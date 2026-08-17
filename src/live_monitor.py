@@ -34,7 +34,7 @@ FRAME_INTERVAL_MS = 30
 # Ruhewert eines liegenden Sensors liegt nahe 1g. Deutliche
 # Abweichungen davon werden farblich als Anomalie hervorgehoben.
 ANOMALY_THRESHOLD_G = 1.15
-FAN_STOP_THRESHOLD_G = 2.0
+FAN_STOP_THRESHOLD_G = 1.7
 FAN_RESTART_THRESHOLD_G = 1.0
 FAN_RESTART_DELAY_S = 5.0
 FAN_PIN = 18
