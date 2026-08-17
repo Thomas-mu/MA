@@ -1,34 +1,34 @@
 {
   "dataset": {
-    "training_windows": 210,
-    "validation_windows": 70,
-    "test_windows": 220,
-    "normal_test_windows": 70,
-    "anomaly_test_windows": 150
+    "training_windows": 253,
+    "validation_windows": 85,
+    "test_windows": 92,
+    "normal_test_windows": 85,
+    "anomaly_test_windows": 7
   },
   "rms_threshold": {
-    "threshold": 0.7230010078759934,
-    "accuracy": 0.7772727272727272,
+    "threshold": 1.1295136218506432,
+    "accuracy": 0.9782608695652174,
     "precision": 1.0,
-    "recall": 0.6733333333333333,
-    "f1_score": 0.8047808764940239,
-    "true_negative": 70,
+    "recall": 0.7142857142857143,
+    "f1_score": 0.8333333333333334,
+    "true_negative": 85,
     "false_positive": 0,
-    "false_negative": 49,
-    "true_positive": 101,
+    "false_negative": 2,
+    "true_positive": 5,
     "false_positive_rate": 0.0,
-    "false_negative_rate": 0.32666666666666666
+    "false_negative_rate": 0.2857142857142857
   },
   "isolation_forest": {
-    "accuracy": 0.7772727272727272,
-    "precision": 0.9469026548672567,
-    "recall": 0.7133333333333334,
-    "f1_score": 0.8136882129277566,
-    "true_negative": 64,
-    "false_positive": 6,
-    "false_negative": 43,
-    "true_positive": 107,
-    "false_positive_rate": 0.08571428571428572,
-    "false_negative_rate": 0.2866666666666667
+    "accuracy": 0.07608695652173914,
+    "precision": 0.07608695652173914,
+    "recall": 1.0,
+    "f1_score": 0.1414141414141414,
+    "true_negative": 0,
+    "false_positive": 85,
+    "false_negative": 0,
+    "true_positive": 7,
+    "false_positive_rate": 1.0,
+    "false_negative_rate": 0.0
   }
 }

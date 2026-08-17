@@ -1,0 +1,13 @@
+monitoring:
+  sample_rate_hz: 500
+  rolling_window_seconds: 5
+  frame_interval_ms: 30
+  anomaly_threshold_g: 1.15
+
+fan:
+  enabled: true
+  pin: 18
+  stop_threshold_g: 2.0
+  restart_threshold_g: 1.0
+  restart_delay_s: 5.0
+  allow_restart_after_error: false

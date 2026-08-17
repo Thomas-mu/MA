@@ -9,6 +9,8 @@ import pandas as pd
 FIGURE_DIR = Path("figures")
 FIGURE_DIR.mkdir(parents=True, exist_ok=True)
 
+FIGURE_HEADER = "Masterarbeit FB 2\nUAS Frankfurt"
+
 DATA_FILE = Path("data/simulated/simulated_vibration.csv")
 METRICS_FILE = Path("results/baseline_metrics.json")
 PREDICTIONS_FILE = Path("results/baseline_predictions.csv")
@@ -45,6 +47,9 @@ def plot_signal() -> None:
     data = data[data["timestamp_s"] < PLOT_DURATION_SECONDS]
 
     plt.figure(figsize=(14, 5))
+    plt.gcf().canvas.manager.set_window_title(
+        "Masterarbeit FB 2 - UAS Frankfurt"
+    )
 
     plt.plot(
         data["timestamp_s"],
@@ -62,8 +67,9 @@ def plot_signal() -> None:
         label="Anomalie",
     )
 
+    plt.suptitle(FIGURE_HEADER, y=1.02, fontsize=10)
     plt.title(
-        f"Simuliertes Vibrationssignal "
+        f"Figure 1: Simuliertes Vibrationssignal "
         f"(Ausschnitt: erste {PLOT_DURATION_SECONDS} s)"
     )
     plt.xlabel("Zeit in Sekunden")
@@ -108,6 +114,9 @@ def plot_metrics() -> None:
     width = 0.36
 
     plt.figure(figsize=(10, 6))
+    plt.gcf().canvas.manager.set_window_title(
+        "Masterarbeit FB 2 - UAS Frankfurt"
+    )
 
     rms_bars = plt.bar(
         positions - width / 2,
@@ -123,6 +132,7 @@ def plot_metrics() -> None:
         label="Isolation Forest",
     )
 
+    plt.suptitle(FIGURE_HEADER, y=1.02, fontsize=10)
     plt.title("Vergleich der Baseline-Modelle")
     plt.xlabel("Metrik")
     plt.ylabel("Ergebnis")
@@ -180,6 +190,9 @@ def plot_predictions() -> None:
     data = pd.read_csv(PREDICTIONS_FILE)
 
     plt.figure(figsize=(14, 5))
+    plt.gcf().canvas.manager.set_window_title(
+        "Masterarbeit FB 2 - UAS Frankfurt"
+    )
 
     plt.step(
         *_break_at_gaps(data["window_start_s"], data["label"]),
@@ -208,6 +221,7 @@ def plot_predictions() -> None:
         label="Isolation-Forest-Ergebnis",
     )
 
+    plt.suptitle(FIGURE_HEADER, y=1.02, fontsize=10)
     plt.title("Tatsächliche und erkannte Anomalien")
     plt.xlabel("Zeitfenster in Sekunden")
     plt.ylabel("Zustand")

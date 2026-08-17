@@ -125,6 +125,9 @@ def main() -> None:
     ]
 
     plt.figure(figsize=(12, 5))
+    plt.gcf().canvas.manager.set_window_title(
+        "Masterarbeit FB 2 - UAS Frankfurt"
+    )
     plt.plot(
         plot_data["timestamp_s"],
         plot_data["signal"],
@@ -143,8 +146,13 @@ def main() -> None:
 
     plt.xlabel("Zeit in Sekunden")
     plt.ylabel("Simulierte Beschleunigung")
+    plt.suptitle(
+        "Masterarbeit FB 2\nUAS Frankfurt",
+        y=1.02,
+        fontsize=10,
+    )
     plt.title(
-        f"Simuliertes Vibrationssignal "
+        f"Figure 1: Simuliertes Vibrationssignal "
         f"(Ausschnitt: erste {PLOT_DURATION_SECONDS} s)"
     )
     plt.legend()

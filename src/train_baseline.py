@@ -24,6 +24,7 @@ from sklearn.preprocessing import StandardScaler
 
 
 DATA_DIRECTORY = Path("data/processed")
+REAL_DATA_DIRECTORY = Path("data/processed_real")
 MODEL_DIRECTORY = Path("models")
 RESULT_DIRECTORY = Path("results")
 FIGURE_DIRECTORY = Path("figures")
@@ -31,6 +32,28 @@ FIGURE_DIRECTORY = Path("figures")
 TRAIN_FILE = DATA_DIRECTORY / "train_normal.csv"
 VALIDATION_FILE = DATA_DIRECTORY / "validation_normal.csv"
 TEST_FILE = DATA_DIRECTORY / "test.csv"
+
+
+def resolve_data_directory(explicit_path: str | None = None) -> Path:
+    """Wählt den Datensatzordner robust aus.
+
+    Beim Retraining mit neuen Messdaten hat der echte Datensatz aus
+    data/processed_real Vorrang, weil er die aktuelle Hardware- und
+    Lüfterumgebung abbildet. Der Standardpfad dient nur als Fallback.
+    """
+
+    if explicit_path:
+        candidate = Path(explicit_path)
+        if candidate.exists():
+            return candidate
+
+    if REAL_DATA_DIRECTORY.exists():
+        return REAL_DATA_DIRECTORY
+
+    if DATA_DIRECTORY.exists():
+        return DATA_DIRECTORY
+
+    return DATA_DIRECTORY
 
 RANDOM_SEED = 42
 
@@ -260,6 +283,31 @@ def train_isolation_forest(
 
 
 def main() -> None:
+    parser = argparse.ArgumentParser(
+        description=(
+            "Trainiert die Baseline-Modelle für Anomalie-Erkennung. "
+            "Wenn data/processed fehlt, wird automatisch "
+            "data/processed_real verwendet."
+        )
+    )
+    parser.add_argument(
+        "--data-dir",
+        type=str,
+        default=None,
+        help=(
+            "Pfad zum Datensatzordner. Standard: data/processed, "
+            "Fallback: data/processed_real"
+        ),
+    )
+    args = parser.parse_args()
+
+    data_directory = resolve_data_directory(args.data_dir)
+
+    global TRAIN_FILE, VALIDATION_FILE, TEST_FILE
+    TRAIN_FILE = data_directory / "train_normal.csv"
+    VALIDATION_FILE = data_directory / "validation_normal.csv"
+    TEST_FILE = data_directory / "test.csv"
+
     check_input_files()
 
     MODEL_DIRECTORY.mkdir(
@@ -274,6 +322,8 @@ def main() -> None:
         parents=True,
         exist_ok=True,
     )
+
+    print(f"Verwende Datensatzordner: {data_directory}")
 
     training_data = pd.read_csv(TRAIN_FILE)
     validation_data = pd.read_csv(VALIDATION_FILE)
