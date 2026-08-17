@@ -1,4 +1,6 @@
 import math
+import shutil
+import subprocess
 import sys
 import time
 from collections import deque
@@ -9,6 +11,11 @@ matplotlib.use("TkAgg")
 
 import matplotlib.animation as animation
 import matplotlib.pyplot as plt
+
+try:
+    from rpi_hardware_pwm import HardwarePWM
+except ImportError:  # pragma: no cover - nur für Desktop/Testumgebungen
+    HardwarePWM = None
 
 try:
     import RPi.GPIO as GPIO
@@ -31,6 +38,11 @@ FAN_STOP_THRESHOLD_G = 2.0
 FAN_RESTART_THRESHOLD_G = 1.0
 FAN_RESTART_DELAY_S = 5.0
 FAN_PIN = 18
+FAN_PWM_CHIP = 0
+FAN_PWM_CHANNEL = 2
+FAN_PWM_FREQUENCY_HZ = 25000
+FAN_STOP_PERCENT = 0
+FAN_RUN_PERCENT = 100
 FAN_ALLOW_RESTART_AFTER_ERROR = False
 
 
@@ -40,12 +52,44 @@ class FanController:
     def __init__(self, pin: int, default_on: bool = True) -> None:
         self.pin = pin
         self.default_on = default_on
-        self.enabled = GPIO is not None
+        self.enabled = False
         self.is_running = default_on
         self.fan_off_since: float | None = None
         self.restart_allowed = FAN_ALLOW_RESTART_AFTER_ERROR
         self.restart_decision_prompted = False
+        self.pwm = None
 
+        if shutil.which("pinctrl") is not None:
+            self.enabled = True
+            self.set_state(default_on)
+            print(
+                f"Lüftersteuerung via pinctrl aktiv (Pin {self.pin})."
+            )
+            return
+
+        if HardwarePWM is not None:
+            try:
+                self.pwm = HardwarePWM(
+                    pwm_channel=FAN_PWM_CHANNEL,
+                    hz=FAN_PWM_FREQUENCY_HZ,
+                    chip=FAN_PWM_CHIP,
+                )
+                self.pwm.start(
+                    FAN_RUN_PERCENT if default_on else FAN_STOP_PERCENT
+                )
+                self.enabled = True
+                print(
+                    "PWM-Lüftersteuerung aktiv. "
+                    f"Kanäle: chip={FAN_PWM_CHIP}, channel={FAN_PWM_CHANNEL}"
+                )
+                return
+            except Exception as exc:  # pragma: no cover - hardwareabhängig
+                print(
+                    "HardwarePWM konnte nicht initialisiert werden: "
+                    f"{exc}. Fallback auf GPIO."
+                )
+
+        self.enabled = GPIO is not None
         if not self.enabled:
             print("GPIO nicht verfügbar. Lüfter-Steuerung deaktiviert.")
             return
@@ -63,22 +107,15 @@ class FanController:
             return
 
     def prompt_restart_decision(self) -> None:
-        if self.restart_decision_prompted:
-            return
-
         self.restart_decision_prompted = True
 
         if not sys.stdin.isatty():
-            print(
-                "Interaktive Bestätigung nicht verfügbar; "
-                "Lüfter bleibt aus, bis der Fehler manuell bestätigt wurde."
-            )
+            self.restart_decision_prompted = False
             return
 
         try:
             answer = input(
-                "Fehler erkannt. Ist der Fehler behoben und soll der "
-                "Lüfter wieder starten? [J/n]: "
+                "Lüfter aus. Wieder starten? [J/n]: "
             ).strip().lower()
         except (EOFError, KeyboardInterrupt):
             answer = "n"
@@ -86,19 +123,43 @@ class FanController:
         if answer in {"j", "ja", "y", "yes", "1", "true"}:
             self.set_state(True)
             self.fan_off_since = None
-            print("Fehler bestätigt: Lüfter wieder AN")
             self.restart_allowed = True
         else:
             self.set_state(False)
-            print("Fehler noch nicht bestätigt: Lüfter bleibt AUS")
             self.restart_allowed = False
+
+        self.restart_decision_prompted = False
 
     def set_state(self, state: bool) -> None:
         if not self.enabled:
             return
 
+        if shutil.which("pinctrl") is not None:
+            command = [
+                "pinctrl",
+                "set",
+                str(self.pin),
+                "op",
+                "dh" if state else "dl",
+            ]
+            try:
+                subprocess.run(command, check=True, capture_output=True, text=True)
+                self.is_running = state
+                return
+            except Exception as exc:  # pragma: no cover - hardwareabhängig
+                print(
+                    f"pinctrl-Befehl fehlgeschlagen: {command} -> {exc}. "
+                    "Fallback auf GPIO/PWM."
+                )
+
+        self.is_running = state
+
+        if self.pwm is not None:
+            duty_cycle = FAN_RUN_PERCENT if state else FAN_STOP_PERCENT
+            self.pwm.change_duty_cycle(duty_cycle)
+            return
+
         try:
-            self.is_running = state
             GPIO.output(self.pin, GPIO.HIGH if state else GPIO.LOW)
         except RuntimeError as exc:
             self.enabled = False
@@ -118,19 +179,22 @@ class FanController:
             if self.is_running:
                 self.set_state(False)
                 self.fan_off_since = time.monotonic()
-                print(
-                    f"ANOMALIE erkannt: {magnitude_g:.3f} g -> Lüfter AUS"
-                )
+                self.restart_decision_prompted = False
                 self.prompt_restart_decision()
             return False
 
         # Automatischer Neustart ist hier deaktiviert. Der Nutzer muss
         # die Fehlersituation manuell bestätigen, damit der Lüfter wieder
-        # auf HIGH / 1 gesetzt wird.
+        # auf 100 % / HIGH gesetzt wird.
         return self.is_running
 
     def close(self) -> None:
         if not self.enabled:
+            return
+
+        if self.pwm is not None:
+            self.pwm.change_duty_cycle(FAN_STOP_PERCENT)
+            self.pwm.stop()
             return
 
         try:
