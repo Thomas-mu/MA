@@ -1,0 +1,5 @@
+{
+  "feature": "rms",
+  "threshold": 0.7230010078759934,
+  "threshold_method": "99th percentile of normal validation data"
+}
