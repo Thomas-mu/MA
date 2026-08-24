@@ -1,0 +1,3 @@
+model,source_file,window_count,normal_windows,anomaly_windows,anomaly_score_mean,anomaly_score_median,anomaly_score_standard_deviation,anomaly_score_maximum,anomaly_window_detection_rate,accuracy,precision,recall,sensitivity,f1,specificity,false_positive_rate,false_negative_rate,tn,fp,fn,tp
+Isolation Forest,normal_20260817_111818.csv,468,468,0,0.5099438369746799,0.5193195522776551,0.03802659768672231,0.5711149608092749,,0.905982905982906,0.0,,,,0.905982905982906,0.09401709401709402,,424,44,0,0
+Isolation Forest,anomaly_20260725_185423.csv,78,52,26,0.6673948327635916,0.6697531375638771,0.006488385941599002,0.6803567854210615,1.0,0.3333333333333333,0.3333333333333333,1.0,1.0,0.5,0.0,1.0,0.0,0,52,0,26

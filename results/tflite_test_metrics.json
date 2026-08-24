@@ -1,0 +1,155 @@
+{
+  "experiment": "clean_comparison_phase5_float32_tflite_20260823",
+  "model": "TensorFlow Lite Float32 Autoencoder",
+  "source_model_path": "models/clean_comparison/autoencoder.keras",
+  "tflite_model_path": "models/clean_comparison/autoencoder_float32.tflite",
+  "source_model_sha256": "749d3e481d68df3d6376566123bb34d4f187eb6e891345935e7c6bd1e35b3407",
+  "tflite_model_sha256": "1b47820ab5f19ddd90af15320f29be82dcbfa9dc01a274a16b31edb5057e5e9c",
+  "source_model_size_bytes": 55472,
+  "source_model_size_kb": 54.171875,
+  "tflite_model_size_bytes": 14084,
+  "tflite_model_size_kb": 13.75390625,
+  "tflite_model_size_mb": 0.013431549072265625,
+  "conversion": {
+    "source_format": "Keras v3 .keras",
+    "target_format": "TensorFlow Lite FlatBuffer",
+    "converter_api": "tf.lite.TFLiteConverter.from_keras_model",
+    "numeric_format": "Float32",
+    "quantization": false,
+    "optimizations": [],
+    "supported_ops": [
+      "TFLITE_BUILTINS"
+    ],
+    "keras_input_shape": [
+      null,
+      128,
+      3
+    ],
+    "keras_output_shape": [
+      null,
+      128,
+      3
+    ],
+    "edge_inference_batch_shape": [
+      1,
+      128,
+      3
+    ],
+    "tensorflow_version": "2.21.0"
+  },
+  "interface": {
+    "input_name": "serving_default_xyz_window:0",
+    "input_index": 0,
+    "input_shape": [
+      1,
+      128,
+      3
+    ],
+    "input_shape_signature": [
+      -1,
+      128,
+      3
+    ],
+    "input_dtype": "float32",
+    "input_quantization_scale": 0.0,
+    "input_quantization_zero_point": 0,
+    "output_name": "StatefulPartitionedCall_1:0",
+    "output_index": 58,
+    "output_shape": [
+      1,
+      128,
+      3
+    ],
+    "output_shape_signature": [
+      -1,
+      128,
+      3
+    ],
+    "output_dtype": "float32",
+    "output_quantization_scale": 0.0,
+    "output_quantization_zero_point": 0
+  },
+  "test_data_path": "data/clean_comparison/X_test.npy",
+  "test_labels_path": "data/clean_comparison/y_test.npy",
+  "test_data_sha256": "3a9b352040b5d6fe7199b5dd84b363b9d23cd0df27fe468b223d6d5055750ebe",
+  "test_labels_sha256": "6cb2b0747ce0c9394602f46f14707c2e2a7f04f79ec72117d24375ed419017cf",
+  "test_shape": [
+    702,
+    128,
+    3
+  ],
+  "test_window_count": 702,
+  "normal_test_windows": 234,
+  "anomaly_test_windows": 468,
+  "threshold": 0.2185792346784422,
+  "threshold_path": "results/clean_tensorflow_threshold.json",
+  "threshold_sha256": "d36794728836156f91422b2a3165538adb0cd5546b00094121c1d0f276b52ad4",
+  "threshold_source": "Existing clean Keras validation threshold",
+  "test_labels_used_for_threshold_selection": false,
+  "decision_rule": {
+    "normal": "reconstruction_error <= threshold",
+    "anomaly": "reconstruction_error > threshold"
+  },
+  "numerical_consistency": {
+    "compared_test_windows": 702,
+    "compared_reconstruction_values": 269568,
+    "maximum_absolute_reconstruction_difference": 1.0013580322265625e-05,
+    "mean_absolute_reconstruction_difference": 3.5669051883992896e-07,
+    "maximum_absolute_reconstruction_error_difference": 2.2401800379157066e-06,
+    "mean_absolute_reconstruction_error_difference": 1.5577670269454453e-07,
+    "keras_vs_tflite_prediction_disagreements": 0,
+    "keras_reference_validation": {
+      "predictions_match_saved_phase3_predictions": true,
+      "maximum_absolute_score_difference": 0.0
+    }
+  },
+  "metrics": {
+    "tn": 231,
+    "fp": 3,
+    "fn": 7,
+    "tp": 461,
+    "accuracy": 0.9857549857549858,
+    "precision": 0.9935344827586207,
+    "recall": 0.9850427350427351,
+    "sensitivity": 0.9850427350427351,
+    "f1": 0.9892703862660944,
+    "specificity": 0.9871794871794872,
+    "false_positive_rate": 0.01282051282051282,
+    "false_negative_rate": 0.014957264957264958
+  },
+  "confusion_matrix": {
+    "tn": 231,
+    "fp": 3,
+    "fn": 7,
+    "tp": 461
+  },
+  "keras_reference_metrics": {
+    "accuracy": 0.9857549857549858,
+    "precision": 0.9935344827586207,
+    "recall": 0.9850427350427351,
+    "sensitivity": 0.9850427350427351,
+    "f1": 0.9892703862660944,
+    "specificity": 0.9871794871794872,
+    "false_positive_rate": 0.01282051282051282,
+    "false_negative_rate": 0.014957264957264958,
+    "tn": 231,
+    "fp": 3,
+    "fn": 7,
+    "tp": 461
+  },
+  "metric_deltas_tflite_minus_keras": {
+    "accuracy": 0.0,
+    "precision": 0.0,
+    "recall": 0.0,
+    "f1": 0.0,
+    "specificity": 0.0,
+    "false_positive_rate": 0.0,
+    "false_negative_rate": 0.0
+  },
+  "tflite_reconstruction_error": {
+    "mean": 3.886937606438097,
+    "median": 1.3521728542429101,
+    "minimum": 0.09103556915486077,
+    "maximum": 46.07248889856297
+  }
+}

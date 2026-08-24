@@ -1,0 +1,21 @@
+{
+  "experiment": "clean_comparison_20260823",
+  "model": "TensorFlow Autoencoder",
+  "model_path": "models/clean_comparison/autoencoder.keras",
+  "threshold_method": "99th percentile of reconstruction MSE from normal validation windows only",
+  "decision_rule": {
+    "normal": "reconstruction_error <= threshold",
+    "anomaly": "reconstruction_error > threshold"
+  },
+  "test_labels_used_for_threshold_selection": false,
+  "validation_statistics": {
+    "validation_window_count": 234,
+    "mean_mse": 0.15635021399945218,
+    "standard_deviation_mse": 0.02770886323421279,
+    "median_mse": 0.15454301567249945,
+    "percentile_95_mse": 0.2048308690513492,
+    "percentile_99_mse": 0.2185792346784422,
+    "maximum_mse": 0.23181535977711576
+  },
+  "threshold": 0.2185792346784422
+}

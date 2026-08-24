@@ -1,0 +1,34 @@
+{
+  "model": "Isolation Forest",
+  "model_path": "models/comparison/isolation_forest.joblib",
+  "input": "Already scaled Phase-2 XYZ windows flattened in C order from (128, 3) to 384 features",
+  "score_definition": "anomaly_score = -IsolationForest.score_samples(X)",
+  "score_direction": "Higher values are more anomalous",
+  "threshold_method": "99th percentile of anomaly scores from normal validation windows only",
+  "decision_rule": {
+    "normal": "anomaly_score <= threshold",
+    "anomaly": "anomaly_score > threshold"
+  },
+  "test_labels_used_for_threshold_selection": false,
+  "hyperparameters": {
+    "n_estimators": 200,
+    "max_samples": "auto",
+    "contamination": "auto",
+    "max_features": 1.0,
+    "bootstrap": false,
+    "n_jobs": -1,
+    "random_state": 42,
+    "verbose": 0,
+    "warm_start": false
+  },
+  "validation_statistics": {
+    "validation_window_count": 468,
+    "mean_anomaly_score": 0.5100567318785809,
+    "standard_deviation_anomaly_score": 0.012465022370494705,
+    "median_anomaly_score": 0.5095181271491281,
+    "percentile_95_anomaly_score": 0.532964816232031,
+    "percentile_99_anomaly_score": 0.5406076415755858,
+    "maximum_anomaly_score": 0.5492309292311285
+  },
+  "threshold": 0.5406076415755858
+}

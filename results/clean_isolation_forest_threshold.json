@@ -1,0 +1,35 @@
+{
+  "experiment": "clean_comparison_20260823",
+  "model": "Isolation Forest",
+  "model_path": "models/clean_comparison/isolation_forest.joblib",
+  "input": "Scaled (128,3) windows flattened to 384 features in C order",
+  "score_definition": "anomaly_score = -IsolationForest.score_samples(X)",
+  "score_direction": "Higher values are more anomalous",
+  "threshold_method": "99th percentile of normal validation anomaly scores only",
+  "decision_rule": {
+    "normal": "anomaly_score <= threshold",
+    "anomaly": "anomaly_score > threshold"
+  },
+  "test_labels_used_for_threshold_selection": false,
+  "hyperparameters": {
+    "n_estimators": 200,
+    "max_samples": "auto",
+    "contamination": "auto",
+    "max_features": 1.0,
+    "bootstrap": false,
+    "n_jobs": -1,
+    "random_state": 42,
+    "verbose": 0,
+    "warm_start": false
+  },
+  "validation_statistics": {
+    "validation_window_count": 234,
+    "mean_anomaly_score": 0.4450812568376253,
+    "standard_deviation_anomaly_score": 0.01376231553238496,
+    "median_anomaly_score": 0.4441199007153416,
+    "percentile_95_anomaly_score": 0.47075066323951903,
+    "percentile_99_anomaly_score": 0.4776322723194337,
+    "maximum_anomaly_score": 0.4823011050365736
+  },
+  "threshold": 0.4776322723194337
+}

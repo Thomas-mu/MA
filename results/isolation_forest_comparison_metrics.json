@@ -1,0 +1,51 @@
+{
+  "model": "Isolation Forest",
+  "model_path": "models/comparison/isolation_forest.joblib",
+  "model_size_kb": 3635.1376953125,
+  "random_state": 42,
+  "hyperparameters": {
+    "n_estimators": 200,
+    "max_samples": "auto",
+    "contamination": "auto",
+    "max_features": 1.0,
+    "bootstrap": false,
+    "n_jobs": -1,
+    "random_state": 42,
+    "verbose": 0,
+    "warm_start": false
+  },
+  "input_window_shape": [
+    128,
+    3
+  ],
+  "flattened_feature_count": 384,
+  "training_windows": 663,
+  "validation_windows": 468,
+  "test_windows": 546,
+  "normal_test_windows": 520,
+  "anomaly_test_windows": 26,
+  "score_definition": "anomaly_score = -IsolationForest.score_samples(X)",
+  "threshold": 0.5406076415755858,
+  "threshold_source": "Normal validation windows only",
+  "test_labels_used_for_hyperparameters_or_threshold": false,
+  "metrics": {
+    "accuracy": 0.8241758241758241,
+    "precision": 0.21311475409836064,
+    "recall": 1.0,
+    "sensitivity": 1.0,
+    "f1": 0.3513513513513513,
+    "specificity": 0.8153846153846154,
+    "false_positive_rate": 0.18461538461538463,
+    "false_negative_rate": 0.0,
+    "tn": 424,
+    "fp": 96,
+    "fn": 0,
+    "tp": 26
+  },
+  "confusion_matrix": {
+    "tn": 424,
+    "fp": 96,
+    "fn": 0,
+    "tp": 26
+  }
+}

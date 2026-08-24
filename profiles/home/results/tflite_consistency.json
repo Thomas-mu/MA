@@ -1,0 +1,74 @@
+{
+  "plausible": true,
+  "validation_windows": 234,
+  "compared_reconstruction_values": 89856,
+  "maximum_absolute_reconstruction_difference": 1.430511474609375e-06,
+  "mean_absolute_reconstruction_difference": 1.7676221274278601e-07,
+  "maximum_absolute_mse_difference": 1.848484421085317e-08,
+  "mean_absolute_mse_difference": 4.786616818868512e-09,
+  "threshold_decision_disagreements": 0,
+  "acceptance_limits": {
+    "maximum_absolute_reconstruction_difference": 0.001,
+    "maximum_absolute_mse_difference": 0.0001,
+    "maximum_threshold_decision_disagreements": 0
+  },
+  "interface": {
+    "input_name": "serving_default_xyz_window:0",
+    "input_index": 0,
+    "input_shape": [
+      1,
+      128,
+      3
+    ],
+    "input_shape_signature": [
+      -1,
+      128,
+      3
+    ],
+    "input_dtype": "float32",
+    "input_quantization_scale": 0.0,
+    "input_quantization_zero_point": 0,
+    "output_name": "StatefulPartitionedCall_1:0",
+    "output_index": 58,
+    "output_shape": [
+      1,
+      128,
+      3
+    ],
+    "output_shape_signature": [
+      -1,
+      128,
+      3
+    ],
+    "output_dtype": "float32",
+    "output_quantization_scale": 0.0,
+    "output_quantization_zero_point": 0
+  },
+  "conversion": {
+    "source_format": "Keras v3 .keras",
+    "target_format": "TensorFlow Lite FlatBuffer",
+    "converter_api": "tf.lite.TFLiteConverter.from_keras_model",
+    "numeric_format": "Float32",
+    "quantization": false,
+    "optimizations": [],
+    "supported_ops": [
+      "TFLITE_BUILTINS"
+    ],
+    "keras_input_shape": [
+      null,
+      128,
+      3
+    ],
+    "keras_output_shape": [
+      null,
+      128,
+      3
+    ],
+    "edge_inference_batch_shape": [
+      1,
+      128,
+      3
+    ],
+    "tensorflow_version": "2.21.0"
+  }
+}

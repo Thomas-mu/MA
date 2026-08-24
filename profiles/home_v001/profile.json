@@ -1,0 +1,459 @@
+{
+  "profile_name": "home_v001",
+  "base_profile_name": "home",
+  "profile_version": 1,
+  "status": "ready",
+  "created_at": "2026-08-23T16:26:41+02:00",
+  "updated_at": "2026-08-23T16:35:59+02:00",
+  "description": null,
+  "sampling_rate_hz": 500,
+  "window_size": 128,
+  "step_size": 128,
+  "axes": [
+    "x_g",
+    "y_g",
+    "z_g"
+  ],
+  "normal_recordings": 8,
+  "training_recordings": 6,
+  "validation_recordings": 2,
+  "methodology": "Setup-specific normal-state calibration. Only normal training files fit the scaler and autoencoder; the threshold is the 99th percentile of reconstruction MSE from separate normal validation files.",
+  "system": {
+    "device_model": "Raspberry Pi 5 Model B Rev 1.0",
+    "cpu_model": "Cortex-A76",
+    "architecture": "aarch64",
+    "logical_cores": 4,
+    "physical_cores": 4,
+    "current_frequency_mhz": 2400.0,
+    "total_ram_bytes": 8449835008,
+    "total_ram_gib": 7.8695220947265625,
+    "operating_system": "Debian GNU/Linux 13 (trixie)",
+    "kernel": "6.18.34+rpt-rpi-2712",
+    "python_version": "3.13.5",
+    "tensorflow_version": "2.21.0",
+    "keras_version": "3.15.1",
+    "numpy_version": "2.5.2",
+    "scikit_learn_version": "1.9.0",
+    "psutil_version": "7.2.2",
+    "standalone_ai_edge_litert_installed": false,
+    "standalone_tflite_runtime_installed": false,
+    "platform_string": "Linux-6.18.34+rpt-rpi-2712-aarch64-with-glibc2.41",
+    "package_versions": {
+      "tensorflow": "2.21.0",
+      "keras": "3.15.1",
+      "numpy": "2.5.2",
+      "pandas": "3.0.5",
+      "scikit-learn": "1.9.0",
+      "joblib": "1.5.3",
+      "psutil": "7.2.2",
+      "smbus2": null
+    }
+  },
+  "sensor": {
+    "model": "ADXL345",
+    "axes": [
+      "x_g",
+      "y_g",
+      "z_g"
+    ],
+    "access_module": "src/adxl345.py",
+    "connect_function": "connect",
+    "read_function": "read_acceleration_g",
+    "software_sampling_rate_hz": 500,
+    "internal_odr_note": "The reused ADXL345 access does not explicitly configure the sensor BW_RATE/ODR register; measured CSV timestamps document the software polling rate."
+  },
+  "configuration": {
+    "normal_recordings": 8,
+    "training_recordings": 6,
+    "validation_recordings": 2,
+    "seconds_per_recording": 60.0,
+    "sampling_rate_hz": 500,
+    "window_size": 128,
+    "step_size": 128,
+    "window_overlap_samples": 0,
+    "axis_columns": [
+      "x_g",
+      "y_g",
+      "z_g"
+    ],
+    "random_seed": 42,
+    "batch_size": 32,
+    "maximum_epochs": 100,
+    "early_stopping_patience": 10,
+    "early_stopping_min_delta": 1e-06,
+    "threshold_percentile": 99,
+    "normal_data_only": true
+  },
+  "data": {
+    "normal_only": true,
+    "raw_directory": "profiles/home_v001/data/raw",
+    "recordings": [
+      {
+        "recording_index": 1,
+        "recorded_at": "2026-08-23T16:27:45+02:00",
+        "filename": "normal_001.csv",
+        "path": "profiles/home_v001/data/raw/normal_001.csv",
+        "split": "train",
+        "sample_count": 30000,
+        "configured_duration_seconds": 60.0,
+        "configured_sampling_rate_hz": 500,
+        "measured_sampling_rate_hz": 499.9995251512969,
+        "sha256": "63c660fd96e4208d296160ca96eda58c9b7c33596d2e208e08b191433db995d8"
+      },
+      {
+        "recording_index": 2,
+        "recorded_at": "2026-08-23T16:28:48+02:00",
+        "filename": "normal_002.csv",
+        "path": "profiles/home_v001/data/raw/normal_002.csv",
+        "split": "train",
+        "sample_count": 30000,
+        "configured_duration_seconds": 60.0,
+        "configured_sampling_rate_hz": 500,
+        "measured_sampling_rate_hz": 499.9994924252867,
+        "sha256": "061cbf1f439e1fa0e3404d15b048a58df28bc2daa3e50694b99756dced82ac16"
+      },
+      {
+        "recording_index": 3,
+        "recorded_at": "2026-08-23T16:29:52+02:00",
+        "filename": "normal_003.csv",
+        "path": "profiles/home_v001/data/raw/normal_003.csv",
+        "split": "train",
+        "sample_count": 30000,
+        "configured_duration_seconds": 60.0,
+        "configured_sampling_rate_hz": 500,
+        "measured_sampling_rate_hz": 499.9995218095264,
+        "sha256": "2c0c8741c60a1e83a8d209fa75c2f14dc68a7cfe912d4e3a0a83d586fb76520f"
+      },
+      {
+        "recording_index": 4,
+        "recorded_at": "2026-08-23T16:30:55+02:00",
+        "filename": "normal_004.csv",
+        "path": "profiles/home_v001/data/raw/normal_004.csv",
+        "split": "train",
+        "sample_count": 30000,
+        "configured_duration_seconds": 60.0,
+        "configured_sampling_rate_hz": 500,
+        "measured_sampling_rate_hz": 499.9995413851361,
+        "sha256": "69458c736581a996852e6c299cedaf1b9f955982c9c2534ed08848c256e3094c"
+      },
+      {
+        "recording_index": 5,
+        "recorded_at": "2026-08-23T16:31:58+02:00",
+        "filename": "normal_005.csv",
+        "path": "profiles/home_v001/data/raw/normal_005.csv",
+        "split": "train",
+        "sample_count": 30000,
+        "configured_duration_seconds": 60.0,
+        "configured_sampling_rate_hz": 500,
+        "measured_sampling_rate_hz": 499.9995541688509,
+        "sha256": "e9bac0edaa5f64568ef1e355093a6c0aebb087c19c38bf1dcea088a2a2784201"
+      },
+      {
+        "recording_index": 6,
+        "recorded_at": "2026-08-23T16:33:02+02:00",
+        "filename": "normal_006.csv",
+        "path": "profiles/home_v001/data/raw/normal_006.csv",
+        "split": "train",
+        "sample_count": 30000,
+        "configured_duration_seconds": 60.0,
+        "configured_sampling_rate_hz": 500,
+        "measured_sampling_rate_hz": 499.99955080209855,
+        "sha256": "e18703e0a964412265db24bb4746f7596f9ef4c74f8ba6107aa55c332c3f80f2"
+      },
+      {
+        "recording_index": 7,
+        "recorded_at": "2026-08-23T16:34:05+02:00",
+        "filename": "normal_007.csv",
+        "path": "profiles/home_v001/data/raw/normal_007.csv",
+        "split": "validation",
+        "sample_count": 30000,
+        "configured_duration_seconds": 60.0,
+        "configured_sampling_rate_hz": 500,
+        "measured_sampling_rate_hz": 499.99955691063957,
+        "sha256": "5a4dc6dff4c307f937fc98c31c4af0265d9bc5a2470c3ef9679daaec8a8fde88"
+      },
+      {
+        "recording_index": 8,
+        "recorded_at": "2026-08-23T16:35:09+02:00",
+        "filename": "normal_008.csv",
+        "path": "profiles/home_v001/data/raw/normal_008.csv",
+        "split": "validation",
+        "sample_count": 30000,
+        "configured_duration_seconds": 60.0,
+        "configured_sampling_rate_hz": 500,
+        "measured_sampling_rate_hz": 499.99951640932295,
+        "sha256": "dd5f3ac32db49f2b9d175a58b714e9d12ed4004d7c81a43a4d11e7b3a2df5ceb"
+      }
+    ],
+    "split_rule": "Files in acquisition order: first files TRAIN, final configured file(s) VALIDATION; no source file occurs in both splits.",
+    "training_files": [
+      "normal_001.csv",
+      "normal_002.csv",
+      "normal_003.csv",
+      "normal_004.csv",
+      "normal_005.csv",
+      "normal_006.csv"
+    ],
+    "validation_files": [
+      "normal_007.csv",
+      "normal_008.csv"
+    ],
+    "training_windows": 1404,
+    "validation_windows": 468,
+    "split_manifest_path": "profiles/home_v001/data/processed/split_manifest.json"
+  },
+  "artifacts": {
+    "scaler": "profiles/home_v001/models/scaler.joblib",
+    "keras_model": "profiles/home_v001/models/autoencoder.keras",
+    "tflite_model": "profiles/home_v001/models/autoencoder_float32.tflite",
+    "threshold": "profiles/home_v001/models/threshold.json",
+    "training_history": "profiles/home_v001/results/training_history.csv",
+    "training_summary": "profiles/home_v001/results/training_summary.json",
+    "model_summary": "profiles/home_v001/results/model_summary.txt",
+    "validation_errors": "profiles/home_v001/results/validation_reconstruction_errors.csv",
+    "tflite_consistency": "profiles/home_v001/results/tflite_consistency.json",
+    "session_statistics": "profiles/home_v001/results/session_statistics.csv"
+  },
+  "warnings": [],
+  "training_windows": 1404,
+  "validation_windows": 468,
+  "scaler": {
+    "path": "profiles/home_v001/models/scaler.joblib",
+    "sha256": "e83a4e30c75c8fcca47333b3c8d9986d28103b2637fbe65c572952ebdcb0dcfc",
+    "type": "sklearn.preprocessing.StandardScaler",
+    "fit_data": "Normal training samples only",
+    "mean": [
+      -0.11479014731896489,
+      0.00609303384587948,
+      -1.0976232713120897
+    ],
+    "scale": [
+      0.07101192532726011,
+      0.01740448474900481,
+      0.04280758751547582
+    ]
+  },
+  "autoencoder": {
+    "keras_model_path": "profiles/home_v001/models/autoencoder.keras",
+    "keras_model_sha256": "5d27c3ffc7bf09f68fa5169fb556ee9aafe28be1dd6c2d0cd67062ce596645f3",
+    "tflite_model_path": "profiles/home_v001/models/autoencoder_float32.tflite",
+    "tflite_model_sha256": "e1d12ebdc3cc6f57ad244fc65ec0ea80e7af730d5498349667edc48ced0c37f4",
+    "input_shape": [
+      128,
+      3
+    ],
+    "architecture": [
+      {
+        "class_name": "InputLayer",
+        "name": "xyz_window",
+        "config": {}
+      },
+      {
+        "class_name": "Conv1D",
+        "name": "encoder_conv_1",
+        "config": {
+          "filters": 8,
+          "kernel_size": [
+            5
+          ],
+          "padding": "same",
+          "activation": "relu"
+        }
+      },
+      {
+        "class_name": "MaxPooling1D",
+        "name": "encoder_pool_1",
+        "config": {
+          "pool_size": [
+            2
+          ],
+          "padding": "same"
+        }
+      },
+      {
+        "class_name": "Conv1D",
+        "name": "encoder_conv_2",
+        "config": {
+          "filters": 4,
+          "kernel_size": [
+            3
+          ],
+          "padding": "same",
+          "activation": "relu"
+        }
+      },
+      {
+        "class_name": "MaxPooling1D",
+        "name": "bottleneck",
+        "config": {
+          "pool_size": [
+            2
+          ],
+          "padding": "same"
+        }
+      },
+      {
+        "class_name": "Conv1D",
+        "name": "decoder_conv_1",
+        "config": {
+          "filters": 4,
+          "kernel_size": [
+            3
+          ],
+          "padding": "same",
+          "activation": "relu"
+        }
+      },
+      {
+        "class_name": "UpSampling1D",
+        "name": "decoder_upsample_1",
+        "config": {
+          "size": 2
+        }
+      },
+      {
+        "class_name": "Conv1D",
+        "name": "decoder_conv_2",
+        "config": {
+          "filters": 8,
+          "kernel_size": [
+            3
+          ],
+          "padding": "same",
+          "activation": "relu"
+        }
+      },
+      {
+        "class_name": "UpSampling1D",
+        "name": "decoder_upsample_2",
+        "config": {
+          "size": 2
+        }
+      },
+      {
+        "class_name": "Conv1D",
+        "name": "reconstruction",
+        "config": {
+          "filters": 3,
+          "kernel_size": [
+            5
+          ],
+          "padding": "same",
+          "activation": "linear"
+        }
+      }
+    ],
+    "trainable_parameters": 507,
+    "tensorflow_version": "2.21.0",
+    "tflite_numeric_format": "Float32",
+    "quantized": false
+  },
+  "training": {
+    "random_seeds": {
+      "python": 42,
+      "numpy": 42,
+      "tensorflow": 42
+    },
+    "batch_size": 32,
+    "maximum_epochs": 100,
+    "epochs_trained": 100,
+    "best_epoch": 100,
+    "early_stopping_patience": 10,
+    "final_train_loss": 0.05108082294464111,
+    "final_validation_loss": 0.048508696258068085,
+    "best_train_loss": 0.05108082294464111,
+    "best_validation_loss": 0.048508696258068085
+  },
+  "threshold": {
+    "path": "profiles/home_v001/models/threshold.json",
+    "sha256": "b1016d0e18d8d1380d6a85fe8b0fcd3fc49a62940dbb7d5e2b58d8219b7a4fb2",
+    "selected_threshold": 0.07985480720896662,
+    "method": "99th percentile of normal validation reconstruction MSE",
+    "normal_validation_only": true,
+    "validation_statistics": {
+      "validation_window_count": 468,
+      "mean_mse": 0.048508699615450346,
+      "standard_deviation_mse": 0.012329494848224952,
+      "median_mse": 0.04691759811757949,
+      "percentile_95_mse": 0.06618381463834495,
+      "percentile_99_mse": 0.07985480720896662,
+      "maximum_mse": 0.180541397713584,
+      "minimum_mse": 0.029184978240019237
+    },
+    "validation_fraction_above_threshold": 0.010683760683760684
+  },
+  "tflite_consistency": {
+    "plausible": true,
+    "validation_windows": 468,
+    "compared_reconstruction_values": 179712,
+    "maximum_absolute_reconstruction_difference": 2.1457672119140625e-06,
+    "mean_absolute_reconstruction_difference": 2.7590600928725996e-07,
+    "maximum_absolute_mse_difference": 1.963174982300142e-08,
+    "mean_absolute_mse_difference": 5.354431167367272e-09,
+    "threshold_decision_disagreements": 0,
+    "acceptance_limits": {
+      "maximum_absolute_reconstruction_difference": 0.001,
+      "maximum_absolute_mse_difference": 0.0001,
+      "maximum_threshold_decision_disagreements": 0
+    },
+    "interface": {
+      "input_name": "serving_default_xyz_window:0",
+      "input_index": 0,
+      "input_shape": [
+        1,
+        128,
+        3
+      ],
+      "input_shape_signature": [
+        -1,
+        128,
+        3
+      ],
+      "input_dtype": "float32",
+      "input_quantization_scale": 0.0,
+      "input_quantization_zero_point": 0,
+      "output_name": "StatefulPartitionedCall_1:0",
+      "output_index": 58,
+      "output_shape": [
+        1,
+        128,
+        3
+      ],
+      "output_shape_signature": [
+        -1,
+        128,
+        3
+      ],
+      "output_dtype": "float32",
+      "output_quantization_scale": 0.0,
+      "output_quantization_zero_point": 0
+    },
+    "conversion": {
+      "source_format": "Keras v3 .keras",
+      "target_format": "TensorFlow Lite FlatBuffer",
+      "converter_api": "tf.lite.TFLiteConverter.from_keras_model",
+      "numeric_format": "Float32",
+      "quantization": false,
+      "optimizations": [],
+      "supported_ops": [
+        "TFLITE_BUILTINS"
+      ],
+      "keras_input_shape": [
+        null,
+        128,
+        3
+      ],
+      "keras_output_shape": [
+        null,
+        128,
+        3
+      ],
+      "edge_inference_batch_shape": [
+        1,
+        128,
+        3
+      ],
+      "tensorflow_version": "2.21.0"
+    }
+  }
+}

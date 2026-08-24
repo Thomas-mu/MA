@@ -1,0 +1,60 @@
+{
+  "experiment": "clean_comparison_20260823",
+  "random_seed": 42,
+  "tensorflow_version": "2.21.0",
+  "input_shape": [
+    128,
+    3
+  ],
+  "trainable_parameters": 507,
+  "training": {
+    "training_windows": 468,
+    "validation_windows": 234,
+    "test_windows_not_used_for_fitting": 702,
+    "batch_size": 32,
+    "maximum_epochs": 100,
+    "epochs_trained": 100,
+    "early_stopping_patience": 10,
+    "best_epoch": 100,
+    "final_training_loss": 0.16374970972537994,
+    "final_validation_loss": 0.15635021030902863,
+    "best_training_loss": 0.16374970972537994,
+    "best_validation_loss": 0.15635021030902863
+  },
+  "threshold": {
+    "selected": false,
+    "note": "Threshold is selected later from normal validation MSE only."
+  },
+  "reconstruction_error": {
+    "definition": "MSE over all 128 x 3 values per window",
+    "splits": {
+      "train": {
+        "window_count": 468,
+        "mean_mse": 0.16337002506819556,
+        "standard_deviation_mse": 0.029731967358123747,
+        "minimum_mse": 0.10172977426120104,
+        "maximum_mse": 0.3016447751969533
+      },
+      "validation": {
+        "window_count": 234,
+        "mean_mse": 0.15635021399945218,
+        "standard_deviation_mse": 0.02770886323421279,
+        "minimum_mse": 0.10060880688674771,
+        "maximum_mse": 0.23181535977711576
+      },
+      "test": {
+        "window_count": 702,
+        "mean_mse": 3.8869376976572636,
+        "standard_deviation_mse": 6.1661040852822016,
+        "minimum_mse": 0.0910355706973333,
+        "maximum_mse": 46.07248993232497
+      }
+    }
+  },
+  "artifacts": {
+    "model": "models/clean_comparison/autoencoder.keras",
+    "history": "results/clean_tensorflow_training_history.csv",
+    "reconstruction_errors": "results/clean_tensorflow_reconstruction_errors.csv",
+    "model_summary": "results/clean_tensorflow_model_summary.txt"
+  }
+}

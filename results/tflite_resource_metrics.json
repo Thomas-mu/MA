@@ -1,0 +1,216 @@
+{
+  "experiment": "clean_comparison_phase5_float32_tflite_20260823",
+  "model": "TensorFlow Lite Float32 Autoencoder",
+  "summary": {
+    "mean_inference_ms": 0.03716591054131054,
+    "median_inference_ms": 0.030685,
+    "std_inference_ms": 0.023302758188506294,
+    "min_inference_ms": 0.028481,
+    "max_inference_ms": 0.684537,
+    "p95_inference_ms": 0.0682319,
+    "p99_inference_ms": 0.13963106999999952,
+    "windows_per_second": 26906.376984588685,
+    "realtime_factor": 6888.032508054704,
+    "model_key": "tflite_float32_autoencoder",
+    "model": "TensorFlow Lite Float32 Autoencoder",
+    "model_path": "models/clean_comparison/autoencoder_float32.tflite",
+    "threshold_path": "results/clean_tensorflow_threshold.json",
+    "threshold": 0.2185792346784422,
+    "test_windows": 702,
+    "warmup_inferences": 50,
+    "repetitions": 5,
+    "measured_inferences": 3510,
+    "runtime_backend": "tensorflow.lite.Interpreter",
+    "framework_version": "2.21.0",
+    "framework_import_time_ms": 5916.677077,
+    "load_time_ms": 2.221203,
+    "model_size_bytes": 14084,
+    "model_size_kb": 13.75390625,
+    "model_size_mb": 0.013431549072265625,
+    "rss_before_framework_import_mb": 37.96875,
+    "rss_before_load_mb": 595.0625,
+    "rss_after_load_mb": 597.875,
+    "framework_import_ram_delta_mb": 557.09375,
+    "model_load_ram_delta_mb": 2.8125,
+    "runtime_total_ram_delta_mb": 559.90625,
+    "mean_rss_during_inference_mb": 598.7109375,
+    "peak_rss_mb": 599.40625,
+    "rss_after_inference_mb": 599.765625,
+    "mean_cpu_percent": 94.73259862179073,
+    "max_cpu_percent": 183.9,
+    "resource_sample_count": 14,
+    "resource_sample_interval_ms": 10.0,
+    "benchmark_wall_time_seconds": 0.137228369,
+    "window_creation_time_ms": 256.0,
+    "latencies_exceeding_window_creation_time": 0,
+    "interpreter_interface": {
+      "input_name": "serving_default_xyz_window:0",
+      "input_index": 0,
+      "input_shape": [
+        1,
+        128,
+        3
+      ],
+      "input_shape_signature": [
+        -1,
+        128,
+        3
+      ],
+      "input_dtype": "float32",
+      "input_quantization_scale": 0.0,
+      "input_quantization_zero_point": 0,
+      "output_name": "StatefulPartitionedCall_1:0",
+      "output_index": 58,
+      "output_shape": [
+        1,
+        128,
+        3
+      ],
+      "output_shape_signature": [
+        -1,
+        128,
+        3
+      ],
+      "output_dtype": "float32",
+      "output_quantization_scale": 0.0,
+      "output_quantization_zero_point": 0
+    }
+  },
+  "repetition_summaries": [
+    {
+      "repetition": 1,
+      "mean_inference_ms": 0.035662903133903134,
+      "median_inference_ms": 0.030408,
+      "std_inference_ms": 0.018166178435194753,
+      "min_inference_ms": 0.02863,
+      "max_inference_ms": 0.233907,
+      "p95_inference_ms": 0.059055499999999976,
+      "p99_inference_ms": 0.11789734000000003,
+      "windows_per_second": 28040.34198352586,
+      "realtime_factor": 7178.32754778262
+    },
+    {
+      "repetition": 2,
+      "mean_inference_ms": 0.03644189173789174,
+      "median_inference_ms": 0.030389,
+      "std_inference_ms": 0.02984597660811224,
+      "min_inference_ms": 0.028481,
+      "max_inference_ms": 0.684537,
+      "p95_inference_ms": 0.061506899999999885,
+      "p99_inference_ms": 0.12243721,
+      "windows_per_second": 27440.946457788163,
+      "realtime_factor": 7024.882293193769
+    },
+    {
+      "repetition": 3,
+      "mean_inference_ms": 0.03935296011396011,
+      "median_inference_ms": 0.030648,
+      "std_inference_ms": 0.02840188739096012,
+      "min_inference_ms": 0.028556,
+      "max_inference_ms": 0.472351,
+      "p95_inference_ms": 0.07987834999999997,
+      "p99_inference_ms": 0.15562281000000003,
+      "windows_per_second": 25411.049057152348,
+      "realtime_factor": 6505.228558631001
+    },
+    {
+      "repetition": 4,
+      "mean_inference_ms": 0.03675091595441596,
+      "median_inference_ms": 0.031389,
+      "std_inference_ms": 0.017341945496760002,
+      "min_inference_ms": 0.028685,
+      "max_inference_ms": 0.192111,
+      "p95_inference_ms": 0.06187644999999991,
+      "p99_inference_ms": 0.10822182,
+      "windows_per_second": 27210.206168476212,
+      "realtime_factor": 6965.81277912991
+    },
+    {
+      "repetition": 5,
+      "mean_inference_ms": 0.037620881766381765,
+      "median_inference_ms": 0.030870500000000002,
+      "std_inference_ms": 0.019466494720335428,
+      "min_inference_ms": 0.028611,
+      "max_inference_ms": 0.214352,
+      "p95_inference_ms": 0.07244304999999995,
+      "p99_inference_ms": 0.12871207000000007,
+      "windows_per_second": 26580.982503541574,
+      "realtime_factor": 6804.731520906644
+    }
+  ],
+  "decision_validation": {
+    "all_repetitions_match_evaluation_predictions": true,
+    "expected_window_count": 702,
+    "maximum_absolute_score_difference": 0.0
+  },
+  "benchmark": {
+    "description": "End-to-end single-window TFLite inference including Float32 input conversion, reconstruction retrieval, MSE and frozen threshold decision; model/framework load and warm-up excluded.",
+    "separate_process": true,
+    "test_shape": [
+      702,
+      128,
+      3
+    ],
+    "warmup_inferences": 50,
+    "repetitions": 5,
+    "measured_inferences": 3510,
+    "timing_clock": "time.perf_counter_ns",
+    "resource_sample_interval_ms": 10.0,
+    "window_creation_time_ms": 256.0,
+    "model_load_definition": "tf.lite.Interpreter construction plus allocate_tensors after the TensorFlow framework import.",
+    "rss_definition": "rss_before_load is measured after loading X_test and importing TensorFlow. Peak RSS is sampled every 10 ms during inference.",
+    "cpu_percent_definition": "Mean is process CPU-time divided by inference benchmark wall-time; 100% is approximately one fully occupied core. Maximum is the largest 10 ms psutil sample and may exceed 100% on four cores.",
+    "runtime_limitation": "No standalone ai-edge-litert or tflite-runtime package was installed. The available tensorflow.lite.Interpreter therefore requires the full TensorFlow import, which is included in process RSS but excluded from model deserialization time.",
+    "comparison_limitation": "Keras and Isolation Forest values are the validated Phase-4 measurements; TFLite was measured later with the same method and platform, not simultaneously.",
+    "other_limitations": [
+      "Operating-system scheduling and background load were not controlled.",
+      "RSS peaks shorter than 10 ms may be missed.",
+      "CPU monitoring adds small overhead.",
+      "Five repetitions run consecutively after one warm-up and one load."
+    ]
+  },
+  "system": {
+    "device_model": "Raspberry Pi 5 Model B Rev 1.0",
+    "cpu_model": "Cortex-A76",
+    "architecture": "aarch64",
+    "logical_cores": 4,
+    "physical_cores": 4,
+    "current_frequency_mhz": 2400.0,
+    "total_ram_bytes": 8449835008,
+    "total_ram_gib": 7.8695220947265625,
+    "operating_system": "Debian GNU/Linux 13 (trixie)",
+    "kernel": "6.18.34+rpt-rpi-2712",
+    "python_version": "3.13.5",
+    "tensorflow_version": "2.21.0",
+    "keras_version": "3.15.1",
+    "numpy_version": "2.5.2",
+    "scikit_learn_version": "1.9.0",
+    "psutil_version": "7.2.2",
+    "standalone_ai_edge_litert_installed": false,
+    "standalone_tflite_runtime_installed": false
+  },
+  "temperature_before": {
+    "cpu_thermal": [
+      58.95
+    ],
+    "rp1_adc": [
+      50.242
+    ]
+  },
+  "temperature_after": {
+    "cpu_thermal": [
+      61.15
+    ],
+    "rp1_adc": [
+      50.242
+    ]
+  },
+  "input_artifacts": {
+    "tflite_model_path": "models/clean_comparison/autoencoder_float32.tflite",
+    "tflite_model_sha256": "1b47820ab5f19ddd90af15320f29be82dcbfa9dc01a274a16b31edb5057e5e9c",
+    "x_test_sha256": "3a9b352040b5d6fe7199b5dd84b363b9d23cd0df27fe468b223d6d5055750ebe",
+    "threshold_sha256": "d36794728836156f91422b2a3165538adb0cd5546b00094121c1d0f276b52ad4"
+  },
+  "worker_stdout": "",
+  "worker_stderr": "/home/malik/masterarbeit-edge-ai/.venv_tf/lib/python3.13/site-packages/tensorflow/lite/python/interpreter.py:457: UserWarning:     Warning: tf.lite.Interpreter is deprecated and is scheduled for deletion in\n    TF 2.20. Please use the LiteRT interpreter from the ai_edge_litert package.\n    See the [migration guide](https://ai.google.dev/edge/litert/migration)\n    for details.\n    \n  warnings.warn(_INTERPRETER_DELETION_WARNING)\nINFO: Created TensorFlow Lite XNNPACK delegate for CPU.\n"
+}

@@ -1,0 +1,21 @@
+{
+  "model": "TensorFlow Autoencoder",
+  "model_path": "models/tensorflow/autoencoder.keras",
+  "threshold_method": "99th percentile of reconstruction MSE from normal validation windows only",
+  "positive_class": "ANOMALY (1)",
+  "decision_rule": {
+    "normal": "reconstruction_error <= threshold",
+    "anomaly": "reconstruction_error > threshold"
+  },
+  "test_labels_used_for_threshold_selection": false,
+  "validation_statistics": {
+    "validation_window_count": 468,
+    "mean_mse": 0.020494945808414957,
+    "standard_deviation_mse": 0.002174887530194922,
+    "median_mse": 0.020403819299676683,
+    "percentile_95_mse": 0.024147584967011162,
+    "percentile_99_mse": 0.025709324511834792,
+    "maximum_mse": 0.02788934098093006
+  },
+  "threshold": 0.025709324511834792
+}

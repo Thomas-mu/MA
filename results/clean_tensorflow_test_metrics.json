@@ -1,0 +1,38 @@
+{
+  "experiment": "clean_comparison_20260823",
+  "model": "TensorFlow Autoencoder",
+  "model_path": "models/clean_comparison/autoencoder.keras",
+  "model_size_kb": 54.171875,
+  "test_window_count": 702,
+  "normal_test_windows": 234,
+  "anomaly_test_windows": 468,
+  "threshold": 0.2185792346784422,
+  "threshold_source": "Normal validation windows only",
+  "test_labels_used_for_threshold_selection": false,
+  "metrics": {
+    "accuracy": 0.9857549857549858,
+    "precision": 0.9935344827586207,
+    "recall": 0.9850427350427351,
+    "sensitivity": 0.9850427350427351,
+    "f1": 0.9892703862660944,
+    "specificity": 0.9871794871794872,
+    "false_positive_rate": 0.01282051282051282,
+    "false_negative_rate": 0.014957264957264958,
+    "tn": 231,
+    "fp": 3,
+    "fn": 7,
+    "tp": 461
+  },
+  "confusion_matrix": {
+    "tn": 231,
+    "fp": 3,
+    "fn": 7,
+    "tp": 461
+  },
+  "test_reconstruction_error": {
+    "normal_mean_mse": 0.15152969446845574,
+    "normal_median_mse": 0.146092268697145,
+    "anomaly_mean_mse": 5.7546416992516685,
+    "anomaly_median_mse": 3.7780643077573073
+  }
+}

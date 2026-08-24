@@ -1,0 +1,25 @@
+{
+  "profile_name": "home_v001",
+  "normal_validation_only": true,
+  "test_or_anomaly_data_used": false,
+  "method": "99th percentile of normal validation reconstruction MSE",
+  "percentile": 99,
+  "decision_rule": {
+    "normal": "reconstruction_error <= selected_threshold",
+    "anomaly": "reconstruction_error > selected_threshold"
+  },
+  "validation_statistics": {
+    "validation_window_count": 468,
+    "mean_mse": 0.048508699615450346,
+    "standard_deviation_mse": 0.012329494848224952,
+    "median_mse": 0.04691759811757949,
+    "percentile_95_mse": 0.06618381463834495,
+    "percentile_99_mse": 0.07985480720896662,
+    "maximum_mse": 0.180541397713584,
+    "minimum_mse": 0.029184978240019237
+  },
+  "validation_windows_above_threshold": 5,
+  "validation_fraction_above_threshold": 0.010683760683760684,
+  "selected_threshold": 0.07985480720896662,
+  "threshold": 0.07985480720896662
+}

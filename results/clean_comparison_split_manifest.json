@@ -1,0 +1,227 @@
+{
+  "description": "Controlled comparison using only 2026-08-23 recordings with unchanged ADXL345 mounting.",
+  "selection_rule": "Only explicitly assigned 20260823 normal recordings and tapping_shaking anomaly recordings are used.",
+  "excluded_files": [
+    {
+      "path": "data/real/excluded/anomaly_20260823_113338.csv",
+      "reason": "Explicitly excluded: recorded with anomaly label although no disturbance was produced."
+    },
+    {
+      "path": "data/real/anomaly_20260823_113459.csv",
+      "reason": "Not part of the tapping_shaking experiment because metadata identifies anomaly_type as unbalance."
+    }
+  ],
+  "random_seed": 42,
+  "randomization_used": false,
+  "sampling_rate_hz": 500,
+  "window_size": 128,
+  "step_size": 128,
+  "window_overlap_samples": 0,
+  "axis_columns": [
+    "x_g",
+    "y_g",
+    "z_g"
+  ],
+  "tensor_layout": "(window, time_sample, axis)",
+  "window_label_rule": "ANOMALY (1) if at least one point label is 1; otherwise NORMAL (0).",
+  "anomaly_fraction_definition": "Number of point labels equal to 1 divided by window_size.",
+  "incomplete_window_rule": "Trailing incomplete windows are dropped.",
+  "normal_session_orientation": {
+    "maximum_pairwise_xyz_mean_distance_g": 0.0007328530437952832,
+    "x_mean_range_g": 0.00024153999999998454,
+    "y_mean_range_g": 0.000545609999999995,
+    "z_mean_range_g": 0.00042549000000002835
+  },
+  "scaling": {
+    "method": "StandardScaler per XYZ axis",
+    "fit_data": "Normal training samples only",
+    "scaler_path": "models/clean_comparison/scaler.joblib",
+    "mean": [
+      -0.12779069001529328,
+      0.05853203134279478,
+      -1.0982784570461441
+    ],
+    "scale": [
+      0.07292699328926185,
+      0.028113023679866636,
+      0.05836225739609243
+    ]
+  },
+  "output_directory": "data/clean_comparison",
+  "splits": {
+    "train": {
+      "files": [
+        "normal_20260823_112402.csv",
+        "normal_20260823_112518.csv"
+      ],
+      "sample_count": 60000,
+      "window_count": 468,
+      "label_distribution": {
+        "normal": 468,
+        "anomaly": 0,
+        "total": 468
+      },
+      "array_shape": [
+        468,
+        128,
+        3
+      ],
+      "file_details": [
+        {
+          "source_file": "normal_20260823_112402.csv",
+          "sample_count": 30000,
+          "created_windows": 234,
+          "trailing_samples_dropped": 48,
+          "point_label_distribution": {
+            "normal": 30000,
+            "anomaly": 0,
+            "total": 30000
+          },
+          "window_label_distribution": {
+            "normal": 234,
+            "anomaly": 0,
+            "total": 234
+          },
+          "anomaly_types": [
+            "normal"
+          ]
+        },
+        {
+          "source_file": "normal_20260823_112518.csv",
+          "sample_count": 30000,
+          "created_windows": 234,
+          "trailing_samples_dropped": 48,
+          "point_label_distribution": {
+            "normal": 30000,
+            "anomaly": 0,
+            "total": 30000
+          },
+          "window_label_distribution": {
+            "normal": 234,
+            "anomaly": 0,
+            "total": 234
+          },
+          "anomaly_types": [
+            "normal"
+          ]
+        }
+      ]
+    },
+    "validation": {
+      "files": [
+        "normal_20260823_112734.csv"
+      ],
+      "sample_count": 30000,
+      "window_count": 234,
+      "label_distribution": {
+        "normal": 234,
+        "anomaly": 0,
+        "total": 234
+      },
+      "array_shape": [
+        234,
+        128,
+        3
+      ],
+      "file_details": [
+        {
+          "source_file": "normal_20260823_112734.csv",
+          "sample_count": 30000,
+          "created_windows": 234,
+          "trailing_samples_dropped": 48,
+          "point_label_distribution": {
+            "normal": 30000,
+            "anomaly": 0,
+            "total": 30000
+          },
+          "window_label_distribution": {
+            "normal": 234,
+            "anomaly": 0,
+            "total": 234
+          },
+          "anomaly_types": [
+            "normal"
+          ]
+        }
+      ]
+    },
+    "test": {
+      "files": [
+        "normal_20260823_112843.csv",
+        "anomaly_20260823_113819.csv",
+        "anomaly_20260823_114124.csv"
+      ],
+      "sample_count": 90000,
+      "window_count": 702,
+      "label_distribution": {
+        "normal": 234,
+        "anomaly": 468,
+        "total": 702
+      },
+      "array_shape": [
+        702,
+        128,
+        3
+      ],
+      "file_details": [
+        {
+          "source_file": "normal_20260823_112843.csv",
+          "sample_count": 30000,
+          "created_windows": 234,
+          "trailing_samples_dropped": 48,
+          "point_label_distribution": {
+            "normal": 30000,
+            "anomaly": 0,
+            "total": 30000
+          },
+          "window_label_distribution": {
+            "normal": 234,
+            "anomaly": 0,
+            "total": 234
+          },
+          "anomaly_types": [
+            "normal"
+          ]
+        },
+        {
+          "source_file": "anomaly_20260823_113819.csv",
+          "sample_count": 30000,
+          "created_windows": 234,
+          "trailing_samples_dropped": 48,
+          "point_label_distribution": {
+            "normal": 0,
+            "anomaly": 30000,
+            "total": 30000
+          },
+          "window_label_distribution": {
+            "normal": 0,
+            "anomaly": 234,
+            "total": 234
+          },
+          "anomaly_types": [
+            "tapping_shaking"
+          ]
+        },
+        {
+          "source_file": "anomaly_20260823_114124.csv",
+          "sample_count": 30000,
+          "created_windows": 234,
+          "trailing_samples_dropped": 48,
+          "point_label_distribution": {
+            "normal": 0,
+            "anomaly": 30000,
+            "total": 30000
+          },
+          "window_label_distribution": {
+            "normal": 0,
+            "anomaly": 234,
+            "total": 234
+          },
+          "anomaly_types": [
+            "tapping_shaking"
+          ]
+        }
+      ]
+    }
+  }
+}

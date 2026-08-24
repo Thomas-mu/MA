@@ -1,0 +1,328 @@
+{
+  "benchmark": {
+    "description": "End-to-end single-window inference including score and frozen threshold decision, excluding model/framework load and warm-up.",
+    "execution_order": [
+      "tensorflow_autoencoder",
+      "isolation_forest"
+    ],
+    "separate_process_per_model": true,
+    "test_data_path": "data/clean_comparison/X_test.npy",
+    "test_data_sha256": "3a9b352040b5d6fe7199b5dd84b363b9d23cd0df27fe468b223d6d5055750ebe",
+    "test_shape": [
+      702,
+      128,
+      3
+    ],
+    "window_size": 128,
+    "sampling_rate_hz": 500,
+    "window_creation_time_ms": 256.0,
+    "warmup_inferences_per_model": 50,
+    "repetitions": 5,
+    "measured_inferences_per_model": 3510,
+    "timing_clock": "time.perf_counter_ns",
+    "resource_sample_interval_ms": 10.0,
+    "model_load_definition": "Model deserialization after framework import; compile=False for TensorFlow inference.",
+    "cpu_percent_definition": "Mean is process CPU-time divided by benchmark wall-time; 100% corresponds approximately to one fully occupied core. Maximum is the largest 10 ms psutil process sample and may exceed 100% on a multicore system.",
+    "rss_definition": "rss_before_load is measured after framework import and test array loading; runtime_total_ram_delta also includes framework import. Peak RSS is sampled every 10 ms during inference.",
+    "limitations": [
+      "Model and framework load times are single cold-process observations.",
+      "Operating-system scheduling and background load were not controlled.",
+      "RSS peaks shorter than the 10 ms sampling interval may be missed.",
+      "CPU monitoring adds small and comparable overhead to both workers.",
+      "Five repetitions run consecutively after one warm-up and one load."
+    ]
+  },
+  "system": {
+    "device_model": "Raspberry Pi 5 Model B Rev 1.0",
+    "cpu": {
+      "model_name": "Cortex-A76",
+      "vendor_id": "ARM",
+      "architecture": "aarch64",
+      "logical_cores": 4,
+      "physical_cores": 4,
+      "current_frequency_mhz": 2400.0,
+      "minimum_frequency_mhz": 1500.0,
+      "maximum_frequency_mhz": 2400.0
+    },
+    "architecture": "aarch64",
+    "total_ram_bytes": 8449835008,
+    "total_ram_gib": 7.8695220947265625,
+    "operating_system": "Debian GNU/Linux 13 (trixie)",
+    "kernel": "6.18.34+rpt-rpi-2712",
+    "python_version": "3.13.5",
+    "tensorflow_version": "2.21.0",
+    "numpy_version": "2.5.2",
+    "scikit_learn_version": "1.9.0",
+    "psutil_version": "7.2.2"
+  },
+  "temperature_before": {
+    "cpu_thermal": [
+      58.4
+    ],
+    "rp1_adc": [
+      47.337
+    ]
+  },
+  "temperature_after": {
+    "cpu_thermal": [
+      59.5
+    ],
+    "rp1_adc": [
+      48.499
+    ]
+  },
+  "input_artifacts": {
+    "tensorflow_autoencoder": {
+      "model_path": "models/clean_comparison/autoencoder.keras",
+      "model_sha256": "749d3e481d68df3d6376566123bb34d4f187eb6e891345935e7c6bd1e35b3407",
+      "threshold_path": "results/clean_tensorflow_threshold.json",
+      "threshold_sha256": "d36794728836156f91422b2a3165538adb0cd5546b00094121c1d0f276b52ad4"
+    },
+    "isolation_forest": {
+      "model_path": "models/clean_comparison/isolation_forest.joblib",
+      "model_sha256": "8ccf28df8e5c215e869d45ccf21a803d1d77c6addabfff92e841efe385f40637",
+      "threshold_path": "results/clean_isolation_forest_threshold.json",
+      "threshold_sha256": "99059c186005e9ed0beced8a57d1685eee15a146e5a123c943ae2e85dde65133"
+    }
+  },
+  "models": {
+    "tensorflow_autoencoder": {
+      "summary": {
+        "mean_inference_ms": 30.701544703418804,
+        "median_inference_ms": 29.8788425,
+        "std_inference_ms": 4.749815656629623,
+        "min_inference_ms": 21.080924,
+        "max_inference_ms": 97.084468,
+        "p95_inference_ms": 37.66398499999998,
+        "p99_inference_ms": 48.892660259999964,
+        "windows_per_second": 32.57165102473309,
+        "realtime_factor": 8.338342662331673,
+        "model_key": "tensorflow_autoencoder",
+        "model": "TensorFlow Autoencoder",
+        "model_path": "models/clean_comparison/autoencoder.keras",
+        "threshold_path": "results/clean_tensorflow_threshold.json",
+        "threshold": 0.2185792346784422,
+        "test_windows": 702,
+        "warmup_inferences": 50,
+        "repetitions": 5,
+        "measured_inferences": 3510,
+        "framework_version": "2.21.0",
+        "framework_import_time_ms": 5780.392589,
+        "load_time_ms": 198.324551,
+        "model_size_bytes": 55472,
+        "model_size_kb": 54.171875,
+        "model_size_mb": 0.0529022216796875,
+        "rss_before_framework_import_mb": 37.15625,
+        "rss_before_load_mb": 593.625,
+        "rss_after_load_mb": 601.1875,
+        "framework_import_ram_delta_mb": 556.46875,
+        "model_load_ram_delta_mb": 7.5625,
+        "runtime_total_ram_delta_mb": 564.03125,
+        "mean_rss_during_inference_mb": 604.3059888795806,
+        "peak_rss_mb": 605.390625,
+        "rss_after_inference_mb": 605.390625,
+        "mean_cpu_percent": 103.16739534851133,
+        "max_cpu_percent": 274.0,
+        "resource_sample_count": 9251,
+        "resource_sample_interval_ms": 10.0,
+        "benchmark_wall_time_seconds": 107.805377488,
+        "window_creation_time_ms": 256.0,
+        "latencies_exceeding_window_creation_time": 0
+      },
+      "repetition_summaries": [
+        {
+          "repetition": 1,
+          "mean_inference_ms": 30.564348246438744,
+          "median_inference_ms": 29.814687,
+          "std_inference_ms": 5.239762184595014,
+          "min_inference_ms": 21.612075,
+          "max_inference_ms": 97.084468,
+          "p95_inference_ms": 35.54658535,
+          "p99_inference_ms": 53.00499511000004,
+          "windows_per_second": 32.71785781057892,
+          "realtime_factor": 8.375771599508203
+        },
+        {
+          "repetition": 2,
+          "mean_inference_ms": 31.171184685185185,
+          "median_inference_ms": 30.175473,
+          "std_inference_ms": 4.453512865324508,
+          "min_inference_ms": 21.291593,
+          "max_inference_ms": 52.381335,
+          "p95_inference_ms": 39.811050949999995,
+          "p99_inference_ms": 48.01095937,
+          "windows_per_second": 32.080910947066855,
+          "realtime_factor": 8.212713202449114
+        },
+        {
+          "repetition": 3,
+          "mean_inference_ms": 30.864173256410254,
+          "median_inference_ms": 30.077953,
+          "std_inference_ms": 5.443720696783447,
+          "min_inference_ms": 21.592648,
+          "max_inference_ms": 88.793019,
+          "p95_inference_ms": 37.2379496,
+          "p99_inference_ms": 53.67638156000003,
+          "windows_per_second": 32.400025482370815,
+          "realtime_factor": 8.294406523486929
+        },
+        {
+          "repetition": 4,
+          "mean_inference_ms": 30.03750525356125,
+          "median_inference_ms": 29.598231,
+          "std_inference_ms": 3.1571071116482434,
+          "min_inference_ms": 22.119351,
+          "max_inference_ms": 46.834499,
+          "p95_inference_ms": 35.479632699999996,
+          "p99_inference_ms": 38.37044507,
+          "windows_per_second": 33.29171286225376,
+          "realtime_factor": 8.522678492736963
+        },
+        {
+          "repetition": 5,
+          "mean_inference_ms": 30.87051207549858,
+          "median_inference_ms": 29.792369,
+          "std_inference_ms": 5.017779183838612,
+          "min_inference_ms": 21.080924,
+          "max_inference_ms": 68.83859,
+          "p95_inference_ms": 39.482333749999995,
+          "p99_inference_ms": 53.60123126000003,
+          "windows_per_second": 32.39337259953273,
+          "realtime_factor": 8.29270338548038
+        }
+      ],
+      "decision_validation": {
+        "all_repetitions_match_saved_predictions": true,
+        "expected_window_count": 702,
+        "maximum_absolute_score_difference": 0.0
+      },
+      "worker_stdout": "",
+      "worker_stderr": ""
+    },
+    "isolation_forest": {
+      "summary": {
+        "mean_inference_ms": 18.06846186267806,
+        "median_inference_ms": 17.577841,
+        "std_inference_ms": 2.47951001348664,
+        "min_inference_ms": 14.817906,
+        "max_inference_ms": 51.246327,
+        "p95_inference_ms": 21.271292399999993,
+        "p99_inference_ms": 28.554216359999984,
+        "windows_per_second": 55.34505413908999,
+        "realtime_factor": 14.168333859607039,
+        "model_key": "isolation_forest",
+        "model": "Isolation Forest",
+        "model_path": "models/clean_comparison/isolation_forest.joblib",
+        "threshold_path": "results/clean_isolation_forest_threshold.json",
+        "threshold": 0.4776322723194337,
+        "test_windows": 702,
+        "warmup_inferences": 50,
+        "repetitions": 5,
+        "measured_inferences": 3510,
+        "framework_version": "1.9.0",
+        "framework_import_time_ms": 2070.627107,
+        "load_time_ms": 77.346902,
+        "model_size_bytes": 3068013,
+        "model_size_kb": 2996.1064453125,
+        "model_size_mb": 2.9258852005004883,
+        "rss_before_framework_import_mb": 37.1875,
+        "rss_before_load_mb": 158.59375,
+        "rss_after_load_mb": 164.5625,
+        "framework_import_ram_delta_mb": 121.40625,
+        "model_load_ram_delta_mb": 5.96875,
+        "runtime_total_ram_delta_mb": 127.375,
+        "mean_rss_during_inference_mb": 165.15126351134418,
+        "peak_rss_mb": 165.984375,
+        "rss_after_inference_mb": 165.984375,
+        "mean_cpu_percent": 102.07965484567832,
+        "max_cpu_percent": 245.8,
+        "resource_sample_count": 4672,
+        "resource_sample_interval_ms": 10.0,
+        "benchmark_wall_time_seconds": 63.470042192,
+        "window_creation_time_ms": 256.0,
+        "latencies_exceeding_window_creation_time": 0
+      },
+      "repetition_summaries": [
+        {
+          "repetition": 1,
+          "mean_inference_ms": 18.020209216524215,
+          "median_inference_ms": 17.5412205,
+          "std_inference_ms": 2.6953691841485545,
+          "min_inference_ms": 14.891702,
+          "max_inference_ms": 47.347978,
+          "p95_inference_ms": 20.881028299999997,
+          "p99_inference_ms": 32.686205930000014,
+          "windows_per_second": 55.49325138151102,
+          "realtime_factor": 14.20627235366682
+        },
+        {
+          "repetition": 2,
+          "mean_inference_ms": 17.859939574074073,
+          "median_inference_ms": 17.53036,
+          "std_inference_ms": 1.799891042426345,
+          "min_inference_ms": 14.820962,
+          "max_inference_ms": 39.952774,
+          "p95_inference_ms": 20.54997239999999,
+          "p99_inference_ms": 24.580679010000004,
+          "windows_per_second": 55.99123086909121,
+          "realtime_factor": 14.33375510248735
+        },
+        {
+          "repetition": 3,
+          "mean_inference_ms": 17.76891192022792,
+          "median_inference_ms": 17.522776,
+          "std_inference_ms": 1.511242676413876,
+          "min_inference_ms": 14.817906,
+          "max_inference_ms": 32.797941,
+          "p95_inference_ms": 20.04365495,
+          "p99_inference_ms": 22.702108260000006,
+          "windows_per_second": 56.27806612410587,
+          "realtime_factor": 14.407184927771103
+        },
+        {
+          "repetition": 4,
+          "mean_inference_ms": 18.89473586039886,
+          "median_inference_ms": 17.7774985,
+          "std_inference_ms": 3.841041852326176,
+          "min_inference_ms": 14.917127,
+          "max_inference_ms": 51.246327,
+          "p95_inference_ms": 26.7114685,
+          "p99_inference_ms": 35.296902040000006,
+          "windows_per_second": 52.92479383614365,
+          "realtime_factor": 13.548747222052775
+        },
+        {
+          "repetition": 5,
+          "mean_inference_ms": 17.798512742165244,
+          "median_inference_ms": 17.544405,
+          "std_inference_ms": 1.518758873356777,
+          "min_inference_ms": 14.913109,
+          "max_inference_ms": 27.9707,
+          "p95_inference_ms": 20.210157049999992,
+          "p99_inference_ms": 23.857518730000002,
+          "windows_per_second": 56.18446970745865,
+          "realtime_factor": 14.383224245109416
+        }
+      ],
+      "decision_validation": {
+        "all_repetitions_match_saved_predictions": true,
+        "expected_window_count": 702,
+        "maximum_absolute_score_difference": 0.0
+      },
+      "worker_stdout": "",
+      "worker_stderr": ""
+    }
+  },
+  "model_size_ratio_isolation_forest_to_tensorflow": 55.30741635419671,
+  "artifacts": {
+    "summary_csv": "results/resource_comparison.csv",
+    "details_json": "results/resource_comparison_details.json",
+    "timings_csv": "results/resource_inference_timings.csv",
+    "figures": [
+      "figures/clean_resource_inference_time.png",
+      "figures/clean_resource_model_size.png",
+      "figures/clean_resource_ram.png",
+      "figures/clean_resource_latency_distribution.png"
+    ]
+  }
+}

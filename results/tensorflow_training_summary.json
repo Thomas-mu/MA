@@ -1,0 +1,73 @@
+{
+  "random_seed": 42,
+  "tensorflow_version": "2.21.0",
+  "input_shape": [
+    128,
+    3
+  ],
+  "trainable_parameters": 507,
+  "training": {
+    "training_windows": 663,
+    "validation_windows": 468,
+    "test_windows_not_used_for_fitting": 546,
+    "batch_size": 32,
+    "maximum_epochs": 100,
+    "epochs_trained": 100,
+    "early_stopping_patience": 10,
+    "best_epoch": 100,
+    "final_training_loss": 0.014714750461280346,
+    "final_validation_loss": 0.020494945347309113,
+    "best_training_loss": 0.014714750461280346,
+    "best_validation_loss": 0.020494945347309113
+  },
+  "threshold": {
+    "selected": false,
+    "note": "No threshold was selected or optimized in Phase 2. Test labels were not used for training or threshold selection."
+  },
+  "reconstruction_error": {
+    "definition": "Mean squared error over all 128 x 3 values per window",
+    "splits": {
+      "train": {
+        "window_count": 663,
+        "mean_mse": 0.01416721295816496,
+        "standard_deviation_mse": 0.011969709267543663,
+        "minimum_mse": 0.004830325497196281,
+        "maximum_mse": 0.04726556363660469
+      },
+      "validation": {
+        "window_count": 468,
+        "mean_mse": 0.020494945808414957,
+        "standard_deviation_mse": 0.002174887530194922,
+        "minimum_mse": 0.013843116590582127,
+        "maximum_mse": 0.02788934098093006
+      },
+      "test": {
+        "window_count": 546,
+        "mean_mse": 0.29693648916953486,
+        "standard_deviation_mse": 1.3429054624585113,
+        "minimum_mse": 0.002190142654622492,
+        "maximum_mse": 11.749126250234744
+      }
+    }
+  },
+  "artifacts": {
+    "model": "models/tensorflow/autoencoder.keras",
+    "history": "results/tensorflow_training_history.csv",
+    "reconstruction_errors": "results/tensorflow_reconstruction_errors.csv",
+    "model_summary": "results/tensorflow_model_summary.txt"
+  },
+  "label_distributions": {
+    "train": {
+      "normal": 663,
+      "anomaly": 0
+    },
+    "validation": {
+      "normal": 468,
+      "anomaly": 0
+    },
+    "test": {
+      "normal": 520,
+      "anomaly": 26
+    }
+  }
+}

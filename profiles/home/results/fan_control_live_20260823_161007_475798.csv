@@ -1,0 +1,2 @@
+timestamp,window_start_timestamp,window_index,reconstruction_error,threshold,predicted_label,anomaly_counter,consecutive_anomalies_required,confirmed_anomaly,startup_grace_active,inference_time_ms,window_formation_time_ms,total_window_pipeline_time_ms,measured_sampling_rate_hz,fan_action,dry_run
+2026-08-23T16:10:07.776+02:00,2026-08-23T16:10:07.484+02:00,1,0.0071525780624256035,0.08138438331902553,0,0,3,0,1,0.281963,256.136481,291.500441,500.16800131372526,none,1

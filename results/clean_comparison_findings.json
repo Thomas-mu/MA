@@ -1,0 +1,166 @@
+{
+  "comparison_scope": "Descriptive comparison of Phase 3 and the controlled 20260823 experiment; no new threshold or hyperparameter selection.",
+  "sensor_orientation": {
+    "previous_maximum_pairwise_normal_session_xyz_mean_distance_g": 1.5358187467788194,
+    "clean_maximum_pairwise_normal_session_xyz_mean_distance_g": 0.0007328530437952884,
+    "relative_reduction": 0.999522825824771,
+    "assessment": "The orientation/session mean shift is substantially reduced in the controlled normal recordings."
+  },
+  "test_class_prevalence": {
+    "previous_anomaly_fraction": 0.047619047619047616,
+    "clean_anomaly_fraction": 0.6666666666666666,
+    "warning": "Precision, F1 and accuracy are not directly comparable without considering the strongly changed class prevalence."
+  },
+  "model_metrics": {
+    "TensorFlow Autoencoder": {
+      "previous": {
+        "accuracy": 0.7637362637362637,
+        "precision": 0.16774193548387098,
+        "recall": 1.0,
+        "sensitivity": 1.0,
+        "f1": 0.28729281767955805,
+        "specificity": 0.7519230769230769,
+        "false_positive_rate": 0.24807692307692308,
+        "false_negative_rate": 0.0,
+        "tn": 391,
+        "fp": 129,
+        "fn": 0,
+        "tp": 26
+      },
+      "clean": {
+        "accuracy": 0.9857549857549858,
+        "precision": 0.9935344827586207,
+        "recall": 0.9850427350427351,
+        "sensitivity": 0.9850427350427351,
+        "f1": 0.9892703862660944,
+        "specificity": 0.9871794871794872,
+        "false_positive_rate": 0.01282051282051282,
+        "false_negative_rate": 0.014957264957264958,
+        "tn": 231,
+        "fp": 3,
+        "fn": 7,
+        "tp": 461
+      },
+      "changes_clean_minus_previous": {
+        "false_positive_rate": -0.23525641025641025,
+        "relative_false_positive_rate_reduction": 0.9483204134366925,
+        "precision": 0.8257925472747497,
+        "recall": -0.014957264957264904,
+        "f1": 0.7019775685865364
+      }
+    },
+    "Isolation Forest": {
+      "previous": {
+        "accuracy": 0.8241758241758241,
+        "precision": 0.21311475409836064,
+        "recall": 1.0,
+        "sensitivity": 1.0,
+        "f1": 0.3513513513513513,
+        "specificity": 0.8153846153846154,
+        "false_positive_rate": 0.18461538461538463,
+        "false_negative_rate": 0.0,
+        "tn": 424,
+        "fp": 96,
+        "fn": 0,
+        "tp": 26
+      },
+      "clean": {
+        "accuracy": 0.9843304843304843,
+        "precision": 0.9956616052060737,
+        "recall": 0.9807692307692307,
+        "sensitivity": 0.9807692307692307,
+        "f1": 0.9881593110871905,
+        "specificity": 0.9914529914529915,
+        "false_positive_rate": 0.008547008547008548,
+        "false_negative_rate": 0.019230769230769232,
+        "tn": 232,
+        "fp": 2,
+        "fn": 9,
+        "tp": 459
+      },
+      "changes_clean_minus_previous": {
+        "false_positive_rate": -0.17606837606837608,
+        "relative_false_positive_rate_reduction": 0.9537037037037037,
+        "precision": 0.782546851107713,
+        "recall": -0.019230769230769273,
+        "f1": 0.6368079597358391
+      }
+    }
+  },
+  "score_separation": {
+    "TensorFlow Autoencoder": {
+      "score_column": "reconstruction_error",
+      "previous": {
+        "normal_count": 520,
+        "anomaly_count": 26,
+        "normal_mean": 0.028389486793516636,
+        "normal_standard_deviation": 0.02266276012846988,
+        "anomaly_mean": 5.667876536689898,
+        "anomaly_standard_deviation": 2.751668193192144,
+        "anomaly_minus_normal_mean_gap": 5.639487049896382,
+        "standardized_mean_gap": 2.8983031493421074
+      },
+      "clean": {
+        "normal_count": 234,
+        "anomaly_count": 468,
+        "normal_mean": 0.15152969446845574,
+        "normal_standard_deviation": 0.028953318550197754,
+        "anomaly_mean": 5.7546416992516685,
+        "anomaly_standard_deviation": 6.823920099602427,
+        "anomaly_minus_normal_mean_gap": 5.603112004783212,
+        "standardized_mean_gap": 1.1611984825059365
+      }
+    },
+    "Isolation Forest": {
+      "score_column": "anomaly_score",
+      "previous": {
+        "normal_count": 520,
+        "anomaly_count": 26,
+        "normal_mean": 0.5258088507592454,
+        "normal_standard_deviation": 0.05974210401606306,
+        "anomaly_mean": 0.6649965486501048,
+        "anomaly_standard_deviation": 0.00833352023627914,
+        "anomaly_minus_normal_mean_gap": 0.13918769789085939,
+        "standardized_mean_gap": 3.2632525664116794
+      },
+      "clean": {
+        "normal_count": 234,
+        "anomaly_count": 468,
+        "normal_mean": 0.44365479594365476,
+        "normal_standard_deviation": 0.013689371815534016,
+        "anomaly_mean": 0.6165888421581199,
+        "anomaly_standard_deviation": 0.052023192857840836,
+        "anomaly_minus_normal_mean_gap": 0.17293404621446518,
+        "standardized_mean_gap": 4.546323988920138
+      }
+    }
+  },
+  "normal_windows_inside_anomaly_recordings": {
+    "previous_tensorflow": {
+      "available_normal_windows": 52,
+      "predicted_anomaly": 52,
+      "rate_predicted_anomaly": 1.0
+    },
+    "clean_tensorflow": {
+      "available_normal_windows": 0,
+      "predicted_anomaly": 0,
+      "rate_predicted_anomaly": null
+    },
+    "previous_isolation_forest": {
+      "available_normal_windows": 52,
+      "predicted_anomaly": 52,
+      "rate_predicted_anomaly": 1.0
+    },
+    "clean_isolation_forest": {
+      "available_normal_windows": 0,
+      "predicted_anomaly": 0,
+      "rate_predicted_anomaly": null
+    },
+    "clean_limitation": "The clean anomaly recordings contain no normal point or window labels, so systematic false positives within those recordings cannot be re-evaluated."
+  },
+  "limitations": [
+    "Clean test prevalence changed from 26/546 anomaly windows to 468/702, affecting precision, F1 and accuracy.",
+    "Every sample of both clean anomaly recordings is labelled anomalous; quiet intervals, if present, cannot be assessed.",
+    "The Autoencoder validation loss continued improving through epoch 100; architecture and epoch cap were retained for comparability rather than tuned on test data."
+  ]
+}

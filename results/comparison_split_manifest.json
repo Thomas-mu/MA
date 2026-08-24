@@ -1,0 +1,210 @@
+{
+  "description": "Session-level split for a fair comparison of TensorFlow Autoencoder and classical anomaly detection methods.",
+  "random_seed": 42,
+  "randomization_used": false,
+  "sampling_rate_hz": 500,
+  "window_size": 128,
+  "step_size": 128,
+  "window_overlap_samples": 0,
+  "axis_columns": [
+    "x_g",
+    "y_g",
+    "z_g"
+  ],
+  "tensor_layout": "(window, time_sample, axis)",
+  "sample_order": "Original row order within each source file",
+  "incomplete_window_rule": "Trailing samples that do not fill a complete window are dropped.",
+  "window_label_rule": "ANOMALY (1) if at least one sample in the window has label 1; otherwise NORMAL (0).",
+  "anomaly_fraction_definition": "Number of samples with label 1 divided by window_size.",
+  "scaling": {
+    "method": "sklearn.preprocessing.StandardScaler per XYZ axis",
+    "fit_data": "Normal training samples only",
+    "scaler_path": "models/tensorflow/scaler.joblib",
+    "mean": [
+      0.19014292212907388,
+      0.25719760794452073,
+      -0.7998914117407651
+    ],
+    "scale": [
+      0.45081338809452237,
+      0.21757713380665847,
+      0.4795996563475914
+    ]
+  },
+  "output_directory": "data/comparison",
+  "splits": {
+    "train": {
+      "files": [
+        "normal_20260725_184948.csv",
+        "normal_20260725_185107.csv",
+        "normal_20260725_185257.csv",
+        "normal_20260817_100340.csv"
+      ],
+      "sample_count": 85000,
+      "window_count": 663,
+      "label_distribution": {
+        "normal": 663,
+        "anomaly": 0,
+        "total": 663
+      },
+      "array_shape": [
+        663,
+        128,
+        3
+      ],
+      "file_details": [
+        {
+          "source_file": "normal_20260725_184948.csv",
+          "sample_count": 5000,
+          "created_windows": 39,
+          "trailing_samples_dropped": 8,
+          "point_label_distribution": {
+            "normal": 5000,
+            "anomaly": 0,
+            "total": 5000
+          },
+          "window_label_distribution": {
+            "normal": 39,
+            "anomaly": 0,
+            "total": 39
+          }
+        },
+        {
+          "source_file": "normal_20260725_185107.csv",
+          "sample_count": 10000,
+          "created_windows": 78,
+          "trailing_samples_dropped": 16,
+          "point_label_distribution": {
+            "normal": 10000,
+            "anomaly": 0,
+            "total": 10000
+          },
+          "window_label_distribution": {
+            "normal": 78,
+            "anomaly": 0,
+            "total": 78
+          }
+        },
+        {
+          "source_file": "normal_20260725_185257.csv",
+          "sample_count": 10000,
+          "created_windows": 78,
+          "trailing_samples_dropped": 16,
+          "point_label_distribution": {
+            "normal": 10000,
+            "anomaly": 0,
+            "total": 10000
+          },
+          "window_label_distribution": {
+            "normal": 78,
+            "anomaly": 0,
+            "total": 78
+          }
+        },
+        {
+          "source_file": "normal_20260817_100340.csv",
+          "sample_count": 60000,
+          "created_windows": 468,
+          "trailing_samples_dropped": 96,
+          "point_label_distribution": {
+            "normal": 60000,
+            "anomaly": 0,
+            "total": 60000
+          },
+          "window_label_distribution": {
+            "normal": 468,
+            "anomaly": 0,
+            "total": 468
+          }
+        }
+      ]
+    },
+    "validation": {
+      "files": [
+        "normal_20260817_100640.csv"
+      ],
+      "sample_count": 60000,
+      "window_count": 468,
+      "label_distribution": {
+        "normal": 468,
+        "anomaly": 0,
+        "total": 468
+      },
+      "array_shape": [
+        468,
+        128,
+        3
+      ],
+      "file_details": [
+        {
+          "source_file": "normal_20260817_100640.csv",
+          "sample_count": 60000,
+          "created_windows": 468,
+          "trailing_samples_dropped": 96,
+          "point_label_distribution": {
+            "normal": 60000,
+            "anomaly": 0,
+            "total": 60000
+          },
+          "window_label_distribution": {
+            "normal": 468,
+            "anomaly": 0,
+            "total": 468
+          }
+        }
+      ]
+    },
+    "test": {
+      "files": [
+        "normal_20260817_111818.csv",
+        "anomaly_20260725_185423.csv"
+      ],
+      "sample_count": 70000,
+      "window_count": 546,
+      "label_distribution": {
+        "normal": 520,
+        "anomaly": 26,
+        "total": 546
+      },
+      "array_shape": [
+        546,
+        128,
+        3
+      ],
+      "file_details": [
+        {
+          "source_file": "normal_20260817_111818.csv",
+          "sample_count": 60000,
+          "created_windows": 468,
+          "trailing_samples_dropped": 96,
+          "point_label_distribution": {
+            "normal": 60000,
+            "anomaly": 0,
+            "total": 60000
+          },
+          "window_label_distribution": {
+            "normal": 468,
+            "anomaly": 0,
+            "total": 468
+          }
+        },
+        {
+          "source_file": "anomaly_20260725_185423.csv",
+          "sample_count": 10000,
+          "created_windows": 78,
+          "trailing_samples_dropped": 16,
+          "point_label_distribution": {
+            "normal": 6756,
+            "anomaly": 3244,
+            "total": 10000
+          },
+          "window_label_distribution": {
+            "normal": 52,
+            "anomaly": 26,
+            "total": 78
+          }
+        }
+      ]
+    }
+  }
+}
