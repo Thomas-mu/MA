@@ -12,6 +12,7 @@ from __future__ import annotations
 import argparse
 import csv
 import json
+import math
 import os
 import queue
 import sys
@@ -19,7 +20,7 @@ import threading
 import time
 import traceback
 from collections import deque
-from dataclasses import dataclass
+from dataclasses import dataclass, replace
 from datetime import datetime
 from pathlib import Path
 from typing import Any
@@ -271,12 +272,14 @@ class LiveTFLiteApplication:
         configuration: LiveConfiguration,
         metadata: ProfileDisplayMetadata,
         *,
+        threshold_source: str,
         self_test: bool,
         self_test_duration: float | None,
     ) -> None:
         self.root = root
         self.configuration = configuration
         self.metadata = metadata
+        self.threshold_source = threshold_source
         self.self_test = self_test
         self.self_test_duration = self_test_duration
         self.message_queue: queue.Queue[WorkerMessage] = queue.Queue()
@@ -295,6 +298,9 @@ class LiveTFLiteApplication:
         self.mse_text = tk.StringVar(value="–")
         self.threshold_text = tk.StringVar(
             value=f"{configuration.threshold:.6f}"
+        )
+        self.threshold_source_text = tk.StringVar(
+            value=f"Quelle: {threshold_source}"
         )
         self.sampling_text = tk.StringVar(value="– Hz")
         self.inference_text = tk.StringVar(value="– ms")
@@ -356,7 +362,13 @@ class LiveTFLiteApplication:
         metrics = tk.Frame(outer, bg=BACKGROUND_COLOR)
         metrics.pack(fill="x", pady=(0, 10))
         self.build_metric_panel(metrics, "MSE", self.mse_text, 0)
-        self.build_metric_panel(metrics, "Threshold", self.threshold_text, 1)
+        self.build_metric_panel(
+            metrics,
+            "Threshold",
+            self.threshold_text,
+            1,
+            detail_variable=self.threshold_source_text,
+        )
         metrics.grid_columnconfigure(0, weight=1, uniform="metric")
         metrics.grid_columnconfigure(1, weight=1, uniform="metric")
 
@@ -419,6 +431,7 @@ class LiveTFLiteApplication:
         title: str,
         variable: tk.StringVar,
         column: int,
+        detail_variable: tk.StringVar | None = None,
     ) -> None:
         panel = tk.Frame(parent, bg=PANEL_COLOR, bd=1, relief="solid", padx=14, pady=8)
         panel.grid(row=0, column=column, sticky="nsew", padx=(0, 5) if column == 0 else (5, 0))
@@ -436,6 +449,14 @@ class LiveTFLiteApplication:
             fg=TEXT_COLOR,
             bg=PANEL_COLOR,
         ).pack(anchor="w")
+        if detail_variable is not None:
+            tk.Label(
+                panel,
+                textvariable=detail_variable,
+                font=("Helvetica", 10),
+                fg="#65717e",
+                bg=PANEL_COLOR,
+            ).pack(anchor="w")
 
     def build_info_row(
         self,
@@ -624,6 +645,15 @@ def parse_args() -> argparse.Namespace:
         help="Freigegebenes Setup-Profil, z.B. home_v001.",
     )
     parser.add_argument(
+        "--threshold",
+        type=float,
+        default=None,
+        help=(
+            "Temporärer Threshold für diese GUI-Laufzeit; ohne Angabe wird "
+            "der validierte P99-Threshold aus dem Profil verwendet."
+        ),
+    )
+    parser.add_argument(
         "--self-test",
         action="store_true",
         help="GUI mit simulierten NORMAL-/ANOMALY-Werten ohne Sensor und Log testen.",
@@ -638,6 +668,10 @@ def parse_args() -> argparse.Namespace:
         ),
     )
     arguments = parser.parse_args()
+    if arguments.threshold is not None and (
+        not math.isfinite(arguments.threshold) or arguments.threshold < 0
+    ):
+        parser.error("--threshold muss eine endliche, nichtnegative Zahl sein.")
     if arguments.self_test_duration is not None:
         if not arguments.self_test:
             parser.error("--self-test-duration ist nur mit --self-test zulässig.")
@@ -650,11 +684,16 @@ def main() -> None:
     arguments = parse_args()
     configuration = resolve_live_configuration(arguments.profile)
     metadata = read_profile_display_metadata(configuration)
+    threshold_source = "PROFILE / P99"
+    if arguments.threshold is not None:
+        configuration = replace(configuration, threshold=arguments.threshold)
+        threshold_source = "MANUAL"
     root = tk.Tk()
     application = LiveTFLiteApplication(
         root,
         configuration,
         metadata,
+        threshold_source=threshold_source,
         self_test=arguments.self_test,
         self_test_duration=arguments.self_test_duration,
     )

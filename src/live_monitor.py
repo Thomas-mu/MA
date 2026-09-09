@@ -1,3 +1,4 @@
+import argparse
 import math
 import shutil
 import subprocess
@@ -43,15 +44,33 @@ FAN_PWM_CHANNEL = 2
 FAN_PWM_FREQUENCY_HZ = 25000
 FAN_STOP_PERCENT = 0
 FAN_RUN_PERCENT = 100
+FAN_DEFAULT_PWM_PERCENT = 20
 FAN_ALLOW_RESTART_AFTER_ERROR = False
+
+
+def fan_pwm_percent(value: str) -> float:
+    """Validiert einen PWM-Duty-Cycle für die Kommandozeile."""
+
+    percent = float(value)
+    if not 0 <= percent <= 100:
+        raise argparse.ArgumentTypeError(
+            "--fan-pwm muss zwischen 0 und 100 Prozent liegen."
+        )
+    return percent
 
 
 class FanController:
     """Steuert den Lüfter basierend auf der aktuellen Sensoramplitude."""
 
-    def __init__(self, pin: int, default_on: bool = True) -> None:
+    def __init__(
+        self,
+        pin: int,
+        default_on: bool = True,
+        run_percent: float = FAN_RUN_PERCENT,
+    ) -> None:
         self.pin = pin
         self.default_on = default_on
+        self.run_percent = run_percent
         self.enabled = False
         self.is_running = default_on
         self.fan_off_since: float | None = None
@@ -59,7 +78,12 @@ class FanController:
         self.restart_decision_prompted = False
         self.pwm = None
 
-        if shutil.which("pinctrl") is not None:
+        # Digitales HIGH ist nur für den bisherigen 100-%-Betrieb geeignet.
+        # Zwischenwerte müssen über Hardware-PWM erzeugt werden.
+        if (
+            self.run_percent == FAN_RUN_PERCENT
+            and shutil.which("pinctrl") is not None
+        ):
             self.enabled = True
             self.set_state(default_on)
             print(
@@ -75,19 +99,30 @@ class FanController:
                     chip=FAN_PWM_CHIP,
                 )
                 self.pwm.start(
-                    FAN_RUN_PERCENT if default_on else FAN_STOP_PERCENT
+                    self.run_percent if default_on else FAN_STOP_PERCENT
                 )
                 self.enabled = True
+                print(f"Lüftersteuerung: GPIO{self.pin}")
+                print(f"PWM: {FAN_PWM_FREQUENCY_HZ / 1000:g} kHz")
+                print(f"Duty Cycle: {self.run_percent:g} %")
                 print(
-                    "PWM-Lüftersteuerung aktiv. "
-                    f"Kanäle: chip={FAN_PWM_CHIP}, channel={FAN_PWM_CHANNEL}"
+                    f"Hardware-PWM: PWM{FAN_PWM_CHIP}_CHAN{FAN_PWM_CHANNEL}"
                 )
                 return
             except Exception as exc:  # pragma: no cover - hardwareabhängig
+                self.pwm = None
                 print(
                     "HardwarePWM konnte nicht initialisiert werden: "
-                    f"{exc}. Fallback auf GPIO."
+                    f"{exc}."
                 )
+
+        if self.run_percent != FAN_RUN_PERCENT:
+            self.is_running = False
+            print(
+                f"{self.run_percent:g} % können nicht als digitales GPIO-Signal "
+                "ausgegeben werden. Lüfter-Steuerung deaktiviert."
+            )
+            return
 
         self.enabled = GPIO is not None
         if not self.enabled:
@@ -134,6 +169,12 @@ class FanController:
         if not self.enabled:
             return
 
+        if self.pwm is not None:
+            duty_cycle = self.run_percent if state else FAN_STOP_PERCENT
+            self.pwm.change_duty_cycle(duty_cycle)
+            self.is_running = state
+            return
+
         if shutil.which("pinctrl") is not None:
             command = [
                 "pinctrl",
@@ -153,11 +194,6 @@ class FanController:
                 )
 
         self.is_running = state
-
-        if self.pwm is not None:
-            duty_cycle = FAN_RUN_PERCENT if state else FAN_STOP_PERCENT
-            self.pwm.change_duty_cycle(duty_cycle)
-            return
 
         try:
             GPIO.output(self.pin, GPIO.HIGH if state else GPIO.LOW)
@@ -185,7 +221,7 @@ class FanController:
 
         # Automatischer Neustart ist hier deaktiviert. Der Nutzer muss
         # die Fehlersituation manuell bestätigen, damit der Lüfter wieder
-        # auf 100 % / HIGH gesetzt wird.
+        # auf den eingestellten Duty Cycle gesetzt wird.
         return self.is_running
 
     def close(self) -> None:
@@ -193,8 +229,11 @@ class FanController:
             return
 
         if self.pwm is not None:
-            self.pwm.change_duty_cycle(FAN_STOP_PERCENT)
-            self.pwm.stop()
+            try:
+                self.pwm.change_duty_cycle(FAN_STOP_PERCENT)
+            finally:
+                self.pwm.stop()
+            self.is_running = False
             return
 
         try:
@@ -204,9 +243,29 @@ class FanController:
             print(f"GPIO-Reset fehlgeschlagen: {exc}")
 
 
+def parse_args() -> argparse.Namespace:
+    parser = argparse.ArgumentParser(description="ADXL345 Live-Monitor")
+    parser.add_argument(
+        "--fan-pwm",
+        type=fan_pwm_percent,
+        default=FAN_DEFAULT_PWM_PERCENT,
+        metavar="PROZENT",
+        help=(
+            "PWM-Duty-Cycle des Lüfters auf GPIO18 "
+            f"(Standard: {FAN_DEFAULT_PWM_PERCENT} Prozent)."
+        ),
+    )
+    return parser.parse_args()
+
+
 def main() -> None:
+    arguments = parse_args()
     bus = connect()
-    fan_controller = FanController(pin=FAN_PIN, default_on=True)
+    fan_controller = FanController(
+        pin=FAN_PIN,
+        default_on=True,
+        run_percent=arguments.fan_pwm,
+    )
 
     timestamps: deque[float] = deque(maxlen=MAX_SAMPLES)
     magnitudes: deque[float] = deque(maxlen=MAX_SAMPLES)

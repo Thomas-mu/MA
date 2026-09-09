@@ -1,0 +1,221 @@
+{
+  "profile_name": "fan_50",
+  "normal_data_only": true,
+  "split_level": "source_file",
+  "train_files": [
+    "normal_001.csv",
+    "normal_002.csv",
+    "normal_003.csv",
+    "normal_004.csv",
+    "normal_005.csv",
+    "normal_006.csv",
+    "normal_007.csv"
+  ],
+  "validation_files": [
+    "normal_008.csv"
+  ],
+  "window_size": 128,
+  "step_size": 128,
+  "window_overlap_samples": 0,
+  "axis_columns": [
+    "x_g",
+    "y_g",
+    "z_g"
+  ],
+  "incomplete_window_rule": "Trailing incomplete samples per file are dropped.",
+  "files": [
+    {
+      "source_file": "normal_001.csv",
+      "sample_count": 30000,
+      "created_windows": 234,
+      "trailing_samples_dropped": 48,
+      "point_label_distribution": {
+        "normal": 30000,
+        "anomaly": 0,
+        "total": 30000
+      },
+      "window_label_distribution": {
+        "normal": 234,
+        "anomaly": 0,
+        "total": 234
+      },
+      "anomaly_types": [
+        "normal"
+      ],
+      "split": "train",
+      "path": "profiles/fan_50/data/raw/normal_001.csv",
+      "sha256": "1e2224817c957fceaca80bf67cffc387208becf415bc4f573954d1f5c9358676"
+    },
+    {
+      "source_file": "normal_002.csv",
+      "sample_count": 30000,
+      "created_windows": 234,
+      "trailing_samples_dropped": 48,
+      "point_label_distribution": {
+        "normal": 30000,
+        "anomaly": 0,
+        "total": 30000
+      },
+      "window_label_distribution": {
+        "normal": 234,
+        "anomaly": 0,
+        "total": 234
+      },
+      "anomaly_types": [
+        "normal"
+      ],
+      "split": "train",
+      "path": "profiles/fan_50/data/raw/normal_002.csv",
+      "sha256": "b4e8e36ed18793d518c3bf623433080ad97356f8963ef854a8e2320df016f228"
+    },
+    {
+      "source_file": "normal_003.csv",
+      "sample_count": 30000,
+      "created_windows": 234,
+      "trailing_samples_dropped": 48,
+      "point_label_distribution": {
+        "normal": 30000,
+        "anomaly": 0,
+        "total": 30000
+      },
+      "window_label_distribution": {
+        "normal": 234,
+        "anomaly": 0,
+        "total": 234
+      },
+      "anomaly_types": [
+        "normal"
+      ],
+      "split": "train",
+      "path": "profiles/fan_50/data/raw/normal_003.csv",
+      "sha256": "5767dfd8caedab2d226d1c53febd735ade9ffcb804da0d4f5692756ce631d307"
+    },
+    {
+      "source_file": "normal_004.csv",
+      "sample_count": 30000,
+      "created_windows": 234,
+      "trailing_samples_dropped": 48,
+      "point_label_distribution": {
+        "normal": 30000,
+        "anomaly": 0,
+        "total": 30000
+      },
+      "window_label_distribution": {
+        "normal": 234,
+        "anomaly": 0,
+        "total": 234
+      },
+      "anomaly_types": [
+        "normal"
+      ],
+      "split": "train",
+      "path": "profiles/fan_50/data/raw/normal_004.csv",
+      "sha256": "bca6a849ad1376b99272e480b12c7cf26947b2fd1149beb35614b1362e355f29"
+    },
+    {
+      "source_file": "normal_005.csv",
+      "sample_count": 30000,
+      "created_windows": 234,
+      "trailing_samples_dropped": 48,
+      "point_label_distribution": {
+        "normal": 30000,
+        "anomaly": 0,
+        "total": 30000
+      },
+      "window_label_distribution": {
+        "normal": 234,
+        "anomaly": 0,
+        "total": 234
+      },
+      "anomaly_types": [
+        "normal"
+      ],
+      "split": "train",
+      "path": "profiles/fan_50/data/raw/normal_005.csv",
+      "sha256": "6d7a07025ef680cd93c25748640a13c563d3b1db2d919a4f8fcc5fee106f23dc"
+    },
+    {
+      "source_file": "normal_006.csv",
+      "sample_count": 30000,
+      "created_windows": 234,
+      "trailing_samples_dropped": 48,
+      "point_label_distribution": {
+        "normal": 30000,
+        "anomaly": 0,
+        "total": 30000
+      },
+      "window_label_distribution": {
+        "normal": 234,
+        "anomaly": 0,
+        "total": 234
+      },
+      "anomaly_types": [
+        "normal"
+      ],
+      "split": "train",
+      "path": "profiles/fan_50/data/raw/normal_006.csv",
+      "sha256": "9233d9a0db746bfbb01b00e09f37d2dde98451331b0bd57b558f6e56d8a93c04"
+    },
+    {
+      "source_file": "normal_007.csv",
+      "sample_count": 30000,
+      "created_windows": 234,
+      "trailing_samples_dropped": 48,
+      "point_label_distribution": {
+        "normal": 30000,
+        "anomaly": 0,
+        "total": 30000
+      },
+      "window_label_distribution": {
+        "normal": 234,
+        "anomaly": 0,
+        "total": 234
+      },
+      "anomaly_types": [
+        "normal"
+      ],
+      "split": "train",
+      "path": "profiles/fan_50/data/raw/normal_007.csv",
+      "sha256": "0b38e09cc8c0a0de6716f9532353ece02c5863f28761c327aa2410e52a985b6d"
+    },
+    {
+      "source_file": "normal_008.csv",
+      "sample_count": 30000,
+      "created_windows": 234,
+      "trailing_samples_dropped": 48,
+      "point_label_distribution": {
+        "normal": 30000,
+        "anomaly": 0,
+        "total": 30000
+      },
+      "window_label_distribution": {
+        "normal": 234,
+        "anomaly": 0,
+        "total": 234
+      },
+      "anomaly_types": [
+        "normal"
+      ],
+      "split": "validation",
+      "path": "profiles/fan_50/data/raw/normal_008.csv",
+      "sha256": "5d3a65c0cf82b2e01896b837bb0dd68e513573dc0c12c746b6466dfb554db297"
+    }
+  ],
+  "training_window_count": 1638,
+  "validation_window_count": 234,
+  "scaler": {
+    "type": "sklearn.preprocessing.StandardScaler",
+    "fit_data": "Normal training samples only",
+    "mean": [
+      -0.13926428694722767,
+      -0.03661914108179922,
+      -1.0903122639744083
+    ],
+    "scale": [
+      0.007512716253369098,
+      0.005820380270293064,
+      0.007919808750760916
+    ],
+    "n_samples_seen": 209664.0
+  }
+}
