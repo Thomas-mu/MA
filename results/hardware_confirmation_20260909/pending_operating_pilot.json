@@ -1,0 +1,33 @@
+{
+  "recorded_utc": "2026-09-09T20:17:11.546295+00:00",
+  "stage": "waiting_for_operator_visual_running_confirmation",
+  "active_control_pid": 13111,
+  "control_process_alive": true,
+  "exec_session_id": 94966,
+  "gate": "Send JSON line with fan_observed_running true and the actual user observation only after positive response and capture announcement; renderer must be stopped.",
+  "fan_journal": "results/hardware_confirmation_20260909/operating25_20260909_201158_fan.jsonl",
+  "fan_config_read_only": {
+    "period": "40000",
+    "duty_cycle": "10000",
+    "enable": "1",
+    "polarity": "normal"
+  },
+  "pin_readback": "18: a3    pd | lo // GPIO18 = PWM0_CHAN2",
+  "pwm_percent_commanded": 25,
+  "mechanical_state": "awaiting_user_observation",
+  "rpm_measured": null,
+  "hardware_points_resolved": true,
+  "standstill_pilot_completed": "data/controlled_20260909/standstill_20260909_200838.csv",
+  "operating_pilot_started": false,
+  "new_training_runs": 0,
+  "tests_passed": 192,
+  "subtests_passed": 12,
+  "software_report": "results/hardware_confirmation_20260909/software_tests_final.xml",
+  "protected_original_file_count": 293,
+  "changed_original_files": [],
+  "source_sha256": {
+    "src/fft_pilot.py": "9ef400b81fe0eaba58629f62e5fbd2e89d736a984d6e10ff910e47513618d67b",
+    "src/live_tflite_gui.py": "7dbdfb2f733e778404b66f3cabc946ae9b8ce6e5b709b3b3db425af8bad5876b",
+    "tests/test_fft_pilot.py": "7ff37e5ae9dd3246c2e2a295c7689b23050761d16384b1efc0559b72a3d6a353"
+  }
+}

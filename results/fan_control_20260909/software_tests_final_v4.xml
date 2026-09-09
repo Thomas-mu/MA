@@ -1,0 +1,448 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="3" skipped="0" tests="125" time="2.201" timestamp="2026-09-09T20:59:36.852038+02:00" hostname="edgepi"><testcase classname="tests.test_acquisition" name="test_no_500_hz_and_readback" time="0.001" /><testcase classname="tests.test_acquisition" name="test_no_burst_without_fifo_entry_and_equal_values_are_fresh" time="0.003" /><testcase classname="tests.test_acquisition" name="test_overflow_saturation_signed_and_stop" time="0.000" /><testcase classname="tests.test_acquisition" name="test_timeout_and_invalid_fifo" time="0.004" /><testcase classname="tests.test_acquisition" name="test_range_and_bus_rate_reject_before_open" time="0.001" /><testcase classname="tests.test_acquisition" name="test_wrong_device_id_does_not_write_even_during_cleanup" time="0.001" /><testcase classname="tests.test_acquisition" name="test_partial_record_survives_interrupt_or_error[failure0]" time="0.007" /><testcase classname="tests.test_acquisition" name="test_partial_record_survives_interrupt_or_error[failure1]" time="0.004" /><testcase classname="tests.test_acquisition" name="test_rate_mismatch_has_no_output" time="0.001" /><testcase classname="tests.test_calibration_acquisition" name="test_new_profile_records_directly_and_preserves_provenance" time="0.056" /><testcase classname="tests.test_calibration_acquisition" name="test_quality_flags_fail_and_journals_remain[gap]" time="0.008" /><testcase classname="tests.test_calibration_acquisition" name="test_quality_flags_fail_and_journals_remain[overrun]" time="0.008" /><testcase classname="tests.test_calibration_acquisition" name="test_quality_flags_fail_and_journals_remain[saturated]" time="0.009" /><testcase classname="tests.test_calibration_acquisition" name="test_ctrl_c_preserves_partial_journal_and_profile_status" time="0.006" /><testcase classname="tests.test_calibration_acquisition" name="test_sigterm_handler_restored_and_capture_preserved" time="0.006" /><testcase classname="tests.test_calibration_acquisition" name="test_preexisting_sidecar_is_never_overwritten" time="0.003" /><testcase classname="tests.test_calibration_acquisition" name="test_train_validation_rejects_altered_sidecar" time="0.019" /><testcase classname="tests.test_calibration_acquisition" name="test_training_checks_csv_flags_even_when_hashes_match[gap]" time="0.024" /><testcase classname="tests.test_calibration_acquisition" name="test_training_checks_csv_flags_even_when_hashes_match[overrun]" time="0.025" /><testcase classname="tests.test_calibration_acquisition" name="test_training_checks_csv_flags_even_when_hashes_match[saturated]" time="0.025" /><testcase classname="tests.test_calibration_acquisition" name="test_training_interrupt_updates_status_without_training" time="0.016" /><testcase classname="tests.test_calibration_acquisition" name="test_rejected_recording_never_becomes_training_ready" time="0.009" /><testcase classname="tests.test_calibration_acquisition" name="test_invalid_configuration_rejected[extra0]" time="0.001" /><testcase classname="tests.test_calibration_acquisition" name="test_invalid_configuration_rejected[extra1]" time="0.001" /><testcase classname="tests.test_calibration_acquisition" name="test_invalid_configuration_rejected[extra2]" time="0.001" /><testcase classname="tests.test_calibration_acquisition" name="test_invalid_configuration_rejected[extra3]" time="0.001" /><testcase classname="tests.test_calibration_acquisition" name="test_invalid_configuration_rejected[extra4]" time="0.001" /><testcase classname="tests.test_calibration_acquisition" name="test_acquisition_requires_explicit_state_and_mounting" time="0.001" /><testcase classname="tests.test_common_comparison.CommonComparisonTests" name="test_all_methods_get_identical_windows_and_frozen_thresholds" time="0.002" /><testcase classname="tests.test_common_comparison.CommonComparisonTests" name="test_changed_frozen_artifact_rejected" time="0.001" /><testcase classname="tests.test_common_comparison.CommonComparisonTests" name="test_duplicate_timestamp_rejected" time="0.001" /><testcase classname="tests.test_common_comparison.CommonComparisonTests" name="test_fifo_sidecar_requires_completed_matching_hashed_capture" time="0.002" /><testcase classname="tests.test_common_comparison.CommonComparisonTests" name="test_invalid_decision_reported_not_silently_excluded" time="0.001" /><testcase classname="tests.test_common_comparison.CommonComparisonTests" name="test_latency_journal_requires_measurement_end_and_retains_every_value" time="0.002" /><testcase classname="tests.test_common_comparison.CommonComparisonTests" name="test_legacy_measurement_chain_cannot_be_final_test" time="0.001" /><testcase classname="tests.test_common_comparison.CommonComparisonTests" name="test_mixed_state_recording_rejected" time="0.001" /><testcase classname="tests.test_common_comparison.CommonComparisonTests" name="test_no_anomaly_recall_and_f1_remain_undefined" time="0.001" /><testcase classname="tests.test_common_comparison.CommonComparisonTests" name="test_nonfinite_scores_never_normal" time="0.001" /><testcase classname="tests.test_common_comparison.CommonComparisonTests" name="test_nonfinite_sensor_values_rejected" time="0.001" /><testcase classname="tests.test_common_comparison.CommonComparisonTests" name="test_p99_only_given_validation_scores_not_test" time="0.001" /><testcase classname="tests.test_common_comparison.CommonComparisonTests" name="test_quality_flag_in_discarded_tail_still_rejects_recording" time="0.002" /><testcase classname="tests.test_common_comparison.CommonComparisonTests" name="test_renamed_duplicate_cannot_cross_train_test_boundary" time="0.001" /><testcase classname="tests.test_common_comparison.CommonComparisonTests" name="test_rms_is_over_all_standardized_axes" time="0.001" /><testcase classname="tests.test_common_comparison.CommonComparisonTests" name="test_scaling_matches_saved_standard_scaler_float32" time="0.002" /><testcase classname="tests.test_common_comparison.CommonComparisonTests" name="test_test_manifest_must_bind_frozen_bundle" time="0.001" /><testcase classname="tests.test_common_comparison.CommonComparisonTests" name="test_windowing_never_crosses_recording_and_reports_tail" time="0.001" /><testcase classname="tests.test_fan_controller" name="test_invalid_configuration_cannot_touch_backend[kwargs0]" time="0.001" /><testcase classname="tests.test_fan_controller" name="test_invalid_configuration_cannot_touch_backend[kwargs1]" time="0.001" /><testcase classname="tests.test_fan_controller" name="test_invalid_configuration_cannot_touch_backend[kwargs2]" time="0.000" /><testcase classname="tests.test_fan_controller" name="test_invalid_configuration_cannot_touch_backend[kwargs3]" time="0.000" /><testcase classname="tests.test_fan_controller" name="test_invalid_configuration_cannot_touch_backend[kwargs4]" time="0.000" /><testcase classname="tests.test_fan_controller" name="test_invalid_configuration_cannot_touch_backend[kwargs5]" time="0.000" /><testcase classname="tests.test_fan_controller" name="test_invalid_configuration_cannot_touch_backend[kwargs6]" time="0.000" /><testcase classname="tests.test_fan_controller" name="test_invalid_configuration_cannot_touch_backend[kwargs7]" time="0.000" /><testcase classname="tests.test_fan_controller" name="test_constant_intermediate_point_and_explicit_close" time="0.001" /><testcase classname="tests.test_fan_controller" name="test_zero_setting_does_not_claim_commanded_activity[kwargs0]" time="0.001" /><testcase classname="tests.test_fan_controller" name="test_zero_setting_does_not_claim_commanded_activity[kwargs1]" time="0.001" /><testcase classname="tests.test_fan_controller" name="test_busy_backend_aborts_without_fallback_or_stop" time="0.001" /><testcase classname="tests.test_fan_controller" name="test_failed_initial_setting_has_no_fallback" time="0.001" /><testcase classname="tests.test_fan_controller" name="test_failed_stop_keeps_state_unknown_and_releases_on_close" time="0.001" /><testcase classname="tests.test_fan_controller" name="test_development_shutdown_is_opt_in_and_never_restarts" time="0.001" /><testcase classname="tests.test_fan_controller" name="test_demo_always_stops_and_releases_after_capture[False]" time="0.001" /><testcase classname="tests.test_fan_controller" name="test_demo_always_stops_and_releases_after_capture[True]" time="0.002" /><testcase classname="tests.test_fan_controller" name="test_monitor_cleanup_reaches_fan_bus_and_journal_on_errors[True-False]" time="0.001" /><testcase classname="tests.test_fan_controller" name="test_monitor_cleanup_reaches_fan_bus_and_journal_on_errors[True-True]" time="0.001" /><testcase classname="tests.test_fan_controller" name="test_monitor_cleanup_reaches_fan_bus_and_journal_on_errors[False-True]" time="0.001" /><testcase classname="tests.test_fan_controller" name="test_shutdown_evidence_distinguishes_dry_run_failed_command_and_motion[True-False]" time="0.001"><failure message="AttributeError: 'types.SimpleNamespace' object has no attribute 'sampling_rate_hz'">tmp_path = PosixPath('/tmp/pytest-of-malik/pytest-5/test_shutdown_evidence_disting0')
+dry_run = True, executed = False
+
+    @pytest.mark.parametrize("dry_run,executed", [(True, False), (False, False), (False, True)])
+    def test_shutdown_evidence_distinguishes_dry_run_failed_command_and_motion(tmp_path, dry_run, executed):
+        configuration = SimpleNamespace(profile_name="fixture", threshold=1,
+                                        threshold_path=tmp_path / "threshold.json",
+                                        scaler_path=tmp_path / "scaler.pkl", model_path=tmp_path / "model.tflite")
+        metadata = SimpleNamespace(profile_version=1, profile_root=tmp_path)
+        state = demo.AnomalyConfirmationState(2)
+        state.first_anomaly_monotonic = 1.0
+        state.first_anomaly_window_start_monotonic = 0.5
+        state.first_anomaly_window_index = 1
+        profile = {"autoencoder": {"tflite_model_sha256": "fixture"},
+                   "scaler": {"sha256": "fixture"}, "threshold": {"sha256": "fixture"}}
+&gt;       event = demo.build_shutdown_event(
+            configuration=configuration, profile_metadata=profile, runtime_metadata=metadata,
+            state=state, window_index=2, confirmed_timestamp="fixture", confirmed_monotonic=2.0,
+            action_started_timestamp="fixture", action_started_monotonic=2.1,
+            action_completed_timestamp="fixture", action_duration_ms=1,
+            hardware_stop_executed=executed, fan_action="fixture",
+            stop_error=None if dry_run or executed else "unconfirmed readback", dry_run=dry_run,
+            inference_time_ms=1, window_formation_time_ms=640, total_window_pipeline_time_ms=641,
+            confirming_sampling_rate_hz=200, consecutive_sampling_rates_hz=[200, 200])
+
+tests/test_fan_controller.py:178: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+configuration = namespace(profile_name='fixture', threshold=1, threshold_path=PosixPath('/tmp/pytest-of-malik/pytest-5/test_shutdown_e...ting0/scaler.pkl'), model_path=PosixPath('/tmp/pytest-of-malik/pytest-5/test_shutdown_evidence_disting0/model.tflite'))
+profile_metadata = {'autoencoder': {'tflite_model_sha256': 'fixture'}, 'scaler': {'sha256': 'fixture'}, 'threshold': {'sha256': 'fixture'}}
+runtime_metadata = namespace(profile_version=1, profile_root=PosixPath('/tmp/pytest-of-malik/pytest-5/test_shutdown_evidence_disting0'))
+state = AnomalyConfirmationState(required_consecutive=2, anomaly_counter=0, confirmation_latched=False, first_anomaly_timestam...1.0, first_anomaly_window_start_timestamp=None, first_anomaly_window_start_monotonic=0.5, first_anomaly_window_index=1)
+window_index = 2, confirmed_timestamp = 'fixture', confirmed_monotonic = 2.0
+action_started_timestamp = 'fixture', action_started_monotonic = 2.1
+action_completed_timestamp = 'fixture', action_duration_ms = 1
+hardware_stop_executed = False, fan_action = 'fixture', stop_error = None
+dry_run = True, inference_time_ms = 1, window_formation_time_ms = 640
+total_window_pipeline_time_ms = 641, confirming_sampling_rate_hz = 200
+consecutive_sampling_rates_hz = [200, 200]
+
+    def build_shutdown_event(
+        *,
+        configuration: LiveConfiguration,
+        profile_metadata: dict[str, Any],
+        runtime_metadata: ProfileRuntimeMetadata,
+        state: AnomalyConfirmationState,
+        window_index: int,
+        confirmed_timestamp: str,
+        confirmed_monotonic: float,
+        action_started_timestamp: str,
+        action_started_monotonic: float,
+        action_completed_timestamp: str,
+        action_duration_ms: float,
+        hardware_stop_executed: bool,
+        fan_action: str,
+        stop_error: str | None,
+        dry_run: bool,
+        inference_time_ms: float,
+        window_formation_time_ms: float,
+        total_window_pipeline_time_ms: float,
+        confirming_sampling_rate_hz: float,
+        consecutive_sampling_rates_hz: list[float],
+    ) -&gt; dict[str, Any]:
+        if (
+            state.first_anomaly_monotonic is None
+            or state.first_anomaly_window_start_monotonic is None
+            or state.first_anomaly_window_index is None
+        ):
+            raise RuntimeError("Zeitbasis der bestätigten Anomalie fehlt.")
+    
+        first_to_confirmation_ms = (
+            confirmed_monotonic - state.first_anomaly_monotonic
+        ) * 1000.0
+        reaction_time_ms = (
+            action_started_monotonic - state.first_anomaly_monotonic
+        ) * 1000.0
+        total_software_reaction_time_ms = (
+            action_started_monotonic - state.first_anomaly_window_start_monotonic
+        ) * 1000.0
+        return {
+            "mode": "development_actuator_demo_excluded_from_method_comparison",
+            "event_type": (
+                "dry_run_shutdown_decision"
+                if dry_run
+                else ("fan_shutdown" if hardware_stop_executed else "fan_shutdown_failed")
+            ),
+            "profile": configuration.profile_name,
+            "profile_version": runtime_metadata.profile_version,
+            "threshold": configuration.threshold,
+            "threshold_source": display_path(configuration.threshold_path),
+            "consecutive_anomalies_required": state.required_consecutive,
+            "first_anomaly_window_index": state.first_anomaly_window_index,
+            "confirmed_anomaly_window_index": window_index,
+            "number_of_windows_from_first_anomaly_to_confirmation": (
+                window_index - state.first_anomaly_window_index + 1
+            ),
+            "first_anomaly_window_start_timestamp": (
+                state.first_anomaly_window_start_timestamp
+            ),
+            "first_anomaly_timestamp": state.first_anomaly_timestamp,
+            "confirmed_anomaly_timestamp": confirmed_timestamp,
+            "stop_command_timestamp": action_started_timestamp if not dry_run else None,
+            "dry_run_stop_decision_timestamp": (
+                action_started_timestamp if dry_run else None
+            ),
+            "action_completed_timestamp": action_completed_timestamp,
+            "first_anomaly_to_confirmation_ms": first_to_confirmation_ms,
+            "reaction_time_ms": reaction_time_ms,
+            "reaction_time_basis": (
+                "first anomaly classification to dry-run stop decision"
+                if dry_run
+                else "first anomaly classification to hardware stop command attempt"
+            ),
+            "total_software_reaction_time_ms": total_software_reaction_time_ms,
+            "total_software_reaction_time_basis": (
+                "start of first anomalous sensor window to stop command/decision"
+            ),
+            "stop_command_duration_ms": action_duration_ms,
+            "confirming_window_inference_time_ms": inference_time_ms,
+            "confirming_window_formation_time_ms": window_formation_time_ms,
+            "confirming_window_pipeline_time_ms": total_window_pipeline_time_ms,
+            "sampling_rate": {
+&gt;               "configured_hz": runtime_metadata.sampling_rate_hz,
+                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                "confirming_window_measured_hz": confirming_sampling_rate_hz,
+                "confirmation_sequence_mean_measured_hz": float(
+                    np.mean(consecutive_sampling_rates_hz)
+                ),
+            },
+            "model": "Float32 TFLite convolutional autoencoder",
+            "scaler": display_path(configuration.scaler_path),
+            "tflite_model": display_path(configuration.model_path),
+            "profile_metadata": display_path(runtime_metadata.profile_root / "profile.json"),
+            "model_sha256": profile_metadata["autoencoder"]["tflite_model_sha256"],
+            "scaler_sha256": profile_metadata["scaler"]["sha256"],
+            "threshold_sha256": profile_metadata["threshold"]["sha256"],
+            "fan_gpio_bcm": 18,
+            "fan_run_state": "Hardware-PWM-Vorgabe 100%",
+            "fan_stop_state": "Hardware-PWM-Vorgabe 0%",
+            "fan_action": fan_action,
+            "hardware_stop_executed": hardware_stop_executed,
+            "hardware_stop_confirmation": "pwm_command_and_readback_only" if hardware_stop_executed else "not_confirmed",
+            "mechanical_state": "not_measured",
+            "stop_error": stop_error,
+            "dry_run": dry_run,
+            "automatic_restart_implemented": False,
+        }
+E       AttributeError: 'types.SimpleNamespace' object has no attribute 'sampling_rate_hz'
+
+src/live_tflite_fan_control.py:389: AttributeError</failure></testcase><testcase classname="tests.test_fan_controller" name="test_shutdown_evidence_distinguishes_dry_run_failed_command_and_motion[False-False]" time="0.001"><failure message="AttributeError: 'types.SimpleNamespace' object has no attribute 'sampling_rate_hz'">tmp_path = PosixPath('/tmp/pytest-of-malik/pytest-5/test_shutdown_evidence_disting1')
+dry_run = False, executed = False
+
+    @pytest.mark.parametrize("dry_run,executed", [(True, False), (False, False), (False, True)])
+    def test_shutdown_evidence_distinguishes_dry_run_failed_command_and_motion(tmp_path, dry_run, executed):
+        configuration = SimpleNamespace(profile_name="fixture", threshold=1,
+                                        threshold_path=tmp_path / "threshold.json",
+                                        scaler_path=tmp_path / "scaler.pkl", model_path=tmp_path / "model.tflite")
+        metadata = SimpleNamespace(profile_version=1, profile_root=tmp_path)
+        state = demo.AnomalyConfirmationState(2)
+        state.first_anomaly_monotonic = 1.0
+        state.first_anomaly_window_start_monotonic = 0.5
+        state.first_anomaly_window_index = 1
+        profile = {"autoencoder": {"tflite_model_sha256": "fixture"},
+                   "scaler": {"sha256": "fixture"}, "threshold": {"sha256": "fixture"}}
+&gt;       event = demo.build_shutdown_event(
+            configuration=configuration, profile_metadata=profile, runtime_metadata=metadata,
+            state=state, window_index=2, confirmed_timestamp="fixture", confirmed_monotonic=2.0,
+            action_started_timestamp="fixture", action_started_monotonic=2.1,
+            action_completed_timestamp="fixture", action_duration_ms=1,
+            hardware_stop_executed=executed, fan_action="fixture",
+            stop_error=None if dry_run or executed else "unconfirmed readback", dry_run=dry_run,
+            inference_time_ms=1, window_formation_time_ms=640, total_window_pipeline_time_ms=641,
+            confirming_sampling_rate_hz=200, consecutive_sampling_rates_hz=[200, 200])
+
+tests/test_fan_controller.py:178: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+configuration = namespace(profile_name='fixture', threshold=1, threshold_path=PosixPath('/tmp/pytest-of-malik/pytest-5/test_shutdown_e...ting1/scaler.pkl'), model_path=PosixPath('/tmp/pytest-of-malik/pytest-5/test_shutdown_evidence_disting1/model.tflite'))
+profile_metadata = {'autoencoder': {'tflite_model_sha256': 'fixture'}, 'scaler': {'sha256': 'fixture'}, 'threshold': {'sha256': 'fixture'}}
+runtime_metadata = namespace(profile_version=1, profile_root=PosixPath('/tmp/pytest-of-malik/pytest-5/test_shutdown_evidence_disting1'))
+state = AnomalyConfirmationState(required_consecutive=2, anomaly_counter=0, confirmation_latched=False, first_anomaly_timestam...1.0, first_anomaly_window_start_timestamp=None, first_anomaly_window_start_monotonic=0.5, first_anomaly_window_index=1)
+window_index = 2, confirmed_timestamp = 'fixture', confirmed_monotonic = 2.0
+action_started_timestamp = 'fixture', action_started_monotonic = 2.1
+action_completed_timestamp = 'fixture', action_duration_ms = 1
+hardware_stop_executed = False, fan_action = 'fixture'
+stop_error = 'unconfirmed readback', dry_run = False, inference_time_ms = 1
+window_formation_time_ms = 640, total_window_pipeline_time_ms = 641
+confirming_sampling_rate_hz = 200, consecutive_sampling_rates_hz = [200, 200]
+
+    def build_shutdown_event(
+        *,
+        configuration: LiveConfiguration,
+        profile_metadata: dict[str, Any],
+        runtime_metadata: ProfileRuntimeMetadata,
+        state: AnomalyConfirmationState,
+        window_index: int,
+        confirmed_timestamp: str,
+        confirmed_monotonic: float,
+        action_started_timestamp: str,
+        action_started_monotonic: float,
+        action_completed_timestamp: str,
+        action_duration_ms: float,
+        hardware_stop_executed: bool,
+        fan_action: str,
+        stop_error: str | None,
+        dry_run: bool,
+        inference_time_ms: float,
+        window_formation_time_ms: float,
+        total_window_pipeline_time_ms: float,
+        confirming_sampling_rate_hz: float,
+        consecutive_sampling_rates_hz: list[float],
+    ) -&gt; dict[str, Any]:
+        if (
+            state.first_anomaly_monotonic is None
+            or state.first_anomaly_window_start_monotonic is None
+            or state.first_anomaly_window_index is None
+        ):
+            raise RuntimeError("Zeitbasis der bestätigten Anomalie fehlt.")
+    
+        first_to_confirmation_ms = (
+            confirmed_monotonic - state.first_anomaly_monotonic
+        ) * 1000.0
+        reaction_time_ms = (
+            action_started_monotonic - state.first_anomaly_monotonic
+        ) * 1000.0
+        total_software_reaction_time_ms = (
+            action_started_monotonic - state.first_anomaly_window_start_monotonic
+        ) * 1000.0
+        return {
+            "mode": "development_actuator_demo_excluded_from_method_comparison",
+            "event_type": (
+                "dry_run_shutdown_decision"
+                if dry_run
+                else ("fan_shutdown" if hardware_stop_executed else "fan_shutdown_failed")
+            ),
+            "profile": configuration.profile_name,
+            "profile_version": runtime_metadata.profile_version,
+            "threshold": configuration.threshold,
+            "threshold_source": display_path(configuration.threshold_path),
+            "consecutive_anomalies_required": state.required_consecutive,
+            "first_anomaly_window_index": state.first_anomaly_window_index,
+            "confirmed_anomaly_window_index": window_index,
+            "number_of_windows_from_first_anomaly_to_confirmation": (
+                window_index - state.first_anomaly_window_index + 1
+            ),
+            "first_anomaly_window_start_timestamp": (
+                state.first_anomaly_window_start_timestamp
+            ),
+            "first_anomaly_timestamp": state.first_anomaly_timestamp,
+            "confirmed_anomaly_timestamp": confirmed_timestamp,
+            "stop_command_timestamp": action_started_timestamp if not dry_run else None,
+            "dry_run_stop_decision_timestamp": (
+                action_started_timestamp if dry_run else None
+            ),
+            "action_completed_timestamp": action_completed_timestamp,
+            "first_anomaly_to_confirmation_ms": first_to_confirmation_ms,
+            "reaction_time_ms": reaction_time_ms,
+            "reaction_time_basis": (
+                "first anomaly classification to dry-run stop decision"
+                if dry_run
+                else "first anomaly classification to hardware stop command attempt"
+            ),
+            "total_software_reaction_time_ms": total_software_reaction_time_ms,
+            "total_software_reaction_time_basis": (
+                "start of first anomalous sensor window to stop command/decision"
+            ),
+            "stop_command_duration_ms": action_duration_ms,
+            "confirming_window_inference_time_ms": inference_time_ms,
+            "confirming_window_formation_time_ms": window_formation_time_ms,
+            "confirming_window_pipeline_time_ms": total_window_pipeline_time_ms,
+            "sampling_rate": {
+&gt;               "configured_hz": runtime_metadata.sampling_rate_hz,
+                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                "confirming_window_measured_hz": confirming_sampling_rate_hz,
+                "confirmation_sequence_mean_measured_hz": float(
+                    np.mean(consecutive_sampling_rates_hz)
+                ),
+            },
+            "model": "Float32 TFLite convolutional autoencoder",
+            "scaler": display_path(configuration.scaler_path),
+            "tflite_model": display_path(configuration.model_path),
+            "profile_metadata": display_path(runtime_metadata.profile_root / "profile.json"),
+            "model_sha256": profile_metadata["autoencoder"]["tflite_model_sha256"],
+            "scaler_sha256": profile_metadata["scaler"]["sha256"],
+            "threshold_sha256": profile_metadata["threshold"]["sha256"],
+            "fan_gpio_bcm": 18,
+            "fan_run_state": "Hardware-PWM-Vorgabe 100%",
+            "fan_stop_state": "Hardware-PWM-Vorgabe 0%",
+            "fan_action": fan_action,
+            "hardware_stop_executed": hardware_stop_executed,
+            "hardware_stop_confirmation": "pwm_command_and_readback_only" if hardware_stop_executed else "not_confirmed",
+            "mechanical_state": "not_measured",
+            "stop_error": stop_error,
+            "dry_run": dry_run,
+            "automatic_restart_implemented": False,
+        }
+E       AttributeError: 'types.SimpleNamespace' object has no attribute 'sampling_rate_hz'
+
+src/live_tflite_fan_control.py:389: AttributeError</failure></testcase><testcase classname="tests.test_fan_controller" name="test_shutdown_evidence_distinguishes_dry_run_failed_command_and_motion[False-True]" time="0.001"><failure message="AttributeError: 'types.SimpleNamespace' object has no attribute 'sampling_rate_hz'">tmp_path = PosixPath('/tmp/pytest-of-malik/pytest-5/test_shutdown_evidence_disting2')
+dry_run = False, executed = True
+
+    @pytest.mark.parametrize("dry_run,executed", [(True, False), (False, False), (False, True)])
+    def test_shutdown_evidence_distinguishes_dry_run_failed_command_and_motion(tmp_path, dry_run, executed):
+        configuration = SimpleNamespace(profile_name="fixture", threshold=1,
+                                        threshold_path=tmp_path / "threshold.json",
+                                        scaler_path=tmp_path / "scaler.pkl", model_path=tmp_path / "model.tflite")
+        metadata = SimpleNamespace(profile_version=1, profile_root=tmp_path)
+        state = demo.AnomalyConfirmationState(2)
+        state.first_anomaly_monotonic = 1.0
+        state.first_anomaly_window_start_monotonic = 0.5
+        state.first_anomaly_window_index = 1
+        profile = {"autoencoder": {"tflite_model_sha256": "fixture"},
+                   "scaler": {"sha256": "fixture"}, "threshold": {"sha256": "fixture"}}
+&gt;       event = demo.build_shutdown_event(
+            configuration=configuration, profile_metadata=profile, runtime_metadata=metadata,
+            state=state, window_index=2, confirmed_timestamp="fixture", confirmed_monotonic=2.0,
+            action_started_timestamp="fixture", action_started_monotonic=2.1,
+            action_completed_timestamp="fixture", action_duration_ms=1,
+            hardware_stop_executed=executed, fan_action="fixture",
+            stop_error=None if dry_run or executed else "unconfirmed readback", dry_run=dry_run,
+            inference_time_ms=1, window_formation_time_ms=640, total_window_pipeline_time_ms=641,
+            confirming_sampling_rate_hz=200, consecutive_sampling_rates_hz=[200, 200])
+
+tests/test_fan_controller.py:178: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+configuration = namespace(profile_name='fixture', threshold=1, threshold_path=PosixPath('/tmp/pytest-of-malik/pytest-5/test_shutdown_e...ting2/scaler.pkl'), model_path=PosixPath('/tmp/pytest-of-malik/pytest-5/test_shutdown_evidence_disting2/model.tflite'))
+profile_metadata = {'autoencoder': {'tflite_model_sha256': 'fixture'}, 'scaler': {'sha256': 'fixture'}, 'threshold': {'sha256': 'fixture'}}
+runtime_metadata = namespace(profile_version=1, profile_root=PosixPath('/tmp/pytest-of-malik/pytest-5/test_shutdown_evidence_disting2'))
+state = AnomalyConfirmationState(required_consecutive=2, anomaly_counter=0, confirmation_latched=False, first_anomaly_timestam...1.0, first_anomaly_window_start_timestamp=None, first_anomaly_window_start_monotonic=0.5, first_anomaly_window_index=1)
+window_index = 2, confirmed_timestamp = 'fixture', confirmed_monotonic = 2.0
+action_started_timestamp = 'fixture', action_started_monotonic = 2.1
+action_completed_timestamp = 'fixture', action_duration_ms = 1
+hardware_stop_executed = True, fan_action = 'fixture', stop_error = None
+dry_run = False, inference_time_ms = 1, window_formation_time_ms = 640
+total_window_pipeline_time_ms = 641, confirming_sampling_rate_hz = 200
+consecutive_sampling_rates_hz = [200, 200]
+
+    def build_shutdown_event(
+        *,
+        configuration: LiveConfiguration,
+        profile_metadata: dict[str, Any],
+        runtime_metadata: ProfileRuntimeMetadata,
+        state: AnomalyConfirmationState,
+        window_index: int,
+        confirmed_timestamp: str,
+        confirmed_monotonic: float,
+        action_started_timestamp: str,
+        action_started_monotonic: float,
+        action_completed_timestamp: str,
+        action_duration_ms: float,
+        hardware_stop_executed: bool,
+        fan_action: str,
+        stop_error: str | None,
+        dry_run: bool,
+        inference_time_ms: float,
+        window_formation_time_ms: float,
+        total_window_pipeline_time_ms: float,
+        confirming_sampling_rate_hz: float,
+        consecutive_sampling_rates_hz: list[float],
+    ) -&gt; dict[str, Any]:
+        if (
+            state.first_anomaly_monotonic is None
+            or state.first_anomaly_window_start_monotonic is None
+            or state.first_anomaly_window_index is None
+        ):
+            raise RuntimeError("Zeitbasis der bestätigten Anomalie fehlt.")
+    
+        first_to_confirmation_ms = (
+            confirmed_monotonic - state.first_anomaly_monotonic
+        ) * 1000.0
+        reaction_time_ms = (
+            action_started_monotonic - state.first_anomaly_monotonic
+        ) * 1000.0
+        total_software_reaction_time_ms = (
+            action_started_monotonic - state.first_anomaly_window_start_monotonic
+        ) * 1000.0
+        return {
+            "mode": "development_actuator_demo_excluded_from_method_comparison",
+            "event_type": (
+                "dry_run_shutdown_decision"
+                if dry_run
+                else ("fan_shutdown" if hardware_stop_executed else "fan_shutdown_failed")
+            ),
+            "profile": configuration.profile_name,
+            "profile_version": runtime_metadata.profile_version,
+            "threshold": configuration.threshold,
+            "threshold_source": display_path(configuration.threshold_path),
+            "consecutive_anomalies_required": state.required_consecutive,
+            "first_anomaly_window_index": state.first_anomaly_window_index,
+            "confirmed_anomaly_window_index": window_index,
+            "number_of_windows_from_first_anomaly_to_confirmation": (
+                window_index - state.first_anomaly_window_index + 1
+            ),
+            "first_anomaly_window_start_timestamp": (
+                state.first_anomaly_window_start_timestamp
+            ),
+            "first_anomaly_timestamp": state.first_anomaly_timestamp,
+            "confirmed_anomaly_timestamp": confirmed_timestamp,
+            "stop_command_timestamp": action_started_timestamp if not dry_run else None,
+            "dry_run_stop_decision_timestamp": (
+                action_started_timestamp if dry_run else None
+            ),
+            "action_completed_timestamp": action_completed_timestamp,
+            "first_anomaly_to_confirmation_ms": first_to_confirmation_ms,
+            "reaction_time_ms": reaction_time_ms,
+            "reaction_time_basis": (
+                "first anomaly classification to dry-run stop decision"
+                if dry_run
+                else "first anomaly classification to hardware stop command attempt"
+            ),
+            "total_software_reaction_time_ms": total_software_reaction_time_ms,
+            "total_software_reaction_time_basis": (
+                "start of first anomalous sensor window to stop command/decision"
+            ),
+            "stop_command_duration_ms": action_duration_ms,
+            "confirming_window_inference_time_ms": inference_time_ms,
+            "confirming_window_formation_time_ms": window_formation_time_ms,
+            "confirming_window_pipeline_time_ms": total_window_pipeline_time_ms,
+            "sampling_rate": {
+&gt;               "configured_hz": runtime_metadata.sampling_rate_hz,
+                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                "confirming_window_measured_hz": confirming_sampling_rate_hz,
+                "confirmation_sequence_mean_measured_hz": float(
+                    np.mean(consecutive_sampling_rates_hz)
+                ),
+            },
+            "model": "Float32 TFLite convolutional autoencoder",
+            "scaler": display_path(configuration.scaler_path),
+            "tflite_model": display_path(configuration.model_path),
+            "profile_metadata": display_path(runtime_metadata.profile_root / "profile.json"),
+            "model_sha256": profile_metadata["autoencoder"]["tflite_model_sha256"],
+            "scaler_sha256": profile_metadata["scaler"]["sha256"],
+            "threshold_sha256": profile_metadata["threshold"]["sha256"],
+            "fan_gpio_bcm": 18,
+            "fan_run_state": "Hardware-PWM-Vorgabe 100%",
+            "fan_stop_state": "Hardware-PWM-Vorgabe 0%",
+            "fan_action": fan_action,
+            "hardware_stop_executed": hardware_stop_executed,
+            "hardware_stop_confirmation": "pwm_command_and_readback_only" if hardware_stop_executed else "not_confirmed",
+            "mechanical_state": "not_measured",
+            "stop_error": stop_error,
+            "dry_run": dry_run,
+            "automatic_restart_implemented": False,
+        }
+E       AttributeError: 'types.SimpleNamespace' object has no attribute 'sampling_rate_hz'
+
+src/live_tflite_fan_control.py:389: AttributeError</failure></testcase><testcase classname="tests.test_fan_controller" name="test_demo_summary_describes_explicit_stop_policy_without_claiming_standstill" time="0.001" /><testcase classname="tests.test_fan_pwm" name="test_construction_does_not_access_hardware_or_files" time="0.001" /><testcase classname="tests.test_fan_pwm" name="test_context_and_readback_never_change_output" time="0.004" /><testcase classname="tests.test_fan_pwm" name="test_bad_preflight_never_partially_initializes[channel]" time="0.002" /><testcase classname="tests.test_fan_pwm" name="test_bad_preflight_never_partially_initializes[device]" time="0.002" /><testcase classname="tests.test_fan_pwm" name="test_bad_preflight_never_partially_initializes[compatible]" time="0.002" /><testcase classname="tests.test_fan_pwm" name="test_bad_preflight_never_partially_initializes[period]" time="0.002" /><testcase classname="tests.test_fan_pwm" name="test_bad_preflight_never_partially_initializes[polarity]" time="0.002" /><testcase classname="tests.test_fan_pwm" name="test_advisory_lock_blocks_competing_controller_and_releases" time="0.004" /><testcase classname="tests.test_fan_pwm" name="test_stale_digital_mux_is_lowered_before_restoring_pwm" time="0.006" /><testcase classname="tests.test_fan_pwm" name="test_running_hardware_pwm_changes_directly_without_intermediate_stop" time="0.004" /><testcase classname="tests.test_fan_pwm" name="test_disabled_pwm_is_zeroed_before_enabling" time="0.004" /><testcase classname="tests.test_fan_pwm" name="test_invalid_percent_never_writes[-0.1]" time="0.003" /><testcase classname="tests.test_fan_pwm" name="test_invalid_percent_never_writes[100.1]" time="0.003" /><testcase classname="tests.test_fan_pwm" name="test_invalid_percent_never_writes[nan]" time="0.003" /><testcase classname="tests.test_fan_pwm" name="test_invalid_percent_never_writes[inf]" time="0.003" /><testcase classname="tests.test_fan_pwm" name="test_invalid_percent_never_writes[-inf]" time="0.003" /><testcase classname="tests.test_fan_pwm" name="test_invalid_percent_never_writes[True]" time="0.003" /><testcase classname="tests.test_fan_pwm" name="test_invalid_percent_never_writes[bad]" time="0.003" /><testcase classname="tests.test_fan_pwm" name="test_failed_mux_readback_prevents_target_write" time="0.004" /><testcase classname="tests.test_fan_pwm" name="test_failed_low_command_prevents_all_sysfs_changes" time="0.004" /><testcase classname="tests.test_fan_pwm" name="test_failed_sysfs_readback_is_reported_without_claiming_success" time="0.003" /><testcase classname="tests.test_fan_pwm" name="test_verify_detects_external_change_without_repair[mux]" time="0.004" /><testcase classname="tests.test_fan_pwm" name="test_verify_detects_external_change_without_repair[duty]" time="0.004" /><testcase classname="tests.test_fan_pwm" name="test_verify_detects_external_change_without_repair[enable]" time="0.004" /><testcase classname="tests.test_fan_pwm" name="test_stop_is_enabled_zero_without_mechanical_state_claim" time="0.004" /><testcase classname="tests.test_fan_pwm" name="test_journal_keeps_command_intents_results_and_transaction_times" time="0.004" /><testcase classname="tests.test_fan_pwm" name="test_journal_intent_failure_prevents_hardware_write" time="0.003" /><testcase classname="tests.test_fan_pwm" name="test_context_error_releases_lock_without_implicit_stop" time="0.005" /><testcase classname="tests.test_fft_pilot" name="test_hann_amplitude_and_psd_of_known_sinusoid" time="0.001" /><testcase classname="tests.test_fft_pilot" name="test_fft_rejects_invalid_values" time="0.000" /><testcase classname="tests.test_live_pipeline.LivePipelineTests" name="test_cooperative_stop_saves_last_captured_sample" time="0.001" /><testcase classname="tests.test_live_pipeline.LivePipelineTests" name="test_empirical_budget_p99_and_missing_decisions_remain_separate" time="0.002" /><testcase classname="tests.test_live_pipeline.LivePipelineTests" name="test_fan_confirmation_safety_sequences" time="0.004" /><testcase classname="tests.test_live_pipeline.LivePipelineTests" name="test_fresh_decision_on_old_window_is_stale_in_actual_gui_update" time="0.341" /><testcase classname="tests.test_live_pipeline.LivePipelineTests" name="test_full_queue_keeps_raw_and_partial_window" time="0.002" /><testcase classname="tests.test_live_pipeline.LivePipelineTests" name="test_full_session_logs_invalid_output_and_closes_bus" time="0.029" /><testcase classname="tests.test_live_pipeline.LivePipelineTests" name="test_gui_log_path_survives_measurement_overflow_and_opens_journal" time="0.002" /><testcase classname="tests.test_live_pipeline.LivePipelineTests" name="test_gui_queue_is_bounded_and_preserves_terminal_error" time="0.001" /><testcase classname="tests.test_live_pipeline.LivePipelineTests" name="test_invalid_scores_never_normal_and_stale_clock" time="0.000" /><testcase classname="tests.test_live_pipeline.LivePipelineTests" name="test_nonfinite_model_outputs_and_wrong_shape_are_rejected" time="0.002" /><testcase classname="tests.test_live_pipeline.LivePipelineTests" name="test_overflow_score_is_rejected" time="0.001" /><testcase classname="tests.test_live_pipeline.LivePipelineTests" name="test_reader_failure_preserves_previous_samples_and_surfaces" time="0.001" /><testcase classname="tests.test_live_pipeline.LivePipelineTests" name="test_sampling_mismatch_fails_before_sensor_access" time="0.001" /></testsuite></testsuites>

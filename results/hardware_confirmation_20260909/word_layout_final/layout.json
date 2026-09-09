@@ -1,0 +1,216 @@
+{
+  "fields": [
+    {
+      "source": "1",
+      "presentation": "Erkl\u00e4rung"
+    },
+    {
+      "source": "1",
+      "presentation": "Anhang"
+    },
+    {
+      "source": "1",
+      "presentation": "Fazit"
+    },
+    {
+      "source": "1",
+      "presentation": "Abk\u00fcrzungsverzeichnis"
+    },
+    {
+      "source": "Table_6_5",
+      "presentation": "38"
+    },
+    {
+      "source": "Table_6_4",
+      "presentation": "36"
+    },
+    {
+      "source": "Table_6_3",
+      "presentation": "34"
+    },
+    {
+      "source": "Table_6_2",
+      "presentation": "32"
+    },
+    {
+      "source": "Table_6_1",
+      "presentation": "31"
+    },
+    {
+      "source": "Table_5_13",
+      "presentation": "28"
+    },
+    {
+      "source": "Table_5_12",
+      "presentation": "26"
+    },
+    {
+      "source": "Table_5_11",
+      "presentation": "26"
+    },
+    {
+      "source": "Table_5_10",
+      "presentation": "25"
+    },
+    {
+      "source": "Table_5_9",
+      "presentation": "24"
+    },
+    {
+      "source": "Table_5_8",
+      "presentation": "23"
+    },
+    {
+      "source": "Table_5_7",
+      "presentation": "22"
+    },
+    {
+      "source": "Table_5_6",
+      "presentation": "21"
+    },
+    {
+      "source": "Table_5_5",
+      "presentation": "21"
+    },
+    {
+      "source": "Table_5_4",
+      "presentation": "20"
+    },
+    {
+      "source": "Table_5_3",
+      "presentation": "19"
+    },
+    {
+      "source": "Table_5_2",
+      "presentation": "18"
+    },
+    {
+      "source": "Table_5_1",
+      "presentation": "18"
+    },
+    {
+      "source": "Table_4_1",
+      "presentation": "14"
+    },
+    {
+      "source": "Table_3_1",
+      "presentation": "10"
+    },
+    {
+      "source": "Table_2_1",
+      "presentation": "7"
+    }
+  ],
+  "bookmark_physical_pages": {
+    "_Toc107229041": 1,
+    "_Ref107078105": 1,
+    "_MA_TOC_001": 3,
+    "_Toc239410448": 3,
+    "_Toc216604720": 3,
+    "_MA_TOC_002": 4,
+    "_Toc239410449": 4,
+    "_Toc216604721": 4,
+    "_Toc107229043": 4,
+    "_MA_TOC_003": 5,
+    "_Toc239410450": 5,
+    "_Toc216604722": 5,
+    "_Toc107229044": 5,
+    "ChapterRef_109": 6,
+    "_MA_TOC_004": 6,
+    "_Toc239410451": 6,
+    "_MA_TOC_005": 8,
+    "_Toc239410452": 8,
+    "_MA_TOC_006": 9,
+    "_MA_TOC_007": 9,
+    "_MA_TOC_008": 9,
+    "_MA_TOC_009": 10,
+    "_MA_TOC_010": 10,
+    "_MA_TOC_011": 11,
+    "_MA_TOC_012": 11,
+    "_MA_TOC_013": 12,
+    "_MA_TOC_014": 12,
+    "_MA_TOC_015": 12,
+    "_MA_TOC_016": 12,
+    "_MA_TOC_017": 13,
+    "_MA_TOC_018": 13,
+    "_MA_TOC_019": 13,
+    "_MA_TOC_020": 14,
+    "_MA_TOC_021": 14,
+    "_MA_TOC_022": 15,
+    "Table_2_1": 15,
+    "_MA_TOC_023": 16,
+    "_MA_TOC_024": 16,
+    "_MA_TOC_025": 17,
+    "_Toc239410475": 17,
+    "_MA_TOC_026": 17,
+    "_Toc239410476": 17,
+    "_MA_TOC_027": 17,
+    "_Toc239410477": 17,
+    "_MA_TOC_028": 18,
+    "_Toc239410478": 18,
+    "Table_3_1": 18,
+    "_MA_TOC_029": 19,
+    "_Toc239410479": 19,
+    "_MA_TOC_030": 20,
+    "_Toc239410480": 20,
+    "_MA_TOC_031": 20,
+    "_Toc239410481": 20,
+    "_MA_TOC_032": 21,
+    "_Toc239410482": 21,
+    "_MA_TOC_033": 21,
+    "_Toc239410483": 21,
+    "_MA_TOC_037": 22,
+    "_Toc239410487": 22,
+    "Table_4_1": 22,
+    "_MA_TOC_042": 24,
+    "_Toc239410492": 24,
+    "_Ref219884887": 24,
+    "_K5_Section_1": 24,
+    "_K5_Section_2": 25,
+    "Table_5_1": 26,
+    "Table_5_2": 26,
+    "Table_5_3": 27,
+    "_K5_Section_3": 28,
+    "Table_5_4": 28,
+    "Table_5_5": 29,
+    "Table_5_6": 29,
+    "Table_5_7": 30,
+    "_K5_Section_4": 30,
+    "Table_5_8": 31,
+    "Table_5_9": 32,
+    "_K5_Section_5": 32,
+    "Table_5_10": 33,
+    "Table_5_11": 34,
+    "Table_5_12": 34,
+    "_K5_Section_6": 35,
+    "Table_5_13": 36,
+    "_MA_TOC_043": 37,
+    "_Toc239410493": 37,
+    "Implementation_1": 37,
+    "Table_6_1": 39,
+    "Implementation_10": 39,
+    "Table_6_2": 40,
+    "Implementation_16": 41,
+    "Table_6_3": 42,
+    "Implementation_24": 43,
+    "Table_6_4": 44,
+    "Implementation_34": 45,
+    "Implementation_39": 46,
+    "Table_6_5": 46,
+    "Implementation_45": 47,
+    "_MA_TOC_044": 50,
+    "_Toc239410494": 50,
+    "_MA_TOC_045": 51,
+    "_Toc239410495": 51,
+    "_MA_TOC_046": 52,
+    "_Toc239410496": 52,
+    "_MA_TOC_048": 53,
+    "_Toc239410498": 53,
+    "ChapterRef_110": 55,
+    "_MA_TOC_049": 55,
+    "_Toc239410499": 55,
+    "_MA_TOC_050": 58,
+    "_Toc239410500": 58
+  },
+  "renderer": "LibreOffice "
+}

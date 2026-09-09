@@ -1,0 +1,15 @@
+{
+  "recorded_utc": "2026-09-09T19:57:58.642381+00:00",
+  "source": "docs/Akz_Masterarbeit_Bericht(3).docx",
+  "backup": "docs/backups/Akz_Masterarbeit_Bericht(3)_vor_hardwarebestaetigung_20260909.docx",
+  "source_sha256": "a1f5c1e52ccd0c0babb64d3cc4035e70323fb1fe564d960f1cf6bbb6cf78c995",
+  "user_confirmed": {
+    "fan_control_gpio_bcm": 18,
+    "adxl345_connection": "I2C as intended",
+    "adxl345_mount_location": "one corner of the fan frame",
+    "these_hardware_points_resolved": true
+  },
+  "operator_report_not_measurement": true,
+  "rpm_measured": null,
+  "no_new_hardware_action": true
+}

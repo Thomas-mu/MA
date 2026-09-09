@@ -1,0 +1,42 @@
+{
+  "utc": "2026-09-09T20:07:00.107675+00:00",
+  "monotonic_ns": 6752687584651,
+  "boot_id": "e0dace22-4649-4e75-b4b9-8a26b59f18c1",
+  "same_boot_as_previous_0percent_readback": true,
+  "state": {
+    "gpio_bcm": 18,
+    "physical_pin": 12,
+    "pwm_chip": 0,
+    "pwm_channel": 2,
+    "pwm_path": "/sys/class/pwm/pwmchip0/pwm2",
+    "rp1_device_path": "/sys/devices/platform/axi/1000120000.pcie/1f00098000.pwm",
+    "pwm_configuration": {
+      "period_ns": 40000,
+      "duty_cycle_ns": 0,
+      "enable": 1,
+      "polarity": "normal",
+      "configured_frequency_hz": 25000.0,
+      "configured_duty_percent": 0.0
+    },
+    "pin_readback": {
+      "mux": "a3",
+      "function": "PWM0_CHAN2",
+      "instantaneous_level": "lo",
+      "raw": "18: a3    pd | lo // GPIO18 = PWM0_CHAN2"
+    },
+    "pwm_mux_confirmed": true,
+    "electrical_waveform_measured": false,
+    "measured_rpm": null,
+    "mechanical_state": "not_measured"
+  },
+  "control_or_capture_processes": [],
+  "fuser": {
+    "returncode": 1,
+    "stdout": "",
+    "stderr": ""
+  },
+  "hardware_changed": false,
+  "mounting_confirmation": "ADXL345 at one corner of fan frame, I2C as intended; fan control GPIO18",
+  "standstill_evidence": "previous user visual confirmation; no subsequent fan change reported",
+  "renderer_must_end_before_capture": true
+}

@@ -1,0 +1,65 @@
+{
+  "physical_pin_mapping": {
+    "command": [
+      "pinctrl",
+      "-p",
+      "get",
+      "12,18"
+    ],
+    "returncode": 0,
+    "stdout": "12: a3    pd | lo // GPIO18 = PWM0_CHAN2\n18: no    pd | -- // GPIO24 = none\n",
+    "stderr": ""
+  },
+  "gpio18_functions": {
+    "command": [
+      "pinctrl",
+      "funcs",
+      "18"
+    ],
+    "returncode": 0,
+    "stdout": "18, GPIO18, SPI1_CE0, DPI_D14, I2S0_SCLK, PWM0_CHAN2, I2S1_SCLK, SYS_RIO018, PROC_RIO018, PIO18, GPCLK1\n",
+    "stderr": ""
+  },
+  "open_sensor_gpio_devices": {
+    "command": [
+      "sudo",
+      "-n",
+      "fuser",
+      "-v",
+      "/dev/i2c-1",
+      "/dev/gpiochip0",
+      "/dev/gpiomem0"
+    ],
+    "returncode": 1,
+    "stdout": "",
+    "stderr": ""
+  },
+  "services": {
+    "command": [
+      "systemctl",
+      "list-units",
+      "--type=service",
+      "--state=running",
+      "--no-pager"
+    ],
+    "returncode": 0,
+    "stdout": "  UNIT                          LOAD   ACTIVE SUB     DESCRIPTION\n  accounts-daemon.service       loaded active running Accounts Service\n  avahi-daemon.service          loaded active running Avahi mDNS/DNS-SD Stack\n  bluetooth.service             loaded active running Bluetooth service\n  cron.service                  loaded active running Regular background program processing daemon\n  dbus.service                  loaded active running D-Bus System Message Bus\n  getty@tty1.service            loaded active running Getty on tty1\n  lightdm.service               loaded active running Light Display Manager\n  NetworkManager.service        loaded active running Network Manager\n  nfs-blkmap.service            loaded active running pNFS block layout mapping daemon\n  polkit.service                loaded active running Authorization Manager\n  rpcbind.service               loaded active running RPC bind portmap service\n  serial-getty@ttyAMA10.service loaded active running Serial Getty on ttyAMA10\n  ssh.service                   loaded active running OpenBSD Secure Shell server\n  systemd-journald.service      loaded active running Journal Service\n  systemd-logind.service        loaded active running User Login Management\n  systemd-timesyncd.service     loaded active running Network Time Synchronization\n  systemd-udevd.service         loaded active running Rule-based Manager for Device Events and Files\n  udisks2.service               loaded active running Disk Manager\n  user@1000.service             loaded active running User Manager for UID 1000\n  user@104.service              loaded active running User Manager for UID 104\n  wpa_supplicant.service        loaded active running WPA supplicant\n\nLegend: LOAD   \u2192 Reflects whether the unit definition was properly loaded.\n        ACTIVE \u2192 The high-level unit activation state, i.e. generalization of SUB.\n        SUB    \u2192 The low-level unit activation state, values depend on unit type.\n\n21 loaded units listed.\n",
+    "stderr": ""
+  },
+  "timestamp_utc": "2026-09-09T18:26:40.725178+00:00",
+  "boot_id": "e0dace22-4649-4e75-b4b9-8a26b59f18c1",
+  "hostname": "edgepi",
+  "kernel": "6.18.34+rpt-rpi-2712",
+  "pwm_device_resolved": "/sys/devices/platform/axi/1000120000.pcie/1f00098000.pwm",
+  "pwm_compatible": [
+    "raspberrypi,rp1-pwm",
+    ""
+  ],
+  "boot_configuration_relevant_lines": [
+    "dtparam=i2c_arm=on",
+    "dtoverlay=pwm"
+  ],
+  "wiring_completeness": "GPIO assignment supported by existing code and user statement; actual sensor mount and full fan interface circuit not documented",
+  "tachometer_confirmed": false,
+  "physical_standstill_confirmed": false
+}

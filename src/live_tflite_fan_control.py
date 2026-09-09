@@ -176,19 +176,24 @@ class ExistingFanActuator:
             raise RuntimeError("Der Lüfter-Stop wurde bereits ausgelöst.")
         self.stop_attempted = True
         self.controller.set_state(False)
-        if not self.controller.enabled or self.controller.is_running:
+        if not self.controller.enabled or self.controller.is_running is not False:
             raise RuntimeError(
                 "Die vorhandene Lüftersteuerung konnte STOP nicht bestätigen."
             )
         self.stop_succeeded = True
+
+    def close(self) -> None:
+        """Request 0 % on demo exit and release the shared control lock."""
+        self.controller.close()
 
 
 def load_existing_fan_actuator() -> ExistingFanActuator:
     """Instantiate the already established hardware implementation.
 
     ``load_sensor_access`` first exposes Debian's system packages to the
-    TensorFlow virtual environment.  This makes the existing smbus2/RPi.GPIO
-    imports available without installing or reimplementing hardware access.
+    TensorFlow virtual environment.  This makes the existing smbus2
+    import available. FanController uses the shared locked RP1 hardware-PWM
+    backend; a confirmed command does not establish mechanical motion.
     Instantiation with ``default_on=True`` is intentionally restricted to the
     explicitly selected real-hardware mode.
     """
@@ -219,10 +224,10 @@ def load_existing_fan_actuator() -> ExistingFanActuator:
     return ExistingFanActuator(
         controller=controller,
         gpio_bcm=int(FAN_PIN),
-        run_description=f"GPIO HIGH / PWM {FAN_RUN_PERCENT}%",
-        stop_description=f"GPIO LOW / PWM {FAN_STOP_PERCENT}%",
+        run_description=f"Hardware-PWM-Vorgabe {FAN_RUN_PERCENT}%",
+        stop_description=f"Hardware-PWM-Vorgabe {FAN_STOP_PERCENT}%",
         backend_description=(
-            "existing FanController: pinctrl -> HardwarePWM -> RPi.GPIO fallback"
+            "FanController -> locked FanPWM: RP1 PWM0_CHAN2, BCM18/physical12, a3, 25kHz"
         ),
     )
 
@@ -368,9 +373,9 @@ def build_shutdown_event(
         "first_anomaly_to_confirmation_ms": first_to_confirmation_ms,
         "reaction_time_ms": reaction_time_ms,
         "reaction_time_basis": (
-            "first anomaly classification to hardware stop command"
-            if hardware_stop_executed
-            else "first anomaly classification to dry-run stop decision"
+            "first anomaly classification to dry-run stop decision"
+            if dry_run
+            else "first anomaly classification to hardware stop command attempt"
         ),
         "total_software_reaction_time_ms": total_software_reaction_time_ms,
         "total_software_reaction_time_basis": (
@@ -395,10 +400,12 @@ def build_shutdown_event(
         "scaler_sha256": profile_metadata["scaler"]["sha256"],
         "threshold_sha256": profile_metadata["threshold"]["sha256"],
         "fan_gpio_bcm": 18,
-        "fan_run_state": "GPIO HIGH / PWM 100%",
-        "fan_stop_state": "GPIO LOW / PWM 0%",
+        "fan_run_state": "Hardware-PWM-Vorgabe 100%",
+        "fan_stop_state": "Hardware-PWM-Vorgabe 0%",
         "fan_action": fan_action,
         "hardware_stop_executed": hardware_stop_executed,
+        "hardware_stop_confirmation": "pwm_command_and_readback_only" if hardware_stop_executed else "not_confirmed",
+        "mechanical_state": "not_measured",
         "stop_error": stop_error,
         "dry_run": dry_run,
         "automatic_restart_implemented": False,
@@ -426,7 +433,7 @@ def print_configuration(
         "Anomaliebestätigung: "
         f"{arguments.consecutive_anomalies} aufeinanderfolgende Fenster"
     )
-    print("Lüfter: BCM GPIO18 | RUN=HIGH/100% | STOP=LOW/0%")
+    print("Lüfter: BCM GPIO18 / physischer Pin 12 | Hardware-PWM 25 kHz | RUN-Vorgabe 100% | STOP-Vorgabe 0% | Drehzahl nicht gemessen")
     if arguments.self_test:
         print("SELF-TEST: kein Sensorzugriff und kein GPIO-/PWM-Controller.")
     elif arguments.dry_run:
@@ -455,8 +462,8 @@ def print_run_summary(
         print("Dry-Run bestätigt: kein GPIO-/PWM-Controller wurde erzeugt.")
     else:
         print(
-            "GPIO-Zustand wurde beim Beenden bewusst nicht durch Cleanup oder "
-            "Restart verändert."
+            "Abschlussregel des Steueradapters: 0-%-PWM anfordern und Sperre freigeben. "
+            "Das Steuerjournal enthält Befehle und Rücklesung; mechanischer Stillstand ist nicht gemessen."
         )
 
 
@@ -570,7 +577,11 @@ def run_fan_control(*, arguments: argparse.Namespace, configuration: LiveConfigu
                 handle.flush()
                 os.fsync(handle.fileno())
     finally:
-        print_run_summary(summary, csv_path, event_path, stop.is_set(), arguments.dry_run)
+        try:
+            if actuator is not None:
+                actuator.close()
+        finally:
+            print_run_summary(summary, csv_path, event_path, stop.is_set(), arguments.dry_run)
 
 def simulate_sequence(
     labels: list[int],

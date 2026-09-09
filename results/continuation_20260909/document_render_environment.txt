@@ -1,0 +1,6 @@
+fonts-crosextra-caladea 20200211-2
+fonts-crosextra-carlito 20230309-2
+libreoffice-writer 4:25.2.3-2+deb13u6
+python3-uno 4:25.2.3-2+deb13u6
+
+Carlito-Regular.ttf: "Carlito" "Regular"

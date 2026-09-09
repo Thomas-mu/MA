@@ -7,12 +7,66 @@ Zeit-/Verlustprüfung, dreiachsige Auswertung und vollständige Provenienz.
 import argparse
 import hashlib
 import json
+from numbers import Integral
 from pathlib import Path
 
 import numpy as np
 import pandas as pd
 
 from collect_real_data import provenance
+
+
+def _integer_column(dataframe, name):
+    """Recorder-Ganzzahlen ohne Umweg über Float und dessen Rundung lesen."""
+    values = dataframe[name]
+    if not values.str.fullmatch(r'[0-9]+').all():
+        raise ValueError(f'{name} muss nichtnegative ganze Zahlen enthalten')
+    try:
+        integers = [int(value) for value in values]
+        if any(value > np.iinfo(np.int64).max for value in integers):
+            raise ValueError('außerhalb des int64-Bereichs')
+        return np.asarray(integers, dtype=np.int64)
+    except (ValueError, OverflowError) as exc:
+        raise ValueError(f'Ungültige Ganzzahlen in {name}') from exc
+
+
+def _validate_recording(dataframe, meta, nperseg):
+    """Alle FFT-Eingaben prüfen, bevor Auswertungsdateien angelegt werden."""
+    if isinstance(nperseg, bool) or not isinstance(nperseg, Integral) or nperseg < 4:
+        raise ValueError('Segmentlänge muss eine ganze Zahl von mindestens vier sein')
+    if len(dataframe) < nperseg:
+        raise ValueError('Zu wenige Samples für die Segmentlänge')
+    required = {'x_g', 'y_g', 'z_g', 'host_monotonic_ns', 'sample_index',
+                'gap', 'overrun', 'saturated'}
+    missing = required.difference(dataframe.columns)
+    if missing:
+        raise ValueError(f'Fehlende Erfassungsspalten: {sorted(missing)}')
+    for flag in ['gap', 'overrun', 'saturated']:
+        # Der Recorder schreibt boolesche CSV-Werte. Nur bekannte False-Werte
+        # zulassen: leer/unbekannt darf nicht als fehlender Fehler gelten.
+        if not dataframe[flag].str.lower().isin(['false', '0']).all():
+            raise ValueError(f'FFT wegen fehlender/unzulässiger Qualitätsflags gesperrt: {flag}')
+    summary = meta.get('summary')
+    samples = summary.get('samples') if isinstance(summary, dict) else None
+    if type(samples) is not int or samples != len(dataframe):
+        raise ValueError('Manifest-Samplezahl fehlt oder stimmt nicht mit CSV überein')
+    odr = meta['sensor'].get('odr_hz')
+    if isinstance(odr, bool) or not isinstance(odr, (int, float)) or not np.isfinite(odr) or odr <= 0:
+        raise ValueError('Sensor-ODR muss endlich und positiv sein')
+    indices = _integer_column(dataframe, 'sample_index')
+    if not np.array_equal(indices, np.arange(len(dataframe), dtype=np.int64)):
+        raise ValueError('Samplefolge muss bei null beginnen und lückenlos sein')
+    times = _integer_column(dataframe, 'host_monotonic_ns')
+    intervals = np.diff(times)
+    if (intervals <= 0).any():
+        raise ValueError('Nicht monotone Hostzeit')
+    if int(intervals.max()) / 1e9 >= 32 / odr:
+        raise ValueError('Hostlücke größer als FIFO-Kapazität')
+    xyz = dataframe[['x_g', 'y_g', 'z_g']].to_numpy(dtype=np.float64)
+    if not np.isfinite(xyz).all():
+        raise ValueError('Alle XYZ-Werte müssen endlich sein, auch im Segmentrest')
+    fs = (len(dataframe) - 1) * 1e9 / (int(times[-1]) - int(times[0]))
+    return xyz, odr, fs
 
 
 def spectrum(values, fs):
@@ -40,28 +94,19 @@ def analyze(path, output, nperseg=512):
         raise ValueError('CSV-Hash stimmt nicht mit Erfassungsmanifest überein')
     if meta.get('status') != 'completed':
         raise ValueError('Nur vollständig abgeschlossene Aufnahmen für diese Pilot-FFT')
-    if meta.get('sensor', {}).get('acquisition_mode') != 'fifo_stream':
+    if not isinstance(meta.get('sensor'), dict) or meta['sensor'].get('acquisition_mode') != 'fifo_stream':
         raise ValueError('Kein dokumentierter FIFO-Frischwertnachweis')
-    df = pd.read_csv(path)
-    for flag in ['gap', 'overrun', 'saturated']:
-        if flag not in df or df[flag].astype(str).str.lower().isin(['true', '1']).any():
-            raise ValueError(f'FFT wegen fehlender/unzulässiger Qualitätsflags gesperrt: {flag}')
-    if nperseg < 4 or len(df) < nperseg:
-        raise ValueError('Zu wenige Samples oder ungültige Segmentlänge')
-    t = df.host_monotonic_ns.to_numpy(dtype=np.int64)
-    if (np.diff(t) <= 0).any() or not (np.diff(df.sample_index) == 1).all():
-        raise ValueError('Nicht monotone Hostzeit oder unterbrochene Samplefolge')
-    odr = meta['sensor']['odr_hz']
-    if np.max(np.diff(t)) / 1e9 >= 32 / odr:
-        raise ValueError('Hostlücke größer als FIFO-Kapazität')
-    fs = (len(df) - 1) * 1e9 / int(t[-1] - t[0])
+    # Keine automatische Float-/NA-Konvertierung für Integer und Qualitätsflags.
+    df = pd.read_csv(path, dtype=str, keep_default_na=False, skip_blank_lines=False)
+    xyz, odr, fs = _validate_recording(df, meta, nperseg)
+    nperseg = int(nperseg)
     # Sensorwerte sind FIFO-geordnet. Fs ist eine Host-Durchsatzschätzung des
     # Sensor-Taktes; die ungleichmäßigen Host-Lesezeiten werden nicht interpoliert.
     output.mkdir(parents=True, exist_ok=False)
     spectra = []
     axes = {}
-    for axis in ['x_g', 'y_g', 'z_g']:
-        values = df[axis].to_numpy(dtype=np.float64)
+    for column, axis in enumerate(['x_g', 'y_g', 'z_g']):
+        values = xyz[:, column]
         results = [spectrum(values[i:i+nperseg], fs)
                    for i in range(0, len(values)-nperseg+1, nperseg//2)]
         f = results[0][0]

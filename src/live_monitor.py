@@ -8,35 +8,18 @@ import signal
 import threading
 from datetime import datetime
 from pathlib import Path
-import shutil
-import subprocess
 import sys
 import time
 from collections import deque
 
-import matplotlib
-
-matplotlib.use("TkAgg")
-
-import matplotlib.animation as animation
-import matplotlib.pyplot as plt
-
-try:
-    from rpi_hardware_pwm import HardwarePWM
-except ImportError:  # pragma: no cover - nur für Desktop/Testumgebungen
-    HardwarePWM = None
-
-try:
-    import RPi.GPIO as GPIO
-except ImportError:  # pragma: no cover - nur für Desktop/Testumgebungen
-    GPIO = None
-
 try:
     from adxl345 import connect, read_fresh_sample, sensor_configuration, reset_fifo
     from live_pipeline import BufferedAcquisition, Sample, is_stale
+    from fan_pwm import FanPWM
 except ModuleNotFoundError:
     from src.adxl345 import connect, read_fresh_sample, sensor_configuration, reset_fifo
     from src.live_pipeline import BufferedAcquisition, Sample, is_stale
+    from src.fan_pwm import FanPWM
 
 
 SAMPLE_RATE_HZ = 200
@@ -73,7 +56,13 @@ def fan_pwm_percent(value: str) -> float:
 
 
 class FanController:
-    """Steuert den Lüfter basierend auf der aktuellen Sensoramplitude."""
+    """Development actuator using the shared, locked hardware-PWM backend.
+
+    Construction explicitly applies the requested initial setting. ``is_running``
+    describes a confirmed nonzero PWM command, never observed mechanical motion;
+    it is None after an unconfirmed command. The controller holds the lock until
+    close(), which explicitly requests 0 % and then releases it.
+    """
 
     def __init__(
         self,
@@ -81,80 +70,39 @@ class FanController:
         default_on: bool = True,
         run_percent: float = FAN_RUN_PERCENT,
         allow_shutdown: bool = False,
+        journal_path: str | Path | None = None,
     ) -> None:
+        if isinstance(pin, bool) or pin != FAN_PIN:
+            raise ValueError("Expected BCM GPIO18 (physical header pin 12).")
+        if isinstance(run_percent, bool) or not math.isfinite(float(run_percent)) or not 0 <= float(run_percent) <= 100:
+            raise ValueError("PWM must be a finite percentage in 0..100.")
         self.pin = pin
         self.default_on = default_on
-        self.run_percent = run_percent
+        self.run_percent = float(run_percent)
         self.allow_shutdown = allow_shutdown
         self.enabled = False
-        self.is_running = default_on
+        self.is_running: bool | None = None
         self.fan_off_since: float | None = None
         self.restart_allowed = FAN_ALLOW_RESTART_AFTER_ERROR
         self.restart_decision_prompted = False
-        self.pwm = None
-
-        # Digitales HIGH ist nur für den bisherigen 100-%-Betrieb geeignet.
-        # Zwischenwerte müssen über Hardware-PWM erzeugt werden.
-        if (
-            self.run_percent == FAN_RUN_PERCENT
-            and shutil.which("pinctrl") is not None
-        ):
+        if journal_path is None:
+            directory = Path(__file__).resolve().parents[1] / "results" / "fan_control"
+            journal_path = directory / ("development_" + datetime.now().strftime("%Y%m%d_%H%M%S_%f") + f"_{os.getpid()}.jsonl")
+        self.pwm = FanPWM(journal_path=journal_path)
+        try:
+            self.pwm.__enter__()
             self.enabled = True
             self.set_state(default_on)
-            print(
-                f"Lüftersteuerung via pinctrl aktiv (Pin {self.pin})."
-            )
-            return
-
-        if HardwarePWM is not None:
-            try:
-                self.pwm = HardwarePWM(
-                    pwm_channel=FAN_PWM_CHANNEL,
-                    hz=FAN_PWM_FREQUENCY_HZ,
-                    chip=FAN_PWM_CHIP,
-                )
-                self.pwm.start(
-                    self.run_percent if default_on else FAN_STOP_PERCENT
-                )
-                self.enabled = True
-                print(f"Lüftersteuerung: GPIO{self.pin}")
-                print(f"PWM: {FAN_PWM_FREQUENCY_HZ / 1000:g} kHz")
-                print(f"Duty Cycle: {self.run_percent:g} %")
-                print(
-                    f"Hardware-PWM: PWM{FAN_PWM_CHIP}_CHAN{FAN_PWM_CHANNEL}"
-                )
-                return
-            except Exception as exc:  # pragma: no cover - hardwareabhängig
-                self.pwm = None
-                print(
-                    "HardwarePWM konnte nicht initialisiert werden: "
-                    f"{exc}."
-                )
-
-        if self.run_percent != FAN_RUN_PERCENT:
-            self.is_running = False
-            print(
-                f"{self.run_percent:g} % können nicht als digitales GPIO-Signal "
-                "ausgegeben werden. Lüfter-Steuerung deaktiviert."
-            )
-            return
-
-        self.enabled = GPIO is not None
-        if not self.enabled:
-            print("GPIO nicht verfügbar. Lüfter-Steuerung deaktiviert.")
-            return
-
-        try:
-            GPIO.setmode(GPIO.BCM)
-            GPIO.setup(self.pin, GPIO.OUT)
-            self.set_state(default_on)
-        except RuntimeError as exc:
+        except BaseException:
             self.enabled = False
-            print(
-                "GPIO-Initialisierung fehlgeschlagen: "
-                f"{exc}. Lüfter-Steuerung deaktiviert."
-            )
-            return
+            self.is_running = None
+            try:
+                self.pwm.close()  # Release only; no hidden fallback command.
+            finally:
+                self.pwm = None
+            raise
+        print(f"Hardware-PWM: GPIO18 / physischer Pin 12, PWM0_CHAN2, 25 kHz; "
+              f"Vorgabe {self.run_percent if default_on else 0:g} %, Drehzahl nicht gemessen.")
 
     def prompt_restart_decision(self) -> None:
         self.restart_decision_prompted = True
@@ -181,47 +129,19 @@ class FanController:
         self.restart_decision_prompted = False
 
     def set_state(self, state: bool) -> None:
-        if not self.enabled:
-            return
-
-        if self.pwm is not None:
-            duty_cycle = self.run_percent if state else FAN_STOP_PERCENT
-            self.pwm.change_duty_cycle(duty_cycle)
-            self.is_running = state
-            return
-
-        if shutil.which("pinctrl") is not None:
-            command = [
-                "pinctrl",
-                "set",
-                str(self.pin),
-                "op",
-                "dh" if state else "dl",
-            ]
-            try:
-                subprocess.run(command, check=True, capture_output=True, text=True)
-                self.is_running = state
-                return
-            except Exception as exc:  # pragma: no cover - hardwareabhängig
-                print(
-                    f"pinctrl-Befehl fehlgeschlagen: {command} -> {exc}. "
-                    "Fallback auf GPIO/PWM."
-                )
-
-        self.is_running = state
-
+        if not self.enabled or self.pwm is None:
+            raise RuntimeError("PWM controller is closed or has an unconfirmed state.")
+        duty_cycle = self.run_percent if state else FAN_STOP_PERCENT
         try:
-            GPIO.output(self.pin, GPIO.HIGH if state else GPIO.LOW)
-        except RuntimeError as exc:
+            self.pwm.set_percent(duty_cycle)
+        except BaseException:
+            self.is_running = None
             self.enabled = False
-            print(
-                "GPIO-Ausgabe fehlgeschlagen: "
-                f"{exc}. Lüfter-Steuerung deaktiviert."
-            )
-            self.is_running = False
+            raise
+        self.is_running = duty_cycle > 0
 
-    def update(self, magnitude_g: float) -> bool:
-        """Gibt True zurück, wenn der Lüfter gerade aktiv ist."""
+    def update(self, magnitude_g: float) -> bool | None:
+        """Return commanded PWM activity; optional development shutdown only."""
 
         if not self.enabled:
             return self.is_running
@@ -243,23 +163,19 @@ class FanController:
         return self.is_running
 
     def close(self) -> None:
-        if not self.enabled:
+        """Request enabled 0 % PWM and release the lock, even on failure."""
+        if self.pwm is None:
             return
-
-        if self.pwm is not None:
-            try:
-                self.pwm.change_duty_cycle(FAN_STOP_PERCENT)
-            finally:
-                self.pwm.stop()
-            self.is_running = False
-            return
-
+        backend, self.pwm = self.pwm, None
         try:
-            self.set_state(False)
-            if GPIO is not None:
-                GPIO.cleanup(self.pin)
-        except RuntimeError as exc:
-            print(f"GPIO-Reset fehlgeschlagen: {exc}")
+            backend.stop()
+            self.is_running = False
+        except BaseException:
+            self.is_running = None
+            raise
+        finally:
+            self.enabled = False
+            backend.close()  # Leaves PWM enabled at the last setting.
 
 
 def parse_args() -> argparse.Namespace:
@@ -286,7 +202,48 @@ def parse_args() -> argparse.Namespace:
     return args
 
 
+def close_live_run(acquisition, fan_controller, bus, events, manifest, stem) -> None:
+    """Attempt every resource cleanup even if acquisition shutdown fails."""
+    try:
+        if acquisition is not None:
+            acquisition.stop()
+            manifest["acquisition"] = acquisition.snapshot()
+    except BaseException as exc:
+        manifest["acquisition_close_error"] = str(exc)
+        raise
+    finally:
+        try:
+            if fan_controller is not None:
+                fan_controller.close()
+                if events is not None:
+                    events.write(json.dumps({"event": "fan_stop_setting_on_exit", "timestamp": datetime.now().astimezone().isoformat(),
+                                             "mechanical_state": "not_measured"}) + "\n")
+        except BaseException as exc:
+            manifest["fan_close_error"] = str(exc)
+            raise
+        finally:
+            try:
+                bus.close()
+            finally:
+                try:
+                    if events is not None:
+                        try:
+                            events.flush()
+                            os.fsync(events.fileno())
+                        finally:
+                            events.close()
+                finally:
+                    manifest["ended_utc"] = datetime.now().astimezone().isoformat()
+                    stem.with_suffix(".run.json").write_text(json.dumps(manifest, indent=2, ensure_ascii=False), encoding="utf-8")
+
+
 def main() -> None:
+    # GUI setup belongs to the GUI entry point, not actuator imports.
+    import matplotlib
+    matplotlib.use("TkAgg")
+    import matplotlib.animation as animation
+    import matplotlib.pyplot as plt
+
     arguments = parse_args()
     project = Path(__file__).resolve().parents[1]
     directory = project / "results" / "live_runs"
@@ -308,7 +265,8 @@ def main() -> None:
         events = stem.with_suffix(".fan.jsonl").open("x", encoding="utf-8", buffering=1)
         if not arguments.no_fan_control:
             fan_controller = FanController(FAN_PIN, default_on=True, run_percent=arguments.fan_pwm,
-                                           allow_shutdown=arguments.enable_development_shutdown)
+                                           allow_shutdown=arguments.enable_development_shutdown,
+                                           journal_path=stem.with_suffix(".pwm.jsonl"))
             events.write(json.dumps({"event": "initial_pwm_command", "percent": arguments.fan_pwm,
                                      "enabled": fan_controller.enabled, "timestamp": datetime.now().astimezone().isoformat()}) + "\n")
         def read(stop_event: threading.Event) -> Sample | None:
@@ -388,20 +346,8 @@ def main() -> None:
             for signum, handler in previous.items():
                 signal.signal(signum, handler)
     finally:
-        if acquisition is not None:
-            acquisition.stop()
-            manifest["acquisition"] = acquisition.snapshot()
-        if fan_controller is not None:
-            fan_controller.close()
-            if events is not None:
-                events.write(json.dumps({"event": "fan_stop_on_exit", "timestamp": datetime.now().astimezone().isoformat()}) + "\n")
-        bus.close()
-        if events is not None:
-            events.flush()
-            os.fsync(events.fileno())
-            events.close()
-        manifest["ended_utc"] = datetime.now().astimezone().isoformat()
-        stem.with_suffix(".run.json").write_text(json.dumps(manifest, indent=2, ensure_ascii=False), encoding="utf-8")
+        close_live_run(acquisition, fan_controller, bus, events, manifest, stem)
+
 
 
 if __name__ == "__main__":

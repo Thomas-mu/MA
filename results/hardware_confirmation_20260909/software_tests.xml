@@ -1,0 +1,241 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="3" skipped="0" tests="204" time="3.977" timestamp="2026-09-09T22:02:59.313442+02:00" hostname="edgepi"><testcase classname="tests.test_acquisition" name="test_no_500_hz_and_readback" time="0.001" /><testcase classname="tests.test_acquisition" name="test_no_burst_without_fifo_entry_and_equal_values_are_fresh" time="0.003" /><testcase classname="tests.test_acquisition" name="test_overflow_saturation_signed_and_stop" time="0.000" /><testcase classname="tests.test_acquisition" name="test_timeout_and_invalid_fifo" time="0.004" /><testcase classname="tests.test_acquisition" name="test_range_and_bus_rate_reject_before_open" time="0.001" /><testcase classname="tests.test_acquisition" name="test_wrong_device_id_does_not_write_even_during_cleanup" time="0.001" /><testcase classname="tests.test_acquisition" name="test_partial_record_survives_interrupt_or_error[failure0]" time="0.013" /><testcase classname="tests.test_acquisition" name="test_partial_record_survives_interrupt_or_error[failure1]" time="0.005" /><testcase classname="tests.test_acquisition" name="test_rate_mismatch_has_no_output" time="0.001" /><testcase classname="tests.test_calibration_acquisition" name="test_new_profile_records_directly_and_preserves_provenance" time="0.130" /><testcase classname="tests.test_calibration_acquisition" name="test_quality_flags_fail_and_journals_remain[gap]" time="0.008" /><testcase classname="tests.test_calibration_acquisition" name="test_quality_flags_fail_and_journals_remain[overrun]" time="0.008" /><testcase classname="tests.test_calibration_acquisition" name="test_quality_flags_fail_and_journals_remain[saturated]" time="0.009" /><testcase classname="tests.test_calibration_acquisition" name="test_ctrl_c_preserves_partial_journal_and_profile_status" time="0.007" /><testcase classname="tests.test_calibration_acquisition" name="test_sigterm_handler_restored_and_capture_preserved" time="0.006" /><testcase classname="tests.test_calibration_acquisition" name="test_preexisting_sidecar_is_never_overwritten" time="0.003" /><testcase classname="tests.test_calibration_acquisition" name="test_train_validation_rejects_altered_sidecar" time="0.020" /><testcase classname="tests.test_calibration_acquisition" name="test_training_checks_csv_flags_even_when_hashes_match[gap]" time="0.025" /><testcase classname="tests.test_calibration_acquisition" name="test_training_checks_csv_flags_even_when_hashes_match[overrun]" time="0.026" /><testcase classname="tests.test_calibration_acquisition" name="test_training_checks_csv_flags_even_when_hashes_match[saturated]" time="0.026" /><testcase classname="tests.test_calibration_acquisition" name="test_training_interrupt_updates_status_without_training" time="0.016" /><testcase classname="tests.test_calibration_acquisition" name="test_rejected_recording_never_becomes_training_ready" time="0.008" /><testcase classname="tests.test_calibration_acquisition" name="test_invalid_configuration_rejected[extra0]" time="0.001" /><testcase classname="tests.test_calibration_acquisition" name="test_invalid_configuration_rejected[extra1]" time="0.001" /><testcase classname="tests.test_calibration_acquisition" name="test_invalid_configuration_rejected[extra2]" time="0.001" /><testcase classname="tests.test_calibration_acquisition" name="test_invalid_configuration_rejected[extra3]" time="0.001" /><testcase classname="tests.test_calibration_acquisition" name="test_invalid_configuration_rejected[extra4]" time="0.001" /><testcase classname="tests.test_calibration_acquisition" name="test_acquisition_requires_explicit_state_and_mounting" time="0.002" /><testcase classname="tests.test_common_comparison.CommonComparisonTests" name="test_all_methods_get_identical_windows_and_frozen_thresholds" time="0.002" /><testcase classname="tests.test_common_comparison.CommonComparisonTests" name="test_changed_frozen_artifact_rejected" time="0.001" /><testcase classname="tests.test_common_comparison.CommonComparisonTests" name="test_duplicate_timestamp_rejected" time="0.001" /><testcase classname="tests.test_common_comparison.CommonComparisonTests" name="test_fifo_sidecar_requires_completed_matching_hashed_capture" time="0.002" /><testcase classname="tests.test_common_comparison.CommonComparisonTests" name="test_invalid_decision_reported_not_silently_excluded" time="0.001" /><testcase classname="tests.test_common_comparison.CommonComparisonTests" name="test_latency_journal_requires_measurement_end_and_retains_every_value" time="0.002" /><testcase classname="tests.test_common_comparison.CommonComparisonTests" name="test_legacy_measurement_chain_cannot_be_final_test" time="0.001" /><testcase classname="tests.test_common_comparison.CommonComparisonTests" name="test_mixed_state_recording_rejected" time="0.001" /><testcase classname="tests.test_common_comparison.CommonComparisonTests" name="test_no_anomaly_recall_and_f1_remain_undefined" time="0.001" /><testcase classname="tests.test_common_comparison.CommonComparisonTests" name="test_nonfinite_scores_never_normal" time="0.001" /><testcase classname="tests.test_common_comparison.CommonComparisonTests" name="test_nonfinite_sensor_values_rejected" time="0.001" /><testcase classname="tests.test_common_comparison.CommonComparisonTests" name="test_p99_only_given_validation_scores_not_test" time="0.001" /><testcase classname="tests.test_common_comparison.CommonComparisonTests" name="test_quality_flag_in_discarded_tail_still_rejects_recording" time="0.002" /><testcase classname="tests.test_common_comparison.CommonComparisonTests" name="test_renamed_duplicate_cannot_cross_train_test_boundary" time="0.002" /><testcase classname="tests.test_common_comparison.CommonComparisonTests" name="test_rms_is_over_all_standardized_axes" time="0.001" /><testcase classname="tests.test_common_comparison.CommonComparisonTests" name="test_scaling_matches_saved_standard_scaler_float32" time="0.003" /><testcase classname="tests.test_common_comparison.CommonComparisonTests" name="test_test_manifest_must_bind_frozen_bundle" time="0.001" /><testcase classname="tests.test_common_comparison.CommonComparisonTests" name="test_windowing_never_crosses_recording_and_reports_tail" time="0.001" /><testcase classname="tests.test_fan_controller" name="test_invalid_configuration_cannot_touch_backend[kwargs0]" time="0.001" /><testcase classname="tests.test_fan_controller" name="test_invalid_configuration_cannot_touch_backend[kwargs1]" time="0.000" /><testcase classname="tests.test_fan_controller" name="test_invalid_configuration_cannot_touch_backend[kwargs2]" time="0.000" /><testcase classname="tests.test_fan_controller" name="test_invalid_configuration_cannot_touch_backend[kwargs3]" time="0.000" /><testcase classname="tests.test_fan_controller" name="test_invalid_configuration_cannot_touch_backend[kwargs4]" time="0.000" /><testcase classname="tests.test_fan_controller" name="test_invalid_configuration_cannot_touch_backend[kwargs5]" time="0.001" /><testcase classname="tests.test_fan_controller" name="test_invalid_configuration_cannot_touch_backend[kwargs6]" time="0.000" /><testcase classname="tests.test_fan_controller" name="test_invalid_configuration_cannot_touch_backend[kwargs7]" time="0.000" /><testcase classname="tests.test_fan_controller" name="test_constant_intermediate_point_and_explicit_close" time="0.001" /><testcase classname="tests.test_fan_controller" name="test_zero_setting_does_not_claim_commanded_activity[kwargs0]" time="0.001" /><testcase classname="tests.test_fan_controller" name="test_zero_setting_does_not_claim_commanded_activity[kwargs1]" time="0.001" /><testcase classname="tests.test_fan_controller" name="test_busy_backend_aborts_without_fallback_or_stop" time="0.001" /><testcase classname="tests.test_fan_controller" name="test_failed_initial_setting_has_no_fallback" time="0.001" /><testcase classname="tests.test_fan_controller" name="test_failed_stop_keeps_state_unknown_and_releases_on_close" time="0.001" /><testcase classname="tests.test_fan_controller" name="test_development_shutdown_is_opt_in_and_never_restarts" time="0.001" /><testcase classname="tests.test_fan_controller" name="test_demo_always_stops_and_releases_after_capture[False]" time="0.001" /><testcase classname="tests.test_fan_controller" name="test_demo_always_stops_and_releases_after_capture[True]" time="0.001" /><testcase classname="tests.test_fan_controller" name="test_monitor_cleanup_reaches_fan_bus_and_journal_on_errors[True-False]" time="0.002" /><testcase classname="tests.test_fan_controller" name="test_monitor_cleanup_reaches_fan_bus_and_journal_on_errors[True-True]" time="0.002" /><testcase classname="tests.test_fan_controller" name="test_monitor_cleanup_reaches_fan_bus_and_journal_on_errors[False-True]" time="0.002" /><testcase classname="tests.test_fan_controller" name="test_shutdown_evidence_distinguishes_dry_run_failed_command_and_motion[True-False]" time="0.001" /><testcase classname="tests.test_fan_controller" name="test_shutdown_evidence_distinguishes_dry_run_failed_command_and_motion[False-False]" time="0.001" /><testcase classname="tests.test_fan_controller" name="test_shutdown_evidence_distinguishes_dry_run_failed_command_and_motion[False-True]" time="0.001" /><testcase classname="tests.test_fan_controller" name="test_demo_summary_describes_explicit_stop_policy_without_claiming_standstill" time="0.001" /><testcase classname="tests.test_fan_pwm" name="test_construction_does_not_access_hardware_or_files" time="0.001" /><testcase classname="tests.test_fan_pwm" name="test_context_and_readback_never_change_output" time="0.004" /><testcase classname="tests.test_fan_pwm" name="test_bad_preflight_never_partially_initializes[channel]" time="0.002" /><testcase classname="tests.test_fan_pwm" name="test_bad_preflight_never_partially_initializes[device]" time="0.002" /><testcase classname="tests.test_fan_pwm" name="test_bad_preflight_never_partially_initializes[compatible]" time="0.002" /><testcase classname="tests.test_fan_pwm" name="test_bad_preflight_never_partially_initializes[period]" time="0.002" /><testcase classname="tests.test_fan_pwm" name="test_bad_preflight_never_partially_initializes[polarity]" time="0.002" /><testcase classname="tests.test_fan_pwm" name="test_advisory_lock_blocks_competing_controller_and_releases" time="0.004" /><testcase classname="tests.test_fan_pwm" name="test_stale_digital_mux_is_lowered_before_restoring_pwm" time="0.006" /><testcase classname="tests.test_fan_pwm" name="test_running_hardware_pwm_changes_directly_without_intermediate_stop" time="0.004" /><testcase classname="tests.test_fan_pwm" name="test_disabled_pwm_is_zeroed_before_enabling" time="0.004" /><testcase classname="tests.test_fan_pwm" name="test_invalid_percent_never_writes[-0.1]" time="0.003" /><testcase classname="tests.test_fan_pwm" name="test_invalid_percent_never_writes[100.1]" time="0.003" /><testcase classname="tests.test_fan_pwm" name="test_invalid_percent_never_writes[nan]" time="0.003" /><testcase classname="tests.test_fan_pwm" name="test_invalid_percent_never_writes[inf]" time="0.003" /><testcase classname="tests.test_fan_pwm" name="test_invalid_percent_never_writes[-inf]" time="0.003" /><testcase classname="tests.test_fan_pwm" name="test_invalid_percent_never_writes[True]" time="0.003" /><testcase classname="tests.test_fan_pwm" name="test_invalid_percent_never_writes[bad]" time="0.003" /><testcase classname="tests.test_fan_pwm" name="test_failed_mux_readback_prevents_target_write" time="0.004" /><testcase classname="tests.test_fan_pwm" name="test_failed_low_command_prevents_all_sysfs_changes" time="0.004" /><testcase classname="tests.test_fan_pwm" name="test_failed_sysfs_readback_is_reported_without_claiming_success" time="0.004" /><testcase classname="tests.test_fan_pwm" name="test_verify_detects_external_change_without_repair[mux]" time="0.004" /><testcase classname="tests.test_fan_pwm" name="test_verify_detects_external_change_without_repair[duty]" time="0.005" /><testcase classname="tests.test_fan_pwm" name="test_verify_detects_external_change_without_repair[enable]" time="0.004" /><testcase classname="tests.test_fan_pwm" name="test_stop_is_enabled_zero_without_mechanical_state_claim" time="0.004" /><testcase classname="tests.test_fan_pwm" name="test_journal_keeps_command_intents_results_and_transaction_times" time="0.004" /><testcase classname="tests.test_fan_pwm" name="test_journal_intent_failure_prevents_hardware_write" time="0.003" /><testcase classname="tests.test_fan_pwm" name="test_context_error_releases_lock_without_implicit_stop" time="0.005" /><testcase classname="tests.test_fft_pilot" name="test_hann_amplitude_and_psd_of_known_sinusoid" time="0.001" /><testcase classname="tests.test_fft_pilot" name="test_fft_rejects_invalid_values" time="0.000" /><testcase classname="tests.test_fft_pilot" name="test_analyze_valid_recorder_flags_and_integer_time_precision[False]" time="0.715" /><testcase classname="tests.test_fft_pilot" name="test_analyze_valid_recorder_flags_and_integer_time_precision[false]" time="0.309" /><testcase classname="tests.test_fft_pilot" name="test_analyze_valid_recorder_flags_and_integer_time_precision[0]" time="0.306" /><testcase classname="tests.test_fft_pilot" name="test_analyze_rejects_unknown_missing_or_active_flag_before_output[-gap]" time="0.006" /><testcase classname="tests.test_fft_pilot" name="test_analyze_rejects_unknown_missing_or_active_flag_before_output[-overrun]" time="0.006" /><testcase classname="tests.test_fft_pilot" name="test_analyze_rejects_unknown_missing_or_active_flag_before_output[-saturated]" time="0.006" /><testcase classname="tests.test_fft_pilot" name="test_analyze_rejects_unknown_missing_or_active_flag_before_output[unknown-gap]" time="0.006" /><testcase classname="tests.test_fft_pilot" name="test_analyze_rejects_unknown_missing_or_active_flag_before_output[unknown-overrun]" time="0.006" /><testcase classname="tests.test_fft_pilot" name="test_analyze_rejects_unknown_missing_or_active_flag_before_output[unknown-saturated]" time="0.006" /><testcase classname="tests.test_fft_pilot" name="test_analyze_rejects_unknown_missing_or_active_flag_before_output[True-gap]" time="0.007" /><testcase classname="tests.test_fft_pilot" name="test_analyze_rejects_unknown_missing_or_active_flag_before_output[True-overrun]" time="0.006" /><testcase classname="tests.test_fft_pilot" name="test_analyze_rejects_unknown_missing_or_active_flag_before_output[True-saturated]" time="0.006" /><testcase classname="tests.test_fft_pilot" name="test_analyze_rejects_unknown_missing_or_active_flag_before_output[1-gap]" time="0.006" /><testcase classname="tests.test_fft_pilot" name="test_analyze_rejects_unknown_missing_or_active_flag_before_output[1-overrun]" time="0.006" /><testcase classname="tests.test_fft_pilot" name="test_analyze_rejects_unknown_missing_or_active_flag_before_output[1-saturated]" time="0.006" /><testcase classname="tests.test_fft_pilot" name="test_analyze_rejects_unknown_missing_or_active_flag_before_output[2-gap]" time="0.006" /><testcase classname="tests.test_fft_pilot" name="test_analyze_rejects_unknown_missing_or_active_flag_before_output[2-overrun]" time="0.007" /><testcase classname="tests.test_fft_pilot" name="test_analyze_rejects_unknown_missing_or_active_flag_before_output[2-saturated]" time="0.007" /><testcase classname="tests.test_fft_pilot" name="test_analyze_rejects_unknown_missing_or_active_flag_before_output[0.0-gap]" time="0.006" /><testcase classname="tests.test_fft_pilot" name="test_analyze_rejects_unknown_missing_or_active_flag_before_output[0.0-overrun]" time="0.006" /><testcase classname="tests.test_fft_pilot" name="test_analyze_rejects_unknown_missing_or_active_flag_before_output[0.0-saturated]" time="0.007" /><testcase classname="tests.test_fft_pilot" name="test_analyze_requires_each_consumed_column[x_g]" time="0.006" /><testcase classname="tests.test_fft_pilot" name="test_analyze_requires_each_consumed_column[y_g]" time="0.006" /><testcase classname="tests.test_fft_pilot" name="test_analyze_requires_each_consumed_column[z_g]" time="0.006" /><testcase classname="tests.test_fft_pilot" name="test_analyze_requires_each_consumed_column[host_monotonic_ns]" time="0.006" /><testcase classname="tests.test_fft_pilot" name="test_analyze_requires_each_consumed_column[sample_index]" time="0.006" /><testcase classname="tests.test_fft_pilot" name="test_analyze_requires_each_consumed_column[gap]" time="0.006" /><testcase classname="tests.test_fft_pilot" name="test_analyze_requires_each_consumed_column[overrun]" time="0.006" /><testcase classname="tests.test_fft_pilot" name="test_analyze_requires_each_consumed_column[saturated]" time="0.005" /><testcase classname="tests.test_fft_pilot" name="test_analyze_rejects_invalid_integer_fields[1.5-host_monotonic_ns]" time="0.007" /><testcase classname="tests.test_fft_pilot" name="test_analyze_rejects_invalid_integer_fields[1.5-sample_index]" time="0.007" /><testcase classname="tests.test_fft_pilot" name="test_analyze_rejects_invalid_integer_fields[nan-host_monotonic_ns]" time="0.007" /><testcase classname="tests.test_fft_pilot" name="test_analyze_rejects_invalid_integer_fields[nan-sample_index]" time="0.007" /><testcase classname="tests.test_fft_pilot" name="test_analyze_rejects_invalid_integer_fields[inf-host_monotonic_ns]" time="0.007" /><testcase classname="tests.test_fft_pilot" name="test_analyze_rejects_invalid_integer_fields[inf-sample_index]" time="0.007" /><testcase classname="tests.test_fft_pilot" name="test_analyze_rejects_invalid_integer_fields[-host_monotonic_ns]" time="0.007" /><testcase classname="tests.test_fft_pilot" name="test_analyze_rejects_invalid_integer_fields[-sample_index]" time="0.007" /><testcase classname="tests.test_fft_pilot" name="test_analyze_rejects_invalid_integer_fields[-1-host_monotonic_ns]" time="0.007" /><testcase classname="tests.test_fft_pilot" name="test_analyze_rejects_invalid_integer_fields[-1-sample_index]" time="0.007" /><testcase classname="tests.test_fft_pilot" name="test_analyze_rejects_invalid_integer_fields[9223372036854775808-host_monotonic_ns]" time="0.007" /><testcase classname="tests.test_fft_pilot" name="test_analyze_rejects_invalid_integer_fields[9223372036854775808-sample_index]" time="0.007" /><testcase classname="tests.test_fft_pilot" name="test_analyze_rejects_incomplete_sample_sequence[starts_at_one]" time="0.006" /><testcase classname="tests.test_fft_pilot" name="test_analyze_rejects_incomplete_sample_sequence[missing_index]" time="0.006" /><testcase classname="tests.test_fft_pilot" name="test_analyze_rejects_incomplete_sample_sequence[duplicate_index]" time="0.007" /><testcase classname="tests.test_fft_pilot" name="test_analyze_rejects_nonmonotonic_time_and_fifo_sized_gap[0]" time="0.007" /><testcase classname="tests.test_fft_pilot" name="test_analyze_rejects_nonmonotonic_time_and_fifo_sized_gap[-1]" time="0.007" /><testcase classname="tests.test_fft_pilot" name="test_analyze_rejects_nonmonotonic_time_and_fifo_sized_gap[160000000]" time="0.007" /><testcase classname="tests.test_fft_pilot" name="test_analyze_requires_matching_integer_manifest_sample_count[None]" time="0.006" /><testcase classname="tests.test_fft_pilot" name="test_analyze_requires_matching_integer_manifest_sample_count[16]" time="0.006" /><testcase classname="tests.test_fft_pilot" name="test_analyze_requires_matching_integer_manifest_sample_count[17.0]" time="0.007" /><testcase classname="tests.test_fft_pilot" name="test_analyze_requires_matching_integer_manifest_sample_count[True]" time="0.006" /><testcase classname="tests.test_fft_pilot" name="test_analyze_requires_matching_integer_manifest_sample_count[17]" time="0.006" /><testcase classname="tests.test_fft_pilot" name="test_analyze_requires_manifest_summary" time="0.006" /><testcase classname="tests.test_fft_pilot" name="test_analyze_requires_finite_positive_numeric_odr[None]" time="0.006" /><testcase classname="tests.test_fft_pilot" name="test_analyze_requires_finite_positive_numeric_odr[0]" time="0.006" /><testcase classname="tests.test_fft_pilot" name="test_analyze_requires_finite_positive_numeric_odr[-200]" time="0.006" /><testcase classname="tests.test_fft_pilot" name="test_analyze_requires_finite_positive_numeric_odr[nan]" time="0.006" /><testcase classname="tests.test_fft_pilot" name="test_analyze_requires_finite_positive_numeric_odr[inf]" time="0.006" /><testcase classname="tests.test_fft_pilot" name="test_analyze_requires_finite_positive_numeric_odr[True]" time="0.006" /><testcase classname="tests.test_fft_pilot" name="test_analyze_requires_finite_positive_numeric_odr[200]" time="0.006" /><testcase classname="tests.test_fft_pilot" name="test_analyze_requires_integer_segment_length[0]" time="0.005" /><testcase classname="tests.test_fft_pilot" name="test_analyze_requires_integer_segment_length[-4]" time="0.005" /><testcase classname="tests.test_fft_pilot" name="test_analyze_requires_integer_segment_length[3]" time="0.005" /><testcase classname="tests.test_fft_pilot" name="test_analyze_requires_integer_segment_length[16.0]" time="0.005" /><testcase classname="tests.test_fft_pilot" name="test_analyze_requires_integer_segment_length[True]" time="0.005" /><testcase classname="tests.test_fft_pilot" name="test_analyze_requires_integer_segment_length[16]" time="0.005" /><testcase classname="tests.test_fft_pilot" name="test_analyze_requires_integer_segment_length[nan]" time="0.005" /><testcase classname="tests.test_fft_pilot" name="test_analyze_rejects_nonfinite_segment_remainder_before_any_output[nan-x_g]" time="0.008" /><testcase classname="tests.test_fft_pilot" name="test_analyze_rejects_nonfinite_segment_remainder_before_any_output[nan-y_g]" time="0.007" /><testcase classname="tests.test_fft_pilot" name="test_analyze_rejects_nonfinite_segment_remainder_before_any_output[nan-z_g]" time="0.007" /><testcase classname="tests.test_fft_pilot" name="test_analyze_rejects_nonfinite_segment_remainder_before_any_output[inf-x_g]" time="0.007" /><testcase classname="tests.test_fft_pilot" name="test_analyze_rejects_nonfinite_segment_remainder_before_any_output[inf-y_g]" time="0.008" /><testcase classname="tests.test_fft_pilot" name="test_analyze_rejects_nonfinite_segment_remainder_before_any_output[inf-z_g]" time="0.007" /><testcase classname="tests.test_fft_pilot" name="test_analyze_rejects_nonfinite_segment_remainder_before_any_output[-inf-x_g]" time="0.008" /><testcase classname="tests.test_fft_pilot" name="test_analyze_rejects_nonfinite_segment_remainder_before_any_output[-inf-y_g]" time="0.008" /><testcase classname="tests.test_fft_pilot" name="test_analyze_rejects_nonfinite_segment_remainder_before_any_output[-inf-z_g]" time="0.008" /><testcase classname="tests.test_fft_pilot" name="test_analyze_rejects_nonfinite_segment_remainder_before_any_output[-x_g]" time="0.007" /><testcase classname="tests.test_fft_pilot" name="test_analyze_rejects_nonfinite_segment_remainder_before_any_output[-y_g]" time="0.007" /><testcase classname="tests.test_fft_pilot" name="test_analyze_rejects_nonfinite_segment_remainder_before_any_output[-z_g]" time="0.008" /><testcase classname="tests.test_live_pipeline.LivePipelineTests" name="test_cooperative_stop_saves_last_captured_sample" time="0.002" /><testcase classname="tests.test_live_pipeline.LivePipelineTests" name="test_empirical_budget_p99_and_missing_decisions_remain_separate" time="0.002" /><testcase classname="tests.test_live_pipeline.LivePipelineTests" name="test_fan_confirmation_safety_sequences" time="0.005" /><testcase classname="tests.test_live_pipeline.LivePipelineTests" name="test_fresh_decision_on_old_window_is_stale_in_actual_gui_update" time="0.014"><failure message="ImportError: Cannot load backend 'TkAgg' which requires the 'tk' interactive framework, as 'headless' is currently running">self = &lt;test_live_pipeline.LivePipelineTests testMethod=test_fresh_decision_on_old_window_is_stale_in_actual_gui_update&gt;
+
+    def test_fresh_decision_on_old_window_is_stale_in_actual_gui_update(self):
+&gt;       import live_tflite_gui as gui
+
+tests/test_live_pipeline.py:205: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+src/live_tflite_gui.py:35: in &lt;module&gt;
+    matplotlib.use("TkAgg")
+.venv/lib/python3.13/site-packages/matplotlib/__init__.py:1274: in use
+    plt.switch_backend(name)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+newbackend = 'TkAgg'
+
+    def switch_backend(newbackend: str) -&gt; None:
+        """
+        Set the pyplot backend.
+    
+        Switching to an interactive backend is possible only if no event loop for
+        another interactive backend has started.  Switching to and from
+        non-interactive backends is always possible.
+    
+        Parameters
+        ----------
+        newbackend : str
+            The case-insensitive name of the backend to use.
+    
+        """
+        global _backend_mod
+        # make sure the init is pulled up so we can assign to it later
+        import matplotlib.backends
+    
+        if newbackend is rcsetup._auto_backend_sentinel:
+            current_framework = cbook._get_running_interactive_framework()
+    
+            if (current_framework and
+                    (backend := backend_registry.backend_for_gui_framework(
+                        current_framework))):
+                candidates = [backend]
+            else:
+                candidates = []
+            candidates += [
+                "macosx", "qtagg", "gtk4agg", "gtk3agg", "tkagg", "wxagg"]
+    
+            # Don't try to fallback on the cairo-based backends as they each have
+            # an additional dependency (pycairo) over the agg-based backend, and
+            # are of worse quality.
+            for candidate in candidates:
+                try:
+                    switch_backend(candidate)
+                except ImportError:
+                    _log.debug("Skipping backend candidate %r as loading failed.",
+                               candidate, exc_info=True)
+                    continue
+                else:
+                    rcParamsOrig['backend'] = candidate
+                    return
+            else:
+                # Switching to Agg should always succeed; if it doesn't, let the
+                # exception propagate out.
+                switch_backend("agg")
+                rcParamsOrig["backend"] = "agg"
+                return
+        old_backend = rcParams._get('backend')  # get without triggering backend resolution
+    
+        module = backend_registry.load_backend_module(newbackend)
+        canvas_class = module.FigureCanvas
+    
+        required_framework = canvas_class.required_interactive_framework
+        if required_framework is not None:
+            current_framework = cbook._get_running_interactive_framework()
+            if (current_framework and required_framework
+                    and current_framework != required_framework):
+&gt;               raise ImportError(
+                    "Cannot load backend {!r} which requires the {!r} interactive "
+                    "framework, as {!r} is currently running".format(
+                        newbackend, required_framework, current_framework))
+E               ImportError: Cannot load backend 'TkAgg' which requires the 'tk' interactive framework, as 'headless' is currently running
+
+.venv/lib/python3.13/site-packages/matplotlib/pyplot.py:453: ImportError</failure></testcase><testcase classname="tests.test_live_pipeline.LivePipelineTests" name="test_full_queue_keeps_raw_and_partial_window" time="0.002" /><testcase classname="tests.test_live_pipeline.LivePipelineTests" name="test_full_session_logs_invalid_output_and_closes_bus" time="0.023" /><testcase classname="tests.test_live_pipeline.LivePipelineTests" name="test_gui_log_path_survives_measurement_overflow_and_opens_journal" time="0.002"><failure message="ImportError: Cannot load backend 'TkAgg' which requires the 'tk' interactive framework, as 'headless' is currently running">self = &lt;test_live_pipeline.LivePipelineTests testMethod=test_gui_log_path_survives_measurement_overflow_and_opens_journal&gt;
+
+    def test_gui_log_path_survives_measurement_overflow_and_opens_journal(self):
+&gt;       import live_tflite_gui as gui
+
+tests/test_live_pipeline.py:175: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+src/live_tflite_gui.py:35: in &lt;module&gt;
+    matplotlib.use("TkAgg")
+.venv/lib/python3.13/site-packages/matplotlib/__init__.py:1274: in use
+    plt.switch_backend(name)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+newbackend = 'TkAgg'
+
+    def switch_backend(newbackend: str) -&gt; None:
+        """
+        Set the pyplot backend.
+    
+        Switching to an interactive backend is possible only if no event loop for
+        another interactive backend has started.  Switching to and from
+        non-interactive backends is always possible.
+    
+        Parameters
+        ----------
+        newbackend : str
+            The case-insensitive name of the backend to use.
+    
+        """
+        global _backend_mod
+        # make sure the init is pulled up so we can assign to it later
+        import matplotlib.backends
+    
+        if newbackend is rcsetup._auto_backend_sentinel:
+            current_framework = cbook._get_running_interactive_framework()
+    
+            if (current_framework and
+                    (backend := backend_registry.backend_for_gui_framework(
+                        current_framework))):
+                candidates = [backend]
+            else:
+                candidates = []
+            candidates += [
+                "macosx", "qtagg", "gtk4agg", "gtk3agg", "tkagg", "wxagg"]
+    
+            # Don't try to fallback on the cairo-based backends as they each have
+            # an additional dependency (pycairo) over the agg-based backend, and
+            # are of worse quality.
+            for candidate in candidates:
+                try:
+                    switch_backend(candidate)
+                except ImportError:
+                    _log.debug("Skipping backend candidate %r as loading failed.",
+                               candidate, exc_info=True)
+                    continue
+                else:
+                    rcParamsOrig['backend'] = candidate
+                    return
+            else:
+                # Switching to Agg should always succeed; if it doesn't, let the
+                # exception propagate out.
+                switch_backend("agg")
+                rcParamsOrig["backend"] = "agg"
+                return
+        old_backend = rcParams._get('backend')  # get without triggering backend resolution
+    
+        module = backend_registry.load_backend_module(newbackend)
+        canvas_class = module.FigureCanvas
+    
+        required_framework = canvas_class.required_interactive_framework
+        if required_framework is not None:
+            current_framework = cbook._get_running_interactive_framework()
+            if (current_framework and required_framework
+                    and current_framework != required_framework):
+&gt;               raise ImportError(
+                    "Cannot load backend {!r} which requires the {!r} interactive "
+                    "framework, as {!r} is currently running".format(
+                        newbackend, required_framework, current_framework))
+E               ImportError: Cannot load backend 'TkAgg' which requires the 'tk' interactive framework, as 'headless' is currently running
+
+.venv/lib/python3.13/site-packages/matplotlib/pyplot.py:453: ImportError</failure></testcase><testcase classname="tests.test_live_pipeline.LivePipelineTests" name="test_gui_queue_is_bounded_and_preserves_terminal_error" time="0.002"><failure message="ImportError: Cannot load backend 'TkAgg' which requires the 'tk' interactive framework, as 'headless' is currently running">self = &lt;test_live_pipeline.LivePipelineTests testMethod=test_gui_queue_is_bounded_and_preserves_terminal_error&gt;
+
+    def test_gui_queue_is_bounded_and_preserves_terminal_error(self):
+&gt;       import live_tflite_gui as gui
+
+tests/test_live_pipeline.py:160: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+src/live_tflite_gui.py:35: in &lt;module&gt;
+    matplotlib.use("TkAgg")
+.venv/lib/python3.13/site-packages/matplotlib/__init__.py:1274: in use
+    plt.switch_backend(name)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+newbackend = 'TkAgg'
+
+    def switch_backend(newbackend: str) -&gt; None:
+        """
+        Set the pyplot backend.
+    
+        Switching to an interactive backend is possible only if no event loop for
+        another interactive backend has started.  Switching to and from
+        non-interactive backends is always possible.
+    
+        Parameters
+        ----------
+        newbackend : str
+            The case-insensitive name of the backend to use.
+    
+        """
+        global _backend_mod
+        # make sure the init is pulled up so we can assign to it later
+        import matplotlib.backends
+    
+        if newbackend is rcsetup._auto_backend_sentinel:
+            current_framework = cbook._get_running_interactive_framework()
+    
+            if (current_framework and
+                    (backend := backend_registry.backend_for_gui_framework(
+                        current_framework))):
+                candidates = [backend]
+            else:
+                candidates = []
+            candidates += [
+                "macosx", "qtagg", "gtk4agg", "gtk3agg", "tkagg", "wxagg"]
+    
+            # Don't try to fallback on the cairo-based backends as they each have
+            # an additional dependency (pycairo) over the agg-based backend, and
+            # are of worse quality.
+            for candidate in candidates:
+                try:
+                    switch_backend(candidate)
+                except ImportError:
+                    _log.debug("Skipping backend candidate %r as loading failed.",
+                               candidate, exc_info=True)
+                    continue
+                else:
+                    rcParamsOrig['backend'] = candidate
+                    return
+            else:
+                # Switching to Agg should always succeed; if it doesn't, let the
+                # exception propagate out.
+                switch_backend("agg")
+                rcParamsOrig["backend"] = "agg"
+                return
+        old_backend = rcParams._get('backend')  # get without triggering backend resolution
+    
+        module = backend_registry.load_backend_module(newbackend)
+        canvas_class = module.FigureCanvas
+    
+        required_framework = canvas_class.required_interactive_framework
+        if required_framework is not None:
+            current_framework = cbook._get_running_interactive_framework()
+            if (current_framework and required_framework
+                    and current_framework != required_framework):
+&gt;               raise ImportError(
+                    "Cannot load backend {!r} which requires the {!r} interactive "
+                    "framework, as {!r} is currently running".format(
+                        newbackend, required_framework, current_framework))
+E               ImportError: Cannot load backend 'TkAgg' which requires the 'tk' interactive framework, as 'headless' is currently running
+
+.venv/lib/python3.13/site-packages/matplotlib/pyplot.py:453: ImportError</failure></testcase><testcase classname="tests.test_live_pipeline.LivePipelineTests" name="test_invalid_scores_never_normal_and_stale_clock" time="0.001" /><testcase classname="tests.test_live_pipeline.LivePipelineTests" name="test_nonfinite_model_outputs_and_wrong_shape_are_rejected" time="0.002" /><testcase classname="tests.test_live_pipeline.LivePipelineTests" name="test_overflow_score_is_rejected" time="0.001" /><testcase classname="tests.test_live_pipeline.LivePipelineTests" name="test_reader_failure_preserves_previous_samples_and_surfaces" time="0.001" /><testcase classname="tests.test_live_pipeline.LivePipelineTests" name="test_sampling_mismatch_fails_before_sensor_access" time="0.001" /></testsuite></testsuites>

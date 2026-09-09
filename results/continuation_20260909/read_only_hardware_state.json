@@ -1,0 +1,47 @@
+{
+  "pin18": {
+    "command": [
+      "pinctrl",
+      "get",
+      "18-19"
+    ],
+    "returncode": 0,
+    "stdout": "18: op dl pd | lo // GPIO18 = output\n19: no    pd | -- // GPIO19 = none\n",
+    "stderr": ""
+  },
+  "open_devices": {
+    "command": [
+      "sudo",
+      "-n",
+      "fuser",
+      "-v",
+      "/dev/i2c-1",
+      "/dev/gpiochip0",
+      "/dev/gpiomem0"
+    ],
+    "returncode": 1,
+    "stdout": "",
+    "stderr": ""
+  },
+  "services": {
+    "command": [
+      "systemctl",
+      "list-units",
+      "--type=service",
+      "--state=running",
+      "--no-pager"
+    ],
+    "returncode": 0,
+    "stdout": "  UNIT                          LOAD   ACTIVE SUB     DESCRIPTION\n  accounts-daemon.service       loaded active running Accounts Service\n  avahi-daemon.service          loaded active running Avahi mDNS/DNS-SD Stack\n  bluetooth.service             loaded active running Bluetooth service\n  cron.service                  loaded active running Regular background program processing daemon\n  dbus.service                  loaded active running D-Bus System Message Bus\n  getty@tty1.service            loaded active running Getty on tty1\n  lightdm.service               loaded active running Light Display Manager\n  NetworkManager.service        loaded active running Network Manager\n  nfs-blkmap.service            loaded active running pNFS block layout mapping daemon\n  polkit.service                loaded active running Authorization Manager\n  rpcbind.service               loaded active running RPC bind portmap service\n  serial-getty@ttyAMA10.service loaded active running Serial Getty on ttyAMA10\n  ssh.service                   loaded active running OpenBSD Secure Shell server\n  systemd-journald.service      loaded active running Journal Service\n  systemd-logind.service        loaded active running User Login Management\n  systemd-timesyncd.service     loaded active running Network Time Synchronization\n  systemd-udevd.service         loaded active running Rule-based Manager for Device Events and Files\n  udisks2.service               loaded active running Disk Manager\n  user@1000.service             loaded active running User Manager for UID 1000\n  user@104.service              loaded active running User Manager for UID 104\n  wpa_supplicant.service        loaded active running WPA supplicant\n\nLegend: LOAD   \u2192 Reflects whether the unit definition was properly loaded.\n        ACTIVE \u2192 The high-level unit activation state, i.e. generalization of SUB.\n        SUB    \u2192 The low-level unit activation state, values depend on unit type.\n\n21 loaded units listed.\n",
+    "stderr": ""
+  },
+  "pwm_sysfs": {
+    "period": "40000",
+    "duty_cycle": "10000",
+    "enable": "1",
+    "polarity": "normal"
+  },
+  "timestamp_utc": "2026-09-09T11:39:05.532369+00:00",
+  "no_actuator_writes": true,
+  "earlier_observation_note": "First tool inspection: GPIO18 PWM0_CHAN2, period 40000 ns, duty 10000 ns, enable 1. After user interruption: GPIO18 output low, same PWM sysfs values. Origin/time of pin change unknown. No agent PWM/pin writes."
+}

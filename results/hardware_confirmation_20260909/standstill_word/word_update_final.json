@@ -1,0 +1,57 @@
+{
+  "completed_utc": "2026-09-09T20:17:31.589240+00:00",
+  "target": "docs/Akz_Masterarbeit_Bericht(3).docx",
+  "target_sha256": "b5fb09c6df5bd4020cc6786cd8057a19d6ebb513b780a56131f331e6722e8139",
+  "backup": "docs/backups/Akz_Masterarbeit_Bericht(3)_vor_stillstandsnachtrag_20260909.docx",
+  "backup_sha256": "6d24b0263be60b3845be4e994b66e1bd54f94ef17991caa4e232662e22977f72",
+  "original_source": "docs/backups/Akz_Masterarbeit_Bericht(3)_vor_implementierung_20260909.docx",
+  "original_source_sha256": "87fc9b2665e739cec9165c14d4cf074b7afd6f7721b4561b5f7ba5f28ea9d6b6",
+  "chapter_source": "docs/implementierung_20260909.md",
+  "chapter_source_sha256": "c9fcd2c75af89fabf48b57afdcde359b167ce2e2c38c8084aac3ded5bc3c852a",
+  "pdf": "results/hardware_confirmation_20260909/standstill_word/word_layout_final/report.pdf",
+  "pdf_sha256": "da28bd7c7acd28245c05d5632553af5d492550befa81c726bb2727aeb25931d1",
+  "pdf_page_count": 57,
+  "chapter_6_physical_pages": [
+    36,
+    49
+  ],
+  "chapter_6_displayed_pages": [
+    29,
+    42
+  ],
+  "render_passes": 2,
+  "rendered_bookmark_maps_equal": true,
+  "bookmarks_checked": 109,
+  "page_reference_cache_updates": 76,
+  "visual_inspection": {
+    "physical_pages": [
+      4,
+      5,
+      6,
+      36,
+      37,
+      38,
+      39,
+      40,
+      41,
+      42,
+      43,
+      44,
+      45,
+      46,
+      47,
+      48,
+      49
+    ],
+    "table_captions": "6-1 through 6-5",
+    "headings": "6.1 through 6.7",
+    "findings": "Contents and table list align with rendered pages. All 14 chapter 6 pages inspected; table cells, captions, numbering and text are legible and not clipped. Expanded table 6-5 appears intact with caption on page 39; standstill follow-up appears on page 40. No unintended empty page."
+  },
+  "structure_audit": "results/hardware_confirmation_20260909/standstill_word/docx_structure_check_final.json",
+  "chapter_1_to_5_xml_unchanged": true,
+  "original_math_objects_unchanged": 3,
+  "backup_guard_and_atomic_replacement": true,
+  "dedicated_libreoffice_session_terminated": true,
+  "soffice_process_absent": true,
+  "hardware_actions_in_document_work": false
+}

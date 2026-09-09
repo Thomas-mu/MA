@@ -1,0 +1,11 @@
+{
+  "recorded_utc": "2026-09-09T20:19:04.690067+00:00",
+  "word_sha256": "b5fb09c6df5bd4020cc6786cd8057a19d6ebb513b780a56131f331e6722e8139",
+  "word_verification": "results/hardware_confirmation_20260909/standstill_word/word_update_final.json",
+  "current_stage": "waiting_for_visual_running_confirmation",
+  "controller_exec_session": 94966,
+  "standstill_complete": true,
+  "operating_capture_started": false,
+  "hardware_points_resolved": true,
+  "models_trained": false
+}

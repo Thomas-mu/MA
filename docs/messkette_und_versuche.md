@@ -1,5 +1,15 @@
 # Messkette und nächste Versuche – 09.09.2026
 
+**Nachtrag zur Fortsetzung:** Die Hardware ist nach Nutzerangabe bereits aufgebaut
+und die Steuerung hat damit funktioniert. Der Lüfter war laut nachträglicher
+Angabe während des vorherigen Durchlaufs ausgeschaltet. Die nachstehenden
+historischen Pilotprotokolle werden dadurch nicht als kontrollierte
+Stillstandsreferenz umgedeutet. GPIO18 als Steueranschluss und der ADXL345 an einer Ecke des Lüfterrahmens
+sind inzwischen vom Nutzer bestätigt. Aktueller Prozess-/PWM-Befund und die
+angekündigte Messfolge stehen im Nachtrag zu
+[Arbeitsstand](arbeitsstand_20260909.md); die neue Reihenfolge steht im
+[kontrollierten Versuchsplan](versuchsplan_kontrolliert_20260909.md).
+
 ## Tatsächliche Plattform und Grenzen der Altaufnahmen
 
 Die Arbeiten laufen auf `edgepi`, Raspberry Pi 5 Model B Rev 1.0, ARM64,
@@ -119,20 +129,32 @@ Es werden weder Drehzahl noch Fehlerursache aus Spektralspitzen abgeleitet.
 SNR bleibt mangels kontrollierter Referenzmessung `null`; Aliasingfreiheit
 und ausreichendes Nutzband sind weiterhin offen.
 
-## Kontrollierte Pilotfolge – nächster notwendiger Eingriff
+## Ergänzte Softwareprüfung nach Hardwarebestätigung
 
-Die technische Arbeit erfordert zunächst diese Rückmeldung am Prüfstand:
+Die Eingangsprüfung von `fft_pilot.py` weist unbekannte oder leere Qualitätsflags,
+fehlende benötigte Spalten, ungültige Integer-Zeit-/Indexfolgen, nicht passende
+Manifest-Samplezahlen und ungültige ODR/Segmentlängen vor der Ausgabeanlage ab.
+Auch Achswerte in einem ungenutzten Segmentrest müssen endlich sein.
+Host-Nanosekunden werden ohne Float-Zwischenschritt eingelesen. 81 FFT-Tests
+verwenden ausschließlich künstliche Daten. Die gesamte Regression besteht mit
+192 Tests und zwölf Untertests; Beleg:
+`results/hardware_confirmation_20260909/software_tests_final.xml`.
+Der interaktive Grafikmodus der TFLite-GUI wird erst beim Start der Oberfläche
+aktiviert. Dies beseitigt den Importkonflikt mit einer zuvor gerenderten FFT.
+Eine sichtbare Live-GUI-Prüfung oder neue mechanische Messung folgt daraus nicht.
 
-1. Lüfter ausschalten und vollständigen Stillstand abwarten. Sensorbefestigung
-   und Montage unverändert lassen, während der Messung nicht berühren.
-2. Stillstand bestätigen und Befestigung/Montage beschreiben.
-3. Mitteilen, ob das Drehzahlsignal angeschlossen ist, an welchem GPIO und mit
-   welcher Beschaltung. Ohne diesen Nachweis bleibt Drehzahl ungemessen.
+## Kontrollierte Pilotfolge nach Hardwareklärung
 
-Erst nach dieser Bestätigung wird eine neue Stillstandsreferenz aufgenommen.
-Anschließend folgen separat bestätigte normale Betriebspunkte mit dokumentierter
-PWM und Drehzahl. Der Zustand wird zwischen Aufnahmen hergestellt und bestätigt;
-die unbekannte technische Probe wird nicht nachträglich als Stillstand gelabelt.
+GPIO18-Steuerung und ADXL345-Befestigung an einer Ecke des Lüfterrahmens sind
+bestätigte Randbedingungen. Vollständigen Stillstand nach 0-%-Vorgabe hat der
+Nutzer visuell bestätigt. Diese Hardwarepunkte sind keine offenen Aufbauaufgaben.
+Der aktuelle Auftrag betrifft Softwareprüfung und Wordbearbeitung. Die weitere
+Messfolge ist im kontrollierten Versuchsplan vorbereitet: angekündigte 30-s-
+Stillstandsreferenz, danach Bereitschaftsbestätigung und 25-%-Betriebspilot mit
+festgelegter Einlaufphase. Die Steuerbefehle übernimmt der Agent. Während jeder
+Aufnahme bleiben Montage und Vorgabe unverändert. Die Drehzahl bleibt ohne
+unabhängigen Messnachweis ungemessen. Die unbekannte technische Probe wird nicht
+nachträglich als Stillstand gelabelt.
 
 Für die Pilotfolge werden vor der abschließenden Testserie folgende Kriterien
 festgelegt und im Versuchsprotokoll eingefroren: betrachtetes Frequenzband,
@@ -165,8 +187,8 @@ Vorbereiteter Plan (Entwurf, noch kein durchgeführter Versuch):
 
 Dauer und konkrete Anomaliezustände werden nach der Pilotprüfung festgelegt.
 Der Entwurf autorisiert keine improvisierte Veränderung am rotierenden Lüfter.
-Die neue Testserie wird erst nach bestätigtem Aufbau und festgelegtem Protokoll
-begonnen. Nach Zustandsübergängen wird eine festgelegte Einschwingzeit verworfen,
+Die neue Testserie verwendet den bestätigten Aufbau und beginnt erst nach
+Pilotprüfung und Festlegung des Testprotokolls. Nach Zustandsübergängen wird eine festgelegte Einschwingzeit verworfen,
 danach beginnt eine neue Datei. Physischer Zustand gilt für die gesamte Datei.
 Zur Kontrolle von Zeitdrift soll N0 nach N1 erneut aufgenommen werden.
 

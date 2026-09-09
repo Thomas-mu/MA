@@ -1,0 +1,15 @@
+{
+  "checked_at_utc": "2026-09-09T11:58:23.454589+00:00",
+  "preserved_original_files": 293,
+  "changed_original_files": [],
+  "docx_backup_sha256": "87fc9b2665e739cec9165c14d4cf074b7afd6f7721b4561b5f7ba5f28ea9d6b6",
+  "updated_docx_sha256": "e3ecba898af615b8c6975801e97573e61cb68668b9a3a86305506db6297ac614",
+  "software_tests": {
+    "passed": 61,
+    "subtests_passed": 12
+  },
+  "sensor_and_actuator_source_changed": false,
+  "controlled_measurements_started": false,
+  "new_model_training_started": false,
+  "awaiting": "Operator confirmation of complete standstill and unchanged mounting; mounting details, PWM setting and shutdown method, optional tachometer wiring."
+}

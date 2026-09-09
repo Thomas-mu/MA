@@ -1,0 +1,56 @@
+{
+  "time_utc": "2026-09-09T19:01:24.531256+00:00",
+  "host_monotonic_ns": 2817111171110,
+  "boot_id": "e0dace22-4649-4e75-b4b9-8a26b59f18c1",
+  "kind": "final_software_and_read_only_verification",
+  "state": {
+    "gpio_bcm": 18,
+    "physical_pin": 12,
+    "pwm_chip": 0,
+    "pwm_channel": 2,
+    "pwm_path": "/sys/class/pwm/pwmchip0/pwm2",
+    "rp1_device_path": "/sys/devices/platform/axi/1000120000.pcie/1f00098000.pwm",
+    "pwm_configuration": {
+      "period_ns": 40000,
+      "duty_cycle_ns": 0,
+      "enable": 1,
+      "polarity": "normal",
+      "configured_frequency_hz": 25000.0,
+      "configured_duty_percent": 0.0
+    },
+    "pin_readback": {
+      "mux": "a3",
+      "function": "PWM0_CHAN2",
+      "instantaneous_level": "lo",
+      "raw": "18: a3    pd | lo // GPIO18 = PWM0_CHAN2"
+    },
+    "pwm_mux_confirmed": true,
+    "electrical_waveform_measured": false,
+    "measured_rpm": null,
+    "mechanical_state": "not_measured"
+  },
+  "matching_control_or_capture_processes": [],
+  "device_holders_check": {
+    "returncode": 1,
+    "stdout": "",
+    "stderr": ""
+  },
+  "tests_passed": 113,
+  "subtests_passed": 12,
+  "test_report": "results/fan_control_20260909/software_tests_final_v5.xml",
+  "source_sha256": {
+    "src/fan_pwm.py": "9ea26cf53849df32ca427d392bc7e8df202e4729255a24ac09a601bc0717b933",
+    "src/live_monitor.py": "ad80c57cb11024d283b018067ff2fedd224f73cba28790c7f0afa94ee72d5cd6",
+    "src/live_tflite_fan_control.py": "72ffe0b8f4e4a6a8e98171fbecc44ab04814149244345939ae595cad9f92cd46",
+    "tests/test_fan_pwm.py": "78df7591ef6589e826e16d9c4d9b58bbd1f1e4d8db5f75050c1c82a048557c71",
+    "tests/test_fan_controller.py": "3a6237ba90ddfecd26d8cb1e5c7563edcf8becab60855ae0e49435486979790b"
+  },
+  "protected_file_count": 293,
+  "changed_protected_files": [],
+  "hardware_writes_during_software_work": false,
+  "new_sensor_recordings": 0,
+  "new_training_runs": 0,
+  "visual_standstill": "previously_confirmed_by_user",
+  "mounting_and_connector_assignment": "still_pending",
+  "next_requested_pwm_percent": 25
+}

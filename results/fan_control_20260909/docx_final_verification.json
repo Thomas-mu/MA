@@ -1,0 +1,51 @@
+{
+  "completed_utc": "2026-09-09T19:02:21.762428+00:00",
+  "target": "docs/Akz_Masterarbeit_Bericht(3).docx",
+  "target_sha256": "a1f5c1e52ccd0c0babb64d3cc4035e70323fb1fe564d960f1cf6bbb6cf78c995",
+  "backup": "docs/backups/Akz_Masterarbeit_Bericht(3)_vor_steuerungsuebernahme_20260909.docx",
+  "backup_sha256": "e3ecba898af615b8c6975801e97573e61cb68668b9a3a86305506db6297ac614",
+  "original_backup_sha256": "87fc9b2665e739cec9165c14d4cf074b7afd6f7721b4561b5f7ba5f28ea9d6b6",
+  "chapter_source_sha256": "ca00b124a3f7e532ddfbc15ff544bedfe8869b4767da7092825e37c1f24e8922",
+  "pdf": "results/fan_control_20260909/word_layout_final_v2/report.pdf",
+  "pdf_sha256": "46c367dafd8bab1bedcaeaeb6233e3b0ee9b443139e1b769c395dbfecfaf545f",
+  "pdf_pages": 55,
+  "chapter_6_numbered_pages": [
+    29,
+    40
+  ],
+  "headings_6_1_through_6_7_present": true,
+  "captions_6_1_through_6_5_present": true,
+  "table_numbered_pages": [
+    30,
+    32,
+    33,
+    35,
+    38
+  ],
+  "repeated_render_bookmark_maps_identical": true,
+  "bookmark_count": 109,
+  "page_reference_fields_cached": 76,
+  "visual_pdf_pages_checked": [
+    4,
+    5,
+    6,
+    36,
+    37,
+    38,
+    39,
+    40,
+    41,
+    42,
+    43,
+    44,
+    45,
+    46,
+    47
+  ],
+  "visual_findings": "Alle fünf neuen Tabellen vollständig auf einzelnen Seiten; Zelltexte, Überschriften, Nummerierung und Verzeichnisse ohne sichtbares Abschneiden oder Überlappen. Mehr Weißraum vor ganzseitig zusammengehaltenen Tabellen akzeptiert.",
+  "rendering_note": "LibreOffice 25.2.3.2, Calibri durch Carlito ersetzt; PDF-Schriften eingebettet. Word kann abhängig von installierten Schriften und Version anders umbrechen; native Felder bleiben aktualisierbar.",
+  "structure_audit": "results/fan_control_20260909/docx_structure_check_final_v2.json",
+  "zip_integrity_and_chapters_1_to_5_preserved": true,
+  "source_markdown_edited_by_this_agent": false,
+  "target_replaced_atomically_after_hash_guard": true
+}

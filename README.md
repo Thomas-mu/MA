@@ -6,8 +6,19 @@ Verglichen werden RMS, Isolation Forest und ein Float32-TFLite-Autoencoder.
 Der aktuelle dokumentierte Arbeitsstand steht in
 [docs/arbeitsstand_20260909.md](docs/arbeitsstand_20260909.md).
 Die Masterarbeit [docs/Akz_Masterarbeit_Bericht(3).docx](docs/Akz_Masterarbeit_Bericht(3).docx)
-ist die Anforderungsquelle und wurde nicht verändert.
+enthält die Anforderungsgrundlage in Kapitel 1–5 und das ergänzte
+Implementierungskapitel 6. Die Ausgangskopie liegt unter `docs/backups/`.
+Der [kontrollierte Versuchsplan](docs/versuchsplan_kontrolliert_20260909.md)
+trennt die noch ausstehenden Pilot-, Trainings-/Validierungs- und Testaufnahmen.
+Der Stillstand nach softwareseitiger 0-%-Vorgabe ist visuell bestätigt.
+GPIO18 ist als Steueranschluss bestätigt; der ADXL345 ist mit vorgesehener
+I²C-Beschaltung an einer Ecke des Lüfterrahmens befestigt. Diese Hardwarepunkte
+sind geklärt. Die neue 30-s-Stillstandsaufnahme ist abgeschlossen; der Betriebspunkt 25 %
+ist eingestellt. Die Betriebsaufnahme wartet auf die Sichtbestätigung des
+tatsächlichen Laufs. Eine unabhängige Drehzahlmessung liegt nicht vor. Die nachträgliche Ausschaltangabe macht frühere
+Aufnahmen nicht zu kontrollierten Stillstandsreferenzen.
 
+- [Softwaresteuerung, Pinzuordnung und ausgeführte Befehle](docs/steuerungsuebernahme_20260909.md)
 - [Anforderungen, vorhandene Belege und Widersprüche](docs/anforderungsabgleich_20260909.md)
 - [Messkette, FFT-Pilot und ausstehende Versuche](docs/messkette_und_versuche.md)
 - [Gemeinsamer Methodenvergleich und Ressourcenmessung](docs/gemeinsamer_vergleich.md)
@@ -37,3 +48,12 @@ Neue Ergebnisse liegen getrennt unter `results/verification_20260909/` und
 `results/common_comparison_20260909/`. Vorhandene Dateien werden nicht überschrieben.
 Unabhängige Testgüte, kontrollierter Betriebspunktwechsel, ausreichende Nutzbandbreite,
 SNR, Drehzahlmessung und GUI-Zusatzlast sind noch nicht abschließend nachgewiesen.
+
+Die Lüfterprogramme verwenden `src/fan_pwm.py` für den vorhandenen RP1-Hardware-
+PWM-Kanal (`pwmchip0/pwm2`, GPIO18 = physischer Pin 12, Funktion `a3`, 25 kHz).
+Das Modul prüft Zuordnung und Rücklesung und hält eine gemeinsame Prozesssperre.
+`FanPWM` öffnet/schließt ohne Ausgangsänderung; seine Stellmethoden sind explizit.
+Der Entwicklungsadapter `FanController` setzt dagegen beim Start seine Vorgabe
+und fordert beim Beenden 0 % bei weiterhin aktivierter PWM an. Er ersetzt weder
+die Sichtbestätigung des Stillstands noch eine Drehzahlmessung. Die Entwicklungs-
+abschaltung wird für den Methodenvergleich nicht gestartet.

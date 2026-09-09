@@ -30,10 +30,6 @@ from typing import Any
 os.environ.setdefault("TF_CPP_MIN_LOG_LEVEL", "2")
 os.environ.setdefault("MPLCONFIGDIR", "/tmp/masterarbeit_matplotlib")
 
-import matplotlib
-
-matplotlib.use("TkAgg")
-
 import tkinter as tk
 from tkinter import ttk
 
@@ -790,6 +786,10 @@ def parse_args() -> argparse.Namespace:
 
 
 def main() -> None:
+    # Select the interactive backend only when actually starting this GUI.
+    import matplotlib
+    matplotlib.use("TkAgg")
+
     arguments = parse_args()
     configuration = resolve_live_configuration(arguments.profile)
     metadata = read_profile_display_metadata(configuration)

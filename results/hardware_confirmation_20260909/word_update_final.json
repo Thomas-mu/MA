@@ -1,0 +1,55 @@
+{
+  "completed_utc": "2026-09-09T20:07:40.363129+00:00",
+  "target": "docs/Akz_Masterarbeit_Bericht(3).docx",
+  "target_sha256": "6d24b0263be60b3845be4e994b66e1bd54f94ef17991caa4e232662e22977f72",
+  "backup": "docs/backups/Akz_Masterarbeit_Bericht(3)_vor_hardwarebestaetigung_20260909.docx",
+  "backup_sha256": "a1f5c1e52ccd0c0babb64d3cc4035e70323fb1fe564d960f1cf6bbb6cf78c995",
+  "original_source": "docs/backups/Akz_Masterarbeit_Bericht(3)_vor_implementierung_20260909.docx",
+  "original_source_sha256": "87fc9b2665e739cec9165c14d4cf074b7afd6f7721b4561b5f7ba5f28ea9d6b6",
+  "chapter_source": "docs/implementierung_20260909.md",
+  "chapter_source_sha256": "7075e9d4259ffa3aef6564e5d1bfccc165638eacd759ca50eefebf1b4cdc25e9",
+  "pdf": "results/hardware_confirmation_20260909/word_layout_final/report.pdf",
+  "pdf_sha256": "e64994b7c286eaeb484a2806531578fdfc4157e857835ab4ebca3e6e39ff7dee",
+  "pdf_page_count": 56,
+  "chapter_6_physical_pages": [
+    36,
+    48
+  ],
+  "chapter_6_displayed_pages": [
+    29,
+    41
+  ],
+  "render_passes": 2,
+  "rendered_bookmark_maps_equal": true,
+  "bookmarks_checked": 109,
+  "page_reference_cache_updates": 76,
+  "visual_inspection": {
+    "physical_pages": [
+      4,
+      5,
+      6,
+      36,
+      37,
+      38,
+      39,
+      40,
+      41,
+      42,
+      43,
+      44,
+      45,
+      46,
+      47,
+      48
+    ],
+    "table_captions": "6-1 through 6-5",
+    "headings": "6.1 through 6.7",
+    "findings": "Contents and table list align with rendered page references. All chapter 6 pages inspected; table cells, captions, numbering and text are legible and not clipped. Tables remain intact with their captions. Last chapter page contains five continuation lines; no unintended empty page."
+  },
+  "structure_audit": "results/hardware_confirmation_20260909/docx_structure_check_final.json",
+  "chapter_1_to_5_xml_unchanged": true,
+  "original_math_objects_unchanged": 3,
+  "backup_guard_and_atomic_replacement": true,
+  "dedicated_libreoffice_session_terminated": true,
+  "hardware_actions_in_document_work": false
+}
