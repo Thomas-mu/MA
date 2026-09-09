@@ -1,0 +1,25 @@
+{
+  "scope": "Explorative Entwicklung und Ressourcen-Replay auf Raspberry Pi 5; keine abschließende Qualitäts- oder Hypothesenbestätigung",
+  "latest_resource_run": "fan_25_resources_10s_bounded/summary.json",
+  "latest_resource_run_code_sha256": "aff8075a676f55484faae53a3170f312091062f21e1ead2b7cdd05d93266b6a7",
+  "legacy_calibration_bundles": ["fan_25/bundle.json", "fan_50/bundle.json"],
+  "measurement_chain_of_legacy_profiles": "unverified_legacy",
+  "independent_anomaly_test_performed": false,
+  "frozen_second_normal_operating_point_test_performed": false,
+  "gui_overhead_measured": false,
+  "runs": {
+    "fan_25_resources": {
+      "status": "superseded_pilot_preserved",
+      "limitation": "Nur 1000 Entscheidungen je Methode; RMS/AE unter 0,1s, CPU-Prozent nicht belastbar"
+    },
+    "fan_25_resources_10s": {
+      "status": "superseded_pilot_preserved",
+      "limitation": "Mindestens 10s je Methode, aber wachsende Latenzliste verursacht methodenabhängigen zusätzlichen RSS; nicht als reiner Modell-/Bibliotheksspeicher vergleichen"
+    },
+    "fan_25_resources_10s_bounded": {
+      "status": "latest_software_resource_pilot",
+      "limitation": "Voller Durchsatz ohne Sensor/GUI/Live-Pacing; CPU enthält 64KiB-gepuffertes Latenzjournal und RSS-Sampling. Exakte empirische P99 über alle Entscheidungen nach Messende. Feste Methodenreihenfolge, nur ein Durchlauf, kein thermischer Kontrollversuch"
+    }
+  },
+  "documentation": "../../docs/gemeinsamer_vergleich.md"
+}

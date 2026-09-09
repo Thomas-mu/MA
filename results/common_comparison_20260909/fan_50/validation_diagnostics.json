@@ -1,0 +1,233 @@
+{
+  "evidence_scope": "Kalibrierungsdiagnose; keine unabhängige Testgüte/Hypothesenbestätigung",
+  "runtime": {
+    "rms": "NumPy RMS (standardisiertes H×3-Fenster)",
+    "isolation_forest": "scikit-learn IsolationForest.score_samples",
+    "tflite_autoencoder": "ai_edge_litert.Interpreter (Float32 TFLite)"
+  },
+  "metrics": {
+    "rms": {
+      "all": {
+        "attempted_windows": 234,
+        "invalid_windows": 0,
+        "valid_decision_fraction": 1.0,
+        "metrics_on_valid_decisions_only": {
+          "windows": 234,
+          "normal_windows": 234,
+          "anomaly_windows": 0,
+          "normal_fraction": 1.0,
+          "anomaly_fraction": 0.0,
+          "tn": 231,
+          "fp": 3,
+          "fn": 0,
+          "tp": 0,
+          "accuracy": 0.9871794871794872,
+          "precision": 0.0,
+          "recall": null,
+          "specificity": 0.9871794871794872,
+          "false_positive_rate": 0.01282051282051282,
+          "false_negative_rate": null,
+          "f1": null,
+          "undefined_metric_representation": "null (Nenner 0 oder keine positive Klasse für F1)"
+        }
+      },
+      "recording:/home/malik/masterarbeit-edge-ai/profiles/fan_50/data/raw/normal_008.csv": {
+        "attempted_windows": 234,
+        "invalid_windows": 0,
+        "valid_decision_fraction": 1.0,
+        "metrics_on_valid_decisions_only": {
+          "windows": 234,
+          "normal_windows": 234,
+          "anomaly_windows": 0,
+          "normal_fraction": 1.0,
+          "anomaly_fraction": 0.0,
+          "tn": 231,
+          "fp": 3,
+          "fn": 0,
+          "tp": 0,
+          "accuracy": 0.9871794871794872,
+          "precision": 0.0,
+          "recall": null,
+          "specificity": 0.9871794871794872,
+          "false_positive_rate": 0.01282051282051282,
+          "false_negative_rate": null,
+          "f1": null,
+          "undefined_metric_representation": "null (Nenner 0 oder keine positive Klasse für F1)"
+        }
+      },
+      "state:normal_calibration": {
+        "attempted_windows": 234,
+        "invalid_windows": 0,
+        "valid_decision_fraction": 1.0,
+        "metrics_on_valid_decisions_only": {
+          "windows": 234,
+          "normal_windows": 234,
+          "anomaly_windows": 0,
+          "normal_fraction": 1.0,
+          "anomaly_fraction": 0.0,
+          "tn": 231,
+          "fp": 3,
+          "fn": 0,
+          "tp": 0,
+          "accuracy": 0.9871794871794872,
+          "precision": 0.0,
+          "recall": null,
+          "specificity": 0.9871794871794872,
+          "false_positive_rate": 0.01282051282051282,
+          "false_negative_rate": null,
+          "f1": null,
+          "undefined_metric_representation": "null (Nenner 0 oder keine positive Klasse für F1)"
+        }
+      }
+    },
+    "isolation_forest": {
+      "all": {
+        "attempted_windows": 234,
+        "invalid_windows": 0,
+        "valid_decision_fraction": 1.0,
+        "metrics_on_valid_decisions_only": {
+          "windows": 234,
+          "normal_windows": 234,
+          "anomaly_windows": 0,
+          "normal_fraction": 1.0,
+          "anomaly_fraction": 0.0,
+          "tn": 231,
+          "fp": 3,
+          "fn": 0,
+          "tp": 0,
+          "accuracy": 0.9871794871794872,
+          "precision": 0.0,
+          "recall": null,
+          "specificity": 0.9871794871794872,
+          "false_positive_rate": 0.01282051282051282,
+          "false_negative_rate": null,
+          "f1": null,
+          "undefined_metric_representation": "null (Nenner 0 oder keine positive Klasse für F1)"
+        }
+      },
+      "recording:/home/malik/masterarbeit-edge-ai/profiles/fan_50/data/raw/normal_008.csv": {
+        "attempted_windows": 234,
+        "invalid_windows": 0,
+        "valid_decision_fraction": 1.0,
+        "metrics_on_valid_decisions_only": {
+          "windows": 234,
+          "normal_windows": 234,
+          "anomaly_windows": 0,
+          "normal_fraction": 1.0,
+          "anomaly_fraction": 0.0,
+          "tn": 231,
+          "fp": 3,
+          "fn": 0,
+          "tp": 0,
+          "accuracy": 0.9871794871794872,
+          "precision": 0.0,
+          "recall": null,
+          "specificity": 0.9871794871794872,
+          "false_positive_rate": 0.01282051282051282,
+          "false_negative_rate": null,
+          "f1": null,
+          "undefined_metric_representation": "null (Nenner 0 oder keine positive Klasse für F1)"
+        }
+      },
+      "state:normal_calibration": {
+        "attempted_windows": 234,
+        "invalid_windows": 0,
+        "valid_decision_fraction": 1.0,
+        "metrics_on_valid_decisions_only": {
+          "windows": 234,
+          "normal_windows": 234,
+          "anomaly_windows": 0,
+          "normal_fraction": 1.0,
+          "anomaly_fraction": 0.0,
+          "tn": 231,
+          "fp": 3,
+          "fn": 0,
+          "tp": 0,
+          "accuracy": 0.9871794871794872,
+          "precision": 0.0,
+          "recall": null,
+          "specificity": 0.9871794871794872,
+          "false_positive_rate": 0.01282051282051282,
+          "false_negative_rate": null,
+          "f1": null,
+          "undefined_metric_representation": "null (Nenner 0 oder keine positive Klasse für F1)"
+        }
+      }
+    },
+    "tflite_autoencoder": {
+      "all": {
+        "attempted_windows": 234,
+        "invalid_windows": 0,
+        "valid_decision_fraction": 1.0,
+        "metrics_on_valid_decisions_only": {
+          "windows": 234,
+          "normal_windows": 234,
+          "anomaly_windows": 0,
+          "normal_fraction": 1.0,
+          "anomaly_fraction": 0.0,
+          "tn": 231,
+          "fp": 3,
+          "fn": 0,
+          "tp": 0,
+          "accuracy": 0.9871794871794872,
+          "precision": 0.0,
+          "recall": null,
+          "specificity": 0.9871794871794872,
+          "false_positive_rate": 0.01282051282051282,
+          "false_negative_rate": null,
+          "f1": null,
+          "undefined_metric_representation": "null (Nenner 0 oder keine positive Klasse für F1)"
+        }
+      },
+      "recording:/home/malik/masterarbeit-edge-ai/profiles/fan_50/data/raw/normal_008.csv": {
+        "attempted_windows": 234,
+        "invalid_windows": 0,
+        "valid_decision_fraction": 1.0,
+        "metrics_on_valid_decisions_only": {
+          "windows": 234,
+          "normal_windows": 234,
+          "anomaly_windows": 0,
+          "normal_fraction": 1.0,
+          "anomaly_fraction": 0.0,
+          "tn": 231,
+          "fp": 3,
+          "fn": 0,
+          "tp": 0,
+          "accuracy": 0.9871794871794872,
+          "precision": 0.0,
+          "recall": null,
+          "specificity": 0.9871794871794872,
+          "false_positive_rate": 0.01282051282051282,
+          "false_negative_rate": null,
+          "f1": null,
+          "undefined_metric_representation": "null (Nenner 0 oder keine positive Klasse für F1)"
+        }
+      },
+      "state:normal_calibration": {
+        "attempted_windows": 234,
+        "invalid_windows": 0,
+        "valid_decision_fraction": 1.0,
+        "metrics_on_valid_decisions_only": {
+          "windows": 234,
+          "normal_windows": 234,
+          "anomaly_windows": 0,
+          "normal_fraction": 1.0,
+          "anomaly_fraction": 0.0,
+          "tn": 231,
+          "fp": 3,
+          "fn": 0,
+          "tp": 0,
+          "accuracy": 0.9871794871794872,
+          "precision": 0.0,
+          "recall": null,
+          "specificity": 0.9871794871794872,
+          "false_positive_rate": 0.01282051282051282,
+          "false_negative_rate": null,
+          "f1": null,
+          "undefined_metric_representation": "null (Nenner 0 oder keine positive Klasse für F1)"
+        }
+      }
+    }
+  },
+  "bundle_sha256": "c77b058434bd367e75047d2d90258351a510ac2883ceb2af795054c8da560bdf"
+}

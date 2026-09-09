@@ -1,0 +1,86 @@
+{
+  "input": "/home/malik/masterarbeit-edge-ai/results/verification_20260909/sensor_fifo_200hz_probe.csv",
+  "csv_sha256": "88c3dcd3306429077ec2c00598bbb3092a9a4d26b22f5984660d98a85cff58df",
+  "metadata_sha256": "d5e9935fe9ddf59f701f73f7d8c988d076de1b6a90b329adf733a823d4720151",
+  "code": {
+    "git_commit": "12bd10d01fe504041b11aac5fd60a6a65883a13d",
+    "git_status": "M src/adxl345.py\n M src/calibrate_and_train.py\n M src/collect_real_data.py\n M src/live_monitor.py\n M src/live_tflite_fan_control.py\n M src/live_tflite_gui.py\n M src/live_tflite_monitor.py\n?? docs/anforderungsabgleich_20260909.md\n?? docs/audit_20260909/\n?? results/common_comparison_20260909/\n?? results/verification_20260909/\n?? src/common_comparison.py\n?? src/fft_pilot.py\n?? src/live_pipeline.py\n?? tests/",
+    "source_sha256": {
+      "src/adxl345.py": "2b0a215d9434feda94e087cef2afe929ada10807f0e2673543320c2b39c0ab46",
+      "src/analyze_clean_comparison.py": "31e729c25ff2c7fa2b29ca8afb548f02d1383c78176832c7adf9d8c221ac8fb0",
+      "src/calibrate_and_train.py": "12d74dd6ca40157361fa345b329948f8df8cf18c0cf1bd8aeb05d6e4e1d1c0a2",
+      "src/collect_real_data.py": "863f21eea89543f49abddc12da833fbdf571efd72fe2f351246b924bfa5a9e70",
+      "src/common_comparison.py": "2b162a17ed1336b9c1fc45f082091af2c2c9f84695b09aefeee955be86b217ec",
+      "src/comparison_metrics.py": "35ee590dea896dd65782307f4772be3e7b26cf9e0afc2837f689991244563d03",
+      "src/convert_model.py": "593390839bac132e827b9e8f564ce53c2d0a214fe7b4de528e83f0419c034a6c",
+      "src/evaluate.py": "821cda8b16c26304d6bc4a1fdc993f7761171d70754d163189327f331a088eb7",
+      "src/evaluate_clean_autoencoder.py": "8f64994d365472e148b370d69fccb18255b9091ed149977379d954bb5556b42d",
+      "src/fft_pilot.py": "1b101549e4e2d2ff53d86ef8aac252059bd14dffa9541189f05cb3e9340c8099",
+      "src/inference_pi.py": "5c0a88bade42a35fc9b91939ccadf6f9be13d0db64b24b657397532e5cb42cda",
+      "src/live_monitor.py": "4e585a9b746d2805de0c40a05f6cfe666c35437c4f9d8a61b7f25798fd991764",
+      "src/live_pipeline.py": "598d2b23d1727812bbd2caf3b272d076a52fd965cf06d9e37d951e22cb77ef40",
+      "src/live_tflite_fan_control.py": "35dd4ad5e9da208b5c423587d02aab7dc5cfe262b67cde63cb4f40163c2f23f9",
+      "src/live_tflite_gui.py": "18fd9680cadc59330f3518b45268767fb15a966f7241e4ccc466bfcd94b12357",
+      "src/live_tflite_monitor.py": "886153f13a7912d9359976175668c9e50565ca3b902672efaccacc41264d4d60",
+      "src/measure_resources.py": "026c8c90b79eec97f2c7858d499dac545805b17cdf4ea00c76e8fd96993928c4",
+      "src/prepare_clean_comparison_data.py": "3d30cc9dfb6978ec78bc30be8421cdbb5601eec17202d26a9f79976d34dc4539",
+      "src/prepare_comparison_data.py": "9b5837e2e2893d3497a157503163d1b3e86b317a65b6bc63547818bead9d9d70",
+      "src/preprocessing.py": "b2f925642a94d44de6696a731c2f0c70fd04730aacec25f59af7acee188b242b",
+      "src/preprocessing_real.py": "07c0388fb62dc70cebf3d33658ded45031241f02e70f487da14dda63ee5712bb",
+      "src/simulate_data.py": "f8e6a8c44c497ae9e0485c885de4ba566afea1899a588fb12d9f5a1ec2460643",
+      "src/train_autoencoder.py": "317ceadaac88bd9ff27c431523ac47b5b1388501a908a38252201b22c8a2bf23",
+      "src/train_baseline.py": "d8fc057cad7f463ec5093de9c9e11b3b9606e692eac68cb7d0975b8205bb703e",
+      "src/train_clean_autoencoder.py": "0805df66e17b04d1a518b90fd0d38781ce4cd0ed229cb188d3655f56843dcd17",
+      "src/train_clean_isolation_forest.py": "34a118d32905a42bc4109f25d2aa5f5b35c849fd267ff618a8dbf9c3753ba247",
+      "src/train_isolation_forest_comparison.py": "e886f3fa74a8bec8047f7d128f9ef485e742550948c33efdcfaf8aeb0b730757",
+      "src/visualize_results.py": "1281612f807064120c6932ad94960df0f8ba18b2df2837e630055af09112d263"
+    }
+  },
+  "purpose": "pilot_only",
+  "state": "technical_probe_unconfirmed",
+  "configured_odr_hz": 200,
+  "host_observed_fifo_rate_hz": 206.491307770002,
+  "segment_samples": 512,
+  "overlap_samples": 256,
+  "segment_seconds": 2.4795232570771715,
+  "frequency_bin_spacing_hz": 0.4033033354882852,
+  "window": "symmetric Hann",
+  "detrend": "remove each segment mean",
+  "amplitude": "abs(rfft)/sum(window); double positive bins except Nyquist",
+  "psd": "abs(rfft)^2/(fs*sum(window^2)); one-sided; arithmetic segment mean",
+  "axes": {
+    "x_g": {
+      "mean_g": -0.1443881213686249,
+      "ac_rms_g": 0.006444192136133131,
+      "largest_psd_bin_hz": 23.794896793808824,
+      "mean_amplitude_at_peak_g": 0.0008454228126441906,
+      "psd_high_band_fraction": 0.17777896639508384,
+      "segments": 11
+    },
+    "y_g": {
+      "mean_g": 0.019813460296965745,
+      "ac_rms_g": 0.005946757222829465,
+      "largest_psd_bin_hz": 0.8066066709765704,
+      "mean_amplitude_at_peak_g": 0.000810772274097689,
+      "psd_high_band_fraction": 0.1749235942625494,
+      "segments": 11
+    },
+    "z_g": {
+      "mean_g": -1.0942118463524855,
+      "ac_rms_g": 0.009199708700142813,
+      "largest_psd_bin_hz": 32.26426683906281,
+      "mean_amplitude_at_peak_g": 0.0012026549574247498,
+      "psd_high_band_fraction": 0.18274129543772652,
+      "segments": 11
+    }
+  },
+  "snr_db": null,
+  "limitations": [
+    "State/mounting may be unconfirmed: no physical attribution of peaks.",
+    "Frequency axis uses observed FIFO throughput, assuming stable sensor clock and no undetected loss; no hardware sample timestamps.",
+    "No verified useful bandwidth, anti-alias margin or SNR from this recording alone.",
+    "High-band power is diagnostic, not proof of absence/presence of aliasing.",
+    "No reference noise recording: SNR remains unmeasured.",
+    "No changes to models, thresholds or final parameters based on test data."
+  ]
+}

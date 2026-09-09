@@ -1,0 +1,2860 @@
+diff --git a/README.md b/README.md
+index e69de29..58ebcc5 100644
+--- a/README.md
++++ b/README.md
+@@ -0,0 +1,39 @@
++# KI-basierte Anomalieerkennung auf ressourcenbeschränkter Edge-Hardware
++
++Bestehender Prüfstand: Raspberry Pi 5, ADXL345, PWM-Lüfter.
++Verglichen werden RMS, Isolation Forest und ein Float32-TFLite-Autoencoder.
++
++Der aktuelle dokumentierte Arbeitsstand steht in
++[docs/arbeitsstand_20260909.md](docs/arbeitsstand_20260909.md).
++Die Masterarbeit [docs/Akz_Masterarbeit_Bericht(3).docx](docs/Akz_Masterarbeit_Bericht(3).docx)
++ist die Anforderungsquelle und wurde nicht verändert.
++
++- [Anforderungen, vorhandene Belege und Widersprüche](docs/anforderungsabgleich_20260909.md)
++- [Messkette, FFT-Pilot und ausstehende Versuche](docs/messkette_und_versuche.md)
++- [Gemeinsamer Methodenvergleich und Ressourcenmessung](docs/gemeinsamer_vergleich.md)
++- [Neue Kalibrierungsaufnahmen](docs/kalibrierung.md)
++- [Livebetrieb, Startbefehle und Messdefinitionen](docs/livebetrieb.md)
++
++Auf dem geprüften Pi enthält `.venv` alle für die Softwareprüfungen benötigten
++Pakete sowie den eigenständigen LiteRT-Interpreter. `.venv_tf` enthält TensorFlow,
++aber zum Prüfzeitpunkt weder pytest noch den eigenständigen LiteRT-Interpreter.
++Die vollständige Systemaufnahme liegt in
++`results/verification_20260909/environment_initial.json`.
++
++```bash
++.venv/bin/python -m pytest -q tests
++.venv/bin/python src/live_tflite_monitor.py --profile fan_25 --self-test
++.venv/bin/python src/calibrate_and_train.py --profile neuer_fifo_pilot --dry-run
++```
++
++Diese drei Befehle greifen nicht auf Sensor oder Lüfter zu. Echte Aufnahmen
++benötigen einen bestätigten und dokumentierten Prüfstandzustand. Die alte Angabe
++500 Hz bezeichnet Softwareabfragen und belegt keine 500 neuen Sensorwerte/s.
++Neue Erfassung verwendet standardmäßig 200-Hz-ODR und FIFO; vorhandene Profile
++sind dafür nicht stillschweigend neu kalibriert. Manuelle Schwellen und eine
++bewusst zugelassene Messratenabweichung bleiben gekennzeichnete Entwicklungsmodi.
++
++Neue Ergebnisse liegen getrennt unter `results/verification_20260909/` und
++`results/common_comparison_20260909/`. Vorhandene Dateien werden nicht überschrieben.
++Unabhängige Testgüte, kontrollierter Betriebspunktwechsel, ausreichende Nutzbandbreite,
++SNR, Drehzahlmessung und GUI-Zusatzlast sind noch nicht abschließend nachgewiesen.
+diff --git a/src/adxl345.py b/src/adxl345.py
+index fa84a49..ecec59c 100644
+--- a/src/adxl345.py
++++ b/src/adxl345.py
+@@ -1,65 +1,235 @@
+-from smbus2 import SMBus
++"""ADXL345: explizite Konfiguration und Frischwerte aus dem Hardware-FIFO.
++
++Zeitstempel sind Host-Lesezeiten, keine vom Sensor gemessenen Zeitstempel.
++Gleiche XYZ-Tupel können verschiedene, quantisierte Sensorwerte sein.
++"""
++from dataclasses import dataclass
++import fcntl
++from pathlib import Path
++import struct
++import time
+ 
++from smbus2 import SMBus
+ 
+ I2C_BUS_NUMBER = 1
+ ADXL345_ADDRESS = 0x53
+-
+-# Register-Adressen laut ADXL345-Datenblatt
+ REGISTER_DEVID = 0x00
++REGISTER_BW_RATE = 0x2C
+ REGISTER_POWER_CTL = 0x2D
++REGISTER_INT_ENABLE = 0x2E
++REGISTER_INT_SOURCE = 0x30
+ REGISTER_DATA_FORMAT = 0x31
+ REGISTER_DATAX0 = 0x32
+-
+-# Skalierungsfaktor im Standardmodus (Full Resolution, +-2g)
++REGISTER_FIFO_CTL = 0x38
++REGISTER_FIFO_STATUS = 0x39
+ GRAVITY_SCALE_FACTOR = 0.0039
+-
+ EXPECTED_DEVICE_ID = 0xE5
+-
+-
+-def connect(bus_number: int = I2C_BUS_NUMBER) -> SMBus:
+-    """Öffnet den I2C-Bus und versetzt den ADXL345 in den Messmodus."""
+-
+-    bus = SMBus(bus_number)
+-
+-    device_id = bus.read_byte_data(ADXL345_ADDRESS, REGISTER_DEVID)
+-
+-    if device_id != EXPECTED_DEVICE_ID:
+-        raise RuntimeError(
+-            f"Unerwartete Device-ID: 0x{device_id:02X} "
+-            f"(erwartet: 0x{EXPECTED_DEVICE_ID:02X}). "
+-            "Ist wirklich ein ADXL345 an Adresse "
+-            f"0x{ADXL345_ADDRESS:02X} angeschlossen?"
+-        )
+-
+-    # Messmodus aktivieren (Standardzustand nach dem Einschalten ist Standby)
++ODR_CODES = {25: 0x08, 50: 0x09, 100: 0x0A, 200: 0x0B, 400: 0x0C, 800: 0x0D}
++RANGE_CODES = {2: 0, 4: 1, 8: 2, 16: 3}
++
++
++@dataclass(frozen=True)
++class FreshSample:
++    xyz_g: tuple[float, float, float]
++    monotonic_ns: int
++    sample_index: int
++    sensor_time_estimate_s: float
++    fifo_depth: int
++    overrun: bool
++    gap: bool
++    saturated: bool
++    read_duration_ns: int
++
++
++def configured_i2c_clock_hz(bus_number=1):
++    """Device-Tree-Konfiguration; keine elektrische Messung der SCL-Frequenz."""
++    for root in (Path('/sys/bus/i2c/devices'), Path('/sys/class/i2c-dev')):
++        for suffix in ('of_node/clock-frequency', 'device/of_node/clock-frequency'):
++            p = root / f'i2c-{bus_number}' / suffix
++            if p.exists():
++                return int.from_bytes(p.read_bytes(), 'big')
++    return None
++
++
++class SensorConnection:
++    """Ein Besitzer pro Bus/Adresse; Registerzustand beim Schließen restaurieren."""
++    def __init__(self, bus, lock, original):
++        self.bus, self.lock, self.original = bus, lock, original
++        self.closed = False
++
++    def __getattr__(self, name):
++        return getattr(self.bus, name)
++
++    def close(self):
++        if self.closed:
++            return
++        self.closed = True
++        try:
++            self.bus.write_byte_data(ADXL345_ADDRESS, REGISTER_POWER_CTL, 0)
++            self.bus.write_byte_data(ADXL345_ADDRESS, REGISTER_FIFO_CTL, 0)
++            for reg, value in self.original.items():
++                if reg != REGISTER_POWER_CTL:
++                    self.bus.write_byte_data(ADXL345_ADDRESS, reg, value)
++            self.bus.write_byte_data(ADXL345_ADDRESS, REGISTER_POWER_CTL,
++                                     self.original[REGISTER_POWER_CTL])
++        finally:
++            try:
++                self.bus.close()
++            finally:
++                self.lock.close()
++
++    def __enter__(self):
++        return self
++
++    def __exit__(self, *args):
++        self.close()
++
++
++def configure_sensor(bus, *, odr_hz=200, range_g=2, fifo=True):
++    if odr_hz not in ODR_CODES:
++        raise ValueError(f'ADXL345 besitzt keine ODR {odr_hz} Hz; erlaubt: {list(ODR_CODES)}')
++    if range_g not in RANGE_CODES:
++        raise ValueError('Messbereich muss 2, 4, 8 oder 16 g sein')
++    if bus.read_byte_data(ADXL345_ADDRESS, REGISTER_DEVID) != EXPECTED_DEVICE_ID:
++        raise RuntimeError('Unerwartete ADXL345-Gerätekennung an Adresse 0x53')
++    expected = {
++        REGISTER_BW_RATE: ODR_CODES[odr_hz],
++        REGISTER_DATA_FORMAT: 0x08 | RANGE_CODES[range_g],
++        REGISTER_INT_ENABLE: 0,
++        REGISTER_FIFO_CTL: 0x80 | 16 if fifo else 0,
++        REGISTER_POWER_CTL: 0x08,
++    }
++    bus.write_byte_data(ADXL345_ADDRESS, REGISTER_POWER_CTL, 0)
++    bus.write_byte_data(ADXL345_ADDRESS, REGISTER_FIFO_CTL, 0)
++    for reg, value in expected.items():
++        bus.write_byte_data(ADXL345_ADDRESS, reg, value)
++    readback = {reg: bus.read_byte_data(ADXL345_ADDRESS, reg) for reg in expected}
++    if readback != expected:
++        raise RuntimeError(f'ADXL345-Konfiguration nicht bestätigt: {readback}')
++    bus._edge_config = {
++        'model': 'ADXL345', 'odr_hz': odr_hz, 'range_g': range_g,
++        'full_resolution': True, 'scale_g_per_lsb': GRAVITY_SCALE_FACTOR,
++        'acquisition_mode': 'fifo_stream' if fifo else 'bypass',
++        'register_readback': {hex(r): hex(v) for r, v in readback.items()},
++        'timestamp_source': 'host_monotonic_read_completion',
++        'sensor_time_estimate': 'sample_index / nominal ODR; not measured sensor time',
++        'lost_samples_exact': None,
++    }
++    bus._edge_index = 0
++    bus._edge_last_ns = None
++
++
++def connect(bus_number=I2C_BUS_NUMBER, *, odr_hz=200, range_g=2, fifo=True):
++    """Default 200 Hz bei 100-kHz-I²C; keine implizite 500-Hz-Erfassung."""
++    if odr_hz not in ODR_CODES:
++        raise ValueError(f'Keine ADXL345-ODR {odr_hz} Hz; zulässig: {list(ODR_CODES)}')
++    clock = configured_i2c_clock_hz(bus_number)
++    max_odr = min(800, (clock or 100000) / 500)
++    if odr_hz > max_odr:
++        raise ValueError(f'{odr_hz} Hz über I²C-Empfehlung ({max_odr:g} Hz; Bus {clock} Hz)')
++    lock = open(f'/tmp/edge-ai-adxl345-{bus_number}-53.lock', 'a')
++    try:
++        fcntl.flock(lock, fcntl.LOCK_EX | fcntl.LOCK_NB)
++    except BaseException:
++        lock.close()
++        raise RuntimeError('ADXL345 wird bereits von einem Erfassungsprozess verwendet')
++    bus = None
++    connection = None
++    try:
++        bus = SMBus(bus_number)
++        # Ein fremdes Gerät darf auch im Fehler-Cleanup keine Registerwrites erhalten.
++        if bus.read_byte_data(ADXL345_ADDRESS, REGISTER_DEVID) != EXPECTED_DEVICE_ID:
++            raise RuntimeError('Unerwartete ADXL345-Gerätekennung an Adresse 0x53')
++        regs = [REGISTER_BW_RATE, REGISTER_POWER_CTL, REGISTER_INT_ENABLE,
++                REGISTER_DATA_FORMAT, REGISTER_FIFO_CTL]
++        original = {r: bus.read_byte_data(ADXL345_ADDRESS, r) for r in regs}
++        connection = SensorConnection(bus, lock, original)
++        configure_sensor(connection, odr_hz=odr_hz, range_g=range_g, fifo=fifo)
++        connection._edge_config.update(bus_number=bus_number,
++                                      i2c_clock_configured_hz=clock)
++        return connection
++    except BaseException:
++        if connection is not None:
++            connection.close()
++        else:
++            if bus is not None:
++                bus.close()
++            lock.close()
++        raise
++
++
++def sensor_configuration(bus):
++    return dict(bus._edge_config)
++
++
++def reset_fifo(bus):
++    """Neue Aufnahmegrenze: noch nicht erfasste Vorlaufwerte bewusst verwerfen."""
++    if bus._edge_config['acquisition_mode'] != 'fifo_stream':
++        raise ValueError('FIFO-Reset benötigt Stream-Modus')
++    bus.write_byte_data(ADXL345_ADDRESS, REGISTER_POWER_CTL, 0)
++    bus.write_byte_data(ADXL345_ADDRESS, REGISTER_FIFO_CTL, 0)
++    # Alten Overrun/Data-ready-Zustand vor der neuen Aufnahmegrenze löschen.
++    _read_raw(bus)
++    bus.read_byte_data(ADXL345_ADDRESS, REGISTER_INT_SOURCE)
++    bus.write_byte_data(ADXL345_ADDRESS, REGISTER_FIFO_CTL, 0x90)
+     bus.write_byte_data(ADXL345_ADDRESS, REGISTER_POWER_CTL, 0x08)
+-
+-    return bus
+-
+-
+-def read_acceleration_g(bus: SMBus) -> tuple[float, float, float]:
+-    """Liest die aktuelle Beschleunigung in g für x, y und z."""
+-
+-    raw_bytes = bus.read_i2c_block_data(
+-        ADXL345_ADDRESS,
+-        REGISTER_DATAX0,
+-        6,
+-    )
+-
+-    def to_signed_16bit(low_byte: int, high_byte: int) -> int:
+-        value = (high_byte << 8) | low_byte
+-
+-        if value >= 0x8000:
+-            value -= 0x10000
+-
+-        return value
+-
+-    x_raw = to_signed_16bit(raw_bytes[0], raw_bytes[1])
+-    y_raw = to_signed_16bit(raw_bytes[2], raw_bytes[3])
+-    z_raw = to_signed_16bit(raw_bytes[4], raw_bytes[5])
+-
+-    return (
+-        x_raw * GRAVITY_SCALE_FACTOR,
+-        y_raw * GRAVITY_SCALE_FACTOR,
+-        z_raw * GRAVITY_SCALE_FACTOR,
+-    )
++    bus._edge_index = 0
++    bus._edge_last_ns = None
++
++
++def _read_raw(bus):
++    data = bus.read_i2c_block_data(ADXL345_ADDRESS, REGISTER_DATAX0, 6)
++    if len(data) != 6:
++        raise IOError(f'Unvollständiger ADXL345-Burst: {len(data)} statt 6 Bytes')
++    return struct.unpack('<hhh', bytes(data))
++
++
++def read_acceleration_g(bus):
++    """Kompatibilitätszugriff ohne Frischwertgarantie; neu: read_fresh_sample."""
++    return tuple(v * GRAVITY_SCALE_FACTOR for v in _read_raw(bus))
++
++
++def read_fresh_sample(bus, stop_event=None, timeout_s=1.0):
++    """FIFO-Status belegt neues XYZ-Sample, Überlauf keine exakte Verlustzahl.
++
++    INT_SOURCE vor Datenburst prüfen (Auslesen löscht Overrun). Voller FIFO
++    ist Verlustverdacht. I²C sichert die nötigen 5 µs zwischen FIFO-Bursts.
++    """
++    cfg = sensor_configuration(bus)
++    if cfg['acquisition_mode'] != 'fifo_stream':
++        raise ValueError('Frischwerterfassung benötigt FIFO-Stream-Modus')
++    if timeout_s <= 0:
++        raise ValueError('timeout_s muss positiv sein')
++    deadline = time.monotonic() + timeout_s
++    while time.monotonic() < deadline:
++        if stop_event is not None and stop_event.is_set():
++            return None
++        begin = time.monotonic_ns()
++        source = bus.read_byte_data(ADXL345_ADDRESS, REGISTER_INT_SOURCE)
++        count = bus.read_byte_data(ADXL345_ADDRESS, REGISTER_FIFO_STATUS) & 0x3F
++        if count > 32:
++            raise IOError(f'Ungültiger FIFO-Füllstand: {count}')
++        if count:
++            raw = _read_raw(bus)
++            end = time.monotonic_ns()
++            overrun = bool(source & 1) or count == 32
++            late = (bus._edge_last_ns is not None and
++                    (end - bus._edge_last_ns) / 1e9 > 32 / cfg['odr_hz'])
++            rail = 256 * cfg['range_g']
++            sample = FreshSample(
++                xyz_g=tuple(v * GRAVITY_SCALE_FACTOR for v in raw),
++                monotonic_ns=end, sample_index=bus._edge_index,
++                sensor_time_estimate_s=bus._edge_index / cfg['odr_hz'],
++                fifo_depth=count, overrun=overrun, gap=overrun or late,
++                saturated=any(v <= -rail + 1 or v >= rail - 2 for v in raw),
++                read_duration_ns=end - begin,
++            )
++            bus._edge_index += 1
++            bus._edge_last_ns = end
++            return sample
++        delay = min(0.001, 0.2 / cfg['odr_hz'])
++        if stop_event is not None:
++            stop_event.wait(delay)
++        else:
++            time.sleep(delay)
++    raise TimeoutError(f'Kein neuer ADXL345-FIFO-Wert innerhalb {timeout_s:g} s')
+diff --git a/src/calibrate_and_train.py b/src/calibrate_and_train.py
+index 4399efb..df37a30 100644
+--- a/src/calibrate_and_train.py
++++ b/src/calibrate_and_train.py
+@@ -17,9 +17,11 @@ import argparse
+ import hashlib
+ import importlib.metadata
+ import json
++import math
+ import os
+ import platform
+ import re
++import signal
+ import sys
+ import tempfile
+ import time
+@@ -51,7 +53,7 @@ EXPECTED_WINDOW_SHAPE = (WINDOW_SIZE, len(AXIS_COLUMNS))
+ DEFAULT_RECORDINGS = 4
+ DEFAULT_VALIDATION_RECORDINGS = 1
+ DEFAULT_SECONDS = 60.0
+-DEFAULT_SAMPLING_RATE_HZ = 500
++DEFAULT_SAMPLING_RATE_HZ = 200
+ RANDOM_SEED = 42
+ MAX_EPOCHS = 100
+ BATCH_SIZE = 32
+@@ -174,6 +176,7 @@ def collect_system_information() -> dict[str, Any]:
+             "joblib",
+             "psutil",
+             "smbus2",
++            "ai-edge-litert",
+         )
+     }
+     return information
+@@ -187,6 +190,13 @@ def calibration_configuration(arguments: argparse.Namespace) -> dict[str, Any]:
+         "validation_recordings": arguments.validation_recordings,
+         "seconds_per_recording": arguments.seconds,
+         "sampling_rate_hz": arguments.sampling_rate,
++        "acquisition_schema_version": 1,
++        "sensor_range_g": arguments.range_g,
++        "state": arguments.state,
++        "mounting": arguments.mounting,
++        "fan_pwm_setpoint_percent": arguments.fan_pwm_setpoint,
++        "rpm_measured": arguments.rpm_measured,
++        "rpm_method": arguments.rpm_method,
+         "window_size": WINDOW_SIZE,
+         "step_size": STEP_SIZE,
+         "window_overlap_samples": 0,
+@@ -197,6 +207,7 @@ def calibration_configuration(arguments: argparse.Namespace) -> dict[str, Any]:
+         "early_stopping_patience": EARLY_STOPPING_PATIENCE,
+         "early_stopping_min_delta": EARLY_STOPPING_MIN_DELTA,
+         "threshold_percentile": THRESHOLD_PERCENTILE,
++        "threshold_quantile_method": "linear",
+         "normal_data_only": True,
+     }
+ 
+@@ -248,13 +259,16 @@ def initialize_profile(
+             "axes": AXIS_COLUMNS,
+             "access_module": "src/adxl345.py",
+             "connect_function": "connect",
+-            "read_function": "read_acceleration_g",
+-            "software_sampling_rate_hz": configuration["sampling_rate_hz"],
++            "read_function": "read_fresh_sample",
++            "requested_odr_hz": configuration["sampling_rate_hz"],
++            "requested_range_g": configuration["sensor_range_g"],
+             "internal_odr_note": (
+-                "The reused ADXL345 access does not explicitly configure the "
+-                "sensor BW_RATE/ODR register; measured CSV timestamps document "
+-                "the software polling rate."
++                "ODR/range/full-resolution/FIFO are explicitly configured and "
++                "read back; each row is a fresh FIFO sample. Host read timestamps "
++                "are distinct from nominal sensor time estimates."
+             ),
++            "quality_status": "pending_acquisition_checks",
++            "open_evidence": ["usable_bandwidth", "signal_to_noise_ratio", "pilot_acceptance_limits"],
+         },
+         "configuration": configuration,
+         "data": {
+@@ -278,7 +292,7 @@ def update_profile_status(
+     profile: dict[str, Any],
+     status: str,
+     *,
+-    error: Exception | None = None,
++    error: BaseException | None = None,
+ ) -> None:
+     profile["status"] = status
+     profile["updated_at"] = timestamp_now()
+@@ -311,89 +325,133 @@ def measured_sampling_rate(dataframe: pd.DataFrame) -> float:
+     return float((len(timestamps) - 1) / duration) if duration > 0 else 0.0
+ 
+ 
++def validate_acquisition_quality(
++    dataframe: pd.DataFrame,
++    path: Path,
++    configuration: dict[str, Any],
++    report: dict[str, Any] | None = None,
++) -> None:
++    """Reject invalid calibration recordings without deleting their journals."""
++    fresh_schema = configuration.get("acquisition_schema_version") == 1
++    required = {"timestamp_s", *AXIS_COLUMNS, "label", "anomaly_type"}
++    if fresh_schema:
++        required.update({"host_monotonic_ns", "sample_index", "gap", "overrun", "saturated"})
++    missing = required - set(dataframe.columns)
++    if missing or len(dataframe) < WINDOW_SIZE:
++        raise ValueError(f"{path.name}: fehlende Spalten {sorted(missing)} oder weniger als {WINDOW_SIZE} Messwerte.")
++    values = dataframe[["timestamp_s", *AXIS_COLUMNS, "label"]].to_numpy(dtype=np.float64)
++    if not np.all(np.isfinite(values)) or np.any(dataframe["label"].to_numpy(dtype=np.float64) != 0):
++        raise ValueError(f"{path.name}: ungültige oder nicht ausschließlich normale Messwerte.")
++    if np.any(np.diff(values[:, 0]) <= 0):
++        raise ValueError(f"{path.name}: Zeitstempel müssen strikt steigen.")
++    expected_state = configuration.get("state", "normal")
++    if set(dataframe["anomaly_type"].astype(str)) != {expected_state}:
++        raise ValueError(f"{path.name}: Zustandskennzeichnung stimmt nicht mit {expected_state!r} überein.")
++    for flag in ("gap", "overrun", "saturated"):
++        if flag in dataframe:
++            normalized = dataframe[flag].astype(str).str.lower()
++            if not normalized.isin(["false", "0", "0.0"]).all():
++                raise ValueError(f"{path.name}: Qualitätsflag {flag} gesetzt oder ungültig; Aufnahme bleibt erhalten.")
++    if not fresh_schema:
++        return
++    host = dataframe["host_monotonic_ns"].to_numpy(dtype=np.int64)
++    indices = dataframe["sample_index"].to_numpy(dtype=np.float64)
++    if np.any(np.diff(host) <= 0) or not np.all(np.isfinite(indices)) or indices[0] != 0 or np.any(np.diff(indices) != 1):
++        raise ValueError(f"{path.name}: ungültige Hostzeit oder lückenhafte Sampleindizes.")
++    if not isinstance(report, dict) or report.get("status") != "completed":
++        raise ValueError(f"{path.name}: vollständiges Aufnahmejournal fehlt oder Lauf wurde abgebrochen.")
++    cfg = report.get("sensor", {})
++    if (cfg.get("odr_hz") != configuration["sampling_rate_hz"]
++            or cfg.get("range_g") != configuration["sensor_range_g"]
++            or cfg.get("acquisition_mode") != "fifo_stream"
++            or not cfg.get("register_readback")
++            or not cfg.get("full_resolution")):
++        raise ValueError(f"{path.name}: Sensorjournal passt nicht zur freigegebenen Aufnahmekonfiguration.")
++    if report.get("csv_sha256") != sha256_file(path):
++        raise ValueError(f"{path.name}: CSV-Hash passt nicht zum Aufnahmejournal.")
++    summary = report.get("summary", {})
++    if summary.get("samples") != len(dataframe):
++        raise ValueError(f"{path.name}: Samplezahl im Aufnahmejournal ist inkonsistent.")
++    for counter in ("overrun_flagged_samples", "gap_flagged_samples", "saturated_samples", "nonmonotonic_host_intervals"):
++        if summary.get(counter) != 0:
++            raise ValueError(f"{path.name}: Journal meldet {counter} oder Nachweis fehlt.")
++    if not report.get("code") or report.get("label") != 0 or report.get("state") != expected_state:
++        raise ValueError(f"{path.name}: Code-/Zustandszuordnung fehlt oder ist inkonsistent.")
++
++
+ def record_normal_sessions(
+     paths: ProfilePaths, profile: dict[str, Any]
+ ) -> None:
++    from adxl345 import sensor_configuration
++
+     configuration = profile["configuration"]
+     recording_count = int(configuration["normal_recordings"])
+-    validation_count = int(configuration["validation_recordings"])
+-    train_count = recording_count - validation_count
++    train_count = int(configuration["training_recordings"])
+     connect_sensor, record = load_record_function()
+-
+-    print(f"Profil: {profile['profile_name']}")
+-    print("ADXL345-Erreichbarkeit wird geprüft ...", flush=True)
+-    bus = connect_sensor()
++    bus = None
++    print(f"Profil: {profile['profile_name']}; bestätigter Normalzustand: {configuration['state']}")
+     try:
+-        print("ADXL345 erreichbar.")
+-        print("\nKalibrierung startet.\n")
+-        print("Bitte:")
+-        print("- Sensor nicht mehr bewegen")
+-        print("- Lüfter normal laufen lassen")
+-        print("- keine Störung erzeugen\n")
+-
+         update_profile_status(paths, profile, "recording")
++        bus = connect_sensor(odr_hz=configuration["sampling_rate_hz"],
++                             range_g=configuration["sensor_range_g"], fifo=True)
++        profile["sensor"]["configuration_readback"] = sensor_configuration(bus)
++        profile["sensor"].update(sensor_configuration(bus))
+         for index in range(1, recording_count + 1):
+             filename = f"normal_{index:03d}.csv"
+             output_path = paths.raw / filename
+-            if output_path.exists():
+-                raise FileExistsError(
+-                    f"Rohaufnahme wird nicht überschrieben: {output_path}"
+-                )
+-            print(f"Aufnahme {index}/{recording_count} startet in:", flush=True)
+-            for remaining in (3, 2, 1):
+-                print(f"  {remaining} ...", flush=True)
+-                time.sleep(1)
+-            print(
+-                f"LOS! Normalaufnahme läuft für "
+-                f"{configuration['seconds_per_recording']:.1f} s ...",
+-                flush=True,
+-            )
++            sidecar = output_path.with_suffix(".json")
++            if output_path.exists() or sidecar.exists():
++                raise FileExistsError(f"Rohaufnahme/Journal wird nicht überschrieben: {output_path}")
++            split = "train" if index <= train_count else "validation"
++            profile["data"]["active_recording"] = {
++                "recording_index": index, "path": stable_path(output_path),
++                "metadata_path": stable_path(sidecar), "split": split,
++            }
++            write_json_atomic(paths.metadata, profile)
++            print(f"Aufnahme {index}/{recording_count}: {configuration['seconds_per_recording']:g} s", flush=True)
++            # record() resets the FIFO immediately at the actual journal boundary;
++            # pre-roll samples from model/provenance setup are intentionally excluded.
+             dataframe = record(
+-                bus=bus,
+-                duration_seconds=float(configuration["seconds_per_recording"]),
++                bus=bus, duration_seconds=float(configuration["seconds_per_recording"]),
+                 sample_rate_hz=int(configuration["sampling_rate_hz"]),
++                output_path=output_path, label=0, state=configuration["state"],
++                metadata={
++                    "profile_name": profile["profile_name"], "recording_index": index,
++                    "purpose": "training" if split == "train" else "validation",
++                    "split": split, "mounting": configuration["mounting"],
++                    "fan_pwm_setpoint_percent": configuration["fan_pwm_setpoint_percent"],
++                    "fan_pwm_source": "operator_documented_external_setting" if configuration["fan_pwm_setpoint_percent"] is not None else "unknown",
++                    "rpm_measured": configuration["rpm_measured"], "rpm_method": configuration["rpm_method"],
++                    "rpm_source": "operator_supplied_measurement" if configuration["rpm_measured"] is not None else "not_measured",
++                    "detection_controls_fan": False,
++                },
+             )
+-            if len(dataframe) < WINDOW_SIZE:
+-                raise RuntimeError(
+-                    f"{filename}: nur {len(dataframe)} Samples; mindestens "
+-                    f"{WINDOW_SIZE} sind erforderlich."
+-                )
+-            dataframe["label"] = np.int8(0)
+-            dataframe["anomaly_type"] = "normal"
+-            dataframe["source"] = "profile_calibration"
+-            dataframe["profile_name"] = profile["profile_name"]
+-            dataframe["recording_index"] = index
+-            with output_path.open("x", encoding="utf-8", newline="") as handle:
+-                dataframe.to_csv(handle, index=False)
+-
+-            split = "train" if index <= train_count else "validation"
++            with sidecar.open(encoding="utf-8") as handle:
++                report = json.load(handle)
++            validate_acquisition_quality(dataframe, output_path, configuration, report)
+             record_metadata = {
+-                "recording_index": index,
+-                "recorded_at": timestamp_now(),
+-                "filename": filename,
+-                "path": stable_path(output_path),
+-                "split": split,
+-                "sample_count": int(len(dataframe)),
+-                "configured_duration_seconds": float(
+-                    configuration["seconds_per_recording"]
+-                ),
+-                "configured_sampling_rate_hz": int(
+-                    configuration["sampling_rate_hz"]
+-                ),
++                "recording_index": index, "recorded_at": report["started_at_utc"],
++                "filename": filename, "path": stable_path(output_path), "split": split,
++                "sample_count": len(dataframe),
++                "configured_duration_seconds": configuration["seconds_per_recording"],
++                "configured_sampling_rate_hz": configuration["sampling_rate_hz"],
+                 "measured_sampling_rate_hz": measured_sampling_rate(dataframe),
+-                "sha256": sha256_file(output_path),
++                "sha256": sha256_file(output_path), "metadata_path": stable_path(sidecar),
++                "metadata_sha256": sha256_file(sidecar), "acquisition": report,
+             }
+             profile["data"]["recordings"].append(record_metadata)
+-            profile["updated_at"] = timestamp_now()
++            profile["data"].pop("active_recording", None)
+             write_json_atomic(paths.metadata, profile)
+-            print(
+-                f"Aufnahme abgeschlossen: {filename}, {len(dataframe)} Samples, "
+-                f"{record_metadata['measured_sampling_rate_hz']:.1f} Hz\n"
+-            )
++        profile["sensor"]["quality_status"] = "recording_integrity_checks_passed_bandwidth_and_snr_open"
++        update_profile_status(paths, profile, "recorded")
++    except BaseException as error:
++        update_profile_status(paths, profile,
++                              "recording_interrupted" if isinstance(error, KeyboardInterrupt) else "recording_failed",
++                              error=error)
++        raise
+     finally:
+-        bus.close()
+-
+-    update_profile_status(paths, profile, "recorded")
++        if bus is not None:
++            bus.close()
+ 
+ 
+ def validate_recorded_profile(
+@@ -459,6 +517,16 @@ def validate_recorded_profile(
+             raise ValueError(
+                 f"Rohaufnahme wurde seit der Erfassung verändert: {path}"
+             )
++        report = None
++        if configuration.get("acquisition_schema_version") == 1:
++            sidecar = path.with_suffix(".json")
++            if not sidecar.is_file() or sha256_file(sidecar) != row.get("metadata_sha256"):
++                raise ValueError(f"{path.name}: Aufnahmejournal fehlt oder wurde verändert.")
++            with sidecar.open(encoding="utf-8") as handle:
++                report = json.load(handle)
++            if report != row.get("acquisition"):
++                raise ValueError(f"{path.name}: Profil und Aufnahmejournal sind inkonsistent.")
++        validate_acquisition_quality(pd.read_csv(path), path, configuration, report)
+     return recordings
+ 
+ 
+@@ -491,12 +559,12 @@ def prepare_profile_data(
+         axes = dataframe[AXIS_COLUMNS].to_numpy(dtype=np.float64)
+         if not np.all(np.isfinite(timestamps)) or not np.all(np.isfinite(axes)):
+             raise ValueError(f"{filename}: nicht-endliche Messwerte gefunden.")
+-        if not dataframe["timestamp_s"].is_monotonic_increasing:
++        if np.any(np.diff(timestamps) <= 0):
+             raise ValueError(f"{filename}: Zeitstempel sind nicht monoton steigend.")
+         if np.any(dataframe["label"].to_numpy(dtype=np.int8) != 0):
+             raise ValueError(f"{filename}: Kalibrierung darf nur Normaldaten nutzen.")
+-        if set(dataframe["anomaly_type"].astype(str).unique()) != {"normal"}:
+-            raise ValueError(f"{filename}: anomaly_type muss ausschließlich normal sein.")
++        if set(dataframe["anomaly_type"].astype(str).unique()) != {profile["configuration"].get("state", "normal")}:
++            raise ValueError(f"{filename}: Zustand stimmt nicht mit der Normalreferenz überein.")
+ 
+         windows, file_labels, metadata, report = window_recording(
+             dataframe, filename, split
+@@ -1000,7 +1068,7 @@ def finalize_profile_metadata(
+ 
+ 
+ def train_profile(paths: ProfilePaths, profile: dict[str, Any]) -> None:
+-    if profile.get("status") not in {"recorded", "training_failed"}:
++    if profile.get("status") not in {"recorded", "training_failed", "training_interrupted"}:
+         raise ValueError(
+             f"Profilstatus {profile.get('status')!r} erlaubt kein Training."
+         )
+@@ -1029,9 +1097,9 @@ def train_profile(paths: ProfilePaths, profile: dict[str, Any]) -> None:
+             outcome = write_training_stage(stage, prepared, profile)
+             committed = commit_stage(stage, paths.root)
+         finalize_profile_metadata(paths, profile, outcome)
+-    except Exception as error:
++    except BaseException as error:
+         update_profile_status(
+-            paths, profile, "training_failed", error=error
++            paths, profile, "training_interrupted" if isinstance(error, KeyboardInterrupt) else "training_failed", error=error
+         )
+         raise
+ 
+@@ -1054,7 +1122,7 @@ def train_profile(paths: ProfilePaths, profile: dict[str, Any]) -> None:
+     print(f"TFLite-Modell: {stable_path(paths.models / 'autoencoder_float32.tflite')}")
+     print("Start Live Monitoring mit:")
+     print(
+-        f".venv_tf/bin/python src/live_tflite_monitor.py "
++        f".venv/bin/python src/live_tflite_monitor.py "
+         f"--profile {profile['profile_name']}"
+     )
+     print(f"Erzeugte Trainingsartefakte: {len(committed)}")
+@@ -1105,7 +1173,7 @@ def print_dry_run(
+         print(f"  {path}")
+ 
+ 
+-def parse_args() -> argparse.Namespace:
++def parse_args(argv: list[str] | None = None) -> argparse.Namespace:
+     parser = argparse.ArgumentParser(
+         description=(
+             "Setup-spezifische Normalzustandskalibrierung: Aufnahme, "
+@@ -1137,9 +1205,16 @@ def parse_args() -> argparse.Namespace:
+     parser.add_argument(
+         "--sampling-rate",
+         type=int,
++        choices=[25, 50, 100, 200, 400, 800],
+         default=DEFAULT_SAMPLING_RATE_HZ,
+-        help=f"Software-Samplingrate (Standard: {DEFAULT_SAMPLING_RATE_HZ} Hz)",
++        help=f"Sensor-ODR; muss zur I²C-Konfiguration passen (Standard: {DEFAULT_SAMPLING_RATE_HZ} Hz)",
+     )
++    parser.add_argument("--range-g", type=int, choices=[2, 4, 8, 16], default=2)
++    parser.add_argument("--state", default=None, help="Bestätigter normaler Zustand, z.B. normal_reference_pwm25")
++    parser.add_argument("--mounting", default=None, help="Eindeutige Montagekennung/Beschreibung")
++    parser.add_argument("--fan-pwm-setpoint", type=float, help="Externe PWM-Vorgabe in Prozent; steuert keinen GPIO")
++    parser.add_argument("--rpm-measured", type=float, help="Unabhängig gemessene Drehzahl; keine PWM-Umrechnung")
++    parser.add_argument("--rpm-method", default=None, help="Messmethode und Zeitpunkt der RPM-Messung")
+     parser.add_argument(
+         "--description",
+         default=None,
+@@ -1172,7 +1247,7 @@ def parse_args() -> argparse.Namespace:
+         default=DEFAULT_PROFILES_DIRECTORY,
+         help=argparse.SUPPRESS,
+     )
+-    arguments = parser.parse_args()
++    arguments = parser.parse_args(argv)
+ 
+     if arguments.recordings < 2:
+         parser.error("--recordings muss mindestens 2 sein.")
+@@ -1181,12 +1256,19 @@ def parse_args() -> argparse.Namespace:
+             "--validation-recordings muss mindestens 1 und kleiner als "
+             "--recordings sein."
+         )
+-    if arguments.seconds <= 0:
+-        parser.error("--seconds muss positiv sein.")
++    if not math.isfinite(arguments.seconds) or arguments.seconds <= 0:
++        parser.error("--seconds muss endlich und positiv sein.")
+     if arguments.sampling_rate <= 0:
+         parser.error("--sampling-rate muss positiv sein.")
+     if arguments.train_only and arguments.new_version:
+         parser.error("--new-version ist mit --train-only nicht zulässig.")
++    if not arguments.train_only and not arguments.dry_run:
++        if not arguments.state or not arguments.state.strip() or arguments.state == "unconfirmed" or not arguments.mounting or not arguments.mounting.strip():
++            parser.error("Für neue Aufnahmen sind --state und --mounting erforderlich; Zustand vorher herstellen und bestätigen.")
++    if arguments.fan_pwm_setpoint is not None and (not math.isfinite(arguments.fan_pwm_setpoint) or not 0 <= arguments.fan_pwm_setpoint <= 100):
++        parser.error("--fan-pwm-setpoint muss endlich und zwischen 0 und 100 sein.")
++    if arguments.rpm_measured is not None and (not math.isfinite(arguments.rpm_measured) or arguments.rpm_measured < 0 or not arguments.rpm_method or not arguments.rpm_method.strip()):
++        parser.error("--rpm-measured benötigt einen endlichen nichtnegativen Wert und --rpm-method.")
+     try:
+         validate_profile_name(arguments.profile)
+     except ValueError as error:
+@@ -1194,7 +1276,7 @@ def parse_args() -> argparse.Namespace:
+     return arguments
+ 
+ 
+-def main() -> None:
++def run() -> None:
+     arguments = parse_args()
+     profiles_root = arguments.profiles_root.resolve()
+     if arguments.dry_run:
+@@ -1219,20 +1301,31 @@ def main() -> None:
+         configuration=configuration,
+         description=arguments.description,
+     )
+-    try:
+-        record_normal_sessions(paths, profile)
+-    except Exception as error:
+-        update_profile_status(paths, profile, "recording_failed", error=error)
+-        raise
++    record_normal_sessions(paths, profile)
+     if arguments.record_only:
+         print("Normalaufnahmen abgeschlossen; Training wurde nicht gestartet.")
+         print(
+-            ".venv_tf/bin/python src/calibrate_and_train.py "
++            ".venv/bin/python src/calibrate_and_train.py "
+             f"--profile {profile['profile_name']} --train-only"
+         )
+         return
+     train_profile(paths, profile)
+ 
+ 
++def interrupt_on_termination(*_: Any) -> None:
++    raise KeyboardInterrupt("SIGTERM: Kalibrierung geordnet beenden")
++
++
++def main() -> None:
++    previous_handler = signal.signal(signal.SIGTERM, interrupt_on_termination)
++    try:
++        run()
++    except KeyboardInterrupt:
++        print("Kalibrierung abgebrochen; Rohjournale und Profilstatus bleiben erhalten.")
++        raise SystemExit(130)
++    finally:
++        signal.signal(signal.SIGTERM, previous_handler)
++
++
+ if __name__ == "__main__":
+     main()
+diff --git a/src/collect_real_data.py b/src/collect_real_data.py
+index e15a942..7fdf025 100644
+--- a/src/collect_real_data.py
++++ b/src/collect_real_data.py
+@@ -1,127 +1,193 @@
++"""Journalisierte FIFO-Aufnahmen; keine automatische Zustands- oder RPM-Annahme."""
+ import argparse
++import csv
++from datetime import datetime, timezone
++import hashlib
++import importlib.metadata
++import json
+ import math
+-import time
++import os
++import platform
+ from pathlib import Path
++import signal
++import subprocess
++import sys
++import time
+ 
+ import pandas as pd
+ 
+-from adxl345 import connect, read_acceleration_g
+-
+-
+-SAMPLE_RATE_HZ = 500
+-OUTPUT_DIRECTORY = Path("data/real")
+-
+-
+-def record(bus, duration_seconds: float, sample_rate_hz: int) -> pd.DataFrame:
+-    """Nimmt für duration_seconds Sekunden Beschleunigungsdaten auf."""
+-
+-    period_s = 1 / sample_rate_hz
+-    rows: list[dict[str, float]] = []
+-
+-    start_time = time.perf_counter()
+-    next_sample_time = start_time
+-
+-    while True:
+-        now = time.perf_counter()
+-        elapsed = now - start_time
+-
+-        if elapsed >= duration_seconds:
+-            break
+-
+-        x_g, y_g, z_g = read_acceleration_g(bus)
+-        magnitude_g = math.sqrt(x_g**2 + y_g**2 + z_g**2)
+-
+-        rows.append(
+-            {
+-                "timestamp_s": elapsed,
+-                "signal": magnitude_g,
+-                "x_g": x_g,
+-                "y_g": y_g,
+-                "z_g": z_g,
+-            }
+-        )
+-
+-        next_sample_time += period_s
+-        sleep_time = next_sample_time - time.perf_counter()
+-
+-        if sleep_time > 0:
+-            time.sleep(sleep_time)
+-
+-    return pd.DataFrame(rows)
+-
+-
+-def main() -> None:
+-    parser = argparse.ArgumentParser(
+-        description=(
+-            "Nimmt echte Beschleunigungsdaten vom ADXL345 auf und "
+-            "speichert sie im selben Format wie simulate_data.py."
+-        )
+-    )
+-    parser.add_argument(
+-        "--seconds",
+-        type=float,
+-        default=60.0,
+-        help="Aufnahmedauer in Sekunden (Standard: 60)",
+-    )
+-    parser.add_argument(
+-        "--label",
+-        choices=["normal", "anomaly"],
+-        default="normal",
+-        help="Ob diese Aufnahme als normal oder anomal gilt",
+-    )
+-    parser.add_argument(
+-        "--anomaly-type",
+-        default="unknown",
+-        help="Beschreibung der Anomalie, z.B. 'tapping' oder 'shaking'",
+-    )
+-    parser.add_argument(
+-        "--output",
+-        type=Path,
+-        default=None,
+-        help="Zielpfad der CSV-Datei (Standard: data/real/<label>_<timestamp>.csv)",
+-    )
+-    args = parser.parse_args()
+-
+-    OUTPUT_DIRECTORY.mkdir(parents=True, exist_ok=True)
+-
+-    if args.output is not None:
+-        output_path = args.output
+-    else:
+-        run_id = time.strftime("%Y%m%d_%H%M%S")
+-        output_path = OUTPUT_DIRECTORY / f"{args.label}_{run_id}.csv"
+-
+-    bus = connect()
+-
+-    print("Aufnahme startet in:", flush=True)
+-    for remaining in (3, 2, 1):
+-        print(f"  {remaining} ...", flush=True)
+-        time.sleep(1)
+-    print(f"LOS! Aufnahme läuft für {args.seconds:.0f} s ...", flush=True)
+-
++from adxl345 import connect, read_fresh_sample, sensor_configuration, reset_fifo
++
++SAMPLE_RATE_HZ = 200
++OUTPUT_DIRECTORY = Path('data/acquisition')
++FIELDS = ['timestamp_s', 'signal', 'x_g', 'y_g', 'z_g', 'label', 'anomaly_type',
++          'source', 'sample_index', 'host_monotonic_ns', 'sensor_time_estimate_s',
++          'fifo_depth', 'overrun', 'gap', 'saturated', 'read_duration_ns']
++
++
++def provenance():
++    root = Path(__file__).resolve().parents[1]
++    def git(*args):
++        return subprocess.check_output(['git', '-C', str(root), *args], text=True).strip()
++    return {
++        'git_commit': git('rev-parse', 'HEAD'), 'git_status': git('status', '--porcelain'),
++        'command': sys.argv, 'python_executable': sys.executable,
++        'python_version': sys.version, 'platform': platform.platform(),
++        'packages': {name: importlib.metadata.version(name) for name in ['numpy', 'pandas', 'smbus2']},
++        'source_sha256': {str(p.relative_to(root)): hashlib.sha256(p.read_bytes()).hexdigest()
++                          for p in sorted((root / 'src').glob('*.py'))},
++    }
++
++
++def recording_summary(dataframe, odr_hz):
++    n = len(dataframe)
++    if not n:
++        return {'samples': 0, 'observed_host_rate_hz': None}
++    dt = dataframe.host_monotonic_ns.diff().dropna() / 1e9
++    xyz = dataframe[['x_g', 'y_g', 'z_g']]
++    return {
++        'samples': n,
++        'observed_host_rate_hz': ((n - 1) * 1e9 / (int(dataframe.host_monotonic_ns.iloc[-1]) -
++                                  int(dataframe.host_monotonic_ns.iloc[0]))) if n > 1 else None,
++        'host_interval_p50_ms': float(dt.median() * 1000) if len(dt) else None,
++        'host_interval_p99_ms': float(dt.quantile(.99) * 1000) if len(dt) else None,
++        'host_interval_max_ms': float(dt.max() * 1000) if len(dt) else None,
++        'host_intervals_over_2_periods': int((dt > 2 / odr_hz).sum()),
++        'nonmonotonic_host_intervals': int((dt <= 0).sum()),
++        'fifo_depth_max': int(dataframe.fifo_depth.max()),
++        'overrun_flagged_samples': int(dataframe.overrun.sum()),
++        'gap_flagged_samples': int(dataframe.gap.sum()),
++        'saturated_samples': int(dataframe.saturated.sum()),
++        'consecutive_equal_xyz_fraction': float((xyz.diff().iloc[1:] == 0).all(axis=1).mean()) if n > 1 else None,
++        'lost_samples_exact': None,
++        'limits': 'FIFO flags detect possible loss, not exact counts; host intervals are not sensor conversion intervals.',
++    }
++
++
++def record(bus, duration_seconds, sample_rate_hz, *, output_path=None, label=-1,
++           state='unconfirmed', metadata=None, stop_event=None):
++    """Schreibt jeden gelesenen Wert sofort ins Journal, auch unvollständige Fenster.
++
++    SIGINT/Fehler werden nach dem Sichern weitergereicht. Auch alte Aufrufer ohne
++    output_path erhalten ein neues Journal statt ausschließlich flüchtigen RAM.
++    """
++    if not math.isfinite(duration_seconds) or duration_seconds <= 0:
++        raise ValueError('Aufnahmedauer muss endlich und positiv sein')
++    config = sensor_configuration(bus)
++    if sample_rate_hz != config['odr_hz']:
++        raise ValueError(f'Angeforderte {sample_rate_hz} Hz passen nicht zur konfigurierten '
++                         f"Sensor-ODR {config['odr_hz']} Hz; keine implizite Neuabtastung.")
++    if label not in (-1, 0, 1):
++        raise ValueError('label muss -1 (unbestätigt), 0 oder 1 sein')
++    path = Path(output_path) if output_path else OUTPUT_DIRECTORY / (
++        datetime.now().strftime('recording_%Y%m%d_%H%M%S_%f.csv'))
++    path.parent.mkdir(parents=True, exist_ok=True)
++    sidecar = path.with_suffix('.json')
++    if path.exists() or sidecar.exists():
++        raise FileExistsError(f'Aufnahme wird nicht überschrieben: {path}')
++    report = dict(metadata or {})
++    report.update(schema_version=1, recording_id=path.stem, path=str(path),
++                  started_at_utc=datetime.now(timezone.utc).isoformat(),
++                  configured_duration_seconds=duration_seconds, label=label, state=state,
++                  sensor=config, code=provenance(), status='recording',
++                  timestamp_note='timestamp_s is relative host read completion; sensor_time_estimate_s is nominal only')
++    with sidecar.open('x') as f:
++        json.dump(report, f, indent=2, allow_nan=False)
++    rows = []
++    start = time.monotonic_ns()
++    last_flush = start
++    error = None
+     try:
+-        dataframe = record(
+-            bus=bus,
+-            duration_seconds=args.seconds,
+-            sample_rate_hz=SAMPLE_RATE_HZ,
+-        )
++        with path.open('x', newline='') as f:
++            writer = csv.DictWriter(f, fieldnames=FIELDS)
++            writer.writeheader()
++            reset_fifo(bus)
++            start = time.monotonic_ns()
++            try:
++                while (time.monotonic_ns() - start) / 1e9 < duration_seconds:
++                    s = read_fresh_sample(bus, stop_event=stop_event)
++                    if s is None:
++                        report['status'] = 'stopped'
++                        break
++                    x, y, z = s.xyz_g
++                    row = dict(timestamp_s=(s.monotonic_ns - start) / 1e9,
++                               signal=math.sqrt(x*x + y*y + z*z), x_g=x, y_g=y, z_g=z,
++                               label=label, anomaly_type=state, source='real_fifo',
++                               sample_index=s.sample_index, host_monotonic_ns=s.monotonic_ns,
++                               sensor_time_estimate_s=s.sensor_time_estimate_s,
++                               fifo_depth=s.fifo_depth, overrun=s.overrun, gap=s.gap,
++                               saturated=s.saturated, read_duration_ns=s.read_duration_ns)
++                    writer.writerow(row)
++                    rows.append(row)
++                    if s.monotonic_ns - last_flush >= 1_000_000_000:
++                        f.flush()
++                        last_flush = s.monotonic_ns
++                else:
++                    report['status'] = 'completed'
++            finally:
++                f.flush()
++                os.fsync(f.fileno())
++    except BaseException as exc:
++        error = exc
++        report.update(status='interrupted' if isinstance(exc, KeyboardInterrupt) else 'error',
++                      error=f'{type(exc).__name__}: {exc}')
+     finally:
+-        bus.close()
+-
+-    dataframe["label"] = 1 if args.label == "anomaly" else 0
+-    dataframe["anomaly_type"] = (
+-        args.anomaly_type if args.label == "anomaly" else "normal"
+-    )
+-    dataframe["source"] = "real"
+-
+-    dataframe.to_csv(output_path, index=False)
+-
+-    actual_rate_hz = len(dataframe) / dataframe["timestamp_s"].iloc[-1]
+-
+-    print("Aufnahme abgeschlossen.")
+-    print(f"Datei: {output_path}")
+-    print(f"Messwerte: {len(dataframe)}")
+-    print(f"Tatsächliche Abtastrate: {actual_rate_hz:.1f} Hz")
++        df = pd.DataFrame(rows, columns=FIELDS)
++        report.update(finished_at_utc=datetime.now(timezone.utc).isoformat(),
++                      summary=recording_summary(df, sample_rate_hz))
++        if path.exists():
++            report['csv_sha256'] = hashlib.sha256(path.read_bytes()).hexdigest()
++        tmp = sidecar.with_suffix('.json.tmp')
++        with tmp.open('x') as f:
++            json.dump(report, f, indent=2, allow_nan=False)
++            f.flush()
++            os.fsync(f.fileno())
++        os.replace(tmp, sidecar)
++    if error is not None:
++        raise error
++    df.attrs.update(recording_path=str(path), metadata_path=str(sidecar), report=report)
++    return df
++
++
++def main():
++    parser = argparse.ArgumentParser(description=__doc__)
++    parser.add_argument('--seconds', type=float, default=60)
++    parser.add_argument('--odr', type=int, default=200)
++    parser.add_argument('--range-g', type=int, choices=[2, 4, 8, 16], default=2)
++    parser.add_argument('--label', choices=['unknown', 'normal', 'anomaly'], default='unknown')
++    parser.add_argument('--state', '--anomaly-type', dest='state', default='unconfirmed')
++    parser.add_argument('--purpose', choices=['pilot', 'training', 'validation', 'test'], default='pilot')
++    parser.add_argument('--mounting', default='not_documented')
++    parser.add_argument('--fan-pwm-setpoint', type=float, help='Dokumentierte externe Vorgabe in Prozent; steuert keinen GPIO')
++    parser.add_argument('--rpm-measured', type=float, help='Unabhängig gemessene Drehzahl, niemals aus PWM berechnet')
++    parser.add_argument('--rpm-method', default=None)
++    parser.add_argument('--output', type=Path)
++    args = parser.parse_args()
++    if args.fan_pwm_setpoint is not None and not (0 <= args.fan_pwm_setpoint <= 100):
++        parser.error('PWM muss zwischen 0 und 100 Prozent liegen')
++    if args.rpm_measured is not None and (not math.isfinite(args.rpm_measured) or args.rpm_measured < 0 or not args.rpm_method):
++        parser.error('Drehzahl muss endlich/nichtnegativ sein; --rpm-method erforderlich')
++    if args.purpose != 'pilot' and (args.label == 'unknown' or args.state == 'unconfirmed' or args.mounting == 'not_documented'):
++        parser.error('Für Training/Validierung/Test sind --label, --state und --mounting erforderlich')
++    def stop(*_):
++        raise KeyboardInterrupt('Stopp-Signal empfangen')
++    signal.signal(signal.SIGTERM, stop)
++    metadata = dict(purpose=args.purpose, mounting=args.mounting,
++                    fan_pwm_setpoint_percent=args.fan_pwm_setpoint,
++                    fan_pwm_source='operator_documented_external_setting' if args.fan_pwm_setpoint is not None else 'unknown',
++                    rpm_measured=args.rpm_measured, rpm_method=args.rpm_method,
++                    rpm_source='operator_supplied_measurement' if args.rpm_measured is not None else 'not_measured',
++                    detection_controls_fan=False)
++    try:
++        with connect(odr_hz=args.odr, range_g=args.range_g) as bus:
++            df = record(bus, args.seconds, args.odr, output_path=args.output,
++                        label={'unknown': -1, 'normal': 0, 'anomaly': 1}[args.label],
++                        state=args.state, metadata=metadata)
++        print(json.dumps({'path': df.attrs['recording_path'], 'summary': df.attrs['report']['summary']}, indent=2))
++    except KeyboardInterrupt:
++        print('Aufnahme abgebrochen; gelesene Werte und Abbruchstatus im CSV/JSON-Journal gesichert.')
++        raise SystemExit(130)
+ 
+ 
+-if __name__ == "__main__":
++if __name__ == '__main__':
+     main()
+diff --git a/src/live_monitor.py b/src/live_monitor.py
+index 4cc8389..9e17573 100644
+--- a/src/live_monitor.py
++++ b/src/live_monitor.py
+@@ -1,5 +1,13 @@
+ import argparse
+ import math
++import csv
++import hashlib
++import json
++import os
++import signal
++import threading
++from datetime import datetime
++from pathlib import Path
+ import shutil
+ import subprocess
+ import sys
+@@ -23,10 +31,15 @@ try:
+ except ImportError:  # pragma: no cover - nur für Desktop/Testumgebungen
+     GPIO = None
+ 
+-from adxl345 import connect, read_acceleration_g
++try:
++    from adxl345 import connect, read_fresh_sample, sensor_configuration, reset_fifo
++    from live_pipeline import BufferedAcquisition, Sample, is_stale
++except ModuleNotFoundError:
++    from src.adxl345 import connect, read_fresh_sample, sensor_configuration, reset_fifo
++    from src.live_pipeline import BufferedAcquisition, Sample, is_stale
+ 
+ 
+-SAMPLE_RATE_HZ = 500
++SAMPLE_RATE_HZ = 200
+ ROLLING_WINDOW_SECONDS = 5
+ MAX_SAMPLES = ROLLING_WINDOW_SECONDS * SAMPLE_RATE_HZ
+ 
+@@ -67,10 +80,12 @@ class FanController:
+         pin: int,
+         default_on: bool = True,
+         run_percent: float = FAN_RUN_PERCENT,
++        allow_shutdown: bool = False,
+     ) -> None:
+         self.pin = pin
+         self.default_on = default_on
+         self.run_percent = run_percent
++        self.allow_shutdown = allow_shutdown
+         self.enabled = False
+         self.is_running = default_on
+         self.fan_off_since: float | None = None
+@@ -211,12 +226,15 @@ class FanController:
+         if not self.enabled:
+             return self.is_running
+ 
++        if not self.allow_shutdown or not math.isfinite(magnitude_g):
++            return self.is_running
++
+         if magnitude_g >= FAN_STOP_THRESHOLD_G:
+             if self.is_running:
+                 self.set_state(False)
+                 self.fan_off_since = time.monotonic()
+                 self.restart_decision_prompted = False
+-                self.prompt_restart_decision()
++                print("Entwicklungs-Abschaltung: Lüfter bleibt aus; Neustart erfordert einen neuen expliziten Lauf.")
+             return False
+ 
+         # Automatischer Neustart ist hier deaktiviert. Der Nutzer muss
+@@ -238,7 +256,8 @@ class FanController:
+ 
+         try:
+             self.set_state(False)
+-            GPIO.cleanup(self.pin)
++            if GPIO is not None:
++                GPIO.cleanup(self.pin)
+         except RuntimeError as exc:
+             print(f"GPIO-Reset fehlgeschlagen: {exc}")
+ 
+@@ -255,109 +274,134 @@ def parse_args() -> argparse.Namespace:
+             f"(Standard: {FAN_DEFAULT_PWM_PERCENT} Prozent)."
+         ),
+     )
+-    return parser.parse_args()
++    parser.add_argument("--sensor-odr", type=float, default=200)
++    parser.add_argument("--sensor-range", type=int, choices=(2, 4, 8, 16), default=2)
++    parser.add_argument("--no-fan-control", action="store_true", help="Nur Sensoranzeige, keine PWM/GPIO-Aktion.")
++    parser.add_argument("--enable-development-shutdown", action="store_true", help="Amplitudenabhängige Abschaltung als Entwicklungsdemo aktivieren; nicht für Methodenvergleich.")
++    parser.add_argument("--measured-rpm", type=float, default=None)
++    parser.add_argument("--rpm-source", default=None)
++    args = parser.parse_args()
++    if args.measured_rpm is not None and (not math.isfinite(args.measured_rpm) or args.measured_rpm < 0 or not args.rpm_source):
++        parser.error("--measured-rpm benötigt endlichen nichtnegativen Wert und --rpm-source")
++    return args
+ 
+ 
+ def main() -> None:
+     arguments = parse_args()
+-    bus = connect()
+-    fan_controller = FanController(
+-        pin=FAN_PIN,
+-        default_on=True,
+-        run_percent=arguments.fan_pwm,
+-    )
+-
+-    timestamps: deque[float] = deque(maxlen=MAX_SAMPLES)
+-    magnitudes: deque[float] = deque(maxlen=MAX_SAMPLES)
+-
+-    start_time = time.perf_counter()
+-
+-    figure, axis = plt.subplots(figsize=(12, 5))
+-    if figure.canvas.manager is not None:
+-        figure.canvas.manager.set_window_title(
+-            "Masterarbeit FB 2 - UAS Frankfurt"
+-        )
+-    (line,) = axis.plot([], [], linewidth=0.8, color="tab:blue")
+-
+-    axis.axhline(
+-        ANOMALY_THRESHOLD_G,
+-        color="tab:red",
+-        linestyle="--",
+-        linewidth=0.8,
+-        label=f"Anomalie-Schwelle ({ANOMALY_THRESHOLD_G} g)",
+-    )
+-    axis.axhline(
+-        FAN_STOP_THRESHOLD_G,
+-        color="tab:orange",
+-        linestyle=":",
+-        linewidth=0.8,
+-        label=f"Lüfter-Aus ({FAN_STOP_THRESHOLD_G} g)",
+-    )
+-    axis.set_xlabel("Zeit in Sekunden")
+-    axis.set_ylabel("Betrag der Beschleunigung in g")
+-    axis.set_title("ADXL345 Live-Monitor mit Lüfter-Stop")
+-    axis.set_ylim(0, 3)
+-    axis.legend(loc="upper right")
+-    axis.grid(alpha=0.25)
+-
+-    status_text = axis.text(
+-        0.01,
+-        0.95,
+-        "",
+-        transform=axis.transAxes,
+-        fontsize=11,
+-        va="top",
+-        fontfamily="monospace",
+-    )
+-
+-    def update(_frame: int):
+-        deadline = time.perf_counter() + FRAME_INTERVAL_MS / 1000
+-
+-        while time.perf_counter() < deadline:
+-            x_g, y_g, z_g = read_acceleration_g(bus)
+-            magnitude_g = math.sqrt(x_g**2 + y_g**2 + z_g**2)
+-
+-            timestamps.append(time.perf_counter() - start_time)
+-            magnitudes.append(magnitude_g)
+-
+-        if not timestamps:
+-            return line, status_text
+-
+-        line.set_data(timestamps, magnitudes)
+-
+-        latest = magnitudes[-1]
+-        fan_running = fan_controller.update(latest)
+-        is_anomaly = latest > ANOMALY_THRESHOLD_G
+-        line.set_color("tab:red" if is_anomaly else "tab:blue")
+-
+-        status_text.set_text(
+-            f"aktuell: {latest:.3f} g   "
+-            f"{'ANOMALIE' if is_anomaly else 'normal'}   "
+-            f"Lüfter: {'AN' if fan_running else 'AUS'}"
+-        )
+-        status_text.set_color("tab:red" if is_anomaly else "tab:green")
+-
+-        axis.set_xlim(
+-            max(0, timestamps[-1] - ROLLING_WINDOW_SECONDS),
+-            max(ROLLING_WINDOW_SECONDS, timestamps[-1]),
+-        )
+-
+-        return line, status_text
+-
+-    anim = animation.FuncAnimation(
+-        figure,
+-        update,
+-        interval=FRAME_INTERVAL_MS,
+-        blit=False,
+-        cache_frame_data=False,
+-    )
+-
++    project = Path(__file__).resolve().parents[1]
++    directory = project / "results" / "live_runs"
++    directory.mkdir(parents=True, exist_ok=True)
++    stem = directory / ("amplitude_gui_" + datetime.now().strftime("%Y%m%d_%H%M%S_%f"))
++    stop = threading.Event()
++    bus = connect(odr_hz=arguments.sensor_odr, range_g=arguments.sensor_range, fifo=True)
++    fan_controller = None
++    acquisition = None
++    events = None
++    manifest = {"mode": "development_amplitude_display_not_RMS_method", "configuration": vars(arguments),
++                "sensor": sensor_configuration(bus), "started_utc": datetime.now().astimezone().isoformat(),
++                "fan_pwm_setpoint_percent": None if arguments.no_fan_control else arguments.fan_pwm,
++                "measured_rpm": arguments.measured_rpm, "rpm_source": arguments.rpm_source,
++                "threshold_note": "Momentaner Beschleunigungsbetrag, kein RMS-Fensterverfahren",
++                "source_sha256": hashlib.sha256(Path(__file__).read_bytes()).hexdigest(),
++                "final_p99_comparison_eligible": False}
+     try:
+-        plt.tight_layout()
+-        plt.show()
++        events = stem.with_suffix(".fan.jsonl").open("x", encoding="utf-8", buffering=1)
++        if not arguments.no_fan_control:
++            fan_controller = FanController(FAN_PIN, default_on=True, run_percent=arguments.fan_pwm,
++                                           allow_shutdown=arguments.enable_development_shutdown)
++            events.write(json.dumps({"event": "initial_pwm_command", "percent": arguments.fan_pwm,
++                                     "enabled": fan_controller.enabled, "timestamp": datetime.now().astimezone().isoformat()}) + "\n")
++        def read(stop_event: threading.Event) -> Sample | None:
++            sample = read_fresh_sample(bus, stop_event=stop_event)
++            if sample is None:
++                return None
++            return Sample(sample.xyz_g, sample.monotonic_ns, time.time_ns(), sample.gap,
++                          sample.overrun, sample.saturated,
++                          {"fifo_depth": sample.fifo_depth, "sample_index": sample.sample_index,
++                           "sensor_time_estimate_s": sample.sensor_time_estimate_s})
++        reset_fifo(bus)
++        acquisition = BufferedAcquisition(read, stem.with_suffix(".raw.csv"), window_size=16, capacity=8,
++                                          stop_event=stop).start()
++        timestamps: deque[float] = deque(maxlen=int(5 * arguments.sensor_odr))
++        magnitudes: deque[float] = deque(maxlen=int(5 * arguments.sensor_odr))
++        start_ns = time.monotonic_ns()
++        last_ns = None
++        last_valid = False
++        figure, axis = plt.subplots(figsize=(12, 5))
++        figure.canvas.manager.set_window_title("Masterarbeit – Entwicklungsanzeige")
++        (line,) = axis.plot([], [], linewidth=0.8)
++        axis.axhline(ANOMALY_THRESHOLD_G, color="tab:red", linestyle="--", label="Entwicklungs-Amplitudenschwelle")
++        if arguments.enable_development_shutdown:
++            axis.axhline(FAN_STOP_THRESHOLD_G, color="tab:orange", linestyle=":", label="Entwicklungs-Abschaltung")
++        axis.set(xlabel="Host-Empfangszeit in Sekunden", ylabel="Beschleunigungsbetrag in g",
++                 title="ADXL345 – Amplitudenanzeige (kein RMS-Methodenvergleich)", ylim=(0, 3))
++        axis.legend(loc="upper right")
++        axis.grid(alpha=0.25)
++        status_text = axis.text(0.01, 0.95, "STARTING", transform=axis.transAxes, va="top")
++        def update(_frame: int):
++            nonlocal last_ns, last_valid
++            if stop.is_set():
++                plt.close(figure)
++                return line, status_text
++            while True:
++                window = acquisition.get(timeout=0)
++                if window is None:
++                    break
++                last_ns = window.complete_ns
++                last_valid = not (window.gap_count or window.overrun_count or window.saturated_count)
++                for index, xyz in enumerate(window.values):
++                    # Plotposition nur interpoliert zwischen Host-Empfangszeitpunkten; Roh-CSV enthält exakte Zeiten.
++                    fraction = index / (len(window.values) - 1)
++                    timestamps.append((window.first_sample_ns + fraction * (window.complete_ns - window.first_sample_ns) - start_ns) / 1e9)
++                    magnitudes.append(math.sqrt(float(sum(value * value for value in xyz))))
++            if acquisition.done.is_set() and acquisition.error is not None:
++                status_text.set_text(f"ERROR: {acquisition.error}")
++                status_text.set_color("tab:red")
++                return line, status_text
++            if not timestamps or is_stale(last_ns):
++                status_text.set_text("STALE / KEINE AKTUELLEN MESSWERTE")
++                status_text.set_color("tab:gray")
++                return line, status_text
++            latest = magnitudes[-1]
++            valid = last_valid and math.isfinite(latest)
++            fan_running = fan_controller.is_running if fan_controller else None
++            if fan_controller and valid:
++                before = fan_controller.is_running
++                fan_running = fan_controller.update(latest)
++                if before != fan_controller.is_running:
++                    events.write(json.dumps({"event": "development_amplitude_fan_action", "running": fan_controller.is_running,
++                                             "timestamp": datetime.now().astimezone().isoformat(), "magnitude_g": latest}) + "\n")
++            state = "ERROR" if not valid else ("AMPLITUDE HIGH" if latest > ANOMALY_THRESHOLD_G else "AMPLITUDE LOW")
++            line.set_data(timestamps, magnitudes)
++            line.set_color("tab:red" if not valid or latest > ANOMALY_THRESHOLD_G else "tab:blue")
++            status_text.set_text(f"{latest:.3f} g | {state} | PWM-Vorgabe {manifest['fan_pwm_setpoint_percent']} % | "
++                                 f"RPM {arguments.measured_rpm if arguments.measured_rpm is not None else 'nicht gemessen'} | "
++                                 f"GUI-Fenster verworfen {acquisition.stats['windows_dropped']}")
++            axis.set_xlim(max(0, timestamps[-1] - 5), max(5, timestamps[-1]))
++            return line, status_text
++        anim = animation.FuncAnimation(figure, update, interval=FRAME_INTERVAL_MS, blit=False, cache_frame_data=False)
++        previous = {signum: signal.signal(signum, lambda signum, frame: stop.set()) for signum in (signal.SIGINT, signal.SIGTERM)}
++        try:
++            plt.tight_layout()
++            plt.show()
++        finally:
++            for signum, handler in previous.items():
++                signal.signal(signum, handler)
+     finally:
+-        fan_controller.close()
++        if acquisition is not None:
++            acquisition.stop()
++            manifest["acquisition"] = acquisition.snapshot()
++        if fan_controller is not None:
++            fan_controller.close()
++            if events is not None:
++                events.write(json.dumps({"event": "fan_stop_on_exit", "timestamp": datetime.now().astimezone().isoformat()}) + "\n")
+         bus.close()
++        if events is not None:
++            events.flush()
++            os.fsync(events.fileno())
++            events.close()
++        manifest["ended_utc"] = datetime.now().astimezone().isoformat()
++        stem.with_suffix(".run.json").write_text(json.dumps(manifest, indent=2, ensure_ascii=False), encoding="utf-8")
+ 
+ 
+ if __name__ == "__main__":
+diff --git a/src/live_tflite_fan_control.py b/src/live_tflite_fan_control.py
+index 4fef058..b4766b1 100644
+--- a/src/live_tflite_fan_control.py
++++ b/src/live_tflite_fan_control.py
+@@ -15,6 +15,8 @@ import json
+ import os
+ import sys
+ import time
++import threading
++from contextlib import closing
+ from collections.abc import Callable
+ from dataclasses import dataclass
+ from datetime import datetime, timedelta, timezone
+@@ -47,6 +49,8 @@ from live_tflite_monitor import (  # noqa: E402
+     resolve_live_configuration,
+     scale_window,
+     warm_up,
++    iter_live_measurements, add_acquisition_arguments, acquisition_options,
++    validate_acquisition_options, cooperative_shutdown,
+ )
+ 
+ 
+@@ -69,7 +73,8 @@ CSV_FIELDS = [
+     "total_window_pipeline_time_ms",
+     "measured_sampling_rate_hz",
+     "fan_action",
+-    "dry_run",
++    "dry_run", "status", "decision_latency_ms", "threshold_source",
++    "mode", "acquisition_windows_dropped",
+ ]
+ 
+ 
+@@ -334,6 +339,7 @@ def build_shutdown_event(
+         action_started_monotonic - state.first_anomaly_window_start_monotonic
+     ) * 1000.0
+     return {
++        "mode": "development_actuator_demo_excluded_from_method_comparison",
+         "event_type": (
+             "dry_run_shutdown_decision"
+             if dry_run
+@@ -421,10 +427,12 @@ def print_configuration(
+         f"{arguments.consecutive_anomalies} aufeinanderfolgende Fenster"
+     )
+     print("Lüfter: BCM GPIO18 | RUN=HIGH/100% | STOP=LOW/0%")
+-    if arguments.dry_run:
++    if arguments.self_test:
++        print("SELF-TEST: kein Sensorzugriff und kein GPIO-/PWM-Controller.")
++    elif arguments.dry_run:
+         print("DRY RUN: GPIO-/PWM-Controller wird nicht initialisiert.")
+     else:
+-        print("REALER HARDWAREMODUS: vorhandener FanController wird verwendet.")
++        print("ENTWICKLUNGS-HARDWAREMODUS: vorhandener FanController wird verwendet.")
+ 
+ 
+ def print_run_summary(
+@@ -452,261 +460,117 @@ def print_run_summary(
+         )
+ 
+ 
+-def run_fan_control(
+-    *,
+-    arguments: argparse.Namespace,
+-    configuration: LiveConfiguration,
+-    profile_metadata: dict[str, Any],
+-    runtime_metadata: ProfileRuntimeMetadata,
+-    scaler: Any,
+-    runtime: TFLiteRuntime,
+-) -> None:
+-    _, csv_path, planned_event_path = allocate_run_paths(
+-        runtime_metadata.results_directory
+-    )
+-    connect_sensor, read_sensor = load_sensor_access()
++def run_fan_control(*, arguments: argparse.Namespace, configuration: LiveConfiguration,
++                    profile_metadata: dict[str, Any], runtime_metadata: ProfileRuntimeMetadata,
++                    scaler: Any, runtime: TFLiteRuntime) -> None:
++    options = acquisition_options(arguments)
++    validate_acquisition_options(configuration, **options)
++    _, csv_path, planned_event_path = allocate_run_paths(PROJECT_ROOT / "results" / "live_runs")
++    control_path = csv_path.with_suffix(".control.csv")
+     summary = LiveSummary()
+     state = AnomalyConfirmationState(arguments.consecutive_anomalies)
+-    event_path: Path | None = None
+-    interrupted = False
+-    consecutive_sampling_rates_hz: list[float] = []
+-    bus = connect_sensor()
+-
++    stop = threading.Event()
++    event_path = None
++    rates: list[float] = []
++    previous_index = 0
++    print("ENTWICKLUNG: Aktordemonstration; dieser Lauf ist vom Methodenvergleich ausgeschlossen.")
++    # Der bestätigte GPIO18-Controller verwendet RUN=100%; nicht mit PWM/RPM verwechseln.
++    actuator = None
++    run_start = time.monotonic()
++    def initialize_after_sensor_validation() -> None:
++        nonlocal actuator, run_start
++        actuator = initialize_fan_actuator(arguments.dry_run)
++        run_start = time.monotonic()
+     try:
+-        with csv_path.open("x", encoding="utf-8", newline="", buffering=1) as handle:
++        with control_path.open("x", encoding="utf-8", newline="", buffering=1) as handle:
+             writer = csv.DictWriter(handle, fieldnames=CSV_FIELDS)
+             writer.writeheader()
+-            handle.flush()
+-
+-            actuator = initialize_fan_actuator(arguments.dry_run)
+-            if actuator is not None:
+-                print(
+-                    f"Vorhandene Lüftersteuerung aktiv: BCM GPIO{actuator.gpio_bcm}; "
+-                    f"RUN={actuator.run_description}; STOP={actuator.stop_description}."
+-                )
+-
+-            run_start_monotonic = time.perf_counter()
+-            monitoring_announced = arguments.startup_grace == 0
+-            if monitoring_announced:
+-                print("Monitoring aktiv.")
+-            else:
+-                print(
+-                    "Startup Grace aktiv; Messung und Logging laufen, "
+-                    "Abschaltung ist deaktiviert."
+-                )
+-            print(f"Log: {display_path(csv_path)}")
+-            print("Beenden mit Ctrl+C.\n")
+-
+             try:
+-                while (
+-                    arguments.max_windows is None
+-                    or summary.window_count < arguments.max_windows
+-                ):
+-                    window_index = summary.window_count + 1
+-                    window_start_wall = datetime.now().astimezone()
+-                    window_start_timestamp = window_start_wall.isoformat(
+-                        timespec="milliseconds"
+-                    )
+-                    window_start_monotonic = time.perf_counter()
+-                    collection_start_ns = time.perf_counter_ns()
+-                    raw_window, measured_sampling_rate_hz = collect_window(
+-                        bus,
+-                        read_sensor,
+-                        sample_rate_hz=runtime_metadata.sampling_rate_hz,
+-                    )
+-                    collection_end_ns = time.perf_counter_ns()
+-                    scaled_window = scale_window(raw_window, scaler)
+-                    (
+-                        reconstruction_error,
+-                        predicted_label,
+-                        inference_time_ms,
+-                    ) = infer_window(runtime, scaled_window, configuration.threshold)
+-                    decision_monotonic = time.perf_counter()
+-                    decision_wall = datetime.now().astimezone()
+-                    timestamp = decision_wall.isoformat(timespec="milliseconds")
+-                    window_formation_time_ms = (
+-                        collection_end_ns - collection_start_ns
+-                    ) / 1e6
+-                    total_window_pipeline_time_ms = (
+-                        time.perf_counter_ns() - collection_start_ns
+-                    ) / 1e6
+-
+-                    grace_active = (
+-                        window_start_monotonic - run_start_monotonic
+-                    ) < arguments.startup_grace
+-                    if not grace_active and not monitoring_announced:
+-                        print("Monitoring aktiv.")
+-                        monitoring_announced = True
+-
+-                    transition = state.observe(
+-                        predicted_anomaly=bool(predicted_label),
+-                        armed=not grace_active,
+-                        window_index=window_index,
+-                        detection_timestamp=timestamp,
+-                        detection_monotonic=decision_monotonic,
+-                        window_start_timestamp=window_start_timestamp,
+-                        window_start_monotonic=window_start_monotonic,
+-                    )
+-                    if grace_active or not predicted_label:
+-                        consecutive_sampling_rates_hz.clear()
+-                    else:
+-                        consecutive_sampling_rates_hz.append(
+-                            measured_sampling_rate_hz
+-                        )
+-
+-                    fan_action = (
+-                        "startup_shutdown_suppressed"
+-                        if grace_active and predicted_label
+-                        else "none"
+-                    )
+-                    stop_error: str | None = None
+-                    shutdown_event: dict[str, Any] | None = None
+-                    if transition.confirmed_now:
+-                        print("\n*** CONFIRMED ANOMALY ***", flush=True)
+-                        action_started_wall = datetime.now().astimezone()
+-                        action_started_timestamp = action_started_wall.isoformat(
+-                            timespec="milliseconds"
+-                        )
+-                        action_started_monotonic = time.perf_counter()
+-                        action_start_ns = time.perf_counter_ns()
+-                        hardware_stop_executed = False
+-                        if arguments.dry_run:
+-                            fan_action = "dry_run_fan_stop_would_execute"
+-                            print(
+-                                "DRY RUN: Lüfter würde jetzt gestoppt werden.",
+-                                flush=True,
+-                            )
++                with cooperative_shutdown(stop), closing(iter_live_measurements(
++                        runtime, scaler, configuration, csv_path, stop_event=stop,
++                        max_windows=arguments.max_windows,
++                        mode="development_actuator_demo_excluded_from_method_comparison",
++                        before_acquisition=initialize_after_sensor_validation, **options)) as measurements:
++                    for row in measurements:
++                        window_index = row["window_index"]
++                        decision_time = row["decision_monotonic_ns"] / 1e9
++                        window_start = (row["window_complete_monotonic_ns"] / 1e9
++                                        - row["window_formation_time_ms"] / 1000)
++                        grace_active = window_start - run_start < arguments.startup_grace
++                        if window_index != previous_index + 1 or row["status"] == "ERROR":
++                            state.reset_unconfirmed_sequence()
++                            rates.clear()
++                        previous_index = window_index
++                        anomaly = row["predicted_label"] == 1 and row["status"] == "ANOMALY"
++                        transition = state.observe(
++                            predicted_anomaly=anomaly, armed=not grace_active and row["status"] != "ERROR",
++                            window_index=window_index, detection_timestamp=row["timestamp"],
++                            detection_monotonic=decision_time,
++                            window_start_timestamp=row["window_start_timestamp"], window_start_monotonic=window_start)
++                        if grace_active or not anomaly:
++                            rates.clear()
+                         else:
+-                            fan_action = "fan_stop_command_sent"
+-                            print("Lüfter wird gestoppt.", flush=True)
+-                            try:
+-                                if actuator is None:
+-                                    raise RuntimeError(
+-                                        "Realer Modus besitzt keinen FanController."
+-                                    )
+-                                actuator.stop_once()
+-                                hardware_stop_executed = True
+-                            except Exception as error:
+-                                fan_action = "fan_stop_command_failed"
+-                                stop_error = f"{type(error).__name__}: {error}"
+-                        action_duration_ms = (
+-                            time.perf_counter_ns() - action_start_ns
+-                        ) / 1e6
+-                        action_completed_timestamp = (
+-                            datetime.now()
+-                            .astimezone()
+-                            .isoformat(timespec="milliseconds")
+-                        )
+-                        shutdown_event = build_shutdown_event(
+-                            configuration=configuration,
+-                            profile_metadata=profile_metadata,
+-                            runtime_metadata=runtime_metadata,
+-                            state=state,
+-                            window_index=window_index,
+-                            confirmed_timestamp=timestamp,
+-                            confirmed_monotonic=decision_monotonic,
+-                            action_started_timestamp=action_started_timestamp,
+-                            action_started_monotonic=action_started_monotonic,
+-                            action_completed_timestamp=action_completed_timestamp,
+-                            action_duration_ms=action_duration_ms,
+-                            hardware_stop_executed=hardware_stop_executed,
+-                            fan_action=fan_action,
+-                            stop_error=stop_error,
+-                            dry_run=arguments.dry_run,
+-                            inference_time_ms=inference_time_ms,
+-                            window_formation_time_ms=window_formation_time_ms,
+-                            total_window_pipeline_time_ms=(
+-                                total_window_pipeline_time_ms
+-                            ),
+-                            confirming_sampling_rate_hz=(
+-                                measured_sampling_rate_hz
+-                            ),
+-                            consecutive_sampling_rates_hz=(
+-                                consecutive_sampling_rates_hz
+-                            ),
+-                        )
+-
+-                    writer.writerow(
+-                        {
+-                            "timestamp": timestamp,
+-                            "window_start_timestamp": window_start_timestamp,
+-                            "window_index": window_index,
+-                            "reconstruction_error": reconstruction_error,
+-                            "threshold": configuration.threshold,
+-                            "predicted_label": predicted_label,
+-                            "anomaly_counter": transition.anomaly_counter,
+-                            "consecutive_anomalies_required": (
+-                                arguments.consecutive_anomalies
+-                            ),
+-                            "confirmed_anomaly": int(transition.confirmed_now),
+-                            "startup_grace_active": int(grace_active),
+-                            "inference_time_ms": inference_time_ms,
+-                            "window_formation_time_ms": window_formation_time_ms,
+-                            "total_window_pipeline_time_ms": (
+-                                total_window_pipeline_time_ms
+-                            ),
+-                            "measured_sampling_rate_hz": (
+-                                measured_sampling_rate_hz
+-                            ),
+-                            "fan_action": fan_action,
+-                            "dry_run": int(arguments.dry_run),
+-                        }
+-                    )
+-                    handle.flush()
+-                    summary.add(
+-                        reconstruction_error,
+-                        predicted_label,
+-                        inference_time_ms,
+-                        measured_sampling_rate_hz,
+-                    )
+-
+-                    status = "ANOMALY" if predicted_label else "NORMAL"
+-                    if grace_active:
+-                        print(
+-                            f"STARTUP | {decision_wall:%H:%M:%S} | "
+-                            f"Window {window_index:04d} | "
+-                            f"MSE {reconstruction_error:.6f} | {status} | "
+-                            "Abschaltung noch deaktiviert",
+-                            flush=True,
+-                        )
+-                    else:
+-                        print(
+-                            f"{decision_wall:%H:%M:%S} | "
+-                            f"Window {window_index:04d} | "
+-                            f"MSE {reconstruction_error:.6f} | {status} | "
+-                            f"anomaly_count {transition.anomaly_counter}/"
+-                            f"{arguments.consecutive_anomalies}",
+-                            flush=True,
+-                        )
+-
+-                    if shutdown_event is not None:
+-                        write_event_json(planned_event_path, shutdown_event)
+-                        event_path = planned_event_path
+-                        if arguments.dry_run:
+-                            print("SIMULATED SYSTEM STOPPED DUE TO ANOMALY")
+-                        elif shutdown_event["hardware_stop_executed"]:
+-                            print("SYSTEM STOPPED DUE TO ANOMALY")
+-                        else:
+-                            print("CRITICAL: FAN STOP COMMAND FAILED")
+-                        if stop_error is not None:
++                            rates.append(row["measured_sampling_rate_hz"])
++                        fan_action = "startup_shutdown_suppressed" if grace_active and anomaly else "none"
++                        stop_error = None
++                        if transition.confirmed_now:
++                            action_started = time.monotonic()
++                            action_timestamp = datetime.now().astimezone().isoformat()
++                            hardware_stopped = False
++                            if arguments.dry_run:
++                                fan_action = "dry_run_fan_stop_would_execute"
++                            else:
++                                fan_action = "fan_stop_command_sent"
++                                try:
++                                    if actuator is None:
++                                        raise RuntimeError("Aktuator fehlt")
++                                    actuator.stop_once()
++                                    hardware_stopped = True
++                                except Exception as error:
++                                    stop_error = f"{type(error).__name__}: {error}"
++                                    fan_action = "fan_stop_command_failed"
++                            event = build_shutdown_event(
++                                configuration=configuration, profile_metadata=profile_metadata,
++                                runtime_metadata=runtime_metadata, state=state, window_index=window_index,
++                                confirmed_timestamp=row["timestamp"], confirmed_monotonic=decision_time,
++                                action_started_timestamp=action_timestamp, action_started_monotonic=action_started,
++                                action_completed_timestamp=datetime.now().astimezone().isoformat(),
++                                action_duration_ms=(time.monotonic() - action_started) * 1000,
++                                hardware_stop_executed=hardware_stopped, fan_action=fan_action,
++                                stop_error=stop_error, dry_run=arguments.dry_run,
++                                inference_time_ms=row["inference_time_ms"],
++                                window_formation_time_ms=row["window_formation_time_ms"],
++                                total_window_pipeline_time_ms=row["total_window_pipeline_time_ms"],
++                                confirming_sampling_rate_hz=row["measured_sampling_rate_hz"],
++                                consecutive_sampling_rates_hz=rates)
++                            event["decision_latency_ms"] = row["decision_latency_ms"]
++                            event["sensor_odr_hz"] = options["sensor_odr"]
++                            event["fan_pwm_setpoint_percent"] = options["fan_pwm_setpoint"]
++                            event["measured_rpm"] = options["measured_rpm"]
++                            write_event_json(planned_event_path, event)
++                            event_path = planned_event_path
++                        control = {key: row[key] for key in CSV_FIELDS if key in row}
++                        control.update(anomaly_counter=transition.anomaly_counter,
++                                       consecutive_anomalies_required=arguments.consecutive_anomalies,
++                                       confirmed_anomaly=int(transition.confirmed_now),
++                                       startup_grace_active=int(grace_active), fan_action=fan_action,
++                                       dry_run=int(arguments.dry_run), mode="development_actuator_demo",
++                                       acquisition_windows_dropped=row["windows_dropped"])
++                        writer.writerow(control)
++                        handle.flush()
++                        summary.add(row["reconstruction_error"], row["predicted_label"],
++                                    row["inference_time_ms"], row["measured_sampling_rate_hz"])
++                        print(f"Window {window_index:04d} | {row['status']} | "
++                              f"Bestätigung {transition.anomaly_counter}/{arguments.consecutive_anomalies} | {fan_action}", flush=True)
++                        if stop_error:
+                             raise RuntimeError(stop_error)
+-                        break
+-            except KeyboardInterrupt:
+-                interrupted = True
+-                print(
+-                    "\nCtrl+C empfangen; CSV und I²C werden geschlossen. "
+-                    "Der GPIO-Zustand wird nicht verändert."
+-                )
++                        if transition.confirmed_now:
++                            break
++            finally:
++                handle.flush()
++                os.fsync(handle.fileno())
+     finally:
+-        bus.close()
+-        print_run_summary(
+-            summary,
+-            csv_path,
+-            event_path,
+-            interrupted,
+-            arguments.dry_run,
+-        )
+-
++        print_run_summary(summary, csv_path, event_path, stop.is_set(), arguments.dry_run)
+ 
+ def simulate_sequence(
+     labels: list[int],
+@@ -824,7 +688,16 @@ def parse_args() -> argparse.Namespace:
+             "oder Logging."
+         ),
+     )
++    parser.add_argument("--enable-development-shutdown", action="store_true",
++                        help="Reale GPIO18-Abschaltung ausdrücklich aktivieren; nur Aktordemonstration, nie Methodenvergleich.")
++    add_acquisition_arguments(parser)
+     arguments = parser.parse_args()
++    if not arguments.self_test and not arguments.dry_run and not arguments.enable_development_shutdown:
++        parser.error("Reale Abschaltung benötigt --enable-development-shutdown; alternativ --dry-run.")
++    if not arguments.dry_run and not arguments.self_test:
++        if arguments.fan_pwm_setpoint not in (None, 100):
++            parser.error("Der vorhandene Aktor-Demomodus steuert RUN=100%; andere PWM-Vorgabe ist widersprüchlich.")
++        arguments.fan_pwm_setpoint = 100.0
+     if arguments.startup_grace < 0:
+         parser.error("--startup-grace darf nicht negativ sein.")
+     if arguments.consecutive_anomalies < 2:
+diff --git a/src/live_tflite_gui.py b/src/live_tflite_gui.py
+index 4b14972..e7d2215 100644
+--- a/src/live_tflite_gui.py
++++ b/src/live_tflite_gui.py
+@@ -15,12 +15,14 @@ import json
+ import math
+ import os
+ import queue
++import signal
++from contextlib import closing
+ import sys
+ import threading
+ import time
+ import traceback
+ from collections import deque
+-from dataclasses import dataclass, replace
++from dataclasses import dataclass, replace, field
+ from datetime import datetime
+ from pathlib import Path
+ from typing import Any
+@@ -55,9 +57,13 @@ from live_tflite_monitor import (  # noqa: E402
+     resolve_live_configuration,
+     scale_window,
+     warm_up,
++    iter_live_measurements, add_acquisition_arguments, acquisition_options,
++    validate_acquisition_options,
+ )
+ 
+ 
++from live_pipeline import decision_status, is_stale
++
+ PLOT_WINDOW_COUNT = 100
+ QUEUE_POLL_INTERVAL_MS = 50
+ SIMULATION_INTERVAL_SECONDS = 0.35
+@@ -86,6 +92,9 @@ class Measurement:
+     predicted_label: int
+     inference_time_ms: float
+     measured_sampling_rate_hz: float
++    decision_monotonic_ns: int = 0
++    window_complete_monotonic_ns: int | None = None
++    details: dict[str, Any] = field(default_factory=dict)
+ 
+     def csv_row(self) -> dict[str, Any]:
+         return {
+@@ -105,6 +114,18 @@ class WorkerMessage:
+     payload: Any = None
+ 
+ 
++def measurement_display_status(measurement: Measurement, *, now_ns: int | None = None,
++                               limit_seconds: float = 1.0) -> str:
++    status = decision_status(measurement.predicted_label, measurement.reconstruction_error, measurement.threshold)
++    if status == "ERROR":
++        return status
++    # Eine gerade berechnete Entscheidung kann sich auf längst alte Daten beziehen.
++    if (is_stale(measurement.window_complete_monotonic_ns, now_ns=now_ns, limit_seconds=limit_seconds)
++            or is_stale(measurement.decision_monotonic_ns, now_ns=now_ns, limit_seconds=limit_seconds)):
++        return "STALE / VERALTET"
++    return status
++
++
+ def read_profile_display_metadata(
+     configuration: LiveConfiguration,
+ ) -> ProfileDisplayMetadata:
+@@ -152,6 +173,7 @@ class AcquisitionWorker(threading.Thread):
+         stop_event: threading.Event,
+         self_test: bool,
+         simulation_interval_seconds: float = SIMULATION_INTERVAL_SECONDS,
++        acquisition_configuration: dict[str, Any] | None = None,
+     ) -> None:
+         super().__init__(name="sensor-tflite-worker", daemon=False)
+         self.configuration = configuration
+@@ -160,9 +182,37 @@ class AcquisitionWorker(threading.Thread):
+         self.stop_event = stop_event
+         self.self_test = self_test
+         self.simulation_interval_seconds = simulation_interval_seconds
++        self.acquisition_configuration = acquisition_configuration or {}
++        self.gui_messages_dropped = 0
++        # Genau vier Kontrollarten, unabhängig von der begrenzten Messwertqueue.
++        # Pro Art wird der letzte Zustand bis zur Abholung aufbewahrt.
++        self.control_messages: dict[str, WorkerMessage] = {}
++        self.control_lock = threading.Lock()
+ 
+     def emit(self, kind: str, payload: Any = None) -> None:
+-        self.output_queue.put(WorkerMessage(kind, payload))
++        message = WorkerMessage(kind, payload)
++        if kind != "measurement":
++            if kind not in ("status", "log_path", "error", "finished"):
++                raise ValueError(f"Unbekannte GUI-Kontrollnachricht: {kind}")
++            with self.control_lock:
++                self.control_messages[kind] = message
++            return
++        try:
++            self.output_queue.put_nowait(message)
++        except queue.Full:
++            # GUI-Verzögerung darf den Inferenz-Worker nicht blockieren.
++            try:
++                self.output_queue.get_nowait()
++                self.gui_messages_dropped += 1
++            except queue.Empty:
++                pass
++            self.output_queue.put_nowait(message)
++
++    def take_control_messages(self) -> list[WorkerMessage]:
++        with self.control_lock:
++            messages = list(self.control_messages.values())
++            self.control_messages.clear()
++        return messages
+ 
+     def run(self) -> None:
+         try:
+@@ -194,6 +244,7 @@ class AcquisitionWorker(threading.Thread):
+                 ((window_index % 5) - 2) * 0.08
+             )
+             inference_time = 0.16 + (window_index % 4) * 0.015
++            simulated_complete_ns = time.monotonic_ns()
+             self.emit(
+                 "measurement",
+                 Measurement(
+@@ -206,6 +257,8 @@ class AcquisitionWorker(threading.Thread):
+                     predicted_label=prediction,
+                     inference_time_ms=inference_time,
+                     measured_sampling_rate_hz=sampling_rate,
++                    decision_monotonic_ns=simulated_complete_ns,
++                    window_complete_monotonic_ns=simulated_complete_ns,
+                 ),
+             )
+             if self.stop_event.wait(self.simulation_interval_seconds):
+@@ -219,50 +272,20 @@ class AcquisitionWorker(threading.Thread):
+         if self.stop_event.is_set():
+             return
+ 
+-        connect_sensor, read_sensor = load_sensor_access()
+-        bus = connect_sensor()
+-        log_path = allocate_gui_log_path(self.metadata.results_directory)
++        log_path = allocate_gui_log_path(PROJECT_ROOT / "results" / "live_runs")
+         self.emit("log_path", log_path)
+-        try:
+-            with log_path.open(
+-                "x", encoding="utf-8", newline="", buffering=1
+-            ) as handle:
+-                writer = csv.DictWriter(handle, fieldnames=CSV_FIELDS)
+-                writer.writeheader()
+-                handle.flush()
+-                self.emit("status", "Live-Messung aktiv")
+-                window_index = 0
+-                while not self.stop_event.is_set():
+-                    raw_window, sampling_rate = collect_window(
+-                        bus,
+-                        read_sensor,
+-                        sample_rate_hz=self.metadata.sampling_rate_hz,
+-                    )
+-                    if self.stop_event.is_set():
+-                        break
+-                    scaled_window = scale_window(raw_window, scaler)
+-                    error, prediction, inference_time = infer_window(
+-                        runtime,
+-                        scaled_window,
+-                        self.configuration.threshold,
+-                    )
+-                    window_index += 1
+-                    measurement = Measurement(
+-                        timestamp=datetime.now()
+-                        .astimezone()
+-                        .isoformat(timespec="milliseconds"),
+-                        window_index=window_index,
+-                        reconstruction_error=error,
+-                        threshold=self.configuration.threshold,
+-                        predicted_label=prediction,
+-                        inference_time_ms=inference_time,
+-                        measured_sampling_rate_hz=sampling_rate,
+-                    )
+-                    writer.writerow(measurement.csv_row())
+-                    handle.flush()
+-                    self.emit("measurement", measurement)
+-        finally:
+-            bus.close()
++        self.emit("status", "Live-Messung aktiv; Rohdaten und Puffer werden protokolliert")
++        with closing(iter_live_measurements(
++                runtime, scaler, self.configuration, log_path, stop_event=self.stop_event,
++                gui_enabled=True, **self.acquisition_configuration)) as measurements:
++            for row in measurements:
++                self.emit("measurement", Measurement(
++                    timestamp=row["timestamp"], window_index=row["window_index"],
++                    reconstruction_error=row["reconstruction_error"], threshold=row["threshold"],
++                    predicted_label=row["predicted_label"], inference_time_ms=row["inference_time_ms"],
++                    measured_sampling_rate_hz=row["measured_sampling_rate_hz"],
++                    decision_monotonic_ns=row["decision_monotonic_ns"],
++                    window_complete_monotonic_ns=row["window_complete_monotonic_ns"], details=row))
+ 
+ 
+ class LiveTFLiteApplication:
+@@ -275,6 +298,7 @@ class LiveTFLiteApplication:
+         threshold_source: str,
+         self_test: bool,
+         self_test_duration: float | None,
++        acquisition_configuration: dict[str, Any] | None = None,
+     ) -> None:
+         self.root = root
+         self.configuration = configuration
+@@ -282,7 +306,13 @@ class LiveTFLiteApplication:
+         self.threshold_source = threshold_source
+         self.self_test = self_test
+         self.self_test_duration = self_test_duration
+-        self.message_queue: queue.Queue[WorkerMessage] = queue.Queue()
++        self.acquisition_configuration = acquisition_configuration or {}
++        self.last_decision_ns: int | None = None
++        self.last_window_complete_ns: int | None = None
++        self.gui_metrics_handle = None
++        self.gui_metrics_writer = None
++        self.last_draw_logged_ns = 0
++        self.message_queue: queue.Queue[WorkerMessage] = queue.Queue(maxsize=8)
+         self.stop_event = threading.Event()
+         self.worker: AcquisitionWorker | None = None
+         self.closing = False
+@@ -305,6 +335,8 @@ class LiveTFLiteApplication:
+         self.sampling_text = tk.StringVar(value="– Hz")
+         self.inference_text = tk.StringVar(value="– ms")
+         self.window_text = tk.StringVar(value="0")
++        self.decision_text = tk.StringVar(value="–")
++        self.latency_text = tk.StringVar(value="–")
+         self.worker_status_text = tk.StringVar(value="Bereit")
+         self.log_text = tk.StringVar(value="Noch kein Live-Log")
+ 
+@@ -398,6 +430,7 @@ class LiveTFLiteApplication:
+         )
+         self.figure.tight_layout()
+         self.canvas = FigureCanvasTkAgg(self.figure, master=plot_panel)
++        self.canvas.mpl_connect("draw_event", self.record_gui_draw)
+         self.canvas.draw()
+         self.canvas.get_tk_widget().pack(fill="both", expand=True, padx=8, pady=6)
+ 
+@@ -410,6 +443,8 @@ class LiveTFLiteApplication:
+         self.build_info_row(info, "Window:", self.window_text, 2)
+         self.build_info_row(info, "Worker:", self.worker_status_text, 3)
+         self.build_info_row(info, "Log:", self.log_text, 4)
++        self.build_info_row(info, "Entscheidung:", self.decision_text, 5)
++        self.build_info_row(info, "Latenz/Puffer:", self.latency_text, 6)
+ 
+         controls = tk.Frame(footer, bg=PANEL_COLOR, padx=12, pady=9)
+         controls.pack(side="right", fill="y")
+@@ -482,6 +517,11 @@ class LiveTFLiteApplication:
+         ).grid(row=row, column=1, sticky="w")
+ 
+     def reset_display(self) -> None:
++        self.last_decision_ns = None
++        self.last_window_complete_ns = None
++        self.close_gui_metrics()
++        self.decision_text.set("–")
++        self.latency_text.set("–")
+         self.window_indices.clear()
+         self.reconstruction_errors.clear()
+         self.normal_seen = False
+@@ -510,6 +550,7 @@ class LiveTFLiteApplication:
+             output_queue=self.message_queue,
+             stop_event=self.stop_event,
+             self_test=self.self_test,
++            acquisition_configuration=self.acquisition_configuration,
+             simulation_interval_seconds=(
+                 0.01
+                 if self.self_test and self.self_test_duration is not None
+@@ -525,29 +566,71 @@ class LiveTFLiteApplication:
+             self.worker_status_text.set("Stop wird angefordert …")
+             self.stop_event.set()
+ 
++    def handle_control_message(self, message: WorkerMessage) -> None:
++        if message.kind == "status":
++            self.worker_status_text.set(str(message.payload))
++        elif message.kind == "log_path":
++            self.log_path = Path(message.payload)
++            self.log_text.set(str(self.log_path.relative_to(PROJECT_ROOT)))
++            gui_path = self.log_path.with_suffix(".gui.csv")
++            self.gui_metrics_handle = gui_path.open("x", encoding="utf-8", newline="", buffering=1)
++            self.gui_metrics_writer = csv.DictWriter(self.gui_metrics_handle, fieldnames=[
++                "window_index", "window_complete_monotonic_ns", "decision_monotonic_ns",
++                "draw_completed_monotonic_ns", "decision_to_gui_draw_ms", "window_to_gui_draw_ms",
++                "gui_messages_dropped"])
++            self.gui_metrics_writer.writeheader()
++        elif message.kind == "error":
++            self.show_worker_error(message.payload)
++        elif message.kind == "finished":
++            self.worker_finished()
++
+     def process_queue(self) -> None:
++        controls = self.worker.take_control_messages() if self.worker is not None else []
++        # Logdatei muss vor den Messwerten geöffnet sein; Fehler/Ende danach,
++        # damit nachträglich gelieferte Messwerte keinen Fehlerzustand überdecken.
++        for message in controls:
++            if message.kind not in ("error", "finished"):
++                self.handle_control_message(message)
+         try:
+             while True:
+                 message = self.message_queue.get_nowait()
+                 if message.kind == "measurement":
+                     self.update_measurement(message.payload)
+-                elif message.kind == "status":
+-                    self.worker_status_text.set(str(message.payload))
+-                elif message.kind == "log_path":
+-                    self.log_path = Path(message.payload)
+-                    self.log_text.set(str(self.log_path.relative_to(PROJECT_ROOT)))
+-                elif message.kind == "error":
+-                    self.show_worker_error(message.payload)
+-                elif message.kind == "finished":
+-                    self.worker_finished()
+         except queue.Empty:
+             pass
+-
++        for message in controls:
++            if message.kind in ("error", "finished"):
++                self.handle_control_message(message)
++
++        limit_seconds = max(1.0, 3 * 128 / self.acquisition_configuration.get("sensor_odr", 200))
++        if (not self.closing and self.worker is not None and self.worker.is_alive()
++                and self.last_decision_ns is not None
++                and self.status_text.get() not in ("ERROR", "STOPPED")
++                and (is_stale(self.last_window_complete_ns, limit_seconds=limit_seconds)
++                     or is_stale(self.last_decision_ns, limit_seconds=limit_seconds))):
++            self.status_text.set("STALE / VERALTET")
++            self.status_label.configure(bg=IDLE_COLOR)
+         if not self.closing:
+             self.root.after(QUEUE_POLL_INTERVAL_MS, self.process_queue)
+ 
+     def update_measurement(self, measurement: Measurement) -> None:
+-        if measurement.predicted_label:
++        self.last_decision_ns = measurement.decision_monotonic_ns
++        self.last_window_complete_ns = measurement.window_complete_monotonic_ns
++        self.decision_text.set(measurement.timestamp)
++        details = measurement.details
++        self.latency_text.set(f"{details.get('decision_latency_ms', 0):.3f} ms | "
++                              f"Queue {details.get('queue_pending_windows', 0)} | "
++                              f"verworfen {details.get('windows_dropped', 0)}")
++        status = measurement_display_status(measurement, limit_seconds=max(
++            1.0, 3 * 128 / self.acquisition_configuration.get("sensor_odr", 200)))
++        if status == "ERROR":
++            self.status_text.set("ERROR")
++            self.status_label.configure(bg=ANOMALY_COLOR)
++            self.worker_status_text.set(details.get("error", "Ungültige Entscheidung"))
++        elif status == "STALE / VERALTET":
++            self.status_text.set(status)
++            self.status_label.configure(bg=IDLE_COLOR)
++        elif measurement.predicted_label:
+             self.status_text.set("ANOMALY")
+             self.status_label.configure(bg=ANOMALY_COLOR)
+             self.anomaly_seen = True
+@@ -564,7 +647,7 @@ class LiveTFLiteApplication:
+         self.inference_text.set(f"{measurement.inference_time_ms:.3f} ms")
+         self.window_text.set(str(measurement.window_index))
+         self.window_indices.append(measurement.window_index)
+-        self.reconstruction_errors.append(measurement.reconstruction_error)
++        self.reconstruction_errors.append(measurement.reconstruction_error if math.isfinite(measurement.reconstruction_error) else float("nan"))
+         self.update_plot()
+ 
+     def update_plot(self) -> None:
+@@ -575,7 +658,7 @@ class LiveTFLiteApplication:
+             left = max(0, x_values[-1] - PLOT_WINDOW_COUNT + 1)
+             right = max(left + 1, x_values[-1])
+             self.axis.set_xlim(left, right)
+-        maximum_error = max(y_values, default=0.0)
++        maximum_error = max((value for value in y_values if math.isfinite(value)), default=0.0)
+         upper_limit = max(
+             maximum_error * 1.18,
+             self.configuration.threshold * 1.35,
+@@ -592,12 +675,13 @@ class LiveTFLiteApplication:
+ 
+     def worker_finished(self) -> None:
+         if not self.closing:
+-            if self.status_text.get() == "STARTING":
++            if self.status_text.get() != "ERROR":
+                 self.status_text.set("STOPPED")
+                 self.status_label.configure(bg=IDLE_COLOR)
+             self.worker_status_text.set("Gestoppt")
+             self.start_button.configure(state="normal")
+             self.stop_button.configure(state="disabled")
++            self.close_gui_metrics()
+ 
+     def close_application(self) -> None:
+         if self.closing:
+@@ -613,8 +697,32 @@ class LiveTFLiteApplication:
+         if self.worker is not None and self.worker.is_alive():
+             self.root.after(50, self.wait_for_worker_and_close)
+             return
++        self.close_gui_metrics()
+         self.root.destroy()
+ 
++    def record_gui_draw(self, event: Any) -> None:
++        if (self.gui_metrics_writer is None or self.last_decision_ns is None
++                or self.last_decision_ns == self.last_draw_logged_ns):
++            return
++        draw_ns = time.monotonic_ns()
++        self.gui_metrics_writer.writerow({
++            "window_index": self.window_text.get(), "decision_monotonic_ns": self.last_decision_ns,
++            "window_complete_monotonic_ns": self.last_window_complete_ns,
++            "draw_completed_monotonic_ns": draw_ns,
++            "decision_to_gui_draw_ms": (draw_ns - self.last_decision_ns) / 1e6,
++            "window_to_gui_draw_ms": (draw_ns - self.last_window_complete_ns) / 1e6 if self.last_window_complete_ns is not None else None,
++            "gui_messages_dropped": self.worker.gui_messages_dropped if self.worker else 0})
++        self.gui_metrics_handle.flush()
++        self.last_draw_logged_ns = self.last_decision_ns
++
++    def close_gui_metrics(self) -> None:
++        if self.gui_metrics_handle is not None:
++            self.gui_metrics_handle.flush()
++            os.fsync(self.gui_metrics_handle.fileno())
++            self.gui_metrics_handle.close()
++        self.gui_metrics_handle = None
++        self.gui_metrics_writer = None
++
+     def validate_automated_self_test(self) -> None:
+         if not self.normal_seen or not self.anomaly_seen:
+             raise AssertionError(
+@@ -667,6 +775,7 @@ def parse_args() -> argparse.Namespace:
+             "GUI-Prüfungen."
+         ),
+     )
++    add_acquisition_arguments(parser)
+     arguments = parser.parse_args()
+     if arguments.threshold is not None and (
+         not math.isfinite(arguments.threshold) or arguments.threshold < 0
+@@ -686,8 +795,10 @@ def main() -> None:
+     metadata = read_profile_display_metadata(configuration)
+     threshold_source = "PROFILE / P99"
+     if arguments.threshold is not None:
+-        configuration = replace(configuration, threshold=arguments.threshold)
++        configuration = replace(configuration, threshold=arguments.threshold, threshold_source="MANUAL")
+         threshold_source = "MANUAL"
++    if not arguments.self_test:
++        validate_acquisition_options(configuration, **acquisition_options(arguments))
+     root = tk.Tk()
+     application = LiveTFLiteApplication(
+         root,
+@@ -696,8 +807,15 @@ def main() -> None:
+         threshold_source=threshold_source,
+         self_test=arguments.self_test,
+         self_test_duration=arguments.self_test_duration,
++        acquisition_configuration=acquisition_options(arguments),
+     )
+-    root.mainloop()
++    previous = {signum: signal.signal(signum, lambda signum, frame: application.close_application())
++                for signum in (signal.SIGINT, signal.SIGTERM)}
++    try:
++        root.mainloop()
++    finally:
++        for signum, handler in previous.items():
++            signal.signal(signum, handler)
+     if arguments.self_test and arguments.self_test_duration is not None:
+         application.validate_automated_self_test()
+         print(
+diff --git a/src/live_tflite_monitor.py b/src/live_tflite_monitor.py
+index cdd1053..ad48162 100644
+--- a/src/live_tflite_monitor.py
++++ b/src/live_tflite_monitor.py
+@@ -11,9 +11,15 @@ import argparse
+ import csv
+ import hashlib
+ import importlib.util
++import importlib.metadata
+ import json
+ import os
+ import re
++import platform
++import signal
++import subprocess
++import threading
++from contextlib import closing, contextmanager
+ import sys
+ import time
+ from collections.abc import Callable
+@@ -28,12 +34,17 @@ os.environ.setdefault("MPLCONFIGDIR", "/tmp/masterarbeit_matplotlib")
+ import joblib
+ import numpy as np
+ 
++try:
++    from live_pipeline import BufferedAcquisition, Sample, ProcessMetrics, decision_status, summarize_decisions
++except ModuleNotFoundError:
++    from src.live_pipeline import BufferedAcquisition, Sample, ProcessMetrics, decision_status, summarize_decisions
++
+ 
+ PROJECT_ROOT = Path(__file__).resolve().parents[1]
+ MODEL_PATH = PROJECT_ROOT / "models" / "clean_comparison" / "autoencoder_float32.tflite"
+ SCALER_PATH = PROJECT_ROOT / "models" / "clean_comparison" / "scaler.joblib"
+ THRESHOLD_PATH = PROJECT_ROOT / "results" / "clean_tensorflow_threshold.json"
+-DEFAULT_LOG_PATH = PROJECT_ROOT / "results" / "live_tflite_log.csv"
++DEFAULT_LOG_PATH = PROJECT_ROOT / "results" / "live_runs" / "live_tflite_log.csv"
+ PROFILES_DIRECTORY = PROJECT_ROOT / "profiles"
+ SYSTEM_DIST_PACKAGES = Path("/usr/lib/python3/dist-packages")
+ 
+@@ -54,6 +65,12 @@ CSV_FIELDS = [
+     "predicted_label",
+     "inference_time_ms",
+     "measured_sampling_rate_hz",
++    "status", "error", "threshold_source", "runtime_backend",
++    "window_start_timestamp", "window_complete_monotonic_ns", "decision_monotonic_ns",
++    "queue_wait_ms", "preprocessing_time_ms", "decision_latency_ms", "window_formation_time_ms",
++    "total_window_pipeline_time_ms", "queue_pending_windows", "windows_dropped",
++    "gap_count", "overrun_count", "saturated_count", "process_cpu_percent_one_core",
++    "process_rss_bytes", "process_lifetime_peak_rss_bytes",
+ ]
+ 
+ 
+@@ -77,12 +94,15 @@ class LiveConfiguration:
+     threshold_path: Path
+     threshold: float
+     default_log_path: Path
++    threshold_source: str = "PROFILE/P99"
++    profile_sampling_rate_hz: float = 500.0
+ 
+ 
+ @dataclass
+ class LiveSummary:
+     window_count: int = 0
+     normal_count: int = 0
++    invalid_count: int = 0
+     anomaly_count: int = 0
+     reconstruction_error_sum: float = 0.0
+     inference_time_sum_ms: float = 0.0
+@@ -96,6 +116,9 @@ class LiveSummary:
+         measured_sampling_rate_hz: float,
+     ) -> None:
+         self.window_count += 1
++        if decision_status(predicted_label, reconstruction_error, 0) == "ERROR":
++            self.invalid_count += 1
++            return
+         if predicted_label == 0:
+             self.normal_count += 1
+         else:
+@@ -107,7 +130,8 @@ class LiveSummary:
+     def mean(self, total: float) -> float | None:
+         if self.window_count == 0:
+             return None
+-        return total / self.window_count
++        valid_count = self.window_count - self.invalid_count
++        return total / valid_count if valid_count else None
+ 
+ 
+ def display_path(path: Path) -> str:
+@@ -194,6 +218,7 @@ def resolve_live_configuration(
+             threshold_path=THRESHOLD_PATH,
+             threshold=validate_fixed_threshold(),
+             default_log_path=DEFAULT_LOG_PATH,
++            threshold_source="CLEAN/P99",
+         )
+ 
+     validate_profile_name(profile_name)
+@@ -222,6 +247,8 @@ def resolve_live_configuration(
+ 
+     with threshold_path.open(encoding="utf-8") as handle:
+         threshold_document = json.load(handle)
++    if threshold_document.get("percentile") != 99:
++        raise ValueError("Profilthreshold ist nicht P99-kalibriert.")
+     if not threshold_document.get("normal_validation_only", False):
+         raise ValueError(
+             "Profilthreshold ist nicht als ausschließlich normal-validiert markiert."
+@@ -254,7 +281,8 @@ def resolve_live_configuration(
+         scaler_path=scaler_path,
+         threshold_path=threshold_path,
+         threshold=threshold,
+-        default_log_path=profile_root / "results" / "live_tflite_log.csv",
++        default_log_path=DEFAULT_LOG_PATH.with_name(f"{profile_name}_live_tflite_log.csv"),
++        profile_sampling_rate_hz=float(metadata["sampling_rate_hz"]),
+     )
+ 
+ 
+@@ -310,9 +338,14 @@ def load_scaler(scaler_path: Path = SCALER_PATH) -> Any:
+ 
+ 
+ def load_tflite_runtime(model_path: Path = MODEL_PATH) -> TFLiteRuntime:
+-    import tensorflow as tf
+-
+-    interpreter = tf.lite.Interpreter(model_path=str(model_path))
++    try:
++        from ai_edge_litert.interpreter import Interpreter
++        backend = f"ai_edge_litert.Interpreter {importlib.metadata.version('ai-edge-litert')} num_threads=1"
++    except ImportError:
++        import tensorflow as tf
++        Interpreter = tf.lite.Interpreter
++        backend = f"tensorflow.lite.Interpreter {tf.__version__} num_threads=1"
++    interpreter = Interpreter(model_path=str(model_path), num_threads=1)
+     interpreter.allocate_tensors()
+     inputs = interpreter.get_input_details()
+     outputs = interpreter.get_output_details()
+@@ -353,7 +386,7 @@ def load_tflite_runtime(model_path: Path = MODEL_PATH) -> TFLiteRuntime:
+         output_shape=output_shape,
+         input_dtype=input_dtype,
+         output_dtype=output_dtype,
+-        backend=f"tensorflow.lite.Interpreter {tf.__version__}",
++        backend=backend,
+     )
+ 
+ 
+@@ -382,6 +415,10 @@ def infer_window(
+ ) -> tuple[float, int, float]:
+     if scaled_window.shape != WINDOW_SHAPE:
+         raise ValueError(f"Ungültige skalierte Fensterform: {scaled_window.shape}")
++    if not np.all(np.isfinite(scaled_window)):
++        raise ValueError("Modelleingabe enthält NaN/Inf.")
++    if not np.isfinite(threshold) or threshold < 0:
++        raise ValueError("Threshold muss endlich und nichtnegativ sein.")
+     model_input = scaled_window[np.newaxis, ...]
+ 
+     start_ns = time.perf_counter_ns()
+@@ -390,12 +427,16 @@ def infer_window(
+     reconstruction = np.asarray(
+         runtime.interpreter.get_tensor(runtime.output_index)[0], dtype=np.float32
+     )
++    if reconstruction.shape != WINDOW_SHAPE or not np.all(np.isfinite(reconstruction)):
++        raise ValueError("Modellausgabe hat ungültige Form oder enthält NaN/Inf.")
+     reconstruction_error = float(
+         np.mean(
+             np.square(scaled_window - reconstruction),
+             dtype=np.float64,
+         )
+     )
++    if not np.isfinite(reconstruction_error):
++        raise ValueError("Rekonstruktionsfehler ist nicht endlich; keine NORMAL-Entscheidung.")
+     predicted_label = int(reconstruction_error > threshold)
+     inference_time_ms = (time.perf_counter_ns() - start_ns) / 1e6
+     return reconstruction_error, predicted_label, inference_time_ms
+@@ -410,37 +451,244 @@ def warm_up(
+         infer_window(runtime, artificial_window, threshold)
+ 
+ 
+-def collect_window(
+-    bus: Any,
+-    read_sensor: Callable[..., tuple[float, float, float]],
+-    sample_rate_hz: int = SAMPLE_RATE_HZ,
+-) -> tuple[np.ndarray, float]:
+-    if sample_rate_hz <= 0:
+-        raise ValueError("Die Samplingrate muss positiv sein.")
+-    sample_period_seconds = 1.0 / sample_rate_hz
+-    samples = np.empty(WINDOW_SHAPE, dtype=np.float64)
+-    sample_timestamps = np.empty(WINDOW_SIZE, dtype=np.float64)
+-    next_sample_time = time.perf_counter()
+-
+-    for sample_index in range(WINDOW_SIZE):
+-        remaining_seconds = next_sample_time - time.perf_counter()
+-        if remaining_seconds > 0:
+-            time.sleep(remaining_seconds)
+-
+-        samples[sample_index] = read_sensor(bus)
+-        sample_timestamps[sample_index] = time.perf_counter()
+-        next_sample_time += sample_period_seconds
++def collect_window(*args: Any, **kwargs: Any) -> tuple[np.ndarray, float]:
++    raise RuntimeError(
++        "Software-Polling wurde stillgelegt: iter_live_measurements nutzt neue "
++        "FIFO-Sensorwerte und speichert Empfangszeitstempel."
++    )
+ 
+-    # Finish the nominal 128 / 500 s window period before inference starts.
+-    remaining_seconds = next_sample_time - time.perf_counter()
+-    if remaining_seconds > 0:
+-        time.sleep(remaining_seconds)
+ 
+-    measured_duration = sample_timestamps[-1] - sample_timestamps[0]
+-    if measured_duration <= 0:
+-        raise RuntimeError("Die gemessene Fensterdauer ist nicht positiv.")
+-    measured_sampling_rate_hz = (WINDOW_SIZE - 1) / measured_duration
+-    return samples, float(measured_sampling_rate_hz)
++@contextmanager
++def cooperative_shutdown(stop_event: threading.Event):
++    """SIGTERM/SIGINT: Reader stoppen; finally sichert Rohdaten und Manifest."""
++    if threading.current_thread() is not threading.main_thread():
++        yield
++        return
++    previous = {}
++    def request_stop(signum: int, frame: Any) -> None:
++        stop_event.set()
++    try:
++        for signum in (signal.SIGINT, signal.SIGTERM):
++            previous[signum] = signal.signal(signum, request_stop)
++        yield
++    finally:
++        for signum, handler in previous.items():
++            signal.signal(signum, handler)
++
++
++def add_acquisition_arguments(parser: argparse.ArgumentParser) -> None:
++    parser.add_argument("--sensor-odr", type=float, default=200, help="Explizite ADXL345-ODR in Hz; Standard 200 (keine 500-Hz-Softwareabfrage).")
++    parser.add_argument("--sensor-range", type=int, choices=(2, 4, 8, 16), default=2)
++    parser.add_argument("--buffer-windows", type=int, default=4)
++    parser.add_argument("--allow-sampling-mismatch", action="store_true", help="Nur Entwicklung: Legacy-Profil trotz abweichender Sensor-ODR anwenden; kein finaler P99-Vergleich.")
++    parser.add_argument("--fan-pwm-setpoint", type=float, default=None, help="Extern vorgegebene PWM in Prozent dokumentieren; verändert keine Hardware.")
++    parser.add_argument("--measured-rpm", type=float, default=None, help="Unabhängig gemessene Drehzahl, niemals aus PWM berechnet.")
++    parser.add_argument("--rpm-source", default=None, help="Messverfahren/Quelle der angegebenen Drehzahl.")
++
++
++def acquisition_options(arguments: argparse.Namespace) -> dict[str, Any]:
++    return {name: getattr(arguments, name) for name in
++            ("sensor_odr", "sensor_range", "buffer_windows", "allow_sampling_mismatch",
++             "fan_pwm_setpoint", "measured_rpm", "rpm_source")}
++
++
++def validate_acquisition_options(configuration: LiveConfiguration, *, sensor_odr: float,
++                                 sensor_range: int, buffer_windows: int,
++                                 allow_sampling_mismatch: bool, fan_pwm_setpoint: float | None,
++                                 measured_rpm: float | None, rpm_source: str | None) -> None:
++    if not np.isfinite(sensor_odr) or sensor_odr <= 0 or buffer_windows < 1:
++        raise ValueError("Sensor-ODR und Pufferkapazität müssen positiv sein.")
++    if sensor_range not in (2, 4, 8, 16):
++        raise ValueError("Ungültiger Messbereich")
++    if sensor_odr != configuration.profile_sampling_rate_hz and not allow_sampling_mismatch:
++        raise ValueError(f"Sensor-ODR {sensor_odr:g} Hz != Profil {configuration.profile_sampling_rate_hz:g} Hz. "
++                         "Neue kompatible Kalibrierung erforderlich; --allow-sampling-mismatch nur für Entwicklung.")
++    if fan_pwm_setpoint is not None and (not np.isfinite(fan_pwm_setpoint) or not 0 <= fan_pwm_setpoint <= 100):
++        raise ValueError("PWM-Vorgabe muss zwischen 0 und 100 liegen")
++    if measured_rpm is not None and (not np.isfinite(measured_rpm) or measured_rpm < 0 or not rpm_source):
++        raise ValueError("Drehzahl benötigt endlichen nichtnegativen Wert und --rpm-source")
++
++
++def run_provenance(configuration: LiveConfiguration, runtime: TFLiteRuntime,
++                   options: dict[str, Any], *, gui_enabled: bool, mode: str) -> dict[str, Any]:
++    def git(*args: str) -> str:
++        result = subprocess.run(["git", *args], cwd=PROJECT_ROOT, capture_output=True, text=True)
++        return result.stdout.strip() if result.returncode == 0 else "unavailable"
++    paths = {"model": configuration.model_path, "scaler": configuration.scaler_path,
++             "threshold": configuration.threshold_path}
++    if configuration.profile_name:
++        paths["profile"] = configuration.model_path.parent.parent / "profile.json"
++    return {"schema_version": 1, "started_utc": datetime.now().astimezone().isoformat(),
++            "status": "running", "mode": mode, "gui_enabled": gui_enabled,
++            "host": platform.node(), "platform": platform.platform(), "python": sys.version,
++            "python_executable": sys.executable, "command": sys.argv,
++            "package_versions": {name: importlib.metadata.version(name) for name in ("numpy", "scikit-learn", "joblib", "psutil")},
++            "git_commit": git("rev-parse", "HEAD"),
++            "git_status": git("status", "--short"),
++            "source_sha256": {str(p.relative_to(PROJECT_ROOT)): sha256_file(p)
++                              for p in sorted((PROJECT_ROOT / "src").glob("*.py"))},
++            "artifacts": {key: {"path": str(path), "sha256": sha256_file(path)} for key, path in paths.items()},
++            "profile_name": configuration.profile_name,
++            "profile_sampling_rate_hz": configuration.profile_sampling_rate_hz,
++            "effective_threshold": configuration.threshold, "threshold_source": configuration.threshold_source,
++            "sampling_mismatch": options["sensor_odr"] != configuration.profile_sampling_rate_hz,
++            "final_p99_comparison_eligible": False,
++            "scope": "Live-Entwicklung; unabhängige Zustandslabels und Vergleich aller Methoden separat erforderlich",
++            "runtime_backend": runtime.backend, "configuration": options,
++            "rpm_note": "Unabhängige Benutzermessung; keine Tachosensor-Erfassung" if options["measured_rpm"] is not None else "Nicht gemessen",
++            "latency_definition": "host completion last sample -> score/classification available; incl queue + scaling + TFLite + score",
++            "cpu_definition": "all process threads incl acquisition/preprocessing/libraries/GUI; 100 percent = one core; sampled between decisions",
++            "memory_definition": "RSS at decision; lifetime peak is Linux ru_maxrss including initialization/warmup",
++            "warmup_inferences_excluded": WARMUP_INFERENCES,
++            "sampling_rate_field_definition": "measured_sampling_rate_hz = (N-1)/host read-completion span; FIFO bursts affect this value, not an independent ODR measurement",
++            "sensor_loss_count_note": "gap/overrun events are evidence; exact lost sensor sample count is unknown; queue-dropped windows counted exactly"}
++
++
++def iter_live_measurements(runtime: TFLiteRuntime, scaler: Any, configuration: LiveConfiguration,
++                           output_path: Path, *, stop_event: threading.Event | None = None,
++                           max_windows: int | None = None, gui_enabled: bool = False,
++                           mode: str = "development_monitor", sensor_odr: float = 200,
++                           sensor_range: int = 2, buffer_windows: int = 4,
++                           allow_sampling_mismatch: bool = False,
++                           fan_pwm_setpoint: float | None = None,
++                           measured_rpm: float | None = None, rpm_source: str | None = None,
++                           before_acquisition: Callable[[], Any] | None = None):
++    options = dict(sensor_odr=sensor_odr, sensor_range=sensor_range, buffer_windows=buffer_windows,
++                   allow_sampling_mismatch=allow_sampling_mismatch, fan_pwm_setpoint=fan_pwm_setpoint,
++                   measured_rpm=measured_rpm, rpm_source=rpm_source)
++    validate_acquisition_options(configuration, **options)
++    stop = stop_event or threading.Event()
++    output_path.parent.mkdir(parents=True, exist_ok=True)
++    manifest_path = output_path.with_suffix(".run.json")
++    raw_path = output_path.with_suffix(".raw.csv")
++    for path in (output_path, manifest_path, raw_path, raw_path.with_suffix(".events.jsonl")):
++        if path.exists():
++            raise FileExistsError(f"Ergebnis wird nicht überschrieben: {path}")
++    manifest = run_provenance(configuration, runtime, options, gui_enabled=gui_enabled, mode=mode)
++    with manifest_path.open("x", encoding="utf-8") as handle:
++        json.dump(manifest, handle, indent=2, ensure_ascii=False)
++        handle.flush()
++        os.fsync(handle.fileno())
++    bus = None
++    acquisition = None
++    processed = 0
++    invalid = 0
++    metrics = ProcessMetrics()
++    try:
++        connect_sensor, _ = load_sensor_access()
++        try:
++            from adxl345 import read_fresh_sample, sensor_configuration, reset_fifo
++        except ModuleNotFoundError:
++            from src.adxl345 import read_fresh_sample, sensor_configuration, reset_fifo
++        bus = connect_sensor(odr_hz=sensor_odr, range_g=sensor_range, fifo=True)
++        manifest["sensor"] = sensor_configuration(bus)
++        def read(stop: threading.Event) -> Sample | None:
++            sample = read_fresh_sample(bus, stop_event=stop)
++            if sample is None:
++                return None
++            return Sample(sample.xyz_g, sample.monotonic_ns, time.time_ns(), sample.gap,
++                          sample.overrun, sample.saturated,
++                          {key: getattr(sample, key) for key in ("sample_index", "sensor_time_estimate_s", "fifo_depth", "read_duration_ns")})
++        acquisition = BufferedAcquisition(read, raw_path, capacity=buffer_windows, stop_event=stop,
++                                          max_samples=max_windows * WINDOW_SIZE if max_windows else None)
++        with output_path.open("x", encoding="utf-8", newline="", buffering=1) as handle:
++            writer = csv.DictWriter(handle, fieldnames=CSV_FIELDS)
++            writer.writeheader()
++            try:
++                if before_acquisition is not None:
++                    before_acquisition()
++                reset_fifo(bus)
++                acquisition.start()
++                while not stop.is_set() and (not acquisition.done.is_set() or not acquisition.queue.empty()):
++                    window = acquisition.get()
++                    if window is None:
++                        continue
++                    start_ns = time.monotonic_ns()
++                    error_message = ""
++                    fatal = False
++                    score, prediction, inference_ms, preprocessing_ms = float("nan"), -1, 0.0, 0.0
++                    try:
++                        if window.gap_count or window.overrun_count or window.saturated_count:
++                            raise ValueError("Sensorfenster mit Lücke, Overrun oder Sättigung; Entscheidung ungültig")
++                        scaled = scale_window(window.values, scaler)
++                        preprocessing_ms = (time.monotonic_ns() - start_ns) / 1e6
++                        score, prediction, inference_ms = infer_window(runtime, scaled, configuration.threshold)
++                    except Exception as error:
++                        error_message = f"{type(error).__name__}: {error}"
++                        invalid += 1
++                        fatal = not (window.gap_count or window.overrun_count or window.saturated_count)
++                    decision_ns = time.monotonic_ns()
++                    snapshot = acquisition.snapshot()
++                    row = {"timestamp": datetime.now().astimezone().isoformat(timespec="milliseconds"),
++                           "window_index": window.index, "reconstruction_error": score,
++                           "threshold": configuration.threshold, "threshold_source": configuration.threshold_source,
++                           "predicted_label": prediction, "status": decision_status(prediction, score, configuration.threshold),
++                           "error": error_message, "runtime_backend": runtime.backend,
++                           "inference_time_ms": inference_ms, "measured_sampling_rate_hz": window.sampling_rate_hz,
++                           "window_start_timestamp": datetime.fromtimestamp(window.first_utc_ns / 1e9).astimezone().isoformat(timespec="milliseconds"),
++                           "window_complete_monotonic_ns": window.complete_ns, "decision_monotonic_ns": decision_ns,
++                           "queue_wait_ms": (start_ns - window.complete_ns) / 1e6,
++                           "preprocessing_time_ms": preprocessing_ms,
++                           "decision_latency_ms": (decision_ns - window.complete_ns) / 1e6,
++                           "window_formation_time_ms": (window.complete_ns - window.first_sample_ns) / 1e6,
++                           "total_window_pipeline_time_ms": (decision_ns - window.first_sample_ns) / 1e6,
++                           "queue_pending_windows": snapshot["queue_pending_windows"], "windows_dropped": snapshot["windows_dropped"],
++                           "gap_count": window.gap_count, "overrun_count": window.overrun_count,
++                           "saturated_count": window.saturated_count, **metrics.sample()}
++                    writer.writerow(row)
++                    handle.flush()
++                    processed += 1
++                    yield row
++                    if fatal:
++                        raise RuntimeError(error_message)
++                if acquisition.error is not None:
++                    raise RuntimeError(f"Sensorerfassung fehlgeschlagen: {acquisition.error}") from acquisition.error
++                manifest["status"] = "stopped" if stop.is_set() else "completed"
++            finally:
++                handle.flush()
++                os.fsync(handle.fileno())
++    except (KeyboardInterrupt, GeneratorExit):
++        manifest["status"] = "stopped"
++        raise
++    except BaseException as error:
++        manifest["status"] = "failed"
++        manifest["error"] = f"{type(error).__name__}: {error}"
++        raise
++    finally:
++        cleanup_errors = []
++        if acquisition is not None:
++            try:
++                acquisition.stop()
++            except BaseException as error:
++                cleanup_errors.append(f"acquisition_stop: {type(error).__name__}: {error}")
++        if bus is not None:
++            try:
++                bus.close()
++            except BaseException as error:
++                cleanup_errors.append(f"sensor_close: {type(error).__name__}: {error}")
++        if acquisition is not None and acquisition.error is not None:
++            manifest["status"] = "failed"
++        if cleanup_errors:
++            manifest["status"] = "failed"
++            manifest["cleanup_errors"] = cleanup_errors
++        manifest["ended_utc"] = datetime.now().astimezone().isoformat()
++        manifest["decisions_logged"] = processed
++        manifest["invalid_windows"] = invalid
++        manifest["acquisition"] = acquisition.snapshot() if acquisition else None
++        manifest["process_final"] = metrics.sample()
++        if acquisition is not None and output_path.exists():
++            try:
++                manifest["latency_summary"] = summarize_decisions(output_path, acquisition.snapshot(), WINDOW_SIZE)
++            except Exception as error:
++                manifest["latency_summary_error"] = f"{type(error).__name__}: {error}"
++        temporary = manifest_path.with_suffix(".json.tmp")
++        with temporary.open("w", encoding="utf-8") as handle:
++            json.dump(manifest, handle, indent=2, ensure_ascii=False, allow_nan=False)
++            handle.flush()
++            os.fsync(handle.fileno())
++        temporary.replace(manifest_path)
++        if cleanup_errors:
++            raise RuntimeError("; ".join(cleanup_errors))
+ 
+ 
+ def format_mean(value: float | None, unit: str, decimals: int) -> str:
+@@ -455,6 +703,7 @@ def print_summary(summary: LiveSummary, log_path: Path) -> None:
+     print(f"Fenster: {summary.window_count}")
+     print(f"NORMAL: {summary.normal_count}")
+     print(f"ANOMALY: {summary.anomaly_count}")
++    print(f"ERROR/ungültig: {summary.invalid_count}")
+     print(
+         "Mittlerer MSE: "
+         + format_mean(summary.mean(summary.reconstruction_error_sum), "", 6)
+@@ -495,74 +744,23 @@ def print_runtime_information(
+     print(f"Warm-up: {WARMUP_INFERENCES} künstliche Inferenzen (nicht geloggt)")
+ 
+ 
+-def run_live_monitor(
+-    runtime: TFLiteRuntime,
+-    scaler: Any,
+-    output_path: Path,
+-    max_windows: int | None,
+-    threshold: float = RECONSTRUCTION_ERROR_THRESHOLD,
+-) -> None:
+-    connect_sensor, read_sensor = load_sensor_access()
+-    bus = connect_sensor()
++def run_live_monitor(runtime: TFLiteRuntime, scaler: Any, output_path: Path,
++                     max_windows: int | None, configuration: LiveConfiguration,
++                     **options: Any) -> None:
++    stop = threading.Event()
+     summary = LiveSummary()
+-    output_path.parent.mkdir(parents=True, exist_ok=True)
+-
+     try:
+-        with output_path.open("x", encoding="utf-8", newline="", buffering=1) as handle:
+-            writer = csv.DictWriter(handle, fieldnames=CSV_FIELDS)
+-            writer.writeheader()
+-            handle.flush()
+-
+-            print(f"Log: {display_path(output_path)}")
+-            print("Live-Erfassung gestartet. Beenden mit Ctrl+C.\n")
+-            try:
+-                while max_windows is None or summary.window_count < max_windows:
+-                    raw_window, measured_sampling_rate_hz = collect_window(
+-                        bus, read_sensor
+-                    )
+-                    scaled_window = scale_window(raw_window, scaler)
+-                    (
+-                        reconstruction_error,
+-                        predicted_label,
+-                        inference_time_ms,
+-                    ) = infer_window(runtime, scaled_window, threshold)
+-
+-                    timestamp = datetime.now().astimezone()
+-                    window_index = summary.window_count + 1
+-                    writer.writerow(
+-                        {
+-                            "timestamp": timestamp.isoformat(timespec="milliseconds"),
+-                            "window_index": window_index,
+-                            "reconstruction_error": reconstruction_error,
+-                            "threshold": threshold,
+-                            "predicted_label": predicted_label,
+-                            "inference_time_ms": inference_time_ms,
+-                            "measured_sampling_rate_hz": measured_sampling_rate_hz,
+-                        }
+-                    )
+-                    handle.flush()
+-                    summary.add(
+-                        reconstruction_error,
+-                        predicted_label,
+-                        inference_time_ms,
+-                        measured_sampling_rate_hz,
+-                    )
+-
+-                    status = "ANOMALY" if predicted_label else "NORMAL"
+-                    print(
+-                        f"{timestamp:%H:%M:%S} | Window {window_index:04d} | "
+-                        f"MSE {reconstruction_error:.6f} | "
+-                        f"Threshold {threshold:.6f} | "
+-                        f"{status} | inference {inference_time_ms:.3f} ms | "
+-                        f"fs {measured_sampling_rate_hz:.1f} Hz",
+-                        flush=True,
+-                    )
+-                    if predicted_label:
+-                        print("*** ANOMALY DETECTED ***", flush=True)
+-            except KeyboardInterrupt:
+-                print("\nCtrl+C empfangen; beende Live-Erfassung sauber ...")
++        with cooperative_shutdown(stop), closing(iter_live_measurements(
++                runtime, scaler, configuration, output_path, stop_event=stop,
++                max_windows=max_windows, **options)) as measurements:
++            for row in measurements:
++                summary.add(row["reconstruction_error"], row["predicted_label"],
++                            row["inference_time_ms"], row["measured_sampling_rate_hz"])
++                print(f"Window {row['window_index']:04d} | {row['status']} | "
++                      f"MSE {row['reconstruction_error']:.6f} | "
++                      f"Latenz {row['decision_latency_ms']:.3f} ms | "
++                      f"Queue {row['queue_pending_windows']} | verworfen {row['windows_dropped']}", flush=True)
+     finally:
+-        bus.close()
+         print_summary(summary, output_path)
+ 
+ 
+@@ -590,7 +788,7 @@ def parse_args() -> argparse.Namespace:
+         "--max-windows",
+         type=int,
+         default=None,
+-        help="Nach dieser Fensterzahl automatisch beenden (Standard: bis Ctrl+C).",
++        help="Nach dieser Zahl erfasster Fenster beenden; Pufferverluste werden separat gezählt.",
+     )
+     parser.add_argument(
+         "--output",
+@@ -601,6 +799,7 @@ def parse_args() -> argparse.Namespace:
+             "Modus; vorhandene Logs erhalten einen neuen Run-Identifier."
+         ),
+     )
++    add_acquisition_arguments(parser)
+     arguments = parser.parse_args()
+     if arguments.max_windows is not None and arguments.max_windows <= 0:
+         parser.error("--max-windows muss positiv sein.")
+@@ -634,7 +833,8 @@ def main() -> None:
+         scaler,
+         output_path,
+         arguments.max_windows,
+-        configuration.threshold,
++        configuration,
++        **acquisition_options(arguments),
+     )
+ 
+ 

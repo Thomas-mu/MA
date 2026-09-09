@@ -1,0 +1,17 @@
+{
+  "head": "12bd10d01fe504041b11aac5fd60a6a65883a13d",
+  "protected_changes": [],
+  "docx_sha256": "87fc9b2665e739cec9165c14d4cf074b7afd6f7721b4561b5f7ba5f28ea9d6b6",
+  "profile_checks": [
+    {
+      "profile": "fan_25",
+      "checks": 12,
+      "all_hashes_match": true
+    },
+    {
+      "profile": "fan_50",
+      "checks": 12,
+      "all_hashes_match": true
+    }
+  ]
+}

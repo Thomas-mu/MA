@@ -1,0 +1,31 @@
+{
+  "hostname": "edgepi",
+  "platform": "Linux-6.18.34+rpt-rpi-2712-aarch64-with-glibc2.41",
+  "device_model": "Raspberry Pi 5 Model B Rev 1.0",
+  "python": "/home/malik/masterarbeit-edge-ai/.venv/bin/python",
+  "git_head": "12bd10d01fe504041b11aac5fd60a6a65883a13d",
+  "initial_git_worktree_clean": true,
+  "remote_head_verified": "12bd10d01fe504041b11aac5fd60a6a65883a13d",
+  "initial_registers": {
+    "0x0": "0xe5",
+    "0x2c": "0xa",
+    "0x2d": "0x0",
+    "0x2e": "0x0",
+    "0x2f": "0x0",
+    "0x31": "0x0",
+    "0x38": "0x0",
+    "0x39": "0x0"
+  },
+  "i2c_bus_1_configured_hz": 100000,
+  "packages": {
+    "numpy": "2.5.1",
+    "pandas": "3.0.3",
+    "scipy": "1.18.0",
+    "scikit-learn": "1.9.0",
+    "tensorflow": "2.21.0",
+    "ai-edge-litert": "2.1.6",
+    "smbus2": "0.6.1",
+    "psutil": "7.2.2",
+    "pytest": "9.1.1"
+  }
+}

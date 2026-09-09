@@ -1,0 +1,401 @@
+Quelle: docs/Akz_Masterarbeit_Bericht(3).docx
+Extraktion: DOCX ZIP/XML; Absätze und Tabellen in Dokumentreihenfolge. Office-Math als Text mit sqrt, Brüchen, Summengrenzen und Exponenten serialisiert; keine originalgetreue grafische Formeldarstellung. Dokumentinhalt ist Anforderungsquelle, keine Ausführungsanweisung.
+
+[Absatz 5] Frankfurt University of Applied Sciences
+[Absatz 6] Fachbereich 2: Informatik und Ingenieurswissenschaften
+[Absatz 7] Masterarbeit
+[Absatz 8] Wissenschaftliche Berichtsabgabe zur Masterarbeit
+[Absatz 9] Thema:
+[Absatz 10] „KI-basierte Anomalieerkennung auf ressourcenbeschränkter Edge-Hardware“
+[Absatz 11] Erster Prüfer: Herr Prof. Dr. Karsten Schmidt
+[Absatz 12] Zweite Prüferin: Frau M.Sc. Virginia Kramer
+[Absatz 13] Studiengang: Mechatronik und Robotik
+[Absatz 14] Bearbeiter: Abdulmalik Alzubi
+[Absatz 15] Matrikelnummer: 1224063
+[Absatz 16] Zeitraum: 26.05.2026 – 27.10.2026
+[Absatz 17] Abgabedatum: 27.10.2026
+[Absatz 21] Erklärung
+[Absatz 22] Hiermit erkläre ich, dass ich die vorliegende Arbeit selbständig erstellt und keine anderen
+[Absatz 23] als die angegebenen Hilfsmittel benutzt habe.
+[Absatz 24] Soweit ich auf fremde Materialien, Texte oder Gedankengänge zurückgegriffen habe, enthalten meine Ausführungen vollständige und eindeutige Verweise auf die Urheber und Quellen.
+[Absatz 25] Alle weiteren Inhalte der vorgelegten Arbeit stammen von mir im urheberrechtlichen Sinn,
+[Absatz 26] soweit keine Verweise und Zitate erfolgen.
+[Absatz 27] Datum: Frankfurt, den XXXXX
+[Absatz 29] Unterschrift: 
+[Absatz 31] Abdulmalik Alzubi
+[Absatz 32]  
+[Absatz 33] Abbildungsverzeichnis
+[Absatz 34] Es konnten keine Einträge für ein Abbildungsverzeichnis gefunden werden.
+[Absatz 35] Tabellenverzeichnis
+[Absatz 36]  Tabelle 2-1: Kennzahlen der binären Anomalieerkennung 7
+[Absatz 37]  Tabelle 3-1: Ausgewählte Vorarbeiten und ihre Bedeutung für die Untersuchung 10
+[Absatz 38]  Tabelle 4-1: Anforderungen, Prioritäten und Nachweise 14
+[Absatz 39]  Tabelle 5-1: Bewertung der Prüfstandsalternativen 18
+[Absatz 40]  Tabelle 5-2: Kriterien und Gewichte für den Prüfstand 18
+[Absatz 41]  Tabelle 5-3: Gewichtete Bewertung der Prüfstandsalternativen 19
+[Absatz 42]  Tabelle 5-4: Vergleich der Sensorik und Messketten 20
+[Absatz 43]  Tabelle 5-5: Bewertung der Edge-Plattformen 21
+[Absatz 44]  Tabelle 5-6: Kriterien und Gewichte für die Edge-Plattform 21
+[Absatz 45]  Tabelle 5-7: Gewichtete Bewertung der Edge-Plattformen 22
+[Absatz 46]  Tabelle 5-8: Bewertung der Signalrepräsentationen 23
+[Absatz 47]  Tabelle 5-9: Auswahl der Anomalieverfahren 24
+[Absatz 48]  Tabelle 5-10: Kriterienbasierter Vergleich der Softwarealternativen 25
+[Absatz 49]  Tabelle 5-11: Kriterien und Gewichte für die Softwareauswahl 26
+[Absatz 50]  Tabelle 5-12: Gewichtete Bewertung der Softwarealternativen 26
+[Absatz 51]  Tabelle 5-13: Systementscheidungen und ausstehende Nachweise 28
+[Absatz 55] Abkürzungsverzeichnis
+[Tabelle ab Block 56]
+Zeile 1: Abkürzung | Bedeutung
+Zeile 2: AE | Autoencoder
+Zeile 3: CPU | Central Processing Unit
+Zeile 4: DFT | Diskrete Fourier-Transformation
+Zeile 5: FFT | Fast Fourier Transform
+Zeile 6: FPR | False-Positive-Rate
+Zeile 7: GPIO | General Purpose Input/Output
+Zeile 8: GUI | Graphical User Interface (grafische Benutzeroberfläche)
+Zeile 9: I²C | Inter-Integrated Circuit
+Zeile 10: IEPE | Integrated Electronics Piezo-Electric
+Zeile 11: KI | Künstliche Intelligenz
+Zeile 12: MCU | Microcontroller Unit
+Zeile 13: ML | Machine Learning
+Zeile 14: MSE | Mean Squared Error
+Zeile 15: ODR | Output Data Rate
+Zeile 16: PWM | Pulsweitenmodulation
+Zeile 17: RAM | Random Access Memory
+Zeile 18: RMS | Root Mean Square
+Zeile 19: RSS | Resident Set Size
+Zeile 20: SBC | Single-Board Computer
+Zeile 21: SPI | Serial Peripheral Interface
+Zeile 22: TFLite | TensorFlow Lite
+[Tabellenende]
+[Absatz 60] Einleitung, Problemstellung und Zielsetzung
+[Absatz 61] Ausgangssituation und Motivation
+[Absatz 62] Beschleunigungssignale ermöglichen es, Schwingungen technischer Systeme zu beobachten. Bei rotierenden Komponenten können Veränderungen dieser Signale auf einen veränderten Zustand hinweisen. Randall und Antoni (2011) erläutern dies am Beispiel der Wälzlagerdiagnose. Die vorliegende Arbeit untersucht die lokale Erkennung solcher Abweichungen anhand von Beschleunigungsdaten.
+[Absatz 63] Die Auswertung soll lokal in der Nähe des Sensors erfolgen. Dieses Prinzip des Edge Computing kann die Übertragung von Rohdaten und die Abhängigkeit von entfernten Rechendiensten verringern (Shi et al., 2016). Neben einer guten Erkennung sind deshalb der Rechen- und Speicherbedarf sowie die Verarbeitungszeit wichtig. Zusätzlich wird untersucht, wie sich veränderte normale Messbedingungen auf die Entscheidungen auswirken.
+[Absatz 64] Wissenschaftliche Problemstellung
+[Absatz 65] Bei der normalitätsbasierten Anomalieerkennung wird ein Referenzmodell aus normalen Messdaten gebildet. Neue Daten gelten als auffällig, wenn sie ausreichend von dieser Referenz abweichen. Dieses Vorgehen benötigt keine vollständige Sammlung möglicher Fehlerbeispiele. Seine Aussagekraft hängt jedoch davon ab, welche Normalbedingungen die Referenzdaten abdecken (Chandola et al., 2009).
+[Absatz 66] Für einen belastbaren Vergleich müssen die Verfahren unter vergleichbaren Bedingungen bewertet werden. Informationen aus dem Test dürfen weder die Modellwahl noch die Vorverarbeitung oder die Entscheidungsschwelle beeinflussen; andernfalls kann die Erkennungsleistung überschätzt werden (Kaufman et al., 2012). Außerdem muss die gesamte Verarbeitung auf der Zielhardware betrachtet werden. Eine kurze Modellinferenz allein zeigt noch nicht, ob alle eingehenden Daten rechtzeitig verarbeitet werden.
+[Absatz 67] Zielsetzung der Arbeit
+[Absatz 68] Ziel ist die Konzeption, Umsetzung und experimentelle Bewertung einer lokalen Verarbeitungskette (Pipeline) für mehrkanalige Beschleunigungsdaten. Verglichen werden ein neuronales Hauptverfahren, eine statistische Schwellenwertbaseline und ein klassisches Lernverfahren. Auch das klassische Verfahren gehört zum maschinellen Lernen. Die konkrete Auswahl des Systems und des Versuchsaufbaus wird in Kapitel 5 anhand der Anforderungen und eines Variantenvergleichs begründet.
+[Absatz 69] Der Beitrag ist der gemeinsame Vergleich von Erkennungsqualität und technischem Aufwand. Ein Zusatzversuch untersucht die Grenzen der unveränderten Pipeline bei geänderten Normalbedingungen.
+[Absatz 70] Forschungsfragen und Hypothesen
+[Absatz 71] Zentrale Forschungsfrage: Wie lässt sich eine lokale Anomalieerkennung für mehrkanalige Beschleunigungsdaten auf ressourcenbeschränkter Edge-Hardware umsetzen und hinsichtlich Erkennungsqualität, Ressourcenbedarf, Zeitverhalten und veränderter Normalbedingungen bewerten?
+[Absatz 72] FF1: Welche Anforderungen ergeben sich aus der Aufgabe, und wie begründen sie die Auswahl von Versuchsaufbau, Sensorik, Hardware und Verfahren?
+[Absatz 73] FF2: Wie unterscheiden sich Hauptverfahren und Baselines bei gleichen Testfenstern und einer einheitlichen Schwellenwertkalibrierung auf Normaldaten hinsichtlich Precision, Recall, F1-Score und Fehlalarmrate?
+[Absatz 74] FF3: Wie viel Speicher und Rechenleistung benötigt die lokale Pipeline, und wie häufig überschreitet ihre Verarbeitung das Zeitbudget bis zum nächsten Fenster?
+[Absatz 75] FF4: Wie verändert sich die Fehlalarmrate bei gezielt geänderten Normalbedingungen, wenn Vorverarbeitung, Modell und Schwelle unverändert bleiben?
+[Absatz 76] Die Arbeitshypothesen legen die Vergleichsgrößen fest. Bereits zur Entwicklung verwendete Daten werden explorativ ausgewertet. Eine unabhängige Bestätigung erfordert neue Testaufnahmen und ein vor deren Auswertung festgelegtes Versuchsprotokoll.
+[Absatz 77] H1 – Erkennungsqualität: Das neuronale Hauptverfahren erreicht bei den definierten Versuchsanomalien einen höheren F1-Score als die statistische Baseline. Diese Erwartung beruht auf der möglichen Nutzung von Informationen, die ein einzelner Kennwert nicht abbildet. Bewertet werden die F1-Differenz auf derselben Testmenge sowie Fehlalarme und übersehene Anomalien.
+[Absatz 78] H2 – Zeitverhalten: Das empirische 99. Perzentil (P99) der Verarbeitungslatenz liegt unter dem Fensterintervall S/fₛ. Die Latenz reicht vom vollständigen Fenster bis zur verfügbaren Entscheidung. S bezeichnet die Schrittweite in Messzeitpunkten, fₛ die aus Zeitstempeln ermittelte Erfassungsrate. Fristüberschreitungen werden zusätzlich gezählt; P99 garantiert keine fristgerechte Ausgabe jeder Entscheidung.
+[Absatz 79] H3 – Veränderte Normalbedingungen: Bei unveränderter Pipeline steigt die Fehlalarmrate unter der untersuchten veränderten Normalbedingung. Verglichen werden die Fehlalarmraten vor und nach der Änderung. Eine Ursache lässt sich nur bei kontrollierten weiteren Einflüssen zuordnen.
+[Absatz 80] Abgrenzung der Arbeit
+[Absatz 81] Die Ergebnisse gelten für die untersuchten Bedingungen und die im Versuchsprotokoll definierten Anomalien. Deren Erkennung erlaubt weder eine gesicherte Schadensdiagnose noch eine Prognose der Restlebensdauer. Die Übertragung auf andere Systeme und den industriellen Dauerbetrieb erfordert weitere Untersuchungen.
+[Absatz 82] Der Kernversuch bewertet die lokale Inferenz eines zuvor trainierten Modells auf einer Zielplattform. Die Pipeline bleibt dabei unverändert. Eine ergänzende Nachkalibrierung wird gesondert ausgewertet.
+[Absatz 83] Aufbau der Arbeit
+[Absatz 84] Kapitel 2 und 3 erläutern Grundlagen und Vorarbeiten. Darauf folgen Anforderungen (Kapitel 4), Variantenvergleich und Versuchsaufbau (Kapitel 5), Implementierung (Kapitel 6) und Evaluation (Kapitel 7). Diskussion und Ausblick ordnen Grenzen und weitere Untersuchungen ein; das Fazit beantwortet die Forschungsfragen.
+[Absatz 85] Theoretische Grundlagen
+[Absatz 86] Dieses Kapitel erklärt die benötigten Begriffe, mögliche Verfahren und die Messgrößen für die Evaluation. Die dargestellten Ansätze bilden die Grundlage für den Variantenvergleich; ihre Auswahl für das System erfolgt erst in Kapitel 5.
+[Absatz 87] Zustandsüberwachung und Anomalieerkennung
+[Absatz 88] Zustandsüberwachung (Condition Monitoring) erfasst und bewertet den technischen Zustand. Diagnose ordnet Fehlerursachen zu, Prognose schätzt die künftige Zustandsentwicklung (Jardine et al., 2006). Anomalieerkennung bewertet zunächst nur Abweichungen von einer Normalreferenz.
+[Absatz 89] Was als anomal gilt, hängt von Referenz und Betriebskontext ab. Auch ein zeitlicher Verlauf kann auffällig sein, obwohl seine Einzelwerte unauffällig sind (Chandola et al., 2009). Deshalb werden hier Messfenster bewertet.
+[Absatz 90] Klassische und neuronale Verfahren können auf als normal ausgewählten Daten angepasst werden. Dieses Normaldaten-Szenario beschreibt die Trainingsgrundlage und ist von der Algorithmusklasse zu unterscheiden. Der Anomalie-Score ist eine Bewertungsgröße, zunächst keine Schadenswahrscheinlichkeit (Ruff et al., 2021).
+[Absatz 91] Verfahrensklassen für die Anomalieentscheidung
+[Absatz 92] Statistische Schwellenwertverfahren
+[Absatz 93] Der Effektivwert (Root Mean Square, RMS) eines Kanals mit N Messwerten ist die Quadratwurzel des Mittelwerts der quadrierten Werte:
+[Absatz 94]    RMS(x) = sqrt((1)/(N) ∑_{n = 0}^{N - 1}((x[n])^(2))) (2-1)
+[Absatz 95] Der RMS fasst die Amplitude eines Fensters zusammen, erhält aber die Reihenfolge der Werte nicht. Für den Fenstermittelwert x̄ gilt RMS²(x) = x̄² + RMS²(x − x̄). Ohne Mittelwertentfernung beeinflussen daher auch konstante Anteile den Kennwert. Beschleunigungssensoren erfassen neben Bewegung unter anderem die Gravitation und einen Sensoroffset (Analog Devices, 2022). Rohwert-RMS und RMS nach Mittelwertentfernung sind deshalb zu unterscheiden. Ebenso muss feststehen, wie mehrere Messkanäle zusammengefasst werden.
+[Absatz 96] Klassische Verfahren im Normaldaten-Szenario
+[Absatz 97] Isolation Forest nutzt zufällige Teilungsbäume. Jeder Schritt teilt die Daten anhand eines zufällig gewählten Merkmals und Teilungspunkts. Beobachtungen, die im Mittel durch wenige Teilungen isoliert werden, gelten als auffälliger (Liu et al., 2008). Im Normaldaten-Szenario erfolgt seine Anpassung ausschließlich anhand normaler Beobachtungen.
+[Absatz 98] Die Eingabe ist ein Vektor fester Länge aus Fensterkennwerten oder aneinandergereihten Messwerten. Die verwendete Darstellung und die Richtung des ausgegebenen Scores müssen dokumentiert werden.
+[Absatz 99] Autoencoder
+[Absatz 100] Ein Autoencoder erzeugt aus einer Eingabe x eine Rekonstruktion x̂. Der Encoder bildet die Eingabe auf eine interne Darstellung ab, der Decoder rekonstruiert daraus die Ausgangswerte. Eine begrenzte Modellkapazität oder Regularisierung soll bloßes Kopieren verhindern (Goodfellow et al., 2016). Als Anomalie-Score kann der mittlere quadratische Rekonstruktionsfehler verwendet werden:
+[Absatz 101]    s(x) = MSE(x, x̂) = (1)/(d) ∑_{j = 1}^{d}(((x_{j} - x̂_{j}))^(2)) (2-2)
+[Absatz 102] Dabei bezeichnet d die Zahl der verglichenen Einzelwerte. Für ein Fenster mit H Messzeitpunkten und C Kanälen gilt d = HC. Der Score hängt von der Skalierung und der Mittelung ab. Bei standardisierten Eingaben ist er dimensionslos.
+[Absatz 103] Die Annahme lautet, dass ein auf Normaldaten trainierter Autoencoder auffällige Eingaben schlechter rekonstruiert. Das ist keine allgemeine Garantie: Auch bestimmte Anomalien können gut rekonstruiert werden (Ruff et al., 2021). Ob der Score die definierten Versuchsanomalien trennt, muss daher experimentell geprüft werden.
+[Absatz 104] Messdaten und Fensterbildung
+[Absatz 105] Bei dreiachsigen Messungen enthält jeder Messvektor beispielsweise einen X-, Y- und Z-Wert. Sensorausgaberate, Signalbandbreite und Abfragerate der Software sind unterschiedliche Größen. Häufigeres Auslesen erzeugt nicht automatisch neue Sensorwerte. Die Abstimmung von Sensorkonfiguration und Datenabruf ist daher zu prüfen (Analog Devices, 2022).
+[Absatz 106] Ein Fenster bündelt H aufeinanderfolgende Messvektoren. Bei C Messkanälen enthält es HC Werte. Die Schrittweite S bestimmt, nach wie vielen neuen Messzeitpunkten das nächste Fenster beginnt. Bei gleichmäßiger Erfassung beträgt das Fensterintervall S/fₛ. Für die Zeitbewertung wird fₛ aus den Zeitstempeln bestimmt; ob jeder erfasste Vektor eine neue Sensormessung enthält, wird getrennt geprüft.
+[Absatz 107] Bei ungleichmäßiger Erfassung und Datenlücken reichen nominelle Zeitangaben nicht aus. Die tatsächlich erfassten Zeitstempel müssen deshalb erhalten bleiben.
+[Absatz 108] Datenaufteilung und Vorverarbeitung
+[Absatz 109] Trainingsdaten dienen zur Anpassung des Modells. Validierungsdaten unterstützen die Auswahl von Einstellungen und die Kalibrierung. Die Testdaten bleiben bis zur abschließenden Bewertung ungenutzt. Vollständige Aufnahmen bilden dabei Gruppen und werden vor der Fensterbildung getrennt zugeordnet. So werden ähnliche Abschnitte derselben Aufnahme nicht auf Training und Test verteilt (scikit-learn developers, o. J. b).
+[Absatz 110] Data Leakage liegt vor, wenn Informationen in die Entwicklung einfließen, die bei der vorgesehenen Anwendung nicht verfügbar wären. Ein Beispiel ist die Standardisierung mit Mittelwert und Standardabweichung der gesamten Datenmenge. Solche Parameter dürfen nur aus Trainingsdaten bestimmt werden. Danach werden sie unverändert auf Validierungs-, Test- und Live-Daten angewendet (scikit-learn developers, o. J. a).
+[Absatz 111] Fenster derselben Aufnahme sind keine unabhängigen Messläufe. Auch getrennte Aufnahmen können bei gleicher Montage sehr ähnlich sein. Die Aussagekraft hängt daher von Zahl und Vielfalt der Messläufe ab.
+[Absatz 112] Schwellenwertkalibrierung
+[Absatz 113] Aus dem Anomalie-Score wird durch einen Schwellenwert eine Entscheidung. Für den Vergleich werden die Scores so ausgerichtet, dass größere Werte eine stärkere Auffälligkeit bedeuten. Die Entscheidung lautet dann anomal, wenn der Score die festgelegte Schwelle überschreitet.
+[Absatz 114] Eine mögliche Kalibrierung nutzt ein hohes empirisches Quantil der Scores separater Normaldaten. Ein Quantil bezeichnet einen Grenzwert in der sortierten Verteilung. Die konkrete Quantilsregel wird für alle Verfahren vor der Testauswertung festgelegt. Damit wird dieselbe Kalibrierungsregel verwendet, auch wenn die numerischen Schwellen verschieden sind.
+[Absatz 115] Eine so bestimmte Schwelle garantiert keine bestimmte Fehlalarmrate auf späteren Aufnahmen. Dafür müssen die neuen Normaldaten ausreichend zur Kalibrierungsgrundlage passen. Eine nachträgliche Anpassung anhand der Testgüte würde die unabhängige Bewertung aufheben (scikit-learn developers, o. J. a).
+[Absatz 116] Erkennungsqualität und Aussagekraft der Evaluation
+[Absatz 117] Die positive Klasse ist die definierte Anomalie. Die Konfusionsmatrix zählt richtig erkannte Anomalien (TP), Fehlalarme (FP), übersehene Anomalien (FN) und richtig erkannte Normalfenster (TN). Daraus ergeben sich die Kennzahlen in Tabelle 2-1 (scikit-learn developers, o. J. c).
+[Absatz 118] Tabelle 2-1: Kennzahlen der binären Anomalieerkennung
+[Tabelle ab Block 119]
+Zeile 1: Kennzahl | Berechnung | Bedeutung
+Zeile 2: Precision | TP / (TP + FP) | Anteil richtiger Anomalien unter allen Alarmen
+Zeile 3: Recall | TP / (TP + FN) | Anteil erkannter Anomalien unter allen tatsächlichen Anomalien
+Zeile 4: F1-Score | 2TP / (2TP + FP + FN) | Harmonisches Mittel von Precision und Recall
+Zeile 5: Fehlalarmrate (FPR) | FP / (FP + TN) | Anteil falsch gemeldeter Fenster unter allen Normalfenstern
+Zeile 6: Accuracy | (TP + TN) / (TP + TN + FP + FN) | Anteil aller richtigen Entscheidungen
+[Tabellenende]
+[Absatz 120] Eine hohe Accuracy kann bei ungleichen Klassenanteilen täuschen. Deshalb werden die Konfusionsmatrix und mehrere Kennzahlen gemeinsam berichtet. Nicht definierte Werte, etwa Recall ohne Anomalien im Datensatz, werden gekennzeichnet. Für reine Normalaufnahmen steht die Fehlalarmrate im Mittelpunkt. Zusätzlich werden Klassenanteile und Ergebnisse je Aufnahme angegeben.
+[Absatz 121] Lokale Ausführung und Zeitverhalten
+[Absatz 122] Bei lokaler Ausführung wird das trainierte Modell nahe der Datenquelle ausgewertet (Shi et al., 2016). Ob Rechenleistung und Arbeitsspeicher der Zielplattform ausreichen, muss für die konkrete Anwendung gemessen werden.
+[Absatz 123] Die Modellgröße bezeichnet die gespeicherte Datei. Der Prozessspeicher umfasst zusätzlich unter anderem Bibliotheken, Eingabedaten und Zwischenergebnisse. Modellgröße und Speicherbedarf während der Ausführung sind daher getrennt auszuweisen. Auch die CPU-Auslastung benötigt eine dokumentierte Messdauer und Bezugsgröße.
+[Absatz 124] Die Inferenzzeit umfasst nur die Modellauswertung. Die Verarbeitungslatenz reicht in dieser Arbeit vom vollständigen Fenster bis zur verfügbaren Entscheidung und enthält auch Vorverarbeitung und Wartezeiten. Die Zeit zum Sammeln des Fensters ist darin nicht enthalten. Ein Echtzeitsystem muss seine Ergebnisse innerhalb festgelegter Fristen liefern (Buttazzo, 2011). Mittelwerte allein belegen das nicht.
+[Absatz 125] P95 und P99 beschreiben hohe empirische Perzentile der gemessenen Latenzen. Sie werden zusammen mit Fristüberschreitungen und Erfassungspausen ausgewertet. Trainierte Modelle können für die lokale Ausführung in ein anderes Format konvertiert werden (Google, 2026a). Danach müssen Scores und Entscheidungen erneut geprüft werden.
+[Absatz 126] Veränderte Normalbedingungen
+[Absatz 127] Ändern sich Montage, Sensororientierung oder Betriebspunkt, können sich normale Eingabedaten von der bisherigen Referenz unterscheiden. Solche Verteilungsänderungen werden häufig als Domain Shift bezeichnet. Sie können die Anomalieerkennung beeinträchtigen (Ruff et al., 2021).
+[Absatz 128] FF4 untersucht deshalb die Fehlalarmrate bei unveränderter Pipeline unter geänderten Normalbedingungen. Eine anschließende Nachkalibrierung ist als eigener Versuch auszuwerten.
+[Absatz 129] Stand der Technik und verwandte Arbeiten
+[Absatz 130] Dieses Kapitel vergleicht ausgewählte Originalstudien nach Datenbasis, Lernaufgabe, lokaler Ausführung und Übertragbarkeit. Die gezielte Auswahl mit Recherchestand September 2026 umfasst Arbeiten zu den Forschungsfragen; sie ist keine vollständige systematische Literaturübersicht.
+[Absatz 131] Datenbasis und Messbedingungen
+[Absatz 132] Lessmeier et al. (2016) untersuchen die überwachte Unterscheidung gesunder Lager sowie von Innen- und Außenringschäden. Sie vergleichen künstlich erzeugte Schäden mit Schäden aus beschleunigten Lebensdauerversuchen. Die Klassifikationsgüte hängt dabei von Schadensherkunft und Verfahren ab. Der Befund betrifft überwachte Lagerklassifikation und lässt sich nicht unmittelbar auf normaldatenbasiertes Training übertragen.
+[Absatz 133] Pittino et al. (2020) untersuchen eine Waferbearbeitungsmaschine bei unterschiedlichen Drehzahlen und Verschleißzuständen. Normaldaten stammen aus funktionsfähigen Kammern, Fehlerdaten aus einem Demonstrator ohne Schmierung. Verglichen werden regressionsbasierte Regelkarten und eine überwachte Support-Vector-Machine-Klassifikation. Letztere nutzt zusätzlich Fehlerbeispiele. Ihr Ergebnis belegt deshalb keinen allgemeinen Vorteil im Normaldaten-Szenario.
+[Absatz 134] Knap et al. (2026) vergleichen klassische und tiefe Klassifikationsverfahren in sechs Übertragungsszenarien auf CWRU- und Paderborner Lagerdaten. Ihr beschriebenes Protokoll trennt vollständige Aufnahmen vor der Fensterbildung. Für die eigene Untersuchung folgt daraus die Trennung ganzer Messläufe. Geänderte Normalbedingungen werden zusätzlich in einem eigenen Versuch betrachtet.
+[Absatz 135] Verfahren und Edge-Ausführung
+[Absatz 136] Ren et al. (2021) führen mit TinyOL einen Autoencoder auf einem Cortex-M4-Mikrocontroller aus und ermöglichen das lokale Nachlernen seiner letzten Schicht. Dreiachsige Lüftermessungen werden vor der Modelleingabe durch Hauptkomponentenanalyse auf eine Dimension reduziert. Nach erneuter Anbringung des Sensors verändert sich der Rekonstruktionsfehler; die feste Schwelle verursacht mehr Fehlalarme. Die untersuchte Modellanpassung ist von der Bewertung einer unveränderten Pipeline zu unterscheiden.
+[Absatz 137] Antonini et al. (2023) entwickeln einen ESP32-Sensorknoten für die Pumpenüberwachung. Merkmalsbildung, Isolation-Forest-Training und Inferenz laufen lokal; das Training setzt normalen Betrieb voraus. Die Ressourcenmessungen erfolgen am Prüfstand und unterscheiden Laden, Training und Inferenz. Eine Bewertung der Erkennungsgenauigkeit ist ausdrücklich nicht Gegenstand der Studie.
+[Absatz 138] Garay et al. (2026) vergleichen vier Algorithmen in fünf Varianten, darunter Isolation Forest und einen Autoencoder, auf einem Cortex-M4F. Nach einer Sensorneumontage treten mehr Fehlalarme auf; gleichzeitig verändert sich die Umgebungstemperatur. Ein isolierter Montageeffekt ist daraus nicht ableitbar. Die Autoren untersuchen außerdem eine Nachkalibrierung von Skalierung und Schwelle. Beim Isolation Forest stammen die Erkennungskennzahlen vom Modell mit 100 Bäumen, die Mikrocontrollerwerte von einer Variante mit sechs Bäumen. Beide Größen beschreiben somit unterschiedliche Modellstände.
+[Absatz 139] Vergleich ausgewählter Arbeiten
+[Absatz 140] Tabelle 3-1 fasst die drei Studien mit eigener Hardwareausführung zusammen. Wegen unterschiedlicher Daten und Messgrenzen erlauben ihre Kennzahlen keine unmittelbare Rangfolge.
+[Absatz 141] Tabelle 3-1: Ausgewählte Vorarbeiten und ihre Bedeutung für die Untersuchung
+[Tabelle ab Block 142]
+Zeile 1: Arbeit | Daten und Lernaufgabe | Ausführung / Messung | Einordnung für diese Arbeit
+Zeile 2: Ren et al. (2021) | Lüfter; Autoencoder und Nachlernen | Cortex-M4; Inferenz und Online-Anpassung | Belegt Montageempfindlichkeit; Anpassung getrennt von fester Normalreferenz bewerten
+Zeile 3: Antonini et al. (2023) | Lüfterprüfstand; Isolation Forest mit Normaltraining | ESP32; Laden, Training und Inferenz | Ressourcen getrennt erfassen; keine Erkennungsbewertung in der Studie
+Zeile 4: Garay et al. (2026) | Unwuchtversuch; fünf normaltrainierte Modellvarianten | Cortex-M4F; Montage- und Temperaturänderung | Modellstände abgleichen; Nachkalibrierung getrennt bewerten
+[Tabellenende]
+[Absatz 143] Forschungslücke und Einordnung der eigenen Arbeit
+[Absatz 144] Die Vorarbeiten zeigen, dass lokale Anomalieerkennung und die Anpassung an veränderte Messbedingungen bereits untersucht werden. Für die eigene Untersuchung bleibt zu klären, welchen zusätzlichen Erkennungsnutzen ein neuronales Verfahren gegenüber den beiden Baselines bietet und welchen technischen Aufwand es verursacht. Die Arbeit liefert hierzu eine anwendungsbezogene Vergleichsevaluation.
+[Absatz 145] Dafür werden drei Aspekte verbunden: gleiche Testfenster und eine gemeinsame Kalibrierungsregel für FF2, Messungen am tatsächlich ausgeführten Modell für FF3 sowie ein kontrollierter Vergleich unveränderter Pipelines bei geänderten Normalbedingungen für FF4. Damit werden die in den Vorarbeiten erkennbaren Grenzen von Vergleichbarkeit und Übertragbarkeit gezielt berücksichtigt.
+[Absatz 146] Kapitel 4 übersetzt diesen Untersuchungsbedarf in überprüfbare Anforderungen und beantwortet damit den ersten Teil von FF1. Kapitel 5 vergleicht anschließend geeignete Lösungsvarianten und begründet die Auswahl des Systems und des Versuchsaufbaus.
+[Absatz 147] Anforderungsanalyse
+[Absatz 148] Dieses Kapitel leitet aus den Forschungsfragen, den Grundlagen und den Grenzen der Vorarbeiten überprüfbare Anforderungen ab. Sie beschreiben die benötigten Funktionen und Bewertungskriterien unabhängig von einer konkreten technischen Lösung.
+[Absatz 149] Messdaten und Vergleichsbasis
+[Absatz 150] Für die Untersuchung muss ein reproduzierbarer Testaufbau realisiert werden (A11). Er muss Messungen im Normalzustand und unter gezielt hergestellten Anomaliebedingungen ermöglichen. Eine Normalbedingung muss für FF4 unabhängig von der Anomaliedefinition veränderbar sein (A10). Ein sicherer Betrieb ist Voraussetzung für die Messläufe. Versuchsbedingungen, Rücksetzbarkeit und Ablauf sind so zu dokumentieren, dass Messläufe wiederholt werden können.
+[Absatz 151] Die Messdaten müssen die benötigten Beschleunigungskanäle mit Einheit, Zeitstempeln und Aufnahmekennung enthalten (A1). Messbereich, nutzbare Bandbreite, Signal-Rausch-Abstand und zeitliche Erfassung sind für die Versuchszustände zu prüfen. Akzeptanzgrenzen werden vor der abschließenden Testserie festgelegt. Datenlücken, ungültige Werte und Sättigung sind zu kennzeichnen. Für Normal- und Anomaliedaten muss feststehen, ob die Kennzeichnung ganze Aufnahmen oder einzelne Zeitabschnitte beschreibt.
+[Absatz 152] Vollständige Aufnahmen werden vor der Fensterbildung getrennt Training, Validierung oder Test zugeordnet. Fenster dürfen keine Aufnahmegrenzen überschreiten. Training und Schwellenwertkalibrierung verwenden nur Normaldaten. Die Vorverarbeitung wird nach den Regeln aus Abschnitt 2.4 angepasst und unverändert auf spätere Daten angewendet.
+[Absatz 153] Das neuronale Hauptverfahren und die beiden Baselines müssen dieselben Testfenster und Labels verwenden. Fensterlänge und Schrittweite werden gemeinsam festgelegt. Unterschiedliche Eingabedarstellungen und der Umgang mit unvollständigen Fenstern sind zu dokumentieren. Die Schwellen folgen derselben Kalibrierungsregel auf separaten Normaldaten. Modellwahl und Kalibrierung müssen vor der Testauswertung abgeschlossen sein.
+[Absatz 154] Lokale Verarbeitung und Zeitverhalten
+[Absatz 155] Datenerfassung, Vorverarbeitung und Entscheidung müssen nach dem Start automatisch und ohne Cloud-Dienst auf der Zielhardware laufen (A4). Die Softwareumgebung muss die benötigten Modelloperationen und Schnittstellen unterstützen; Abhängigkeiten und Versionen sind zu dokumentieren (A5, A6). Für jedes gültige Fenster sind Score, Schwelle und die Entscheidung normal/anomal zu speichern. Ungültige Fenster dürfen nicht als normal bewertet werden. Der Betrieb muss ohne Speicherabbruch und ohne stetig wachsenden Verarbeitungsrückstand möglich sein (A8).
+[Absatz 156] Messläufe müssen gezielt gestartet und geordnet beendet werden können (A13). Jeder Lauf erhält eine eindeutige Kennung. Beim Beenden müssen die bis dahin vollständig erfassten Daten und Ergebnisse gespeichert bleiben. Messdaten, Entscheidungen und die zugehörigen Angaben müssen maschinenlesbar vorliegen und eindeutig zusammengehören (A5).
+[Absatz 157] Als optionale Erweiterung kann eine grafische Benutzeroberfläche zur Live-Anzeige (Live-GUI) entwickelt werden (A12). Sie zeigt den aktuellen Erfassungsstatus sowie Score, Schwelle, Entscheidung und Zeitstempel des zuletzt ausgewerteten Fensters. Fehlende oder veraltete Daten müssen erkennbar sein. Die Anzeige verwendet die Ergebnisse der Verarbeitung und verändert weder Modell noch Schwelle. Der Messbetrieb und die Evaluation müssen auch ohne diese Oberfläche möglich sein.
+[Absatz 158] Für FF3 werden Inferenzzeit und Verarbeitungslatenz nach Abschnitt 2.7 getrennt gemessen. Das Ziel aus H2 ist P99 der Verarbeitungslatenz < S/fₛ. Zusätzlich sind Anzahl und Anteil der Fristüberschreitungen sowie Erfassungspausen zwischen Fenstern zu berichten.
+[Absatz 159] Evaluation
+[Absatz 160] Für FF2 werden die Kennzahlen aus Abschnitt 2.6 auf derselben Testmenge ermittelt. Anzahl der Aufnahmen, Klassenverteilung und Ergebnisse je Aufnahme sind anzugeben (A9). Für FF3 werden Modellgröße, CPU-Auslastung und Prozessspeicher einschließlich Bibliotheken und Vorverarbeitung auf derselben Zielhardware gemessen (A8). Messbedingungen sowie Software-, Code- und Modellstand müssen nachvollziehbar sein (A5). Bei einer Modellkonvertierung sind numerische Abweichungen und Entscheidungen gegenüber dem Ausgangsmodell zu prüfen; die Prüfdaten und Akzeptanzgrenzen werden vor der Testauswertung festgelegt (A6). Wird die Live-GUI umgesetzt, ist ihr zusätzlicher Einfluss auf Latenz und Ressourcenbedarf bei ansonsten gleichen Bedingungen mit und ohne Anzeige zu messen.
+[Absatz 161] Für FF4 wird eine dokumentierte Normalbedingung gezielt verändert. Vorverarbeitung, Modell und Schwelle bleiben dabei unverändert. Verglichen werden die Fehlalarmraten unter der ursprünglichen und der veränderten Bedingung. Eine Nachkalibrierung ist getrennt auszuwerten.
+[Absatz 162] Kernanforderungen und Nachweis
+[Absatz 163] Tabelle 4-1 enthält die Anforderungen A1–A13 mit Art, Priorität und Nachweis. F kennzeichnet funktionale Anforderungen an Systemfunktionen. NF bezeichnet nichtfunktionale Anforderungen an Nachvollziehbarkeit, Zeitverhalten und Betriebsstabilität. Methodische Anforderungen (M) betreffen Versuchsplanung und wissenschaftliche Auswertung. MUSS ist verbindlich; KANN bezeichnet die optionale Live-GUI. Ihr Nachweis ist nur bei Umsetzung erforderlich. Kapitel 6 dokumentiert Umsetzung und Prüfprotokoll. Kapitel 7 bewertet die Erfüllung und prüft die Hypothesen. Nichterfüllte technische Ziele und nicht bestätigte Hypothesen werden als Ergebnisse offengelegt.
+[Absatz 164] Tabelle 4-1: Anforderungen, Prioritäten und Nachweise
+[Tabelle ab Block 165]
+Zeile 1: ID | Art / Priorität | Anforderung | Nachweis
+Zeile 2: A1 | F MUSS | Messdaten mit überprüfter Qualität erfassen | Kanäle, Einheiten und Zeitstempel prüfen; Bandbreite, Signal-Rausch-Abstand, Sättigung und Datenlücken anhand vorab festgelegter Grenzen bewerten
+Zeile 3: A2 | M MUSS | Datenbasis nach Aufnahmen trennen | Ganze Aufnahmen zuordnen; Training und Kalibrierung nur mit Normaldaten; Vorverarbeitung nur an Trainingsdaten anpassen
+Zeile 4: A3 | M MUSS | Verfahren einheitlich vergleichen | Gleiche Testfenster und Labels; gemeinsame Kalibrierungsregel und dokumentierte Eingaben
+Zeile 5: A4 | F MUSS | Automatisch und lokal auswerten | Versuchslauf ohne Cloud-Dienst; Score, Schwelle und Entscheidung je gültigem Fenster; ungültige Fenster kennzeichnen
+Zeile 6: A5 | NF MUSS | Daten und Softwarestände nachvollziehbar zuordnen | Lauf, Fenster, Code, Modell, Vorverarbeitung sowie Softwareabhängigkeiten und Versionen maschinenlesbar dokumentieren
+Zeile 7: A6 | M MUSS | Zielkompatibilität und ausgeführtes Modell prüfen | Modelloperationen auf der Zielhardware prüfen; bei Konvertierung Scores und Entscheidungen nach vorab festgelegten Akzeptanzgrenzen vergleichen
+Zeile 8: A7 | NF MUSS | Latenzziel aus H2 erfüllen: P99 < S/fₛ | Inferenzzeit und Verarbeitungslatenz getrennt erfassen; Latenzverteilung, Fristüberschreitungen und Erfassungspausen berichten
+Zeile 9: A8 | NF MUSS | Ohne Speicherabbruch und wachsenden Rückstand laufen | Modellgröße, Prozessspeicher, CPU und Rückstand über dokumentierte Messdauer erfassen; Aufwärmphase und Hintergrundlast angeben
+Zeile 10: A9 | M MUSS | Erkennungsqualität bewerten | Konfusionsmatrix, Precision, Recall, F1, Fehlalarmrate und Accuracy auf derselben Testmenge; Ergebnisse je Aufnahme
+Zeile 11: A10 | M MUSS | Geänderte Normalbedingungen prüfen | Fehlalarmraten bei unveränderter Vorverarbeitung, unverändertem Modell und unveränderter Schwelle vergleichen
+Zeile 12: A11 | M MUSS | Reproduzierbaren Testaufbau realisieren | Aufbau und Protokoll dokumentieren; sicheren Betrieb herstellen; Normal- und Anomaliezustände wiederholen; Rücksetzbarkeit und kontrollierte Veränderung prüfen
+Zeile 13: A12 | F KANN | Live-GUI zur Ergebnisanzeige entwickeln | Angezeigte Werte mit gespeicherten Ergebnissen abgleichen; veraltete und fehlende Daten prüfen; Zusatzaufwand messen
+Zeile 14: A13 | F MUSS | Messläufe starten und geordnet beenden | Start und Stopp prüfen; eindeutige Laufkennung und Erhalt vollständig erfasster Daten und Ergebnisse nachweisen
+[Tabellenende]
+[Absatz 166] Kapitel 5 leitet aus A1–A13 Kriterien für Prüfstand, Messkette, Verarbeitung und Evaluation ab. MUSS-Prioritäten sind keine Gewichte: Bekannte Nichterfüllungen dürfen nicht durch Vorteile anderer Kriterien ausgeglichen werden. Noch offene Nachweise begrenzen die Vorauswahl. Die konkrete Lösung wird erst im Variantenvergleich festgelegt.
+[Absatz 167] Variantenvergleich und Systementscheidung
+[Absatz 168] Dieses Kapitel begründet die Systemauswahl anhand der Anforderungen A1–A13 und beantwortet damit den zweiten Teil von FF1. Zunächst wird der Prüfstand ausgewählt. Darauf folgen Sensorik und Edge-Plattform, Datenrepräsentation und Verfahren sowie die Entwicklungs- und Inferenzumgebung. Die abschließende Systementscheidung verbindet diese Teilauswahlen mit den noch ausstehenden Nachweisen.
+[Absatz 169] Bewertungsrahmen und Vorgehen
+[Absatz 170] Die Bewertung berücksichtigt die Eignung für die Forschungsfragen, die technische Umsetzbarkeit und den erforderlichen Zusatzaufwand. Anforderungen und Auswahlgründe müssen dabei nachvollziehbar zusammenhängen (NASA, 2023). Für den Prüfstand stehen wiederholbare Zustände und kontrollierte Veränderungen im Vordergrund (A10, A11). Für die Messkette sind Signalqualität und zeitliche Erfassung entscheidend (A1). Hardware und Software müssen die lokale Verarbeitung sowie ihre überprüfbare Ausführung ermöglichen (A4–A8).
+[Absatz 171] Zuerst werden die MUSS-Anforderungen geprüft. Eine bekannte Nichterfüllung kann nicht durch Punkte in anderen Kriterien ausgeglichen werden. Noch offene Nachweise, etwa zur Signalqualität oder Latenz, führen zu einer vorläufigen Auswahl mit Prüfvorbehalt. Sicherheitsmaßnahmen sind vor dem Versuch umzusetzen. Erst unter diesen Voraussetzungen werden geeignete Entwurfsvarianten gegeneinander abgewogen.
+[Absatz 172] Für Prüfstand, Edge-Plattform und Software werden gewichtete Nutzwertmatrizen verwendet. Die Punkteskala reicht von 0 bis 4; ein höherer Wert bedeutet einen höheren Nutzen für dieses Projekt. Die Kriterientabellen erläutern die Bewertungsmaßstäbe. Zwischenwerte 1 und 3 kennzeichnen abgestufte Einschätzungen zwischen den beschriebenen Ankern. Gleich große Punktabstände werden vereinfachend als gleich große Nutzenzuwächse behandelt. Das ist eine Modellannahme und keine gemessene Leistungsrelation.
+[Absatz 173] Die Gewichte beziehen sich auf den Unterschied zwischen dem ungünstigsten und dem günstigsten beschriebenen Zustand eines Kriteriums. Je größer dessen Bedeutung für die Forschungsfragen, desto höher wird dieser Unterschied gewichtet. Dieses Vorgehen orientiert sich am Prinzip der Swing-Gewichtung (Department for Communities and Local Government, 2009, S. 63–65). Die konkreten Gewichte und Punkte sind eigene Entwurfsannahmen; sie stammen weder aus Herstellerangaben noch aus einer Expertenbefragung. Jede Matrix wird für sich auf 100 % normiert. Nutzwerte verschiedener Auswahlbereiche sind nicht miteinander vergleichbar.
+[Absatz 174] N_{j} = ∑_{i = 1}^{m}((w_{i})/(100)  · s_{ij})
+[Absatz 175] Dabei ist m die Anzahl der Kriterien, Nⱼ der Nutzwert der Alternative j, wᵢ das in Prozent angegebene Gewicht des Kriteriums i und sᵢⱼ dessen Punktwert. Der Nutzwert liegt zwischen 0 und 4. Er ist weder eine Erfolgswahrscheinlichkeit noch ein Nachweis erfüllter Anforderungen.
+[Absatz 176] Die Sensitivität wird rechnerisch geprüft: Jedes Gewicht wird einzeln um fünf Prozentpunkte erhöht und gesenkt; die übrigen Gewichte werden proportional auf zusammen 100 % angepasst. Zusätzlich werden gleiche Gewichte und ausgewählte Änderungen unsicherer Punktwerte um einen Punkt betrachtet. Diese Prüfungen zeigen die Abhängigkeit von den Annahmen, ersetzen aber keine Messung (NASA, 2023).
+[Absatz 177] Bewertung der Prüfstandsalternativen
+[Absatz 178] Der Prüfstand muss normale und gezielt veränderte Zustände wiederholt herstellen können (A11). Für FF4 muss außerdem eine Normalbedingung veränderbar sein, ohne diese Änderung bereits als Anomalie zu kennzeichnen (A10). Tabelle 5-1 vergleicht hierfür drei Alternativen anhand ihrer Kontrollierbarkeit, des zusätzlichen Aufwands und ihrer Aussagegrenzen.
+[Absatz 179] Tabelle 5-1: Bewertung der Prüfstandsalternativen
+[Tabelle ab Block 180]
+Zeile 1: Alternative | Kontrollierbarkeit und Wiederholung | Zusatzaufwand und Aussagegrenze
+Zeile 2: Lüfter mit PWM-Ansteuerung | Betriebspunkte vorgebbar; Versuchszustände bei fester Montage wiederholbar zu gestalten | Wenige Antriebskomponenten; Lastvariation und Übertragbarkeit auf Industriemaschinen begrenzt
+Zeile 3: Servomotor mit Regler | Geregelte Drehzahl- und Bewegungsprofile; Lastvariation mit zusätzlicher Belastungseinrichtung | Regler, mechanische Kopplung und gegebenenfalls Lastmaschine nötig; Regelung beeinflusst das Schwingungsverhalten
+Zeile 4: Motor-/Lagerprüfstand | Drehzahl, Last und Lagerzustände gezielt untersuchbar | Zusätzliche Mechanik, Messtechnik und Schutzmaßnahmen; größere Nähe zur Lagerdiagnostik
+[Tabellenende]
+[Absatz 181] Quelle: Eigene Bewertung auf Grundlage von ARCTIC (o. J.), Oriental Motor (o. J.) und Universität Paderborn (o. J.). Der Aufwand ist eine qualitative Einschätzung der benötigten Komponenten.
+[Absatz 182] Für die Bewertung wird vorausgesetzt, dass bei allen drei Varianten sichere, rücksetzbare Versuchszustände realisiert werden können. Dies bleibt nach A10 und A11 am fertigen Aufbau nachzuweisen. Die folgenden Kriterien unterscheiden die verbleibenden Gestaltungsmöglichkeiten. Der Realisierungsaufwand erhält das größte Gewicht, weil die Arbeit den Methodenvergleich und keine Entwicklung einer komplexen Antriebsanlage untersucht. Es werden benötigte Baugruppen eingeschätzt; Kosten oder Arbeitsstunden werden nicht behauptet.
+[Absatz 183] Tabelle 5-2: Kriterien und Gewichte für den Prüfstand
+[Tabelle ab Block 184]
+Zeile 1: Kriterium | Gewicht | Bewertungsmaßstab und Anforderungsbezug
+Zeile 2: P1 Betriebspunkte einstellen | 25 % | A10, A11. 0: keine Vorgabe; 2: einzelne Stellgröße ohne unabhängige Lastregelung; 4: geregelte Drehzahl und zusätzlich Last oder Bewegung vorgebbar.
+Zeile 3: P2 Einflüsse trennen | 25 % | A10, A11. 0: Änderungen nicht zuordenbar; 2: mehrere gekoppelte Einflüsse; 4: einfache Variation bei fester Mechanik und wenigen Einflussgrößen.
+Zeile 4: P3 Aufbauaufwand | 40 % | A11. 0: im Projekt nicht realisierbar; 2: Antrieb, Regler und Kopplung aufzubauen; 4: integrierter Antrieb mit wenigen Zusatzbaugruppen.
+Zeile 5: P4 Anwendungsnähe | 10 % | FF1, FF4. 0: kein rotierendes System; 2: einfache rotierende Baugruppe; 4: gezielt untersuchbare Maschinen- und Lagerzustände.
+[Tabellenende]
+[Absatz 185] Quelle: Eigene Kriterien und Gewichte, abgeleitet aus Kapitel 4. Maßstäbe beschreiben projektbezogene Präferenzen.
+[Absatz 186] Tabelle 5-3: Gewichtete Bewertung der Prüfstandsalternativen
+[Tabelle ab Block 187]
+Zeile 1: Alternative | P1 | P2 | P3 | P4 | Nutzwert
+Zeile 2: Lüfter mit PWM | 2 | 4 | 4 | 2 | 3,30
+Zeile 3: Servomotor mit Regler | 4 | 3 | 2 | 3 | 2,85
+Zeile 4: Motor-/Lagerprüfstand | 4 | 3 | 1 | 4 | 2,55
+[Tabellenende]
+[Absatz 188] Quelle: Eigene Punktvergabe auf Grundlage des Variantenvergleichs und der vorausgehenden Kriterien; keine experimentellen Messwerte.
+[Absatz 189] Der Lüfter erhält weniger Punkte bei der Betriebspunktregelung und der Nähe zur Maschinenüberwachung, bietet aber einen einfachen Aufbau mit wenigen zu kontrollierenden Einflussgrößen. Beim Servo kommen Rückführung und mechanische Kopplung hinzu. Der Motor-/Lagerprüfstand ermöglicht die gezielteste Lageruntersuchung, benötigt jedoch zusätzliche Belastungs- und Messbaugruppen. Die Punkte bewerten diese angenommenen Aufbauvarianten; sie belegen keine schlechtere Reproduzierbarkeit eines professionellen Prüfstands.
+[Absatz 190] Unter den gewählten Gewichten wird der Lüfter mit 3,30 Punkten bevorzugt. Beispielhaft ergibt sich 0,25 · 2 + 0,25 · 4 + 0,40 · 4 + 0,10 · 2 = 3,30. In den acht einzelnen Gewichtsänderungen bleibt er vorn. Bei gleichen Gewichten erreichen dagegen alle Varianten 3,00 Punkte. Die Auswahl hängt damit wesentlich vom begrenzten Realisierungsaufwand ab. Eine einzelne Änderung eines Punktwerts um einen Punkt kehrt die Ausgangsrangfolge an der Spitze nicht um; gemeinsame Änderungen können dies tun.
+[Absatz 191] Für den Kernversuch wird deshalb der Lüfter gewählt. Ein Servomotor wäre bei Lastwechseln oder dynamischen Bewegungsprofilen sinnvoll, ein Motor-/Lagerprüfstand bei konkreten Lagerfehlern. Diese Aufgaben gehören nicht zum Kernvergleich. Die Ergebnisse bleiben auf den untersuchten Laborversuch begrenzt.
+[Absatz 192] Als konkrete Variante wird der ARCTIC P12 Pro PST vorgesehen, dessen Datenblatt PWM-Ansteuerung und ein Drehzahlsignal ausweist (ARCTIC, o. J.). Ein PWM-Tastgrad ist eine Stellgröße und kein Nachweis einer konstanten Drehzahl; die tatsächliche Drehzahl ist zu erfassen. Für FF4 wird ein zweiter normaler Betriebspunkt bei unveränderter Montage untersucht. Art und Rücksetzbarkeit der Versuchsanomalien, Schutzmaßnahmen und Messablauf werden in Kapitel 6 vor der abschließenden Testserie festgelegt.
+[Absatz 193] Auswahl von Sensorik und Edge-Plattform
+[Absatz 194] Die Sensorik muss die vorgesehenen dreiachsigen Beschleunigungssignale mit ausreichender Qualität erfassen. Verglichen werden zwei digital anschließbare MEMS-Sensoren und eine industrielle Messkette. Tabelle 5-4 nennt Eigenschaften, die für A1 relevant sind. Datenblattwerte belegen noch keine ausreichende Signalqualität am späteren Montageort.
+[Absatz 195] Tabelle 5-4: Vergleich der Sensorik und Messketten
+[Tabelle ab Block 196]
+Zeile 1: Alternative | Relevante Herstellerangaben | Bewertung für den Prüfstand
+Zeile 2: ADXL345 | Drei Achsen; ±2/4/8/16 g; I²C/SPI; FIFO | Direkte digitale Erfassung; Bandbreite, Auflösung und Rauschen am Aufbau prüfen
+Zeile 3: ADXL355 | Drei Achsen; ±2/4/8 g; 20-Bit-ADC; typische Rauschdichte 22,5 µg/√Hz bei ±2 g | Alternative bei höheren Anforderungen an Auflösung und Rauschen; eigene Integrationsprüfung nötig
+Zeile 4: PCB 356A32 mit IEPE-Messkette | Drei Achsen; ±50 g; 100 mV/g; 1–4000 Hz innerhalb ±5 % | Größerer spezifizierter Frequenzbereich; Konstantstromspeisung und externe A/D-Wandlung nötig
+[Tabellenende]
+[Absatz 197] Quelle: Eigene Einordnung nach Analog Devices (2022, 2025) und PCB Piezotronics (o. J.). Die Zahlen sind Herstellerangaben.
+[Absatz 198] Für den ersten Systementwurf wird der ADXL345 mit digitaler I²C-Anbindung vorgesehen. Er bietet eine vollständige dreiachsige Messung ohne externe A/D-Wandlung. Auch der ADXL355 erfüllt dieses Integrationsprinzip; die Wahl des ADXL345 ist daher eine zu prüfende Ausgangsentscheidung und kein Nachweis seiner Überlegenheit. Reichen Auflösung oder Signal-Rausch-Abstand nicht aus, wird der ADXL355 als Alternative geprüft. Eine IEPE-Messkette ist erst bei entsprechendem Bandbreiten- oder Messqualitätsbedarf zu rechtfertigen.
+[Absatz 199] Die Pilotmessung prüft effektive Erfassungsrate, neue Sensorwerte, Datenlücken, Sättigung und den Abstand des Nutzsignals zum Rauschboden bei dokumentierter Montage (A1). Die Akzeptanzgrenzen sind vor der abschließenden Testserie festzulegen. Beim ADXL345 beträgt die maximal empfohlene Sensorausgaberate bei 400-kHz-I²C 800 Hz; bei 100-kHz-I²C sind es 200 Hz. Diese Grenzen ersetzen keine Messung der tatsächlich erreichten Erfassung (Analog Devices, 2022, S. 17).
+[Absatz 200] Die Edge-Plattform muss neben der Inferenz auch Datenerfassung, Vorverarbeitung, Baselines und Messwerkzeuge tragen (A4, A7, A8). Tabelle 5-5 vergleicht deshalb den Ressourcenrahmen und die daraus abgeleiteten Integrationsfolgen. Taktraten und Beschleunigerangaben erlauben keinen unmittelbaren Vergleich der Inferenzzeiten.
+[Absatz 201] Tabelle 5-5: Bewertung der Edge-Plattformen
+[Tabelle ab Block 202]
+Zeile 1: Alternative | Dokumentierter Ressourcenrahmen | Bewertung für den Methodenvergleich
+Zeile 2: STM32H743 | Cortex-M7 bis 480 MHz; bis 2 MB Flash und 1 MB RAM | Hardwarenahe Umsetzung möglich; knapper Speicher und eigenständige Portierung der Pipeline
+Zeile 3: Raspberry Pi 4 Model B | Vier Cortex-A72-Kerne mit 1,8 GHz; RAM im GB-Bereich | Plausible Linux-Plattform für CPU-Inferenz und Messwerkzeuge
+Zeile 4: Raspberry Pi 5 | Vier Cortex-A76-Kerne mit 2,4 GHz; RAM im GB-Bereich | Nominell größere CPU-Reserve; konkrete Latenz und Speicherbelegung bleiben zu messen
+Zeile 5: Jetson Orin Nano Super | Sechs Cortex-A78AE-Kerne; 8 GB RAM; GPU-Beschleunigung | Sinnvoll bei GPU-bedürftigen Modellen; Nutzen für den vorgesehenen CPU-Vergleich nicht belegt
+[Tabellenende]
+[Absatz 203] Quelle: Eigene Bewertung nach STMicroelectronics (2026), Raspberry Pi Ltd. (o. J., 2026) und NVIDIA (o. J.).
+[Absatz 204] Die Ressourcenangaben werden nicht in erwartete Inferenzzeiten umgerechnet. Die gewichtete Vorauswahl verbindet den nominellen Ressourcenrahmen mit der Integration der vollständigen Pipeline. Das Gewicht für zeitliche Kontrollierbarkeit bleibt begrenzt, weil H2 ein empirisches Latenzziel und keine harte Echtzeitgarantie formuliert.
+[Absatz 205] Tabelle 5-6: Kriterien und Gewichte für die Edge-Plattform
+[Tabelle ab Block 206]
+Zeile 1: Kriterium | Gewicht | Bewertungsmaßstab und Anforderungsbezug
+Zeile 2: E1 Nomineller Ressourcenrahmen | 35 % | A8. 0: keine plausible Reserve; 2: eingeschränkter Rahmen; 4: GB-Arbeitsspeicher und größere nominelle CPU-Reserve im Variantenfeld. Kein Laufzeitnachweis.
+Zeile 3: E2 Integration der Gesamtpipeline | 35 % | A4–A6. 0: keine geeignete Umgebung; 2: erhebliche Anpassungen; 4: allgemeine Linux-/Python-Umgebung für Erfassung, Verfahren und Messwerkzeuge.
+Zeile 4: E3 Zeitliche Kontrollierbarkeit | 15 % | A7. 0: Ablauf kaum beeinflussbar; 2: allgemeines Betriebssystem mit schwankender Last; 4: hardwarenah planbare Ausführung. Keine Fristgarantie.
+Zeile 5: E4 Passung zum CPU-Kernvergleich | 15 % | FF1, FF3. 0: ungeeignete Plattformklasse; 2: zusätzliche Beschleuniger bleiben ungenutzt oder die Plattform erzwingt einen Portierungsfokus; 4: CPU-System ohne solche Zusatzschwerpunkte.
+[Tabellenende]
+[Absatz 207] Quelle: Eigene Kriterien und Gewichte aus Kapitel 4. Ressourcen, Softwareintegration, Zeitplanung und Untersuchungsumfang werden getrennt betrachtet.
+[Absatz 208] Tabelle 5-7: Gewichtete Bewertung der Edge-Plattformen
+[Tabelle ab Block 209]
+Zeile 1: Alternative | E1 | E2 | E3 | E4 | Nutzwert
+Zeile 2: STM32H743 | 1 | 1 | 4 | 2 | 1,60
+Zeile 3: Raspberry Pi 4 | 3 | 4 | 2 | 4 | 3,35
+Zeile 4: Raspberry Pi 5 | 4 | 4 | 2 | 4 | 3,70
+Zeile 5: Jetson Orin Nano Super | 4 | 4 | 2 | 2 | 3,40
+[Tabellenende]
+[Absatz 210] Quelle: Eigene Punktvergabe nach dem dokumentierten Ressourcenrahmen und den Kriterien E1–E4; keine gemessenen Leistungswerte.
+[Absatz 211] Der STM32 wird bei Ressourcen und Integration wegen des begrenzten Speichers und der notwendigen Portierung niedrig bewertet. Die Linux-Plattformen erhalten bei der allgemeinen Integration denselben Wert. Der Pi 4 erhält für E1 einen Punkt weniger als der Pi 5; dies bewertet ausschließlich die nominelle CPU-Reserve. Die Jetson-GPU bringt für den hier abgegrenzten CPU-Vergleich keinen zusätzlichen Untersuchungsnutzen. Ihre Leistungsfähigkeit wird damit nicht infrage gestellt.
+[Absatz 212] Der Raspberry Pi 5 erreicht 3,70 Punkte und wird als Zielplattform gewählt. Er bleibt bei den acht einzelnen Gewichtsänderungen und bei gleichen Gewichten vorn. Die Einschätzung ist jedoch punktempfindlich: Wird seine Ressourcenbewertung E1 um einen Punkt gesenkt, liegt er mit 3,35 gleichauf mit dem Pi 4 und unter dem Jetson mit 3,40. Die nominelle Reserve ist deshalb eine Entwurfsbegründung, kein Leistungsbeleg. Die Erfüllung von A7 und A8 wird an der vollständigen Pipeline gemessen; ein zusätzlicher Hardwarebenchmark gehört nicht zum Kernversuch.
+[Absatz 213] Datenbasis, Signalrepräsentation und Verfahren
+[Absatz 214] Für die Evaluation werden eigene reale Messläufe gewählt. Damit umfasst die Untersuchung die vollständige Kette vom Sensor bis zur Entscheidung. Öffentliche Datensätze können die Methodenentwicklung unterstützen, ersetzen jedoch keinen Nachweis an der gewählten Messkette. Simulierte Daten eignen sich für Funktionstests, belegen aber keine Erkennungsleistung am realen Prüfstand. Ganze Aufnahmen werden nach A2 getrennt zugeordnet. Training und Schwellenwertkalibrierung verwenden ausschließlich Normaldaten.
+[Absatz 215] Tabelle 5-8: Bewertung der Signalrepräsentationen
+[Tabelle ab Block 216]
+Zeile 1: Darstellung | Informationsgehalt und Grenze | Vorgesehene Rolle
+Zeile 2: Dreiachsiges Zeitfenster | Erhält Reihenfolge und Achsenbeziehungen; höhere Eingabedimension | Gemeinsame Ausgangsdaten für den Hauptvergleich
+Zeile 3: Zeitbereichskennwerte | Kompakt und interpretierbar; zeitliche Struktur wird verdichtet | RMS als statistische Baseline
+Zeile 4: Frequenzspektrum mittels FFT | Zeigt Frequenzanteile; abhängig von Abtastung, Fensterdauer und Fensterfunktion | Ergänzende Analyse gespeicherter Pilotmessungen
+Zeile 5: Zeit-Frequenz-Darstellung | Zeigt zeitlich wechselnde Frequenzanteile; zusätzliche Parameter und Rechenaufwand | Keine zusätzliche Variante im Kernvergleich
+[Tabellenende]
+[Absatz 217] Quelle: Eigene Einordnung auf Grundlage von Ruff et al. (2021) und SciPy developers (o. J. a, o. J. b).
+[Absatz 218] Die Fast Fourier Transform (FFT) ist ein effizienter Algorithmus zur Berechnung der diskreten Fourier-Transformation. Sie wird ergänzend eingesetzt, um beobachtbare Frequenzanteile in Pilotmessungen zu untersuchen und die Wahl von Erfassungsrate und Fensterdauer zu unterstützen. Für H gleichmäßig abgetastete Werte beträgt der Abstand der Frequenzstützstellen Δf = fₛ/H; dies allein beschreibt noch nicht die Trennbarkeit benachbarter Frequenzanteile (SciPy developers, o. J. a, o. J. b).
+[Absatz 219] Eine FFT behebt weder Datenlücken noch Aliasing. Vor ihrer Auswertung müssen zeitliche Regelmäßigkeit, nutzbare Sensorbandbreite und mögliche Frequenzüberlagerungen durch die Abtastung geprüft werden. Mittelwertbehandlung, Fensterfunktion und Amplitudenskalierung sind zu dokumentieren. Die Spektralanalyse erfolgt ergänzend außerhalb der Live-Pipeline. FFT-Merkmale würden eine weitere Verfahrensvariante bilden und müssten vor der Testauswertung festgelegt sowie mit ihrem Zusatzaufwand bewertet werden. Die FFT selbst liefert keine Anomalieentscheidung.
+[Absatz 220] Tabelle 5-9: Auswahl der Anomalieverfahren
+[Tabelle ab Block 221]
+Zeile 1: Verfahren | Rolle und Auswahlgrund | Wesentliche Grenze
+Zeile 2: Autoencoder | Neuronales Hauptverfahren; prüft den Nutzen einer erlernten multivariaten Rekonstruktion | Eine gute Trennung der Zustände ist empirisch zu prüfen
+Zeile 3: RMS mit Schwelle | Statistische Minimalbaseline; transparente Verdichtung auf einen Kennwert | Verwirft die zeitliche Reihenfolge
+Zeile 4: Isolation Forest | Klassische Lernbaseline; ergänzt den RMS um eine multivariate Bewertung | Nutzt keine explizite zeitliche Nachbarschaft
+Zeile 5: One-Class SVM | Plausible Alternative zur klassischen Lernbaseline | Zusätzliche Kernel- und Hyperparameterwahl; keine weitere Vergleichsrolle
+Zeile 6: Überwachte Klassifikation | Geeignet bei repräsentativen gelabelten Fehlerklassen | Benötigt Fehlerbeispiele im Training und passt damit nicht zum gewählten Szenario
+[Tabellenende]
+[Absatz 222] Quelle: Eigene Rollenverteilung nach Liu et al. (2008), Ruff et al. (2021) und scikit-learn developers (o. J. d).
+[Absatz 223] Der Hauptvergleich umfasst Autoencoder, RMS und Isolation Forest. So werden die in Kapitel 1 festgelegten drei Verfahrensklassen abgedeckt. Alle erhalten dieselben H × 3-Ausgangsfenster. Die Standardisierung wird ausschließlich an Trainingsdaten angepasst. Der Autoencoder rekonstruiert das standardisierte Fenster, der Isolation Forest verwendet dessen Werte in fester Reihenfolge als Vektor. Die RMS-Baseline berechnet einen gemeinsamen Effektivwert über alle 3H standardisierten Werte; dieser Score ist dimensionslos und vom RMS der Beschleunigung in g zu unterscheiden.
+[Absatz 224] Für jedes Verfahren wird die Schwelle als empirisches 99. Perzentil seiner Scores auf separaten normalen Validierungsaufnahmen bestimmt. Größere Scores bedeuten stets eine stärkere Auffälligkeit. Die genaue Quantilsberechnung, Modellparameter und Fensterbildung werden vor der Testauswertung festgehalten (A2, A3). Eine bessere Erkennungsqualität des Autoencoders wird damit nicht vorausgesetzt, sondern durch H1 geprüft.
+[Absatz 225] Kriterienbasierte Bewertung der Softwarealternativen
+[Absatz 226] Die Softwareauswahl betrifft den Entwicklungs- und Ausführungspfad des Autoencoders. TensorFlow/Keras und PyTorch dienen zur Modellbildung; TFLite/LiteRT, ExecuTorch und ONNX Runtime bieten Wege zur lokalen Inferenz. Der Prüfstand wurde bereits in Abschnitt 5.2 bewertet. Die nachfolgenden Kriterien betreffen die Software und werden aus A4–A8 abgeleitet. 
+[Absatz 227] Tabelle 5-10: Kriterienbasierter Vergleich der Softwarealternativen
+[Tabelle ab Block 228]
+Zeile 1: Entwicklungs- und Ausführungspfad | Übergang zur Inferenz | Lokale Ausführung | Integrations- und Prüfaufwand
+Zeile 2: TensorFlow/Keras → TFLite/LiteRT | Dokumentierter Konverter für Keras-Modelle; .tflite-Datei | CPU-Inferenz mit passender Laufzeit | Modelloperationen, Paketkompatibilität und Konvertierung prüfen
+Zeile 3: PyTorch → ExecuTorch | Modellexport und Anpassung an ein Backend; .pte-Datei | Arm-CPU über geeignetes Backend, z. B. XNNPACK | Export, Backend und numerische Übereinstimmung prüfen
+Zeile 4: PyTorch → ONNX Runtime | Export in das ONNX-Austauschformat | CPU-Paket für Linux ARM64 | Exporter, ONNX-Operatorversionen und Laufzeit abstimmen
+Zeile 5: TensorFlow/Keras → TensorFlow direkt | Kein Wechsel des Modellformats erforderlich | TensorFlow-CPU-Paket für Linux ARM64 | Paketkompatibilität und Ressourcenbedarf der vollständigen Umgebung prüfen
+[Tabellenende]
+[Absatz 229] Quelle: Eigene Bewertung nach Google (2026a, 2026c, 2026d), PyTorch (o. J.) und ONNX Runtime developers (o. J.). Die Zielkompatibilität des konkreten Modells ist bei jeder Alternative zu prüfen.
+[Absatz 230] Die gemeinsame Voraussetzung ist, dass Modelloperationen, Python-Version und Betriebssystem auf dem Zielgerät zusammenpassen (A6). Dies ist für das konkrete Modell noch nachzuweisen. Dokumentierte ARM64-Unterstützung allein bestätigt keine beliebige Raspberry-Pi-OS-Konfiguration. Für TFLite wird ein separates Interpreter-Paket beschrieben; Modelle mit zusätzlichen TensorFlow-Operationen können eine umfangreichere Umgebung benötigen (Google, 2026c). Diese Einschränkung wird bei der Modellkonvertierung geprüft.
+[Absatz 231] Tabelle 5-11: Kriterien und Gewichte für die Softwareauswahl
+[Tabelle ab Block 232]
+Zeile 1: Kriterium | Gewicht | Bewertungsmaßstab und Anforderungsbezug
+Zeile 2: S1 Entwicklung und Inferenz trennen | 30 % | A5, A8. 0: kein getrennt ladbares Modell; 2: gespeichertes Modell benötigt vollständiges Framework; 4: separates Inferenzpaket vorgesehen.
+Zeile 3: S2 Modellübergang nachvollziehen | 25 % | A5, A6. 0: kein dokumentierter Weg; 2: nur teilweise dokumentiert; 4: offizieller Weg zum Speichern bzw. Exportieren und Laden.
+Zeile 4: S3 Python-Anbindung | 25 % | A4, A5. 0: keine Anbindung; 2: eigene Brücke nötig; 4: offiziell dokumentierte Python-API.
+Zeile 5: S4 Linux-ARM64-CPU unterstützen | 20 % | A4, A6. 0: kein dokumentierter Weg; 2: eigene Portierung nötig; 4: dokumentiertes CPU-Paket für Linux ARM64. Konkrete Versionen bleiben zu prüfen.
+[Tabellenende]
+[Absatz 233] Quelle: Eigene Kriterien und Gewichte aus Kapitel 4. Die Punkte bewerten dokumentierte Wege, nicht deren gemessenen Ressourcenbedarf.
+[Absatz 234] Tabelle 5-12: Gewichtete Bewertung der Softwarealternativen
+[Tabelle ab Block 235]
+Zeile 1: Entwicklungs- und Ausführungspfad | S1 | S2 | S3 | S4 | Nutzwert
+Zeile 2: TensorFlow/Keras → TFLite/LiteRT | 4 | 4 | 4 | 4 | 4,00
+Zeile 3: PyTorch → ExecuTorch | 4 | 4 | 4 | 4 | 4,00
+Zeile 4: PyTorch → ONNX Runtime | 4 | 4 | 4 | 4 | 4,00
+Zeile 5: TensorFlow/Keras → TensorFlow direkt | 2 | 4 | 4 | 4 | 3,40
+[Tabellenende]
+[Absatz 236] Quelle: Eigene Bewertung der offiziellen Dokumentation von Google (2026a, 2026c, 2026d), PyTorch (o. J.) und ONNX Runtime developers (o. J.).
+[Absatz 237] Die drei separaten Inferenzwege erreichen jeweils 4,00 Punkte. Sie bieten die in S1–S4 beschriebenen Möglichkeiten. Die direkte TensorFlow-Ausführung erhält bei S1 zwei Punkte, weil dabei das vollständige Framework vorgesehen ist; dafür entfällt der Formatwechsel. Eine hohe Punktzahl sagt nichts über spätere Latenz, Speichernutzung oder Erkennungsqualität aus. Diese Größen werden nicht mit unbelegten Schätzwerten bewertet.
+[Absatz 238] Der Gleichstand bleibt bei gleichen Gewichten und bei allen acht einzelnen Gewichtsänderungen bestehen. Sinkt ein bisher mit vier Punkten bewertetes Kriterium einer Alternative um einen Punkt, verliert diese ihren Gleichstand an der Spitze. Die Matrix zeigt daher mehrere geeignete Wege und keinen eindeutigen TensorFlow-Vorsprung. Bei gleich geeigneten Alternativen ist eine begründete Entwurfsentscheidung zulässig (NASA, 2023).
+[Absatz 239] Für diese Arbeit wird aus dieser Gruppe TensorFlow/Keras mit einem Float32-TFLite-Modell gewählt. Der dokumentierte direkte Konverter für Keras-Modelle ermöglicht einen klaren Weg von der Modellbildung zur gespeicherten Inferenzdatei und deren Prüfung gegen das Ausgangsmodell (Google, 2026a). Damit wird eine konkrete Umsetzung innerhalb der gleich bewerteten Gruppe festgelegt. ExecuTorch bleibt eine gleichwertige Entwurfsalternative nach den verwendeten Maßstäben; ONNX Runtime wäre besonders bei einem gewünschten Austauschformat zweckmäßig. Ein solcher Austausch ist keine eigene Anforderung des Kernversuchs.
+[Absatz 240] Im Hauptvergleich wird auf Quantisierung verzichtet. So wird zunächst keine zusätzliche Änderung der Zahlendarstellung untersucht. Die Dokumentation empfiehlt ein nicht quantisiertes TFLite-Modell als Ausgangspunkt für die Kompatibilitätsprüfung (Google, 2026b). Ob die ausgewählte Laufzeit A7 und A8 erfüllt, entscheidet erst die Messung. Auch eine kleine Modelldatei garantiert keinen kleinen Prozessspeicher. Konkrete Pakete, Versionen und ihre Einbindung werden in Kapitel 6 dokumentiert.
+[Absatz 241] Systementscheidung und Übergang zur Implementierung
+[Absatz 242] Die abschließende Tabelle fasst die Entscheidungen und die jeweils noch erforderlichen Nachweise zusammen. Die Nutzwerte unterstützen die Auswahl innerhalb des jeweiligen Variantenfelds. Sie sind an die offengelegten Gewichte, Punkte und Prüfvorbehalte gebunden. Die praktische Eignung bleibt Gegenstand von Implementierung und Evaluation.
+[Absatz 243] Tabelle 5-13: Systementscheidungen und ausstehende Nachweise
+[Tabelle ab Block 244]
+Zeile 1: Bereich | Auswahl | Anforderungsbezug und Nachweis
+Zeile 2: Prüfstand | Lüfter mit PWM; 3,30 Punkte | A10, A11: wiederholbare Zustände und zweiter normaler Betriebspunkt
+Zeile 3: Sensorik | ADXL345 als Ausgangsvariante; ADXL355 als Alternative | A1: Signalqualität und zeitliche Erfassung vor der Testserie prüfen
+Zeile 4: Edge-Plattform | Raspberry Pi 5; 3,70 Punkte | A4, A7, A8: vollständige Pipeline und Zeitbudget messen
+Zeile 5: Datenbasis | Eigene reale Messläufe; Normaldaten für Training und Kalibrierung | A2, A3, A9: getrennte Aufnahmen und gemeinsame Testbasis
+Zeile 6: Verfahren | Autoencoder, RMS und Isolation Forest | A3, A9: gleiche Fenster und Kalibrierungsregel; Erkennungsqualität vergleichen
+Zeile 7: FFT | Ergänzende Analyse der Pilotmessungen | A1: Frequenzanteile innerhalb der überprüften Messbandbreite untersuchen
+Zeile 8: Neuronale Software | TensorFlow/Keras → Float32-TFLite; 4,00 Punkte, Gleichstand mit zwei Alternativen | A5–A8: Konvertierung, Zielkompatibilität und Ressourcen prüfen
+Zeile 9: Bedienung und Ausgabe | Start/Stopp und gespeicherte Ergebnisse; Live-GUI optional | A4, A5, A12, A13: Datenzuordnung, geordnetes Beenden und gegebenenfalls Anzeige prüfen
+[Tabellenende]
+[Absatz 245] Quelle: Eigene Zusammenführung der Entscheidungen aus den Abschnitten 5.2–5.5.
+[Absatz 246] Kapitel 6 dokumentiert Aufbau, Software, Eignungsprüfungen und das vor der Testauswertung festgelegte Versuchsprotokoll. Entwicklungsaufnahmen bleiben explorativ; eine unabhängige Bestätigung benötigt neue Testaufnahmen gemäß Abschnitt 1.4. Kapitel 7 bewertet Anforderungen und Hypothesen. Nicht bestätigte Hypothesen werden berichtet; eine nachträgliche Anpassung an die Testdaten ist ausgeschlossen.
+[Absatz 247] Implementierung
+[Absatz 248] Evaluation und Ergebnisse
+[Absatz 249] Diskussion
+[Absatz 250] Ausblick
+[Absatz 251] Ausblick
+[Absatz 252] Fazit
+[Absatz 258] Anhang
+
+[Zusatzteil: word/footnotes.xml]
+
+[Zusatzteil: word/endnotes.xml]
+
+[Zusatzteil: word/header1.xml]
+
+[Zusatzteil: word/header2.xml]
+Variantenvergleich und Systementscheidung  1  
+
+[Zusatzteil: word/footer1.xml]
+
+[Zusatzteil: word/footer2.xml]
+
+[Zusatzteil: word/header3.xml]
+
+[Zusatzteil: word/footer3.xml]
+
+[Zusatzteil: word/header4.xml]
+
+[Zusatzteil: word/header5.xml]
+Anhang  1  
+
+[Zusatzteil: word/footer4.xml]
+
+[Zusatzteil: word/footer5.xml]
+
+[Zusatzteil: word/header6.xml]
+
+[Zusatzteil: word/footer6.xml]

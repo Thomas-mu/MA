@@ -1,0 +1,256 @@
+{
+  "schema_version": 1,
+  "profile_name": "fan_50",
+  "source_profile_path": "/home/malik/masterarbeit-edge-ai/profiles/fan_50/profile.json",
+  "provenance": {
+    "created_at_utc": "2026-09-09T06:48:22.917492+00:00",
+    "command": [
+      "src/common_comparison.py",
+      "calibrate",
+      "--profile",
+      "fan_50",
+      "--runtime",
+      "litert",
+      "--output",
+      "results/common_comparison_20260909/fan_50"
+    ],
+    "working_directory": "/home/malik/masterarbeit-edge-ai",
+    "code_commit": "12bd10d01fe504041b11aac5fd60a6a65883a13d",
+    "git_status_porcelain": "M src/adxl345.py\n M src/collect_real_data.py\n M src/live_tflite_fan_control.py\n M src/live_tflite_gui.py\n M src/live_tflite_monitor.py\n?? docs/anforderungsabgleich_20260909.md\n?? docs/audit_20260909/\n?? results/common_comparison_20260909/\n?? results/verification_20260909/\n?? src/common_comparison.py\n?? src/live_pipeline.py\n?? tests/",
+    "implementation_sha256": "476185bb5573c8f7c5de17fdf6de5786f590652d78907143c6fe98b927a884bd",
+    "python": "3.13.5 (main, Jun 13 2026, 14:18:01) [GCC 14.2.0]",
+    "python_executable": "/home/malik/masterarbeit-edge-ai/.venv/bin/python",
+    "platform": "Linux-6.18.34+rpt-rpi-2712-aarch64-with-glibc2.41",
+    "hostname": "edgepi",
+    "device_model": "Raspberry Pi 5 Model B Rev 1.0",
+    "logical_cpu_count": 4,
+    "packages": {
+      "numpy": "2.5.1",
+      "scikit-learn": "1.9.0",
+      "joblib": "1.5.3",
+      "psutil": "7.2.2",
+      "tensorflow": "2.21.0",
+      "ai-edge-litert": "2.1.6",
+      "tflite-runtime": null
+    }
+  },
+  "window_size": 128,
+  "step_size": 128,
+  "axes": [
+    "x_g",
+    "y_g",
+    "z_g"
+  ],
+  "sampling_rate_hz": 500,
+  "measurement_chain_status": "unverified_legacy",
+  "sensor": {
+    "model": "ADXL345",
+    "axes": [
+      "x_g",
+      "y_g",
+      "z_g"
+    ],
+    "access_module": "src/adxl345.py",
+    "connect_function": "connect",
+    "read_function": "read_acceleration_g",
+    "software_sampling_rate_hz": 500,
+    "internal_odr_note": "The reused ADXL345 access does not explicitly configure the sensor BW_RATE/ODR register; measured CSV timestamps document the software polling rate."
+  },
+  "scaler": {
+    "mean": [
+      -0.13926428694722767,
+      -0.03661914108179922,
+      -1.0903122639744083
+    ],
+    "scale": [
+      0.007512716253369098,
+      0.005820380270293064,
+      0.007919808750760916
+    ],
+    "fit_samples": 209664,
+    "fit_source": "normal_train_windows_only",
+    "verified_against_train_only_refit": true
+  },
+  "recordings": [
+    {
+      "path": "/home/malik/masterarbeit-edge-ai/profiles/fan_50/data/raw/normal_001.csv",
+      "sha256": "1e2224817c957fceaca80bf67cffc387208becf415bc4f573954d1f5c9358676",
+      "sample_content_sha256": "e9f4a7a7f471b752044c8336f419276d428326df2d97f07207159ef5a9f1ed49",
+      "sample_count": 30000,
+      "label": 0,
+      "state": "normal_calibration",
+      "timestamp_rate_hz": 499.9995574356468,
+      "timestamp_interval_median_s": 0.001999906999117229,
+      "timestamp_interval_max_s": 0.0062190349999582395,
+      "timestamp_note": "Zeitstempelrate belegt allein keine neuen Sensorwerte.",
+      "split": "train",
+      "windows": 234,
+      "trailing_samples_excluded": 48
+    },
+    {
+      "path": "/home/malik/masterarbeit-edge-ai/profiles/fan_50/data/raw/normal_002.csv",
+      "sha256": "b4e8e36ed18793d518c3bf623433080ad97356f8963ef854a8e2320df016f228",
+      "sample_content_sha256": "41201572d5fefe33175a3a4a39232a612bfd044d393d469a5a5ed5f64dfafa58",
+      "sample_count": 30000,
+      "label": 0,
+      "state": "normal_calibration",
+      "timestamp_rate_hz": 499.99950045051,
+      "timestamp_interval_median_s": 0.001999815000090166,
+      "timestamp_interval_max_s": 0.07867226800044591,
+      "timestamp_note": "Zeitstempelrate belegt allein keine neuen Sensorwerte.",
+      "split": "train",
+      "windows": 234,
+      "trailing_samples_excluded": 48
+    },
+    {
+      "path": "/home/malik/masterarbeit-edge-ai/profiles/fan_50/data/raw/normal_003.csv",
+      "sha256": "5767dfd8caedab2d226d1c53febd735ade9ffcb804da0d4f5692756ce631d307",
+      "sample_content_sha256": "6a3fda83bb7c6a77fb08b559da13e8f1afdff49c865007b9138ee9da23ea1a90",
+      "sample_count": 30000,
+      "label": 0,
+      "state": "normal_calibration",
+      "timestamp_rate_hz": 499.9995467769725,
+      "timestamp_interval_median_s": 0.0019999070009362185,
+      "timestamp_interval_max_s": 0.002081388000078732,
+      "timestamp_note": "Zeitstempelrate belegt allein keine neuen Sensorwerte.",
+      "split": "train",
+      "windows": 234,
+      "trailing_samples_excluded": 48
+    },
+    {
+      "path": "/home/malik/masterarbeit-edge-ai/profiles/fan_50/data/raw/normal_004.csv",
+      "sha256": "bca6a849ad1376b99272e480b12c7cf26947b2fd1149beb35614b1362e355f29",
+      "sample_content_sha256": "c14ae781b58911ab36551853b55a7e6f5c2da396a2074b06fa348db2da8e77cd",
+      "sample_count": 30000,
+      "label": 0,
+      "state": "normal_calibration",
+      "timestamp_rate_hz": 499.9995653692225,
+      "timestamp_interval_median_s": 0.001999869000428589,
+      "timestamp_interval_max_s": 0.005434164000689634,
+      "timestamp_note": "Zeitstempelrate belegt allein keine neuen Sensorwerte.",
+      "split": "train",
+      "windows": 234,
+      "trailing_samples_excluded": 48
+    },
+    {
+      "path": "/home/malik/masterarbeit-edge-ai/profiles/fan_50/data/raw/normal_005.csv",
+      "sha256": "6d7a07025ef680cd93c25748640a13c563d3b1db2d919a4f8fcc5fee106f23dc",
+      "sample_content_sha256": "ff9b18c2c907cd20d03aba869432867b1c6577ee62223231f1dfe60278227b2b",
+      "sample_count": 30000,
+      "label": 0,
+      "state": "normal_calibration",
+      "timestamp_rate_hz": 499.9993175781887,
+      "timestamp_interval_median_s": 0.0019997769995825365,
+      "timestamp_interval_max_s": 0.009621607001463417,
+      "timestamp_note": "Zeitstempelrate belegt allein keine neuen Sensorwerte.",
+      "split": "train",
+      "windows": 234,
+      "trailing_samples_excluded": 48
+    },
+    {
+      "path": "/home/malik/masterarbeit-edge-ai/profiles/fan_50/data/raw/normal_006.csv",
+      "sha256": "9233d9a0db746bfbb01b00e09f37d2dde98451331b0bd57b558f6e56d8a93c04",
+      "sample_content_sha256": "624e0df09fa4d28f8a8d96de7e0c6b680ecd7e4d1c31fe839ffcd91b69131ef6",
+      "sample_count": 30000,
+      "label": 0,
+      "state": "normal_calibration",
+      "timestamp_rate_hz": 499.9995526104887,
+      "timestamp_interval_median_s": 0.001999869000428589,
+      "timestamp_interval_max_s": 0.006358681999699911,
+      "timestamp_note": "Zeitstempelrate belegt allein keine neuen Sensorwerte.",
+      "split": "train",
+      "windows": 234,
+      "trailing_samples_excluded": 48
+    },
+    {
+      "path": "/home/malik/masterarbeit-edge-ai/profiles/fan_50/data/raw/normal_007.csv",
+      "sha256": "0b38e09cc8c0a0de6716f9532353ece02c5863f28761c327aa2410e52a985b6d",
+      "sample_content_sha256": "78822044f2c612a22bffabe3928af0fbac2b78f432df40a271ed787ffacad40e",
+      "sample_count": 30000,
+      "label": 0,
+      "state": "normal_calibration",
+      "timestamp_rate_hz": 499.9995490103678,
+      "timestamp_interval_median_s": 0.0019997840008727508,
+      "timestamp_interval_max_s": 0.005480096999235684,
+      "timestamp_note": "Zeitstempelrate belegt allein keine neuen Sensorwerte.",
+      "split": "train",
+      "windows": 234,
+      "trailing_samples_excluded": 48
+    },
+    {
+      "path": "/home/malik/masterarbeit-edge-ai/profiles/fan_50/data/raw/normal_008.csv",
+      "sha256": "5d3a65c0cf82b2e01896b837bb0dd68e513573dc0c12c746b6466dfb554db297",
+      "sample_content_sha256": "8d5b8cbbe2fd6845f0323f3ca648e7fb51014e1e36930a96cdbf530949eac10b",
+      "sample_count": 30000,
+      "label": 0,
+      "state": "normal_calibration",
+      "timestamp_rate_hz": 499.9995421434967,
+      "timestamp_interval_median_s": 0.001999895999688306,
+      "timestamp_interval_max_s": 0.0024422090009466046,
+      "timestamp_note": "Zeitstempelrate belegt allein keine neuen Sensorwerte.",
+      "split": "validation",
+      "windows": 234,
+      "trailing_samples_excluded": 48
+    }
+  ],
+  "window_counts": {
+    "train": 1638,
+    "validation": 234
+  },
+  "if_parameters": {
+    "n_estimators": 200,
+    "max_samples": "auto",
+    "contamination": "auto",
+    "max_features": 1.0,
+    "bootstrap": false,
+    "n_jobs": 1,
+    "random_state": 42
+  },
+  "score_definitions": {
+    "rms": "sqrt(mean(square(standardized_Hx3)))",
+    "isolation_forest": "-score_samples(standardized_Hx3.flatten(order=C))",
+    "tflite_autoencoder": "mean(square(standardized_Hx3 - reconstruction), dtype=float64)"
+  },
+  "thresholds": {
+    "rms": {
+      "value": 1.1082771254487802,
+      "source": "P99_NORMAL_VALIDATION",
+      "percentile": 99
+    },
+    "isolation_forest": {
+      "value": 0.4576683345789156,
+      "source": "P99_NORMAL_VALIDATION",
+      "percentile": 99
+    },
+    "tflite_autoencoder": {
+      "value": 0.22105744905736202,
+      "source": "PROFILE/P99_FROZEN_KERAS_CALIBRATION",
+      "percentile": 99
+    }
+  },
+  "decision_rule": "score > threshold = ANOMALY; <= = NORMAL; nonfinite = INVALID",
+  "development_only": true,
+  "limitations": [
+    "Validierung ist Schwellenkalibrierung, keine unabhängige Testgüte.",
+    "Profil-AE verwendete dieselbe Normalvalidierung auch für Trainingsüberwachung/Early Stopping; kein dritter Kalibrierungssplit.",
+    "Software-Zeitstempel belegen keine Sensor-ODR oder neue Messwerte.",
+    "Zweites separat trainiertes Profil ist kein Betriebspunktwechsel mit eingefrorenem Modell."
+  ],
+  "ae_validation_check": {
+    "runtime": "ai_edge_litert.Interpreter (Float32 TFLite)",
+    "tflite_p99_observed": 0.2210574540414726,
+    "frozen_threshold_used": 0.22105744905736202,
+    "absolute_difference": 4.984110568706512e-09,
+    "acceptance_tolerance": 0.0001,
+    "threshold_recalibrated": false
+  },
+  "artifact_sha256": {
+    "validation_raw.npy": "912f5f0a1e1e50f3fe971659805fbad7ef2c448977009e920b2a096ad21771d7",
+    "autoencoder_float32.tflite": "472a7d4413837ea5c69885ea06d72345d231a4c978a135f07807903218fd7d27",
+    "validation_windows.json": "a67d4fde1b3ec3d182379cfb67dc2aee92d4656307cfd30649e2d881c75a2a04",
+    "isolation_forest.joblib": "562b569913d767e9a94392cb18f2055c89737e3621a0c99bab8b4fe383adff88",
+    "source_profile.json": "93fbe9253c5058166823f2b7287ca14b09737c9c1286e339a9a89fcedbde1ba0",
+    "scaler.joblib": "a3e7fc88a9404e5ad272f7e98ca0a5c5de86eb7d9023464f07b62a1fa371a840",
+    "source_ae_threshold.json": "730c5b68b07e410b830e49104565f7ae696003ec13741fe999549c93015ce4a4"
+  }
+}
