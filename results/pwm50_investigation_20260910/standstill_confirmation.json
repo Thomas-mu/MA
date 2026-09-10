@@ -1,0 +1,8 @@
+{
+  "received_utc": "2026-09-10T07:03:27.113456+00:00",
+  "operator_answer": "Ja, vollständig still",
+  "fan_observed_fully_stopped": true,
+  "mounting_unchanged": true,
+  "mounting_source": "current user request: Die Montage bleibt unverändert",
+  "after_restore_zero_session": "results/pwm50_investigation_20260910/restore_zero_session.json"
+}

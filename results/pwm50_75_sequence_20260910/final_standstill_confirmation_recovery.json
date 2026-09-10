@@ -1,0 +1,9 @@
+{
+  "recorded_utc": "2026-09-10T08:36:21.220945+00:00",
+  "operator_answer": "ja",
+  "question_answered": "Full mechanical standstill after final0% command, before final two30s recordings",
+  "fan_observed_fully_stopped": true,
+  "mounting_unchanged": true,
+  "control_session_unavailable": 65289,
+  "actual_new_capture_started_when_confirmation_stored": false
+}

@@ -1,0 +1,9 @@
+{
+  "recorded_utc": "2026-09-10T09:18:43.566253+00:00",
+  "operator_answer": "ja",
+  "fan_observed_fully_stopped": true,
+  "pwm_setpoint_percent": 0,
+  "pwm_frequency_hz": 25000,
+  "mechanical_state_source": "operator_visual_confirmation_after_final_shutdown",
+  "scope": "after completed recording3 and ten-second runout; no further starts planned"
+}

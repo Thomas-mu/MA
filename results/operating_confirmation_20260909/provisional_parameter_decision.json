@@ -1,0 +1,147 @@
+{
+  "created_utc": "2026-09-09T20:42:57.201958+00:00",
+  "decision": "hold_new_training_pending_post_operation_background_reference_and_parameter_justification",
+  "final_parameter_selection": false,
+  "measurement_chain_verified": false,
+  "new_training_authorized_by_this_decision": false,
+  "pilot_records": [
+    {
+      "csv": "data/controlled_20260909/standstill_20260909_200838.csv",
+      "csv_sha256": "1f2f5f24ff34ca1f6c1c863daa4d325ef9e98f2e929a66eaf47adb81c5ec25cb",
+      "sidecar": "data/controlled_20260909/standstill_20260909_200838.json",
+      "sidecar_sha256": "57ff4ebd119f65e2f4838fb19d6dd3ebb73d249498bb7bc080856628db00a09b",
+      "state": "controlled_standstill",
+      "purpose": "pilot",
+      "summary": {
+        "samples": 6193,
+        "observed_host_rate_hz": 206.4796693269605,
+        "host_interval_p50_ms": 5.5370085,
+        "host_interval_p99_ms": 5.70228596,
+        "host_interval_max_ms": 7.103851,
+        "host_intervals_over_2_periods": 0,
+        "nonmonotonic_host_intervals": 0,
+        "fifo_depth_max": 1,
+        "overrun_flagged_samples": 0,
+        "gap_flagged_samples": 0,
+        "saturated_samples": 0,
+        "consecutive_equal_xyz_fraction": 0.005975452196382429,
+        "lost_samples_exact": null,
+        "limits": "FIFO flags detect possible loss, not exact counts; host intervals are not sensor conversion intervals."
+      }
+    },
+    {
+      "csv": "data/controlled_20260909/operating25_20260909_201158.csv",
+      "csv_sha256": "a8c882263a69be2290883cfaf959063a2b1a124ed76b97bb631f528abbbee583",
+      "sidecar": "data/controlled_20260909/operating25_20260909_201158.json",
+      "sidecar_sha256": "1402e156e06aebad644b480eff94216a2fae9d59b4a48005e2879bf98b2da3d2",
+      "state": "normal_operating_25_percent_pilot",
+      "purpose": "pilot",
+      "summary": {
+        "samples": 6205,
+        "observed_host_rate_hz": 206.84652052711402,
+        "host_interval_p50_ms": 5.5751105,
+        "host_interval_p99_ms": 5.684895340000001,
+        "host_interval_max_ms": 6.008778,
+        "host_intervals_over_2_periods": 0,
+        "nonmonotonic_host_intervals": 0,
+        "fifo_depth_max": 1,
+        "overrun_flagged_samples": 0,
+        "gap_flagged_samples": 0,
+        "saturated_samples": 0,
+        "consecutive_equal_xyz_fraction": 0.0038684719535783366,
+        "lost_samples_exact": null,
+        "limits": "FIFO flags detect possible loss, not exact counts; host intervals are not sensor conversion intervals."
+      }
+    },
+    {
+      "csv": "data/controlled_20260909/operating25_repeat_20260909_203210.csv",
+      "csv_sha256": "d4e4501fdba80b406b9469c837aa95fa7e7cb528bd7c533a85325f07fe176928",
+      "sidecar": "data/controlled_20260909/operating25_repeat_20260909_203210.json",
+      "sidecar_sha256": "57ececff0e80a9dd80d788fbd0b662f38af26129a57d9e6eba34ff7e894306f1",
+      "state": "normal_operating_25_percent_repeat_pilot",
+      "purpose": "pilot",
+      "summary": {
+        "samples": 6205,
+        "observed_host_rate_hz": 206.86288379294587,
+        "host_interval_p50_ms": 5.5817760000000005,
+        "host_interval_p99_ms": 5.69614888,
+        "host_interval_max_ms": 6.057078,
+        "host_intervals_over_2_periods": 0,
+        "nonmonotonic_host_intervals": 0,
+        "fifo_depth_max": 1,
+        "overrun_flagged_samples": 0,
+        "gap_flagged_samples": 0,
+        "saturated_samples": 0,
+        "consecutive_equal_xyz_fraction": 0.004190844616376531,
+        "lost_samples_exact": null,
+        "limits": "FIFO flags detect possible loss, not exact counts; host intervals are not sensor conversion intervals."
+      }
+    }
+  ],
+  "mounting_id": "fan_frame_corner_adxl345_gpio18_v1",
+  "hardware_conditions_closed": {
+    "control_gpio_bcm": 18,
+    "physical_header_pin": 12,
+    "sensor_mount": "corner of fan frame, intended I2C wiring"
+  },
+  "pilot_parameters": {
+    "odr_hz": 200,
+    "range_g": 2,
+    "full_resolution": true,
+    "acquisition_mode": "fifo_stream",
+    "i2c_clock_configured_hz": 100000,
+    "duration_seconds": 30,
+    "pwm_frequency_hz": 25000,
+    "normal_pwm_percent": 25,
+    "spectral_segment_samples": 512,
+    "spectral_step_samples": 256,
+    "spectral_window": "symmetric Hann; per-segment mean removed",
+    "diagnostic_bands_hz": [
+      [
+        1,
+        90
+      ],
+      [
+        5,
+        80
+      ]
+    ],
+    "diagnostic_bands_are_final_useful_band": false
+  },
+  "parameter_reasoning": {
+    "odr": "Retain 200 Hz for the next paired reference to preserve comparability and respect the existing 100-kHz-I2C constraint documented in chapter 5 and the sensor implementation. No higher-rate capture or boot change made. Host-observed FIFO throughput around 206.5–206.9/s is separately reported; neither retimed nor relabeled as nominal200.",
+    "range": "Keep full-resolution ±2 g for the reference. No clipping/saturation flag occurred in any of the three pilots. This supports the pilot setting but does not establish headroom for future anomaly conditions or calibrated acceleration accuracy.",
+    "spectra": "512 samples and half overlap yield approximately0.4-Hz bin spacing for broad pilot diagnostics. Frequency bins are not an independent tachometer. The diagnostic bands and candidate bands are exploratory; no post-hoc pass threshold is assigned.",
+    "model_windows": "Current implementation H=S=128 XYZ, nominal0.64 s at200 Hz. Input shape remains unchanged; physical suitability is not yet released.",
+    "duration": "30-s pilots allow six non-overlapping5-s diagnostic sections. The sections are dependent within-recording evidence, not six independent experimental repeats. Sixty-second train/validation durations remain a proposal."
+  },
+  "technical_criteria": {
+    "completed": true,
+    "finite_xyz_and_time": true,
+    "contiguous_indices": true,
+    "no_flagged_gaps": true,
+    "no_flagged_overruns": true,
+    "no_flagged_saturation": true,
+    "exact_physical_loss_count_proven": false,
+    "passed_for_existing_three_pilots": true
+  },
+  "signal_evidence": {
+    "B1_vs_S0_broadband_ratio_db": [
+      0.51,
+      0.592
+    ],
+    "repeat_vs_S0_broadband_ratio_db": [
+      0.347,
+      0.371
+    ],
+    "interpretation": "Small broad power differences and overlapping5-s variation; the fixed X71.51-Hz candidate band is enhanced in the repeat. Does not establish absence of fan signal or sufficient final useful-band separation.",
+    "independent_tachometer_rpm": null,
+    "bracketing_reference_S1_available": false,
+    "acceptance_thresholds_for_signal_drift_and_bandwidth": "not yet fixed; must be justified before independent final tests",
+    "saturation_margin_for_anomaly_states": "unmeasured"
+  },
+  "next_required_observation": "fresh visual full standstill after shutdown20:32:40 UTC; mounting unchanged",
+  "next_capture": "announced30-s S1 at unchanged0% and identical sensor parameters; no PWM write needed",
+  "training_preparation": "results/operating_confirmation_20260909/training_and_independent_test_preparation.json",
+  "analysis": "results/paired_pilots_20260909/repeat_bracketing/three_recordings.json"
+}

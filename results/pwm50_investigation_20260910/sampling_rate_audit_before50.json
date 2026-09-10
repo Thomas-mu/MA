@@ -1,0 +1,92 @@
+{
+  "created_utc": "2026-09-10T07:09:04.495432+00:00",
+  "scope": "four completed pilots before50% acquisition",
+  "records": [
+    {
+      "csv": "data/controlled_20260909/operating25_20260909_201158.csv",
+      "csv_sha256": "a8c882263a69be2290883cfaf959063a2b1a124ed76b97bb631f528abbbee583",
+      "sidecar_sha256": "1402e156e06aebad644b480eff94216a2fae9d59b4a48005e2879bf98b2da3d2",
+      "xyz_points": 6205,
+      "individual_axis_values": 18615,
+      "first_to_last_host_s": 29.993252892,
+      "rate_from_host_xyz_per_s": 206.84652052711402,
+      "rate_from_relative_timestamp_xyz_per_s": 206.84652052711402,
+      "linear_fit_rate_xyz_per_s": 206.85529017479683,
+      "nominal_odr_hz": 200,
+      "rate_deviation_percent": 3.4232602635570153,
+      "expected_count_at_nominal_rate": 6000,
+      "nominal_time_column_last_s": 31.02,
+      "actual_last_relative_timestamp_s": 30.004558576,
+      "bw_rate_register_readback": "0xb"
+    },
+    {
+      "csv": "data/controlled_20260909/operating25_repeat_20260909_203210.csv",
+      "csv_sha256": "d4e4501fdba80b406b9469c837aa95fa7e7cb528bd7c533a85325f07fe176928",
+      "sidecar_sha256": "57ececff0e80a9dd80d788fbd0b662f38af26129a57d9e6eba34ff7e894306f1",
+      "xyz_points": 6205,
+      "individual_axis_values": 18615,
+      "first_to_last_host_s": 29.990880366,
+      "rate_from_host_xyz_per_s": 206.86288379294587,
+      "rate_from_relative_timestamp_xyz_per_s": 206.8628837929459,
+      "linear_fit_rate_xyz_per_s": 206.8674585450877,
+      "nominal_odr_hz": 200,
+      "rate_deviation_percent": 3.431441896472931,
+      "expected_count_at_nominal_rate": 6000,
+      "nominal_time_column_last_s": 31.02,
+      "actual_last_relative_timestamp_s": 30.002183063,
+      "bw_rate_register_readback": "0xb"
+    },
+    {
+      "csv": "data/controlled_20260909/standstill_20260909_200838.csv",
+      "csv_sha256": "1f2f5f24ff34ca1f6c1c863daa4d325ef9e98f2e929a66eaf47adb81c5ec25cb",
+      "sidecar_sha256": "57ff4ebd119f65e2f4838fb19d6dd3ebb73d249498bb7bc080856628db00a09b",
+      "xyz_points": 6193,
+      "individual_axis_values": 18579,
+      "first_to_last_host_s": 29.988424624,
+      "rate_from_host_xyz_per_s": 206.4796693269605,
+      "rate_from_relative_timestamp_xyz_per_s": 206.4796693269605,
+      "linear_fit_rate_xyz_per_s": 206.48121248855864,
+      "nominal_odr_hz": 200,
+      "rate_deviation_percent": 3.2398346634802566,
+      "expected_count_at_nominal_rate": 6000,
+      "nominal_time_column_last_s": 30.96,
+      "actual_last_relative_timestamp_s": 30.001584641,
+      "bw_rate_register_readback": "0xb"
+    },
+    {
+      "csv": "data/controlled_20260910/standstill_post_operation_20260910_070328.csv",
+      "csv_sha256": "581a34b971efa5f6d6ea6f6905dd2435e1ee24c7bd2d6db82317f4cbdf051e09",
+      "sidecar_sha256": "0fdadf4080cc28bf4aaf24d93732f170f159be638896dcc22e9cae8ccaee5897",
+      "xyz_points": 6201,
+      "individual_axis_values": 18603,
+      "first_to_last_host_s": 29.988047104,
+      "rate_from_host_xyz_per_s": 206.74904165976864,
+      "rate_from_relative_timestamp_xyz_per_s": 206.74904165976864,
+      "linear_fit_rate_xyz_per_s": 206.74681552210754,
+      "nominal_odr_hz": 200,
+      "rate_deviation_percent": 3.37452082988432,
+      "expected_count_at_nominal_rate": 6000,
+      "nominal_time_column_last_s": 31.0,
+      "actual_last_relative_timestamp_s": 30.001199523,
+      "bw_rate_register_readback": "0xb"
+    }
+  ],
+  "implementation_findings": {
+    "termination": "elapsed monotonic time<30s; there is no target of6205rows or6000rows",
+    "one_row": "one FIFO item, one6-byte burst, decoded as3signed16-bit axis values",
+    "nominal_time": "sample_index/200is a calculated column, not an independently measured timestamp",
+    "endpoint_effect": "up to one final blocking fresh-read can extend slightly beyond30s; does not explain about205extra samples",
+    "same_N_does_not_mean_same_rate": "rates differ even when both counts round to6205; hashes and timestamps differ"
+  },
+  "mechanism_interpretation": "Observed~3.4% deviation is consistent with manufacturer-stated internalRC oscillator variation. Specific clock error not independently measured; host-observed FIFO rate remains an estimate of sensor output rate.",
+  "source": {
+    "url": "https://ez.analog.com/condition-based-monitoring/f/q-a/553781/adxl345---number-of-samples-for-odr---3200",
+    "author": "Analog Devices employee ChrisM",
+    "date": "2022-01-07",
+    "claim_used": "internal clock independent of communication clock;RC±10%accuracy;DATA_READY supports independent timing"
+  },
+  "code_sha256": {
+    "src/adxl345.py": "de7d7bb6df14a0a4499b843136ba9d47db6ef9e146709e827b9e40f0bcf9be84",
+    "src/collect_real_data.py": "80175fcf85c2c39c7e1027f83a1e845d2262f92375a083cfcc30ad1db84e54b1"
+  }
+}

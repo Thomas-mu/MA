@@ -1,0 +1,53 @@
+{
+  "checked_utc": "2026-09-09T20:45:42.769276+00:00",
+  "device_holders": {
+    "/dev/i2c-1": {
+      "returncode": 1,
+      "stdout": "",
+      "stderr": ""
+    },
+    "/dev/gpiochip0": {
+      "returncode": 1,
+      "stdout": "",
+      "stderr": ""
+    },
+    "/dev/gpiomem0": {
+      "returncode": 1,
+      "stdout": "",
+      "stderr": ""
+    }
+  },
+  "process_name_matches": [],
+  "fan_readback": {
+    "gpio_bcm": 18,
+    "physical_pin": 12,
+    "pwm_chip": 0,
+    "pwm_channel": 2,
+    "pwm_path": "/sys/class/pwm/pwmchip0/pwm2",
+    "rp1_device_path": "/sys/devices/platform/axi/1000120000.pcie/1f00098000.pwm",
+    "pwm_configuration": {
+      "period_ns": 40000,
+      "duty_cycle_ns": 0,
+      "enable": 1,
+      "polarity": "normal",
+      "configured_frequency_hz": 25000.0,
+      "configured_duty_percent": 0.0
+    },
+    "pin_readback": {
+      "mux": "a3",
+      "function": "PWM0_CHAN2",
+      "instantaneous_level": "lo",
+      "raw": "18: a3    pd | lo // GPIO18 = PWM0_CHAN2"
+    },
+    "pwm_mux_confirmed": true,
+    "electrical_waveform_measured": false,
+    "measured_rpm": null,
+    "mechanical_state": "not_measured"
+  },
+  "hardware_changed": false,
+  "actual_mechanical_state": "awaiting_new_user_visual_standstill_confirmation",
+  "sensor_recording_active": false,
+  "training_started": false,
+  "word_sha256": "a9a5d7d17b28098f554240a3e1650881e252db679f33319a1d11164b3246cbb8",
+  "word_source_sha256": "1fd8aa3fab4a5621542d2d629b3004a98bbea11d8338b9638a85cfa05d71e4bf"
+}

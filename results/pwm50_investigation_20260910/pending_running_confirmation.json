@@ -1,0 +1,18 @@
+{
+  "recorded_utc": "2026-09-10T07:10:56.122117+00:00",
+  "state": "50_percent_settled_waiting_for_operator_running_observation",
+  "exec_session_id": 21869,
+  "sequence_script": "results/pwm50_investigation_20260910/run_measurements.py",
+  "pwm_setpoint_percent": 50,
+  "pwm_frequency_hz": 25000,
+  "pwm_applied_utc": "2026-09-10T07:04:20.432177+00:00",
+  "standstill_reference_completed": "data/controlled_20260910/standstill_post_operation_20260910_070328.csv",
+  "operating50_recordings_completed": 0,
+  "sensor_recording_active": false,
+  "controller_holds_advisory_lock": true,
+  "next_gate": "capture_50_first with actual positive operator observation after explicit capture announcement",
+  "following_gate": "capture_50_second after separate announcement",
+  "final_sequence_action": "set0% after second capture or handled abort; do not infer mechanical stop",
+  "training_started": false,
+  "word_edited": false
+}

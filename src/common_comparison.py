@@ -371,6 +371,8 @@ def calibrate(args) -> None:
     profile = read_json(profile_path)
     if profile.get("status") != "ready" or profile.get("axes") != list(AXES):
         raise ValueError("Fertiges XYZ-Profil erforderlich.")
+    sensor = profile.get("sensor", {})
+    chain_requested = sensor.get("measurement_chain_verified") is True
     size, step = int(profile["window_size"]), int(profile["step_size"])
     groups, metadata, reports = {"train": [], "validation": []}, {"train": [], "validation": []}, []
     for entry in profile["data"]["recordings"]:
@@ -382,11 +384,21 @@ def calibrate(args) -> None:
             raise ValueError(f"Aufnahme stimmt nicht mit Profilhash überein: {path}")
         # Neue Erfassungsprotokolle tragen den konkreten Normalzustandsnamen.
         sidecar_path = path.with_suffix(".json")
+        sidecar_hash = entry.get("metadata_sha256")
+        if sidecar_hash is not None:
+            if not isinstance(sidecar_hash, str) or not sidecar_hash:
+                raise ValueError(f"{sidecar_path}: ungültiger Sidecar-Hash im Profil.")
+            if not sidecar_path.is_file() or sha256(sidecar_path) != sidecar_hash:
+                raise ValueError(f"{sidecar_path}: Sidecar fehlt oder widerspricht dem Profilhash.")
+        elif chain_requested:
+            raise ValueError(f"{sidecar_path}: überprüfte Messkette benötigt metadata_sha256 im Profil.")
         state = read_json(sidecar_path).get("state", "normal_calibration") if sidecar_path.exists() else "normal_calibration"
         values, times, report = load_recording(path, label=0, state=state)
         report["split"] = split
-        if report["quality_flags_present"]:
-            acquisition_sidecar(path, report, purpose="training" if split == "train" else "validation")
+        report["profile_sidecar_hash_verified"] = sidecar_hash is not None
+        if report["quality_flags_present"] or chain_requested:
+            acquisition_sidecar(path, report, purpose="training" if split == "train" else "validation",
+                                expected_hash=sidecar_hash)
         windows, meta = make_windows(values, times, size, step, report)
         groups[split].append(windows)
         metadata[split].extend(meta)
@@ -436,9 +448,9 @@ def calibrate(args) -> None:
     joblib.dump(if_model, output / "isolation_forest.joblib")
     np.save(output / "validation_raw.npy", raw["validation"], allow_pickle=False)
     write_json(output / "validation_windows.json", {"windows": metadata["validation"]})
-    sensor = profile.get("sensor", {})
     sidecars = [r.get("acquisition_sidecar") for r in reports]
-    chain_verified = (sensor.get("measurement_chain_verified") is True and all(sidecars)
+    chain_verified = (chain_requested and all(sidecars)
+                      and all(r["profile_sidecar_hash_verified"] for r in reports)
                       and all(all(s["sensor"].get(key) == sensor.get(key) for key in
                                   ("odr_hz", "range_g", "acquisition_mode", "register_readback")) for s in sidecars))
     mounting = next((s["mounting"] for s in sidecars if s), None)

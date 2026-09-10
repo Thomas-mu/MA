@@ -1,0 +1,136 @@
+{
+  "trial": 2,
+  "attempt": 3,
+  "started_utc": "2026-09-10T09:09:09.744065+00:00",
+  "status": "aborted",
+  "protocol": "confirmed full standstill ->75% ->fixed60s ->30s capture ->0%",
+  "standstill_confirmation": {
+    "trial": 2,
+    "attempt": 3,
+    "recorded_utc": "2026-09-10T09:09:04.144976+00:00",
+    "operator_answer": "ja",
+    "fan_observed_fully_stopped": true,
+    "mounting_unchanged": true,
+    "operator_ready_for_running_confirmation_during_settling": true,
+    "confirmation_context": "Current user confirms full mechanical standstill and availability for running confirmation during the next60-s settling period, following second timed-out attempt and return to0%."
+  },
+  "standstill_confirmation_sha256": "67b30bf7fc2fe39d962f78b3acdb0ad1592da88ce085c1fc58e87c719105f88c",
+  "runner_sha256": "c1f331694b0d4cf6d1c7e8b36efaafea6c495187ff23acb12efad8aa4aed95d8",
+  "fan_journal": "results/pwm75_restarts_20260910_085357/start_2_attempt3_fan.jsonl",
+  "requested_settling_s": 60,
+  "requested_record_s": 30,
+  "training": false,
+  "induced_anomalies": false,
+  "mechanical_state_after_shutdown": "not_yet_visually_confirmed",
+  "initial_readback": {
+    "gpio_bcm": 18,
+    "physical_pin": 12,
+    "pwm_chip": 0,
+    "pwm_channel": 2,
+    "pwm_path": "/sys/class/pwm/pwmchip0/pwm2",
+    "rp1_device_path": "/sys/devices/platform/axi/1000120000.pcie/1f00098000.pwm",
+    "pwm_configuration": {
+      "period_ns": 40000,
+      "duty_cycle_ns": 0,
+      "enable": 1,
+      "polarity": "normal",
+      "configured_frequency_hz": 25000.0,
+      "configured_duty_percent": 0.0
+    },
+    "pin_readback": {
+      "mux": "a3",
+      "function": "PWM0_CHAN2",
+      "instantaneous_level": "lo",
+      "raw": "18: a3    pd | lo // GPIO18 = PWM0_CHAN2"
+    },
+    "pwm_mux_confirmed": true,
+    "electrical_waveform_measured": false,
+    "measured_rpm": null,
+    "mechanical_state": "not_measured"
+  },
+  "setting_result": {
+    "gpio_bcm": 18,
+    "physical_pin": 12,
+    "pwm_chip": 0,
+    "pwm_channel": 2,
+    "pwm_path": "/sys/class/pwm/pwmchip0/pwm2",
+    "rp1_device_path": "/sys/devices/platform/axi/1000120000.pcie/1f00098000.pwm",
+    "pwm_configuration": {
+      "period_ns": 40000,
+      "duty_cycle_ns": 30000,
+      "enable": 1,
+      "polarity": "normal",
+      "configured_frequency_hz": 25000.0,
+      "configured_duty_percent": 75.0
+    },
+    "pin_readback": {
+      "mux": "a3",
+      "function": "PWM0_CHAN2",
+      "instantaneous_level": "hi",
+      "raw": "18: a3    pd | hi // GPIO18 = PWM0_CHAN2"
+    },
+    "pwm_mux_confirmed": true,
+    "electrical_waveform_measured": false,
+    "measured_rpm": null,
+    "mechanical_state": "not_measured"
+  },
+  "setting_completed_monotonic_ns": 9615975701978,
+  "setting_completed_utc": "2026-09-10T09:09:09.833251+00:00",
+  "capture_deadline_monotonic_ns": 9675975701978,
+  "error": "TimeoutError: No visual running confirmation before fixed60-s capture deadline; no capture",
+  "zero_command_result": {
+    "gpio_bcm": 18,
+    "physical_pin": 12,
+    "pwm_chip": 0,
+    "pwm_channel": 2,
+    "pwm_path": "/sys/class/pwm/pwmchip0/pwm2",
+    "rp1_device_path": "/sys/devices/platform/axi/1000120000.pcie/1f00098000.pwm",
+    "pwm_configuration": {
+      "period_ns": 40000,
+      "duty_cycle_ns": 0,
+      "enable": 1,
+      "polarity": "normal",
+      "configured_frequency_hz": 25000.0,
+      "configured_duty_percent": 0.0
+    },
+    "pin_readback": {
+      "mux": "a3",
+      "function": "PWM0_CHAN2",
+      "instantaneous_level": "lo",
+      "raw": "18: a3    pd | lo // GPIO18 = PWM0_CHAN2"
+    },
+    "pwm_mux_confirmed": true,
+    "electrical_waveform_measured": false,
+    "measured_rpm": null,
+    "mechanical_state": "not_measured"
+  },
+  "zero_command_completed_utc": "2026-09-10T09:10:09.882561+00:00",
+  "final_readback": {
+    "gpio_bcm": 18,
+    "physical_pin": 12,
+    "pwm_chip": 0,
+    "pwm_channel": 2,
+    "pwm_path": "/sys/class/pwm/pwmchip0/pwm2",
+    "rp1_device_path": "/sys/devices/platform/axi/1000120000.pcie/1f00098000.pwm",
+    "pwm_configuration": {
+      "period_ns": 40000,
+      "duty_cycle_ns": 0,
+      "enable": 1,
+      "polarity": "normal",
+      "configured_frequency_hz": 25000.0,
+      "configured_duty_percent": 0.0
+    },
+    "pin_readback": {
+      "mux": "a3",
+      "function": "PWM0_CHAN2",
+      "instantaneous_level": "lo",
+      "raw": "18: a3    pd | lo // GPIO18 = PWM0_CHAN2"
+    },
+    "pwm_mux_confirmed": true,
+    "electrical_waveform_measured": false,
+    "measured_rpm": null,
+    "mechanical_state": "not_measured"
+  },
+  "runout_wait_s": 10,
+  "finished_utc": "2026-09-10T09:10:19.901195+00:00"
+}

@@ -1,0 +1,9 @@
+{
+  "trial": 2,
+  "attempt": 2,
+  "recorded_utc": "2026-09-10T09:04:16.695609+00:00",
+  "operator_answer": "ja",
+  "fan_observed_fully_stopped": true,
+  "mounting_unchanged": true,
+  "confirmation_context": "Current user confirms full mechanical standstill after the timed-out physical start2 and its return to0%, before the separately documented replacement."
+}

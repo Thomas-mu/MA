@@ -1,0 +1,18 @@
+{
+  "recorded_utc": "2026-09-09T20:29:30.827272+00:00",
+  "supersedes_pending_record": "results/hardware_confirmation_20260909/pending_operating_pilot.json",
+  "status": "operating_pilot_completed",
+  "controller_exec_session": 94966,
+  "controller_process_exited": true,
+  "fan_output_left_unchanged_percent": 25,
+  "mechanical_observation": {
+    "fan_observed_running": true,
+    "operator_observation": "Ja, der Lüfter läuft sichtbar gleichmäßig. Sensor und Montage sind unverändert. Du kannst die Betriebsaufnahme ankündigen und starten."
+  },
+  "rpm_measured": null,
+  "recording": "data/controlled_20260909/operating25_20260909_201158.csv",
+  "acquisition_status": "completed",
+  "actual_settling_before_capture_seconds": 756.907159026,
+  "next_stage": "paired_signal_quality_and_parameter_decision",
+  "new_models_trained": false
+}

@@ -1,0 +1,27 @@
+{
+  "recorded_utc": "2026-09-10T07:52:31.522473+00:00",
+  "stage": "waiting_for_50_percent_visual_uniform_running_confirmation",
+  "exec_session_id": 65289,
+  "session": "results/pwm50_75_sequence_20260910/sequence_20260910_074455.json",
+  "current_pwm_setpoint_percent": 50,
+  "minimum_settling_elapsed_s": 30.00010681099957,
+  "completed_recordings": [
+    "data/pwm50_75_sequence_20260910/standstill_before_r1_20260910_074835.csv",
+    "data/pwm50_75_sequence_20260910/standstill_before_r2_20260910_074910.csv"
+  ],
+  "sensor_recording_active": false,
+  "controller_holds_advisory_lock": true,
+  "next_gate": {
+    "action": "capture_phase",
+    "phase": "operating50",
+    "fan_observed_running_uniformly": "must be true only after actual positive user answer",
+    "operator_answer": "quote actual answer"
+  },
+  "remaining_phases": [
+    "operating50",
+    "operating75",
+    "standstill_after"
+  ],
+  "word_changed": false,
+  "training_started": false
+}

@@ -1,0 +1,15 @@
+{
+  "created_utc": "2026-09-10T09:04:04.789059+00:00",
+  "reason": "Second physical start aborted without recording because visual running confirmation was absent at fixed60-s deadline. Preserve the attempt and prepare a separately identified replacement only after fresh standstill observation.",
+  "preserved_file_sha256": {
+    "results/pwm75_restarts_20260910_085357/run_one_start.py": "a1398cfbbc31f5b36e31b59124e8c4557f5f1ffc9cc36734b7f7e71186f7fc5c",
+    "results/pwm75_restarts_20260910_085357/start_1.json": "5169be3a5ac8b3a9c0bb95249d5876818cdf63c4715f865b4ac9b2f5300e9c16",
+    "results/pwm75_restarts_20260910_085357/start_1_fan.jsonl": "75116eded0f33f47f91eeb476db3e563c094c51a22ae048c1f8359b46f063475",
+    "results/pwm75_restarts_20260910_085357/start_2.json": "5836048e55d8f1e9e6828709b87b77a5bff13c35e27f1258007eaf764d70660b",
+    "results/pwm75_restarts_20260910_085357/start_2_fan.jsonl": "d959ab45b51b587d6109aa5fdb88dfb073819e970db96718f1a2327fababa8ae"
+  },
+  "retry_runner": "results/pwm75_restarts_20260910_085357/run_one_start_with_attempts.py",
+  "retry_runner_sha256": "c1f331694b0d4cf6d1c7e8b36efaafea6c495187ff23acb12efad8aa4aed95d8",
+  "timing_or_sensor_acquisition_changed": false,
+  "additional_physical_start_required_for_three_completed_recordings": true
+}

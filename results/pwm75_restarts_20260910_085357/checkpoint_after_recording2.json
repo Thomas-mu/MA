@@ -1,0 +1,24 @@
+{
+  "recorded_utc": "2026-09-10T09:15:13.341673+00:00",
+  "status": "awaiting_recording2_running_observation_and_prestart3_full_standstill_confirmation",
+  "completed_recordings": 2,
+  "physical_starts_so_far": 5,
+  "aborted_without_recording": 3,
+  "successful_sessions": [
+    "start_1.json",
+    "start_2_attempt4.json"
+  ],
+  "next_trial": 3,
+  "next_attempt": 1,
+  "next_runner": "run_one_start_timed.py",
+  "next_standstill_confirmation_file": "standstill_before_start_3.json",
+  "pending_running_observation_file": "running_observation_start_2_attempt4.json",
+  "pending_running_observation_scope": "Recording2 interval about11:13:14–11:13:44 Europe/Berlin; do not infer observation if user did not watch.",
+  "final_pwm_setpoint_percent": 0,
+  "pwm_frequency_hz": 25000,
+  "mechanical_standstill_after_last_shutdown_confirmed": false,
+  "planned_settling_s": 60,
+  "planned_capture_s": 30,
+  "models_trained": false,
+  "no_timed_running_reply_required": true
+}

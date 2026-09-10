@@ -1,0 +1,22 @@
+{
+  "chapter_1_to_5_xml_unchanged": true,
+  "preserved_chapter_blocks": 187,
+  "math_objects_unchanged": 3,
+  "only_changed_zip_parts": [
+    "word/document.xml",
+    "word/settings.xml"
+  ],
+  "tables_total": 22,
+  "new_table_captions": [
+    "Tabelle 6-1: Bestätigte Prüfstandangaben und Grenzen der Nachweise",
+    "Tabelle 6-2: Implementierte Komponenten der Verarbeitung",
+    "Tabelle 6-3: Aktuelle Pilotparameter und ihre Aussagegrenzen",
+    "Tabelle 6-4: Gemeinsame Eingabebasis und implementierte Verfahren",
+    "Tabelle 6-5: Vorhandene Entwicklungsbelege und offene Nachweise"
+  ],
+  "unresolved_internal_hyperlinks": [],
+  "single_outlook_heading": true,
+  "new_tables_repeat_header_and_preserve_rows": true,
+  "new_tables_within_text_width": true,
+  "docx_sha256": "a9a5d7d17b28098f554240a3e1650881e252db679f33319a1d11164b3246cbb8"
+}

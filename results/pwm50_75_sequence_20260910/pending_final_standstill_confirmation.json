@@ -1,0 +1,29 @@
+{
+  "recorded_utc": "2026-09-10T08:20:59.220556+00:00",
+  "stage": "waiting_for_final_visual_full_standstill_confirmation",
+  "exec_session_id": 65289,
+  "session": "results/pwm50_75_sequence_20260910/sequence_20260910_074455.json",
+  "current_pwm_setpoint_percent": 0,
+  "zero_command_completed_utc": "2026-09-10T08:20:04.722053+00:00",
+  "minimum_shutdown_wait_elapsed_s": 10.000114451000627,
+  "mechanical_standstill": "awaiting_actual_new_visual_confirmation",
+  "completed_recordings": [
+    "data/pwm50_75_sequence_20260910/standstill_before_r1_20260910_074835.csv",
+    "data/pwm50_75_sequence_20260910/standstill_before_r2_20260910_074910.csv",
+    "data/pwm50_75_sequence_20260910/operating50_r1_20260910_081505.csv",
+    "data/pwm50_75_sequence_20260910/operating50_r2_20260910_081541.csv",
+    "data/pwm50_75_sequence_20260910/operating75_r1_20260910_081828.csv",
+    "data/pwm50_75_sequence_20260910/operating75_r2_20260910_081903.csv"
+  ],
+  "sensor_recording_active": false,
+  "controller_holds_advisory_lock": true,
+  "next_gate": {
+    "action": "capture_phase",
+    "phase": "standstill_after",
+    "fan_observed_fully_stopped": "true only after actual positive user observation",
+    "operator_answer": "quote actual answer"
+  },
+  "following_work": "analyze all8new recordings; compare bracket drift and50/75 repeatability; write separate report; verify646existing file hashes unchanged",
+  "word_changed": false,
+  "training_started": false
+}

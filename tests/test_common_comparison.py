@@ -6,6 +6,7 @@ import sys
 import tempfile
 import unittest
 from pathlib import Path
+from types import SimpleNamespace
 from unittest.mock import patch
 
 import numpy as np
@@ -203,6 +204,94 @@ class CommonComparisonTests(unittest.TestCase):
         metadata.write_text(json.dumps(document))
         with self.assertRaisesRegex(ValueError, "Status"):
             comparison.acquisition_sidecar(path, report, purpose="test")
+
+    def calibration_input(self, *, verified=False, sidecar=True, bind_hash=True,
+                          quality_flags=True):
+        path = self.fifo_recording() if quality_flags else self.recording()
+        sensor = {"odr_hz": 200, "range_g": 2, "acquisition_mode": "fifo_stream",
+                  "register_readback": {"0x2c": "0xb"},
+                  "measurement_chain_verified": verified}
+        entry = {"path": str(path), "filename": path.name,
+                 "sha256": comparison.sha256(path), "split": "train"}
+        metadata = path.with_suffix(".json")
+        if sidecar:
+            comparison.write_json(metadata, {
+                "csv_sha256": entry["sha256"], "status": "completed",
+                "purpose": "training", "label": 0, "state": "normal", "mounting": "M1",
+                "sensor": sensor, "detection_controls_fan": False})
+            if bind_hash:
+                entry["metadata_sha256"] = comparison.sha256(metadata)
+        profile = {"status": "ready", "axes": list(comparison.AXES), "sensor": sensor,
+                   "window_size": 4, "step_size": 4, "data": {"recordings": [entry]}}
+        profile_path = self.root / "profile.json"
+        comparison.write_json(profile_path, profile)
+        args = SimpleNamespace(profile=str(profile_path), output=str(self.root / "output"),
+                               runtime="auto", threads=1)
+        return args, metadata, profile_path
+
+    def test_calibration_rejects_changed_sidecar_bound_in_unverified_profile(self):
+        args, metadata, _ = self.calibration_input()
+        document = comparison.read_json(metadata)
+        document["mounting"] = "changed_but_semantically_valid"
+        metadata.write_text(json.dumps(document))
+        with patch.object(comparison, "assert_disjoint") as next_stage:
+            with self.assertRaisesRegex(ValueError, "Profilhash"):
+                comparison.calibrate(args)
+            next_stage.assert_not_called()
+        self.assertFalse(Path(args.output).exists())
+
+    def test_calibration_rejects_missing_bound_sidecar(self):
+        args, metadata, _ = self.calibration_input(verified=True)
+        metadata.unlink()
+        with self.assertRaisesRegex(ValueError, "Sidecar fehlt"):
+            comparison.calibrate(args)
+        self.assertFalse(Path(args.output).exists())
+
+    def test_verified_calibration_requires_profile_sidecar_hash(self):
+        args, _, _ = self.calibration_input(verified=True, bind_hash=False)
+        with self.assertRaisesRegex(ValueError, "metadata_sha256"):
+            comparison.calibrate(args)
+
+    def test_verified_calibration_rejects_hashed_legacy_capture_without_flags(self):
+        args, _, _ = self.calibration_input(verified=True, quality_flags=False)
+        with self.assertRaisesRegex(ValueError, "Qualitätsflags"):
+            comparison.calibrate(args)
+
+    def test_calibration_checks_matching_sidecar_before_any_fit(self):
+        args, _, _ = self.calibration_input(verified=True)
+        with patch.object(comparison, "assert_disjoint", side_effect=RuntimeError("stop before fitting")) as checked:
+            with self.assertRaisesRegex(RuntimeError, "stop before fitting"):
+                comparison.calibrate(args)
+        report = checked.call_args.args[0][0]
+        self.assertTrue(report["profile_sidecar_hash_verified"])
+        self.assertIn("acquisition_sidecar", report)
+        self.assertFalse(Path(args.output).exists())
+
+    def test_unverified_legacy_without_sidecar_remains_explorative(self):
+        args, _, _ = self.calibration_input(sidecar=False, quality_flags=False)
+        with patch.object(comparison, "assert_disjoint", side_effect=RuntimeError("stop before fitting")) as checked:
+            with self.assertRaisesRegex(RuntimeError, "stop before fitting"):
+                comparison.calibrate(args)
+        report = checked.call_args.args[0][0]
+        self.assertFalse(report["profile_sidecar_hash_verified"])
+        self.assertNotIn("acquisition_sidecar", report)
+
+    def test_unverified_fifo_without_profile_hash_is_not_hash_verified(self):
+        args, _, _ = self.calibration_input(bind_hash=False)
+        with patch.object(comparison, "assert_disjoint", side_effect=RuntimeError("stop before fitting")) as checked:
+            with self.assertRaisesRegex(RuntimeError, "stop before fitting"):
+                comparison.calibrate(args)
+        report = checked.call_args.args[0][0]
+        self.assertFalse(report["profile_sidecar_hash_verified"])
+        self.assertIn("acquisition_sidecar", report)
+
+    def test_calibration_rejects_invalid_present_sidecar_hash(self):
+        args, _, profile_path = self.calibration_input()
+        profile = comparison.read_json(profile_path)
+        profile["data"]["recordings"][0]["metadata_sha256"] = False
+        profile_path.write_text(json.dumps(profile))
+        with self.assertRaisesRegex(ValueError, "ungültiger Sidecar-Hash"):
+            comparison.calibrate(args)
 
     def test_latency_journal_requires_measurement_end_and_retains_every_value(self):
         timings = comparison.TimingJournal(self.root / "timings.bin")

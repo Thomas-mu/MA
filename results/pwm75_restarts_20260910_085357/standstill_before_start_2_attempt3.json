@@ -1,0 +1,10 @@
+{
+  "trial": 2,
+  "attempt": 3,
+  "recorded_utc": "2026-09-10T09:09:04.144976+00:00",
+  "operator_answer": "ja",
+  "fan_observed_fully_stopped": true,
+  "mounting_unchanged": true,
+  "operator_ready_for_running_confirmation_during_settling": true,
+  "confirmation_context": "Current user confirms full mechanical standstill and availability for running confirmation during the next60-s settling period, following second timed-out attempt and return to0%."
+}

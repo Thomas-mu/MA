@@ -1,0 +1,122 @@
+{
+  "verified_utc": "2026-09-10T08:48:03.036247+00:00",
+  "status": "eight_recordings_complete_and_verified_pilot",
+  "controller_execution_uninterrupted": false,
+  "capture_sequence_elapsed_s": 2931.06115,
+  "preservation_checks": [
+    {
+      "baseline": "baseline_and_protocol.json",
+      "files_checked": 646,
+      "changed_or_missing": []
+    },
+    {
+      "baseline": "recovery_baseline.json",
+      "files_checked": 14,
+      "changed_or_missing": []
+    }
+  ],
+  "raw_recording_checks": [
+    {
+      "name": "PRE_1",
+      "xyz_points": 6200,
+      "rms_and_rate_independently_recomputed": true
+    },
+    {
+      "name": "PRE_2",
+      "xyz_points": 6200,
+      "rms_and_rate_independently_recomputed": true
+    },
+    {
+      "name": "PWM50_1",
+      "xyz_points": 6207,
+      "rms_and_rate_independently_recomputed": true
+    },
+    {
+      "name": "PWM50_2",
+      "xyz_points": 6207,
+      "rms_and_rate_independently_recomputed": true
+    },
+    {
+      "name": "PWM75_1",
+      "xyz_points": 6207,
+      "rms_and_rate_independently_recomputed": true
+    },
+    {
+      "name": "PWM75_2",
+      "xyz_points": 6207,
+      "rms_and_rate_independently_recomputed": true
+    },
+    {
+      "name": "POST_1",
+      "xyz_points": 6201,
+      "rms_and_rate_independently_recomputed": true
+    },
+    {
+      "name": "POST_2",
+      "xyz_points": 6200,
+      "rms_and_rate_independently_recomputed": true
+    }
+  ],
+  "word_sha256": "a9a5d7d17b28098f554240a3e1650881e252db679f33319a1d11164b3246cbb8",
+  "word_unchanged_from_task_baseline": true,
+  "device_users_check": {
+    "command": [
+      "fuser",
+      "-v",
+      "/dev/i2c-1",
+      "/dev/gpiochip0",
+      "/dev/gpiomem0"
+    ],
+    "returncode": 1,
+    "stdout": "",
+    "stderr": ""
+  },
+  "final_pwm_readback": {
+    "gpio_bcm": 18,
+    "physical_pin": 12,
+    "pwm_chip": 0,
+    "pwm_channel": 2,
+    "pwm_path": "/sys/class/pwm/pwmchip0/pwm2",
+    "rp1_device_path": "/sys/devices/platform/axi/1000120000.pcie/1f00098000.pwm",
+    "pwm_configuration": {
+      "period_ns": 40000,
+      "duty_cycle_ns": 0,
+      "enable": 1,
+      "polarity": "normal",
+      "configured_frequency_hz": 25000.0,
+      "configured_duty_percent": 0.0
+    },
+    "pin_readback": {
+      "mux": "a3",
+      "function": "PWM0_CHAN2",
+      "instantaneous_level": "lo",
+      "raw": "18: a3    pd | lo // GPIO18 = PWM0_CHAN2"
+    },
+    "pwm_mux_confirmed": true,
+    "electrical_waveform_measured": false,
+    "measured_rpm": null,
+    "mechanical_state": "not_measured"
+  },
+  "final_pwm_check_wrote_hardware": false,
+  "mechanical_state_source": "operator_confirmed_full_standstill_before_closing_pair; no subsequent PWM change",
+  "final_pwm_journal": "results/pwm50_75_sequence_20260910/final_zero_verification_fan.jsonl",
+  "report_relative_links_exist": true,
+  "report_tables_consistent_column_counts": true,
+  "comparison_plot_visually_reviewed": true,
+  "git_diff_check_passed": true,
+  "models_trained": false,
+  "induced_anomalies": false,
+  "recommended_pwm_percent": 75,
+  "recommendation_provisional": true,
+  "artifacts_sha256": {
+    "results/pwm50_75_sequence_20260910/comparison/comparison.pdf": "7a6f188401a6bf045cfbfcfc49a8373cee91350041a8d5f9693cfb90c3f9ad93",
+    "results/pwm50_75_sequence_20260910/comparison/comparison.png": "af39137e59f4fac3a409d96d7cdfb05c09d39c92b6e2be2bd6fe96c491b29b9b",
+    "results/pwm50_75_sequence_20260910/comparison/five_second_metrics.csv": "f521cbf189df10b0a133a28069750f6d7222da6e48766e29de96e366f50de2ad",
+    "results/pwm50_75_sequence_20260910/comparison/operating_point_recommendation.json": "f4ecea53fd54edbb1c3c671d8642964054d9dde83806732fabbc51c92c919db3",
+    "results/pwm50_75_sequence_20260910/comparison/phase_contrasts.csv": "d7d4fc1747c5d63e04b1a899bc8c009efd8fcc3790e9b3a4ea678e2afab7eb39",
+    "results/pwm50_75_sequence_20260910/comparison/recording_metrics.csv": "a4d8b42dd522c208e9a09ff3e6c394e488ec0c98c8ba3e1bece0a0c810b5be2f",
+    "results/pwm50_75_sequence_20260910/comparison/report.json": "1169e18403ac1c14778f1afc543f769d51176123368b997f4ca5d8c238b92c43",
+    "results/pwm50_75_sequence_20260910/comparison/report.md": "274ac6d6413f259a0324c8d17d5895bc8422994237e5162aa2fcc8216824c7de",
+    "results/pwm50_75_sequence_20260910/comparison/spectra.csv": "4c0d246f8ce9cfad147705d1b164b6792856bef7318e20b27d1b04629985718c"
+  }
+}

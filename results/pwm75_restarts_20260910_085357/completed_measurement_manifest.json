@@ -1,0 +1,153 @@
+{
+  "assembled_utc": "2026-09-10T09:24:42.311409+00:00",
+  "role": "Derived complete record and attempt index; original journals unchanged",
+  "status": "three_recordings_completed_with_three_documented_aborts",
+  "completed_recordings": 3,
+  "physical_starts_total": 6,
+  "aborted_without_recording": 3,
+  "chronology": [
+    {
+      "physical_start": 1,
+      "session": "results/pwm75_restarts_20260910_085357/start_1.json",
+      "sha256": "5169be3a5ac8b3a9c0bb95249d5876818cdf63c4715f865b4ac9b2f5300e9c16",
+      "trial": 1,
+      "attempt": 1,
+      "setting_completed_utc": "2026-09-10T08:56:16.499146+00:00",
+      "zero_command_completed_utc": "2026-09-10T08:57:46.768614+00:00",
+      "seconds_since_previous_documented_zero_command": null,
+      "status": "completed"
+    },
+    {
+      "physical_start": 2,
+      "session": "results/pwm75_restarts_20260910_085357/start_2.json",
+      "sha256": "5836048e55d8f1e9e6828709b87b77a5bff13c35e27f1258007eaf764d70660b",
+      "trial": 2,
+      "attempt": 1,
+      "setting_completed_utc": "2026-09-10T09:01:39.530853+00:00",
+      "zero_command_completed_utc": "2026-09-10T09:02:39.580037+00:00",
+      "seconds_since_previous_documented_zero_command": 232.762239,
+      "status": "aborted"
+    },
+    {
+      "physical_start": 3,
+      "session": "results/pwm75_restarts_20260910_085357/start_2_attempt2.json",
+      "sha256": "e242cc47bef6eaacbd1cfc1556805f7e8202fd5ae4d42c2a570ac6020200abbd",
+      "trial": 2,
+      "attempt": 2,
+      "setting_completed_utc": "2026-09-10T09:04:26.192894+00:00",
+      "zero_command_completed_utc": "2026-09-10T09:05:26.245404+00:00",
+      "seconds_since_previous_documented_zero_command": 106.612857,
+      "status": "aborted"
+    },
+    {
+      "physical_start": 4,
+      "session": "results/pwm75_restarts_20260910_085357/start_2_attempt3.json",
+      "sha256": "b083695dfcf178893f1f9773267521ef9347fcbc852d7a77c86d17c967f4cec5",
+      "trial": 2,
+      "attempt": 3,
+      "setting_completed_utc": "2026-09-10T09:09:09.833251+00:00",
+      "zero_command_completed_utc": "2026-09-10T09:10:09.882561+00:00",
+      "seconds_since_previous_documented_zero_command": 223.587847,
+      "status": "aborted"
+    },
+    {
+      "physical_start": 5,
+      "session": "results/pwm75_restarts_20260910_085357/start_2_attempt4.json",
+      "sha256": "f876a74d1066181ad5d3ece16e42ec9db443b0c875a1841a8d23005751227df9",
+      "trial": 2,
+      "attempt": 4,
+      "setting_completed_utc": "2026-09-10T09:12:13.844856+00:00",
+      "zero_command_completed_utc": "2026-09-10T09:13:44.046720+00:00",
+      "seconds_since_previous_documented_zero_command": 123.962295,
+      "status": "completed"
+    },
+    {
+      "physical_start": 6,
+      "session": "results/pwm75_restarts_20260910_085357/start_3.json",
+      "sha256": "e3e7f5a8330d67fde4a91bcf75822dd60e63d023a5a32faa160aa4f3ba53d4cd",
+      "trial": 3,
+      "attempt": 1,
+      "setting_completed_utc": "2026-09-10T09:16:20.217638+00:00",
+      "zero_command_completed_utc": "2026-09-10T09:17:50.410293+00:00",
+      "seconds_since_previous_documented_zero_command": 156.170918,
+      "status": "completed"
+    }
+  ],
+  "records": [
+    {
+      "trial": 1,
+      "csv": "data/pwm75_restarts_20260910_085357/operating75_start1_20260910_085716_592083.csv",
+      "csv_sha256": "dfabdc436a8468c0687a25189aacf7a68953a0b7b5294f4ec8712490e230f5c1",
+      "sidecar_sha256": "1c90fb70a39a4e53200c59b05f35191fcb724c3130367cd4dafc02fbd32b2d63",
+      "session": "results/pwm75_restarts_20260910_085357/start_1.json",
+      "actual_first_point_after_setting_s": 60.164304431,
+      "running_observation_source": "results/pwm75_restarts_20260910_085357/start_1.json",
+      "running_observation_reported_after_capture": false
+    },
+    {
+      "trial": 2,
+      "csv": "data/pwm75_restarts_20260910_085357/operating75_start2_20260910_091313_865178.csv",
+      "csv_sha256": "9054e9873b8ae2b8772d944533ad2f70c8faeafd9ccbd5d236672daf6a23eac9",
+      "sidecar_sha256": "8419050969873dcdc201f0fb58b998b6296aa84d914d07f492a195d9f5d2ea2b",
+      "session": "results/pwm75_restarts_20260910_085357/start_2_attempt4.json",
+      "actual_first_point_after_setting_s": 60.097605228,
+      "running_observation_source": "results/pwm75_restarts_20260910_085357/running_observation_start_2_attempt4.json",
+      "running_observation_reported_after_capture": true
+    },
+    {
+      "trial": 3,
+      "csv": "data/pwm75_restarts_20260910_085357/operating75_start3_20260910_091720_241491.csv",
+      "csv_sha256": "7fac4a585d80555e6c4e88dc63e7b3fb8816233e27710e4834427b7f7955a273",
+      "sidecar_sha256": "c5d77433d382f6f8200cbcdd5b979136091e378bb8acde97f5886dde0aada4aa",
+      "session": "results/pwm75_restarts_20260910_085357/start_3.json",
+      "actual_first_point_after_setting_s": 60.075336639,
+      "running_observation_source": "results/pwm75_restarts_20260910_085357/running_observation_start_3.json",
+      "running_observation_reported_after_capture": true
+    }
+  ],
+  "planned_settling_seconds": 60,
+  "actual_first_point_after_setting_s": {
+    "n": 3,
+    "mean": 60.112415432666666,
+    "min": 60.075336639,
+    "max": 60.164304431,
+    "range": 0.08896779199999827,
+    "population_std": 0.03780056106320956,
+    "sample_std": 0.0462960432978905,
+    "descriptive_cv_percent": 0.06288311789026488,
+    "relative_range_percent": 0.14800235751573348
+  },
+  "protocol_revision": "results/pwm75_restarts_20260910_085357/protocol_revision_without_chat_deadline.json",
+  "final_pwm_readback": {
+    "gpio_bcm": 18,
+    "physical_pin": 12,
+    "pwm_chip": 0,
+    "pwm_channel": 2,
+    "pwm_path": "/sys/class/pwm/pwmchip0/pwm2",
+    "rp1_device_path": "/sys/devices/platform/axi/1000120000.pcie/1f00098000.pwm",
+    "pwm_configuration": {
+      "period_ns": 40000,
+      "duty_cycle_ns": 0,
+      "enable": 1,
+      "polarity": "normal",
+      "configured_frequency_hz": 25000.0,
+      "configured_duty_percent": 0.0
+    },
+    "pin_readback": {
+      "mux": "a3",
+      "function": "PWM0_CHAN2",
+      "instantaneous_level": "lo",
+      "raw": "18: a3    pd | lo // GPIO18 = PWM0_CHAN2"
+    },
+    "pwm_mux_confirmed": true,
+    "electrical_waveform_measured": false,
+    "measured_rpm": null,
+    "mechanical_state": "not_measured"
+  },
+  "final_mechanical_state": "full_standstill_confirmed_by_operator_after_final_shutdown",
+  "final_standstill_confirmation": "results/pwm75_restarts_20260910_085357/final_standstill_confirmation.json",
+  "final_standstill_confirmation_sha256": "1ac1490a0f2e4a4823d4de10cd3f2ca7eef21da7fd654618c9e18a189769c7bc",
+  "models_trained": false,
+  "induced_anomalies": false,
+  "raw_metadata_retroactively_changed": false
+}

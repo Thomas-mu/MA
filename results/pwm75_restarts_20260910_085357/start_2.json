@@ -1,0 +1,133 @@
+{
+  "trial": 2,
+  "started_utc": "2026-09-10T09:01:39.442635+00:00",
+  "status": "aborted",
+  "protocol": "confirmed full standstill ->75% ->fixed60s ->30s capture ->0%",
+  "standstill_confirmation": {
+    "trial": 2,
+    "recorded_utc": "2026-09-10T09:01:34.655921+00:00",
+    "operator_answer": "ja",
+    "fan_observed_fully_stopped": true,
+    "mounting_unchanged": true,
+    "confirmation_context": "Current user confirms full mechanical standstill before second independent75% start, after completed first trial and return to0%."
+  },
+  "standstill_confirmation_sha256": "438f8684b05f5f7f1c43dc7732d3790774dbb3bf2cec1a04523bee9d69e586d3",
+  "runner_sha256": "a1398cfbbc31f5b36e31b59124e8c4557f5f1ffc9cc36734b7f7e71186f7fc5c",
+  "fan_journal": "results/pwm75_restarts_20260910_085357/start_2_fan.jsonl",
+  "requested_settling_s": 60,
+  "requested_record_s": 30,
+  "training": false,
+  "induced_anomalies": false,
+  "mechanical_state_after_shutdown": "not_yet_visually_confirmed",
+  "initial_readback": {
+    "gpio_bcm": 18,
+    "physical_pin": 12,
+    "pwm_chip": 0,
+    "pwm_channel": 2,
+    "pwm_path": "/sys/class/pwm/pwmchip0/pwm2",
+    "rp1_device_path": "/sys/devices/platform/axi/1000120000.pcie/1f00098000.pwm",
+    "pwm_configuration": {
+      "period_ns": 40000,
+      "duty_cycle_ns": 0,
+      "enable": 1,
+      "polarity": "normal",
+      "configured_frequency_hz": 25000.0,
+      "configured_duty_percent": 0.0
+    },
+    "pin_readback": {
+      "mux": "a3",
+      "function": "PWM0_CHAN2",
+      "instantaneous_level": "lo",
+      "raw": "18: a3    pd | lo // GPIO18 = PWM0_CHAN2"
+    },
+    "pwm_mux_confirmed": true,
+    "electrical_waveform_measured": false,
+    "measured_rpm": null,
+    "mechanical_state": "not_measured"
+  },
+  "setting_result": {
+    "gpio_bcm": 18,
+    "physical_pin": 12,
+    "pwm_chip": 0,
+    "pwm_channel": 2,
+    "pwm_path": "/sys/class/pwm/pwmchip0/pwm2",
+    "rp1_device_path": "/sys/devices/platform/axi/1000120000.pcie/1f00098000.pwm",
+    "pwm_configuration": {
+      "period_ns": 40000,
+      "duty_cycle_ns": 30000,
+      "enable": 1,
+      "polarity": "normal",
+      "configured_frequency_hz": 25000.0,
+      "configured_duty_percent": 75.0
+    },
+    "pin_readback": {
+      "mux": "a3",
+      "function": "PWM0_CHAN2",
+      "instantaneous_level": "lo",
+      "raw": "18: a3    pd | lo // GPIO18 = PWM0_CHAN2"
+    },
+    "pwm_mux_confirmed": true,
+    "electrical_waveform_measured": false,
+    "measured_rpm": null,
+    "mechanical_state": "not_measured"
+  },
+  "setting_completed_monotonic_ns": 9165673303716,
+  "setting_completed_utc": "2026-09-10T09:01:39.530853+00:00",
+  "capture_deadline_monotonic_ns": 9225673303716,
+  "error": "TimeoutError: No visual running confirmation before fixed60-s capture deadline; no capture",
+  "zero_command_result": {
+    "gpio_bcm": 18,
+    "physical_pin": 12,
+    "pwm_chip": 0,
+    "pwm_channel": 2,
+    "pwm_path": "/sys/class/pwm/pwmchip0/pwm2",
+    "rp1_device_path": "/sys/devices/platform/axi/1000120000.pcie/1f00098000.pwm",
+    "pwm_configuration": {
+      "period_ns": 40000,
+      "duty_cycle_ns": 0,
+      "enable": 1,
+      "polarity": "normal",
+      "configured_frequency_hz": 25000.0,
+      "configured_duty_percent": 0.0
+    },
+    "pin_readback": {
+      "mux": "a3",
+      "function": "PWM0_CHAN2",
+      "instantaneous_level": "lo",
+      "raw": "18: a3    pd | lo // GPIO18 = PWM0_CHAN2"
+    },
+    "pwm_mux_confirmed": true,
+    "electrical_waveform_measured": false,
+    "measured_rpm": null,
+    "mechanical_state": "not_measured"
+  },
+  "zero_command_completed_utc": "2026-09-10T09:02:39.580037+00:00",
+  "final_readback": {
+    "gpio_bcm": 18,
+    "physical_pin": 12,
+    "pwm_chip": 0,
+    "pwm_channel": 2,
+    "pwm_path": "/sys/class/pwm/pwmchip0/pwm2",
+    "rp1_device_path": "/sys/devices/platform/axi/1000120000.pcie/1f00098000.pwm",
+    "pwm_configuration": {
+      "period_ns": 40000,
+      "duty_cycle_ns": 0,
+      "enable": 1,
+      "polarity": "normal",
+      "configured_frequency_hz": 25000.0,
+      "configured_duty_percent": 0.0
+    },
+    "pin_readback": {
+      "mux": "a3",
+      "function": "PWM0_CHAN2",
+      "instantaneous_level": "lo",
+      "raw": "18: a3    pd | lo // GPIO18 = PWM0_CHAN2"
+    },
+    "pwm_mux_confirmed": true,
+    "electrical_waveform_measured": false,
+    "measured_rpm": null,
+    "mechanical_state": "not_measured"
+  },
+  "runout_wait_s": 10,
+  "finished_utc": "2026-09-10T09:02:49.598274+00:00"
+}

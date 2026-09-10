@@ -1,0 +1,61 @@
+{
+  "completed_utc": "2026-09-09T20:44:42.697238+00:00",
+  "target": "docs/Akz_Masterarbeit_Bericht(3).docx",
+  "target_sha256": "a9a5d7d17b28098f554240a3e1650881e252db679f33319a1d11164b3246cbb8",
+  "backup": "docs/backups/Akz_Masterarbeit_Bericht(3)_vor_betriebsnachtrag_20260909.docx",
+  "backup_sha256": "b5fb09c6df5bd4020cc6786cd8057a19d6ebb513b780a56131f331e6722e8139",
+  "original_source": "docs/backups/Akz_Masterarbeit_Bericht(3)_vor_implementierung_20260909.docx",
+  "original_source_sha256": "87fc9b2665e739cec9165c14d4cf074b7afd6f7721b4561b5f7ba5f28ea9d6b6",
+  "chapter_source": "docs/implementierung_20260909.md",
+  "chapter_source_sha256": "1fd8aa3fab4a5621542d2d629b3004a98bbea11d8338b9638a85cfa05d71e4bf",
+  "pdf": "results/operating_confirmation_20260909/word_update/word_layout_final_v2/report.pdf",
+  "pdf_sha256": "6a5d3694c08f1b301ee09c4405f2301fefa6d240e72acac8aead226e6d579fd3",
+  "pdf_page_count": 58,
+  "chapter_6_physical_pages": [
+    36,
+    50
+  ],
+  "chapter_6_displayed_pages": [
+    29,
+    43
+  ],
+  "final_render_passes": 2,
+  "preceding_draft_render_passes": 2,
+  "rendered_bookmark_maps_equal": true,
+  "bookmarks_checked": 109,
+  "page_reference_cache_updates": 76,
+  "visual_inspection": {
+    "physical_pages": [
+      4,
+      5,
+      6,
+      36,
+      37,
+      38,
+      39,
+      40,
+      41,
+      42,
+      43,
+      44,
+      45,
+      46,
+      47,
+      48,
+      49,
+      50
+    ],
+    "table_captions": "6-1 through 6-5",
+    "headings": "6.1 through 6.7",
+    "findings": "All 15 chapter 6 pages and all contents/table-list pages inspected. No clipped text or table cells. Captions remain with complete tables. Contents and table-list page references match rendering. A redundant final cross-reference was removed to avoid a two-line last chapter page; final chapter ends on page 43 without an extra near-empty page."
+  },
+  "structure_audit": "results/operating_confirmation_20260909/word_update/docx_structure_check_final_v2.json",
+  "chapter_1_to_5_xml_unchanged": true,
+  "original_math_objects_unchanged": 3,
+  "backup_guard_and_atomic_replacement": true,
+  "dedicated_libreoffice_sessions_terminated": true,
+  "soffice_process_absent": true,
+  "render_and_png_sessions_completed": true,
+  "hardware_actions_in_document_work": false,
+  "measurement_status": "S0, B1 and B1 repeat completed; S1 awaiting new visual standstill confirmation; no training or final measurement-parameter release"
+}

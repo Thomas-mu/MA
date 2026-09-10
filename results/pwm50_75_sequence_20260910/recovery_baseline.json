@@ -1,0 +1,23 @@
+{
+  "recorded_utc": "2026-09-10T08:36:21.221442+00:00",
+  "preserved_file_sha256": {
+    "results/pwm50_75_sequence_20260910/sequence_20260910_074455.json": "94ac3fd96ec5bbf9d2fdaf29994ce6125661c3436216fd60f200d19848b9e883",
+    "results/pwm50_75_sequence_20260910/sequence_20260910_074455_fan.jsonl": "53e4f587f7ecd9b3db662b49e92eb16f16f6a0d62c6b002b0372c92c5597e680",
+    "data/pwm50_75_sequence_20260910/standstill_before_r2_20260910_074910.csv": "07b250adf36fb5e1403f47c7ffc5555b5d12b879f49898162e33ca7a1d240186",
+    "data/pwm50_75_sequence_20260910/standstill_before_r2_20260910_074910.json": "ea534db5af25b51934b85db60bce80af2cf2965c96ae67345e8ac251249f6c27",
+    "data/pwm50_75_sequence_20260910/operating50_r1_20260910_081505.csv": "1c12e62a699577916d3e292a46b820494b6f6ee554aed0e6dca46e1dfb462531",
+    "data/pwm50_75_sequence_20260910/operating50_r1_20260910_081505.json": "a3c5d6a33f6b304220c0eae13049721002b78f1e9caebc7c0c02d37a850912ef",
+    "data/pwm50_75_sequence_20260910/operating75_r2_20260910_081903.csv": "52d0d81741e30a63f4eb3d9ff3e67a10c783821fda60568e2375af2a75d201b5",
+    "data/pwm50_75_sequence_20260910/operating50_r2_20260910_081541.csv": "21e6f2d0cb26be51fee244818cdcf2f948a6b8ace703860b589c91d37d9d38e8",
+    "data/pwm50_75_sequence_20260910/operating75_r1_20260910_081828.json": "bea02201704022153a8286efcc344f6189776f1144a5e5530096bb0dc2a0c899",
+    "data/pwm50_75_sequence_20260910/operating75_r1_20260910_081828.csv": "f562ac5d773a7cbaa8b567e18a06d1bd155bad50b69a749dfcd198b0700d564a",
+    "data/pwm50_75_sequence_20260910/standstill_before_r1_20260910_074835.json": "e52c9439fcfbf599a4e81d5aec11583370d248ffe6cef76e43b27776c1c877d5",
+    "data/pwm50_75_sequence_20260910/standstill_before_r1_20260910_074835.csv": "8f61a28d045552946c9b154877754eb1b634af7bbdb2b70416edb85bdb801796",
+    "data/pwm50_75_sequence_20260910/operating75_r2_20260910_081903.json": "3b04346274cd8b2fea099c77072543465cd6142a0267ee93e0ee644c12d7632b",
+    "data/pwm50_75_sequence_20260910/operating50_r2_20260910_081541.json": "21a06cccbb534867ce69e3ea0c850b6efc4ceaccb9fbc719445c7d1a9a80dab0"
+  },
+  "tool_error": "write_stdin failed: Unknown process id65289",
+  "controller_process_found": false,
+  "termination_cause": "unknown",
+  "new_pwm_command_issued": false
+}

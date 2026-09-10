@@ -1,0 +1,740 @@
+{
+  "method": "Explorative local maxima in full operating PSD, ranked by ratio to median within \u00b15 Hz excluding \u00b11.2 Hz; five separated candidates per axis. These widths and ranking are diagnostic choices, not predeclared acceptance criteria. Each 5 s section uses 512-sample Hann PSDs with 256-sample hop and its own host-observed FIFO rate. Candidate-band power is integrated over fixed \u00b10.8 Hz and compared with the full standstill PSD in the same band. Candidate selection and checking use the same operating data; no independent significance test.",
+  "script_sha256": "3959f0328b47054b90798c5b0f36113a0dfce31974db9f249a85805b40403610",
+  "rpm_measured": null,
+  "candidates": {
+    "x_g": [
+      {
+        "frequency_hz": 54.53960990461015,
+        "full_operating_peak_to_neighbor_median_db": 4.179846276501834,
+        "full_operating_to_standstill_peak_bin_db": 3.239775114048874,
+        "candidate_band_hz": [
+          53.739609904610155,
+          55.33960990461015
+        ],
+        "full_candidate_band_operating_to_standstill_db": 2.1439721140760986,
+        "sections": [
+          {
+            "section_start_seconds": 0,
+            "local_peak_hz": 54.53033149958106,
+            "local_peak_to_neighbor_median_db": 5.3907210181262,
+            "candidate_band_operating_to_full_standstill_db": 2.428191380532395
+          },
+          {
+            "section_start_seconds": 5,
+            "local_peak_hz": 54.55681809812388,
+            "local_peak_to_neighbor_median_db": 4.807816192803941,
+            "candidate_band_operating_to_full_standstill_db": 1.6696019264725854
+          },
+          {
+            "section_start_seconds": 10,
+            "local_peak_hz": 54.13811321518303,
+            "local_peak_to_neighbor_median_db": 4.250323150457635,
+            "candidate_band_operating_to_full_standstill_db": 1.710860159443179
+          },
+          {
+            "section_start_seconds": 15,
+            "local_peak_hz": 54.13262098444965,
+            "local_peak_to_neighbor_median_db": 7.290528890360135,
+            "candidate_band_operating_to_full_standstill_db": 2.6197882534654795
+          },
+          {
+            "section_start_seconds": 20,
+            "local_peak_hz": 54.1400886849117,
+            "local_peak_to_neighbor_median_db": 6.352790478133454,
+            "candidate_band_operating_to_full_standstill_db": 1.4464104969842804
+          },
+          {
+            "section_start_seconds": 25,
+            "local_peak_hz": 54.52734875565289,
+            "local_peak_to_neighbor_median_db": 6.369923214016274,
+            "candidate_band_operating_to_full_standstill_db": 3.84570698451834
+          }
+        ]
+      },
+      {
+        "frequency_hz": 71.50748854159997,
+        "full_operating_peak_to_neighbor_median_db": 3.823723164480788,
+        "full_operating_to_standstill_peak_bin_db": 4.811164938134459,
+        "candidate_band_hz": [
+          70.70748854159997,
+          72.30748854159997
+        ],
+        "full_candidate_band_operating_to_standstill_db": 3.382032825393982,
+        "sections": [
+          {
+            "section_start_seconds": 0,
+            "local_peak_hz": 71.49532352167294,
+            "local_peak_to_neighbor_median_db": 5.934916117060638,
+            "candidate_band_operating_to_full_standstill_db": 3.2153060409124223
+          },
+          {
+            "section_start_seconds": 5,
+            "local_peak_hz": 71.53005039531797,
+            "local_peak_to_neighbor_median_db": 6.190820678500172,
+            "candidate_band_operating_to_full_standstill_db": 3.878279353135392
+          },
+          {
+            "section_start_seconds": 10,
+            "local_peak_hz": 71.10677556621056,
+            "local_peak_to_neighbor_median_db": 3.7438525370853357,
+            "candidate_band_operating_to_full_standstill_db": 0.6659730237266621
+          },
+          {
+            "section_start_seconds": 15,
+            "local_peak_hz": 71.50353667348946,
+            "local_peak_to_neighbor_median_db": 4.104283356695722,
+            "candidate_band_operating_to_full_standstill_db": 3.3090089093870696
+          },
+          {
+            "section_start_seconds": 20,
+            "local_peak_hz": 71.10937021301835,
+            "local_peak_to_neighbor_median_db": 2.895393623714985,
+            "candidate_band_operating_to_full_standstill_db": 2.090455699533304
+          },
+          {
+            "section_start_seconds": 25,
+            "local_peak_hz": 71.49141281296713,
+            "local_peak_to_neighbor_median_db": 5.62714922360729,
+            "candidate_band_operating_to_full_standstill_db": 4.501765263955013
+          }
+        ]
+      },
+      {
+        "frequency_hz": 6.867950876876833,
+        "full_operating_peak_to_neighbor_median_db": 2.380237490651927,
+        "full_operating_to_standstill_peak_bin_db": 3.3351699378605693,
+        "candidate_band_hz": [
+          6.067950876876833,
+          7.667950876876833
+        ],
+        "full_candidate_band_operating_to_standstill_db": 2.526718793024585,
+        "sections": [
+          {
+            "section_start_seconds": 0,
+            "local_peak_hz": 7.270710866610808,
+            "local_peak_to_neighbor_median_db": 1.5097530723166868,
+            "candidate_band_operating_to_full_standstill_db": 0.45510133879513687
+          },
+          {
+            "section_start_seconds": 5,
+            "local_peak_hz": 7.274242413083184,
+            "local_peak_to_neighbor_median_db": 7.3660563287747705,
+            "candidate_band_operating_to_full_standstill_db": 3.7479952409194937
+          },
+          {
+            "section_start_seconds": 10,
+            "local_peak_hz": 6.868268094463519,
+            "local_peak_to_neighbor_median_db": 4.717635436422075,
+            "candidate_band_operating_to_full_standstill_db": 1.368553164237705
+          },
+          {
+            "section_start_seconds": 15,
+            "local_peak_hz": 6.8675713189227166,
+            "local_peak_to_neighbor_median_db": 3.0063052010371596,
+            "candidate_band_operating_to_full_standstill_db": 1.5980042421067888
+          },
+          {
+            "section_start_seconds": 20,
+            "local_peak_hz": 6.868518713757455,
+            "local_peak_to_neighbor_median_db": 3.9216404486529512,
+            "candidate_band_operating_to_full_standstill_db": 2.1876773145202084
+          },
+          {
+            "section_start_seconds": 25,
+            "local_peak_hz": 6.866406880341475,
+            "local_peak_to_neighbor_median_db": 1.6624089134694944,
+            "candidate_band_operating_to_full_standstill_db": 3.1166885351530533
+          }
+        ]
+      },
+      {
+        "frequency_hz": 60.599566560677935,
+        "full_operating_peak_to_neighbor_median_db": 2.0682356710124754,
+        "full_operating_to_standstill_peak_bin_db": 2.7162223608050944,
+        "candidate_band_hz": [
+          59.79956656067794,
+          61.39956656067793
+        ],
+        "full_candidate_band_operating_to_standstill_db": 1.1807932004266029,
+        "sections": [
+          {
+            "section_start_seconds": 0,
+            "local_peak_hz": 60.18532884027836,
+            "local_peak_to_neighbor_median_db": 5.456157888219408,
+            "candidate_band_operating_to_full_standstill_db": 3.105341393492105
+          },
+          {
+            "section_start_seconds": 5,
+            "local_peak_hz": 59.810437618683956,
+            "local_peak_to_neighbor_median_db": -0.41125038259689184,
+            "candidate_band_operating_to_full_standstill_db": -1.366854297100104
+          },
+          {
+            "section_start_seconds": 10,
+            "local_peak_hz": 61.00638130964656,
+            "local_peak_to_neighbor_median_db": 4.3236458623128815,
+            "candidate_band_operating_to_full_standstill_db": 1.2322241184905032
+          },
+          {
+            "section_start_seconds": 15,
+            "local_peak_hz": 60.596217519906325,
+            "local_peak_to_neighbor_median_db": 6.712632574486771,
+            "candidate_band_operating_to_full_standstill_db": 2.594833910277998
+          },
+          {
+            "section_start_seconds": 20,
+            "local_peak_hz": 61.008607398669156,
+            "local_peak_to_neighbor_median_db": 4.0912150264722715,
+            "candidate_band_operating_to_full_standstill_db": 0.377530954412928
+          },
+          {
+            "section_start_seconds": 25,
+            "local_peak_hz": 60.585943061836545,
+            "local_peak_to_neighbor_median_db": 2.3328672237266495,
+            "candidate_band_operating_to_full_standstill_db": 1.0887002433174244
+          }
+        ]
+      },
+      {
+        "frequency_hz": 45.24767636530619,
+        "full_operating_peak_to_neighbor_median_db": 1.9635682505678684,
+        "full_operating_to_standstill_peak_bin_db": 1.383135835917571,
+        "candidate_band_hz": [
+          44.447676365306194,
+          46.04767636530619
+        ],
+        "full_candidate_band_operating_to_standstill_db": 0.9274863818922423,
+        "sections": [
+          {
+            "section_start_seconds": 0,
+            "local_peak_hz": 44.83605034409998,
+            "local_peak_to_neighbor_median_db": 3.793933449340514,
+            "candidate_band_operating_to_full_standstill_db": 1.1836494801362487
+          },
+          {
+            "section_start_seconds": 5,
+            "local_peak_hz": 45.666077371022205,
+            "local_peak_to_neighbor_median_db": 6.160244552155304,
+            "candidate_band_operating_to_full_standstill_db": 1.4912848528246305
+          },
+          {
+            "section_start_seconds": 10,
+            "local_peak_hz": 45.653782039669274,
+            "local_peak_to_neighbor_median_db": 4.693561376577803,
+            "candidate_band_operating_to_full_standstill_db": 1.9094419949705208
+          },
+          {
+            "section_start_seconds": 15,
+            "local_peak_hz": 44.84120096473068,
+            "local_peak_to_neighbor_median_db": 5.864208282152978,
+            "candidate_band_operating_to_full_standstill_db": 1.5050642427000271
+          },
+          {
+            "section_start_seconds": 20,
+            "local_peak_hz": 45.65544792085838,
+            "local_peak_to_neighbor_median_db": 1.454876561428683,
+            "candidate_band_operating_to_full_standstill_db": -0.17377676894579805
+          },
+          {
+            "section_start_seconds": 25,
+            "local_peak_hz": 45.64141043991686,
+            "local_peak_to_neighbor_median_db": 3.33082794042932,
+            "candidate_band_operating_to_full_standstill_db": 0.6904553745248233
+          }
+        ]
+      }
+    ],
+    "y_g": [
+      {
+        "frequency_hz": 39.99571393004744,
+        "full_operating_peak_to_neighbor_median_db": 2.788098266419632,
+        "full_operating_to_standstill_peak_bin_db": 4.400208092174807,
+        "candidate_band_hz": [
+          39.19571393004744,
+          40.795713930047434
+        ],
+        "full_candidate_band_operating_to_standstill_db": 3.1443158072079385,
+        "sections": [
+          {
+            "section_start_seconds": 0,
+            "local_peak_hz": 39.98890976635944,
+            "local_peak_to_neighbor_median_db": 4.597867887528305,
+            "candidate_band_operating_to_full_standstill_db": 4.780002145560776
+          },
+          {
+            "section_start_seconds": 5,
+            "local_peak_hz": 40.00833327195751,
+            "local_peak_to_neighbor_median_db": 3.6661800961122104,
+            "candidate_band_operating_to_full_standstill_db": 1.8921103560273913
+          },
+          {
+            "section_start_seconds": 10,
+            "local_peak_hz": 39.99756125599344,
+            "local_peak_to_neighbor_median_db": -0.3768269751141693,
+            "candidate_band_operating_to_full_standstill_db": 0.6738894406457528
+          },
+          {
+            "section_start_seconds": 15,
+            "local_peak_hz": 39.99350356313818,
+            "local_peak_to_neighbor_median_db": 3.2983766387241316,
+            "candidate_band_operating_to_full_standstill_db": 2.329913136600182
+          },
+          {
+            "section_start_seconds": 20,
+            "local_peak_hz": 40.4030512573968,
+            "local_peak_to_neighbor_median_db": 3.66885101259009,
+            "candidate_band_operating_to_full_standstill_db": 2.6722808159027682
+          },
+          {
+            "section_start_seconds": 25,
+            "local_peak_hz": 39.98672242081212,
+            "local_peak_to_neighbor_median_db": 5.292991223137578,
+            "candidate_band_operating_to_full_standstill_db": 3.3797343363172736
+          }
+        ]
+      },
+      {
+        "frequency_hz": 23.027835293057617,
+        "full_operating_peak_to_neighbor_median_db": 2.63235802228853,
+        "full_operating_to_standstill_peak_bin_db": 4.1193448988498025,
+        "candidate_band_hz": [
+          22.227835293057616,
+          23.827835293057618
+        ],
+        "full_candidate_band_operating_to_standstill_db": 3.849365009915844,
+        "sections": [
+          {
+            "section_start_seconds": 0,
+            "local_peak_hz": 23.02391774426756,
+            "local_peak_to_neighbor_median_db": 2.3294638410136494,
+            "candidate_band_operating_to_full_standstill_db": 0.023942055604123203
+          },
+          {
+            "section_start_seconds": 5,
+            "local_peak_hz": 23.439225553268034,
+            "local_peak_to_neighbor_median_db": 2.172119070173244,
+            "candidate_band_operating_to_full_standstill_db": 0.17079145740588578
+          },
+          {
+            "section_start_seconds": 10,
+            "local_peak_hz": 23.028898904965917,
+            "local_peak_to_neighbor_median_db": 6.877562086130046,
+            "candidate_band_operating_to_full_standstill_db": 9.526228780112119
+          },
+          {
+            "section_start_seconds": 15,
+            "local_peak_hz": 23.0265626575644,
+            "local_peak_to_neighbor_median_db": 2.6554561237749748,
+            "candidate_band_operating_to_full_standstill_db": 2.1068464618017577
+          },
+          {
+            "section_start_seconds": 20,
+            "local_peak_hz": 22.625708704142205,
+            "local_peak_to_neighbor_median_db": 2.922146914363994,
+            "candidate_band_operating_to_full_standstill_db": 2.2854645819282955
+          },
+          {
+            "section_start_seconds": 25,
+            "local_peak_hz": 23.426564650576797,
+            "local_peak_to_neighbor_median_db": 0.7331501965049071,
+            "candidate_band_operating_to_full_standstill_db": 0.780477353271634
+          }
+        ]
+      },
+      {
+        "frequency_hz": 67.8715145479593,
+        "full_operating_peak_to_neighbor_median_db": 1.9888586483431738,
+        "full_operating_to_standstill_peak_bin_db": 1.4248622059728908,
+        "candidate_band_hz": [
+          67.0715145479593,
+          68.67151454795929
+        ],
+        "full_candidate_band_operating_to_standstill_db": 1.124744322845999,
+        "sections": [
+          {
+            "section_start_seconds": 0,
+            "local_peak_hz": 67.45603970688916,
+            "local_peak_to_neighbor_median_db": 0.46956380481027127,
+            "candidate_band_operating_to_full_standstill_db": 0.15803955675781678
+          },
+          {
+            "section_start_seconds": 5,
+            "local_peak_hz": 67.89292918877638,
+            "local_peak_to_neighbor_median_db": 5.595604408902667,
+            "candidate_band_operating_to_full_standstill_db": 2.5272573155952545
+          },
+          {
+            "section_start_seconds": 10,
+            "local_peak_hz": 67.87464940411007,
+            "local_peak_to_neighbor_median_db": 6.900965394902951,
+            "candidate_band_operating_to_full_standstill_db": 3.4322798267686543
+          },
+          {
+            "section_start_seconds": 15,
+            "local_peak_hz": 67.46378883882905,
+            "local_peak_to_neighbor_median_db": 0.5444473357348459,
+            "candidate_band_operating_to_full_standstill_db": -0.5513070273037551
+          },
+          {
+            "section_start_seconds": 20,
+            "local_peak_hz": 68.28115662500058,
+            "local_peak_to_neighbor_median_db": 1.6853535523882266,
+            "candidate_band_operating_to_full_standstill_db": -0.32816590933894885
+          },
+          {
+            "section_start_seconds": 25,
+            "local_peak_hz": 67.45234994217802,
+            "local_peak_to_neighbor_median_db": 3.3502755813948673,
+            "candidate_band_operating_to_full_standstill_db": 1.8521160796899263
+          }
+        ]
+      },
+      {
+        "frequency_hz": 86.05138451616267,
+        "full_operating_peak_to_neighbor_median_db": 1.9855048283538166,
+        "full_operating_to_standstill_peak_bin_db": 3.1305937445487375,
+        "candidate_band_hz": [
+          85.25138451616267,
+          86.85138451616267
+        ],
+        "full_candidate_band_operating_to_standstill_db": 1.560948077336664,
+        "sections": [
+          {
+            "section_start_seconds": 0,
+            "local_peak_hz": 85.63281687341619,
+            "local_peak_to_neighbor_median_db": 3.8714215706142285,
+            "candidate_band_operating_to_full_standstill_db": 2.3151671537351493
+          },
+          {
+            "section_start_seconds": 5,
+            "local_peak_hz": 85.67441064297972,
+            "local_peak_to_neighbor_median_db": 2.753439070019679,
+            "candidate_band_operating_to_full_standstill_db": 1.1358614863946443
+          },
+          {
+            "section_start_seconds": 10,
+            "local_peak_hz": 86.05535906592527,
+            "local_peak_to_neighbor_median_db": 3.6382647282120506,
+            "candidate_band_operating_to_full_standstill_db": 1.0957283708717893
+          },
+          {
+            "section_start_seconds": 15,
+            "local_peak_hz": 86.04662887826697,
+            "local_peak_to_neighbor_median_db": -0.08144657351796682,
+            "candidate_band_operating_to_full_standstill_db": -1.4926342766510339
+          },
+          {
+            "section_start_seconds": 20,
+            "local_peak_hz": 86.05849917825518,
+            "local_peak_to_neighbor_median_db": 4.960174822454793,
+            "candidate_band_operating_to_full_standstill_db": 4.8736368347420935
+          },
+          {
+            "section_start_seconds": 25,
+            "local_peak_hz": 86.4359454348868,
+            "local_peak_to_neighbor_median_db": 3.8449604360041723,
+            "candidate_band_operating_to_full_standstill_db": 2.504359947659847
+          }
+        ]
+      },
+      {
+        "frequency_hz": 7.271947987281353,
+        "full_operating_peak_to_neighbor_median_db": 1.944743051226028,
+        "full_operating_to_standstill_peak_bin_db": 0.852267426218613,
+        "candidate_band_hz": [
+          6.471947987281353,
+          8.071947987281353
+        ],
+        "full_candidate_band_operating_to_standstill_db": 0.994399908056302,
+        "sections": [
+          {
+            "section_start_seconds": 0,
+            "local_peak_hz": 7.270710866610808,
+            "local_peak_to_neighbor_median_db": 4.247564972692083,
+            "candidate_band_operating_to_full_standstill_db": 0.9774071416850176
+          },
+          {
+            "section_start_seconds": 5,
+            "local_peak_hz": 7.274242413083184,
+            "local_peak_to_neighbor_median_db": 3.834927187907789,
+            "candidate_band_operating_to_full_standstill_db": 1.9071951941727177
+          },
+          {
+            "section_start_seconds": 10,
+            "local_peak_hz": 7.272283864726079,
+            "local_peak_to_neighbor_median_db": 0.40824927789251403,
+            "candidate_band_operating_to_full_standstill_db": 0.8417562825759616
+          },
+          {
+            "section_start_seconds": 15,
+            "local_peak_hz": 7.675520885854801,
+            "local_peak_to_neighbor_median_db": 4.003628746101674,
+            "candidate_band_operating_to_full_standstill_db": 0.9042604543391286
+          },
+          {
+            "section_start_seconds": 20,
+            "local_peak_hz": 6.868518713757455,
+            "local_peak_to_neighbor_median_db": 1.1739922058398646,
+            "candidate_band_operating_to_full_standstill_db": 0.4904832588749392
+          },
+          {
+            "section_start_seconds": 25,
+            "local_peak_hz": 7.674219454499296,
+            "local_peak_to_neighbor_median_db": 2.3729486104588187,
+            "candidate_band_operating_to_full_standstill_db": 1.7095700108271228
+          }
+        ]
+      }
+    ],
+    "z_g": [
+      {
+        "frequency_hz": 54.13561279420562,
+        "full_operating_peak_to_neighbor_median_db": 2.066751316124207,
+        "full_operating_to_standstill_peak_bin_db": 1.6883045202003593,
+        "candidate_band_hz": [
+          53.33561279420562,
+          54.93561279420562
+        ],
+        "full_candidate_band_operating_to_standstill_db": 1.6615374514326189,
+        "sections": [
+          {
+            "section_start_seconds": 0,
+            "local_peak_hz": 54.12640311810268,
+            "local_peak_to_neighbor_median_db": 0.8001096843133166,
+            "candidate_band_operating_to_full_standstill_db": -1.3936644450965274
+          },
+          {
+            "section_start_seconds": 5,
+            "local_peak_hz": 54.152693519619255,
+            "local_peak_to_neighbor_median_db": 2.882677475267058,
+            "candidate_band_operating_to_full_standstill_db": 0.9209055181328686
+          },
+          {
+            "section_start_seconds": 10,
+            "local_peak_hz": 54.54212898544559,
+            "local_peak_to_neighbor_median_db": 5.350114656914759,
+            "candidate_band_operating_to_full_standstill_db": 1.3018257137100522
+          },
+          {
+            "section_start_seconds": 15,
+            "local_peak_hz": 53.728646200983604,
+            "local_peak_to_neighbor_median_db": 4.292368512951273,
+            "candidate_band_operating_to_full_standstill_db": 3.364542694417681
+          },
+          {
+            "section_start_seconds": 20,
+            "local_peak_hz": 54.54411919748567,
+            "local_peak_to_neighbor_median_db": 2.4550626277349386,
+            "candidate_band_operating_to_full_standstill_db": 1.1761236543907065
+          },
+          {
+            "section_start_seconds": 25,
+            "local_peak_hz": 54.12344246857398,
+            "local_peak_to_neighbor_median_db": 3.619384517563148,
+            "candidate_band_operating_to_full_standstill_db": 3.8377814941593567
+          }
+        ]
+      },
+      {
+        "frequency_hz": 23.43183240346213,
+        "full_operating_peak_to_neighbor_median_db": 2.043318257137451,
+        "full_operating_to_standstill_peak_bin_db": 2.079960132269421,
+        "candidate_band_hz": [
+          22.63183240346213,
+          24.231832403462132
+        ],
+        "full_candidate_band_operating_to_standstill_db": 1.4684320953603365,
+        "sections": [
+          {
+            "section_start_seconds": 0,
+            "local_peak_hz": 23.427846125745937,
+            "local_peak_to_neighbor_median_db": 4.307660420826499,
+            "candidate_band_operating_to_full_standstill_db": 0.6094912915466656
+          },
+          {
+            "section_start_seconds": 5,
+            "local_peak_hz": 23.035100974763413,
+            "local_peak_to_neighbor_median_db": -1.3173989596508953,
+            "candidate_band_operating_to_full_standstill_db": -1.6040177944057568
+          },
+          {
+            "section_start_seconds": 10,
+            "local_peak_hz": 23.83693044549104,
+            "local_peak_to_neighbor_median_db": 4.150272113751529,
+            "candidate_band_operating_to_full_standstill_db": 2.1155329445932756
+          },
+          {
+            "section_start_seconds": 15,
+            "local_peak_hz": 23.430537441030445,
+            "local_peak_to_neighbor_median_db": 3.6525469839184144,
+            "candidate_band_operating_to_full_standstill_db": 2.5640262936718776
+          },
+          {
+            "section_start_seconds": 20,
+            "local_peak_hz": 23.83780024186411,
+            "local_peak_to_neighbor_median_db": 0.349713745363272,
+            "candidate_band_operating_to_full_standstill_db": -0.9687514904455763
+          },
+          {
+            "section_start_seconds": 25,
+            "local_peak_hz": 23.426564650576797,
+            "local_peak_to_neighbor_median_db": 5.521988253843142,
+            "candidate_band_operating_to_full_standstill_db": 4.672705616185986
+          }
+        ]
+      },
+      {
+        "frequency_hz": 50.49963880056495,
+        "full_operating_peak_to_neighbor_median_db": 2.011543405166397,
+        "full_operating_to_standstill_peak_bin_db": 2.380587765158478,
+        "candidate_band_hz": [
+          49.699638800564955,
+          51.29963880056495
+        ],
+        "full_candidate_band_operating_to_standstill_db": -0.09177850087178435,
+        "sections": [
+          {
+            "section_start_seconds": 0,
+            "local_peak_hz": 50.49104768479728,
+            "local_peak_to_neighbor_median_db": 4.036065603532316,
+            "candidate_band_operating_to_full_standstill_db": -1.366381154855736
+          },
+          {
+            "section_start_seconds": 5,
+            "local_peak_hz": 50.11144773457304,
+            "local_peak_to_neighbor_median_db": -1.1608801281177508,
+            "candidate_band_operating_to_full_standstill_db": -3.886046203312551
+          },
+          {
+            "section_start_seconds": 10,
+            "local_peak_hz": 50.097955512557434,
+            "local_peak_to_neighbor_median_db": 0.46892572611759714,
+            "candidate_band_operating_to_full_standstill_db": -3.7151190994944456
+          },
+          {
+            "section_start_seconds": 15,
+            "local_peak_hz": 50.09287314978923,
+            "local_peak_to_neighbor_median_db": 0.35050388158170154,
+            "candidate_band_operating_to_full_standstill_db": -0.4013387268013991
+          },
+          {
+            "section_start_seconds": 20,
+            "local_peak_hz": 50.50381407174599,
+            "local_peak_to_neighbor_median_db": 1.0532940543864238,
+            "candidate_band_operating_to_full_standstill_db": 0.07759428422032166
+          },
+          {
+            "section_start_seconds": 25,
+            "local_peak_hz": 50.488285884863785,
+            "local_peak_to_neighbor_median_db": 2.7521490167308182,
+            "candidate_band_operating_to_full_standstill_db": 2.366748480848833
+          }
+        ]
+      },
+      {
+        "frequency_hz": 40.80370815085648,
+        "full_operating_peak_to_neighbor_median_db": 1.9726535458819519,
+        "full_operating_to_standstill_peak_bin_db": 2.598107135391041,
+        "candidate_band_hz": [
+          40.00370815085648,
+          41.60370815085648
+        ],
+        "full_candidate_band_operating_to_standstill_db": 1.753651109208826,
+        "sections": [
+          {
+            "section_start_seconds": 0,
+            "local_peak_hz": 41.20069491079458,
+            "local_peak_to_neighbor_median_db": -0.30986804903008713,
+            "candidate_band_operating_to_full_standstill_db": -1.0603859354023373
+          },
+          {
+            "section_start_seconds": 5,
+            "local_peak_hz": 40.816582428966754,
+            "local_peak_to_neighbor_median_db": 4.301433494777399,
+            "candidate_band_operating_to_full_standstill_db": 2.853948299635773
+          },
+          {
+            "section_start_seconds": 10,
+            "local_peak_hz": 40.401577026256,
+            "local_peak_to_neighbor_median_db": 1.2734492370500325,
+            "candidate_band_operating_to_full_standstill_db": 1.0132635730745396
+          },
+          {
+            "section_start_seconds": 15,
+            "local_peak_hz": 41.2054279135363,
+            "local_peak_to_neighbor_median_db": 5.18164260062901,
+            "candidate_band_operating_to_full_standstill_db": 2.4951530160065065
+          },
+          {
+            "section_start_seconds": 20,
+            "local_peak_hz": 40.807081769970765,
+            "local_peak_to_neighbor_median_db": 4.028273874235573,
+            "candidate_band_operating_to_full_standstill_db": 3.008627148457
+          },
+          {
+            "section_start_seconds": 25,
+            "local_peak_hz": 41.19844128204885,
+            "local_peak_to_neighbor_median_db": 2.7520248135616336,
+            "candidate_band_operating_to_full_standstill_db": 2.085589502716431
+          }
+        ]
+      },
+      {
+        "frequency_hz": 44.84367925490167,
+        "full_operating_peak_to_neighbor_median_db": 1.904255918760773,
+        "full_operating_to_standstill_peak_bin_db": 1.2386101703972388,
+        "candidate_band_hz": [
+          44.043679254901676,
+          45.64367925490167
+        ],
+        "full_candidate_band_operating_to_standstill_db": 0.13759844018179,
+        "sections": [
+          {
+            "section_start_seconds": 0,
+            "local_peak_hz": 44.83605034409998,
+            "local_peak_to_neighbor_median_db": 6.924983920905266,
+            "candidate_band_operating_to_full_standstill_db": 2.278143239306707
+          },
+          {
+            "section_start_seconds": 5,
+            "local_peak_hz": 44.85782821401296,
+            "local_peak_to_neighbor_median_db": 3.037114787594853,
+            "candidate_band_operating_to_full_standstill_db": 0.5337684957092927
+          },
+          {
+            "section_start_seconds": 10,
+            "local_peak_hz": 44.84575049914416,
+            "local_peak_to_neighbor_median_db": -1.8312509158918056,
+            "candidate_band_operating_to_full_standstill_db": -3.6552331684000134
+          },
+          {
+            "section_start_seconds": 15,
+            "local_peak_hz": 44.84120096473068,
+            "local_peak_to_neighbor_median_db": -2.4612100928197695,
+            "candidate_band_operating_to_full_standstill_db": -4.218392930372535
+          },
+          {
+            "section_start_seconds": 20,
+            "local_peak_hz": 44.84738689571044,
+            "local_peak_to_neighbor_median_db": 3.2647574433160793,
+            "candidate_band_operating_to_full_standstill_db": 2.670461139035564
+          },
+          {
+            "section_start_seconds": 25,
+            "local_peak_hz": 44.833597865759046,
+            "local_peak_to_neighbor_median_db": 1.691333176548382,
+            "candidate_band_operating_to_full_standstill_db": 1.148964604682651
+          }
+        ]
+      }
+    ]
+  },
+  "section_count": 6,
+  "interpretation_limits": [
+    "Local maxima and positive ratios are not line-detection proofs; no confidence interval or repeat run.",
+    "Section peak search is constrained around a candidate selected from the same full recording and therefore cannot independently prove frequency stability.",
+    "Several candidate bands are intermittently below or close to the standstill average; a candidate consistently above it can motivate a repeat, not a rotational assignment.",
+    "Comparison with a full standstill mean suppresses its time variation; underlying 5 s standstill RMS variation remains relevant."
+  ]
+}

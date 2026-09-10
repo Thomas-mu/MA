@@ -1,0 +1,73 @@
+{
+  "checked_utc": "2026-09-10T07:30:22.086302+00:00",
+  "status": "all_requested_measurements_and_analysis_completed",
+  "supersedes_pending_state": "results/pwm50_investigation_20260910/pending_running_confirmation.json",
+  "preserved_files_checked": 582,
+  "changed_existing_files": [],
+  "word_sha256_before": "a9a5d7d17b28098f554240a3e1650881e252db679f33319a1d11164b3246cbb8",
+  "word_sha256_after": "a9a5d7d17b28098f554240a3e1650881e252db679f33319a1d11164b3246cbb8",
+  "new_raw_files": [
+    {
+      "csv": "data/controlled_20260910/standstill_post_operation_20260910_070328.csv",
+      "csv_sha256": "581a34b971efa5f6d6ea6f6905dd2435e1ee24c7bd2d6db82317f4cbdf051e09",
+      "sidecar_sha256": "0fdadf4080cc28bf4aaf24d93732f170f159be638896dcc22e9cae8ccaee5897",
+      "samples": 6201,
+      "duration_requested_s": 30
+    },
+    {
+      "csv": "data/controlled_20260910/operating50_first_20260910_072426.csv",
+      "csv_sha256": "093235fa1bbb19d56bbbc39a3f819eb11f86e2991d00a6b0044373e06fd896ef",
+      "sidecar_sha256": "dcd6726fdda8f33b2178c7554b629271863b12ae8b1f9782ead5379af14e73a3",
+      "samples": 6207,
+      "duration_requested_s": 30
+    },
+    {
+      "csv": "data/controlled_20260910/operating50_second_20260910_072523.csv",
+      "csv_sha256": "d3fc1980b169862580132c156e6c830d92e77b25c3b5fac625c105ee0068110d",
+      "sidecar_sha256": "c6b2e7da15167e725fa336817db2d5055fb34d31d18cb5269dc40d9382d13efc",
+      "samples": 6207,
+      "duration_requested_s": 30
+    }
+  ],
+  "analysis_six_input_hashes_unchanged": true,
+  "pwm_final_readback": {
+    "gpio_bcm": 18,
+    "physical_pin": 12,
+    "pwm_chip": 0,
+    "pwm_channel": 2,
+    "pwm_path": "/sys/class/pwm/pwmchip0/pwm2",
+    "rp1_device_path": "/sys/devices/platform/axi/1000120000.pcie/1f00098000.pwm",
+    "pwm_configuration": {
+      "period_ns": 40000,
+      "duty_cycle_ns": 0,
+      "enable": 1,
+      "polarity": "normal",
+      "configured_frequency_hz": 25000.0,
+      "configured_duty_percent": 0.0
+    },
+    "pin_readback": {
+      "mux": "a3",
+      "function": "PWM0_CHAN2",
+      "instantaneous_level": "lo",
+      "raw": "18: a3    pd | lo // GPIO18 = PWM0_CHAN2"
+    },
+    "pwm_mux_confirmed": true,
+    "electrical_waveform_measured": false,
+    "measured_rpm": null,
+    "mechanical_state": "not_measured"
+  },
+  "final_setpoint_percent": 0,
+  "actual_mechanical_standstill_confirmed_after_final_stop": false,
+  "device_holders": {
+    "returncode": 1,
+    "stdout": "",
+    "stderr": ""
+  },
+  "git_diff_check": "passed",
+  "training_started": false,
+  "source_code_changed_this_measurement_task": false,
+  "sequence_process_exited": true,
+  "analysis_process_exited": true,
+  "readback_session_released_pwm_lock": true,
+  "report_md_sha256": "50ac6b47dc3fdb15d76dbd87046072628c57d5d7d94d98b2236df0d0c8fa66e9"
+}

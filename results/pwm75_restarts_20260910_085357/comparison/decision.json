@@ -1,0 +1,110 @@
+{
+  "created_utc": "2026-09-10T09:23:31.462252+00:00",
+  "status": "restart_variability_detected_candidate_not_finally_validated",
+  "pwm_candidate_percent": 75,
+  "pwm_frequency_hz": 25000,
+  "normal_reference_reproducibility_proven": false,
+  "completed_recordings": 3,
+  "physical_starts_total": 6,
+  "aborted_starts_without_data": 3,
+  "vector_ac_rms_summary_g": {
+    "n": 3,
+    "mean": 0.029976132907902766,
+    "min": 0.028919571166443715,
+    "max": 0.03147912419109122,
+    "range": 0.002559553024647509,
+    "population_std": 0.0010915745273967316,
+    "sample_std": 0.0013369003041708446,
+    "descriptive_cv_percent": 3.6414788083253864,
+    "relative_range_percent": 8.538636496279747
+  },
+  "actual_first_point_after_command_s": {
+    "n": 3,
+    "mean": 60.112415432666666,
+    "min": 60.075336639,
+    "max": 60.164304431,
+    "range": 0.08896779199999827,
+    "population_std": 0.03780056106320956,
+    "sample_std": 0.0462960432978905,
+    "descriptive_cv_percent": 0.06288311789026488,
+    "relative_range_percent": 0.14800235751573348
+  },
+  "chronology": [
+    {
+      "physical_start": 1,
+      "session": "results/pwm75_restarts_20260910_085357/start_1.json",
+      "sha256": "5169be3a5ac8b3a9c0bb95249d5876818cdf63c4715f865b4ac9b2f5300e9c16",
+      "trial": 1,
+      "attempt": 1,
+      "setting_completed_utc": "2026-09-10T08:56:16.499146+00:00",
+      "zero_command_completed_utc": "2026-09-10T08:57:46.768614+00:00",
+      "seconds_since_previous_documented_zero_command": null,
+      "status": "completed"
+    },
+    {
+      "physical_start": 2,
+      "session": "results/pwm75_restarts_20260910_085357/start_2.json",
+      "sha256": "5836048e55d8f1e9e6828709b87b77a5bff13c35e27f1258007eaf764d70660b",
+      "trial": 2,
+      "attempt": 1,
+      "setting_completed_utc": "2026-09-10T09:01:39.530853+00:00",
+      "zero_command_completed_utc": "2026-09-10T09:02:39.580037+00:00",
+      "seconds_since_previous_documented_zero_command": 232.762239,
+      "status": "aborted"
+    },
+    {
+      "physical_start": 3,
+      "session": "results/pwm75_restarts_20260910_085357/start_2_attempt2.json",
+      "sha256": "e242cc47bef6eaacbd1cfc1556805f7e8202fd5ae4d42c2a570ac6020200abbd",
+      "trial": 2,
+      "attempt": 2,
+      "setting_completed_utc": "2026-09-10T09:04:26.192894+00:00",
+      "zero_command_completed_utc": "2026-09-10T09:05:26.245404+00:00",
+      "seconds_since_previous_documented_zero_command": 106.612857,
+      "status": "aborted"
+    },
+    {
+      "physical_start": 4,
+      "session": "results/pwm75_restarts_20260910_085357/start_2_attempt3.json",
+      "sha256": "b083695dfcf178893f1f9773267521ef9347fcbc852d7a77c86d17c967f4cec5",
+      "trial": 2,
+      "attempt": 3,
+      "setting_completed_utc": "2026-09-10T09:09:09.833251+00:00",
+      "zero_command_completed_utc": "2026-09-10T09:10:09.882561+00:00",
+      "seconds_since_previous_documented_zero_command": 223.587847,
+      "status": "aborted"
+    },
+    {
+      "physical_start": 5,
+      "session": "results/pwm75_restarts_20260910_085357/start_2_attempt4.json",
+      "sha256": "f876a74d1066181ad5d3ece16e42ec9db443b0c875a1841a8d23005751227df9",
+      "trial": 2,
+      "attempt": 4,
+      "setting_completed_utc": "2026-09-10T09:12:13.844856+00:00",
+      "zero_command_completed_utc": "2026-09-10T09:13:44.046720+00:00",
+      "seconds_since_previous_documented_zero_command": 123.962295,
+      "status": "completed"
+    },
+    {
+      "physical_start": 6,
+      "session": "results/pwm75_restarts_20260910_085357/start_3.json",
+      "sha256": "e3e7f5a8330d67fde4a91bcf75822dd60e63d023a5a32faa160aa4f3ba53d4cd",
+      "trial": 3,
+      "attempt": 1,
+      "setting_completed_utc": "2026-09-10T09:16:20.217638+00:00",
+      "zero_command_completed_utc": "2026-09-10T09:17:50.410293+00:00",
+      "seconds_since_previous_documented_zero_command": 156.170918,
+      "status": "completed"
+    }
+  ],
+  "observation_protocol_changed": true,
+  "raw_metadata_retroactively_changed": false,
+  "final_mechanical_standstill_confirmed_by_user": true,
+  "final_standstill_confirmation_sha256": "1ac1490a0f2e4a4823d4de10cd3f2ca7eef21da7fd654618c9e18a189769c7bc",
+  "next_step": "Prospectively standardise off-times and operating history, examine longer normal-operation time courses for settling, then collect normal reference data across separate starts before training.",
+  "models_trained": false,
+  "thresholds_changed": false,
+  "induced_anomalies": false,
+  "analysis_sha256": "1723fbf95b7310798132b48a80726345dde23670dc0da143e1975c1a3734564f",
+  "written_report_sha256": "2f8d8248080875353c7256437cf06975a58d8bb91629c532086a0df2aba06dd1"
+}

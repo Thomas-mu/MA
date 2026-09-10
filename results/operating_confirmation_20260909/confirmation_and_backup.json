@@ -1,0 +1,39 @@
+{
+  "recorded_utc": "2026-09-09T20:26:02.868260+00:00",
+  "backup": "docs/backups/Akz_Masterarbeit_Bericht(3)_vor_betriebsnachtrag_20260909.docx",
+  "sha256": "b5fb09c6df5bd4020cc6786cd8057a19d6ebb513b780a56131f331e6722e8139",
+  "operator_confirmation": {
+    "fan_observed_running": true,
+    "operator_observation": "Ja, der Lüfter läuft sichtbar gleichmäßig. Sensor und Montage sind unverändert. Du kannst die Betriebsaufnahme ankündigen und starten."
+  },
+  "operating_pilot": "data/controlled_20260909/operating25_20260909_201158.csv",
+  "status": "completed",
+  "fan_after_capture": {
+    "gpio_bcm": 18,
+    "physical_pin": 12,
+    "pwm_chip": 0,
+    "pwm_channel": 2,
+    "pwm_path": "/sys/class/pwm/pwmchip0/pwm2",
+    "rp1_device_path": "/sys/devices/platform/axi/1000120000.pcie/1f00098000.pwm",
+    "pwm_configuration": {
+      "period_ns": 40000,
+      "duty_cycle_ns": 10000,
+      "enable": 1,
+      "polarity": "normal",
+      "configured_frequency_hz": 25000.0,
+      "configured_duty_percent": 25.0
+    },
+    "pin_readback": {
+      "mux": "a3",
+      "function": "PWM0_CHAN2",
+      "instantaneous_level": "hi",
+      "raw": "18: a3    pd | hi // GPIO18 = PWM0_CHAN2"
+    },
+    "pwm_mux_confirmed": true,
+    "electrical_waveform_measured": false,
+    "measured_rpm": null,
+    "mechanical_state": "not_measured"
+  },
+  "source_session": "results/hardware_confirmation_20260909/operating25_20260909_201158_session.json",
+  "measurement_chain_parameter_decision": "pending_pair_analysis"
+}

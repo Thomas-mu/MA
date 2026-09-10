@@ -1,0 +1,46 @@
+{
+  "recorded_utc": "2026-09-10T09:06:50.191637+00:00",
+  "status": "awaiting_fresh_standstill_confirmation_before_replacement_for_recording2",
+  "physical_starts_so_far": 3,
+  "completed_recordings": 1,
+  "missing_recordings": 2,
+  "sessions": [
+    {
+      "path": "results/pwm75_restarts_20260910_085357/start_1.json",
+      "sha256": "5169be3a5ac8b3a9c0bb95249d5876818cdf63c4715f865b4ac9b2f5300e9c16",
+      "status": "completed",
+      "csv": "data/pwm75_restarts_20260910_085357/operating75_start1_20260910_085716_592083.csv",
+      "error": null,
+      "final_pwm_percent": 0.0
+    },
+    {
+      "path": "results/pwm75_restarts_20260910_085357/start_2.json",
+      "sha256": "5836048e55d8f1e9e6828709b87b77a5bff13c35e27f1258007eaf764d70660b",
+      "status": "aborted",
+      "csv": null,
+      "error": "TimeoutError: No visual running confirmation before fixed60-s capture deadline; no capture",
+      "final_pwm_percent": 0.0
+    },
+    {
+      "path": "results/pwm75_restarts_20260910_085357/start_2_attempt2.json",
+      "sha256": "e242cc47bef6eaacbd1cfc1556805f7e8202fd5ae4d42c2a570ac6020200abbd",
+      "status": "aborted",
+      "csv": null,
+      "error": "TimeoutError: No visual running confirmation before fixed60-s capture deadline; no capture",
+      "final_pwm_percent": 0.0
+    }
+  ],
+  "final_pwm_percent": 0,
+  "final_pwm_frequency_hz": 25000,
+  "mechanical_standstill_after_last_shutdown_confirmed": false,
+  "next_trial": 2,
+  "next_attempt": 3,
+  "next_runner": "run_one_start_with_attempts.py",
+  "next_standstill_confirmation_file": "standstill_before_start_2_attempt3.json",
+  "next_running_confirmation_file": "running_start_2_attempt3.json",
+  "settling_seconds": 60,
+  "record_seconds": 30,
+  "protected_files_checked": 691,
+  "changed_protected_files": [],
+  "training": false
+}

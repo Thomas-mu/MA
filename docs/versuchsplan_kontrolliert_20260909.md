@@ -1,4 +1,4 @@
-# Kontrollierte Messfolge – Stand nach Stillstandsbestätigung
+# Kontrollierte Messfolge – Stand nach zwei Betriebspiloten
 
 **Aktualisierung nach Steuerungsübernahme:** Der Nutzer hat den Lüfter selbst
 mit GPIO18 High gestartet und die frühere Stillstandsbedingung aufgehoben.
@@ -21,7 +21,11 @@ ist aufgebaut; GPIO18-Steuerung und Sensorbefestigung am Lüfterrahmen sind
 festgelegt. Der aktuelle Auftrag setzt Softwareprüfung und Wordbearbeitung fort.
 Die neue 30-s-Stillstandsaufnahme ist inzwischen abgeschlossen und technisch
 ausgewertet. Nach Bereitschaftsbestätigung wurde D₁ = 25 % eingestellt; die
-Betriebsaufnahme wartet auf die Sichtbestätigung des tatsächlichen Laufs.
+Betriebsaufnahme ist nach bestätigtem gleichmäßigem Lauf abgeschlossen.
+Nach einer zweiten 30-s-Betriebsaufnahme bei unveränderten 25 % wurde erneut
+0 % eingestellt. Vor S₁ fehlt eine neue Sichtbestätigung des vollständigen
+Stillstands. Die geringe Signaltrennung im ersten Paar ergibt noch keine
+Trainingsfreigabe; der Messparameterentscheid berücksichtigt Wiederholung und S₁.
 
 ## Voraussetzungen und Kommunikation
 
@@ -34,7 +38,8 @@ unverändert. Eine heutige Nutzerangabe wird separat datiert, nicht in historisc
 Messjournale eingesetzt.
 
 Die nächste Ansage lautet: **Lüfter soll AUS sein; Stellvorgabe 0 % bei 25 kHz;
-Stillstand wurde bereits visuell bestätigt; der Aufbau ist geklärt.
+vollständiger Stillstand ist nach dem zwischenzeitlichen Betrieb noch neu
+visuell zu bestätigen; der Aufbau ist geklärt.
 Der Beginn der 30-s-Aufnahme wird ausdrücklich angekündigt. Währenddessen
 nichts berühren.** Die zuvor gespeicherten 25 % bei 25 kHz waren lediglich ein
 ausgelesener PWM-Subsystemzustand. GPIO18 ist jetzt wieder der PWM zugeordnet.
@@ -68,8 +73,9 @@ zu einer dokumentierten Wiederholung unter neuem Dateinamen.
 | Phase | Zustand / Zweck | Geplanter Umfang | Freigabebedingung |
 |---|---|---|---|
 | S₀ | vollständiger Stillstand; `pilot`, Label −1 | 30 s abgeschlossen; 6.193 Werte | Neue Aufnahme standstill_20260909_200838.csv; keine gesetzten Qualitätsflags |
-| B₁ | normaler Lauf bei D₁; `pilot`, Label 0 | 30 s nach zunächst 30 s Einlaufzeit | Bereitschaft bestätigt, 25 % eingestellt, Einlaufzeit abgewartet; Sichtbestätigung des Laufs ausstehend |
-| S₁ / B₁-Wiederholung | erneut Stillstand / derselbe Betriebspunkt; `pilot` | je 30 s, falls Drift oder zu geringe Trennung fraglich | getrennte Ansage und Bestätigung je Umschaltung |
+| B₁ | normaler Lauf bei D₁; `pilot`, Label 0 | 30 s nach zunächst 30 s Einlaufzeit | Lauf und unveränderte Montage bestätigt; 30 s abgeschlossen, 6.205 Werte ohne gesetzte Qualitätsflags |
+| B₁-Wiederholung | derselbe Betriebspunkt 25 %; `pilot` | 30 s abgeschlossen; 6.205 Werte | Keine gesetzten Qualitätsflags, anschließend angekündigt 0 % eingestellt |
+| S₁ | erneuter vollständiger Stillstand; `pilot` | 30 s vorgesehen | Neue Sichtbestätigung nach Abschaltung noch ausstehend; keine Aufnahme gestartet |
 | T₁–T₆ | Normalbetrieb D₁; `training` | Vorschlag: 6 vollständige Aufnahmen à 60 s | Messparameter mit Pilotbelegen festgelegt |
 | V₁–V₂ | Normalbetrieb D₁; `validation` | Vorschlag: 2 weitere Aufnahmen à 60 s | Zuordnung vor Aufnahme; keine Überschneidung mit Training |
 | N₁ / N₂ | Normalbetrieb D₁ / D₂; `test` | Vorschlag: je 5 getrennte Aufnahmen à 60 s | gemeinsames Bundle und Testprotokoll vorab eingefroren |
@@ -142,7 +148,7 @@ Erst nach Pilotentscheidung neue Aufnahmen mit `calibrate_and_train.py --record-
 erstellen, Qualität prüfen und das neue Profil anschließend mit `--train-only`
 trainieren. Vorläufiger Umfang: `--recordings 8 --validation-recordings 2 --seconds 60`.
 Montagekennung und D₁ = 25 % sind festgelegt; die endgültigen Messparameter
-werden anhand der noch ausstehenden Piloten begründet.
+werden anhand der erhobenen Piloten und der noch ausstehenden Stillstandsreferenz S₁ begründet.
 Kein Aufruf dieser Art wurde mit unbestätigten Bedingungen ausgeführt.
 
 `common_comparison.py calibrate` erhält das neue geprüfte Profil. Alle Verfahren

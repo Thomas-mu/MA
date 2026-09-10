@@ -1,0 +1,29 @@
+{
+  "created_utc": "2026-09-10T09:11:47.396090+00:00",
+  "protocol_revision": "fixed_timer_without_timed_chat_response_gate",
+  "reason": "Three response-deadline aborts exposed an unnecessary chat-timing dependency. Current user task requires fresh full standstill before each start and equal settling; preserve these and record running observations separately after capture.",
+  "announced_to_user_before_next_start": true,
+  "preserved_file_sha256": {
+    "results/pwm75_restarts_20260910_085357/run_one_start.py": "a1398cfbbc31f5b36e31b59124e8c4557f5f1ffc9cc36734b7f7e71186f7fc5c",
+    "results/pwm75_restarts_20260910_085357/run_one_start_with_attempts.py": "c1f331694b0d4cf6d1c7e8b36efaafea6c495187ff23acb12efad8aa4aed95d8",
+    "results/pwm75_restarts_20260910_085357/start_1.json": "5169be3a5ac8b3a9c0bb95249d5876818cdf63c4715f865b4ac9b2f5300e9c16",
+    "results/pwm75_restarts_20260910_085357/start_2.json": "5836048e55d8f1e9e6828709b87b77a5bff13c35e27f1258007eaf764d70660b",
+    "results/pwm75_restarts_20260910_085357/start_2_attempt2.json": "e242cc47bef6eaacbd1cfc1556805f7e8202fd5ae4d42c2a570ac6020200abbd",
+    "results/pwm75_restarts_20260910_085357/start_2_attempt3.json": "b083695dfcf178893f1f9773267521ef9347fcbc852d7a77c86d17c967f4cec5"
+  },
+  "runner": "results/pwm75_restarts_20260910_085357/run_one_start_timed.py",
+  "runner_sha256": "b1c81a44651582c98047441180409cf27fbc7e5d58a7838436ca5f4fb7c53012",
+  "settling_s": 60,
+  "record_s": 30,
+  "pwm_percent": 75,
+  "pwm_frequency_hz": 25000,
+  "sensor_and_record_function_unchanged": true,
+  "prestart_full_standstill_confirmation_required": true,
+  "running_observation_after_capture": true,
+  "running_state_never_inferred_from_pwm": true,
+  "raw_recordings_label_before_observation": -1,
+  "physical_starts_so_far": 4,
+  "completed_recordings_so_far": 1,
+  "aborted_without_recording": 3,
+  "training": false
+}

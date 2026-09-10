@@ -10,13 +10,15 @@ enthält die Anforderungsgrundlage in Kapitel 1–5 und das ergänzte
 Implementierungskapitel 6. Die Ausgangskopie liegt unter `docs/backups/`.
 Der [kontrollierte Versuchsplan](docs/versuchsplan_kontrolliert_20260909.md)
 trennt die noch ausstehenden Pilot-, Trainings-/Validierungs- und Testaufnahmen.
-Der Stillstand nach softwareseitiger 0-%-Vorgabe ist visuell bestätigt.
 GPIO18 ist als Steueranschluss bestätigt; der ADXL345 ist mit vorgesehener
 I²C-Beschaltung an einer Ecke des Lüfterrahmens befestigt. Diese Hardwarepunkte
-sind geklärt. Die neue 30-s-Stillstandsaufnahme ist abgeschlossen; der Betriebspunkt 25 %
-ist eingestellt. Die Betriebsaufnahme wartet auf die Sichtbestätigung des
-tatsächlichen Laufs. Eine unabhängige Drehzahlmessung liegt nicht vor. Die nachträgliche Ausschaltangabe macht frühere
-Aufnahmen nicht zu kontrollierten Stillstandsreferenzen.
+sind geklärt. Die neue 30-s-Stillstandsaufnahme und zwei 30-s-Betriebsaufnahmen
+bei 25 % PWM sind abgeschlossen. Nach angekündigter Abschaltung beträgt die
+Vorgabe 0 %; vor der zweiten Stillstandsaufnahme ist vollständiger Stillstand
+noch neu visuell zu bestätigen. Die geringe Signaltrennung ergibt noch keine
+Trainingsfreigabe. Eine unabhängige Drehzahlmessung liegt nicht vor. Die
+nachträgliche Ausschaltangabe macht frühere Aufnahmen nicht zu kontrollierten
+Stillstandsreferenzen.
 
 - [Softwaresteuerung, Pinzuordnung und ausgeführte Befehle](docs/steuerungsuebernahme_20260909.md)
 - [Anforderungen, vorhandene Belege und Widersprüche](docs/anforderungsabgleich_20260909.md)

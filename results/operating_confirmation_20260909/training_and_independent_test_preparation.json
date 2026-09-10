@@ -1,0 +1,62 @@
+{
+  "schema_version": 1,
+  "status": "draft_not_executable",
+  "created_utc": "2026-09-09T20:34:37.700380+00:00",
+  "measurement_chain_verified": false,
+  "parameter_decision_path": null,
+  "parameter_decision_sha256": null,
+  "normal_reference": {
+    "pwm_setpoint_percent": 25,
+    "mounting_id": "fan_frame_corner_adxl345_gpio18_v1",
+    "rpm_measured": null
+  },
+  "planned_acquisition": {
+    "training_recordings": 6,
+    "validation_recordings": 2,
+    "seconds_per_recording": 60,
+    "split_unit": "whole_recording",
+    "status": "proposal_pending_measurement_parameter_release",
+    "fan_control": "external_FanPWM_lock_held_for_entire_sequence",
+    "before_and_after_each_recording": "verify unchanged PWM; no detection-dependent actions"
+  },
+  "new_recording_metadata_required": [
+    "actual_agent_PWM_source",
+    "control_journal_path",
+    "parameter_decision_path_and_hash",
+    "operator_state_and_unchanged_mounting_confirmation",
+    "pilot_evidence_paths_and_hashes"
+  ],
+  "frozen_comparison": {
+    "methods": [
+      "RMS",
+      "IsolationForest",
+      "Float32_TFLite_Autoencoder"
+    ],
+    "shared_input": "same standardized XYZ windows",
+    "fit_scaler_on": "normal training recordings only",
+    "threshold_source": "same normal validation recordings; linear empirical P99",
+    "bundle_sha256": null,
+    "normal_second_operating_point_pwm_percent": null,
+    "second_point_policy": "same frozen models/scaler/all thresholds; no fitting or threshold adjustment"
+  },
+  "independent_test_manifest": {
+    "measurement_chain_verified": false,
+    "frozen_bundle_sha256": null,
+    "detection_dependent_fan_shutdown": false,
+    "independent_recordings": null,
+    "sampling_rate_hz": null,
+    "sensor": null,
+    "protocol": {
+      "path": null,
+      "sha256": null
+    },
+    "recordings": []
+  },
+  "unresolved_experiment_parameters": [
+    "robust useful-signal/background evidence",
+    "final measurement parameters and numerical acceptance rules",
+    "second normal setpoint",
+    "reproducible reversible anomaly conditions and independent test sequence"
+  ],
+  "hardware_setup_todos": []
+}

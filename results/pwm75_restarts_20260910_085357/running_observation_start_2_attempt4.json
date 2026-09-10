@@ -1,0 +1,12 @@
+{
+  "trial": 2,
+  "attempt": 4,
+  "session": "results/pwm75_restarts_20260910_085357/start_2_attempt4.json",
+  "recorded_utc": "2026-09-10T09:16:15.308063+00:00",
+  "operator_answer": "1. ja",
+  "observed_during_recording": true,
+  "fan_observed_running_uniformly": true,
+  "mounting_unchanged": true,
+  "observation_reported_after_capture": true,
+  "confirmation_context": "User explicitly confirms visible uniform running with unchanged mounting during recording2, approximately11:13:14–11:13:44 Europe/Berlin. Original capture metadata remain unchanged."
+}

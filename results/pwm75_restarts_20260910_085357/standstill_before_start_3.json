@@ -1,0 +1,9 @@
+{
+  "trial": 3,
+  "attempt": 1,
+  "recorded_utc": "2026-09-10T09:16:15.308063+00:00",
+  "operator_answer": "2. 2. ja",
+  "fan_observed_fully_stopped": true,
+  "mounting_unchanged": true,
+  "confirmation_context": "Second part of current user reply confirms current full mechanical standstill at0% after recording2, before start3."
+}

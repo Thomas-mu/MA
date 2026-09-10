@@ -1,0 +1,15 @@
+{
+  "checked_utc": "2026-09-10T07:12:17.780045+00:00",
+  "preserved_files_checked": 582,
+  "changed_existing_files": [],
+  "pwm_readback": {
+    "period": "40000",
+    "duty_cycle": "20000",
+    "enable": "1",
+    "polarity": "normal"
+  },
+  "pin_readback": "18: a3    pd | lo // GPIO18 = PWM0_CHAN2",
+  "actual_mechanical_running_state": "awaiting_operator_visual_confirmation",
+  "stage": "waiting_before_first50_capture",
+  "hardware_changed": false
+}

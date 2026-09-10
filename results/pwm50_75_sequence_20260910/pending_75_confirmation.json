@@ -1,0 +1,34 @@
+{
+  "recorded_utc": "2026-09-10T08:18:21.080117+00:00",
+  "stage": "waiting_for_75_percent_visual_uniform_running_confirmation",
+  "exec_session_id": 65289,
+  "session": "results/pwm50_75_sequence_20260910/sequence_20260910_074455.json",
+  "current_pwm_setpoint_percent": 75,
+  "minimum_settling_elapsed_s": 30.000104258000647,
+  "completed_recordings": [
+    "data/pwm50_75_sequence_20260910/standstill_before_r1_20260910_074835.csv",
+    "data/pwm50_75_sequence_20260910/standstill_before_r2_20260910_074910.csv",
+    "data/pwm50_75_sequence_20260910/operating50_r1_20260910_081505.csv",
+    "data/pwm50_75_sequence_20260910/operating50_r2_20260910_081541.csv"
+  ],
+  "sensor_recording_active": false,
+  "controller_holds_advisory_lock": true,
+  "next_gate": {
+    "action": "capture_phase",
+    "phase": "operating75",
+    "fan_observed_running_uniformly": "must be true only after actual positive user answer",
+    "operator_answer": "quote actual answer"
+  },
+  "following_gate": {
+    "action": "set_phase",
+    "phase": "standstill_after",
+    "before_command": "announce0% shutdown; then wait10s and ask full mechanical standstill"
+  },
+  "final_gate": {
+    "action": "capture_phase",
+    "phase": "standstill_after",
+    "fan_observed_fully_stopped": "must be actual positive observation"
+  },
+  "word_changed": false,
+  "training_started": false
+}

@@ -1,0 +1,105 @@
+{
+  "verified_utc": "2026-09-10T09:24:42.320465+00:00",
+  "status": "completed_three_record_restart_comparison",
+  "preservation_checks": [
+    {
+      "baseline": "baseline_and_protocol.json",
+      "checked_files": 691,
+      "changed_or_missing": []
+    },
+    {
+      "baseline": "retry_preparation_baseline.json",
+      "checked_files": 5,
+      "changed_or_missing": []
+    },
+    {
+      "baseline": "protocol_revision_without_chat_deadline.json",
+      "checked_files": 6,
+      "changed_or_missing": []
+    }
+  ],
+  "recording_checks": [
+    {
+      "name": "START_1",
+      "xyz_points": 6206,
+      "raw_hashes_verified": true,
+      "rms_rate_and_actual_start_independently_recomputed": true,
+      "actual_first_point_after_setting_s": 60.164304431
+    },
+    {
+      "name": "START_2",
+      "xyz_points": 6207,
+      "raw_hashes_verified": true,
+      "rms_rate_and_actual_start_independently_recomputed": true,
+      "actual_first_point_after_setting_s": 60.097605228
+    },
+    {
+      "name": "START_3",
+      "xyz_points": 6207,
+      "raw_hashes_verified": true,
+      "rms_rate_and_actual_start_independently_recomputed": true,
+      "actual_first_point_after_setting_s": 60.075336639
+    }
+  ],
+  "raw_csv_files": 3,
+  "final_pwm_readback": {
+    "gpio_bcm": 18,
+    "physical_pin": 12,
+    "pwm_chip": 0,
+    "pwm_channel": 2,
+    "pwm_path": "/sys/class/pwm/pwmchip0/pwm2",
+    "rp1_device_path": "/sys/devices/platform/axi/1000120000.pcie/1f00098000.pwm",
+    "pwm_configuration": {
+      "period_ns": 40000,
+      "duty_cycle_ns": 0,
+      "enable": 1,
+      "polarity": "normal",
+      "configured_frequency_hz": 25000.0,
+      "configured_duty_percent": 0.0
+    },
+    "pin_readback": {
+      "mux": "a3",
+      "function": "PWM0_CHAN2",
+      "instantaneous_level": "lo",
+      "raw": "18: a3    pd | lo // GPIO18 = PWM0_CHAN2"
+    },
+    "pwm_mux_confirmed": true,
+    "electrical_waveform_measured": false,
+    "measured_rpm": null,
+    "mechanical_state": "not_measured"
+  },
+  "final_pwm_check_changed_hardware": false,
+  "final_visual_full_standstill_confirmed": true,
+  "device_users_check": {
+    "command": [
+      "fuser",
+      "-v",
+      "/dev/i2c-1",
+      "/dev/gpiochip0",
+      "/dev/gpiomem0"
+    ],
+    "returncode": 1,
+    "stdout": "",
+    "stderr": ""
+  },
+  "word_sha256": "a9a5d7d17b28098f554240a3e1650881e252db679f33319a1d11164b3246cbb8",
+  "word_unchanged": true,
+  "comparison_plot_visually_reviewed": true,
+  "report_links_valid": true,
+  "report_tables_checked": 8,
+  "git_diff_check_passed": true,
+  "models_trained": false,
+  "induced_anomalies": false,
+  "completed_manifest_sha256": "a1a6ba05de04df332fbf2400d9237d3c280c6ae98784c679420540cb57c79703",
+  "artifacts_sha256": {
+    "results/pwm75_restarts_20260910_085357/comparison/comparison.png": "7de45cae759c7721c138757bc3795cc656598c9980f3817e3944a88e381a3ddf",
+    "results/pwm75_restarts_20260910_085357/comparison/spectra.csv": "231fe31b41a7409b8a87146dfa2cb8fd13e613814a8063d8f2f7683d92b79241",
+    "results/pwm75_restarts_20260910_085357/comparison/comparison.pdf": "cf6e23aa5e8e0401a38c2a9e1759feae5c78aa40f94b4d64771e5b3069a71971",
+    "results/pwm75_restarts_20260910_085357/comparison/recording_metrics.csv": "ab04b6a57b1c79369acd533ecb15df359aeddf98926dfaa87d9d488e3057b090",
+    "results/pwm75_restarts_20260910_085357/comparison/decision.json": "bf72ed0598ecab0e75de2f9a4e98f27bd84f3b1b764d46514220ebdd780724f4",
+    "results/pwm75_restarts_20260910_085357/comparison/five_second_metrics.csv": "101e16b31b0f75c1af58da5a937317156d21fc23e750cdcbb438795e111897c8",
+    "results/pwm75_restarts_20260910_085357/comparison/report.json": "1723fbf95b7310798132b48a80726345dde23670dc0da143e1975c1a3734564f",
+    "results/pwm75_restarts_20260910_085357/comparison/report.md": "2f8d8248080875353c7256437cf06975a58d8bb91629c532086a0df2aba06dd1",
+    "results/pwm75_restarts_20260910_085357/comparison/pairwise.csv": "1d9a9b8d8dd8baac5cb4bccb476c4659725c08e62f3d68a1d5ecbcf313add603"
+  }
+}

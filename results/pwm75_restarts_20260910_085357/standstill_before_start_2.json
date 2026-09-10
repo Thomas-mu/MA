@@ -1,0 +1,8 @@
+{
+  "trial": 2,
+  "recorded_utc": "2026-09-10T09:01:34.655921+00:00",
+  "operator_answer": "ja",
+  "fan_observed_fully_stopped": true,
+  "mounting_unchanged": true,
+  "confirmation_context": "Current user confirms full mechanical standstill before second independent75% start, after completed first trial and return to0%."
+}

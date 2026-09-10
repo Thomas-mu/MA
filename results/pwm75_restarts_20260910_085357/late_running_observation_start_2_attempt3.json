@@ -1,0 +1,10 @@
+{
+  "trial": 2,
+  "attempt": 3,
+  "recorded_utc": "2026-09-10T09:12:08.966594+00:00",
+  "operator_answer": "ja",
+  "fan_observed_running_uniformly_reported": true,
+  "received_after_aborted_attempt": true,
+  "no_retrospective_capture_or_gate_success": true,
+  "confirmation_context": "Delayed answer to the running question for attempt3; that attempt already aborted without recording and returned to0%."
+}

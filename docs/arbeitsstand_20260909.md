@@ -5,9 +5,11 @@ Steueranschluss des Lüfters. Der ADXL345 ist mit vorgesehener I²C-Beschaltung 
 einer Ecke des Lüfterrahmens befestigt. Diese beiden Hardwarepunkte sind
 abgeschlossen und keine offenen TODOs. Die historische Chronologie darunter
 bewahrt die damals gestellten Fragen und Antworten; sie verlangt keine erneute
-Klärung. Die jetzige Fortsetzung betrifft Softwareprüfung und Wordbearbeitung.
-Eine unabhängige Drehzahlmessung und die kontrollierte Pilot-/Evaluationsfolge
-sind dadurch nicht nachgewiesen.
+Klärung. Die kontrollierte Stillstandsaufnahme S₀ und zwei Betriebsaufnahmen bei 25 %
+sind inzwischen abgeschlossen. Nach angekündigter Abschaltung steht die Vorgabe
+aktuell bei 0 %; eine neue Sichtbestätigung für S₁ fehlt noch. Die erste
+Signaltrennung ist schwach und rechtfertigt noch keine Trainingsfreigabe. Eine
+unabhängige Drehzahlmessung und die abschließende Evaluation sind nicht belegt.
 
 Historischer Bericht des ersten Arbeitsdurchlaufs vom 09.09.2026; der unten
 angefügte Nachtrag dokumentiert die Fortsetzung und nachträgliche Nutzerangaben.
@@ -640,3 +642,163 @@ die Betriebsaufnahme frei. Die bereits bestätigten GPIO18-/Montageangaben werde
 nicht erneut erfragt. Alle 293 im ursprünglichen Erhaltungsmanifest erfassten
 Daten-, Modell- und Ergebnisdateien sind weiterhin hashidentisch. Kein Commit
 oder Push wurde erstellt.
+
+## Bestätigter Betriebspilot bei 25 % PWM
+
+Der Nutzer bestätigte anschließend ausdrücklich: „Ja, der Lüfter läuft sichtbar
+gleichmäßig. Sensor und Montage sind unverändert. Du kannst die Betriebsaufnahme
+ankündigen und starten.“ Damit ist die zuvor ausstehende Zustandsbeobachtung
+beantwortet. Nach erneuter Aufnahmeansage wurde die vorgesehene 30-s-Betriebsaufnahme
+am **09.09.2026, 20:24:35 UTC (22:24:35 CEST)** begonnen und vollständig beendet.
+
+Datei: `data/controlled_20260909/operating25_20260909_201158.csv`. Der Dateiname
+enthält den Beginn der Steuersitzung, nicht den Beginn der Erfassung. Letzterer
+steht im Aufnahmejournal. CSV-SHA-256:
+`a8c882263a69be2290883cfaf959063a2b1a124ed76b97bb631f528abbbee583`.
+Die Aufnahme enthält **6.205 Werte**, beobachteten FIFO-Durchsatz
+**206,846521 Werte/s**, maximale Hostzeitdifferenz **6,008778 ms** und maximal
+einen FIFO-Eintrag. Gap-, Overrun- und Sättigungsflags sind jeweils null.
+Sensorvorgaben und Registerrücklesung entsprechen dem Stillstandspiloten:
+200 Hz ODR, Full Resolution, ±2 g, FIFO-Stream, I²C-Konfiguration 100 kHz.
+
+Die erste Stabilisierungsphase dauerte 30,000110 s. Wegen der anschließenden
+Wartezeit auf die Sichtbestätigung lagen zwischen dem Einstellen der 25 %
+und dem Aufnahmebeginn insgesamt **756,907159 s**. Diese tatsächliche Dauer
+ersetzt im Versuchsbericht nicht nachträglich die Mindestplanung; beide Größen
+werden getrennt angegeben. Der PWM-Tastgrad wurde währenddessen nicht geändert.
+Vor und nach der Aufnahme bestätigte die Rücklesung 10.000 ns Tastzeit bei
+40.000 ns Periode, `enable=1` und GPIO18 in `a3/PWM0_CHAN2`.
+
+Der Steuerprozess hat nach Abschluss seinen Lock freigegeben und den letzten
+Stellwert von 25 % beibehalten. Der Sensorzugriff wurde geschlossen. Die
+Sichtbeobachtung belegt tatsächlichen Lauf, aber keine gemessene oder exakt
+konstante Drehzahl. RPM bleibt ungemessen. Belege:
+`results/hardware_confirmation_20260909/operating25_20260909_201158_session.json`
+und zugehöriges Fan-Journal sowie `results/operating_confirmation_20260909/`.
+Die Paaranalyse und die Entscheidung über die endgültigen Messparameter folgen;
+noch wurde kein neues Modell trainiert.
+
+
+## Wiederholter Betriebspilot und erneute Abschaltung
+
+Wegen der geringen Betriebs-/Stillstandstrennung wurde eine zweite 30-s-
+Betriebsaufnahme bei unverändert **25 % PWM und 25 kHz** angekündigt und am
+09.09.2026 ab **20:32:10 UTC** durchgeführt. Datei:
+`data/controlled_20260909/operating25_repeat_20260909_203210.csv`.
+Sie enthält 6.205 Werte bei einem beobachteten FIFO-Durchsatz von
+206,862884 Werten/s. Das größte Hostintervall beträgt 6,057078 ms;
+Gap-, Overrun- und Sättigungsflags sind jeweils null, der größte beobachtete
+FIFO-Füllstand beträgt einen Eintrag. Der Vektor-AC-RMS beträgt 0,012954 g.
+Die fortgeltende Nutzerbeobachtung eines gleichmäßigen Laufs und unveränderter
+Montage ist im neuen Aufnahmejournal als Quelle genannt. Eine unabhängige
+Drehzahl wurde nicht erfasst. Während beider Betriebsaufnahmen blieb die Vorgabe
+konstant; keine Erkennungsentscheidung steuerte den Lüfter.
+
+Nach Abschluss wurde der Lüfter wie angekündigt durch `FanPWM.stop()` am
+**20:32:40,281593 UTC** auf **0 % PWM** gestellt. Zehn Sekunden Auslaufzeit
+wurden abgewartet; Rücklesung: Tastzeit 0 ns, Periode 40.000 ns, `enable=1`,
+GPIO18 `a3/PWM0_CHAN2`. Der Steuerprozess ist beendet und hat die gemeinsame
+Sperre freigegeben; auch der Sensorzugriff ist geschlossen. Die Einstellung
+wird nicht als mechanischer Stillstand bezeichnet. Für die nachfolgende
+30-s-Stillstandsaufnahme S₁ steht eine neue Sichtbestätigung aus. Die alte
+Bestätigung vor S₀ gilt nicht automatisch nach diesem zwischenzeitlichen Betrieb.
+Belege: `results/operating_confirmation_20260909/operating25_repeat_20260909_203210_session.json`
+und das zugehörige `_fan.jsonl`.
+
+Die erste Paaranalyse liegt unter `results/paired_pilots_20260909/`.
+Der Vektor-AC-RMS steigt zwischen S₀ und B₁ von 0,012371 auf 0,013099 g;
+die Wertebereiche der 5-s-Abschnitte überlappen. Die summierte XYZ-Bandleistung
+ist in den Diagnosebändern 1–90 Hz beziehungsweise 5–80 Hz um 0,510 und
+0,592 dB höher. Die nur unter unverändertem, additivem und unkorreliertem
+Hintergrund definierten Überschuss-SNR-Schätzungen betragen −9,042 und
+−8,353 dB. Das sind keine unabhängig gemessenen Lüfter-SNR-Werte oder zuvor
+festgelegte Freigabegrenzen. Einzelne schwache Spektralkandidaten werden geprüft;
+weder vollständige Abwesenheit eines Lüftersignals noch ein ausreichend
+abgesichertes Nutzband wird behauptet. Aus dem ersten Paar folgt keine
+Trainingsfreigabe. S₁ soll mögliche zeitliche Änderungen des Hintergrundes prüfen.
+
+### Softwareprüfung und Vorbereitung ohne Modellbildung
+
+`common_comparison.calibrate` prüft deklarierte Sidecar-Prüfsummen jetzt vor
+der Übernahme des Aufnahmezustands. Eine als geprüft deklarierte Messkette
+benötigt Profilhashes und vollständige Qualitätsbelege; ohne diese entsteht
+kein als `verified` gekennzeichnetes Bundle. Die erweiterte Regression umfasst
+**200 bestandene Tests und zwölf Untertests**; Beleg:
+`results/operating_confirmation_20260909/software_tests_final.xml`.
+Die Tests greifen für diese Integritätsfälle auf temporäre Daten zurück und
+belegen keine physikalische Messqualität.
+
+Ein nicht ausführbarer Vorbereitungssatz für sechs Trainings- und zwei
+Validierungsaufnahmen à 60 s und den gemeinsamen Methodenvergleich liegt unter
+`results/operating_confirmation_20260909/training_and_independent_test_preparation.*`.
+Die Freigabe bleibt falsch. Parameterentscheid, zweiter normaler PWM-Wert und
+zukünftige Modellhashes werden nicht erfunden. Für den zweiten normalen
+Betriebspunkt müssen Modelle, Skalierung und Schwellen des ersten Punktes
+unverändert bleiben. Neue Trainings-/Validierungsaufnahmen und Modelle wurden
+noch nicht erstellt. Die bestätigte GPIO18-Steuerung und die Sensorbefestigung
+an einer Ecke des Lüfterrahmens bleiben feststehende Randbedingungen.
+
+
+### Dreifachauswertung und vorläufiger Parameterentscheid
+
+Die Ergänzung `results/paired_pilots_20260909/repeat_bracketing/` vergleicht S₀,
+B₁ und B₁-Wiederholung bei unveränderten Diagnosebändern. In der Wiederholung
+betragen die summierten XYZ-Bandleistungsverhältnisse gegenüber S₀ 0,347 dB
+für 1–90 Hz und 0,371 dB für 5–80 Hz. Das bereits aus B₁ ausgewählte X-Band
+um 71,51 Hz (±0,8 Hz) bleibt erhöht: 4,102 dB in der Wiederholung gegenüber
+3,382 dB in B₁; alle sechs Wiederholungsabschnitte liegen über der ersten
+Stillstandsreferenz. Das belegt einen wiederkehrenden spektralen Befund,
+keine Drehzahl oder abschließende Eignung für die Anomaliedetektion.
+
+Der vorläufige Entscheid unter
+`results/operating_confirmation_20260909/provisional_parameter_decision.*`
+bindet die drei CSV-Dateien und Begleitprotokolle über SHA-256. Für die noch
+ausstehende S₁-Referenz bleiben 200 Hz ODR, FIFO, Full Resolution, ±2 g und
+30 s erhalten, damit die Vergleiche dieselbe Konfiguration verwenden.
+H = S = 128 bleibt die aktuelle Modelleingabe; deren endgültige Eignung ist
+noch offen. Der Entscheid erteilt keine Trainingsfreigabe. Die begründeten
+technischen Eingangskriterien sind erfüllt; neue Signal-, Drift- oder
+Bandbreitengrenzen werden nicht nachträglich als bereits erfüllt behauptet.
+
+Die Erhaltungsprüfung nach der Betriebswiederholung bestätigte alle **293**
+ursprünglich geschützten Daten-, Modell- und Ergebnisdateien unverändert.
+Zusätzlich sind die sechs neuen CSV-/JSON-Dateien des kontrollierten Piloten
+gehasht. Beleg:
+`results/operating_confirmation_20260909/preservation_after_operating_repeat.json`.
+Der vorbereitete S₁-Runner erfordert eine neue tatsächlich erhaltene positive
+Sichtbestätigung; er wurde nicht ausgeführt. Es läuft keine Sensoraufnahme.
+
+
+## Wordabschluss nach beiden Betriebspiloten und Fortsetzungszustand
+
+Die vor dem Betriebsnachtrag gesicherte Wordfassung liegt unter
+`docs/backups/Akz_Masterarbeit_Bericht(3)_vor_betriebsnachtrag_20260909.docx`
+(SHA-256 `b5fb09c6df5bd4020cc6786cd8057a19d6ebb513b780a56131f331e6722e8139`).
+Die aktualisierte Zieldatei `docs/Akz_Masterarbeit_Bericht(3).docx` hat SHA-256
+`a9a5d7d17b28098f554240a3e1650881e252db679f33319a1d11164b3246cbb8`.
+Kapitel 6 enthält die tatsächlich abgeschlossenen Piloten S₀, B₁ und B₁-W,
+die vorläufige Analyse, 200 Tests und zwölf Untertests sowie den zusätzlichen
+Integritätsnachweis. Anforderungen und Hypothesen werden dadurch nicht pauschal
+als erfüllt ausgegeben. S₁, die endgültige Messparameterfreigabe, neue Trainings-
+und Validierungsaufnahmen sowie unabhängige Evaluation bleiben ausdrücklich offen.
+
+Die Strukturprüfung bestätigt 187 unveränderte XML-Blöcke der Kapitel 1–5 und
+drei unveränderte Formeln. Die PDF-Layoutprüfung umfasst 58 Seiten; Kapitel 6
+liegt auf den arabischen Seiten 29–43. Alle 15 Kapitelseiten und die drei
+Verzeichnisseiten wurden visuell geprüft. Tabellen 6-1 bis 6-5, Überschriften
+6.1 bis 6.7 und Seitenverweise stimmen. Beide finalen Renderläufe liefern
+identische Seitenpositionen für 109 Bookmarks; 76 Seitenverweisfelder wurden
+mit passenden Cachewerten versehen. Die Prüfung erfolgte mit LibreOffice und
+PDF-Rendering, nicht mit einer nativen Microsoft-Word-Sitzung. Beleg:
+`results/operating_confirmation_20260909/word_update/word_update_final.json`.
+
+Alle Dokument-, Sensor- und Steuerprozesse sind beendet. Die abschließende
+reine Rücklesung bestätigt **0 % PWM bei 25 kHz**, GPIO18 in `a3/PWM0_CHAN2`
+und aktivierten PWM-Kanal. Kein weiterer Stellbefehl wurde dabei ausgeführt.
+Ein mechanischer Stillstand nach der letzten Abschaltung wird ohne die noch
+fehlende neue Nutzerbeobachtung nicht behauptet. Der Fortsetzungsbeleg lautet
+`results/operating_confirmation_20260909/final_checkpoint.json`.
+Nach der Sichtbestätigung ist die angekündigte 30-s-Referenz S₁ bei unveränderter
+Montage vorgesehen. Der vorbereitete Runner benötigt einen tatsächlichen neuen
+Bestätigungsbeleg; bislang wurde er nicht ausgeführt. Es wurde kein Commit oder
+Push durch den Agenten erstellt.

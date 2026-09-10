@@ -1,0 +1,16 @@
+{
+  "recorded_utc": "2026-09-09T20:39:42.000027+00:00",
+  "supersedes_status": "results/operating_confirmation_20260909/current_stage.json",
+  "status": "operating_repeat_completed_shutdown_commanded_awaiting_new_visual_standstill_confirmation",
+  "fan_setpoint_percent": 0,
+  "mechanical_standstill_confirmed_after_latest_stop": false,
+  "stop_command_utc": "2026-09-09T20:32:40.281593+00:00",
+  "stop_session": "results/operating_confirmation_20260909/operating25_repeat_20260909_203210_session.json",
+  "controller_process_exited": true,
+  "sensor_process_exited": true,
+  "rpm_measured": null,
+  "next_stage": "visual_standstill_confirmation_then_announced_30_second_S1",
+  "measurement_chain_verified": false,
+  "new_models_trained": false,
+  "original_hardware_questions_closed": true
+}

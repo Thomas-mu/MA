@@ -1,0 +1,609 @@
+{
+  "purpose": "paired_pilot_diagnostics_only_no_training_release",
+  "source_script_sha256": "943d73aa498d30ea90b47bc75d951ebb905c6585c2c6e8ca1e76f18ff42a6724",
+  "fft_implementation_sha256": "9ef400b81fe0eaba58629f62e5fbd2e89d736a984d6e10ff910e47513618d67b",
+  "diagnostic_bands_hz": {
+    "1_to_90_hz": [
+      1.0,
+      90.0
+    ],
+    "5_to_80_hz": [
+      5.0,
+      80.0
+    ]
+  },
+  "band_definition": "Diagnostic summaries chosen for broad comparison, not experimentally validated useful bands or acceptance criteria.",
+  "spectral_method": "Each recording: 512-sample symmetric Hann, 256-sample hop, per-segment mean removed, one-sided PSD, arithmetic mean over full segments; trapezoidal integration with linearly interpolated common exact band endpoints.",
+  "vector_definition": "sqrt(sum(axis population variance)); no mean removed from magnitude before forming vector. magnitude_ac_rms_g is separately std(norm(xyz)).",
+  "time_sections": "Non-overlapping 5-second host-relative intervals; own axis mean removed within each section. Rates use first/last host completion; no hardware sensor timestamps.",
+  "records": {
+    "standstill": {
+      "input_csv": "data/controlled_20260909/standstill_20260909_200838.csv",
+      "hashes": {
+        "data/controlled_20260909/standstill_20260909_200838.csv": "1f2f5f24ff34ca1f6c1c863daa4d325ef9e98f2e929a66eaf47adb81c5ec25cb",
+        "data/controlled_20260909/standstill_20260909_200838.json": "57ff4ebd119f65e2f4838fb19d6dd3ebb73d249498bb7bc080856628db00a09b"
+      },
+      "started_at_utc": "2026-09-09T20:08:39.008863+00:00",
+      "finished_at_utc": "2026-09-09T20:09:09.080003+00:00",
+      "state": "controlled_standstill",
+      "mounting_id": "fan_frame_corner_adxl345_gpio18_v1",
+      "physical_state_source": "user_visual_standstill_confirmation_after_previous_shutdown; no subsequent fan or mount change reported",
+      "pwm_setpoint_percent": 0.0,
+      "rpm_measured": null,
+      "statistics": {
+        "axes": {
+          "x_g": {
+            "mean_g": -0.15295393185854994,
+            "min_g": -0.1794,
+            "max_g": -0.1248,
+            "ac_rms_g": 0.006464824979460497
+          },
+          "y_g": {
+            "mean_g": 0.006333327950912321,
+            "min_g": -0.0195,
+            "max_g": 0.027299999999999998,
+            "ac_rms_g": 0.0054615412000775
+          },
+          "z_g": {
+            "mean_g": -1.090168076860972,
+            "min_g": -1.1232,
+            "max_g": -1.0373999999999999,
+            "ac_rms_g": 0.00902372367812312
+          }
+        },
+        "vector_ac_rms_g": 0.012371337167595113,
+        "magnitude_ac_rms_g": 0.008791174769828434
+      },
+      "timing": {
+        "samples": 6193,
+        "host_span_seconds": 29.988424624,
+        "configured_duration_seconds": 30,
+        "configured_odr_hz": 200,
+        "host_observed_fifo_rate_hz": 206.4796693269605,
+        "rate_deviation_from_nominal_percent": 3.2398346634802566,
+        "host_interval_min_ms": 2.393537,
+        "host_interval_p50_ms": 5.5370085,
+        "host_interval_p99_ms": 5.70228596,
+        "host_interval_max_ms": 7.103851,
+        "host_intervals_over_10_ms": 0,
+        "nonmonotonic_host_intervals": 0,
+        "sample_indices_contiguous": true,
+        "fifo_depth_max": 1,
+        "consecutive_equal_xyz_fraction": 0.005975452196382429,
+        "gap_flagged_samples": 0,
+        "overrun_flagged_samples": 0,
+        "saturated_flagged_samples": 0,
+        "lost_samples_exact": null
+      },
+      "five_second_sections": [
+        {
+          "start_seconds": 0,
+          "stop_seconds": 5,
+          "samples": 1033,
+          "host_span_seconds": 4.997464102,
+          "host_observed_fifo_rate_hz": 206.50473498888977,
+          "axes": {
+            "x_g": {
+              "mean_g": -0.15299477250726037,
+              "min_g": -0.1755,
+              "max_g": -0.1326,
+              "ac_rms_g": 0.006724002444864752
+            },
+            "y_g": {
+              "mean_g": 0.006304937076476283,
+              "min_g": -0.0156,
+              "max_g": 0.027299999999999998,
+              "ac_rms_g": 0.0054404320500756895
+            },
+            "z_g": {
+              "mean_g": -1.0903576960309778,
+              "min_g": -1.1232,
+              "max_g": -1.0373999999999999,
+              "ac_rms_g": 0.009649486306495184
+            }
+          },
+          "vector_ac_rms_g": 0.012958514411354259,
+          "magnitude_ac_rms_g": 0.009447868864571206
+        },
+        {
+          "start_seconds": 5,
+          "stop_seconds": 10,
+          "samples": 1033,
+          "host_span_seconds": 4.998139063000001,
+          "host_observed_fifo_rate_hz": 206.4768480812475,
+          "axes": {
+            "x_g": {
+              "mean_g": -0.1530174249757986,
+              "min_g": -0.1716,
+              "max_g": -0.12869999999999998,
+              "ac_rms_g": 0.006626076149637098
+            },
+            "y_g": {
+              "mean_g": 0.006267182962245886,
+              "min_g": -0.0195,
+              "max_g": 0.027299999999999998,
+              "ac_rms_g": 0.005807282331341824
+            },
+            "z_g": {
+              "mean_g": -1.0900443368828654,
+              "min_g": -1.1193,
+              "max_g": -1.0608,
+              "ac_rms_g": 0.009244584996775038
+            }
+          },
+          "vector_ac_rms_g": 0.012770738623090782,
+          "magnitude_ac_rms_g": 0.008958506680524893
+        },
+        {
+          "start_seconds": 10,
+          "stop_seconds": 15,
+          "samples": 1032,
+          "host_span_seconds": 4.9932148210000005,
+          "host_observed_fifo_rate_hz": 206.48020102478182,
+          "axes": {
+            "x_g": {
+              "mean_g": -0.15287093023255813,
+              "min_g": -0.1794,
+              "max_g": -0.12869999999999998,
+              "ac_rms_g": 0.006435062318396315
+            },
+            "y_g": {
+              "mean_g": 0.0063110465116279066,
+              "min_g": -0.011699999999999999,
+              "max_g": 0.027299999999999998,
+              "ac_rms_g": 0.005260459686578326
+            },
+            "z_g": {
+              "mean_g": -1.0902313953488372,
+              "min_g": -1.1154,
+              "max_g": -1.053,
+              "ac_rms_g": 0.008881235269570667
+            }
+          },
+          "vector_ac_rms_g": 0.01216383175932756,
+          "magnitude_ac_rms_g": 0.008639296136965948
+        },
+        {
+          "start_seconds": 15,
+          "stop_seconds": 20,
+          "samples": 1032,
+          "host_span_seconds": 4.994547115,
+          "host_observed_fifo_rate_hz": 206.42512249081068,
+          "axes": {
+            "x_g": {
+              "mean_g": -0.15320726744186045,
+              "min_g": -0.1716,
+              "max_g": -0.12869999999999998,
+              "ac_rms_g": 0.006419169110407495
+            },
+            "y_g": {
+              "mean_g": 0.006348837209302326,
+              "min_g": -0.011699999999999999,
+              "max_g": 0.023399999999999997,
+              "ac_rms_g": 0.005296115166536706
+            },
+            "z_g": {
+              "mean_g": -1.0897968023255813,
+              "min_g": -1.1193,
+              "max_g": -1.053,
+              "ac_rms_g": 0.008914266472998308
+            }
+          },
+          "vector_ac_rms_g": 0.0121950282770009,
+          "magnitude_ac_rms_g": 0.008702705999136305
+        },
+        {
+          "start_seconds": 20,
+          "stop_seconds": 25,
+          "samples": 1033,
+          "host_span_seconds": 4.998776077000002,
+          "host_observed_fifo_rate_hz": 206.45053591185288,
+          "axes": {
+            "x_g": {
+              "mean_g": -0.15289661181026137,
+              "min_g": -0.1755,
+              "max_g": -0.1248,
+              "ac_rms_g": 0.006464174721639551
+            },
+            "y_g": {
+              "mean_g": 0.006297386253630204,
+              "min_g": -0.0156,
+              "max_g": 0.027299999999999998,
+              "ac_rms_g": 0.005505621780825425
+            },
+            "z_g": {
+              "mean_g": -1.0903916747337852,
+              "min_g": -1.1193,
+              "max_g": -1.0569,
+              "ac_rms_g": 0.008742015491439877
+            }
+          },
+          "vector_ac_rms_g": 0.012186888892492533,
+          "magnitude_ac_rms_g": 0.008562948643556893
+        },
+        {
+          "start_seconds": 25,
+          "stop_seconds": 30,
+          "samples": 1030,
+          "host_span_seconds": 4.983985372999999,
+          "host_observed_fifo_rate_hz": 206.4612800780786,
+          "axes": {
+            "x_g": {
+              "mean_g": -0.15273611650485436,
+              "min_g": -0.1716,
+              "max_g": -0.1326,
+              "ac_rms_g": 0.006091265150365538
+            },
+            "y_g": {
+              "mean_g": 0.006470970873786407,
+              "min_g": -0.011699999999999999,
+              "max_g": 0.027299999999999998,
+              "ac_rms_g": 0.0054391177565875
+            },
+            "z_g": {
+              "mean_g": -1.0901863106796117,
+              "min_g": -1.1115,
+              "max_g": -1.053,
+              "ac_rms_g": 0.008657991256781595
+            }
+          },
+          "vector_ac_rms_g": 0.011901610214781429,
+          "magnitude_ac_rms_g": 0.008382064057472584
+        }
+      ],
+      "band_power_g2": {
+        "1_to_90_hz": {
+          "x_g": 3.6549589278539205e-05,
+          "y_g": 2.614157210016289e-05,
+          "z_g": 7.075543130789772e-05,
+          "xyz_sum": 0.0001334465926865998
+        },
+        "5_to_80_hz": {
+          "x_g": 3.0993819774989576e-05,
+          "y_g": 2.1843510940974508e-05,
+          "z_g": 5.9621789871211884e-05,
+          "xyz_sum": 0.00011245912058717596
+        }
+      },
+      "largest_psd_bin_hz": {
+        "x_g": 55.65272337328232,
+        "y_g": 80.25284022668973,
+        "z_g": 75.01019237268487
+      },
+      "high_band_power_fraction": {
+        "x_g": 0.1880913708748847,
+        "y_g": 0.18472326781644235,
+        "z_g": 0.19357003910572226
+      },
+      "frequency_bin_spacing_hz": 0.40328060415421974
+    },
+    "operating25": {
+      "input_csv": "data/controlled_20260909/operating25_20260909_201158.csv",
+      "hashes": {
+        "data/controlled_20260909/operating25_20260909_201158.csv": "a8c882263a69be2290883cfaf959063a2b1a124ed76b97bb631f528abbbee583",
+        "data/controlled_20260909/operating25_20260909_201158.json": "1402e156e06aebad644b480eff94216a2fae9d59b4a48005e2879bf98b2da3d2"
+      },
+      "started_at_utc": "2026-09-09T20:24:35.252261+00:00",
+      "finished_at_utc": "2026-09-09T20:25:05.333380+00:00",
+      "state": "normal_operating_25_percent_pilot",
+      "mounting_id": "fan_frame_corner_adxl345_gpio18_v1",
+      "physical_state_source": "operator_visual_running_observation",
+      "pwm_setpoint_percent": 25.0,
+      "rpm_measured": null,
+      "statistics": {
+        "axes": {
+          "x_g": {
+            "mean_g": -0.15405534246575342,
+            "min_g": -0.1833,
+            "max_g": -0.12869999999999998,
+            "ac_rms_g": 0.0068598258858433925
+          },
+          "y_g": {
+            "mean_g": 0.0071224496373892025,
+            "min_g": -0.027299999999999998,
+            "max_g": 0.0351,
+            "ac_rms_g": 0.005926487651624088
+          },
+          "z_g": {
+            "mean_g": -1.0890773569701855,
+            "min_g": -1.1271,
+            "max_g": -1.0218,
+            "ac_rms_g": 0.009454911949696825
+          }
+        },
+        "vector_ac_rms_g": 0.013098695623819177,
+        "magnitude_ac_rms_g": 0.009230485358753657
+      },
+      "timing": {
+        "samples": 6205,
+        "host_span_seconds": 29.993252892,
+        "configured_duration_seconds": 30,
+        "configured_odr_hz": 200,
+        "host_observed_fifo_rate_hz": 206.84652052711402,
+        "rate_deviation_from_nominal_percent": 3.4232602635570153,
+        "host_interval_min_ms": 3.612647,
+        "host_interval_p50_ms": 5.5751105,
+        "host_interval_p99_ms": 5.684895340000001,
+        "host_interval_max_ms": 6.008778,
+        "host_intervals_over_10_ms": 0,
+        "nonmonotonic_host_intervals": 0,
+        "sample_indices_contiguous": true,
+        "fifo_depth_max": 1,
+        "consecutive_equal_xyz_fraction": 0.0038684719535783366,
+        "gap_flagged_samples": 0,
+        "overrun_flagged_samples": 0,
+        "saturated_flagged_samples": 0,
+        "lost_samples_exact": null
+      },
+      "five_second_sections": [
+        {
+          "start_seconds": 0,
+          "stop_seconds": 5,
+          "samples": 1035,
+          "host_span_seconds": 4.999726047,
+          "host_observed_fifo_rate_hz": 206.81133131692965,
+          "axes": {
+            "x_g": {
+              "mean_g": -0.15369014492753624,
+              "min_g": -0.1716,
+              "max_g": -0.12869999999999998,
+              "ac_rms_g": 0.0068188074295733505
+            },
+            "y_g": {
+              "mean_g": 0.006816521739130435,
+              "min_g": -0.027299999999999998,
+              "max_g": 0.0312,
+              "ac_rms_g": 0.005888100460431709
+            },
+            "z_g": {
+              "mean_g": -1.0887217391304347,
+              "min_g": -1.1232,
+              "max_g": -1.0218,
+              "ac_rms_g": 0.009130386749356003
+            }
+          },
+          "vector_ac_rms_g": 0.01282691794573258,
+          "magnitude_ac_rms_g": 0.008943318655429779
+        },
+        {
+          "start_seconds": 5,
+          "stop_seconds": 10,
+          "samples": 1034,
+          "host_span_seconds": 4.992465770000001,
+          "host_observed_fifo_rate_hz": 206.9117841943661,
+          "axes": {
+            "x_g": {
+              "mean_g": -0.15364642166344292,
+              "min_g": -0.1755,
+              "max_g": -0.12869999999999998,
+              "ac_rms_g": 0.006693117785218144
+            },
+            "y_g": {
+              "mean_g": 0.007124854932301742,
+              "min_g": -0.011699999999999999,
+              "max_g": 0.0312,
+              "ac_rms_g": 0.005735106118778933
+            },
+            "z_g": {
+              "mean_g": -1.0891447775628624,
+              "min_g": -1.1193,
+              "max_g": -1.0569,
+              "ac_rms_g": 0.009511958105501251
+            }
+          },
+          "vector_ac_rms_g": 0.012967907112609572,
+          "magnitude_ac_rms_g": 0.009257955051330247
+        },
+        {
+          "start_seconds": 10,
+          "stop_seconds": 15,
+          "samples": 1034,
+          "host_span_seconds": 4.993810325,
+          "host_observed_fifo_rate_hz": 206.8560743744307,
+          "axes": {
+            "x_g": {
+              "mean_g": -0.15441586073500965,
+              "min_g": -0.1794,
+              "max_g": -0.12869999999999998,
+              "ac_rms_g": 0.006780428933496121
+            },
+            "y_g": {
+              "mean_g": 0.0071361702127659575,
+              "min_g": -0.027299999999999998,
+              "max_g": 0.0351,
+              "ac_rms_g": 0.006381029005898844
+            },
+            "z_g": {
+              "mean_g": -1.0885526112185686,
+              "min_g": -1.1232,
+              "max_g": -1.0569,
+              "ac_rms_g": 0.009236790345648591
+            }
+          },
+          "vector_ac_rms_g": 0.013115259951132526,
+          "magnitude_ac_rms_g": 0.009022369142828952
+        },
+        {
+          "start_seconds": 15,
+          "stop_seconds": 20,
+          "samples": 1034,
+          "host_span_seconds": 4.994316991,
+          "host_observed_fifo_rate_hz": 206.83508913461358,
+          "axes": {
+            "x_g": {
+              "mean_g": -0.1541970986460348,
+              "min_g": -0.1833,
+              "max_g": -0.1326,
+              "ac_rms_g": 0.006879103227502866
+            },
+            "y_g": {
+              "mean_g": 0.007358704061895552,
+              "min_g": -0.011699999999999999,
+              "max_g": 0.027299999999999998,
+              "ac_rms_g": 0.005654708815034318
+            },
+            "z_g": {
+              "mean_g": -1.0893484526112185,
+              "min_g": -1.1271,
+              "max_g": -1.0608,
+              "ac_rms_g": 0.009592226791537367
+            }
+          },
+          "vector_ac_rms_g": 0.013088491426354468,
+          "magnitude_ac_rms_g": 0.009378739144681701
+        },
+        {
+          "start_seconds": 20,
+          "stop_seconds": 25,
+          "samples": 1035,
+          "host_span_seconds": 4.998462213,
+          "host_observed_fifo_rate_hz": 206.86362243787158,
+          "axes": {
+            "x_g": {
+              "mean_g": -0.15429304347826087,
+              "min_g": -0.1833,
+              "max_g": -0.12869999999999998,
+              "ac_rms_g": 0.0067088613916239685
+            },
+            "y_g": {
+              "mean_g": 0.007287536231884058,
+              "min_g": -0.0156,
+              "max_g": 0.0312,
+              "ac_rms_g": 0.005680981851705908
+            },
+            "z_g": {
+              "mean_g": -1.0888460869565217,
+              "min_g": -1.1232,
+              "max_g": -1.053,
+              "ac_rms_g": 0.009287909737760456
+            }
+          },
+          "vector_ac_rms_g": 0.012788574716058864,
+          "magnitude_ac_rms_g": 0.00903840112164325
+        },
+        {
+          "start_seconds": 25,
+          "stop_seconds": 30,
+          "samples": 1033,
+          "host_span_seconds": 4.990328362,
+          "host_observed_fifo_rate_hz": 206.80001898440207,
+          "axes": {
+            "x_g": {
+              "mean_g": -0.15408964181994192,
+              "min_g": -0.1794,
+              "max_g": -0.1326,
+              "ac_rms_g": 0.007227948014141633
+            },
+            "y_g": {
+              "mean_g": 0.007010939012584705,
+              "min_g": -0.0156,
+              "max_g": 0.0312,
+              "ac_rms_g": 0.006166697430676166
+            },
+            "z_g": {
+              "mean_g": -1.0898517909002903,
+              "min_g": -1.1271,
+              "max_g": -1.0491,
+              "ac_rms_g": 0.009890439475436056
+            }
+          },
+          "vector_ac_rms_g": 0.013714670346526956,
+          "magnitude_ac_rms_g": 0.009663010832534655
+        }
+      ],
+      "band_power_g2": {
+        "1_to_90_hz": {
+          "x_g": 4.169866507426745e-05,
+          "y_g": 3.074794619016044e-05,
+          "z_g": 7.763876204088187e-05,
+          "xyz_sum": 0.00015008537330530976
+        },
+        "5_to_80_hz": {
+          "x_g": 3.6064550542562276e-05,
+          "y_g": 2.672898146165101e-05,
+          "z_g": 6.609856232012048e-05,
+          "xyz_sum": 0.00012889209432433377
+        }
+      },
+      "largest_psd_bin_hz": {
+        "x_g": 71.50748854159997,
+        "y_g": 23.027835293057617,
+        "z_g": 7.271947987281353
+      },
+      "high_band_power_fraction": {
+        "x_g": 0.1724948550191699,
+        "y_g": 0.17633069914191596,
+        "z_g": 0.18365463235755913
+      },
+      "frequency_bin_spacing_hz": 0.4039971104045196
+    }
+  },
+  "band_comparison": {
+    "1_to_90_hz": {
+      "x_g": {
+        "operating_to_standstill_power_ratio": 1.140879169844779,
+        "operating_to_standstill_power_db": 0.5723965086132305,
+        "excess_power_g2": 5.1490757957282424e-06,
+        "conditional_excess_snr_db": -8.511532161896566
+      },
+      "y_g": {
+        "operating_to_standstill_power_ratio": 1.1762087632812583,
+        "operating_to_standstill_power_db": 0.7048441076616863,
+        "excess_power_g2": 4.606374089997548e-06,
+        "conditional_excess_snr_db": -7.539724968884692
+      },
+      "z_g": {
+        "operating_to_standstill_power_ratio": 1.097283425537056,
+        "operating_to_standstill_power_db": 0.4031881923238481,
+        "excess_power_g2": 6.883330732984153e-06,
+        "conditional_excess_snr_db": -10.119611454557107
+      },
+      "xyz_sum": {
+        "operating_to_standstill_power_ratio": 1.1246849416214488,
+        "operating_to_standstill_power_db": 0.5103088042218459,
+        "excess_power_g2": 1.6638780618709944e-05,
+        "conditional_excess_snr_db": -9.041859937195653
+      }
+    },
+    "5_to_80_hz": {
+      "x_g": {
+        "operating_to_standstill_power_ratio": 1.1636045767958074,
+        "operating_to_standstill_power_db": 0.6580542078510656,
+        "excess_power_g2": 5.070730767572699e-06,
+        "conditional_excess_snr_db": -7.862045512187217
+      },
+      "y_g": {
+        "operating_to_standstill_power_ratio": 1.2236577505272852,
+        "operating_to_standstill_power_db": 0.8765996532430744,
+        "excess_power_g2": 4.885470520676503e-06,
+        "conditional_excess_snr_db": -6.504160474000695
+      },
+      "z_g": {
+        "operating_to_standstill_power_ratio": 1.1086309629901916,
+        "operating_to_standstill_power_db": 0.44787003850525137,
+        "excess_power_g2": 6.476772448908599e-06,
+        "conditional_excess_snr_db": -9.640463705188115
+      },
+      "xyz_sum": {
+        "operating_to_standstill_power_ratio": 1.1461239751063081,
+        "operating_to_standstill_power_db": 0.5923159738046,
+        "excess_power_g2": 1.6432973737157808e-05,
+        "conditional_excess_snr_db": -8.35278521901863
+      }
+    }
+  },
+  "conditional_snr_assumptions": [
+    "Stationary and unchanged background between separate standstill and operating recordings.",
+    "Additive, uncorrelated vibration and background; identical mechanical transfer and sensor response.",
+    "Only positive operating-minus-standstill power is converted to SNR; this is an assumption-dependent estimate, not an independently measured fan SNR."
+  ],
+  "limitations": [
+    "One standstill and one operating run; no repeatability or statistical confidence established.",
+    "Host-observed FIFO throughput estimates frequency axis; nominal ODR 200 Hz is not measured conversion timing.",
+    "No gap/overrun flags do not prove exact zero lost sensor samples.",
+    "No tachometer reference: spectral peaks must not be assigned to shaft speed or blade passage.",
+    "Both diagnostic bands retain substantial near-Nyquist content; alias absence and useful bandwidth are not proven.",
+    "Changed mount details are not inferred from axis means; user confirms unchanged mounting.",
+    "No new models, scaling, thresholds or final measurement parameters are released by this analysis."
+  ]
+}

@@ -1,0 +1,65 @@
+{
+  "created_utc": "2026-09-10T08:46:46.816192+00:00",
+  "status": "provisional_candidate_requires_restart_and_timing_check",
+  "recommended_candidate_pwm_percent": 75,
+  "pwm_frequency_hz": 25000,
+  "final_operating_point_validated": false,
+  "evidence": {
+    "operating50": {
+      "mean_vector_ac_rms_g": 0.014734697467325988,
+      "mean_increase_over_pre_g": 0.0019900268544248336,
+      "mean_increase_over_post_g": 0.0020000690932455156,
+      "minimum_operating_minus_maximum_background_recording_g": 0.001696396173407019,
+      "repeat_difference_g": 0.00028703386038279703,
+      "relative_repeat_difference_percent": 1.9480132593104889,
+      "five_second_rms_range_g": {
+        "mean": 0.014726404790248697,
+        "min": 0.014058110335089165,
+        "max": 0.015469287440551913,
+        "range": 0.0014111771054627475,
+        "descriptive_cv_percent": 2.814107547215469
+      },
+      "minimum_operating_minus_maximum_background_section_g": 0.0008446913374839018,
+      "observed_background_change_or_repeat_difference_g": 0.0003203119792941928,
+      "meaning": "Descriptive margins and variability; no automatic pass threshold or PWM selection."
+    },
+    "operating75": {
+      "mean_vector_ac_rms_g": 0.02937449809092295,
+      "mean_increase_over_pre_g": 0.016629827478021796,
+      "mean_increase_over_post_g": 0.016639869716842476,
+      "minimum_operating_minus_maximum_background_recording_g": 0.016467110765518725,
+      "repeat_difference_g": 2.5205923353303905e-05,
+      "relative_repeat_difference_percent": 0.08580886480267325,
+      "five_second_rms_range_g": {
+        "mean": 0.029369382934344723,
+        "min": 0.029109919227601994,
+        "max": 0.029965948603346133,
+        "range": 0.0008560293757441384,
+        "descriptive_cv_percent": 0.8459828059597493
+      },
+      "minimum_operating_minus_maximum_background_section_g": 0.01589650022999673,
+      "observed_background_change_or_repeat_difference_g": 0.0003203119792941928,
+      "meaning": "Descriptive margins and variability; no automatic pass threshold or PWM selection."
+    }
+  },
+  "reason": "Larger observed background margin and lower whole-record repeat difference and absolute/relative five-second vector-AC-RMS variation than 50%, within this pilot.",
+  "independent_restart_repeats_per_operating_point": 0,
+  "files_per_phase": 2,
+  "limitations": [
+    "Two sequential files from each held state do not establish statistical reproducibility.",
+    "Actual time since PWM command differs: about 1487.56s for first50% and103.53s for first75%.",
+    "Sequence elapsed48.85min; original controller unavailable before final references; cause/time unknown.",
+    "Standstill-versus-operation separation is not evidence of anomaly detection at fixed PWM.",
+    "No measured RPM, electrical waveform, alias-freedom proof or new absolute sensor calibration."
+  ],
+  "next_step": "Controlled normal-operation repeats across separate restarts, comparable actual settling times, alternating50/75 order and beginning/end standstill references; then decide final point.",
+  "later_anomaly_comparison_requires_same_pwm": true,
+  "later_second_normal_point_requires_frozen_models_scaling_thresholds": true,
+  "models_trained": false,
+  "anomalies_induced": false,
+  "final_pwm_setpoint_percent": 0,
+  "mechanical_state_source": "operator_confirmed_full_standstill_before_closing_pair; no subsequent PWM change",
+  "analysis_path": "results/pwm50_75_sequence_20260910/comparison/report.json",
+  "analysis_sha256": "1169e18403ac1c14778f1afc543f769d51176123368b997f4ca5d8c238b92c43",
+  "written_report_sha256": "274ac6d6413f259a0324c8d17d5895bc8422994237e5162aa2fcc8216824c7de"
+}
