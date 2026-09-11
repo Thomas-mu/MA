@@ -1,0 +1,130 @@
+{
+  "created_utc": "2026-09-11T11:17:03.904882+00:00",
+  "mounting_id": "fan_upright_position_v4_20260911_103726",
+  "independent_recordings_per_operating_condition": 1,
+  "primary_time_window_s": [
+    180,
+    300
+  ],
+  "settling_time_validated": false,
+  "historical_horizontal_reference_used": false,
+  "all_quality_flags_clear": true,
+  "primary": {
+    "normal_before": {
+      "mean_mg": 27.736778507218087,
+      "median_mg": 27.67169579274764,
+      "std_mg_ddof0": 0.2525685986948969,
+      "min_mg": 27.38804348691058,
+      "max_mg": 28.418646848442666,
+      "windows": 24,
+      "linear_slope_mg_min": -0.11763866866721247,
+      "theil_sen_slope_mg_min": -0.112886349410524,
+      "fitted_120s_change_mg": -0.23527733733442494,
+      "fitted_120s_change_percent": -0.8482504097337674,
+      "last60_minus_first60_mg": -0.15908442650403032,
+      "four_30s_means_mg": [
+        27.78105064746317,
+        27.851590793477033,
+        27.691093337675884,
+        27.62337925025626
+      ],
+      "residual_std_mg": 0.24328163416543933
+    },
+    "airflow_modified": {
+      "mean_mg": 36.48053432401462,
+      "median_mg": 36.70574857750856,
+      "std_mg_ddof0": 0.6901550547984567,
+      "min_mg": 34.94817580009536,
+      "max_mg": 37.18120656421868,
+      "windows": 24,
+      "linear_slope_mg_min": 0.8649560207544573,
+      "theil_sen_slope_mg_min": 0.8516349449148833,
+      "fitted_120s_change_mg": 1.7299120415089146,
+      "fitted_120s_change_percent": 4.742013990650729,
+      "last60_minus_first60_mg": 0.6810015402493761,
+      "four_30s_means_mg": [
+        35.41547769099097,
+        36.8645894167889,
+        36.719780914453054,
+        36.92228927382555
+      ],
+      "residual_std_mg": 0.47682699546104496
+    },
+    "normal_after": {
+      "mean_mg": 33.14771066519531,
+      "median_mg": 33.09767599585844,
+      "std_mg_ddof0": 0.5450320437467152,
+      "min_mg": 32.095154494927485,
+      "max_mg": 34.315830270998134,
+      "windows": 24,
+      "linear_slope_mg_min": 0.8002288398788081,
+      "theil_sen_slope_mg_min": 0.7680087098991848,
+      "fitted_120s_change_mg": 1.6004576797576162,
+      "fitted_120s_change_percent": 4.828260074799304,
+      "last60_minus_first60_mg": 0.8793866171977172,
+      "four_30s_means_mg": [
+        32.580187935320104,
+        32.835846777872796,
+        33.431474116610254,
+        33.74333383097809
+      ],
+      "residual_std_mg": 0.28978459633937986
+    }
+  },
+  "normal_after_minus_before_mg": 5.410932157977225,
+  "normal_after_minus_before_percent": 19.50814928478125,
+  "after_windows_inside_observed_before_range": 0,
+  "after_windows_total": 24,
+  "normal_observed_ranges_overlap": false,
+  "normal_within_rms_std_mg": 0.424765126721477,
+  "altered_contrasts": {
+    "normal_before": {
+      "mean_difference_mg": 8.743755816796533,
+      "percent_of_normal_mean": 31.52404960987484,
+      "absolute_difference_exceeds_observed_normal_mean_shift": true,
+      "absolute_difference_exceeds_this_normal_window_range": true,
+      "absolute_difference_in_this_normal_window_std": 34.61933059762118,
+      "observed_ranges_overlap": false
+    },
+    "normal_after": {
+      "mean_difference_mg": 3.332823658819308,
+      "percent_of_normal_mean": 10.054461053078793,
+      "absolute_difference_exceeds_observed_normal_mean_shift": false,
+      "absolute_difference_exceeds_this_normal_window_range": true,
+      "absolute_difference_in_this_normal_window_std": 6.114913236859378,
+      "observed_ranges_overlap": false
+    }
+  },
+  "input_sha256": {
+    "results/upright_position_v4_sequence_20260911_104025/standstill_session.json": "68c3428ba0f2ee78b9003f16f4319babb3ff9eb399b8694aae2bb30eb7cf660d",
+    "data/upright_position_v4_sequence_20260911_104025/standstill_0pwm_30s_20260911_104359_704943.csv": "95dd293a1a30f36efb5556961cb388892a69281ded07495b26edf6b8df8d6fd8",
+    "data/upright_position_v4_sequence_20260911_104025/standstill_0pwm_30s_20260911_104359_704943.json": "4934669c8b4cd8010e0fdae178840cfe9cd52eabca3857a1067cee449ea51c84",
+    "results/upright_position_v4_sequence_20260911_104025/standstill_fan.jsonl": "d92d626315a951243b0cec6b9edd900779d7b4b70dbf32247d0e0a041b02520d",
+    "results/upright_position_v4_sequence_20260911_104025/initial_release.json": "60ac00d8684e849fe2955a73786b38885503df2bdea5897e68a1c73e2875710a",
+    "results/upright_position_v4_sequence_20260911_104025/mounting.json": "8c46ff0527da4db47efdd45ae4d9a1e2847d0e3d7606a52c45d2c59a2a19d6cd",
+    "results/upright_position_v4_sequence_20260911_104025/analysis/standstill/summary.json": "cf02a6c7af2f9a8bfc3818a3446ea45a1b7bf392614a2407ddb4c8feda563858",
+    "results/upright_position_v4_sequence_20260911_104025/analysis/standstill/five_second_rms.csv": "86f4b4744c27908877c9a4bdf7cc5f3fdbd44382a5e3ca4a94af151a3e7ee801",
+    "results/upright_position_v4_sequence_20260911_104025/normal_before_session.json": "7f68de304326ab81a1d96900404692f9682f7a30b7f6e4495a53e37358b62356",
+    "data/upright_position_v4_sequence_20260911_104025/normal_before_75pwm_300s_20260911_104430_339886.csv": "8a141c4284bac2cb64c11f0006fa29d336a54ea2936127946be59b2ea1a9426b",
+    "data/upright_position_v4_sequence_20260911_104025/normal_before_75pwm_300s_20260911_104430_339886.json": "9f476d46357726b9d62150570110311e1b0af5b0f872e806be7129088f452446",
+    "results/upright_position_v4_sequence_20260911_104025/normal_before_fan.jsonl": "02a5950af3205bab5784c6ad891d3cff9bb29c383bfebdc437be102510cb8c26",
+    "results/upright_position_v4_sequence_20260911_104025/analysis/normal_before/summary.json": "1f88a1700e303fc6d05e3e4fb509bdbe77fcf15def4ed712e619679766f40e08",
+    "results/upright_position_v4_sequence_20260911_104025/analysis/normal_before/five_second_rms.csv": "7a47eca374a227eae0fefdb1be422542aa9b66caeb4d6134c5c60543dc4959c0",
+    "results/upright_position_v4_sequence_20260911_104025/airflow_modified_session.json": "105ab838a9b2bded5369fdbb41beda8c88806a4970d2417a62bbcb77b2838d34",
+    "data/upright_position_v4_sequence_20260911_104025/airflow_modified_75pwm_300s_20260911_110050_628158.csv": "1efabb0203d77cc6d06eb9d085c689c6de14cc6293373b241d3f8abbd686e394",
+    "data/upright_position_v4_sequence_20260911_104025/airflow_modified_75pwm_300s_20260911_110050_628158.json": "1a2df4f9dbff4abd9094d6ca7e32421e26ef3e1a292be51573400be2de72bd3e",
+    "results/upright_position_v4_sequence_20260911_104025/airflow_modified_fan.jsonl": "115f8e9138bd6a020bdc6ca39b52e84c925f627215d9ebc5a8f29cdd4bc1058a",
+    "results/upright_position_v4_sequence_20260911_104025/airflow_modified_release.json": "2a76a46bcc534fecbd3ba7dff8a0868d27954f1577cdeb93f4d971513935e947",
+    "results/upright_position_v4_sequence_20260911_104025/analysis/airflow_modified/summary.json": "dde53f34d8ea289375d7d77d65a16e0780f8a04335fe75427223043d717305bb",
+    "results/upright_position_v4_sequence_20260911_104025/analysis/airflow_modified/five_second_rms.csv": "89d02fc9fe338874a38665012390398a9cdc4b66d68c1fe9654fe0f3bd80f505",
+    "results/upright_position_v4_sequence_20260911_104025/normal_after_session.json": "88782e3f05bdfa22f382c945cb2d57a14f4152ef506e869b37a946b049941a67",
+    "data/upright_position_v4_sequence_20260911_104025/normal_after_75pwm_300s_20260911_111103_206329.csv": "5357e8d0c0592a6e3765904f16ea037937f2f5f54e7c0d88ba2c42cda6589944",
+    "data/upright_position_v4_sequence_20260911_104025/normal_after_75pwm_300s_20260911_111103_206329.json": "5203831902be0c55c489fae450dd43bfcb7c196c7dcffd933582c4c91738e2ef",
+    "results/upright_position_v4_sequence_20260911_104025/normal_after_fan.jsonl": "7f931a6d579720ef6714c100c8dc6d19d2ed43b4ab51785595a64bc97e7b0822",
+    "results/upright_position_v4_sequence_20260911_104025/normal_after_release.json": "e462623dde719dc8033dfe92905d0ea7abf03ccec63326d882c5fdeaabfdfd39",
+    "results/upright_position_v4_sequence_20260911_104025/analysis/normal_after/summary.json": "d54b2777f9ac49b0f154889e6627397da7c1c608c4a8e7b3e7c4cddb2b749dcb",
+    "results/upright_position_v4_sequence_20260911_104025/analysis/normal_after/five_second_rms.csv": "735a0bb58f1e51c99e29222ce115ba4c3bfba63ce09d7ff6817d0e5a1ef18c75"
+  },
+  "models_trained": false,
+  "interpretation_limit": "One N-A-N sequence. Window counts are descriptive, not independent experimental replicates; no defect or detection claim."
+}

@@ -1,0 +1,53 @@
+{
+  "created_utc": "2026-09-11T11:19:27.229819+00:00",
+  "status": "completed_all_four_phases_zero_read_back_no_further_start",
+  "mounting_id": "fan_upright_position_v4_20260911_103726",
+  "preserved_file_count": 1009,
+  "changed_or_missing": [],
+  "all_input_hashes_match": true,
+  "capture_source_hashes_match": true,
+  "same_sensor_settings_all_phases": true,
+  "all_quality_flags_clear": true,
+  "all_phases_complete": true,
+  "plots_visually_checked": [
+    "analysis/sequence_comparison/sequence_comparison.png",
+    "analysis/normal_after/phase_overview.png"
+  ],
+  "report_links_checked": 35,
+  "report_tables_consistent": true,
+  "report_values_checked": true,
+  "report_editorial_note": "Evidence-based outcome and proposed next normal pilot added after complete numeric and visual comparison; no previous reports or data edited.",
+  "further_measurement_executed": false,
+  "models_trained": false,
+  "final_pwm_readback": {
+    "period": "40000",
+    "duty_cycle": "0",
+    "enable": "1",
+    "polarity": "normal"
+  },
+  "final_pin_readback": "18: a3    pd | lo // GPIO18 = PWM0_CHAN2",
+  "mechanical_standstill_observed_after_final_run": null,
+  "readable_device_holders": [],
+  "word_sha256": "a9a5d7d17b28098f554240a3e1650881e252db679f33319a1d11164b3246cbb8",
+  "source_sha256": {
+    "build_final_report.py": "b5c2d1551313c5cee640904f89afb40596fa81a2850ab5e6bc2b534db48c9a56",
+    "compare_sequence.py": "acaddb8e412e917facbdff1b9a8b9dc87d7ca3a59afa712770204116f9bf974f"
+  },
+  "artifact_sha256": {
+    "normal_after_fan.jsonl": "7f931a6d579720ef6714c100c8dc6d19d2ed43b4ab51785595a64bc97e7b0822",
+    "final_sequence_report.md": "23718b04efcf378839cea06ef2f8ae37e89c35f33029407ad2669e45732acef3",
+    "build_final_report.py": "b5c2d1551313c5cee640904f89afb40596fa81a2850ab5e6bc2b534db48c9a56",
+    "normal_after_readonly_spotchecks.jsonl": "56c99c001fc90a95e08e4fb7cb111a6b3e149e85b4e5f9eb97d6b0d3631f1666",
+    "normal_after_preservation_baseline.json": "dbb99fdbf6224152c79a0fb379e87a87ca86498fc14b3f1d2bdf3031df624aaa",
+    "normal_after_release.json": "e462623dde719dc8033dfe92905d0ea7abf03ccec63326d882c5fdeaabfdfd39",
+    "normal_after_geometry.json": "d04457ef6f014eb5195879cbef9412fcf008ab086495c7d2aa546f79ac15e91b",
+    "normal_after_session.json": "88782e3f05bdfa22f382c945cb2d57a14f4152ef506e869b37a946b049941a67",
+    "analysis/sequence_comparison/sequence_comparison.png": "370b8304b2ca3fe2a12d5d9d59d123fefee3ac810ea866f85fd4b125403f80d5",
+    "analysis/sequence_comparison/comparison.json": "9cee5f2d0fda7b2ae4b9cc3383b8c9f2af3fa1656be5b3da3fd28b7d207b23c3",
+    "analysis/sequence_comparison/sequence_comparison.pdf": "399cdf0b70c8847d25fb202ecf318fd50112190521056ac7cc020f1c6cc4eeb7",
+    "analysis/normal_after/phase_overview.png": "a496ff110d6a2c5d08aa3cf5f940c245eff864f3522a229950532429fd207224",
+    "analysis/normal_after/phase_overview.pdf": "f37681e823eb45ad9590e33040c1b4e240e4701448f0a790a732ee4eb8b87295",
+    "analysis/normal_after/five_second_rms.csv": "735a0bb58f1e51c99e29222ce115ba4c3bfba63ce09d7ff6817d0e5a1ef18c75",
+    "analysis/normal_after/summary.json": "d54b2777f9ac49b0f154889e6627397da7c1c608c4a8e7b3e7c4cddb2b749dcb"
+  }
+}

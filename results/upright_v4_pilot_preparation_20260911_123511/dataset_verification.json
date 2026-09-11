@@ -1,0 +1,7 @@
+{
+  "verified": true,
+  "original_recordings": 3,
+  "all_raw_and_ac_windows_recomputed_exactly": true,
+  "train_windows": 388,
+  "validation_windows": 194
+}

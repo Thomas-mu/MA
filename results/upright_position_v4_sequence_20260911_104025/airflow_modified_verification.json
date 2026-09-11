@@ -1,0 +1,39 @@
+{
+  "created_utc": "2026-09-11T11:08:02.507960+00:00",
+  "status": "airflow_modified_complete_paused_for_plate_removal",
+  "mounting_id": "fan_upright_position_v4_20260911_103726",
+  "preexisting_files_checked": 972,
+  "changed_or_missing": [],
+  "input_hashes_match": true,
+  "source_hashes_match_capture": true,
+  "same_sensor_settings": true,
+  "plots_visually_checked": true,
+  "report_links_checked": 10,
+  "report_numbers_checked": true,
+  "report_editorial_note": "Late trend interpretation added after inspecting plots and four 30-s group means; no raw data or prior report changed.",
+  "next_phase_released": false,
+  "final_pwm_readback": {
+    "period": "40000",
+    "duty_cycle": "0",
+    "enable": "1",
+    "polarity": "normal"
+  },
+  "final_pin_readback": "18: a3    pd | lo // GPIO18 = PWM0_CHAN2",
+  "mechanical_standstill_observed_after_operation": null,
+  "device_holders": [],
+  "models_trained": false,
+  "word_sha256": "a9a5d7d17b28098f554240a3e1650881e252db679f33319a1d11164b3246cbb8",
+  "artifact_sha256": {
+    "airflow_interim_report.md": "cb8e61b069f423ff9b6a7267a5ac8280a9cb24cd724345d90400d7f69c9e2afd",
+    "analysis/airflow_modified/summary.json": "dde53f34d8ea289375d7d77d65a16e0780f8a04335fe75427223043d717305bb",
+    "analysis/airflow_modified/five_second_rms.csv": "89d02fc9fe338874a38665012390398a9cdc4b66d68c1fe9654fe0f3bd80f505",
+    "analysis/airflow_modified/phase_overview.png": "bcfb197179595c18c32f751108764ea745d7e7f25faf9e18c7c7816659bc3f99",
+    "analysis/airflow_modified/phase_overview.pdf": "6003b72390d10802e8880d1bfee209ed9fbc91299302333e469b250b8a3000a8",
+    "analysis/airflow_before_comparison/comparison.json": "7147f40a02c506ce979defedc9a33c5f20de7aa04b18d0b697a1095eb9ac2729",
+    "analysis/airflow_before_comparison/comparison.png": "306741fbe28265e74d506cbd16d8cbc5ae23b85abf20a015307aa324bc878ebb",
+    "analysis/airflow_before_comparison/comparison.pdf": "8be5afbf11eefc4a7c00ff0ab113f3084a5f451cab7c92afb5f15548906638eb",
+    "airflow_modified_geometry.json": "48df352cbff493c3eca632099eac7932ca79a17fec28a246bd8d54b41ac7ffe3",
+    "airflow_modified_release.json": "2a76a46bcc534fecbd3ba7dff8a0868d27954f1577cdeb93f4d971513935e947",
+    "airflow_modified_readonly_spotchecks.jsonl": "c71746acaf78475f1e2228ddd3d5ea1feb23a8a732531c9fd1ba3492ecbc3c25"
+  }
+}

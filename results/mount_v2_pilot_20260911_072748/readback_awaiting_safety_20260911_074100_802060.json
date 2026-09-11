@@ -1,0 +1,11 @@
+{
+  "recorded_utc": "2026-09-11T07:41:00.802583+00:00",
+  "read_only": true,
+  "configuration": {
+    "period": "40000",
+    "duty_cycle": "0",
+    "enable": "1",
+    "polarity": "normal"
+  },
+  "pin18": "18: a3    pd | lo // GPIO18 = PWM0_CHAN2"
+}

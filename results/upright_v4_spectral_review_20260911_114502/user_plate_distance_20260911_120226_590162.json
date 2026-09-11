@@ -1,0 +1,16 @@
+{
+  "recorded_utc": "2026-09-11T12:02:26.590162+00:00",
+  "event": "subsequent_user_plate_distance_report",
+  "operator_message_verbatim": "10 cm entfert ",
+  "source": "user_report_not_independent_measurement",
+  "reported_distance_cm": 10,
+  "converted_distance_mm": 100,
+  "distance_reference_points": null,
+  "applicable_capture_or_future_trial": null,
+  "current_plate_inserted": null,
+  "actual_plate_width_mm": null,
+  "actual_plate_height_mm": null,
+  "interpretation": "User reports distance only. No plate dimensions, exact reference planes, current insertion state or start release inferred. Historical geometry is not retroactively changed.",
+  "new_start_released": false,
+  "hardware_commands_sent": []
+}

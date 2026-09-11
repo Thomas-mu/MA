@@ -1,0 +1,36 @@
+{
+  "created_utc": "2026-09-11T09:20:18.504844+00:00",
+  "state": "prepared_awaiting_explicit_first_release",
+  "tests": {
+    "returncode": 0,
+    "stdout": "",
+    "stderr": "...\n----------------------------------------------------------------------\nRan 3 tests in 0.003s\n\nOK\n",
+    "hardware_free": true
+  },
+  "preserved_files_checked": 888,
+  "changed_or_missing": [],
+  "word_sha256": "a9a5d7d17b28098f554240a3e1650881e252db679f33319a1d11164b3246cbb8",
+  "syntax_valid": true,
+  "no_release_file": true,
+  "no_attempt_or_recording_created": true,
+  "no_sensor_access": true,
+  "pwm_configuration_read_only": {
+    "period": "40000",
+    "duty_cycle": "0",
+    "enable": "1",
+    "polarity": "normal"
+  },
+  "hardware_pwm_writes": false,
+  "models_trained": false,
+  "new_artifact_sha256": {
+    "protocol.md": "b9a328289f3efad51b1690686ea477a546a9bc0b6e89aeec232fadb44b93c7fd",
+    "preparation_fan_readback.jsonl": "f27cecdac75747f1e45aa854073c68a4d5cb616ef878f63b509e5dd936a48ce7",
+    "baseline.json": "ef0a6b2c9edced695a8bc33391d218fe632f31a69537ba9c629904d96a309ecc",
+    "check_guards.py": "e209c84faf2194cccfde7d41dfbb2c4c8a7f4ef9c8e6b16f823f1f53ba2c5fe1",
+    "sequence_common.py": "469bd9ab22d6d9576abe6105888fa60f774a6ceae6ec4f85e54a72305058c8ae",
+    "geometry.json": "bd5f427ce21a971cba8734aaa45f0dd4fae438006ec502cc18a97d8f910fdfbf",
+    "run_phase.py": "f005aa7143eb09e6a350f72bbca0d6f1bbedc36172ecdb41eb9feb964a571d49",
+    "preparation.json": "68d682ee8b6577ce14d6b301cc80c52acef36df804e7f36cb40835e0baeef4b0",
+    "plan.json": "c1228a170f9dff57c4eea14043ff28d58077b9cd212a9ff3521682552cc7007f"
+  }
+}

@@ -1,0 +1,172 @@
+{
+  "created_utc": "2026-09-11T11:16:35.998479+00:00",
+  "phase": "normal_after",
+  "csv": "data/upright_position_v4_sequence_20260911_104025/normal_after_75pwm_300s_20260911_111103_206329.csv",
+  "mounting_id": "fan_upright_position_v4_20260911_103726",
+  "geometry": {
+    "fixture_version": "outlet_screen_v1_proposed",
+    "created_utc": "2026-09-11T11:11:02.821854+00:00",
+    "planned": {
+      "plate_width_mm": 60,
+      "plate_height_mm": 120,
+      "outlet_distance_mm": 100,
+      "alignment": "parallel to outlet plane; covers right half of frame silhouette when looking into outlet",
+      "normal_park_clearance_from_projected_outlet_mm": 120,
+      "support": "separate, tip resistant; no fan or sensor contact"
+    },
+    "actual": {
+      "plate_width_mm": null,
+      "plate_height_mm": null,
+      "outlet_distance_mm": null,
+      "material": null,
+      "alignment": null,
+      "normal_park_clearance_mm": null,
+      "clamping_details": null,
+      "fan_support_details": null,
+      "normal_state": "No plate, explicitly confirmed for this final run",
+      "movement_distance_mm": null,
+      "current_state": "Plate removed, reported by user; normal return reference"
+    },
+    "evidence": {
+      "planned_geometry_source": "results/mount_v2_review_20260911_085505/versuchsplan.md",
+      "actual_geometry_source": null,
+      "dimensions_measured_by_software": false,
+      "separate_tip_resistant_no_contact": "user specified operating procedure; not independently observed",
+      "phase_release_source": "normal_after_release.json",
+      "fan_and_sensor_position_unchanged": "Required throughout this sequence; no further movement reported after initial v4 readiness. Not independently measured."
+    },
+    "note": "Plate removal confirmed; parking distance, former actual dimensions, outlet distance and alignment remain unknown. Planned values are not actual measurements. mounting.json is the preserved initial-condition snapshot.",
+    "mounting_id": "fan_upright_position_v4_20260911_103726",
+    "outlet_direction": {
+      "model": "ARCTIC P12 Pro PST",
+      "manufacturer_manual": "https://support.arctic.de/de/p12-pro-pst",
+      "manufacturer_illustration_url": "https://support.arctic.de/products/p12-pro-pst/img/001.jpg",
+      "local_illustration": "manufacturer_airflow_direction.jpg",
+      "illustration_sha256": "275f3ab54d49b55214b96698004fc703379ac541326aae24b4e8efc18b98d003",
+      "illustration_visually_inspected": true,
+      "manufacturer_illustration_interpretation": "straight red arrows denote airflow; curved blue arrows denote rotation; use airflow direction, not rotation, to identify outlet",
+      "actual_orientation_in_room": null,
+      "actual_outlet_identified_on_this_setup": null,
+      "limitation": "Manufacturer illustration is not a photograph of the user setup; actual outlet side not documented"
+    },
+    "phase": "normal_after"
+  },
+  "sensor": {
+    "model": "ADXL345",
+    "odr_hz": 200,
+    "range_g": 2,
+    "full_resolution": true,
+    "scale_g_per_lsb": 0.0039,
+    "acquisition_mode": "fifo_stream",
+    "register_readback": {
+      "0x2c": "0xb",
+      "0x31": "0x8",
+      "0x2e": "0x0",
+      "0x38": "0x90",
+      "0x2d": "0x8"
+    },
+    "timestamp_source": "host_monotonic_read_completion",
+    "sensor_time_estimate": "sample_index / nominal ODR; not measured sensor time",
+    "lost_samples_exact": null,
+    "bus_number": 1,
+    "i2c_clock_configured_hz": 100000
+  },
+  "quality": {
+    "xyz_points": 62156,
+    "single_axis_values": 186468,
+    "nominal_odr_hz": 200,
+    "configured_duration_s": 300,
+    "first_to_last_host_s": 299.992181086,
+    "observed_xyz_s": 207.1887333029582,
+    "host_interval_mean_ms": 4.826517272721422,
+    "host_interval_p50_ms": 5.557735999999999,
+    "host_interval_p99_ms": 5.6838187399999995,
+    "host_interval_max_ms": 9.48303,
+    "host_intervals_over_10ms": 0,
+    "host_intervals_over_10ms_command_times_s": [],
+    "read_duration_max_ms": 7.136012,
+    "fifo_max": 2,
+    "nonmonotonic_host_intervals": 0,
+    "software_sample_indices_contiguous": true,
+    "exact_sensor_loss_count": null,
+    "max_absolute_axis_g": 0.7644,
+    "axis_means_g": [
+      -0.6270562005277045,
+      -0.7124878225754553,
+      0.09031477894330389
+    ],
+    "axis_std_g_ddof0": [
+      0.009834309160345191,
+      0.011404141748237357,
+      0.02908820698670689
+    ],
+    "gap_count": 0,
+    "overrun_count": 0,
+    "saturated_count": 0,
+    "points_after_analysis_duration": 15,
+    "analysis_time_origin": "PWM command invocation",
+    "first_window_note": "starts with first acquired XYZ; missing pre-read interval is not filled",
+    "timestamp_note": "host read completion, not independently measured sensor conversion times"
+  },
+  "primary_180_300": {
+    "mean_mg": 33.14771066519531,
+    "median_mg": 33.09767599585844,
+    "std_mg_ddof0": 0.5450320437467152,
+    "min_mg": 32.095154494927485,
+    "max_mg": 34.315830270998134,
+    "windows": 24,
+    "linear_slope_mg_min": 0.8002288398788081,
+    "theil_sen_slope_mg_min": 0.7680087098991848,
+    "fitted_120s_change_mg": 1.6004576797576162,
+    "fitted_120s_change_percent": 4.828260074799304,
+    "last60_minus_first60_mg": 0.8793866171977172,
+    "four_30s_means_mg": [
+      32.580187935320104,
+      32.835846777872796,
+      33.431474116610254,
+      33.74333383097809
+    ],
+    "residual_std_mg": 0.28978459633937986
+  },
+  "all_window_summary": {
+    "mean_mg": 32.66383303879677,
+    "median_mg": 33.051348234205406,
+    "std_mg_ddof0": 2.3620019150611586,
+    "min_mg": 16.56486741649177,
+    "max_mg": 34.4818770994137
+  },
+  "timing": {
+    "first_xyz_monotonic_ns": 15765113109418,
+    "last_xyz_monotonic_ns": 16065105290504,
+    "first_xyz_after_command_invocation_s": 0.078117678,
+    "first_xyz_after_command_completion_s": 0.034563769,
+    "first_to_last_xyz_s": 299.992181086,
+    "last_xyz_after_command_invocation_s": 300.070298764,
+    "first_xyz_utc_estimate": "2026-09-11T11:11:27.668953+00:00",
+    "utc_estimate_note": "derived from paired host UTC/monotonic command timestamps",
+    "electrical_signal_and_rotor_start_measured": false
+  },
+  "additional_off_from_release_actual_s": 60.021969767,
+  "total_off_since_previous_zero_s": 309.024351439,
+  "command_invocation_utc": "2026-09-11T11:11:27.590835+00:00",
+  "zero_command_completed_utc": "2026-09-11T11:16:27.980960+00:00",
+  "source_sha256": "9f21e3299e8b9744e1f54f0b2acde505acdb1a4e7b4a674a7cb1b1b05a143d01",
+  "input_sha256": {
+    "results/upright_position_v4_sequence_20260911_104025/normal_after_session.json": "88782e3f05bdfa22f382c945cb2d57a14f4152ef506e869b37a946b049941a67",
+    "data/upright_position_v4_sequence_20260911_104025/normal_after_75pwm_300s_20260911_111103_206329.csv": "5357e8d0c0592a6e3765904f16ea037937f2f5f54e7c0d88ba2c42cda6589944",
+    "data/upright_position_v4_sequence_20260911_104025/normal_after_75pwm_300s_20260911_111103_206329.json": "5203831902be0c55c489fae450dd43bfcb7c196c7dcffd933582c4c91738e2ef",
+    "results/upright_position_v4_sequence_20260911_104025/normal_after_fan.jsonl": "7f931a6d579720ef6714c100c8dc6d19d2ed43b4ab51785595a64bc97e7b0822",
+    "results/upright_position_v4_sequence_20260911_104025/normal_after_release.json": "e462623dde719dc8033dfe92905d0ea7abf03ccec63326d882c5fdeaabfdfd39",
+    "results/upright_position_v4_sequence_20260911_104025/mounting.json": "8c46ff0527da4db47efdd45ae4d9a1e2847d0e3d7606a52c45d2c59a2a19d6cd"
+  },
+  "control_transactions": [
+    75.0,
+    0.0
+  ],
+  "final_pwm_percent": 0,
+  "mechanical_standstill_user_confirmed_before_capture": null,
+  "settling_time_validated": false,
+  "models_trained": false,
+  "observations_requested": false,
+  "quality_flags_clear": true
+}

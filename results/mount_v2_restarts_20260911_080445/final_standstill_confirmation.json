@@ -1,0 +1,34 @@
+{
+  "recorded_utc": "2026-09-11T08:53:51.619813+00:00",
+  "mounting_id": "adxl345_mount_v2_provisional_20260911_072748",
+  "operator_answer": "ja",
+  "source": "plain user reply following final report that closing mechanical standstill confirmation remained pending",
+  "fan_observed_fully_stopped": true,
+  "interpretation_scope": "closing current mechanical standstill only; no retrospective run3 running observation inferred",
+  "control_readback": {
+    "gpio_bcm": 18,
+    "physical_pin": 12,
+    "pwm_chip": 0,
+    "pwm_channel": 2,
+    "pwm_path": "/sys/class/pwm/pwmchip0/pwm2",
+    "rp1_device_path": "/sys/devices/platform/axi/1000120000.pcie/1f00098000.pwm",
+    "pwm_configuration": {
+      "period_ns": 40000,
+      "duty_cycle_ns": 0,
+      "enable": 1,
+      "polarity": "normal",
+      "configured_frequency_hz": 25000.0,
+      "configured_duty_percent": 0.0
+    },
+    "pin_readback": {
+      "mux": "a3",
+      "function": "PWM0_CHAN2",
+      "instantaneous_level": "lo",
+      "raw": "18: a3    pd | lo // GPIO18 = PWM0_CHAN2"
+    },
+    "pwm_mux_confirmed": true,
+    "electrical_waveform_measured": false,
+    "measured_rpm": null,
+    "mechanical_state": "not_measured"
+  }
+}

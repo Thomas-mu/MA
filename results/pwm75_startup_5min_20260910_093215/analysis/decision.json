@@ -1,0 +1,17 @@
+{
+  "created_utc": "2026-09-10T09:45:10.244182+00:00",
+  "single_recording_only": true,
+  "additional_starts": 0,
+  "status": "initial_rise_and_later_level_variation_no_validated_settling_time",
+  "late_vs_minute3_mean_change_percent": 5.899145086618729,
+  "general_reproducibility_proven": false,
+  "stable_after60s_proven": false,
+  "automatic_new_settling_time_selected": false,
+  "models_trained": false,
+  "word_changed": false,
+  "final_pwm_percent": 0,
+  "final_standstill_visually_confirmed": false,
+  "running_observation_available": false,
+  "analysis_sha256": "70df6f85d44d1a2b53035d26860d8e6d53982a6021a98771eca798e6a8b4c088",
+  "written_report_sha256": "c55cfa289203148acbcf84cd243069088891a2d6ac386c0722db1c23ce9b27ea"
+}

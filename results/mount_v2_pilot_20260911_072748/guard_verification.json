@@ -1,0 +1,21 @@
+{
+  "recorded_utc": "2026-09-11T07:32:29.223194+00:00",
+  "purpose": "hardware_free_safety_gate_checks_using_synthetic_dicts_only",
+  "rejected_incomplete_cases": [
+    "missing_power_disconnected_during_checks",
+    "missing_rotor_clear",
+    "missing_cables_safely_routed",
+    "missing_no_electrical_short_circuits",
+    "missing_sensor_board_firm",
+    "missing_sensor_board_not_bent",
+    "firm_only",
+    "wrong_mounting",
+    "string_boolean",
+    "no_answer"
+  ],
+  "complete_synthetic_case_validates": true,
+  "real_safety_confirmation_received": false,
+  "hardware_access_performed": false,
+  "guard_source_sha256": "3949e83591d6248660c5737ec99750380d7d9f08d5f395a341cba2a43c8e1cf6",
+  "runner_syntax_checks": "passed"
+}

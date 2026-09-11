@@ -1,0 +1,14 @@
+{
+  "run": 1,
+  "mounting_id": "adxl345_mount_v2_provisional_20260911_072748",
+  "recorded_utc": "2026-09-11T08:10:09.468501+00:00",
+  "accepted_monotonic_ns": 4886912678153,
+  "boot_id": "e0207b92-50ab-43c9-b686-57d9dae9d7bb",
+  "operator_answer": "ja",
+  "question": "Sichtprüfung vor Start 1: vollständig mechanisch still; 0 % PWM bei25 kHz; angeschlossene12V-Versorgung und neue Montage unverändert; danach60s Auszeit und75%/300s.",
+  "fan_observed_fully_stopped": true,
+  "mounting_unchanged": true,
+  "fan_12v_supply_connected": true,
+  "source": "explicit user standstill confirmation; unchanged setup per instruction",
+  "time_origin_note": "software acceptance time of received reply, not measured instant of mechanical stop"
+}

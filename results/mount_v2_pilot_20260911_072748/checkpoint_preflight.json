@@ -1,0 +1,21 @@
+{
+  "recorded_utc": "2026-09-11T07:34:09.255281+00:00",
+  "status": "awaiting_explicit_full_safety_and_initial_standstill_conditions",
+  "hardware_access_available": true,
+  "pwm_setpoint_percent": 0,
+  "pwm_frequency_hz": 25000,
+  "pin_mux": "a3/PWM0_CHAN2",
+  "sensor_detection": "0xe5 confirmed with existing connect function",
+  "measurements_started": false,
+  "positive_pwm_commands_issued": false,
+  "safety_confirmation_received": false,
+  "prestart_standstill_confirmation_received": false,
+  "power_supply_connection_state": "unknown_pending_user_answer",
+  "mounting_id": "adxl345_mount_v2_provisional_20260911_072748",
+  "mounting_details": "pending_user_answer",
+  "source_files_preserved": 772,
+  "word_changed": false,
+  "models_trained": false,
+  "next_capture_command": "capture_references.py --phase before after confirmed standstill and documented connected12V state",
+  "next_operating_command": "run_operating.py only after complete safety confirmation and two completed initial references"
+}

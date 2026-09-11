@@ -1,0 +1,98 @@
+{
+  "created_utc": "2026-09-11T10:49:43.699312+00:00",
+  "phase": "standstill",
+  "csv": "data/upright_position_v4_sequence_20260911_104025/standstill_0pwm_30s_20260911_104359_704943.csv",
+  "mounting_id": "fan_upright_position_v4_20260911_103726",
+  "geometry": null,
+  "sensor": {
+    "model": "ADXL345",
+    "odr_hz": 200,
+    "range_g": 2,
+    "full_resolution": true,
+    "scale_g_per_lsb": 0.0039,
+    "acquisition_mode": "fifo_stream",
+    "register_readback": {
+      "0x2c": "0xb",
+      "0x31": "0x8",
+      "0x2e": "0x0",
+      "0x38": "0x90",
+      "0x2d": "0x8"
+    },
+    "timestamp_source": "host_monotonic_read_completion",
+    "sensor_time_estimate": "sample_index / nominal ODR; not measured sensor time",
+    "lost_samples_exact": null,
+    "bus_number": 1,
+    "i2c_clock_configured_hz": 100000
+  },
+  "quality": {
+    "xyz_points": 6212,
+    "single_axis_values": 18636,
+    "nominal_odr_hz": 200,
+    "configured_duration_s": 30,
+    "first_to_last_host_s": 29.99166979,
+    "observed_xyz_s": 207.0908370053777,
+    "host_interval_mean_ms": 4.82879887135727,
+    "host_interval_p50_ms": 5.554698999999999,
+    "host_interval_p99_ms": 5.688421399999999,
+    "host_interval_max_ms": 5.885422,
+    "host_intervals_over_10ms": 0,
+    "host_intervals_over_10ms_command_times_s": [],
+    "read_duration_max_ms": 2.407295,
+    "fifo_max": 1,
+    "nonmonotonic_host_intervals": 0,
+    "software_sample_indices_contiguous": true,
+    "exact_sensor_loss_count": null,
+    "max_absolute_axis_g": 0.7449,
+    "axis_means_g": [
+      -0.6267360270444301,
+      -0.7127350450740502,
+      0.08955811332904054
+    ],
+    "axis_std_g_ddof0": [
+      0.006765621987677417,
+      0.006862290695841559,
+      0.009608948604571078
+    ],
+    "gap_count": 0,
+    "overrun_count": 0,
+    "saturated_count": 0,
+    "points_after_analysis_duration": 7,
+    "analysis_time_origin": "record invocation",
+    "first_window_note": "starts with first acquired XYZ; missing pre-read interval is not filled",
+    "timestamp_note": "host read completion, not independently measured sensor conversion times"
+  },
+  "primary_180_300": null,
+  "all_window_summary": {
+    "mean_mg": 13.602507778142233,
+    "median_mg": 13.61619878915426,
+    "std_mg_ddof0": 0.15820436041897118,
+    "min_mg": 13.400627042807598,
+    "max_mg": 13.774859999040698
+  },
+  "timing": {
+    "first_xyz_monotonic_ns": 14117243430226,
+    "last_xyz_monotonic_ns": 14147235100016,
+    "first_xyz_after_record_invocation_s": 0.041457911,
+    "first_to_last_xyz_s": 29.99166979
+  },
+  "additional_off_from_release_actual_s": null,
+  "total_off_since_previous_zero_s": null,
+  "command_invocation_utc": null,
+  "zero_command_completed_utc": null,
+  "source_sha256": "9f21e3299e8b9744e1f54f0b2acde505acdb1a4e7b4a674a7cb1b1b05a143d01",
+  "input_sha256": {
+    "results/upright_position_v4_sequence_20260911_104025/standstill_session.json": "68c3428ba0f2ee78b9003f16f4319babb3ff9eb399b8694aae2bb30eb7cf660d",
+    "data/upright_position_v4_sequence_20260911_104025/standstill_0pwm_30s_20260911_104359_704943.csv": "95dd293a1a30f36efb5556961cb388892a69281ded07495b26edf6b8df8d6fd8",
+    "data/upright_position_v4_sequence_20260911_104025/standstill_0pwm_30s_20260911_104359_704943.json": "4934669c8b4cd8010e0fdae178840cfe9cd52eabca3857a1067cee449ea51c84",
+    "results/upright_position_v4_sequence_20260911_104025/standstill_fan.jsonl": "d92d626315a951243b0cec6b9edd900779d7b4b70dbf32247d0e0a041b02520d",
+    "results/upright_position_v4_sequence_20260911_104025/initial_release.json": "60ac00d8684e849fe2955a73786b38885503df2bdea5897e68a1c73e2875710a",
+    "results/upright_position_v4_sequence_20260911_104025/mounting.json": "8c46ff0527da4db47efdd45ae4d9a1e2847d0e3d7606a52c45d2c59a2a19d6cd"
+  },
+  "control_transactions": [],
+  "final_pwm_percent": 0,
+  "mechanical_standstill_user_confirmed_before_capture": true,
+  "settling_time_validated": false,
+  "models_trained": false,
+  "observations_requested": false,
+  "quality_flags_clear": true
+}

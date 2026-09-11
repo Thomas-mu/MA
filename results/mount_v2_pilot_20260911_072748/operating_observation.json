@@ -1,0 +1,11 @@
+{
+  "recorded_utc": "2026-09-11T07:53:51.023654+00:00",
+  "mounting_id": "adxl345_mount_v2_provisional_20260911_072748",
+  "operator_answer": "ja",
+  "question": "Hast du den Lüfter während der fünfminütigen Aufnahme (etwa 09:44:41–09:49:41 Uhr) beobachtet? Falls ja: Lief er nach dem Anlaufen sichtbar gleichmäßig, ohne erkennbare Lockerung oder Berührung?",
+  "source": "retrospective user observation",
+  "running_visibly_even_after_startup": true,
+  "no_visible_loosening_or_contact_user_confirmed": true,
+  "measured_rpm": null,
+  "measurement_original_metadata_unchanged": true
+}

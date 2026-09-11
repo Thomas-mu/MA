@@ -1,0 +1,31 @@
+{
+  "recorded_utc": "2026-09-11T08:35:21.280217+00:00",
+  "syntax": "passed",
+  "report_tables": [
+    {
+      "rows": 5,
+      "columns": 5
+    },
+    {
+      "rows": 5,
+      "columns": 7
+    },
+    {
+      "rows": 5,
+      "columns": 6
+    }
+  ],
+  "image_links_valid": true,
+  "plot_visual_review": "PNG inspected; overview, primary interval and within-run values readable; no clipping",
+  "complete_5s_sections": 180,
+  "primary_sections_per_run": 24,
+  "output_sha256": {
+    "results/mount_v2_restarts_20260911_080445/analysis/assessment.json": "0f1ff4989c67680b9362cb2fadabb52d35f7674108cc688a6d1f6f123fb422ff",
+    "results/mount_v2_restarts_20260911_080445/analysis/primary_summary.csv": "1a64afaf339d5ddbf978133e8cb6222443955f93fde4f73c68b2d569865bc3d7",
+    "results/mount_v2_restarts_20260911_080445/analysis/restart_comparison.png": "8bd1587ae6631c5329951135a63cdf3710eebf672ca28336094bdcee6de0600b",
+    "results/mount_v2_restarts_20260911_080445/analysis/five_second_sections.csv": "9234b1bfa34f890cd0e583d98853b01170335ef108b335b531b84291f2d923a8",
+    "results/mount_v2_restarts_20260911_080445/analysis/restart_comparison.pdf": "d08ef13b3c3d70c9b98490cd718aa99372e9a112460bba34704d9f943bb541a6",
+    "results/mount_v2_restarts_20260911_080445/analysis/report.json": "5f28fdef5fa6638341bc554d8e112ca249897bc9df0468b70b33047e56039956",
+    "results/mount_v2_restarts_20260911_080445/analysis/report.md": "0ac5481141e745da0a8bf61879c8569f805c80c2cafcf4911ee19d18a7d18dbe"
+  }
+}

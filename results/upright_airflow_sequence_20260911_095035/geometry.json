@@ -1,0 +1,42 @@
+{
+  "fixture_version": "outlet_screen_v1_proposed",
+  "created_utc": "2026-09-11T09:50:35.554851+00:00",
+  "planned": {
+    "plate_width_mm": 60,
+    "plate_height_mm": 120,
+    "outlet_distance_mm": 100,
+    "alignment": "parallel to outlet plane; covers right half of frame silhouette when looking into outlet",
+    "normal_park_clearance_from_projected_outlet_mm": 120,
+    "support": "separate, tip resistant; no fan or sensor contact"
+  },
+  "actual": {
+    "plate_width_mm": null,
+    "plate_height_mm": null,
+    "outlet_distance_mm": null,
+    "material": null,
+    "alignment": null,
+    "normal_park_clearance_mm": null,
+    "clamping_details": null,
+    "fan_support_details": null
+  },
+  "evidence": {
+    "planned_geometry_source": "results/mount_v2_review_20260911_085505/versuchsplan.md",
+    "actual_geometry_source": null,
+    "dimensions_measured_by_software": false,
+    "separate_tip_resistant_no_contact": "user specified operating procedure; not independently observed"
+  },
+  "note": "Unknown actual dimensions stay null; phase-specific user reports are separate evidence, not retroactive measurements.",
+  "mounting_id": "fan_upright_mount_v3_20260911_095035",
+  "outlet_direction": {
+    "model": "ARCTIC P12 Pro PST",
+    "manufacturer_manual": "https://support.arctic.de/de/p12-pro-pst",
+    "manufacturer_illustration_url": "https://support.arctic.de/products/p12-pro-pst/img/001.jpg",
+    "local_illustration": "manufacturer_airflow_direction.jpg",
+    "illustration_sha256": "275f3ab54d49b55214b96698004fc703379ac541326aae24b4e8efc18b98d003",
+    "illustration_visually_inspected": true,
+    "manufacturer_illustration_interpretation": "straight red arrows denote airflow; curved blue arrows denote rotation; use airflow direction, not rotation, to identify outlet",
+    "actual_orientation_in_room": null,
+    "actual_outlet_identified_on_this_setup": null,
+    "limitation": "Manufacturer illustration is not a photograph of the user setup; actual outlet side not documented"
+  }
+}

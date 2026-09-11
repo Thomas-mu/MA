@@ -1,0 +1,79 @@
+{
+  "verified_utc": "2026-09-10T09:46:16.287661+00:00",
+  "status": "one_300s_capture_and_analysis_complete",
+  "preserved_files_checked": 744,
+  "changed_or_missing": [],
+  "raw_xyz_points": 62063,
+  "five_second_sections": 60,
+  "all_points_in_sections": true,
+  "all_section_rms_and_means_independently_recomputed": true,
+  "command_to_first_point_offset_independently_recomputed": true,
+  "physical_starts": 1,
+  "pwm_completed_commands": [
+    75.0,
+    0.0
+  ],
+  "aborts": 0,
+  "final_pwm_readback": {
+    "gpio_bcm": 18,
+    "physical_pin": 12,
+    "pwm_chip": 0,
+    "pwm_channel": 2,
+    "pwm_path": "/sys/class/pwm/pwmchip0/pwm2",
+    "rp1_device_path": "/sys/devices/platform/axi/1000120000.pcie/1f00098000.pwm",
+    "pwm_configuration": {
+      "period_ns": 40000,
+      "duty_cycle_ns": 0,
+      "enable": 1,
+      "polarity": "normal",
+      "configured_frequency_hz": 25000.0,
+      "configured_duty_percent": 0.0
+    },
+    "pin_readback": {
+      "mux": "a3",
+      "function": "PWM0_CHAN2",
+      "instantaneous_level": "lo",
+      "raw": "18: a3    pd | lo // GPIO18 = PWM0_CHAN2"
+    },
+    "pwm_mux_confirmed": true,
+    "electrical_waveform_measured": false,
+    "measured_rpm": null,
+    "mechanical_state": "not_measured"
+  },
+  "final_verification_changed_hardware": false,
+  "visual_observations": {
+    "recorded_utc": "2026-09-10T09:46:16.287427+00:00",
+    "running_observation_received": false,
+    "post_shutdown_standstill_confirmation_received": false,
+    "meaning": "Missing replies do not imply irregular running or continued motion. No further start or timed reply required."
+  },
+  "device_users_check": {
+    "command": [
+      "fuser",
+      "-v",
+      "/dev/i2c-1",
+      "/dev/gpiochip0",
+      "/dev/gpiomem0"
+    ],
+    "returncode": 1,
+    "stdout": "",
+    "stderr": ""
+  },
+  "word_sha256": "a9a5d7d17b28098f554240a3e1650881e252db679f33319a1d11164b3246cbb8",
+  "word_unchanged": true,
+  "plot_visually_reviewed": true,
+  "tables_checked": 5,
+  "links_valid": true,
+  "git_diff_check_passed": true,
+  "models_trained": false,
+  "induced_anomalies": false,
+  "analysis_artifacts_sha256": {
+    "results/pwm75_startup_5min_20260910_093215/analysis/decision.json": "80b041b4f1708a0f31f5047565e8fb9f02dbbf2a64bbbb38664794b9e3d79635",
+    "results/pwm75_startup_5min_20260910_093215/analysis/minute_summary.csv": "494a72555b1e10c9d2b9f16ae5ce0ef1f95c4ec6c42fb5505804211c25f92359",
+    "results/pwm75_startup_5min_20260910_093215/analysis/startup_rms.pdf": "4a8062ee141af62537166450c71995923cad805020bd11da562aff106352a4f1",
+    "results/pwm75_startup_5min_20260910_093215/analysis/five_second_rms.csv": "9561b121e13e21501521e47c59b97d35c69f2f189eaa77c024697b3bbb20d273",
+    "results/pwm75_startup_5min_20260910_093215/analysis/startup_rms.png": "59b3bb964b97dbca44d46b78419d5f1d7d75e1a1eaabcc35696b71f2a7c71bac",
+    "results/pwm75_startup_5min_20260910_093215/analysis/report.json": "70df6f85d44d1a2b53035d26860d8e6d53982a6021a98771eca798e6a8b4c088",
+    "results/pwm75_startup_5min_20260910_093215/analysis/report.md": "c55cfa289203148acbcf84cd243069088891a2d6ac386c0722db1c23ce9b27ea"
+  }
+}

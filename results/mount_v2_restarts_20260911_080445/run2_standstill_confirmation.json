@@ -1,0 +1,14 @@
+{
+  "run": 2,
+  "mounting_id": "adxl345_mount_v2_provisional_20260911_072748",
+  "recorded_utc": "2026-09-11T08:17:40.084375+00:00",
+  "accepted_monotonic_ns": 5337528548070,
+  "boot_id": "e0207b92-50ab-43c9-b686-57d9dae9d7bb",
+  "operator_answer": "ja",
+  "question": "Sichtprüfung vor Start2: jetzt vollständig mechanisch still,0% bei25kHz; Versorgung und neue Montage unverändert; danach60s Auszeit.",
+  "fan_observed_fully_stopped": true,
+  "mounting_unchanged": true,
+  "fan_12v_supply_connected": true,
+  "source": "explicit user visual confirmation after run1 shutdown",
+  "time_origin_note": "software acceptance time of reply, not measured rotor-stop instant"
+}

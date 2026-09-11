@@ -1,0 +1,31 @@
+{
+  "created_utc": "2026-09-11T09:32:02.965817+00:00",
+  "phase": "normal_before",
+  "status": "complete_and_paused",
+  "preserved_files_checked": 888,
+  "changed_or_missing": [],
+  "raw_input_hashes_match": true,
+  "runner_unchanged_during_capture": true,
+  "control_transactions": [
+    75.0,
+    0.0
+  ],
+  "read_only_final_configuration": {
+    "period": "40000",
+    "duty_cycle": "0",
+    "enable": "1",
+    "polarity": "normal"
+  },
+  "mechanical_standstill_observed": null,
+  "readable_device_holders": [],
+  "next_phase_released": false,
+  "models_trained": false,
+  "plot_visually_checked": true,
+  "word_sha256": "a9a5d7d17b28098f554240a3e1650881e252db679f33319a1d11164b3246cbb8",
+  "new_analysis_artifact_sha256": {
+    "analysis/normal_before/phase_overview.png": "35be5570aa8b37068eac3ddede341fa1c30be92180fd506ae722b81eb748a9f6",
+    "analysis/normal_before/phase_overview.pdf": "39c74fa42f707d75ad1bec346dbe9dc344cc6471ca7b4e4f0127ebbba7ff129e",
+    "analysis/normal_before/five_second_rms.csv": "b497226eace680cbffd3f632742a95978f0acb815c3b01703d250586dceeaf3b",
+    "analysis/normal_before/summary.json": "b61c6c8b701650b071ca7ae41745104fd6e697e197937dafb5886ea616a5c736"
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "recorded_utc": "2026-09-11T07:38:22.458147+00:00",
+  "operator_answer": "ja",
+  "question": "Ist die externe 12-V-Versorgung aktuell angeschlossen oder getrennt?",
+  "fan_12v_supply_connected": null,
+  "interpretation": "Ambiguous answer to alternative states; no connection state inferred.",
+  "complete_safety_confirmation_received": false,
+  "measurements_started": false,
+  "positive_pwm_command_issued": false,
+  "readback": {
+    "period_ns": 40000,
+    "duty_cycle_ns": 0,
+    "enable": 1,
+    "polarity": "normal",
+    "pin_function": "a3/PWM0_CHAN2"
+  },
+  "mechanical_standstill": "previously confirmed by user for current phase; not inferred from PWM"
+}

@@ -1,0 +1,21 @@
+{
+  "source": "explicit_user_message",
+  "released": true,
+  "phase": "normal_after",
+  "authorized_phases": [
+    "normal_after"
+  ],
+  "mounting_id": "fan_upright_position_v4_20260911_103726",
+  "boot_id": "e0207b92-50ab-43c9-b686-57d9dae9d7bb",
+  "accepted_monotonic_ns": 15705013021973,
+  "accepted_utc": "2026-09-11T11:10:27.568881+00:00",
+  "operator_message": "Umbau fertig, nächster Lauf freigegeben.",
+  "operator_message_verbatim": "Platte entfernt, Versorgung angeschlossen, letzter Lauf freigegeben  ",
+  "normalization_note": "Canonical phrase is used by the existing software gate; exact user wording explicitly authorizes normal_after and confirms plate removal plus connected supply. No later start is authorized.",
+  "external_12v_supply_connected": true,
+  "plate_removed_user_confirmed": true,
+  "additional_off_requested_s": 60,
+  "no_response_deadline": true,
+  "automatic_restarts": false,
+  "physical_handling_protocol": "User was instructed to disconnect 12V and await mechanical standstill before removing only the plate; no new independent mechanical observation is inferred."
+}

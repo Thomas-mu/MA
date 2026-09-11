@@ -1,0 +1,11 @@
+{
+  "scope": "software only",
+  "resolved_preexport_errors": [
+    "Initial evidence path guessed as normal_before_release.json; actual preserved initial_release.json used after checking. No plan/export was written on the failed lookup.",
+    "System python lacked pandas; used existing project .venv. No package installation."
+  ],
+  "new_dataset_successfully_prepared": true,
+  "no_capture_or_pwm_write": true,
+  "no_model_or_scaler_fit": true,
+  "test_result": "46 passed in 4.78s; JUnit stored separately"
+}

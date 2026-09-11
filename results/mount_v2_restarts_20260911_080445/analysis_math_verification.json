@@ -1,0 +1,10 @@
+{
+  "created_utc": "2026-09-11T08:24:42.952888+00:00",
+  "synthetic_only": true,
+  "checks": [
+    "constant24-section profile has zero descriptive drift and scatter",
+    "equal-size group variance decomposition"
+  ],
+  "passed": true,
+  "hardware_access": false
+}

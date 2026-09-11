@@ -1,0 +1,78 @@
+{
+  "recorded_utc": "2026-09-11T07:59:58.384301+00:00",
+  "all_four_recordings_completed": true,
+  "recordings": [
+    {
+      "name": "S_vor_1",
+      "csv": "data/mount_v2_pilot_20260911_072748/standstill_before_r1_20260911_074325_271186.csv",
+      "csv_sha256": "53b40682f55b38055708e37ab806a6a60132f8baf7f303989d1c262cef2fcaa3",
+      "sidecar_sha256": "8c535514f213f06800bd39bed8cc18c63aa9d4bbcc79569580d56c75b6211d46"
+    },
+    {
+      "name": "S_vor_2",
+      "csv": "data/mount_v2_pilot_20260911_072748/standstill_before_r2_20260911_074400_437637.csv",
+      "csv_sha256": "4647616e50359815508bdbd8b402043d7f45e3d395fcc33ed0e71499b2986964",
+      "sidecar_sha256": "79fc40f9cb8eba82603e39e831d5e6427cb6a83e0b098a73ed6e5ba8cfdadd59"
+    },
+    {
+      "name": "B75_300s",
+      "csv": "data/mount_v2_pilot_20260911_072748/normal75_startup300s_20260911_074440_951186.csv",
+      "csv_sha256": "6741091004e79b97509b28e88a15b1e98ab3da34611edf4d9bd0ded288344563",
+      "sidecar_sha256": "35c26ee1523b64ee1f338e18122404c2a0bf2bd13a2f1d87224414c24288aa78"
+    },
+    {
+      "name": "S_nach",
+      "csv": "data/mount_v2_pilot_20260911_072748/standstill_after_r1_20260911_075351_682082.csv",
+      "csv_sha256": "f43dfd78faed3562f69e3d9daf5f679eefc53a2a88d340056293e8330e2c4c52",
+      "sidecar_sha256": "7a2190c5508f6bb81e80b176f1f3d61ee43a43b79d196c2039dbb339e95f5526"
+    }
+  ],
+  "preexisting_files_checked": 772,
+  "changed_or_missing_preexisting_files": [],
+  "word_sha256": "a9a5d7d17b28098f554240a3e1650881e252db679f33319a1d11164b3246cbb8",
+  "raw_and_analysis_input_hashes_match": true,
+  "one_start_commands": [
+    75.0,
+    0.0
+  ],
+  "reference_phases_contained_no_pwm_changes": true,
+  "final_control_readback": {
+    "gpio_bcm": 18,
+    "physical_pin": 12,
+    "pwm_chip": 0,
+    "pwm_channel": 2,
+    "pwm_path": "/sys/class/pwm/pwmchip0/pwm2",
+    "rp1_device_path": "/sys/devices/platform/axi/1000120000.pcie/1f00098000.pwm",
+    "pwm_configuration": {
+      "period_ns": 40000,
+      "duty_cycle_ns": 0,
+      "enable": 1,
+      "polarity": "normal",
+      "configured_frequency_hz": 25000.0,
+      "configured_duty_percent": 0.0
+    },
+    "pin_readback": {
+      "mux": "a3",
+      "function": "PWM0_CHAN2",
+      "instantaneous_level": "lo",
+      "raw": "18: a3    pd | lo // GPIO18 = PWM0_CHAN2"
+    },
+    "pwm_mux_confirmed": true,
+    "electrical_waveform_measured": false,
+    "measured_rpm": null,
+    "mechanical_state": "not_measured"
+  },
+  "mechanical_standstill": "user confirmed before final30-s reference; no subsequent positive PWM commanded",
+  "standstill_confirmation": "after_standstill_confirmation.json",
+  "operating_observation": "operating_observation.json",
+  "device_holders_after_completion": {
+    "fuser_code": 1,
+    "stdout": "",
+    "stderr": ""
+  },
+  "plot_review": "Both PNG figures visually inspected: readable axes, legends, correct units and time offsets; overview and detail export as PNG/PDF",
+  "report_image_links_exist": true,
+  "python_syntax_passed": true,
+  "models_trained": false,
+  "anomalies_induced": false
+}

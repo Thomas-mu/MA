@@ -1,0 +1,168 @@
+{
+  "created_utc": "2026-09-11T10:28:21.174552+00:00",
+  "phase": "normal_before",
+  "csv": "data/upright_airflow_sequence_20260911_095035/normal_before_75pwm_300s_20260911_102238_050385.csv",
+  "mounting_id": "fan_upright_mount_v3_20260911_095035",
+  "geometry": {
+    "fixture_version": "outlet_screen_v1_proposed",
+    "created_utc": "2026-09-11T09:50:35.554851+00:00",
+    "planned": {
+      "plate_width_mm": 60,
+      "plate_height_mm": 120,
+      "outlet_distance_mm": 100,
+      "alignment": "parallel to outlet plane; covers right half of frame silhouette when looking into outlet",
+      "normal_park_clearance_from_projected_outlet_mm": 120,
+      "support": "separate, tip resistant; no fan or sensor contact"
+    },
+    "actual": {
+      "plate_width_mm": null,
+      "plate_height_mm": null,
+      "outlet_distance_mm": null,
+      "material": null,
+      "alignment": null,
+      "normal_park_clearance_mm": null,
+      "clamping_details": null,
+      "fan_support_details": null
+    },
+    "evidence": {
+      "planned_geometry_source": "results/mount_v2_review_20260911_085505/versuchsplan.md",
+      "actual_geometry_source": null,
+      "dimensions_measured_by_software": false,
+      "separate_tip_resistant_no_contact": "user specified operating procedure; not independently observed"
+    },
+    "note": "Unknown actual dimensions stay null; phase-specific user reports are separate evidence, not retroactive measurements.",
+    "mounting_id": "fan_upright_mount_v3_20260911_095035",
+    "outlet_direction": {
+      "model": "ARCTIC P12 Pro PST",
+      "manufacturer_manual": "https://support.arctic.de/de/p12-pro-pst",
+      "manufacturer_illustration_url": "https://support.arctic.de/products/p12-pro-pst/img/001.jpg",
+      "local_illustration": "manufacturer_airflow_direction.jpg",
+      "illustration_sha256": "275f3ab54d49b55214b96698004fc703379ac541326aae24b4e8efc18b98d003",
+      "illustration_visually_inspected": true,
+      "manufacturer_illustration_interpretation": "straight red arrows denote airflow; curved blue arrows denote rotation; use airflow direction, not rotation, to identify outlet",
+      "actual_orientation_in_room": null,
+      "actual_outlet_identified_on_this_setup": null,
+      "limitation": "Manufacturer illustration is not a photograph of the user setup; actual outlet side not documented"
+    }
+  },
+  "sensor": {
+    "model": "ADXL345",
+    "odr_hz": 200,
+    "range_g": 2,
+    "full_resolution": true,
+    "scale_g_per_lsb": 0.0039,
+    "acquisition_mode": "fifo_stream",
+    "register_readback": {
+      "0x2c": "0xb",
+      "0x31": "0x8",
+      "0x2e": "0x0",
+      "0x38": "0x90",
+      "0x2d": "0x8"
+    },
+    "timestamp_source": "host_monotonic_read_completion",
+    "sensor_time_estimate": "sample_index / nominal ODR; not measured sensor time",
+    "lost_samples_exact": null,
+    "bus_number": 1,
+    "i2c_clock_configured_hz": 100000
+  },
+  "quality": {
+    "xyz_points": 62168,
+    "single_axis_values": 186504,
+    "nominal_odr_hz": 200,
+    "configured_duration_s": 300,
+    "first_to_last_host_s": 299.990309489,
+    "observed_xyz_s": 207.2300272161942,
+    "host_interval_mean_ms": 4.82555551158975,
+    "host_interval_p50_ms": 5.569421,
+    "host_interval_p99_ms": 5.687903039999999,
+    "host_interval_max_ms": 10.695417,
+    "host_intervals_over_10ms": 1,
+    "host_intervals_over_10ms_command_times_s": [
+      93.819899894
+    ],
+    "read_duration_max_ms": 5.983347,
+    "fifo_max": 2,
+    "nonmonotonic_host_intervals": 0,
+    "software_sample_indices_contiguous": true,
+    "exact_sensor_loss_count": null,
+    "max_absolute_axis_g": 0.7956,
+    "axis_means_g": [
+      -0.6299512514476902,
+      -0.7099605343585124,
+      0.0929187170248359
+    ],
+    "axis_std_g_ddof0": [
+      0.012188571160400277,
+      0.009783287958700612,
+      0.022732926567913224
+    ],
+    "gap_count": 0,
+    "overrun_count": 0,
+    "saturated_count": 0,
+    "points_after_analysis_duration": 14,
+    "analysis_time_origin": "PWM command invocation",
+    "first_window_note": "starts with first acquired XYZ; missing pre-read interval is not filled",
+    "timestamp_note": "host read completion, not independently measured sensor conversion times"
+  },
+  "primary_180_300": {
+    "mean_mg": 26.33401371331132,
+    "median_mg": 26.27903270726721,
+    "std_mg_ddof0": 0.3406925418039465,
+    "min_mg": 25.815625596309236,
+    "max_mg": 27.02131057065238,
+    "windows": 24,
+    "linear_slope_mg_min": 0.03118319092548464,
+    "theil_sen_slope_mg_min": 0.0208414736784382,
+    "fitted_120s_change_mg": 0.06236638185096928,
+    "fitted_120s_change_percent": 0.23682824247731105,
+    "last60_minus_first60_mg": -0.06721197785162758,
+    "four_30s_means_mg": [
+      26.33794157067604,
+      26.397297833798234,
+      26.140996769419658,
+      26.45981867935137
+    ],
+    "residual_std_mg": 0.3402173427412314
+  },
+  "all_window_summary": {
+    "mean_mg": 26.62882676005768,
+    "median_mg": 25.540702573463733,
+    "std_mg_ddof0": 7.183085932930053,
+    "min_mg": 24.259586620133387,
+    "max_mg": 81.26399779096202
+  },
+  "timing": {
+    "first_xyz_monotonic_ns": 12864566567309,
+    "last_xyz_monotonic_ns": 13164556876798,
+    "first_xyz_after_command_invocation_s": 0.076800366,
+    "first_xyz_after_command_completion_s": 0.034324177,
+    "first_to_last_xyz_s": 299.990309489,
+    "last_xyz_after_command_invocation_s": 300.067109855,
+    "first_xyz_utc_estimate": "2026-09-11T10:23:07.122409+00:00",
+    "utc_estimate_note": "derived from paired host UTC/monotonic command timestamps",
+    "electrical_signal_and_rotor_start_measured": false
+  },
+  "additional_off_from_release_actual_s": 60.018874662,
+  "total_off_since_previous_zero_s": null,
+  "command_invocation_utc": "2026-09-11T10:23:07.045609+00:00",
+  "zero_command_completed_utc": "2026-09-11T10:28:07.430262+00:00",
+  "source_sha256": "9f21e3299e8b9744e1f54f0b2acde505acdb1a4e7b4a674a7cb1b1b05a143d01",
+  "input_sha256": {
+    "results/upright_airflow_sequence_20260911_095035/normal_before_session.json": "c2f78ec02e51f2e653c14acba218a8555a210e7c3932e58417f6ae4762c3b83f",
+    "data/upright_airflow_sequence_20260911_095035/normal_before_75pwm_300s_20260911_102238_050385.csv": "d4ad72d744d3060b650e6b6b07323eeb69a82ea2fb9f5464630f6514d61c6cfe",
+    "data/upright_airflow_sequence_20260911_095035/normal_before_75pwm_300s_20260911_102238_050385.json": "81e6d099396b44f3ea6494594f96c0819045e32b00b6ba13ca323c57f795c317",
+    "results/upright_airflow_sequence_20260911_095035/normal_before_fan.jsonl": "131251de0111b7a88db7f920b8a7a69a1faf782904df044dff0e47a798f0893c",
+    "results/upright_airflow_sequence_20260911_095035/initial_release.json": "8552ac4b26646c9ac386818ab66035af2fc6a5a7a9d0d1c3fd613392dcb6d069",
+    "results/upright_airflow_sequence_20260911_095035/mounting.json": "29bc2055116419195ce77eca3ef3d43f1d37bca06a74ad7db443151f26dd1ddc"
+  },
+  "control_transactions": [
+    75.0,
+    0.0
+  ],
+  "final_pwm_percent": 0,
+  "mechanical_standstill_user_confirmed_before_capture": null,
+  "settling_time_validated": false,
+  "models_trained": false,
+  "observations_requested": false,
+  "quality_flags_clear": true
+}

@@ -1,0 +1,11 @@
+{
+  "recorded_utc": "2026-09-11T10:45:46.184613+00:00",
+  "planned_additional_off_s": 60,
+  "actual_release_to_command_s": 84.096527397,
+  "excess_s": 24.096527397000003,
+  "exact_uniform_60s_achieved": false,
+  "minimum_60s_met": true,
+  "reason": "New-version files and guard checks prepared after readiness acceptance; subsequent30s standstill capture completed before operating start",
+  "no_automatic_repeat": true,
+  "limits": "This initial start must not be described as having the same exact60-s post-release off interval as later starts."
+}

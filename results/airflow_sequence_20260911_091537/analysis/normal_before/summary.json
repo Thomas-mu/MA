@@ -1,0 +1,151 @@
+{
+  "created_utc": "2026-09-11T09:30:05.722447+00:00",
+  "phase": "normal_before",
+  "csv": "data/airflow_sequence_20260911_091537/normal_before_75pwm_300s_20260911_092359_503998.csv",
+  "mounting_id": "adxl345_mount_v2_provisional_20260911_072748",
+  "geometry": {
+    "fixture_version": "outlet_screen_v1_proposed",
+    "created_utc": "2026-09-11T09:19:35.331680+00:00",
+    "planned": {
+      "plate_width_mm": 60,
+      "plate_height_mm": 120,
+      "outlet_distance_mm": 100,
+      "alignment": "parallel to outlet plane; covers right half of frame silhouette when looking into outlet",
+      "normal_park_clearance_from_projected_outlet_mm": 120,
+      "support": "separate, tip resistant; no fan or sensor contact"
+    },
+    "actual": {
+      "plate_width_mm": null,
+      "plate_height_mm": null,
+      "outlet_distance_mm": null,
+      "material": null,
+      "alignment": null,
+      "normal_park_clearance_mm": null,
+      "clamping_details": null,
+      "fan_support_details": null
+    },
+    "evidence": {
+      "planned_geometry_source": "results/mount_v2_review_20260911_085505/versuchsplan.md",
+      "actual_geometry_source": null,
+      "dimensions_measured_by_software": false,
+      "separate_tip_resistant_no_contact": "user specified operating procedure; not independently observed"
+    },
+    "note": "Unknown actual dimensions stay null; phase-specific user reports are separate evidence, not retroactive measurements."
+  },
+  "sensor": {
+    "model": "ADXL345",
+    "odr_hz": 200,
+    "range_g": 2,
+    "full_resolution": true,
+    "scale_g_per_lsb": 0.0039,
+    "acquisition_mode": "fifo_stream",
+    "register_readback": {
+      "0x2c": "0xb",
+      "0x31": "0x8",
+      "0x2e": "0x0",
+      "0x38": "0x90",
+      "0x2d": "0x8"
+    },
+    "timestamp_source": "host_monotonic_read_completion",
+    "sensor_time_estimate": "sample_index / nominal ODR; not measured sensor time",
+    "lost_samples_exact": null,
+    "bus_number": 1,
+    "i2c_clock_configured_hz": 100000
+  },
+  "quality": {
+    "xyz_points": 62154,
+    "single_axis_values": 186462,
+    "nominal_odr_hz": 200,
+    "configured_duration_s": 300,
+    "first_to_last_host_s": 299.993264685,
+    "observed_xyz_s": 207.18131810479852,
+    "host_interval_mean_ms": 4.8266900179396,
+    "host_interval_p50_ms": 5.590228,
+    "host_interval_p99_ms": 5.689515159999999,
+    "host_interval_max_ms": 9.795048000000001,
+    "host_intervals_over_10ms": 0,
+    "host_intervals_over_10ms_command_times_s": [],
+    "read_duration_max_ms": 5.915058,
+    "fifo_max": 2,
+    "nonmonotonic_host_intervals": 0,
+    "software_sample_indices_contiguous": true,
+    "exact_sensor_loss_count": null,
+    "max_absolute_axis_g": 1.3533,
+    "axis_means_g": [
+      -0.21956691282942364,
+      -0.027521184477266116,
+      -1.0705163046626125
+    ],
+    "axis_std_g_ddof0": [
+      0.16679787303013313,
+      0.02854602233354637,
+      0.09927185120057896
+    ],
+    "gap_count": 0,
+    "overrun_count": 0,
+    "saturated_count": 0,
+    "beyond_300s_from_command_points": 17,
+    "first_window_note": "starts with first acquired XYZ; missing pre-read interval is not filled",
+    "timestamp_note": "host read completion, not independently measured sensor conversion times"
+  },
+  "primary_180_300": {
+    "mean_mg": 196.89757133363545,
+    "median_mg": 196.83513043171547,
+    "std_mg_ddof0": 0.6510898683126505,
+    "min_mg": 195.93958330042005,
+    "max_mg": 198.49008997858968,
+    "windows": 24,
+    "linear_slope_mg_min": -0.7450524375236455,
+    "theil_sen_slope_mg_min": -0.767512452627758,
+    "fitted_120s_change_mg": -1.490104875047291,
+    "fitted_120s_change_percent": -0.7567919019795145,
+    "last60_minus_first60_mg": -0.8917302934886209,
+    "four_30s_means_mg": [
+      197.6635960559199,
+      197.0232769048397,
+      196.25379820279167,
+      196.64961417099053
+    ],
+    "residual_std_mg": 0.4890857579600898
+  },
+  "full_60_window_summary": {
+    "mean_mg": 194.81165908596614,
+    "median_mg": 197.63186247996623,
+    "std_mg_ddof0": 22.976611615041012,
+    "min_mg": 18.897110312275874,
+    "max_mg": 201.63397230927046
+  },
+  "timing": {
+    "first_xyz_monotonic_ns": 9376708666559,
+    "last_xyz_monotonic_ns": 9676701931244,
+    "first_xyz_after_command_invocation_s": 0.087708549,
+    "first_xyz_after_command_completion_s": 0.033705997,
+    "first_to_last_xyz_s": 299.993264685,
+    "last_xyz_after_command_invocation_s": 300.080973234,
+    "first_xyz_utc_estimate": "2026-09-11T09:24:59.264507+00:00",
+    "utc_estimate_note": "derived from paired host UTC/monotonic command timestamps",
+    "electrical_signal_and_rotor_start_measured": false
+  },
+  "additional_off_from_release_actual_s": 60.021713003,
+  "total_off_since_previous_zero_s": null,
+  "command_invocation_utc": "2026-09-11T09:24:59.176798+00:00",
+  "zero_command_completed_utc": "2026-09-11T09:29:59.583077+00:00",
+  "source_sha256": "fc70ef5081085edc1795699cdb91ee79994dd7d58c0d2b92207cf24a64f2bb72",
+  "input_sha256": {
+    "results/airflow_sequence_20260911_091537/normal_before_session.json": "c85ce2bebf8e2f0ed836280e87be24d6ba1c624af96e911fe4f717a96ace0155",
+    "data/airflow_sequence_20260911_091537/normal_before_75pwm_300s_20260911_092359_503998.csv": "61253af6608798e9382928f3eff9098bf53bf19dc8dc5a2f2ca1b351a76a6449",
+    "data/airflow_sequence_20260911_091537/normal_before_75pwm_300s_20260911_092359_503998.json": "1ad5c58f8a76f0f99be19eedda20db026e1e282c410ec703157a8926d57d3a42",
+    "results/airflow_sequence_20260911_091537/normal_before_fan.jsonl": "39c6fad2bc1bc43408c416fe024de68ccd58b9e2ad3c8ac21624c9637dbcadb9",
+    "results/airflow_sequence_20260911_091537/normal_before_release.json": "de484d7fbab962e7e48169c1199c9ec49bce7c1d100e30372902f493cdddae55"
+  },
+  "control_transactions": [
+    75.0,
+    0.0
+  ],
+  "final_pwm_percent": 0,
+  "mechanical_standstill_observed": null,
+  "settling_time_validated": false,
+  "models_trained": false,
+  "observations_requested": false,
+  "quality_flags_clear": true
+}

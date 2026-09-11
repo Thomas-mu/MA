@@ -1,0 +1,14 @@
+{
+  "recorded_utc": "2026-09-11T07:43:24.284251+00:00",
+  "mounting_id": "adxl345_mount_v2_provisional_20260911_072748",
+  "operator_answer": "ja",
+  "fan_observed_fully_stopped": true,
+  "fan_12v_supply_connected": true,
+  "mounting_unchanged": true,
+  "confirmation_basis": "Initial full standstill explicitly confirmed; PWM has remained zero throughout subsequent clarification. Current connected supply confirmed separately. No intervening start commanded or physical change reported.",
+  "standstill_source": "initial_standstill_partial_reply.json",
+  "supply_and_mounting_source": "operator_mounting_reply_20260911_074100_802060.json",
+  "mounting_unchanged_basis": "User instruction to keep the newly described setup unchanged during this pilot; not a sensor measurement",
+  "safety_source": "safety_confirmation.json",
+  "recorded_utc_meaning": "time assembled from preceding user replies, not exact time of physical observation"
+}

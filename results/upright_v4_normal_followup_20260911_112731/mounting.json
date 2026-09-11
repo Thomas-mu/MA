@@ -1,0 +1,29 @@
+{
+  "mounting_id": "fan_upright_position_v4_20260911_103726",
+  "created_utc": "2026-09-11T10:43:58.875643+00:00",
+  "fan_orientation": "upright; final position after reported movement to fit plate",
+  "source_position_change": "results/upright_position_change_20260911_103726/position_change.json",
+  "source_current_readiness": "initial_release.json",
+  "previous_mounting_id": "fan_upright_mount_v3_20260911_095035",
+  "current_without_plate_user_confirmed": true,
+  "current_standstill_user_confirmed": true,
+  "external_12v_supply_connected_user_confirmed": true,
+  "sensor_attachment": "two screws on stationary outer fan frame; existing fastening to remain unchanged",
+  "movement_distance_mm": null,
+  "rotation_degrees": null,
+  "actual_plate_geometry": null,
+  "prior_firm_safe_upright_mounting_confirmation": "user statement retained; no independent force or fastening measurement",
+  "final_position_readiness_user_message": "Ohne Platte bereit, Lüfter steht still, Versorgung angeschlossen.“",
+  "constant_during_new_sequence": [
+    "fan final position",
+    "sensor attachment",
+    "sensor configuration"
+  ],
+  "previous_measurements_direct_reference": false,
+  "followup_context": {
+    "same_mounting_version": true,
+    "source": "results/upright_position_v4_sequence_20260911_104025/mounting.json",
+    "plate_state": "removed; no further plate change instructed",
+    "release_source": "normal_followup_release.json"
+  }
+}

@@ -1,0 +1,9 @@
+# Positionsänderung und Wiederherstellung der Nullvorgabe
+
+Der Nutzer berichtet, den Lüfter zum Einpassen der Platte etwas bewegt zu haben. Strecke, mögliche Drehung und genaue Istgeometrie wurden nicht angegeben. Die Auswirkungen auf die Vibration sind nicht gemessen. Da Position und Plattenzustand gemeinsam verändert wurden, kann die vorhandene aufrechte Normalaufnahme nicht als direkte Vorherreferenz für einen alleinigen Platteneffekt in dieser neuen Position dienen. Sie bleibt als historische Aufnahme erhalten.
+
+Die geänderte Position erhält vorläufig `fan_upright_position_v4_20260911_103726`. Kein Plattenlauf wurde gestartet. Für den kontrollierten Vergleich muss der Lüfter in seiner endgültigen Position bleiben; nur die Platte wird nach Trennen der externen12V und bestätigtem mechanischem Stillstand entfernt. Anschließend sind eine neue30-s-Stillstandsreferenz und ein300-s-Normallauf ohne Platte vorgesehen. Start erst nach der entsprechenden Bereitschaftsmeldung. Sensor und Lüfter dürfen zwischen diesen Referenzen und dem späteren Plattenlauf nicht verschoben werden.
+
+Bei einer Softwarekontrolle im vorangegangenen, unterbrochenen Turn wurde GPIO18 als Digitalausgang High erkannt, obwohl die gespeicherte PWM-Vorgabe0% betrug. In diesem Turn war GPIO18 zunächst Digitalausgang Low. Ursache, auslösender Prozess und exakte Umschaltzeit sind nicht belegt; keine Nutzerhandlung wird daraus behauptet. Die angekündigte Softwarekorrektur stellte anschließend über die vorhandene Steuerung0% PWM bei25kHz und die Pin-Funktion a3/PWM0_CHAN2 her; vollständige Rücklesungen und Befehle stehen im neuen zero_restore-Journal.
+
+Eine elektrische Wellenform oder mechanischer Stillstand wurden nicht gemessen. Bisherige Messdateien, Protokolle, Modelle und Worddatei bleiben unverändert. Es wurden keine neuen Messungen oder Trainings gestartet.

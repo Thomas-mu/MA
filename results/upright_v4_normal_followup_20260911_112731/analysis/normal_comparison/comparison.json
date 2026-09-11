@@ -1,0 +1,124 @@
+{
+  "created_utc": "2026-09-11T11:34:29.024332+00:00",
+  "mounting_id": "fan_upright_position_v4_20260911_103726",
+  "records": [
+    "normal_before",
+    "normal_after",
+    "normal_followup"
+  ],
+  "full_normal_recordings": 3,
+  "primary_interval_s": [
+    180,
+    300
+  ],
+  "window_length_s": 5,
+  "windows_are_independent_replicates": false,
+  "settling_time_validated": false,
+  "primary": {
+    "normal_before": {
+      "mean_mg": 27.736778507218087,
+      "median_mg": 27.67169579274764,
+      "std_mg_ddof0": 0.2525685986948969,
+      "min_mg": 27.38804348691058,
+      "max_mg": 28.418646848442666,
+      "windows": 24,
+      "linear_slope_mg_min": -0.11763866866721247,
+      "theil_sen_slope_mg_min": -0.112886349410524,
+      "fitted_120s_change_mg": -0.23527733733442494,
+      "fitted_120s_change_percent": -0.8482504097337674,
+      "last60_minus_first60_mg": -0.15908442650403032,
+      "four_30s_means_mg": [
+        27.78105064746317,
+        27.851590793477033,
+        27.691093337675884,
+        27.62337925025626
+      ],
+      "residual_std_mg": 0.24328163416543933
+    },
+    "normal_after": {
+      "mean_mg": 33.14771066519531,
+      "median_mg": 33.09767599585844,
+      "std_mg_ddof0": 0.5450320437467152,
+      "min_mg": 32.095154494927485,
+      "max_mg": 34.315830270998134,
+      "windows": 24,
+      "linear_slope_mg_min": 0.8002288398788081,
+      "theil_sen_slope_mg_min": 0.7680087098991848,
+      "fitted_120s_change_mg": 1.6004576797576162,
+      "fitted_120s_change_percent": 4.828260074799304,
+      "last60_minus_first60_mg": 0.8793866171977172,
+      "four_30s_means_mg": [
+        32.580187935320104,
+        32.835846777872796,
+        33.431474116610254,
+        33.74333383097809
+      ],
+      "residual_std_mg": 0.28978459633937986
+    },
+    "normal_followup": {
+      "mean_mg": 39.127636495156985,
+      "median_mg": 39.18384282888276,
+      "std_mg_ddof0": 0.3390320102442501,
+      "min_mg": 38.27128189921692,
+      "max_mg": 39.565929379377074,
+      "windows": 24,
+      "linear_slope_mg_min": 0.20312616103725925,
+      "theil_sen_slope_mg_min": 0.20891725206987488,
+      "fitted_120s_change_mg": 0.4062523220745185,
+      "fitted_120s_change_percent": 1.0382746275124548,
+      "last60_minus_first60_mg": 0.21237421068556017,
+      "four_30s_means_mg": [
+        39.02363679984246,
+        39.01926197978594,
+        39.28805710193222,
+        39.17959009906732
+      ],
+      "residual_std_mg": 0.31814017192083416
+    }
+  },
+  "normal_run_mean_range_mg": 11.390857987938897,
+  "normal_run_means_sd_mg_ddof1": 5.697797022409425,
+  "within_run_pooled_sd_mg_ddof0": 0.3982434472060534,
+  "followup_contrasts": {
+    "normal_before": {
+      "mean_difference_mg": 11.390857987938897,
+      "percent_of_reference_mean": 41.067703608674655,
+      "observed_ranges_overlap": false,
+      "followup_windows_inside_reference_range": 0
+    },
+    "normal_after": {
+      "mean_difference_mg": 5.979925829961672,
+      "percent_of_reference_mean": 18.040237802125265,
+      "observed_ranges_overlap": false,
+      "followup_windows_inside_reference_range": 0
+    }
+  },
+  "input_sha256": {
+    "results/upright_position_v4_sequence_20260911_104025/normal_before_session.json": "7f68de304326ab81a1d96900404692f9682f7a30b7f6e4495a53e37358b62356",
+    "data/upright_position_v4_sequence_20260911_104025/normal_before_75pwm_300s_20260911_104430_339886.csv": "8a141c4284bac2cb64c11f0006fa29d336a54ea2936127946be59b2ea1a9426b",
+    "data/upright_position_v4_sequence_20260911_104025/normal_before_75pwm_300s_20260911_104430_339886.json": "9f476d46357726b9d62150570110311e1b0af5b0f872e806be7129088f452446",
+    "results/upright_position_v4_sequence_20260911_104025/normal_before_fan.jsonl": "02a5950af3205bab5784c6ad891d3cff9bb29c383bfebdc437be102510cb8c26",
+    "results/upright_position_v4_sequence_20260911_104025/initial_release.json": "60ac00d8684e849fe2955a73786b38885503df2bdea5897e68a1c73e2875710a",
+    "results/upright_position_v4_sequence_20260911_104025/mounting.json": "8c46ff0527da4db47efdd45ae4d9a1e2847d0e3d7606a52c45d2c59a2a19d6cd",
+    "results/upright_position_v4_sequence_20260911_104025/analysis/normal_before/summary.json": "1f88a1700e303fc6d05e3e4fb509bdbe77fcf15def4ed712e619679766f40e08",
+    "results/upright_position_v4_sequence_20260911_104025/analysis/normal_before/five_second_rms.csv": "7a47eca374a227eae0fefdb1be422542aa9b66caeb4d6134c5c60543dc4959c0",
+    "results/upright_position_v4_sequence_20260911_104025/normal_after_session.json": "88782e3f05bdfa22f382c945cb2d57a14f4152ef506e869b37a946b049941a67",
+    "data/upright_position_v4_sequence_20260911_104025/normal_after_75pwm_300s_20260911_111103_206329.csv": "5357e8d0c0592a6e3765904f16ea037937f2f5f54e7c0d88ba2c42cda6589944",
+    "data/upright_position_v4_sequence_20260911_104025/normal_after_75pwm_300s_20260911_111103_206329.json": "5203831902be0c55c489fae450dd43bfcb7c196c7dcffd933582c4c91738e2ef",
+    "results/upright_position_v4_sequence_20260911_104025/normal_after_fan.jsonl": "7f931a6d579720ef6714c100c8dc6d19d2ed43b4ab51785595a64bc97e7b0822",
+    "results/upright_position_v4_sequence_20260911_104025/normal_after_release.json": "e462623dde719dc8033dfe92905d0ea7abf03ccec63326d882c5fdeaabfdfd39",
+    "results/upright_position_v4_sequence_20260911_104025/analysis/normal_after/summary.json": "d54b2777f9ac49b0f154889e6627397da7c1c608c4a8e7b3e7c4cddb2b749dcb",
+    "results/upright_position_v4_sequence_20260911_104025/analysis/normal_after/five_second_rms.csv": "735a0bb58f1e51c99e29222ce115ba4c3bfba63ce09d7ff6817d0e5a1ef18c75",
+    "results/upright_v4_normal_followup_20260911_112731/normal_followup_session.json": "b9eb11c8283e090ef27d94992e0ba89f3d5053e8f3ad7330a3c6de00d42b8a29",
+    "data/upright_v4_normal_followup_20260911_112731/normal_followup_75pwm_300s_20260911_112835_067380.csv": "557d1a665573d4f6113a0913e81d0d29191907f4a31b8810f9fd83a2cc9b5f50",
+    "data/upright_v4_normal_followup_20260911_112731/normal_followup_75pwm_300s_20260911_112835_067380.json": "da13050e25d65cdb9436b29ba9e3df477d9d6479661cb9e20393ba36deaac20b",
+    "results/upright_v4_normal_followup_20260911_112731/normal_followup_fan.jsonl": "1c187b4f348396a4d568856dd8ccbb8cb9181c781cbff52197ce308b1ee845c2",
+    "results/upright_v4_normal_followup_20260911_112731/normal_followup_release.json": "c9b8ec0d9b93cab5f134ed12c7511b9591955acac321e46741d285b9d39e9a7d",
+    "results/upright_v4_normal_followup_20260911_112731/mounting.json": "a5395ccfe5ec28ff015dc60bfc7ae1c57b764b8bb6ca3cba8915220643815333",
+    "results/upright_v4_normal_followup_20260911_112731/analysis/normal_followup/summary.json": "2b2a012f9107e3b6b28e4ba35906279d84e4d40492f85d7888d4969d4cb76181",
+    "results/upright_v4_normal_followup_20260911_112731/analysis/normal_followup/five_second_rms.csv": "99976f25f82c32e83b684b05bddd82a87ca7d95a3529f03623c351a54c1b4d56"
+  },
+  "source_sha256": "fcd0ed8c672cc17cd2f2ec1c6c1d6c8d242c1ac2cb3364640f12961915aabd7e",
+  "models_trained": false,
+  "interpretation": "Three pilot normal starts; different total off times; descriptive comparison, no calibrated normal distribution or detection proof."
+}

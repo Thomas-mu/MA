@@ -1,0 +1,60 @@
+{
+  "created_utc": "2026-09-11T11:39:28.327428+00:00",
+  "status": "single_followup_complete_analyzed_zero_read_back",
+  "mounting_id": "fan_upright_position_v4_20260911_103726",
+  "protected_file_count": 1028,
+  "changed_or_missing": [],
+  "all_input_hashes_match": true,
+  "capture_source_hashes_match": true,
+  "same_sensor_configuration": true,
+  "control_transactions": [
+    75,
+    0
+  ],
+  "all_quality_flags_clear": true,
+  "plots_visually_checked": [
+    "analysis/normal_followup/phase_overview.png",
+    "analysis/normal_comparison/comparison.png"
+  ],
+  "report_values_checked": true,
+  "report_table_columns_consistent": true,
+  "report_links_checked": 16,
+  "additional_off_deviation_s": 3.904915703999997,
+  "deviation_reason": "Preparation of isolated follow-up directory finished after 60-s target; no automatic repeat",
+  "final_pwm_readback": {
+    "period": "40000",
+    "duty_cycle": "0",
+    "enable": "1",
+    "polarity": "normal"
+  },
+  "final_pin_readback": "18: a3    pd | lo // GPIO18 = PWM0_CHAN2",
+  "mechanical_standstill_after_followup_user_confirmed": null,
+  "standstill_question_pending": true,
+  "readable_device_holders": [],
+  "models_trained": false,
+  "further_starts_authorized": false,
+  "frequency_comparison_performed": false,
+  "word_sha256": "a9a5d7d17b28098f554240a3e1650881e252db679f33319a1d11164b3246cbb8",
+  "artifact_sha256": {
+    "protocol.md": "4cc1a9e71fdb357bf6b72d229b2486cd0378be07d20fc34c15cbd8648d4d532d",
+    "normal_followup_fan.jsonl": "1c187b4f348396a4d568856dd8ccbb8cb9181c781cbff52197ce308b1ee845c2",
+    "compare_normals.py": "fcd0ed8c672cc17cd2f2ec1c6c1d6c8d242c1ac2cb3364640f12961915aabd7e",
+    "normal_followup_release.json": "c9b8ec0d9b93cab5f134ed12c7511b9591955acac321e46741d285b9d39e9a7d",
+    "mounting.json": "a5395ccfe5ec28ff015dc60bfc7ae1c57b764b8bb6ca3cba8915220643815333",
+    "normal_followup_session.json": "b9eb11c8283e090ef27d94992e0ba89f3d5053e8f3ad7330a3c6de00d42b8a29",
+    "preservation_baseline.json": "6ff93166a3e1c974e74b2d737207e2b3fb43585c5fe04e58a343c1dd6c61d5cc",
+    "analyze_phase.py": "465f9b13fc28c351339c4185480731937f38bc3130ccc219f528e67636d4f118",
+    "sequence_common.py": "15a63493fb6445263d39adf40f055a6e34f9f32cce3375668c779d359911b822",
+    "geometry.json": "88410ff4de9bcdbcd67a7343781669d019655e2539b0a7b3438928e0142770a0",
+    "run_phase.py": "e6161eaa7f78dd4cd06e6e89afa0e6f8d90e3fdd22dd96d353a125cabc39a33d",
+    "measurement_report.md": "9dd1488b7aba9f6ca0d588012ebe74820b5742d3782651f740b2d8e2281b8ac7",
+    "normal_followup_readonly_spotchecks.jsonl": "ae83daa5a3d0da4d878830ff67c63c277112cb25441ac5910ded4c1cef64c502",
+    "analysis/normal_followup/phase_overview.png": "ab515f62f79d0b65c2cf3f99cb3bdff5ac83b8e0e027372f97022453107d8925",
+    "analysis/normal_followup/phase_overview.pdf": "5ebaac6784386fb9450a972679eddeabbb793f56df7ce06c974b225636e86738",
+    "analysis/normal_followup/five_second_rms.csv": "99976f25f82c32e83b684b05bddd82a87ca7d95a3529f03623c351a54c1b4d56",
+    "analysis/normal_followup/summary.json": "2b2a012f9107e3b6b28e4ba35906279d84e4d40492f85d7888d4969d4cb76181",
+    "analysis/normal_comparison/comparison.png": "7dc19bb390c28bf2398baf90441c2e4058859cd91d209682e92a0670a9e286b5",
+    "analysis/normal_comparison/comparison.pdf": "8f33de4ddac8cfbf90c1bb8429c356a1ce23c101379c3a73251e33a5e074b923",
+    "analysis/normal_comparison/comparison.json": "49ab300627a3eeb9a012bda0cc5e6656749e3fdbb0ecb87de091905da2e02a9e"
+  }
+}

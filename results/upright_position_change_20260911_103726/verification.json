@@ -1,0 +1,10 @@
+{
+  "recorded_utc": "2026-09-11T10:40:25.700894+00:00",
+  "preexisting_files_checked": 946,
+  "changed_or_missing": [],
+  "pwm_percent": 0,
+  "pwm_frequency_hz": 25000,
+  "pwm_mux_verified": true,
+  "mechanical_standstill_observed": null,
+  "new_measurements": false
+}

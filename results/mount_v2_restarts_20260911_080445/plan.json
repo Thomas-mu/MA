@@ -1,0 +1,26 @@
+{
+  "created_utc": "2026-09-11T08:04:45.455140+00:00",
+  "mounting_id": "adxl345_mount_v2_provisional_20260911_072748",
+  "mounting_source": "results/mount_v2_pilot_20260911_072748/mounting_details.json",
+  "safety_source": "results/mount_v2_pilot_20260911_072748/safety_confirmation.json",
+  "prior_shutdown_source": "results/mount_v2_pilot_20260911_072748/session.json",
+  "runs": 3,
+  "pwm_percent": 75,
+  "pwm_frequency_hz": 25000,
+  "duration_s": 300,
+  "off_after_confirmed_standstill_s": 60,
+  "off_timer_origin": "monotonic time when current run standstill reply is accepted and saved by software",
+  "primary_analysis_interval_since_first_xyz_s": [
+    180,
+    300
+  ],
+  "primary_window_status": "prospectively selected candidate; settling time not validated",
+  "nominal_odr_hz": 200,
+  "range_g": 2,
+  "full_resolution": true,
+  "fifo_stream": true,
+  "automatic_restarts": false,
+  "reply_deadline": false,
+  "training": false,
+  "induced_anomalies": false
+}

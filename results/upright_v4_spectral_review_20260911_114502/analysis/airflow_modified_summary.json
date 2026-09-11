@@ -1,0 +1,109 @@
+{
+  "phase": "airflow_modified",
+  "mounting_id": "fan_upright_position_v4_20260911_103726",
+  "sensor": {
+    "model": "ADXL345",
+    "odr_hz": 200,
+    "range_g": 2,
+    "full_resolution": true,
+    "scale_g_per_lsb": 0.0039,
+    "acquisition_mode": "fifo_stream",
+    "register_readback": {
+      "0x2c": "0xb",
+      "0x31": "0x8",
+      "0x2e": "0x0",
+      "0x38": "0x90",
+      "0x2d": "0x8"
+    },
+    "timestamp_source": "host_monotonic_read_completion",
+    "sensor_time_estimate": "sample_index / nominal ODR; not measured sensor time",
+    "lost_samples_exact": null,
+    "bus_number": 1,
+    "i2c_clock_configured_hz": 100000
+  },
+  "primary_interval_s": [
+    180,
+    300
+  ],
+  "nominal_odr_hz": 200,
+  "observed_rate_hz": 207.1838619998999,
+  "nominal_frequency_factor": 0.9653261507409135,
+  "segment_samples": 1024,
+  "overlap_samples": 512,
+  "segments": 47,
+  "segment_duration_s": 4.942469891793477,
+  "frequency_bin_spacing_hz": 0.20232799023427725,
+  "selected_xyz_points": 24862,
+  "tail_points_not_in_complete_fft_segment": 286,
+  "hann_psd_rms_mg": 36.479128875564165,
+  "mean_5s_ac_rms_mg": 36.480534324014606,
+  "bands": [
+    {
+      "low_hz": 0,
+      "high_hz": 10,
+      "power_g2": 2.0988323388408936e-05,
+      "rms_mg": 4.581301495034892,
+      "fraction": 0.015773075808245732
+    },
+    {
+      "low_hz": 10,
+      "high_hz": 30,
+      "power_g2": 4.1484556301764526e-05,
+      "rms_mg": 6.44085058837453,
+      "fraction": 0.0311763374000868
+    },
+    {
+      "low_hz": 30,
+      "high_hz": 60,
+      "power_g2": 0.0011717242143698934,
+      "rms_mg": 34.230457408131336,
+      "fraction": 0.880570330349505
+    },
+    {
+      "low_hz": 60,
+      "high_hz": 90,
+      "power_g2": 5.660567032152327e-05,
+      "rms_mg": 7.523673990911838,
+      "fraction": 0.04254010730800142
+    },
+    {
+      "low_hz": 90,
+      "high_hz": null,
+      "power_g2": 3.983963178547934e-05,
+      "rms_mg": 6.311864366847512,
+      "fraction": 0.029940149134160952
+    }
+  ],
+  "largest_separated_local_psd_bins": [
+    {
+      "frequency_hz": 39.453958095684065,
+      "nominal_scaled_hz": 38.0859375,
+      "density_g2_per_hz": 0.002892478249845447
+    },
+    {
+      "frequency_hz": 49.772685597632204,
+      "nominal_scaled_hz": 48.04687500000001,
+      "density_g2_per_hz": 6.377387322936082e-05
+    },
+    {
+      "frequency_hz": 99.34304320503013,
+      "nominal_scaled_hz": 95.8984375,
+      "density_g2_per_hz": 4.701199402157669e-05
+    },
+    {
+      "frequency_hz": 68.3868606991857,
+      "nominal_scaled_hz": 66.01562499999999,
+      "density_g2_per_hz": 1.119070926443534e-05
+    },
+    {
+      "frequency_hz": 89.024315703082,
+      "nominal_scaled_hz": 85.9375,
+      "density_g2_per_hz": 4.985746297839633e-06
+    }
+  ],
+  "input_sha256": {
+    "data/upright_position_v4_sequence_20260911_104025/airflow_modified_75pwm_300s_20260911_110050_628158.csv": "1efabb0203d77cc6d06eb9d085c689c6de14cc6293373b241d3f8abbd686e394",
+    "data/upright_position_v4_sequence_20260911_104025/airflow_modified_75pwm_300s_20260911_110050_628158.json": "1a2df4f9dbff4abd9094d6ca7e32421e26ef3e1a292be51573400be2de72bd3e",
+    "results/upright_position_v4_sequence_20260911_104025/airflow_modified_session.json": "105ab838a9b2bded5369fdbb41beda8c88806a4970d2417a62bbcb77b2838d34"
+  }
+}

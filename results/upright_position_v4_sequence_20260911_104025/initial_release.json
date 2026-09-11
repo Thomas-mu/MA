@@ -1,0 +1,19 @@
+{
+  "source": "explicit_user_message",
+  "released": true,
+  "mounting_id": "fan_upright_position_v4_20260911_103726",
+  "boot_id": "e0207b92-50ab-43c9-b686-57d9dae9d7bb",
+  "accepted_monotonic_ns": 14063787231435,
+  "accepted_utc": "2026-09-11T10:43:06.343092+00:00",
+  "authorized_phases": [
+    "standstill",
+    "normal_before"
+  ],
+  "mechanical_standstill_user_confirmed": true,
+  "external_12v_supply_connected": true,
+  "without_plate_ready_user_confirmed": true,
+  "operator_message": "Ohne Platte bereit, Lüfter steht still, Versorgung angeschlossen.“",
+  "authorization_source": "explicit user readiness for new final-position references after reported fan movement",
+  "time_origin_note": "software acceptance of readiness; not measured rotor-stop instant",
+  "automatic_following_manual_phases_authorized": false
+}

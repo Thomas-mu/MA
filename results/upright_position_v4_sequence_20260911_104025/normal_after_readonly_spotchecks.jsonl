@@ -1,0 +1,2 @@
+{"utc": "2026-09-11T11:14:45.254015+00:00", "monotonic_ns": 15962698190791, "purpose": "read-only setpoint check, no waveform or RPM measurement", "pwm": {"period": "40000", "duty_cycle": "30000", "enable": "1", "polarity": "normal"}, "pin": "18: a3    pd | hi // GPIO18 = PWM0_CHAN2"}
+{"utc": "2026-09-11T11:15:54.574642+00:00", "monotonic_ns": 16032018817107, "purpose": "read-only setpoint check, no waveform or RPM measurement", "pwm": {"period": "40000", "duty_cycle": "30000", "enable": "1", "polarity": "normal"}, "pin": "18: a3    pd | hi // GPIO18 = PWM0_CHAN2"}

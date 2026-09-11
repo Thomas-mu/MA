@@ -1,0 +1,45 @@
+{
+  "created_utc": "2026-09-11T10:43:58.876307+00:00",
+  "sequence_id": "upright_position_v4_sequence_20260911_104025",
+  "mounting_id": "fan_upright_position_v4_20260911_103726",
+  "status": "initial_block_released",
+  "phases": [
+    "standstill",
+    "normal_before",
+    "airflow_modified",
+    "normal_after"
+  ],
+  "durations_s": [
+    30,
+    300,
+    300,
+    300
+  ],
+  "nominal_odr_hz": 200,
+  "range_g": 2,
+  "fifo": true,
+  "full_resolution": true,
+  "operating_pwm_percent": 75,
+  "frequency_hz": 25000,
+  "additional_off_s_after_release": 60,
+  "first_off_interval": "30-s standstill capture occurs within60s interval after initial confirmation; report any extra setup delay",
+  "historical_source_sequence": "results/upright_airflow_sequence_20260911_095035",
+  "historical_sequence_reused_as_normal_reference": false,
+  "manual_release_required_before": [
+    "airflow_modified",
+    "normal_after"
+  ],
+  "initial_scope_after_states_confirmed": [
+    "standstill",
+    "normal_before"
+  ],
+  "no_running_questions": true,
+  "no_response_deadlines": true,
+  "no_automatic_restarts": true,
+  "primary_candidate_interval_s": [
+    180,
+    300
+  ],
+  "settling_time_validated": false,
+  "models_trained": false
+}

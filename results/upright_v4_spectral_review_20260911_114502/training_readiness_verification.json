@@ -1,0 +1,19 @@
+{
+  "created_utc": "2026-09-11T12:24:20.669239+00:00",
+  "status": "readiness_inventory_complete_no_training_or_capture",
+  "readiness_report_sha256": "a9fa658acf7ed51b905bdd7c7da585c500dd69b97ec3a1e9f1fbf8f3966ebd9f",
+  "links_checked": 7,
+  "historical_files_checked": 1051,
+  "changed_or_missing": [],
+  "previous_spectral_artifacts_preserved": true,
+  "software_findings": {
+    "current_model_window_samples": 128,
+    "current_step_samples": 128,
+    "existing_pilot_import_profile_ready": false,
+    "recording_state_alias_handling_needed": true,
+    "final_preprocessing_decision_needed": true
+  },
+  "models_trained": false,
+  "hardware_commands_sent": [],
+  "word_unchanged_sha256": "a9a5d7d17b28098f554240a3e1650881e252db679f33319a1d11164b3246cbb8"
+}

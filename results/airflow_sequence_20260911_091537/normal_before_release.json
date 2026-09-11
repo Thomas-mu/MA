@@ -1,0 +1,15 @@
+{
+  "phase": "normal_before",
+  "source": "explicit_user_message",
+  "operator_message": "Normalaufbau bereit, Versorgung angeschlossen, erster Lauf freigegeben.",
+  "full_user_message": "Normalaufbau bereit, Versorgung angeschlossen, erster Lauf freigegeben. Bitte führe die angekündigten 60 Sekunden Auszeit und danach die 300-Sekunden-Aufnahme bei 75 % PWM ohne weitere Rückfragen durch. Anschließend auf 0 % zurückstellen und auslesen. Für den manuellen Plattenumbau pausieren. Ich melde mich selbstständig, sobald der Umbau abgeschlossen und der nächste Lauf freigegeben ist. Nicht erneut nachfragen.",
+  "released": true,
+  "accepted_monotonic_ns": 9316599245007,
+  "accepted_utc": "2026-09-11T09:23:59.155106+00:00",
+  "boot_id": "e0207b92-50ab-43c9-b686-57d9dae9d7bb",
+  "supply_connected_user_confirmed": true,
+  "normal_setup_ready_user_confirmed": true,
+  "mechanical_standstill_separately_observed": null,
+  "actual_geometry_dimensions_reported": null,
+  "scope": "One normal_before start after 60s additional off time, 300s capture then zero and pause; no running questions"
+}

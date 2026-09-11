@@ -1,0 +1,12 @@
+{
+  "created_utc": "2026-09-11T12:35:12.423534+00:00",
+  "user_request": "Dann starrte bitte damit",
+  "scope": "Offline pilot parameters and dataset preparation only. No training or capture.",
+  "pwm_sysfs_read_only": {
+    "period": "40000",
+    "duty_cycle": "0",
+    "enable": "1",
+    "polarity": "normal"
+  },
+  "mechanical_state": "not inferred"
+}

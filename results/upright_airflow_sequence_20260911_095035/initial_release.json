@@ -1,0 +1,21 @@
+{
+  "source": "explicit_user_message",
+  "released": true,
+  "mounting_id": "fan_upright_mount_v3_20260911_095035",
+  "boot_id": "e0207b92-50ab-43c9-b686-57d9dae9d7bb",
+  "accepted_monotonic_ns": 12804470892281,
+  "accepted_utc": "2026-09-11T10:22:07.026754+00:00",
+  "authorized_phases": [
+    "standstill",
+    "normal_before"
+  ],
+  "mechanical_standstill_user_confirmed": true,
+  "external_12v_supply_connected": true,
+  "standstill_question": "Steht der Lüfter jetzt vollständig mechanisch still?",
+  "standstill_answer": "ja",
+  "supply_answer_previous_message": "angeschlossen",
+  "authorization_source": "User requested upright standstill followed by first normal recording, then pause for manual plate change.",
+  "firm_safe_upright_setup_confirmation_inherited": true,
+  "time_origin_note": "Software acceptance of current standstill reply; not measured physical stop instant",
+  "automatic_following_manual_phases_authorized": false
+}

@@ -1,0 +1,20 @@
+{
+  "recorded_utc": "2026-09-11T10:40:25.364638+00:00",
+  "provisional_mounting_id": "fan_upright_position_v4_20260911_103726",
+  "previous_mounting_id": "fan_upright_mount_v3_20260911_095035",
+  "operator_message": "habe ich abgeschlossen udn dann haeb ich aber dafr den Lüfter bisschen beqwegt damit doe Platte passt",
+  "fan_moved_for_plate_user_reported": true,
+  "movement_amount_mm": null,
+  "possible_rotation_degrees": null,
+  "plate_installation_reported_complete": true,
+  "actual_plate_dimensions_and_distance": null,
+  "former_before_reference_valid_as_direct_control_for_new_position": false,
+  "measured_signal_effect_of_movement": null,
+  "unannounced_pin_state_detected_in_previous_turn": "GPIO18 output High, pwm saved zero; setter identity and command time unknown",
+  "pin_state_at_this_turn": "GPIO18 output Low before assistant restoration; setter identity unknown",
+  "assistant_restore_report": "results/upright_position_change_20260911_103726/zero_restore_20260911_104025_156866.json",
+  "old_measurements_and_documents_changed": false,
+  "new_measurement_started": false,
+  "models_trained": false,
+  "recommended_next_step": "Keep final fan position fixed; disconnect fan12V, wait for full mechanical stop, remove only plate, then establish a new no-plate stillstand and normal reference after readiness message."
+}

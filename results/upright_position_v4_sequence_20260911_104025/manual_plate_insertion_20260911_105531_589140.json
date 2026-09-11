@@ -1,0 +1,30 @@
+{
+  "recorded_utc": "2026-09-11T10:55:31.589140+00:00",
+  "event": "user_reported_manual_plate_insertion",
+  "mounting_id": "fan_upright_position_v4_20260911_103726",
+  "operator_message": "ich hab externe 12-V-Versorgung trennen, vollständigen Stillstand abwarten und **nur die Platte einsetzen — Lüfter und Sensor bleiben in ihrer jetzigen Position**.  ",
+  "evidence_type": "user_report; not independently observed",
+  "reported_actions": {
+    "external_12v_disconnected_before_change": true,
+    "mechanical_standstill_awaited_before_change": true,
+    "plate_inserted": true,
+    "fan_and_sensor_position_unchanged": true
+  },
+  "external_12v_reconnected_confirmed": false,
+  "external_12v_current_state": "last reported disconnected; reconnection not reported",
+  "mechanical_standstill_current_observation": null,
+  "actual_plate_dimensions_mm": null,
+  "actual_plate_outlet_distance_mm": null,
+  "actual_plate_alignment": null,
+  "next_phase_released": false,
+  "status": "paused_waiting_for_user_initiated_reconnection_confirmation_and_release",
+  "software_control_actions_this_turn": [],
+  "pwm_readback": {
+    "period": "40000",
+    "duty_cycle": "0",
+    "enable": "1",
+    "polarity": "normal"
+  },
+  "pin_readback": "18: a3    pd | lo // GPIO18 = PWM0_CHAN2",
+  "previous_files_modified": false
+}

@@ -1,0 +1,11 @@
+{
+  "recorded_utc": "2026-09-11T07:53:21.959106+00:00",
+  "syntax": "passed",
+  "checks": [
+    "analytic sine/cosine vector AC-RMS",
+    "invariance to independent constant axis offsets",
+    "constant signal gives zero AC-RMS"
+  ],
+  "synthetic_only": true,
+  "hardware_access": false
+}

@@ -1,0 +1,10 @@
+{
+  "recorded_utc": "2026-09-11T07:41:00.802060+00:00",
+  "mounting_id": "adxl345_mount_v2_provisional_20260911_072748",
+  "operator_answer": "1. Die externe 12-V-Versorgung ist aktuell [angeschlossen].\n2. Die Prüfung bei getrennter Stromversorgung habe ich [durchgeführt  Ergebnis: [Rotor frei, Kabel gesichert, keine erkennbaren Kurzschlüsse, Platine fest und nicht verbogen / festgestellte Probleme].\n3. Der Sensor ist mit zwei Schrauben am äußeren, feststehenden Lüfterrahmen befestigt. Die Platine sitzt schräg.",
+  "fan_12v_supply_connected": true,
+  "power_disconnected_during_checks_user_reported": true,
+  "complete_safety_result_confirmed": null,
+  "unresolved_text": "Prüfergebnis enthält weiterhin die Alternative / festgestellte Probleme; kein vollständig positives Ergebnis abgeleitet.",
+  "positive_pwm_commands_issued": false
+}

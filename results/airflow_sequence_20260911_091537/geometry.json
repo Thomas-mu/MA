@@ -1,0 +1,29 @@
+{
+  "fixture_version": "outlet_screen_v1_proposed",
+  "created_utc": "2026-09-11T09:19:35.331680+00:00",
+  "planned": {
+    "plate_width_mm": 60,
+    "plate_height_mm": 120,
+    "outlet_distance_mm": 100,
+    "alignment": "parallel to outlet plane; covers right half of frame silhouette when looking into outlet",
+    "normal_park_clearance_from_projected_outlet_mm": 120,
+    "support": "separate, tip resistant; no fan or sensor contact"
+  },
+  "actual": {
+    "plate_width_mm": null,
+    "plate_height_mm": null,
+    "outlet_distance_mm": null,
+    "material": null,
+    "alignment": null,
+    "normal_park_clearance_mm": null,
+    "clamping_details": null,
+    "fan_support_details": null
+  },
+  "evidence": {
+    "planned_geometry_source": "results/mount_v2_review_20260911_085505/versuchsplan.md",
+    "actual_geometry_source": null,
+    "dimensions_measured_by_software": false,
+    "separate_tip_resistant_no_contact": "user specified operating procedure; not independently observed"
+  },
+  "note": "Unknown actual dimensions stay null; phase-specific user reports are separate evidence, not retroactive measurements."
+}

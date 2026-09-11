@@ -1,0 +1,2 @@
+{"utc": "2026-09-11T10:45:46.187601+00:00", "pwm": {"period": "40000", "duty_cycle": "30000", "enable": "1", "polarity": "normal"}, "pin": "18: a3    pd | hi // GPIO18 = PWM0_CHAN2", "read_only": true}
+{"utc": "2026-09-11T10:48:20.152462+00:00", "pwm": {"period": "40000", "duty_cycle": "30000", "enable": "1", "polarity": "normal"}, "pin": "18: a3    pd | lo // GPIO18 = PWM0_CHAN2", "read_only": true}

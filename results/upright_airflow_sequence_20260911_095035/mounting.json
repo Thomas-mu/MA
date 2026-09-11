@@ -1,0 +1,24 @@
+{
+  "mounting_id": "fan_upright_mount_v3_20260911_095035",
+  "created_utc": "2026-09-11T09:50:35.554591+00:00",
+  "fan_orientation": "upright",
+  "orientation_source": "explicit user statement in current instruction",
+  "user_statement": "Der Lüfter steht jetzt aufrecht und ist nach meiner Prüfung fest und sicher befestigt.",
+  "firm_and_safe_mounting_user_confirmed": true,
+  "additional_safety_reconfirmation_required": false,
+  "sensor_attachment": "two screws on outer stationary fan frame; inherited established mounting, no fastening change requested",
+  "prior_sensor_mounting_id": "adxl345_mount_v2_provisional_20260911_072748",
+  "sensor_axes_relative_to_gravity": "changed with upright orientation; not measured here",
+  "fan_support_material": null,
+  "fixture_details": null,
+  "actual_plate_geometry": null,
+  "current_mechanical_standstill_confirmed": null,
+  "current_12v_supply_connected": null,
+  "previous_horizontal_measurements_direct_reference": false,
+  "constant_during_sequence": [
+    "sensor attachment",
+    "fan position",
+    "sensor settings",
+    "75% PWM and25kHz during operation"
+  ]
+}

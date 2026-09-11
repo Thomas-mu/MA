@@ -1,0 +1,50 @@
+{
+  "created_utc": "2026-09-11T11:45:56.646389+00:00",
+  "hardware_access": "read-only PWM check already performed; no sensor acquisition or PWM writes",
+  "mounting_id": "fan_upright_position_v4_20260911_103726",
+  "operating_phases": [
+    "normal_before",
+    "airflow_modified",
+    "normal_after",
+    "normal_followup"
+  ],
+  "standstill_reference": "standstill",
+  "primary_interval_s": [
+    180,
+    300
+  ],
+  "fft_segment_samples": 1024,
+  "fft_overlap_samples": 512,
+  "window": "symmetric Hann, existing src/fft_pilot.py spectrum()",
+  "detrend": "own mean removed per axis per FFT segment",
+  "power": "sum of XYZ power spectral densities, not spectrum of vector magnitude",
+  "frequency_axis": "phase observed FIFO throughput; approximate sensor rate, not independently calibrated",
+  "nominal_sensor_rate_hz": 200,
+  "summary_bands_hz": [
+    [
+      0,
+      10
+    ],
+    [
+      10,
+      30
+    ],
+    [
+      30,
+      60
+    ],
+    [
+      60,
+      90
+    ],
+    [
+      90,
+      null
+    ]
+  ],
+  "bands_interpretation": "fixed descriptive bins selected before spectral results; no fault labels or optimized thresholds",
+  "time_resolved_summary": "all actual samples in each non-overlapping 5s host-time window, same Hann/PSD method; native frequency grids",
+  "models_trained": false,
+  "further_measurements": false,
+  "exact_loss_count_unknown": true
+}

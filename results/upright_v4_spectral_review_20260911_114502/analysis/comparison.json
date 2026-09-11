@@ -1,0 +1,613 @@
+{
+  "created_utc": "2026-09-11T11:47:59.968271+00:00",
+  "phases": {
+    "standstill": {
+      "phase": "standstill",
+      "mounting_id": "fan_upright_position_v4_20260911_103726",
+      "sensor": {
+        "model": "ADXL345",
+        "odr_hz": 200,
+        "range_g": 2,
+        "full_resolution": true,
+        "scale_g_per_lsb": 0.0039,
+        "acquisition_mode": "fifo_stream",
+        "register_readback": {
+          "0x2c": "0xb",
+          "0x31": "0x8",
+          "0x2e": "0x0",
+          "0x38": "0x90",
+          "0x2d": "0x8"
+        },
+        "timestamp_source": "host_monotonic_read_completion",
+        "sensor_time_estimate": "sample_index / nominal ODR; not measured sensor time",
+        "lost_samples_exact": null,
+        "bus_number": 1,
+        "i2c_clock_configured_hz": 100000
+      },
+      "primary_interval_s": [
+        0,
+        30
+      ],
+      "nominal_odr_hz": 200,
+      "observed_rate_hz": 207.0908370053777,
+      "nominal_frequency_factor": 0.9657597742714539,
+      "segment_samples": 1024,
+      "overlap_samples": 512,
+      "segments": 11,
+      "segment_duration_s": 4.944690044269843,
+      "frequency_bin_spacing_hz": 0.20223714551306415,
+      "selected_xyz_points": 6205,
+      "tail_points_not_in_complete_fft_segment": 61,
+      "hann_psd_rms_mg": 13.55891639378066,
+      "mean_5s_ac_rms_mg": 13.602507778142249,
+      "bands": [
+        {
+          "low_hz": 0,
+          "high_hz": 10,
+          "power_g2": 1.8966400742528318e-05,
+          "rms_mg": 4.355043138997399,
+          "fraction": 0.10319596097598888
+        },
+        {
+          "low_hz": 10,
+          "high_hz": 30,
+          "power_g2": 3.664894520475437e-05,
+          "rms_mg": 6.053837229786937,
+          "fraction": 0.1994064751927636
+        },
+        {
+          "low_hz": 30,
+          "high_hz": 60,
+          "power_g2": 5.391961024384479e-05,
+          "rms_mg": 7.342997361013062,
+          "fraction": 0.29337595836449615
+        },
+        {
+          "low_hz": 60,
+          "high_hz": 90,
+          "power_g2": 5.1919104412370645e-05,
+          "rms_mg": 7.205491267940768,
+          "fraction": 0.2824912299165659
+        },
+        {
+          "low_hz": 90,
+          "high_hz": null,
+          "power_g2": 2.2336085475390855e-05,
+          "rms_mg": 4.7261067989827374,
+          "fraction": 0.12153037555018566
+        }
+      ],
+      "largest_separated_local_psd_bins": [
+        {
+          "frequency_hz": 34.78478902824703,
+          "nominal_scaled_hz": 33.59375,
+          "density_g2_per_hz": 2.8119727512986184e-06
+        },
+        {
+          "frequency_hz": 54.60402928852732,
+          "nominal_scaled_hz": 52.73437499999999,
+          "density_g2_per_hz": 2.795139772711989e-06
+        },
+        {
+          "frequency_hz": 2.629082891669834,
+          "nominal_scaled_hz": 2.5390624999999996,
+          "density_g2_per_hz": 2.757119734415761e-06
+        },
+        {
+          "frequency_hz": 78.67024960458195,
+          "nominal_scaled_hz": 75.9765625,
+          "density_g2_per_hz": 2.6732775338975394e-06
+        },
+        {
+          "frequency_hz": 39.63848052056058,
+          "nominal_scaled_hz": 38.28125000000001,
+          "density_g2_per_hz": 2.5724446842362917e-06
+        }
+      ],
+      "input_sha256": {
+        "data/upright_position_v4_sequence_20260911_104025/standstill_0pwm_30s_20260911_104359_704943.csv": "95dd293a1a30f36efb5556961cb388892a69281ded07495b26edf6b8df8d6fd8",
+        "data/upright_position_v4_sequence_20260911_104025/standstill_0pwm_30s_20260911_104359_704943.json": "4934669c8b4cd8010e0fdae178840cfe9cd52eabca3857a1067cee449ea51c84",
+        "results/upright_position_v4_sequence_20260911_104025/standstill_session.json": "68c3428ba0f2ee78b9003f16f4319babb3ff9eb399b8694aae2bb30eb7cf660d"
+      }
+    },
+    "normal_before": {
+      "phase": "normal_before",
+      "mounting_id": "fan_upright_position_v4_20260911_103726",
+      "sensor": {
+        "model": "ADXL345",
+        "odr_hz": 200,
+        "range_g": 2,
+        "full_resolution": true,
+        "scale_g_per_lsb": 0.0039,
+        "acquisition_mode": "fifo_stream",
+        "register_readback": {
+          "0x2c": "0xb",
+          "0x31": "0x8",
+          "0x2e": "0x0",
+          "0x38": "0x90",
+          "0x2d": "0x8"
+        },
+        "timestamp_source": "host_monotonic_read_completion",
+        "sensor_time_estimate": "sample_index / nominal ODR; not measured sensor time",
+        "lost_samples_exact": null,
+        "bus_number": 1,
+        "i2c_clock_configured_hz": 100000
+      },
+      "primary_interval_s": [
+        180,
+        300
+      ],
+      "nominal_odr_hz": 200,
+      "observed_rate_hz": 207.16495729155454,
+      "nominal_frequency_factor": 0.9654142409738201,
+      "segment_samples": 1024,
+      "overlap_samples": 512,
+      "segments": 47,
+      "segment_duration_s": 4.942920913785959,
+      "frequency_bin_spacing_hz": 0.20230952860503373,
+      "selected_xyz_points": 24865,
+      "tail_points_not_in_complete_fft_segment": 289,
+      "hann_psd_rms_mg": 27.761315071510545,
+      "mean_5s_ac_rms_mg": 27.736778507218087,
+      "bands": [
+        {
+          "low_hz": 0,
+          "high_hz": 10,
+          "power_g2": 1.831220619679257e-05,
+          "rms_mg": 4.279276363684937,
+          "fraction": 0.023762906502503955
+        },
+        {
+          "low_hz": 10,
+          "high_hz": 30,
+          "power_g2": 3.699238786405462e-05,
+          "rms_mg": 6.08213678439203,
+          "fraction": 0.04800331782370708
+        },
+        {
+          "low_hz": 30,
+          "high_hz": 60,
+          "power_g2": 0.000617594383314419,
+          "rms_mg": 24.851446302266172,
+          "fraction": 0.8014237841938804
+        },
+        {
+          "low_hz": 60,
+          "high_hz": 90,
+          "power_g2": 5.601685520795328e-05,
+          "rms_mg": 7.484440874771694,
+          "fraction": 0.07269049280932875
+        },
+        {
+          "low_hz": 90,
+          "high_hz": null,
+          "power_g2": 4.170564820504058e-05,
+          "rms_mg": 6.457991034760004,
+          "fraction": 0.05411949867057994
+        }
+      ],
+      "largest_separated_local_psd_bins": [
+        {
+          "frequency_hz": 39.45035807798158,
+          "nominal_scaled_hz": 38.08593750000001,
+          "density_g2_per_hz": 0.001478384608751187
+        },
+        {
+          "frequency_hz": 99.33397854507157,
+          "nominal_scaled_hz": 95.8984375,
+          "density_g2_per_hz": 5.244382133728557e-05
+        },
+        {
+          "frequency_hz": 49.76814403683831,
+          "nominal_scaled_hz": 48.046875000000014,
+          "density_g2_per_hz": 5.1603273356562226e-05
+        },
+        {
+          "frequency_hz": 68.38062066850141,
+          "nominal_scaled_hz": 66.015625,
+          "density_g2_per_hz": 1.0575986350971612e-05
+        },
+        {
+          "frequency_hz": 89.01619258621486,
+          "nominal_scaled_hz": 85.93750000000001,
+          "density_g2_per_hz": 3.816519218725988e-06
+        }
+      ],
+      "input_sha256": {
+        "data/upright_position_v4_sequence_20260911_104025/normal_before_75pwm_300s_20260911_104430_339886.csv": "8a141c4284bac2cb64c11f0006fa29d336a54ea2936127946be59b2ea1a9426b",
+        "data/upright_position_v4_sequence_20260911_104025/normal_before_75pwm_300s_20260911_104430_339886.json": "9f476d46357726b9d62150570110311e1b0af5b0f872e806be7129088f452446",
+        "results/upright_position_v4_sequence_20260911_104025/normal_before_session.json": "7f68de304326ab81a1d96900404692f9682f7a30b7f6e4495a53e37358b62356"
+      }
+    },
+    "airflow_modified": {
+      "phase": "airflow_modified",
+      "mounting_id": "fan_upright_position_v4_20260911_103726",
+      "sensor": {
+        "model": "ADXL345",
+        "odr_hz": 200,
+        "range_g": 2,
+        "full_resolution": true,
+        "scale_g_per_lsb": 0.0039,
+        "acquisition_mode": "fifo_stream",
+        "register_readback": {
+          "0x2c": "0xb",
+          "0x31": "0x8",
+          "0x2e": "0x0",
+          "0x38": "0x90",
+          "0x2d": "0x8"
+        },
+        "timestamp_source": "host_monotonic_read_completion",
+        "sensor_time_estimate": "sample_index / nominal ODR; not measured sensor time",
+        "lost_samples_exact": null,
+        "bus_number": 1,
+        "i2c_clock_configured_hz": 100000
+      },
+      "primary_interval_s": [
+        180,
+        300
+      ],
+      "nominal_odr_hz": 200,
+      "observed_rate_hz": 207.1838619998999,
+      "nominal_frequency_factor": 0.9653261507409135,
+      "segment_samples": 1024,
+      "overlap_samples": 512,
+      "segments": 47,
+      "segment_duration_s": 4.942469891793477,
+      "frequency_bin_spacing_hz": 0.20232799023427725,
+      "selected_xyz_points": 24862,
+      "tail_points_not_in_complete_fft_segment": 286,
+      "hann_psd_rms_mg": 36.479128875564165,
+      "mean_5s_ac_rms_mg": 36.480534324014606,
+      "bands": [
+        {
+          "low_hz": 0,
+          "high_hz": 10,
+          "power_g2": 2.0988323388408936e-05,
+          "rms_mg": 4.581301495034892,
+          "fraction": 0.015773075808245732
+        },
+        {
+          "low_hz": 10,
+          "high_hz": 30,
+          "power_g2": 4.1484556301764526e-05,
+          "rms_mg": 6.44085058837453,
+          "fraction": 0.0311763374000868
+        },
+        {
+          "low_hz": 30,
+          "high_hz": 60,
+          "power_g2": 0.0011717242143698934,
+          "rms_mg": 34.230457408131336,
+          "fraction": 0.880570330349505
+        },
+        {
+          "low_hz": 60,
+          "high_hz": 90,
+          "power_g2": 5.660567032152327e-05,
+          "rms_mg": 7.523673990911838,
+          "fraction": 0.04254010730800142
+        },
+        {
+          "low_hz": 90,
+          "high_hz": null,
+          "power_g2": 3.983963178547934e-05,
+          "rms_mg": 6.311864366847512,
+          "fraction": 0.029940149134160952
+        }
+      ],
+      "largest_separated_local_psd_bins": [
+        {
+          "frequency_hz": 39.453958095684065,
+          "nominal_scaled_hz": 38.0859375,
+          "density_g2_per_hz": 0.002892478249845447
+        },
+        {
+          "frequency_hz": 49.772685597632204,
+          "nominal_scaled_hz": 48.04687500000001,
+          "density_g2_per_hz": 6.377387322936082e-05
+        },
+        {
+          "frequency_hz": 99.34304320503013,
+          "nominal_scaled_hz": 95.8984375,
+          "density_g2_per_hz": 4.701199402157669e-05
+        },
+        {
+          "frequency_hz": 68.3868606991857,
+          "nominal_scaled_hz": 66.01562499999999,
+          "density_g2_per_hz": 1.119070926443534e-05
+        },
+        {
+          "frequency_hz": 89.024315703082,
+          "nominal_scaled_hz": 85.9375,
+          "density_g2_per_hz": 4.985746297839633e-06
+        }
+      ],
+      "input_sha256": {
+        "data/upright_position_v4_sequence_20260911_104025/airflow_modified_75pwm_300s_20260911_110050_628158.csv": "1efabb0203d77cc6d06eb9d085c689c6de14cc6293373b241d3f8abbd686e394",
+        "data/upright_position_v4_sequence_20260911_104025/airflow_modified_75pwm_300s_20260911_110050_628158.json": "1a2df4f9dbff4abd9094d6ca7e32421e26ef3e1a292be51573400be2de72bd3e",
+        "results/upright_position_v4_sequence_20260911_104025/airflow_modified_session.json": "105ab838a9b2bded5369fdbb41beda8c88806a4970d2417a62bbcb77b2838d34"
+      }
+    },
+    "normal_after": {
+      "phase": "normal_after",
+      "mounting_id": "fan_upright_position_v4_20260911_103726",
+      "sensor": {
+        "model": "ADXL345",
+        "odr_hz": 200,
+        "range_g": 2,
+        "full_resolution": true,
+        "scale_g_per_lsb": 0.0039,
+        "acquisition_mode": "fifo_stream",
+        "register_readback": {
+          "0x2c": "0xb",
+          "0x31": "0x8",
+          "0x2e": "0x0",
+          "0x38": "0x90",
+          "0x2d": "0x8"
+        },
+        "timestamp_source": "host_monotonic_read_completion",
+        "sensor_time_estimate": "sample_index / nominal ODR; not measured sensor time",
+        "lost_samples_exact": null,
+        "bus_number": 1,
+        "i2c_clock_configured_hz": 100000
+      },
+      "primary_interval_s": [
+        180,
+        300
+      ],
+      "nominal_odr_hz": 200,
+      "observed_rate_hz": 207.1887333029582,
+      "nominal_frequency_factor": 0.9653034545442845,
+      "segment_samples": 1024,
+      "overlap_samples": 512,
+      "segments": 47,
+      "segment_duration_s": 4.942353687266737,
+      "frequency_bin_spacing_hz": 0.20233274736617013,
+      "selected_xyz_points": 24863,
+      "tail_points_not_in_complete_fft_segment": 287,
+      "hann_psd_rms_mg": 33.151478222831926,
+      "mean_5s_ac_rms_mg": 33.14771066519531,
+      "bands": [
+        {
+          "low_hz": 0,
+          "high_hz": 10,
+          "power_g2": 1.9079905952520723e-05,
+          "rms_mg": 4.368055168209386,
+          "fraction": 0.017361940272089163
+        },
+        {
+          "low_hz": 10,
+          "high_hz": 30,
+          "power_g2": 3.7194427788524646e-05,
+          "rms_mg": 6.098723455652391,
+          "fraction": 0.033845420167471184
+        },
+        {
+          "low_hz": 30,
+          "high_hz": 60,
+          "power_g2": 0.0009448913126827274,
+          "rms_mg": 30.7390844476983,
+          "fraction": 0.8598127566895103
+        },
+        {
+          "low_hz": 60,
+          "high_hz": 90,
+          "power_g2": 5.53424457490558e-05,
+          "rms_mg": 7.4392503485939905,
+          "fraction": 0.0503593801771072
+        },
+        {
+          "low_hz": 90,
+          "high_hz": null,
+          "power_g2": 4.244200519580124e-05,
+          "rms_mg": 6.514752888314432,
+          "fraction": 0.03862050269382211
+        }
+      ],
+      "largest_separated_local_psd_bins": [
+        {
+          "frequency_hz": 39.45488573640318,
+          "nominal_scaled_hz": 38.0859375,
+          "density_g2_per_hz": 0.0023077352706732017
+        },
+        {
+          "frequency_hz": 49.77385585207785,
+          "nominal_scaled_hz": 48.046875,
+          "density_g2_per_hz": 5.623344904980021e-05
+        },
+        {
+          "frequency_hz": 99.34537895678953,
+          "nominal_scaled_hz": 95.8984375,
+          "density_g2_per_hz": 4.941440582104003e-05
+        },
+        {
+          "frequency_hz": 68.38846860976551,
+          "nominal_scaled_hz": 66.01562500000001,
+          "density_g2_per_hz": 1.1495128872531615e-05
+        },
+        {
+          "frequency_hz": 10.318970115674677,
+          "nominal_scaled_hz": 9.9609375,
+          "density_g2_per_hz": 4.113527600107535e-06
+        }
+      ],
+      "input_sha256": {
+        "data/upright_position_v4_sequence_20260911_104025/normal_after_75pwm_300s_20260911_111103_206329.csv": "5357e8d0c0592a6e3765904f16ea037937f2f5f54e7c0d88ba2c42cda6589944",
+        "data/upright_position_v4_sequence_20260911_104025/normal_after_75pwm_300s_20260911_111103_206329.json": "5203831902be0c55c489fae450dd43bfcb7c196c7dcffd933582c4c91738e2ef",
+        "results/upright_position_v4_sequence_20260911_104025/normal_after_session.json": "88782e3f05bdfa22f382c945cb2d57a14f4152ef506e869b37a946b049941a67"
+      }
+    },
+    "normal_followup": {
+      "phase": "normal_followup",
+      "mounting_id": "fan_upright_position_v4_20260911_103726",
+      "sensor": {
+        "model": "ADXL345",
+        "odr_hz": 200,
+        "range_g": 2,
+        "full_resolution": true,
+        "scale_g_per_lsb": 0.0039,
+        "acquisition_mode": "fifo_stream",
+        "register_readback": {
+          "0x2c": "0xb",
+          "0x31": "0x8",
+          "0x2e": "0x0",
+          "0x38": "0x90",
+          "0x2d": "0x8"
+        },
+        "timestamp_source": "host_monotonic_read_completion",
+        "sensor_time_estimate": "sample_index / nominal ODR; not measured sensor time",
+        "lost_samples_exact": null,
+        "bus_number": 1,
+        "i2c_clock_configured_hz": 100000
+      },
+      "primary_interval_s": [
+        180,
+        300
+      ],
+      "nominal_odr_hz": 200,
+      "observed_rate_hz": 207.17101150615045,
+      "nominal_frequency_factor": 0.9653860284119067,
+      "segment_samples": 1024,
+      "overlap_samples": 512,
+      "segments": 47,
+      "segment_duration_s": 4.942776465468962,
+      "frequency_bin_spacing_hz": 0.20231544092397505,
+      "selected_xyz_points": 24861,
+      "tail_points_not_in_complete_fft_segment": 285,
+      "hann_psd_rms_mg": 39.117247510381716,
+      "mean_5s_ac_rms_mg": 39.127636495156985,
+      "bands": [
+        {
+          "low_hz": 0,
+          "high_hz": 10,
+          "power_g2": 1.753603293489042e-05,
+          "rms_mg": 4.187604677484543,
+          "fraction": 0.011460733860781799
+        },
+        {
+          "low_hz": 10,
+          "high_hz": 30,
+          "power_g2": 3.617071608580471e-05,
+          "rms_mg": 6.014209514624903,
+          "fraction": 0.023639494300248205
+        },
+        {
+          "low_hz": 30,
+          "high_hz": 60,
+          "power_g2": 0.001374921608514911,
+          "rms_mg": 37.07993538984273,
+          "fraction": 0.8985846852098128
+        },
+        {
+          "low_hz": 60,
+          "high_hz": 90,
+          "power_g2": 5.954575037601461e-05,
+          "rms_mg": 7.716589296834101,
+          "fraction": 0.038916327320658944
+        },
+        {
+          "low_hz": 90,
+          "high_hz": null,
+          "power_g2": 4.192275568435444e-05,
+          "rms_mg": 6.474778427433208,
+          "fraction": 0.027398759308498406
+        }
+      ],
+      "largest_separated_local_psd_bins": [
+        {
+          "frequency_hz": 39.45151098017514,
+          "nominal_scaled_hz": 38.0859375,
+          "density_g2_per_hz": 0.0034702778255638364
+        },
+        {
+          "frequency_hz": 49.76959846729786,
+          "nominal_scaled_hz": 48.046875,
+          "density_g2_per_hz": 5.745487640266542e-05
+        },
+        {
+          "frequency_hz": 99.33688149367175,
+          "nominal_scaled_hz": 95.8984375,
+          "density_g2_per_hz": 5.0936257771867214e-05
+        },
+        {
+          "frequency_hz": 68.38261903230357,
+          "nominal_scaled_hz": 66.015625,
+          "density_g2_per_hz": 1.284361388764289e-05
+        },
+        {
+          "frequency_hz": 89.01879400654902,
+          "nominal_scaled_hz": 85.9375,
+          "density_g2_per_hz": 6.894190156719082e-06
+        }
+      ],
+      "input_sha256": {
+        "data/upright_v4_normal_followup_20260911_112731/normal_followup_75pwm_300s_20260911_112835_067380.csv": "557d1a665573d4f6113a0913e81d0d29191907f4a31b8810f9fd83a2cc9b5f50",
+        "data/upright_v4_normal_followup_20260911_112731/normal_followup_75pwm_300s_20260911_112835_067380.json": "da13050e25d65cdb9436b29ba9e3df477d9d6479661cb9e20393ba36deaac20b",
+        "results/upright_v4_normal_followup_20260911_112731/normal_followup_session.json": "b9eb11c8283e090ef27d94992e0ba89f3d5053e8f3ad7330a3c6de00d42b8a29"
+      }
+    }
+  },
+  "shape_comparisons": [
+    {
+      "left": "normal_before",
+      "right": "airflow_modified",
+      "cosine_normalized_shape_1_90hz": 0.9993024396328334,
+      "total_variation_normalized_shape_1_90hz": 0.09743884346459855,
+      "max_frequency_bin_mismatch_hz": 0.008196963384108358,
+      "note": "Same FFT bin indices; observed frequency grids differ slightly. No interpolation, classification threshold, or inference of significance."
+    },
+    {
+      "left": "normal_before",
+      "right": "normal_after",
+      "cosine_normalized_shape_1_90hz": 0.9992537016047667,
+      "total_variation_normalized_shape_1_90hz": 0.07974028691521953,
+      "max_frequency_bin_mismatch_hz": 0.010309129944545248,
+      "note": "Same FFT bin indices; observed frequency grids differ slightly. No interpolation, classification threshold, or inference of significance."
+    },
+    {
+      "left": "normal_before",
+      "right": "normal_followup",
+      "cosine_normalized_shape_1_90hz": 0.9993231396244815,
+      "total_variation_normalized_shape_1_90hz": 0.12769385761666466,
+      "max_frequency_bin_mismatch_hz": 0.0026250696099197057,
+      "note": "Same FFT bin indices; observed frequency grids differ slightly. No interpolation, classification threshold, or inference of significance."
+    },
+    {
+      "left": "airflow_modified",
+      "right": "normal_after",
+      "cosine_normalized_shape_1_90hz": 0.9999890566759921,
+      "total_variation_normalized_shape_1_90hz": 0.02109691014380849,
+      "max_frequency_bin_mismatch_hz": 0.00211216656043689,
+      "note": "Same FFT bin indices; observed frequency grids differ slightly. No interpolation, classification threshold, or inference of significance."
+    },
+    {
+      "left": "airflow_modified",
+      "right": "normal_followup",
+      "cosine_normalized_shape_1_90hz": 0.9999690077668529,
+      "total_variation_normalized_shape_1_90hz": 0.031223401376959035,
+      "max_frequency_bin_mismatch_hz": 0.005571893774188652,
+      "note": "Same FFT bin indices; observed frequency grids differ slightly. No interpolation, classification threshold, or inference of significance."
+    },
+    {
+      "left": "normal_after",
+      "right": "normal_followup",
+      "cosine_normalized_shape_1_90hz": 0.9999275090009135,
+      "total_variation_normalized_shape_1_90hz": 0.04939707748326491,
+      "max_frequency_bin_mismatch_hz": 0.007684060334625542,
+      "note": "Same FFT bin indices; observed frequency grids differ slightly. No interpolation, classification threshold, or inference of significance."
+    }
+  ],
+  "source_sha256": {
+    "results/upright_v4_spectral_review_20260911_114502/analyze_spectra.py": "1893a06c858da270cac23ea54c2da15526ea9dbc3ab4dd34ee570c08210fc21f",
+    "src/fft_pilot.py": "9ef400b81fe0eaba58629f62e5fbd2e89d736a984d6e10ff910e47513618d67b"
+  },
+  "limitations": [
+    "No independently measured sensor conversion times or RPM.",
+    "Aliasing and useful bandwidth are not validated by these spectra.",
+    "Three normal starts and one plate state are descriptive pilot data.",
+    "Overlapping FFT segments and adjacent windows are not independent repetitions.",
+    "Hann-weighted spectral RMS is not numerically identical to unweighted 5-s AC-RMS."
+  ],
+  "models_trained": false,
+  "hardware_commands_sent": []
+}

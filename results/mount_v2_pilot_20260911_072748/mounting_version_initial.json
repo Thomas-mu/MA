@@ -1,0 +1,14 @@
+{
+  "mounting_id": "adxl345_mount_v2_provisional_20260911_072748",
+  "recorded_utc": "2026-09-11T07:27:52.624223+00:00",
+  "status": "provisional_new_version",
+  "user_statement": "Sensor attachment was changed and is firm per user inspection.",
+  "attachment_changed": true,
+  "firmness_user_reported": true,
+  "complete_safety_confirmation": null,
+  "attachment_material": null,
+  "location": null,
+  "orientation": null,
+  "fan_support": null,
+  "relation_to_old_data": "Separate mounting version; old measurements must not be pooled as a normal reference."
+}

@@ -1,0 +1,62 @@
+{
+  "status": "adapter_audited_without_training",
+  "contract": {
+    "format": "upright_v4_ac_pilot_bundle_v1",
+    "preprocessing_id": "xyz_window128_axis_mean_removed_unscaled_v1",
+    "window_size": 128,
+    "step_size": 128,
+    "axes": [
+      "x_g",
+      "y_g",
+      "z_g"
+    ],
+    "centering": "per_window_per_axis_float64_then_float32",
+    "scaling": "train_only_axis_StandardScaler_float32_transform",
+    "selection_seconds_since_pwm_command": [
+      180,
+      300
+    ],
+    "time_origin": "pwm_command_invocation_monotonic_ns",
+    "mounting_id": "fan_upright_position_v4_20260911_103726",
+    "sensor": {
+      "model": "ADXL345",
+      "odr_hz": 200,
+      "range_g": 2,
+      "full_resolution": true,
+      "scale_g_per_lsb": 0.0039,
+      "acquisition_mode": "fifo_stream",
+      "register_readback": {
+        "0x2c": "0xb",
+        "0x31": "0x8",
+        "0x2e": "0x0",
+        "0x38": "0x90",
+        "0x2d": "0x8"
+      },
+      "timestamp_source": "host_monotonic_read_completion",
+      "bus_number": 1,
+      "i2c_clock_configured_hz": 100000
+    },
+    "development_only": true,
+    "independent_test": false,
+    "second_pwm_rule": "no_model_scaler_threshold_or_preprocessing_change"
+  },
+  "dataset": "/home/malik/masterarbeit-edge-ai/results/upright_v4_pilot_preparation_20260911_123511/dataset",
+  "dataset_manifest_sha256": "399a64466bf8b8735b30a4256645508e326a9ba9848e089fb8b4cbb5e7f11622",
+  "all_windows_raw_to_ac_exact": 582,
+  "window_counts": {
+    "train": 388,
+    "validation": 194
+  },
+  "input_array_sha256": {
+    "train": "abb80d8ed8f9fee2206ec38f77b50d0fe5446077a85268896ccdc169148f3fb0",
+    "validation": "deb7e09dd92ebedb7c1662426fe93d804fc75f41872c06947218be20d5491abf"
+  },
+  "models_trained": false,
+  "scaler_fitted": false,
+  "thresholds_calibrated": false,
+  "real_model_inference_executed": false,
+  "hardware_access": false,
+  "legacy_profile_compatible": false,
+  "future_live_requirement": "Original Float64 XYZ required. Existing Float32 BufferedAcquisition/GUI paths must not silently load this bundle.",
+  "implementation_sha256": "dd35a47ad7714863c9a132811ae391d200db7f34ddbb981da24f0a4b3c80fa7c"
+}

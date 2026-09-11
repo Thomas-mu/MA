@@ -1,0 +1,45 @@
+{
+  "independent_reference": "scipy.signal.welch with explicitly identical symmetric Hann coefficients and parameters",
+  "all_passed": true,
+  "phases": {
+    "standstill": {
+      "welch_max_abs_difference_g2_per_hz": 1.6093625997831706e-20,
+      "segments": 11,
+      "tail_points": 61,
+      "bin_spacing_hz": 0.20223714551306415,
+      "spectral_rms_mg": 13.55891639378066
+    },
+    "normal_before": {
+      "welch_max_abs_difference_g2_per_hz": 9.519295074422729e-17,
+      "segments": 47,
+      "tail_points": 289,
+      "bin_spacing_hz": 0.20230952860503373,
+      "spectral_rms_mg": 27.761315071510545
+    },
+    "airflow_modified": {
+      "welch_max_abs_difference_g2_per_hz": 8.76306405911409e-17,
+      "segments": 47,
+      "tail_points": 286,
+      "bin_spacing_hz": 0.20232799023427725,
+      "spectral_rms_mg": 36.479128875564165
+    },
+    "normal_after": {
+      "welch_max_abs_difference_g2_per_hz": 5.898059818321144e-17,
+      "segments": 47,
+      "tail_points": 287,
+      "bin_spacing_hz": 0.20233274736617013,
+      "spectral_rms_mg": 33.151478222831926
+    },
+    "normal_followup": {
+      "welch_max_abs_difference_g2_per_hz": 7.62465177800431e-17,
+      "segments": 47,
+      "tail_points": 285,
+      "bin_spacing_hz": 0.20231544092397505,
+      "spectral_rms_mg": 39.117247510381716
+    }
+  },
+  "normal_followup_minus_before_power_delta_g2": 0.0007594753828077151,
+  "same_delta_in_30_60_hz_g2": 0.0007573272252004921,
+  "fraction_of_positive_power_increase_in_30_60_hz": 0.9971715243761009,
+  "note": "Exploratory attribution of observed power difference; no causal or model claim"
+}

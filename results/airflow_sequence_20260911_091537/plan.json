@@ -1,0 +1,35 @@
+{
+  "sequence_id": "airflow_sequence_20260911_091537",
+  "status": "prepared_awaiting_first_explicit_release",
+  "phases": [
+    "normal_before",
+    "airflow_modified",
+    "normal_after"
+  ],
+  "duration_s_each": 300,
+  "pwm_percent": 75,
+  "pwm_frequency_hz": 25000,
+  "additional_off_time_s_after_release": 60,
+  "automatic_restarts": false,
+  "running_questions": false,
+  "response_deadlines": false,
+  "required_release_messages": {
+    "normal_before": "Normalaufbau bereit, Versorgung angeschlossen, erster Lauf freigegeben.",
+    "airflow_modified": "Umbau fertig, nächster Lauf freigegeben.",
+    "normal_after": "Umbau fertig, nächster Lauf freigegeben."
+  },
+  "sensor": {
+    "odr_hz": 200,
+    "range_g": 2,
+    "full_resolution": true,
+    "fifo": true,
+    "i2c_bus": 1,
+    "i2c_address": "0x53"
+  },
+  "primary_interval_s": [
+    180,
+    300
+  ],
+  "settling_time_validated": false,
+  "models_trained": false
+}

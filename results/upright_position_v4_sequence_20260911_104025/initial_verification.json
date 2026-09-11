@@ -1,0 +1,46 @@
+{
+  "created_utc": "2026-09-11T10:52:05.038132+00:00",
+  "status": "initial_references_complete_paused_for_plate_change",
+  "mounting_id": "fan_upright_position_v4_20260911_103726",
+  "preexisting_files_checked": 953,
+  "changed_or_missing": [],
+  "input_hashes_match": true,
+  "source_hashes_match_capture": true,
+  "same_sensor_settings": true,
+  "plots_visually_checked": true,
+  "report_values_and_links_checked": true,
+  "no_manual_phase_released": true,
+  "final_pwm_readback": {
+    "period": "40000",
+    "duty_cycle": "0",
+    "enable": "1",
+    "polarity": "normal"
+  },
+  "final_pin_readback": "18: a3    pd | lo // GPIO18 = PWM0_CHAN2",
+  "mechanical_standstill_observed_after_operation": null,
+  "readable_device_holders": [],
+  "models_trained": false,
+  "word_sha256": "a9a5d7d17b28098f554240a3e1650881e252db679f33319a1d11164b3246cbb8",
+  "initial_wait_deviation": {
+    "recorded_utc": "2026-09-11T10:45:46.184613+00:00",
+    "planned_additional_off_s": 60,
+    "actual_release_to_command_s": 84.096527397,
+    "excess_s": 24.096527397000003,
+    "exact_uniform_60s_achieved": false,
+    "minimum_60s_met": true,
+    "reason": "New-version files and guard checks prepared after readiness acceptance; subsequent30s standstill capture completed before operating start",
+    "no_automatic_repeat": true,
+    "limits": "This initial start must not be described as having the same exact60-s post-release off interval as later starts."
+  },
+  "artifact_sha256": {
+    "analysis/standstill/phase_overview.png": "6bc2d19932ec45fc8eccea7e7317c230566bf9e1479fa05fc55b2f9dee47ee3c",
+    "analysis/standstill/phase_overview.pdf": "0480e4630419163b8d31b8dffb5214bffccc6f921dfd213b480578175c71a5e7",
+    "analysis/standstill/five_second_rms.csv": "86f4b4744c27908877c9a4bdf7cc5f3fdbd44382a5e3ca4a94af151a3e7ee801",
+    "analysis/standstill/summary.json": "cf02a6c7af2f9a8bfc3818a3446ea45a1b7bf392614a2407ddb4c8feda563858",
+    "analysis/normal_before/phase_overview.png": "72415b27b979580a51a0cd9f1964090b2575edc8912714c86bfdf577507250aa",
+    "analysis/normal_before/phase_overview.pdf": "4f56cbb12d4aa7ebdb3b9d79ca64b6ba864ea1b0e628ad1d59cd6fc061a06d9b",
+    "analysis/normal_before/five_second_rms.csv": "7a47eca374a227eae0fefdb1be422542aa9b66caeb4d6134c5c60543dc4959c0",
+    "analysis/normal_before/summary.json": "1f88a1700e303fc6d05e3e4fb509bdbe77fcf15def4ed712e619679766f40e08",
+    "initial_report.md": "aea4bbe6411e294d45acda80104de85024a5190fb2041ad03e92c46f65645f28"
+  }
+}

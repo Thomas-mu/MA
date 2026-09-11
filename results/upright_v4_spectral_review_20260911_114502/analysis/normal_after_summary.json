@@ -1,0 +1,109 @@
+{
+  "phase": "normal_after",
+  "mounting_id": "fan_upright_position_v4_20260911_103726",
+  "sensor": {
+    "model": "ADXL345",
+    "odr_hz": 200,
+    "range_g": 2,
+    "full_resolution": true,
+    "scale_g_per_lsb": 0.0039,
+    "acquisition_mode": "fifo_stream",
+    "register_readback": {
+      "0x2c": "0xb",
+      "0x31": "0x8",
+      "0x2e": "0x0",
+      "0x38": "0x90",
+      "0x2d": "0x8"
+    },
+    "timestamp_source": "host_monotonic_read_completion",
+    "sensor_time_estimate": "sample_index / nominal ODR; not measured sensor time",
+    "lost_samples_exact": null,
+    "bus_number": 1,
+    "i2c_clock_configured_hz": 100000
+  },
+  "primary_interval_s": [
+    180,
+    300
+  ],
+  "nominal_odr_hz": 200,
+  "observed_rate_hz": 207.1887333029582,
+  "nominal_frequency_factor": 0.9653034545442845,
+  "segment_samples": 1024,
+  "overlap_samples": 512,
+  "segments": 47,
+  "segment_duration_s": 4.942353687266737,
+  "frequency_bin_spacing_hz": 0.20233274736617013,
+  "selected_xyz_points": 24863,
+  "tail_points_not_in_complete_fft_segment": 287,
+  "hann_psd_rms_mg": 33.151478222831926,
+  "mean_5s_ac_rms_mg": 33.14771066519531,
+  "bands": [
+    {
+      "low_hz": 0,
+      "high_hz": 10,
+      "power_g2": 1.9079905952520723e-05,
+      "rms_mg": 4.368055168209386,
+      "fraction": 0.017361940272089163
+    },
+    {
+      "low_hz": 10,
+      "high_hz": 30,
+      "power_g2": 3.7194427788524646e-05,
+      "rms_mg": 6.098723455652391,
+      "fraction": 0.033845420167471184
+    },
+    {
+      "low_hz": 30,
+      "high_hz": 60,
+      "power_g2": 0.0009448913126827274,
+      "rms_mg": 30.7390844476983,
+      "fraction": 0.8598127566895103
+    },
+    {
+      "low_hz": 60,
+      "high_hz": 90,
+      "power_g2": 5.53424457490558e-05,
+      "rms_mg": 7.4392503485939905,
+      "fraction": 0.0503593801771072
+    },
+    {
+      "low_hz": 90,
+      "high_hz": null,
+      "power_g2": 4.244200519580124e-05,
+      "rms_mg": 6.514752888314432,
+      "fraction": 0.03862050269382211
+    }
+  ],
+  "largest_separated_local_psd_bins": [
+    {
+      "frequency_hz": 39.45488573640318,
+      "nominal_scaled_hz": 38.0859375,
+      "density_g2_per_hz": 0.0023077352706732017
+    },
+    {
+      "frequency_hz": 49.77385585207785,
+      "nominal_scaled_hz": 48.046875,
+      "density_g2_per_hz": 5.623344904980021e-05
+    },
+    {
+      "frequency_hz": 99.34537895678953,
+      "nominal_scaled_hz": 95.8984375,
+      "density_g2_per_hz": 4.941440582104003e-05
+    },
+    {
+      "frequency_hz": 68.38846860976551,
+      "nominal_scaled_hz": 66.01562500000001,
+      "density_g2_per_hz": 1.1495128872531615e-05
+    },
+    {
+      "frequency_hz": 10.318970115674677,
+      "nominal_scaled_hz": 9.9609375,
+      "density_g2_per_hz": 4.113527600107535e-06
+    }
+  ],
+  "input_sha256": {
+    "data/upright_position_v4_sequence_20260911_104025/normal_after_75pwm_300s_20260911_111103_206329.csv": "5357e8d0c0592a6e3765904f16ea037937f2f5f54e7c0d88ba2c42cda6589944",
+    "data/upright_position_v4_sequence_20260911_104025/normal_after_75pwm_300s_20260911_111103_206329.json": "5203831902be0c55c489fae450dd43bfcb7c196c7dcffd933582c4c91738e2ef",
+    "results/upright_position_v4_sequence_20260911_104025/normal_after_session.json": "88782e3f05bdfa22f382c945cb2d57a14f4152ef506e869b37a946b049941a67"
+  }
+}

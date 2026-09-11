@@ -1,0 +1,10 @@
+{
+  "recorded_utc": "2026-09-11T07:34:45.764367+00:00",
+  "mounting_id": "adxl345_mount_v2_provisional_20260911_072748",
+  "operator_answer": "ja",
+  "question_scope": "Full current standstill plus whether12V supply connected/disconnected",
+  "fan_observed_fully_stopped": true,
+  "fan_12v_supply_connected": null,
+  "safety_confirmation_inferred": false,
+  "note": "The reply confirms standstill but does not resolve the alternative supply states. It is not an answer to the separately pending full safety checklist."
+}

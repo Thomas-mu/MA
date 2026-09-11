@@ -1,0 +1,11 @@
+{
+  "recorded_utc": "2026-09-11T07:53:51.023654+00:00",
+  "mounting_id": "adxl345_mount_v2_provisional_20260911_072748",
+  "operator_answer": "ja",
+  "question": "Steht der Lüfter jetzt vollständig mechanisch still? Die Stellvorgabe beträgt 0 % PWM bei 25 kHz. Bitte die externe 12-V-Versorgung angeschlossen und Montage sowie Sensorposition unverändert lassen.",
+  "fan_observed_fully_stopped": true,
+  "fan_12v_supply_connected": true,
+  "mounting_unchanged": true,
+  "source": "explicit operator visual confirmation after automatic zero and ten-second runout",
+  "supply_and_mounting_basis": "Previously confirmed connected supply and new mounting; instruction to preserve both throughout pilot, no intervening change reported"
+}

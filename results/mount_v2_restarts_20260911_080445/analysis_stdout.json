@@ -1,0 +1,111 @@
+{
+  "primary": [
+    {
+      "name": "Lauf_1",
+      "primary_180_300": {
+        "n": 24,
+        "mean": 0.1963353501304539,
+        "minimum": 0.19458055782807904,
+        "maximum": 0.1979565143653225,
+        "range": 0.0033759565372434575,
+        "population_std": 0.000659439823092692,
+        "descriptive_cv_percent": 0.33587421860328825,
+        "slope_g_per_minute": -0.0006487405587314262,
+        "flagged_sections": 0
+      },
+      "primary_late_vs_early_percent": -0.2558421612483208,
+      "controlled_off_to_command_s": 60.018141377,
+      "total_off_since_previous_zero_s": 1288.084653
+    },
+    {
+      "name": "Lauf_2",
+      "primary_180_300": {
+        "n": 24,
+        "mean": 0.19468252192233768,
+        "minimum": 0.19347037260229838,
+        "maximum": 0.19561856337007397,
+        "range": 0.0021481907677755874,
+        "population_std": 0.0004804166899414666,
+        "descriptive_cv_percent": 0.2467692965951578,
+        "slope_g_per_minute": -0.00030851594985792683,
+        "flagged_sections": 0
+      },
+      "primary_late_vs_early_percent": -0.18702467641821263,
+      "controlled_off_to_command_s": 60.01676571,
+      "total_off_since_previous_zero_s": 150.21976
+    },
+    {
+      "name": "Lauf_3",
+      "primary_180_300": {
+        "n": 24,
+        "mean": 0.19275855411349807,
+        "minimum": 0.1919821009724704,
+        "maximum": 0.19375293005087077,
+        "range": 0.001770829078400371,
+        "population_std": 0.00046358317498708043,
+        "descriptive_cv_percent": 0.24049940461481065,
+        "slope_g_per_minute": 0.00030676587978123286,
+        "flagged_sections": 0
+      },
+      "primary_late_vs_early_percent": 0.14880950566595885,
+      "controlled_off_to_command_s": 60.017723934,
+      "total_off_since_previous_zero_s": 141.381255
+    }
+  ],
+  "between": {
+    "run_means_g": [
+      0.1963353501304539,
+      0.19468252192233768,
+      0.19275855411349807
+    ],
+    "n": 3,
+    "mean": 0.19459214205542988,
+    "minimum": 0.19275855411349807,
+    "maximum": 0.1963353501304539,
+    "range": 0.003576796016955819,
+    "population_std": 0.0014616186978790456,
+    "descriptive_cv_percent": 0.7511190752310548,
+    "sample_std_of_three_run_means_g": 0.0017901100041574137,
+    "range_percent_of_grand_mean": 1.838098897095733,
+    "rms_within_run_population_std_g": 0.0005417780715341963,
+    "pooled_72_blocks_are_not_independent_restarts": true
+  },
+  "pairwise": [
+    {
+      "runs": [
+        1,
+        2
+      ],
+      "mean_difference_g": -0.0016528282081162138,
+      "difference_percent_of_pair_mean": -0.8453977816610205,
+      "observed_ranges_overlap": true,
+      "overlap_interval_g": [
+        0.19458055782807904,
+        0.19561856337007397
+      ]
+    },
+    {
+      "runs": [
+        1,
+        3
+      ],
+      "mean_difference_g": -0.003576796016955819,
+      "difference_percent_of_pair_mean": -1.8385258560685438,
+      "observed_ranges_overlap": false,
+      "overlap_interval_g": null
+    },
+    {
+      "runs": [
+        2,
+        3
+      ],
+      "mean_difference_g": -0.001923967808839605,
+      "difference_percent_of_pair_mean": -0.9931666660257007,
+      "observed_ranges_overlap": true,
+      "overlap_interval_g": [
+        0.19347037260229838,
+        0.19375293005087077
+      ]
+    }
+  ]
+}

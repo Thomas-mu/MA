@@ -1,0 +1,143 @@
+{
+  "created_utc": "2026-09-11T09:03:47.033994+00:00",
+  "hardware_access": false,
+  "boundary_sensitivity": [
+    {
+      "run": 1,
+      "time_origin": "first_xyz",
+      "mean_mg": 196.3353501304539,
+      "ols_slope_mg_min": -0.6487405587314684,
+      "sign_matches_primary": true
+    },
+    {
+      "run": 1,
+      "time_origin": "command_invocation",
+      "mean_mg": 196.33601005134338,
+      "ols_slope_mg_min": -0.6464625019883329,
+      "sign_matches_primary": true
+    },
+    {
+      "run": 1,
+      "time_origin": "command_completion",
+      "mean_mg": 196.33430030712285,
+      "ols_slope_mg_min": -0.6425639738866563,
+      "sign_matches_primary": true
+    },
+    {
+      "run": 2,
+      "time_origin": "first_xyz",
+      "mean_mg": 194.68252192233766,
+      "ols_slope_mg_min": -0.3085159498579315,
+      "sign_matches_primary": true
+    },
+    {
+      "run": 2,
+      "time_origin": "command_invocation",
+      "mean_mg": 194.68821832389347,
+      "ols_slope_mg_min": -0.2952058767884427,
+      "sign_matches_primary": true
+    },
+    {
+      "run": 2,
+      "time_origin": "command_completion",
+      "mean_mg": 194.69025073863455,
+      "ols_slope_mg_min": -0.30780682897139994,
+      "sign_matches_primary": true
+    },
+    {
+      "run": 3,
+      "time_origin": "first_xyz",
+      "mean_mg": 192.75855411349804,
+      "ols_slope_mg_min": 0.3067658797812296,
+      "sign_matches_primary": true
+    },
+    {
+      "run": 3,
+      "time_origin": "command_invocation",
+      "mean_mg": 192.75491225144955,
+      "ols_slope_mg_min": 0.29962031334740563,
+      "sign_matches_primary": true
+    },
+    {
+      "run": 3,
+      "time_origin": "command_completion",
+      "mean_mg": 192.76424958432267,
+      "ols_slope_mg_min": 0.2965803730323305,
+      "sign_matches_primary": true
+    }
+  ],
+  "per_run_supplemental": [
+    {
+      "run": 1,
+      "host_intervals_over_10ms": 0,
+      "over_10ms_times_since_first_xyz_s": [],
+      "max_absolute_axis_g": 1.3455,
+      "first_xyz_after_command_invocation_s": 0.078603734,
+      "controlled_off_s": 60.018141377,
+      "total_off_since_previous_zero_s": 1288.084653,
+      "command_invocation_utc": "2026-09-11T08:11:09.486662+00:00"
+    },
+    {
+      "run": 2,
+      "host_intervals_over_10ms": 1,
+      "over_10ms_times_since_first_xyz_s": [
+        78.671252604
+      ],
+      "max_absolute_axis_g": 1.3220999999999998,
+      "first_xyz_after_command_invocation_s": 0.081049394,
+      "controlled_off_s": 60.01676571,
+      "total_off_since_previous_zero_s": 150.21976,
+      "command_invocation_utc": "2026-09-11T08:18:40.101154+00:00"
+    },
+    {
+      "run": 3,
+      "host_intervals_over_10ms": 0,
+      "over_10ms_times_since_first_xyz_s": [],
+      "max_absolute_axis_g": 1.3065,
+      "first_xyz_after_command_invocation_s": 0.081651728,
+      "controlled_off_s": 60.017723934,
+      "total_off_since_previous_zero_s": 141.381255,
+      "command_invocation_utc": "2026-09-11T08:26:01.894898+00:00"
+    }
+  ],
+  "current_host_clock_snapshot": {
+    "implementation": "clock_gettime(CLOCK_MONOTONIC)",
+    "monotonic": true,
+    "adjustable": false,
+    "resolution_s": 1e-09,
+    "clocksource": "arch_sys_counter",
+    "independent_clock_calibration": false
+  },
+  "software_sha256": {
+    "src/adxl345.py": "de7d7bb6df14a0a4499b843136ba9d47db6ef9e146709e827b9e40f0bcf9be84",
+    "src/collect_real_data.py": "80175fcf85c2c39c7e1027f83a1e845d2262f92375a083cfcc30ad1db84e54b1",
+    "src/fan_pwm.py": "9ea26cf53849df32ca427d392bc7e8df202e4729255a24ac09a601bc0717b933"
+  },
+  "smbus2_read_i2c_block_data_source": "    def read_i2c_block_data(self, i2c_addr, register, length, force=None):\n        \"\"\"\n        Read a block of byte data from a given register.\n\n        :param i2c_addr: i2c address\n        :type i2c_addr: int\n        :param register: Start register\n        :type register: int\n        :param length: Desired block length\n        :type length: int\n        :param force: Use slave address even when driver is already using it.\n        :type force: bool\n        :return: List of bytes\n        :rtype: list\n        \"\"\"\n        if length > I2C_SMBUS_BLOCK_MAX:\n            raise ValueError(\"Desired block length over %d bytes\" % I2C_SMBUS_BLOCK_MAX)\n        self._set_address(i2c_addr, force=force)\n        msg = i2c_smbus_ioctl_data.create(\n            read_write=I2C_SMBUS_READ, command=register, size=I2C_SMBUS_I2C_BLOCK_DATA\n        )\n        msg.data.contents.byte = length\n        ioctl(self.fd, I2C_SMBUS, msg)\n        return msg.data.contents.block[1:length + 1]\n",
+  "sources": [
+    {
+      "url": "https://www.analog.com/media/en/technical-documentation/data-sheets/adxl345.pdf",
+      "edition": "Rev. G",
+      "consulted_date": "2026-09-11",
+      "pages": [
+        13,
+        14,
+        17,
+        20,
+        21,
+        27
+      ]
+    },
+    {
+      "url": "https://ez.analog.com/mems/f/q-a/86236/adxl345-tolerance",
+      "author": "ADIApproved / Venkat",
+      "answer_date": "2015-06-05",
+      "consulted_date": "2026-09-11",
+      "use": "original verified employee reply, not AI thread summary"
+    },
+    {
+      "url": "https://support.arctic.de/de/p12-pro-pst",
+      "consulted_date": "2026-09-11"
+    }
+  ]
+}

@@ -1,0 +1,61 @@
+{
+  "created_utc": "2026-09-11T07:58:46.408815+00:00",
+  "mounting_id": "adxl345_mount_v2_provisional_20260911_072748",
+  "status": "provisionally_suitable_for_further_normal_repeatability_pilots",
+  "final_pwm_setpoint_percent": 0,
+  "final_pwm_frequency_hz": 25000,
+  "full_mechanical_stop_user_confirmed": true,
+  "operating_observation": {
+    "recorded_utc": "2026-09-11T07:53:51.023654+00:00",
+    "mounting_id": "adxl345_mount_v2_provisional_20260911_072748",
+    "operator_answer": "ja",
+    "question": "Hast du den Lüfter während der fünfminütigen Aufnahme (etwa 09:44:41–09:49:41 Uhr) beobachtet? Falls ja: Lief er nach dem Anlaufen sichtbar gleichmäßig, ohne erkennbare Lockerung oder Berührung?",
+    "source": "retrospective user observation",
+    "running_visibly_even_after_startup": true,
+    "no_visible_loosening_or_contact_user_confirmed": true,
+    "measured_rpm": null,
+    "measurement_original_metadata_unchanged": true
+  },
+  "safety_confirmation": {
+    "recorded_utc": "2026-09-11T07:43:24.284251+00:00",
+    "mounting_id": "adxl345_mount_v2_provisional_20260911_072748",
+    "operator_answer": "ja",
+    "question": "Wurden bei getrennter Stromversorgung Rotorfreiheit, sichere Kabelführung, fehlende erkennbare Kurzschlüsse sowie eine feste, nicht verbogene Sensorplatine geprüft und für in Ordnung befunden?",
+    "source": "explicit user confirmation in current conversation",
+    "scope": "User visual and physical checks; no independent electrical measurement by software",
+    "power_disconnected_during_checks": true,
+    "rotor_clear": true,
+    "cables_safely_routed": true,
+    "no_electrical_short_circuits": true,
+    "sensor_board_firm": true,
+    "sensor_board_not_bent": true
+  },
+  "future_normal_anomaly_comparison_pwm_percent": 75,
+  "recommended_next_experiment": {
+    "independent_starts": 3,
+    "duration_each_s": 300,
+    "record_from_command": true,
+    "identical_new_mounting": true,
+    "primary_comparison_window_s": [
+      180,
+      300
+    ],
+    "window_status": "prospective candidate for next test, not validated settling time",
+    "required_confirmations": "full standstill before each start and after shutdown; no reply deadlines or automatic retries"
+  },
+  "general_reproducibility_proven": false,
+  "training_authorized_by_this_analysis": false,
+  "anomaly_recognition_proven": false,
+  "induced_anomalies": false,
+  "measured_rpm": null,
+  "no_old_measurement_values_pooled": true,
+  "source_sha256": {
+    "results/mount_v2_pilot_20260911_072748/analysis/report.json": "cef23fa368b3391530e61993911be12cc78cd2313fdb8a41797230e6690023dc",
+    "results/mount_v2_pilot_20260911_072748/safety_confirmation.json": "759e1693f70871e25f50711f56a475dc1d820ffa88d65f461de227702cfa1c75",
+    "results/mount_v2_pilot_20260911_072748/operating_observation.json": "391349df4a33bb932876fbd6186bda86bb72e34eac0257c8857e1b7f91b90061",
+    "results/mount_v2_pilot_20260911_072748/before_standstill_confirmation.json": "a6a863795d0652672062b1120f99877df743bd36cb982c99ed900914ab5de238",
+    "results/mount_v2_pilot_20260911_072748/after_standstill_confirmation.json": "f7bd702dd87c736e66aacdb5a308c176e37c1e3c394770dd4682cdf09615ab02",
+    "results/mount_v2_pilot_20260911_072748/mounting_details.json": "54b87814f72d0c2f8c667e29309692398facc4d66022cb1f8ae3adef16142d2b",
+    "results/mount_v2_pilot_20260911_072748/build_report.py": "6f5bb2f7adf8db20a7f458e60da8ed3c13cd7f6da1ee45d61575c94a9ec5deaf"
+  }
+}

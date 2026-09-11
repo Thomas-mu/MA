@@ -1,0 +1,33 @@
+{
+  "created_utc": "2026-09-11T10:30:26.149967+00:00",
+  "status": "standstill_and_normal_before_completed_paused_for_manual_plate_change",
+  "mounting_id": "fan_upright_mount_v3_20260911_095035",
+  "preexisting_files_checked": 910,
+  "changed_or_missing": [],
+  "raw_input_hashes_match": true,
+  "capture_sources_unchanged_during_recordings": true,
+  "local_report_links_valid": true,
+  "figures_visually_checked": true,
+  "read_only_final_pwm_configuration": {
+    "period": "40000",
+    "duty_cycle": "0",
+    "enable": "1",
+    "polarity": "normal"
+  },
+  "device_holders": [],
+  "mechanical_standstill_after_operation_observed": null,
+  "airflow_modified_released": false,
+  "models_trained": false,
+  "word_sha256": "a9a5d7d17b28098f554240a3e1650881e252db679f33319a1d11164b3246cbb8",
+  "new_report_and_analysis_sha256": {
+    "analysis/standstill/phase_overview.png": "8407eb132417dc5c7366fb4541230f19ebf4218c4764872c7ac322525935f49f",
+    "analysis/standstill/phase_overview.pdf": "59945ad267e1d824031a4c3bdb02e7ec9faf9b83be4b90f8428129b0401cdbc7",
+    "analysis/standstill/five_second_rms.csv": "bf6b25426d04f7833b60b3a69e01493aa661a990e7db3b8d8ce5df9340b2172c",
+    "analysis/standstill/summary.json": "3f603a09591f59847a621bfcfcf72e012016c9bea1a73c62e322ba05116946eb",
+    "analysis/normal_before/phase_overview.png": "35247aeda1e5f83e74034f11a8d9661c769da73e20405564be7fc235f45511b8",
+    "analysis/normal_before/phase_overview.pdf": "cbeec532e7506ead4f08f62c42cd6ad51581ea50315356e74a374558a44de98b",
+    "analysis/normal_before/five_second_rms.csv": "2e362bff0630b4012155f444ae331f313a2169ba76a0765ac5067a6af5a34383",
+    "analysis/normal_before/summary.json": "2b5ed73eabeb27923f0641ed2510fe1c2ee9dac2f81222b99d1d0fa67d45db12",
+    "initial_report.md": "f99b3cb7ccbb1f59f7c7a25cb57abd3af4e1369867907601ac4aa75ce52b848e"
+  }
+}

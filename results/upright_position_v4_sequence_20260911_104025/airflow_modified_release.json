@@ -1,0 +1,20 @@
+{
+  "source": "explicit_user_message",
+  "released": true,
+  "phase": "airflow_modified",
+  "authorized_phases": [
+    "airflow_modified"
+  ],
+  "mounting_id": "fan_upright_position_v4_20260911_103726",
+  "boot_id": "e0207b92-50ab-43c9-b686-57d9dae9d7bb",
+  "accepted_monotonic_ns": 15095623374682,
+  "accepted_utc": "2026-09-11T11:00:18.179234+00:00",
+  "operator_message": "Umbau fertig, nächster Lauf freigegeben.",
+  "operator_message_verbatim": "Umbau fertig, Versorgung angeschlossen, nächster Lauf freigegeben.  ",
+  "normalization_note": "Existing release gate requires canonical phrase; verbatim user message explicitly authorizes the same next phase and additionally confirms connected supply. No wider or later phase authorized.",
+  "external_12v_supply_connected": true,
+  "manual_change_evidence": "manual_plate_insertion_20260911_105531_589140.json",
+  "additional_off_requested_s": 60,
+  "no_response_deadline": true,
+  "automatic_restarts": false
+}

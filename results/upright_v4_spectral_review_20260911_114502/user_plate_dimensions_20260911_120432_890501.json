@@ -1,0 +1,20 @@
+{
+  "recorded_utc": "2026-09-11T12:04:32.890501+00:00",
+  "event": "user_reported_actual_plate_dimensions",
+  "operator_message_verbatim": "höhe 12cm und breite 12 cm aber was bringt das wenn wir kein Model trainierne können ",
+  "source": "user_report_not_independently_measured",
+  "height_cm": 12,
+  "width_cm": 12,
+  "height_mm": 120,
+  "width_mm": 120,
+  "prior_planned_width_mm": 60,
+  "prior_planned_height_mm": 120,
+  "width_differs_from_prior_plan": true,
+  "previous_reported_distance_cm": 10,
+  "distance_reference_planes_confirmed": false,
+  "current_plate_state": "previous user statement interpreted as currently removed",
+  "applies_retroactively_to_prior_plate_recording": null,
+  "previous_files_edited": false,
+  "training_authorized_by_this_message": false,
+  "new_start_authorized": false
+}

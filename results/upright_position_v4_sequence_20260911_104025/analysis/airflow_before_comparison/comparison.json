@@ -1,0 +1,85 @@
+{
+  "created_utc": "2026-09-11T11:06:38.661939+00:00",
+  "mounting_id": "fan_upright_position_v4_20260911_103726",
+  "status": "interim; normal_after not captured",
+  "phase_labels": [
+    "normal_before",
+    "airflow_modified"
+  ],
+  "primary_interval_s": [
+    180,
+    300
+  ],
+  "one_complete_recording_per_phase": true,
+  "windows_are_independent_replicates": false,
+  "mean_difference_mg": 8.743755816796533,
+  "mean_difference_percent_of_normal": 31.52404960987484,
+  "observed_window_ranges_overlap": false,
+  "absolute_difference_over_before_window_sd": 34.61933059762118,
+  "normal_between_start_variability_estimated": false,
+  "return_to_normal_assessed": false,
+  "settling_time_validated": false,
+  "primary": {
+    "normal_before": {
+      "mean_mg": 27.736778507218087,
+      "median_mg": 27.67169579274764,
+      "std_mg_ddof0": 0.2525685986948969,
+      "min_mg": 27.38804348691058,
+      "max_mg": 28.418646848442666,
+      "windows": 24,
+      "linear_slope_mg_min": -0.11763866866721247,
+      "theil_sen_slope_mg_min": -0.112886349410524,
+      "fitted_120s_change_mg": -0.23527733733442494,
+      "fitted_120s_change_percent": -0.8482504097337674,
+      "last60_minus_first60_mg": -0.15908442650403032,
+      "four_30s_means_mg": [
+        27.78105064746317,
+        27.851590793477033,
+        27.691093337675884,
+        27.62337925025626
+      ],
+      "residual_std_mg": 0.24328163416543933
+    },
+    "airflow_modified": {
+      "mean_mg": 36.48053432401462,
+      "median_mg": 36.70574857750856,
+      "std_mg_ddof0": 0.6901550547984567,
+      "min_mg": 34.94817580009536,
+      "max_mg": 37.18120656421868,
+      "windows": 24,
+      "linear_slope_mg_min": 0.8649560207544573,
+      "theil_sen_slope_mg_min": 0.8516349449148833,
+      "fitted_120s_change_mg": 1.7299120415089146,
+      "fitted_120s_change_percent": 4.742013990650729,
+      "last60_minus_first60_mg": 0.6810015402493761,
+      "four_30s_means_mg": [
+        35.41547769099097,
+        36.8645894167889,
+        36.719780914453054,
+        36.92228927382555
+      ],
+      "residual_std_mg": 0.47682699546104496
+    }
+  },
+  "input_sha256": {
+    "results/upright_position_v4_sequence_20260911_104025/normal_before_session.json": "7f68de304326ab81a1d96900404692f9682f7a30b7f6e4495a53e37358b62356",
+    "data/upright_position_v4_sequence_20260911_104025/normal_before_75pwm_300s_20260911_104430_339886.csv": "8a141c4284bac2cb64c11f0006fa29d336a54ea2936127946be59b2ea1a9426b",
+    "data/upright_position_v4_sequence_20260911_104025/normal_before_75pwm_300s_20260911_104430_339886.json": "9f476d46357726b9d62150570110311e1b0af5b0f872e806be7129088f452446",
+    "results/upright_position_v4_sequence_20260911_104025/normal_before_fan.jsonl": "02a5950af3205bab5784c6ad891d3cff9bb29c383bfebdc437be102510cb8c26",
+    "results/upright_position_v4_sequence_20260911_104025/initial_release.json": "60ac00d8684e849fe2955a73786b38885503df2bdea5897e68a1c73e2875710a",
+    "results/upright_position_v4_sequence_20260911_104025/mounting.json": "8c46ff0527da4db47efdd45ae4d9a1e2847d0e3d7606a52c45d2c59a2a19d6cd",
+    "results/upright_position_v4_sequence_20260911_104025/analysis/normal_before/summary.json": "1f88a1700e303fc6d05e3e4fb509bdbe77fcf15def4ed712e619679766f40e08",
+    "results/upright_position_v4_sequence_20260911_104025/analysis/normal_before/five_second_rms.csv": "7a47eca374a227eae0fefdb1be422542aa9b66caeb4d6134c5c60543dc4959c0",
+    "results/upright_position_v4_sequence_20260911_104025/airflow_modified_session.json": "105ab838a9b2bded5369fdbb41beda8c88806a4970d2417a62bbcb77b2838d34",
+    "data/upright_position_v4_sequence_20260911_104025/airflow_modified_75pwm_300s_20260911_110050_628158.csv": "1efabb0203d77cc6d06eb9d085c689c6de14cc6293373b241d3f8abbd686e394",
+    "data/upright_position_v4_sequence_20260911_104025/airflow_modified_75pwm_300s_20260911_110050_628158.json": "1a2df4f9dbff4abd9094d6ca7e32421e26ef3e1a292be51573400be2de72bd3e",
+    "results/upright_position_v4_sequence_20260911_104025/airflow_modified_fan.jsonl": "115f8e9138bd6a020bdc6ca39b52e84c925f627215d9ebc5a8f29cdd4bc1058a",
+    "results/upright_position_v4_sequence_20260911_104025/airflow_modified_release.json": "2a76a46bcc534fecbd3ba7dff8a0868d27954f1577cdeb93f4d971513935e947",
+    "results/upright_position_v4_sequence_20260911_104025/analysis/airflow_modified/summary.json": "dde53f34d8ea289375d7d77d65a16e0780f8a04335fe75427223043d717305bb",
+    "results/upright_position_v4_sequence_20260911_104025/analysis/airflow_modified/five_second_rms.csv": "89d02fc9fe338874a38665012390398a9cdc4b66d68c1fe9654fe0f3bd80f505"
+  },
+  "source_sha256": "b5cd88545fde3ada2483661edf222ca2db2d504d604eb4cbec7836e2fb734e73",
+  "models_trained": false,
+  "defect_proven": false,
+  "anomaly_detection_evaluated": false
+}

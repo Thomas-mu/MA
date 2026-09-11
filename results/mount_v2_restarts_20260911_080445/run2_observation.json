@@ -1,0 +1,11 @@
+{
+  "run": 2,
+  "recorded_utc": "2026-09-11T08:25:01.877155+00:00",
+  "operator_answer": "ja",
+  "question": "Lief der Lüfter während Lauf2 etwa10:18:40–10:23:40 nach dem Anlaufen sichtbar gleichmäßig, ohne Berührung oder erkennbare Lockerung?",
+  "running_visibly_even_after_startup": true,
+  "mounting_unchanged_user_confirmed": true,
+  "source": "retrospective user observation",
+  "measured_rpm": null,
+  "raw_metadata_unchanged": true
+}

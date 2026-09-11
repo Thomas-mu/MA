@@ -1,0 +1,23 @@
+{
+  "source": "explicit_user_message",
+  "released": true,
+  "phase": "normal_followup",
+  "authorized_phases": [
+    "normal_followup"
+  ],
+  "mounting_id": "fan_upright_position_v4_20260911_103726",
+  "boot_id": "e0207b92-50ab-43c9-b686-57d9dae9d7bb",
+  "accepted_monotonic_ns": 16728700533137,
+  "accepted_utc": "2026-09-11T11:27:31.256394+00:00",
+  "operator_message_verbatim": "alles klar dann starte ",
+  "operator_message_interpretation": "Explicit start authorization following the explained single normal follow-up protocol. No automatic repeats.",
+  "standstill_confirmation_source": "results/upright_position_v4_sequence_20260911_104025/final_standstill_confirmation_20260911_112033_347884.json",
+  "external_supply_and_mounting_unchanged_as_instructed": true,
+  "condition_evidence_note": "Supply connected and plate removed were previously explicitly confirmed. User was instructed to leave them unchanged and now authorizes this specific follow-up. No new independent observation inferred.",
+  "planned_additional_off_s": 60,
+  "duration_s": 300,
+  "pwm_percent": 75,
+  "pwm_frequency_hz": 25000,
+  "no_response_deadline": true,
+  "automatic_restarts": false
+}

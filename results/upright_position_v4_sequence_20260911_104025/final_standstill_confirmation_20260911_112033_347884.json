@@ -1,0 +1,31 @@
+{
+  "recorded_utc": "2026-09-11T11:20:33.347884+00:00",
+  "mounting_id": "fan_upright_position_v4_20260911_103726",
+  "event": "user_confirmed_mechanical_standstill_after_final_run",
+  "operator_message_verbatim": "ja es ist stillstand",
+  "source": "explicit_user_observation",
+  "mechanical_standstill_user_confirmed": true,
+  "independent_mechanical_measurement": false,
+  "rpm_measured": null,
+  "exact_time_rotor_stopped": null,
+  "scope": "Current user-reported standstill after completed normal_after; not retroactive proof of stop time or earlier conditions",
+  "software_readback": {
+    "pwm_attributes": {
+      "period": "40000",
+      "duty_cycle": "0",
+      "enable": "1",
+      "polarity": "normal"
+    },
+    "gpio18_pin_function": "18: a3    pd | lo // GPIO18 = PWM0_CHAN2"
+  },
+  "expected_zero_configuration_confirmed": true,
+  "device_holder_check": {
+    "returncode": 1,
+    "stdout": "",
+    "stderr": ""
+  },
+  "new_start_released": false,
+  "control_commands_sent": [],
+  "previous_report_sha256": "23718b04efcf378839cea06ef2f8ae37e89c35f33029407ad2669e45732acef3",
+  "previous_files_edited": false
+}

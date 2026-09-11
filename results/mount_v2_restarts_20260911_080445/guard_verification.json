@@ -1,0 +1,7 @@
+{
+  "recorded_utc": "2026-09-11T08:09:22.449325+00:00",
+  "syntax": "passed",
+  "missing_current_standstill_confirmation_blocks_before_hardware_access": true,
+  "session_or_fan_journal_created": false,
+  "physical_start_commands_issued": 0
+}

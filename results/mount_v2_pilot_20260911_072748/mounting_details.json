@@ -1,0 +1,11 @@
+{
+  "recorded_utc": "2026-09-11T07:41:00.802060+00:00",
+  "mounting_id": "adxl345_mount_v2_provisional_20260911_072748",
+  "source": "user_statement",
+  "operator_answer": "Der Sensor ist mit zwei Schrauben am äußeren, feststehenden Lüfterrahmen befestigt. Die Platine sitzt schräg.",
+  "attachment_material": "two screws",
+  "location": "outer stationary fan frame",
+  "orientation": "sensor board sits obliquely; numerical angle and axis directions not specified",
+  "fan_support": null,
+  "safety_result": "pending clarification; not inferred from attachment description"
+}

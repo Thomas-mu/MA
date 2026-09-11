@@ -1,0 +1,42 @@
+{
+  "created_utc": "2026-09-11T09:56:55.363603+00:00",
+  "status": "prepared_awaiting_initial_standstill_and_supply",
+  "mounting_id": "fan_upright_mount_v3_20260911_095035",
+  "preexisting_files_checked": 910,
+  "changed_or_missing": [],
+  "word_sha256": "a9a5d7d17b28098f554240a3e1650881e252db679f33319a1d11164b3246cbb8",
+  "syntax_valid": true,
+  "hardware_free_guard_tests": {
+    "returncode": 0,
+    "output": "...\n----------------------------------------------------------------------\nRan 3 tests in 0.003s\n\nOK\n"
+  },
+  "local_protocol_links_valid": true,
+  "manufacturer_direction_image_visually_checked": true,
+  "actual_outlet_side_verified": false,
+  "no_recording_created": true,
+  "no_release_inferred": true,
+  "sensor_access_performed": false,
+  "pwm_writes_performed": false,
+  "read_only_pwm_configuration": {
+    "period": "40000",
+    "duty_cycle": "0",
+    "enable": "1",
+    "polarity": "normal"
+  },
+  "artifact_sha256": {
+    "protocol.md": "fc0046ab925fa0fa45bd03b2381224cf887bd4154d3236cd9f5c2beadbb8ea88",
+    "preparation_fan_readback.jsonl": "1a572880d5af8021e0fb95799179b95f9776e4ed2e152c9abb3eaca65d934e2c",
+    "mounting.json": "29bc2055116419195ce77eca3ef3d43f1d37bca06a74ad7db443151f26dd1ddc",
+    "run_initial.py": "07c161b89b011d4c0ac217bcf948e7efa86442952de7f0588d3b7e75846464cf",
+    "baseline.json": "0eab85b17cf333edda57e0dd2ec18a23d396aee61141ff2d94e6c8360db42e37",
+    "check_guards.py": "2fe450bc3192c2b9101d2f3f17276996c1ccbe51f953e66e02ad3ab132912ee3",
+    "analyze_phase.py": "9f21e3299e8b9744e1f54f0b2acde505acdb1a4e7b4a674a7cb1b1b05a143d01",
+    "sequence_common.py": "7067b15842c801bd9cbf7a3746aa1979f94e5b8318c5cb9fdf93ee122340d60b",
+    "geometry.json": "2af3328416122c8b162e04cc93675e17f1627e71f4edecf5537e8c294b5e14e6",
+    "run_phase.py": "88b90d9957493185e1bd642684e6901f67ad8cfdf3a85a16e29bc3b44eed34f5",
+    "run_standstill.py": "3a67ab43b4c577bac10deabd522837dd1a202d4233e500365ff66d7888e8ae7b",
+    "manufacturer_airflow_direction.jpg": "275f3ab54d49b55214b96698004fc703379ac541326aae24b4e8efc18b98d003",
+    "preparation.json": "89b0bd3b516d07183133e13aedf4f6c147e9c2f94ee8145c150d43b6e2268a9c",
+    "plan.json": "246cda5dfbfe39f1640344daebe4ec255c31e46fb3a9e2d311d2cc7be302dd48"
+  }
+}

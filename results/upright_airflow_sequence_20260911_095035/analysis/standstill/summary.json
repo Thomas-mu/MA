@@ -1,0 +1,98 @@
+{
+  "created_utc": "2026-09-11T10:28:19.522766+00:00",
+  "phase": "standstill",
+  "csv": "data/upright_airflow_sequence_20260911_095035/standstill_0pwm_30s_20260911_102207_437292.csv",
+  "mounting_id": "fan_upright_mount_v3_20260911_095035",
+  "geometry": null,
+  "sensor": {
+    "model": "ADXL345",
+    "odr_hz": 200,
+    "range_g": 2,
+    "full_resolution": true,
+    "scale_g_per_lsb": 0.0039,
+    "acquisition_mode": "fifo_stream",
+    "register_readback": {
+      "0x2c": "0xb",
+      "0x31": "0x8",
+      "0x2e": "0x0",
+      "0x38": "0x90",
+      "0x2d": "0x8"
+    },
+    "timestamp_source": "host_monotonic_read_completion",
+    "sensor_time_estimate": "sample_index / nominal ODR; not measured sensor time",
+    "lost_samples_exact": null,
+    "bus_number": 1,
+    "i2c_clock_configured_hz": 100000
+  },
+  "quality": {
+    "xyz_points": 6214,
+    "single_axis_values": 18642,
+    "nominal_odr_hz": 200,
+    "configured_duration_s": 30,
+    "first_to_last_host_s": 29.987045052,
+    "observed_xyz_s": 207.18947096074814,
+    "host_interval_mean_ms": 4.826500088845968,
+    "host_interval_p50_ms": 5.537236,
+    "host_interval_p99_ms": 5.70335176,
+    "host_interval_max_ms": 6.192125,
+    "host_intervals_over_10ms": 0,
+    "host_intervals_over_10ms_command_times_s": [],
+    "read_duration_max_ms": 1.999406,
+    "fifo_max": 1,
+    "nonmonotonic_host_intervals": 0,
+    "software_sample_indices_contiguous": true,
+    "exact_sensor_loss_count": null,
+    "max_absolute_axis_g": 0.7332,
+    "axis_means_g": [
+      -0.6303696652719665,
+      -0.7105148535564854,
+      0.08898389121338908
+    ],
+    "axis_std_g_ddof0": [
+      0.006885128924455004,
+      0.006767709534441557,
+      0.009693854107247536
+    ],
+    "gap_count": 0,
+    "overrun_count": 0,
+    "saturated_count": 0,
+    "points_after_analysis_duration": 7,
+    "analysis_time_origin": "record invocation",
+    "first_window_note": "starts with first acquired XYZ; missing pre-read interval is not filled",
+    "timestamp_note": "host read completion, not independently measured sensor conversion times"
+  },
+  "primary_180_300": null,
+  "all_window_summary": {
+    "mean_mg": 13.672028515831919,
+    "median_mg": 13.679263058513055,
+    "std_mg_ddof0": 0.39397048469761087,
+    "min_mg": 13.132353521273544,
+    "max_mg": 14.230685257799776
+  },
+  "timing": {
+    "first_xyz_monotonic_ns": 12804975091686,
+    "last_xyz_monotonic_ns": 12834962136738,
+    "first_xyz_after_record_invocation_s": 0.042445152,
+    "first_to_last_xyz_s": 29.987045052
+  },
+  "additional_off_from_release_actual_s": null,
+  "total_off_since_previous_zero_s": null,
+  "command_invocation_utc": null,
+  "zero_command_completed_utc": null,
+  "source_sha256": "9f21e3299e8b9744e1f54f0b2acde505acdb1a4e7b4a674a7cb1b1b05a143d01",
+  "input_sha256": {
+    "results/upright_airflow_sequence_20260911_095035/standstill_session.json": "e9c5f16e02be4ba8a0f811c5dc69f1d0bd4166d96dca0d172b880011dcea0ebd",
+    "data/upright_airflow_sequence_20260911_095035/standstill_0pwm_30s_20260911_102207_437292.csv": "f9bc46eb090be48781a257ae3af220da90f40f6d989b951607de1faf45c78c08",
+    "data/upright_airflow_sequence_20260911_095035/standstill_0pwm_30s_20260911_102207_437292.json": "b5704ff81c3d4f39925133110cce9d9d258a63a248ec5e88c0bb4c44c64f52b4",
+    "results/upright_airflow_sequence_20260911_095035/standstill_fan.jsonl": "08e83285a4ae16fe3d39e76c8cfc38c6febc9294516bc15b14bfb6035618b05f",
+    "results/upright_airflow_sequence_20260911_095035/initial_release.json": "8552ac4b26646c9ac386818ab66035af2fc6a5a7a9d0d1c3fd613392dcb6d069",
+    "results/upright_airflow_sequence_20260911_095035/mounting.json": "29bc2055116419195ce77eca3ef3d43f1d37bca06a74ad7db443151f26dd1ddc"
+  },
+  "control_transactions": [],
+  "final_pwm_percent": 0,
+  "mechanical_standstill_user_confirmed_before_capture": true,
+  "settling_time_validated": false,
+  "models_trained": false,
+  "observations_requested": false,
+  "quality_flags_clear": true
+}
