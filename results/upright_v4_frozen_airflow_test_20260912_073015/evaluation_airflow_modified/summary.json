@@ -1,0 +1,216 @@
+{
+  "status": "evaluated_controlled_airflow_recording",
+  "csv": "/home/malik/masterarbeit-edge-ai/data/upright_v4_frozen_airflow_test_20260912_073015/airflow_modified_75pwm_300s_20260912_074845_333651.csv",
+  "csv_sha256": "4627309c3a60dcf2bb941150176ae0995faf6112f42941d6cf986354e2251b3d",
+  "sidecar": "/home/malik/masterarbeit-edge-ai/data/upright_v4_frozen_airflow_test_20260912_073015/airflow_modified_75pwm_300s_20260912_074845_333651.json",
+  "sidecar_sha256": "3d78735d33b63df1e3204d118fc43e6d351e8d43a3973fac5b7a73e5b65ab782",
+  "session": "/home/malik/masterarbeit-edge-ai/results/upright_v4_frozen_airflow_test_20260912_073015/airflow_modified_session.json",
+  "session_sha256": "3a9c5e9cf469b010fd2b7752890b627c2083e263e8aec346400cc51457988c67",
+  "protocol_sha256": "5375fda6aff23f8f3c7651ac25e638a0dbbfbb52b49a33611e528bade3644a5d",
+  "frozen_bundle_sha256": "cec1859bfb354bafef77a619e6d2c1ffd85b50787c87595aba9a1e20a80cdae5",
+  "recording_id": "airflow_modified_75pwm_300s_20260912_074845_333651",
+  "phase": "airflow_modified",
+  "mounting_id": "fan_upright_position_v4_20260911_103726",
+  "condition": "airflow_modified",
+  "quality": {
+    "xyz_points": 62121,
+    "individual_axis_values": 186363,
+    "nominal_sensor_odr_hz": 200,
+    "observed_xyz_per_second": 207.0724681980619,
+    "first_to_last_host_span_s": 299.991594926,
+    "first_xyz_after_command_s": 0.097458462,
+    "last_xyz_after_command_s": 300.089053388,
+    "host_interval_p50_ms": 5.583385,
+    "host_interval_p99_ms": 5.68925736,
+    "host_interval_max_ms": 8.172495,
+    "host_intervals_over_10ms": 0,
+    "host_intervals_over_160ms": 0,
+    "read_duration_max_ms": 4.076494,
+    "fifo_depth_max": 1,
+    "gap_flagged_xyz": 0,
+    "overrun_flagged_xyz": 0,
+    "saturated_flagged_xyz": 0,
+    "nonfinite_xyz_points": 0,
+    "nonmonotonic_host_intervals": 0,
+    "exact_lost_sensor_samples": null,
+    "timebase_limitation": "Host read completion is not a measured sensor conversion clock. Exact physical losses are unknown.",
+    "selected_interval": {
+      "xyz_selected": 24849,
+      "full_model_windows": 194,
+      "trailing_xyz_not_windowed": 17,
+      "quality_valid_windows": 194,
+      "quality_invalid_windows": 0
+    }
+  },
+  "sensor": {
+    "model": "ADXL345",
+    "odr_hz": 200,
+    "range_g": 2,
+    "full_resolution": true,
+    "scale_g_per_lsb": 0.0039,
+    "acquisition_mode": "fifo_stream",
+    "register_readback": {
+      "0x2c": "0xb",
+      "0x31": "0x8",
+      "0x2e": "0x0",
+      "0x38": "0x90",
+      "0x2d": "0x8"
+    },
+    "timestamp_source": "host_monotonic_read_completion",
+    "sensor_time_estimate": "sample_index / nominal ODR; not measured sensor time",
+    "lost_samples_exact": null,
+    "bus_number": 1,
+    "i2c_clock_configured_hz": 100000
+  },
+  "acquisition_timing": {
+    "first_xyz_monotonic_ns": 90002880647261,
+    "last_xyz_monotonic_ns": 90302872242187,
+    "first_xyz_after_command_invocation_s": 0.097458462,
+    "first_xyz_after_command_completion_s": 0.048458,
+    "first_to_last_xyz_s": 299.991594926,
+    "last_xyz_after_command_invocation_s": 300.089053388,
+    "first_xyz_utc_estimate": "2026-09-12T07:48:45.436487+00:00",
+    "electrical_signal_and_rotor_start_measured": false
+  },
+  "metrics": {
+    "rms": {
+      "total_windows": 194,
+      "valid_windows": 194,
+      "invalid_windows": 0,
+      "alarms": 7,
+      "alarm_fraction_among_valid_windows": 0.03608247422680412,
+      "condition": "airflow_modified",
+      "interpretation": "Alarm fraction for a controlled altered operating state; not defect recall."
+    },
+    "isolation_forest": {
+      "total_windows": 194,
+      "valid_windows": 194,
+      "invalid_windows": 0,
+      "alarms": 4,
+      "alarm_fraction_among_valid_windows": 0.020618556701030927,
+      "condition": "airflow_modified",
+      "interpretation": "Alarm fraction for a controlled altered operating state; not defect recall."
+    },
+    "tflite_autoencoder": {
+      "total_windows": 194,
+      "valid_windows": 194,
+      "invalid_windows": 0,
+      "alarms": 0,
+      "alarm_fraction_among_valid_windows": 0.0,
+      "condition": "airflow_modified",
+      "interpretation": "Alarm fraction for a controlled altered operating state; not defect recall."
+    }
+  },
+  "runtimes": {
+    "rms": "NumPy RMS (standardisiertes H×3-Fenster)",
+    "isolation_forest": "scikit-learn IsolationForest.score_samples",
+    "tflite_autoencoder": "ai_edge_litert.Interpreter (Float32 TFLite)"
+  },
+  "rms_5s_summary": {
+    "interval_seconds": [
+      180,
+      300
+    ],
+    "total_5s_blocks": 24,
+    "valid_5s_blocks": 24,
+    "invalid_5s_blocks": 0,
+    "mean_mg": 38.05253506723269,
+    "std_sample_mg": 1.2990511516813708,
+    "min_mg": 36.38631791947393,
+    "max_mg": 41.675628062155596,
+    "coefficient_of_variation": 0.03413836027970691,
+    "linear_slope_mg_per_min": -0.9029734750207205,
+    "linear_change_over_interval_mg": -1.805946950041441,
+    "first_half_mean_mg": 38.20032491748869,
+    "second_half_mean_mg": 37.90474521697668,
+    "second_minus_first_half_mg": -0.29557970051201465,
+    "inference": "Descriptive within-recording changes; blocks are not independent replicates."
+  },
+  "rms_full_run_summary": {
+    "interval_seconds": [
+      0,
+      300
+    ],
+    "total_5s_blocks": 60,
+    "valid_5s_blocks": 60,
+    "invalid_5s_blocks": 0,
+    "mean_mg": 35.45563718139629,
+    "std_sample_mg": 4.28797785209284,
+    "min_mg": 15.302126966429919,
+    "max_mg": 41.675628062155596,
+    "coefficient_of_variation": 0.12093924106214508,
+    "linear_slope_mg_per_min": 2.0892232374782838,
+    "linear_change_over_interval_mg": 10.44611618739142,
+    "first_half_mean_mg": 32.972954165697914,
+    "second_half_mean_mg": 37.93832019709467,
+    "second_minus_first_half_mg": 4.965366031396755,
+    "inference": "Descriptive within-recording changes; blocks are not independent replicates."
+  },
+  "pwm_command_invocation_utc": "2026-09-12T07:48:45.339029+00:00",
+  "pwm_command_invocation_monotonic_ns": 90002783188799,
+  "zero_command_completed_monotonic_ns": 90303182554476,
+  "zero_command_completed_utc": "2026-09-12T07:53:45.738411+00:00",
+  "additional_off_from_release_actual_s": 60.022425806,
+  "total_off_since_previous_zero_s": 321.440291667,
+  "total_off_time_note": "Software zero-completion to start-command interval; exact mechanical stop, supply-disconnection, and cooling intervals unknown. Total off-time is unknown if no verified reference exists.",
+  "plate_geometry": {
+    "source": "operator_report",
+    "width_mm": 120,
+    "height_mm": 120,
+    "distance_mm": 100,
+    "distance_reference": "outlet_frame_plane_to_nearest_plate_face",
+    "outlet_identification": "Current operator confirms installation as described at the air outlet. Actual outlet side was explicitly confirmed on 2026-09-11; no independent observation or distinct housing-arrow inspection is claimed.",
+    "parallel_to_outlet": true,
+    "centered_on_outlet": true,
+    "separate_stable_holder": true,
+    "no_contact": true,
+    "independently_measured": false
+  },
+  "models_changed": false,
+  "scaler_fitted": false,
+  "thresholds_changed": false,
+  "physical_loss_count": null,
+  "mechanical_stop_measured": false,
+  "final_readback": {
+    "gpio_bcm": 18,
+    "physical_pin": 12,
+    "pwm_chip": 0,
+    "pwm_channel": 2,
+    "pwm_path": "/sys/class/pwm/pwmchip0/pwm2",
+    "rp1_device_path": "/sys/devices/platform/axi/1000120000.pcie/1f00098000.pwm",
+    "pwm_configuration": {
+      "period_ns": 40000,
+      "duty_cycle_ns": 0,
+      "enable": 1,
+      "polarity": "normal",
+      "configured_frequency_hz": 25000.0,
+      "configured_duty_percent": 0.0
+    },
+    "pin_readback": {
+      "mux": "a3",
+      "function": "PWM0_CHAN2",
+      "instantaneous_level": "lo",
+      "raw": "18: a3    pd | lo // GPIO18 = PWM0_CHAN2"
+    },
+    "pwm_mux_confirmed": true,
+    "electrical_waveform_measured": false,
+    "measured_rpm": null,
+    "mechanical_state": "not_measured"
+  },
+  "selection_seconds_since_pwm_command": [
+    180,
+    300
+  ],
+  "evaluator_sha256": "f1b96a2867e74a3a73648fcd533d9ba1b36ebcf8cc58b9b0c7efce906773628c",
+  "limitation": "One sequence is not general reproducibility. The altered state is not a verified defect; no defect recall, F1 or general detection performance is inferred. Adjacent windows are dependent.",
+  "artifact_sha256": {
+    "scores.png": "339b16eb3bf0787086e1175208b99edad8541b962e924d546c67edb16abe7e56",
+    "scores.csv": "f9c4219c6090218ca1e8890a06e27eae6a74041db8de74d2582ac9694b8cbd93",
+    "rms_5s.json": "4edea4af694567791c0ff34e12a581dd6a5f0ded74c60013293d6d429a0b98ee",
+    "rms_5s.pdf": "9ea32cce222c539700056116d4d0418203a1aa4cd0c92fd4a9f245c127fcec4f",
+    "rms_5s.csv": "b41eef16954143404359cbc86aaebe44f03fc850a5a0150b051c794a0b4a02fb",
+    "rms_5s.png": "310afd50bd0040620d25bc90e50b98f5254523b24bf54f265cd7e84e18da45c8",
+    "scores.pdf": "b45f4381b58ac8a37520973cad66f9040662420f8757f75dca2f398305aa1501",
+    "scores.json": "436b5ffe7673c1f198c411451f34b8b299546ad103be6d1b4fb5cefb6804525e"
+  }
+}

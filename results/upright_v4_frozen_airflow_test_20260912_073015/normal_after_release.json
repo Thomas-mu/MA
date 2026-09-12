@@ -1,0 +1,32 @@
+{
+  "source": "explicit_user_message",
+  "released": true,
+  "phase": "normal_after",
+  "authorized_phases": [
+    "normal_after"
+  ],
+  "protocol_id": "upright_v4_frozen_airflow_test_20260912_073015",
+  "protocol_sha256": "5375fda6aff23f8f3c7651ac25e638a0dbbfbb52b49a33611e528bade3644a5d",
+  "mounting_id": "fan_upright_position_v4_20260911_103726",
+  "boot_id": "e0207b92-50ab-43c9-b686-57d9dae9d7bb",
+  "accepted_monotonic_ns": 90452562702979,
+  "accepted_utc": "2026-09-12T07:56:15.118560+00:00",
+  "operator_message_verbatim": "Platte entfernt, Lüfter steht, Versorgung angeschlossen, letzter Lauf freigegeben",
+  "ready": true,
+  "external_supply_connected": true,
+  "mechanical_standstill_confirmed": true,
+  "mounting_unchanged": true,
+  "plate_present": false,
+  "plate_absent": true,
+  "manual_change_power_disconnected": true,
+  "no_fan_sensor_movement": true,
+  "plate_geometry": null,
+  "readiness_basis": "Current explicit last-run release after the immediately preceding instruction to disconnect external 12 V, wait for full stop, remove only plate without moving fan or sensor, then reconnect. Physical conditions are operator reports, not remotely measured.",
+  "planned_additional_off_s": 60,
+  "pwm_percent": 75,
+  "pwm_frequency_hz": 25000,
+  "duration_s": 300,
+  "running_observation_requested": false,
+  "no_response_deadline": true,
+  "pause_after_this_phase": true
+}

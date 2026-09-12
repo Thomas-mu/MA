@@ -1,0 +1,40 @@
+{
+  "reviewed_utc": "2026-09-12T07:54:45.604199+00:00",
+  "report_sha256": "c36493ff47375ca105ad4302496d2c8d85efa94a8761a48e82b31771c843e303",
+  "summary_sha256": "d9e617ed03ba4e81cb2ccc3bade2b1c67954d6a960d94c95b95a0d87872e70ef",
+  "comparison_sha256": "2b2b521c5dda8f3bd9919666d6e03e1dd5e256259c791af7e1e63620b99de5bf",
+  "verification_sha256": "57c7c67b8e599d12e5788b064b12ea691b47243464dc6483f39bede161984202",
+  "artifact_sha256": {
+    "evaluation_normal_before/scores.png": "93750d5eb5ecbc28493325f39caf464f3b0dec7d384af4c8838409ef418a6dc4",
+    "evaluation_normal_before/scores.csv": "d1e76a96afff48252860956af0fa64c345f30c4f93bda04ddbae8695a7b7534c",
+    "evaluation_normal_before/rms_5s.json": "f7b490cda86cc0cd0be7ad759d6f128d1f5cc1f59b0dfe0c90fdb15c4821fec3",
+    "evaluation_normal_before/rms_5s.pdf": "744c1a9fe2e5840116093eddda1f58c857987abe000e38d696a00a1793456457",
+    "evaluation_normal_before/rms_5s.csv": "46dc9fc53ce9c06ff8546a93f41c7b0452df567c377d0f8ee09bd1638130d84c",
+    "evaluation_normal_before/rms_5s.png": "021432cca33fb3437ee9bba9081bcae4c46e715365e51a11436a95851c5b2cc2",
+    "evaluation_normal_before/scores.pdf": "94b7555cb26bda11b9dd3d5e01a15ee75150a6b9c4985761bae4f59324682b48",
+    "evaluation_normal_before/scores.json": "3e1611931a92084cc38fed682b0ceb5af14bb7c417639849b8f753d0348d9a57",
+    "evaluation_airflow_modified/scores.png": "339b16eb3bf0787086e1175208b99edad8541b962e924d546c67edb16abe7e56",
+    "evaluation_airflow_modified/scores.csv": "f9c4219c6090218ca1e8890a06e27eae6a74041db8de74d2582ac9694b8cbd93",
+    "evaluation_airflow_modified/rms_5s.json": "4edea4af694567791c0ff34e12a581dd6a5f0ded74c60013293d6d429a0b98ee",
+    "evaluation_airflow_modified/rms_5s.pdf": "9ea32cce222c539700056116d4d0418203a1aa4cd0c92fd4a9f245c127fcec4f",
+    "evaluation_airflow_modified/rms_5s.csv": "b41eef16954143404359cbc86aaebe44f03fc850a5a0150b051c794a0b4a02fb",
+    "evaluation_airflow_modified/rms_5s.png": "310afd50bd0040620d25bc90e50b98f5254523b24bf54f265cd7e84e18da45c8",
+    "evaluation_airflow_modified/scores.pdf": "b45f4381b58ac8a37520973cad66f9040662420f8757f75dca2f398305aa1501",
+    "evaluation_airflow_modified/scores.json": "436b5ffe7673c1f198c411451f34b8b299546ad103be6d1b4fb5cefb6804525e",
+    "comparison_before_modified/rms_comparison.json": "b99a1a478e889291a924c01a2cb37f7ac2ca3494bce0a8d1181d55f68842fe48",
+    "comparison_before_modified/scores.png": "30f5da00c64bff1199a771ad217aadeaf251adafe46547bc4e13805d0f626eae",
+    "comparison_before_modified/rms_5s.pdf": "a169fc072e8720ce8673eb9e066792e9108c8f36ea6e94b475be633df1677a9a",
+    "comparison_before_modified/comparison.csv": "39c6fbc22623fd20c2e43b4eeae919a2b50bd5ee1147006bf7f677437e09625f",
+    "comparison_before_modified/rms_5s.png": "c66ff88f822675a3597840aed087eb0529ca80e54494d747f4dfc4ea8d981983",
+    "comparison_before_modified/scores.pdf": "9524ca19b709c1c9a438d844fc92be8c29e741b5a1dd2e84603571046364d5f8"
+  },
+  "all_source_and_result_hashes_match": true,
+  "local_links_checked": 7,
+  "graphics_visually_reviewed": [
+    "comparison_before_modified/rms_5s.png",
+    "comparison_before_modified/scores.png"
+  ],
+  "normal_after_not_started": true,
+  "no_automatic_restart": true,
+  "interpretation": "Two phases only; changed operating state, not verified defect. No return or general detection claim; AE alarms lower in changed state despite higher physical RMS."
+}

@@ -1,0 +1,50 @@
+{
+  "checked_utc": "2026-09-12T07:30:15.867202+00:00",
+  "monotonic_ns": 88893311354251,
+  "boot_id": "e0207b92-50ab-43c9-b686-57d9dae9d7bb",
+  "user_message": "latte entfernt, Lüfter steht, Versorgung getrennt.",
+  "operator_confirmation": {
+    "plate_absent": true,
+    "mechanical_standstill": true,
+    "external_12v_supply_connected": false
+  },
+  "readback": {
+    "gpio_bcm": 18,
+    "physical_pin": 12,
+    "pwm_chip": 0,
+    "pwm_channel": 2,
+    "pwm_path": "/sys/class/pwm/pwmchip0/pwm2",
+    "rp1_device_path": "/sys/devices/platform/axi/1000120000.pcie/1f00098000.pwm",
+    "pwm_configuration": {
+      "period_ns": 40000,
+      "duty_cycle_ns": 0,
+      "enable": 1,
+      "polarity": "normal",
+      "configured_frequency_hz": 25000.0,
+      "configured_duty_percent": 0.0
+    },
+    "pin_readback": {
+      "mux": "a3",
+      "function": "PWM0_CHAN2",
+      "instantaneous_level": "lo",
+      "raw": "18: a3    pd | lo // GPIO18 = PWM0_CHAN2"
+    },
+    "pwm_mux_confirmed": true,
+    "electrical_waveform_measured": false,
+    "measured_rpm": null,
+    "mechanical_state": "not_measured"
+  },
+  "device_holders": {
+    "exit_code": 1,
+    "stdout": "",
+    "stderr": ""
+  },
+  "fan_service_readonly": "Restart=no\nExecMainStartTimestamp=Thu 2026-09-10 19:25:21 CEST\nExecMainExitTimestamp=Thu 2026-09-10 19:25:22 CEST\nActiveState=active\nSubState=exited\n",
+  "frozen_implementation_changed": [],
+  "frozen_bundle_sha256": "cec1859bfb354bafef77a619e6d2c1ffd85b50787c87595aba9a1e20a80cdae5",
+  "pwm_written": false,
+  "capture_started": false,
+  "readiness_pending": "Supply reconnection and explicit first-run release required",
+  "previous_incomplete_sequence": "/home/malik/masterarbeit-edge-ai/results/upright_v4_frozen_airflow_test_20260911_164040",
+  "new_sequence_not_retry_of_failed_phase": true
+}

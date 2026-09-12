@@ -1,0 +1,65 @@
+{
+  "checked_utc": "2026-09-12T07:47:45.312766+00:00",
+  "readback": {
+    "gpio_bcm": 18,
+    "physical_pin": 12,
+    "pwm_chip": 0,
+    "pwm_channel": 2,
+    "pwm_path": "/sys/class/pwm/pwmchip0/pwm2",
+    "rp1_device_path": "/sys/devices/platform/axi/1000120000.pcie/1f00098000.pwm",
+    "pwm_configuration": {
+      "period_ns": 40000,
+      "duty_cycle_ns": 0,
+      "enable": 1,
+      "polarity": "normal",
+      "configured_frequency_hz": 25000.0,
+      "configured_duty_percent": 0.0
+    },
+    "pin_readback": {
+      "mux": "a3",
+      "function": "PWM0_CHAN2",
+      "instantaneous_level": "lo",
+      "raw": "18: a3    pd | lo // GPIO18 = PWM0_CHAN2"
+    },
+    "pwm_mux_confirmed": true,
+    "electrical_waveform_measured": false,
+    "measured_rpm": null,
+    "mechanical_state": "not_measured"
+  },
+  "pwm_written": false,
+  "device_holders": {
+    "exit_code": 1,
+    "stdout": "",
+    "stderr": ""
+  },
+  "protocol_sha256": "5375fda6aff23f8f3c7651ac25e638a0dbbfbb52b49a33611e528bade3644a5d",
+  "existing_sequence_files_sha256": {
+    "final_normal_before_fan_readonly.jsonl": "c18fd53817c6e7d9ecfbe14144b3011f5972ba07c6ca6af594174d34e7b40f92",
+    "protocol.json": "5375fda6aff23f8f3c7651ac25e638a0dbbfbb52b49a33611e528bade3644a5d",
+    "normal_before_report.md": "dcea4797c5518b0b62dc326ceae97b3e4a8d360331918ca1ce26e59679490ddd",
+    "airflow_modified_preflight_readonly.jsonl": "1a3d06092c99c83b1a07b8f169c77ff10b3e518b695d76ce47ae6b0c26334fef",
+    "protocol.sha256": "d82c128305b763bc9cd1e362a93687ebb621b2ed22cc1140e88c0087117adb4c",
+    "geometry_plan.json": "e0917a15b05bca20c92599781c841112b19423c4c2eaee8799a8a32373e07563",
+    "normal_before_fan.jsonl": "0e51fe96e19f825ccf72c61292d3761e8d3f0c106fc2f75606c63c8a9f646357",
+    "build_normal_before_report.py": "4b5ba56970c8e39cd870ccbfd8026dd3eb94b755a5d888a177d9fea54dc69b82",
+    "normal_before_verification.json": "a8b63735954e45572e00f6a1919c017e32a066d57947f85a4cd1f59f0853bf5f",
+    "normal_before_session.json": "7df949cebb90d134ee7a65fe642c9c1e10069c076a11d9407567deb96eb9c18f",
+    "evaluation_normal_before_console.log": "5df24fb1f05b9e4ae92d49dc6323dd4eb119cf9d7389cb1dc39016fd50da28d3",
+    "preparation_readonly.json": "0863fc63870e993e8c64f602ff6b9d7b4c705144889827f4a50fe38f56851e0d",
+    "normal_before_console.log": "208e688a4290dde8dbc5e0cc9a6ce72bfe7e5e42be153b2006e5d885ff53cc16",
+    "preservation_inventory.json": "21aa47f53e7fb829ae8269245ac2aead1e670185746173e9875649e353ebc06f",
+    "preparation_fan_readonly.jsonl": "26958f73244822bc8ec532cfca85a04c7244ea3a3db053167535f3cc89a2d514",
+    "normal_before_report_review.json": "084e8dbffe44288fa1a7c9412567ebf5435c921cbf6dffcdad4617e066f4237b",
+    "normal_before_release.json": "60b4ac74658a671222fda1ab48e229cd72f14290832c1d18cd3e019f84dd432f",
+    "test_protocol.md": "ba1dc3de34d305c290c75d7dfd22823049c7a825e76d4a8ed5e9ff81201b7dbf",
+    "evaluation_normal_before/scores.png": "93750d5eb5ecbc28493325f39caf464f3b0dec7d384af4c8838409ef418a6dc4",
+    "evaluation_normal_before/scores.csv": "d1e76a96afff48252860956af0fa64c345f30c4f93bda04ddbae8695a7b7534c",
+    "evaluation_normal_before/rms_5s.json": "f7b490cda86cc0cd0be7ad759d6f128d1f5cc1f59b0dfe0c90fdb15c4821fec3",
+    "evaluation_normal_before/rms_5s.pdf": "744c1a9fe2e5840116093eddda1f58c857987abe000e38d696a00a1793456457",
+    "evaluation_normal_before/summary.json": "9a165c0f75f60a6f13722498523fef70093ca727e155631f952f6624ac1bb532",
+    "evaluation_normal_before/rms_5s.csv": "46dc9fc53ce9c06ff8546a93f41c7b0452df567c377d0f8ee09bd1638130d84c",
+    "evaluation_normal_before/rms_5s.png": "021432cca33fb3437ee9bba9081bcae4c46e715365e51a11436a95851c5b2cc2",
+    "evaluation_normal_before/scores.pdf": "94b7555cb26bda11b9dd3d5e01a15ee75150a6b9c4985761bae4f59324682b48",
+    "evaluation_normal_before/scores.json": "3e1611931a92084cc38fed682b0ceb5af14bb7c417639849b8f753d0348d9a57"
+  }
+}

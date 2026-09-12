@@ -1,0 +1,207 @@
+{
+  "status": "evaluated_controlled_airflow_recording",
+  "csv": "/home/malik/masterarbeit-edge-ai/data/upright_v4_frozen_airflow_test_20260912_073015/normal_before_75pwm_300s_20260912_073823_494120.csv",
+  "csv_sha256": "fdfcec021dc9f9ad2d86b41025a05259a66ed10d29e07a6ed98da3b593ac6960",
+  "sidecar": "/home/malik/masterarbeit-edge-ai/data/upright_v4_frozen_airflow_test_20260912_073015/normal_before_75pwm_300s_20260912_073823_494120.json",
+  "sidecar_sha256": "62c0a80eb795ea8bd8729e273d0ccabeca1026f510f992580e3c8920d1560a37",
+  "session": "/home/malik/masterarbeit-edge-ai/results/upright_v4_frozen_airflow_test_20260912_073015/normal_before_session.json",
+  "session_sha256": "7df949cebb90d134ee7a65fe642c9c1e10069c076a11d9407567deb96eb9c18f",
+  "protocol_sha256": "5375fda6aff23f8f3c7651ac25e638a0dbbfbb52b49a33611e528bade3644a5d",
+  "frozen_bundle_sha256": "cec1859bfb354bafef77a619e6d2c1ffd85b50787c87595aba9a1e20a80cdae5",
+  "recording_id": "normal_before_75pwm_300s_20260912_073823_494120",
+  "phase": "normal_before",
+  "mounting_id": "fan_upright_position_v4_20260911_103726",
+  "condition": "normal",
+  "quality": {
+    "xyz_points": 62140,
+    "individual_axis_values": 186420,
+    "nominal_sensor_odr_hz": 200,
+    "observed_xyz_per_second": 207.13690890038643,
+    "first_to_last_host_span_s": 299.989993719,
+    "first_xyz_after_command_s": 0.095443892,
+    "last_xyz_after_command_s": 300.085437611,
+    "host_interval_p50_ms": 5.588826,
+    "host_interval_p99_ms": 5.69486396,
+    "host_interval_max_ms": 13.437473,
+    "host_intervals_over_10ms": 1,
+    "host_intervals_over_160ms": 0,
+    "read_duration_max_ms": 8.056658,
+    "fifo_depth_max": 2,
+    "gap_flagged_xyz": 0,
+    "overrun_flagged_xyz": 0,
+    "saturated_flagged_xyz": 0,
+    "nonfinite_xyz_points": 0,
+    "nonmonotonic_host_intervals": 0,
+    "exact_lost_sensor_samples": null,
+    "timebase_limitation": "Host read completion is not a measured sensor conversion clock. Exact physical losses are unknown.",
+    "selected_interval": {
+      "xyz_selected": 24854,
+      "full_model_windows": 194,
+      "trailing_xyz_not_windowed": 22,
+      "quality_valid_windows": 194,
+      "quality_invalid_windows": 0
+    }
+  },
+  "sensor": {
+    "model": "ADXL345",
+    "odr_hz": 200,
+    "range_g": 2,
+    "full_resolution": true,
+    "scale_g_per_lsb": 0.0039,
+    "acquisition_mode": "fifo_stream",
+    "register_readback": {
+      "0x2c": "0xb",
+      "0x31": "0x8",
+      "0x2e": "0x0",
+      "0x38": "0x90",
+      "0x2d": "0x8"
+    },
+    "timestamp_source": "host_monotonic_read_completion",
+    "sensor_time_estimate": "sample_index / nominal ODR; not measured sensor time",
+    "lost_samples_exact": null,
+    "bus_number": 1,
+    "i2c_clock_configured_hz": 100000
+  },
+  "acquisition_timing": {
+    "first_xyz_monotonic_ns": 89381041856578,
+    "last_xyz_monotonic_ns": 89681031850297,
+    "first_xyz_after_command_invocation_s": 0.095443892,
+    "first_xyz_after_command_completion_s": 0.046578826,
+    "first_to_last_xyz_s": 299.989993719,
+    "last_xyz_after_command_invocation_s": 300.085437611,
+    "first_xyz_utc_estimate": "2026-09-12T07:38:23.597696+00:00",
+    "electrical_signal_and_rotor_start_measured": false
+  },
+  "metrics": {
+    "rms": {
+      "total_windows": 194,
+      "valid_windows": 194,
+      "invalid_windows": 0,
+      "alarms": 1,
+      "alarm_fraction_among_valid_windows": 0.005154639175257732,
+      "condition": "normal",
+      "false_alarms": 1,
+      "false_alarm_rate_among_valid_normal_windows": 0.005154639175257732
+    },
+    "isolation_forest": {
+      "total_windows": 194,
+      "valid_windows": 194,
+      "invalid_windows": 0,
+      "alarms": 0,
+      "alarm_fraction_among_valid_windows": 0.0,
+      "condition": "normal",
+      "false_alarms": 0,
+      "false_alarm_rate_among_valid_normal_windows": 0.0
+    },
+    "tflite_autoencoder": {
+      "total_windows": 194,
+      "valid_windows": 194,
+      "invalid_windows": 0,
+      "alarms": 51,
+      "alarm_fraction_among_valid_windows": 0.26288659793814434,
+      "condition": "normal",
+      "false_alarms": 51,
+      "false_alarm_rate_among_valid_normal_windows": 0.26288659793814434
+    }
+  },
+  "runtimes": {
+    "rms": "NumPy RMS (standardisiertes H×3-Fenster)",
+    "isolation_forest": "scikit-learn IsolationForest.score_samples",
+    "tflite_autoencoder": "ai_edge_litert.Interpreter (Float32 TFLite)"
+  },
+  "rms_5s_summary": {
+    "interval_seconds": [
+      180,
+      300
+    ],
+    "total_5s_blocks": 24,
+    "valid_5s_blocks": 24,
+    "invalid_5s_blocks": 0,
+    "mean_mg": 28.458000919213134,
+    "std_sample_mg": 1.6183811790313194,
+    "min_mg": 26.59293506263083,
+    "max_mg": 33.214154957804006,
+    "coefficient_of_variation": 0.056869109802392535,
+    "linear_slope_mg_per_min": -0.7066480542786516,
+    "linear_change_over_interval_mg": -1.4132961085573033,
+    "first_half_mean_mg": 28.43487210203196,
+    "second_half_mean_mg": 28.481129736394312,
+    "second_minus_first_half_mg": 0.04625763436235175,
+    "inference": "Descriptive within-recording changes; blocks are not independent replicates."
+  },
+  "rms_full_run_summary": {
+    "interval_seconds": [
+      0,
+      300
+    ],
+    "total_5s_blocks": 60,
+    "valid_5s_blocks": 60,
+    "invalid_5s_blocks": 0,
+    "mean_mg": 30.246186691272836,
+    "std_sample_mg": 4.011870884866098,
+    "min_mg": 15.36867528398303,
+    "max_mg": 45.076489792696655,
+    "coefficient_of_variation": 0.13264055154508697,
+    "linear_slope_mg_per_min": -1.3665512431832765,
+    "linear_change_over_interval_mg": -6.832756215916382,
+    "first_half_mean_mg": 31.762124964282794,
+    "second_half_mean_mg": 28.730248418262885,
+    "second_minus_first_half_mg": -3.031876546019909,
+    "inference": "Descriptive within-recording changes; blocks are not independent replicates."
+  },
+  "pwm_command_invocation_utc": "2026-09-12T07:38:23.502252+00:00",
+  "pwm_command_invocation_monotonic_ns": 89380946412686,
+  "zero_command_completed_monotonic_ns": 89681342897132,
+  "zero_command_completed_utc": "2026-09-12T07:43:23.898754+00:00",
+  "additional_off_from_release_actual_s": 60.025137393,
+  "total_off_since_previous_zero_s": null,
+  "total_off_time_note": "Software zero-completion to start-command interval; exact mechanical stop, supply-disconnection, and cooling intervals unknown. Total off-time is unknown if no verified reference exists.",
+  "plate_geometry": null,
+  "models_changed": false,
+  "scaler_fitted": false,
+  "thresholds_changed": false,
+  "physical_loss_count": null,
+  "mechanical_stop_measured": false,
+  "final_readback": {
+    "gpio_bcm": 18,
+    "physical_pin": 12,
+    "pwm_chip": 0,
+    "pwm_channel": 2,
+    "pwm_path": "/sys/class/pwm/pwmchip0/pwm2",
+    "rp1_device_path": "/sys/devices/platform/axi/1000120000.pcie/1f00098000.pwm",
+    "pwm_configuration": {
+      "period_ns": 40000,
+      "duty_cycle_ns": 0,
+      "enable": 1,
+      "polarity": "normal",
+      "configured_frequency_hz": 25000.0,
+      "configured_duty_percent": 0.0
+    },
+    "pin_readback": {
+      "mux": "a3",
+      "function": "PWM0_CHAN2",
+      "instantaneous_level": "lo",
+      "raw": "18: a3    pd | lo // GPIO18 = PWM0_CHAN2"
+    },
+    "pwm_mux_confirmed": true,
+    "electrical_waveform_measured": false,
+    "measured_rpm": null,
+    "mechanical_state": "not_measured"
+  },
+  "selection_seconds_since_pwm_command": [
+    180,
+    300
+  ],
+  "evaluator_sha256": "f1b96a2867e74a3a73648fcd533d9ba1b36ebcf8cc58b9b0c7efce906773628c",
+  "limitation": "One sequence is not general reproducibility. The altered state is not a verified defect; no defect recall, F1 or general detection performance is inferred. Adjacent windows are dependent.",
+  "artifact_sha256": {
+    "scores.png": "93750d5eb5ecbc28493325f39caf464f3b0dec7d384af4c8838409ef418a6dc4",
+    "scores.csv": "d1e76a96afff48252860956af0fa64c345f30c4f93bda04ddbae8695a7b7534c",
+    "rms_5s.json": "f7b490cda86cc0cd0be7ad759d6f128d1f5cc1f59b0dfe0c90fdb15c4821fec3",
+    "rms_5s.pdf": "744c1a9fe2e5840116093eddda1f58c857987abe000e38d696a00a1793456457",
+    "rms_5s.csv": "46dc9fc53ce9c06ff8546a93f41c7b0452df567c377d0f8ee09bd1638130d84c",
+    "rms_5s.png": "021432cca33fb3437ee9bba9081bcae4c46e715365e51a11436a95851c5b2cc2",
+    "scores.pdf": "94b7555cb26bda11b9dd3d5e01a15ee75150a6b9c4985761bae4f59324682b48",
+    "scores.json": "3e1611931a92084cc38fed682b0ceb5af14bb7c417639849b8f753d0348d9a57"
+  }
+}

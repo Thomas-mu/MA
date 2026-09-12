@@ -1,0 +1,27 @@
+{
+  "reviewed_utc": "2026-09-12T07:44:55.873999+00:00",
+  "report_sha256": "dcea4797c5518b0b62dc326ceae97b3e4a8d360331918ca1ce26e59679490ddd",
+  "local_links_checked": 7,
+  "all_links_exist": true,
+  "quality_metrics_reviewed_against_summary": true,
+  "graphics_visually_reviewed": [
+    "evaluation_normal_before/rms_5s.png",
+    "evaluation_normal_before/scores.png"
+  ],
+  "source_and_result_hashes": {
+    "report": "dcea4797c5518b0b62dc326ceae97b3e4a8d360331918ca1ce26e59679490ddd",
+    "summary": "9a165c0f75f60a6f13722498523fef70093ca727e155631f952f6624ac1bb532",
+    "verification": "a8b63735954e45572e00f6a1919c017e32a066d57947f85a4cd1f59f0853bf5f",
+    "scores.png": "93750d5eb5ecbc28493325f39caf464f3b0dec7d384af4c8838409ef418a6dc4",
+    "scores.csv": "d1e76a96afff48252860956af0fa64c345f30c4f93bda04ddbae8695a7b7534c",
+    "rms_5s.json": "f7b490cda86cc0cd0be7ad759d6f128d1f5cc1f59b0dfe0c90fdb15c4821fec3",
+    "rms_5s.pdf": "744c1a9fe2e5840116093eddda1f58c857987abe000e38d696a00a1793456457",
+    "rms_5s.csv": "46dc9fc53ce9c06ff8546a93f41c7b0452df567c377d0f8ee09bd1638130d84c",
+    "rms_5s.png": "021432cca33fb3437ee9bba9081bcae4c46e715365e51a11436a95851c5b2cc2",
+    "scores.pdf": "94b7555cb26bda11b9dd3d5e01a15ee75150a6b9c4985761bae4f59324682b48",
+    "scores.json": "3e1611931a92084cc38fed682b0ceb5af14bb7c417639849b8f753d0348d9a57"
+  },
+  "all_evaluation_artifact_hashes_match": true,
+  "planned_state": "paused_after_normal_before_waiting_for_user",
+  "no_further_starts": true
+}

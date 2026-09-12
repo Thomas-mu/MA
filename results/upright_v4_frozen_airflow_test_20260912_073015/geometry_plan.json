@@ -1,0 +1,31 @@
+{
+  "fixture_version": "outlet_plate_120x120_centered_100mm_v2_planned",
+  "created_utc": "2026-09-12T07:37:23.111565+00:00",
+  "fan_mounting_id": "fan_upright_position_v4_20260911_103726",
+  "planned": {
+    "width_mm": 120,
+    "height_mm": 120,
+    "distance_mm": 100,
+    "distance_reference": "outlet_frame_plane_to_nearest_plate_face",
+    "alignment": "parallel_to_outlet",
+    "position": "centered_on_outlet",
+    "separate_stable_holder": true,
+    "no_contact": true,
+    "normal_condition": "plate removed from airflow; fan and sensor position unchanged"
+  },
+  "actual": null,
+  "actual_geometry_confirmation_pending": true,
+  "known_prior_operator_reports": {
+    "dimensions": "results/upright_v4_spectral_review_20260911_114502/user_plate_dimensions_20260911_120432_890501.json",
+    "distance": "results/upright_v4_spectral_review_20260911_114502/user_plate_distance_20260911_120226_590162.json"
+  },
+  "previous_plan_not_current_actual": "Older 60x120-mm right-half proposal does not match later 120x120-mm operator report. Centered 120x120 arrangement is explicitly planned for this new test, not claimed retrospectively.",
+  "outlet_identification": "Outlet side confirmed by operator on 2026-09-11; current plate absent. Next insertion geometry will be recorded from the next phase release, not presumed already executed.",
+  "mounting_safety": "Existing safe fixed v4 fan and sensor mounting retained; plate separately supported; supply disconnected and rotor fully stopped for physical changes.",
+  "model_label_meaning": {
+    "normal": 0,
+    "airflow_modified": 1,
+    "label_1_is_proven_defect": false
+  },
+  "source_previous_plan": "/home/malik/masterarbeit-edge-ai/results/upright_v4_frozen_airflow_test_20260911_164040/geometry_plan.json"
+}

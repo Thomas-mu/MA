@@ -1,0 +1,208 @@
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+{
+  "status": "evaluated_controlled_airflow_recording",
+  "csv": "/home/malik/masterarbeit-edge-ai/data/upright_v4_frozen_airflow_test_20260912_073015/normal_after_75pwm_300s_20260912_075715_142650.csv",
+  "csv_sha256": "b68701e7272cc0d109ad51c7aeb827be2d9f9cc370ee0fd7f4d1bd2869367288",
+  "sidecar": "/home/malik/masterarbeit-edge-ai/data/upright_v4_frozen_airflow_test_20260912_073015/normal_after_75pwm_300s_20260912_075715_142650.json",
+  "sidecar_sha256": "9696be80e59720026ee30401882a394839b46e8ed738186a2837a8487738ef9f",
+  "session": "/home/malik/masterarbeit-edge-ai/results/upright_v4_frozen_airflow_test_20260912_073015/normal_after_session.json",
+  "session_sha256": "3f963c0c114759692b2d81144a35d04ec31d18dc27d75e7960ba2e00c3f4dcc2",
+  "protocol_sha256": "5375fda6aff23f8f3c7651ac25e638a0dbbfbb52b49a33611e528bade3644a5d",
+  "frozen_bundle_sha256": "cec1859bfb354bafef77a619e6d2c1ffd85b50787c87595aba9a1e20a80cdae5",
+  "recording_id": "normal_after_75pwm_300s_20260912_075715_142650",
+  "phase": "normal_after",
+  "mounting_id": "fan_upright_position_v4_20260911_103726",
+  "condition": "normal",
+  "quality": {
+    "xyz_points": 62105,
+    "individual_axis_values": 186315,
+    "nominal_sensor_odr_hz": 200,
+    "observed_xyz_per_second": 207.02030057394643,
+    "first_to_last_host_span_s": 299.98990354,
+    "first_xyz_after_command_s": 0.09289961,
+    "last_xyz_after_command_s": 300.08280315,
+    "host_interval_p50_ms": 5.586850500000001,
+    "host_interval_p99_ms": 5.692288660000001,
+    "host_interval_max_ms": 8.060022,
+    "host_intervals_over_10ms": 0,
+    "host_intervals_over_160ms": 0,
+    "read_duration_max_ms": 4.201026,
+    "fifo_depth_max": 1,
+    "gap_flagged_xyz": 0,
+    "overrun_flagged_xyz": 0,
+    "saturated_flagged_xyz": 0,
+    "nonfinite_xyz_points": 0,
+    "nonmonotonic_host_intervals": 0,
+    "exact_lost_sensor_samples": null,
+    "timebase_limitation": "Host read completion is not a measured sensor conversion clock. Exact physical losses are unknown.",
+    "selected_interval": {
+      "xyz_selected": 24840,
+      "full_model_windows": 194,
+      "trailing_xyz_not_windowed": 8,
+      "quality_valid_windows": 194,
+      "quality_invalid_windows": 0
+    }
+  },
+  "sensor": {
+    "model": "ADXL345",
+    "odr_hz": 200,
+    "range_g": 2,
+    "full_resolution": true,
+    "scale_g_per_lsb": 0.0039,
+    "acquisition_mode": "fifo_stream",
+    "register_readback": {
+      "0x2c": "0xb",
+      "0x31": "0x8",
+      "0x2e": "0x0",
+      "0x38": "0x90",
+      "0x2d": "0x8"
+    },
+    "timestamp_source": "host_monotonic_read_completion",
+    "sensor_time_estimate": "sample_index / nominal ODR; not measured sensor time",
+    "lost_samples_exact": null,
+    "bus_number": 1,
+    "i2c_clock_configured_hz": 100000
+  },
+  "acquisition_timing": {
+    "first_xyz_monotonic_ns": 90512687665660,
+    "last_xyz_monotonic_ns": 90812677569200,
+    "first_xyz_after_command_invocation_s": 0.09289961,
+    "first_xyz_after_command_completion_s": 0.048338418,
+    "first_to_last_xyz_s": 299.98990354,
+    "last_xyz_after_command_invocation_s": 300.08280315,
+    "first_xyz_utc_estimate": "2026-09-12T07:57:15.243508+00:00",
+    "electrical_signal_and_rotor_start_measured": false
+  },
+  "metrics": {
+    "rms": {
+      "total_windows": 194,
+      "valid_windows": 194,
+      "invalid_windows": 0,
+      "alarms": 0,
+      "alarm_fraction_among_valid_windows": 0.0,
+      "condition": "normal",
+      "false_alarms": 0,
+      "false_alarm_rate_among_valid_normal_windows": 0.0
+    },
+    "isolation_forest": {
+      "total_windows": 194,
+      "valid_windows": 194,
+      "invalid_windows": 0,
+      "alarms": 0,
+      "alarm_fraction_among_valid_windows": 0.0,
+      "condition": "normal",
+      "false_alarms": 0,
+      "false_alarm_rate_among_valid_normal_windows": 0.0
+    },
+    "tflite_autoencoder": {
+      "total_windows": 194,
+      "valid_windows": 194,
+      "invalid_windows": 0,
+      "alarms": 4,
+      "alarm_fraction_among_valid_windows": 0.020618556701030927,
+      "condition": "normal",
+      "false_alarms": 4,
+      "false_alarm_rate_among_valid_normal_windows": 0.020618556701030927
+    }
+  },
+  "runtimes": {
+    "rms": "NumPy RMS (standardisiertes H×3-Fenster)",
+    "isolation_forest": "scikit-learn IsolationForest.score_samples",
+    "tflite_autoencoder": "ai_edge_litert.Interpreter (Float32 TFLite)"
+  },
+  "rms_5s_summary": {
+    "interval_seconds": [
+      180,
+      300
+    ],
+    "total_5s_blocks": 24,
+    "valid_5s_blocks": 24,
+    "invalid_5s_blocks": 0,
+    "mean_mg": 32.07414825719751,
+    "std_sample_mg": 2.780943070921696,
+    "min_mg": 26.865738098066,
+    "max_mg": 35.34941323780479,
+    "coefficient_of_variation": 0.0867035672661283,
+    "linear_slope_mg_per_min": -0.5438218173253948,
+    "linear_change_over_interval_mg": -1.0876436346507896,
+    "first_half_mean_mg": 31.870156977206822,
+    "second_half_mean_mg": 32.27813953718819,
+    "second_minus_first_half_mg": 0.4079825599813667,
+    "inference": "Descriptive within-recording changes; blocks are not independent replicates."
+  },
+  "rms_full_run_summary": {
+    "interval_seconds": [
+      0,
+      300
+    ],
+    "total_5s_blocks": 60,
+    "valid_5s_blocks": 60,
+    "invalid_5s_blocks": 0,
+    "mean_mg": 29.948713576564753,
+    "std_sample_mg": 5.111032193368893,
+    "min_mg": 16.452860780475017,
+    "max_mg": 35.34941323780479,
+    "coefficient_of_variation": 0.1706594902750127,
+    "linear_slope_mg_per_min": 2.120905298254679,
+    "linear_change_over_interval_mg": 10.604526491273397,
+    "first_half_mean_mg": 27.43569835429354,
+    "second_half_mean_mg": 32.46172879883596,
+    "second_minus_first_half_mg": 5.026030444542425,
+    "inference": "Descriptive within-recording changes; blocks are not independent replicates."
+  },
+  "pwm_command_invocation_utc": "2026-09-12T07:57:15.150608+00:00",
+  "pwm_command_invocation_monotonic_ns": 90512594766050,
+  "zero_command_completed_monotonic_ns": 90813000876477,
+  "zero_command_completed_utc": "2026-09-12T08:02:15.556733+00:00",
+  "additional_off_from_release_actual_s": 60.032063071,
+  "total_off_since_previous_zero_s": 209.412211574,
+  "total_off_time_note": "Software zero-completion to start-command interval; exact mechanical stop, supply-disconnection, and cooling intervals unknown. Total off-time is unknown if no verified reference exists.",
+  "plate_geometry": null,
+  "models_changed": false,
+  "scaler_fitted": false,
+  "thresholds_changed": false,
+  "physical_loss_count": null,
+  "mechanical_stop_measured": false,
+  "final_readback": {
+    "gpio_bcm": 18,
+    "physical_pin": 12,
+    "pwm_chip": 0,
+    "pwm_channel": 2,
+    "pwm_path": "/sys/class/pwm/pwmchip0/pwm2",
+    "rp1_device_path": "/sys/devices/platform/axi/1000120000.pcie/1f00098000.pwm",
+    "pwm_configuration": {
+      "period_ns": 40000,
+      "duty_cycle_ns": 0,
+      "enable": 1,
+      "polarity": "normal",
+      "configured_frequency_hz": 25000.0,
+      "configured_duty_percent": 0.0
+    },
+    "pin_readback": {
+      "mux": "a3",
+      "function": "PWM0_CHAN2",
+      "instantaneous_level": "lo",
+      "raw": "18: a3    pd | lo // GPIO18 = PWM0_CHAN2"
+    },
+    "pwm_mux_confirmed": true,
+    "electrical_waveform_measured": false,
+    "measured_rpm": null,
+    "mechanical_state": "not_measured"
+  },
+  "selection_seconds_since_pwm_command": [
+    180,
+    300
+  ],
+  "evaluator_sha256": "f1b96a2867e74a3a73648fcd533d9ba1b36ebcf8cc58b9b0c7efce906773628c",
+  "limitation": "One sequence is not general reproducibility. The altered state is not a verified defect; no defect recall, F1 or general detection performance is inferred. Adjacent windows are dependent.",
+  "artifact_sha256": {
+    "scores.png": "aa85512dc53d41965da8c009da307f4d796542d009269492f26fb13ce9f13da3",
+    "scores.csv": "97b5a91df6091a8088cdef8872c5a76c9b3138f755291ddeb989891deffcaf7d",
+    "rms_5s.json": "0aff174e845c7cba03a828ae89214b3a48a43113b6c3a72c3c6a5ce5c1659609",
+    "rms_5s.pdf": "e20309ccea0c2e05ab805618b72023fd7db58c633ed38d3388e3ee2ecf6acf81",
+    "rms_5s.csv": "b6c6fb8994f6628430777a79765b7c252f21bd8e20bc0a91cd4aade5ec1f70cb",
+    "rms_5s.png": "29e19ed9920a575e2e8b4db750b43d2533b0777ee3d2b013f56dbc4733535629",
+    "scores.pdf": "3773cd4a5b327bc874769fac393354e8dee5629903832b71cc98babd6d41bf50",
+    "scores.json": "cb442648c20952a1a5babca2a6819202c3cafff118a38d56c49ba4cb8d2a5632"
+  }
+}

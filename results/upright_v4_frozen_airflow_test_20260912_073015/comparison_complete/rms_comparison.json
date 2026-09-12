@@ -1,0 +1,88 @@
+{
+  "late_interval_seconds": [
+    180,
+    300
+  ],
+  "per_phase": {
+    "normal_before": {
+      "interval_seconds": [
+        180,
+        300
+      ],
+      "total_5s_blocks": 24,
+      "valid_5s_blocks": 24,
+      "invalid_5s_blocks": 0,
+      "mean_mg": 28.458000919213134,
+      "std_sample_mg": 1.6183811790313194,
+      "min_mg": 26.59293506263083,
+      "max_mg": 33.214154957804006,
+      "coefficient_of_variation": 0.056869109802392535,
+      "linear_slope_mg_per_min": -0.7066480542786516,
+      "linear_change_over_interval_mg": -1.4132961085573033,
+      "first_half_mean_mg": 28.43487210203196,
+      "second_half_mean_mg": 28.481129736394312,
+      "second_minus_first_half_mg": 0.04625763436235175,
+      "inference": "Descriptive within-recording changes; blocks are not independent replicates."
+    },
+    "airflow_modified": {
+      "interval_seconds": [
+        180,
+        300
+      ],
+      "total_5s_blocks": 24,
+      "valid_5s_blocks": 24,
+      "invalid_5s_blocks": 0,
+      "mean_mg": 38.05253506723269,
+      "std_sample_mg": 1.2990511516813708,
+      "min_mg": 36.38631791947393,
+      "max_mg": 41.675628062155596,
+      "coefficient_of_variation": 0.03413836027970691,
+      "linear_slope_mg_per_min": -0.9029734750207205,
+      "linear_change_over_interval_mg": -1.805946950041441,
+      "first_half_mean_mg": 38.20032491748869,
+      "second_half_mean_mg": 37.90474521697668,
+      "second_minus_first_half_mg": -0.29557970051201465,
+      "inference": "Descriptive within-recording changes; blocks are not independent replicates."
+    },
+    "normal_after": {
+      "interval_seconds": [
+        180,
+        300
+      ],
+      "total_5s_blocks": 24,
+      "valid_5s_blocks": 24,
+      "invalid_5s_blocks": 0,
+      "mean_mg": 32.07414825719751,
+      "std_sample_mg": 2.780943070921696,
+      "min_mg": 26.865738098066,
+      "max_mg": 35.34941323780479,
+      "coefficient_of_variation": 0.0867035672661283,
+      "linear_slope_mg_per_min": -0.5438218173253948,
+      "linear_change_over_interval_mg": -1.0876436346507896,
+      "first_half_mean_mg": 31.870156977206822,
+      "second_half_mean_mg": 32.27813953718819,
+      "second_minus_first_half_mg": 0.4079825599813667,
+      "inference": "Descriptive within-recording changes; blocks are not independent replicates."
+    }
+  },
+  "warmup_180_seconds_validated": false,
+  "interpretation": "Within-run slopes and between-run means describe different effects. One sequence cannot establish general reproducibility or successful anomaly detection.",
+  "return_comparison": {
+    "status": "descriptive",
+    "modified_minus_before_mean_mg": 9.594534148019555,
+    "modified_minus_after_mean_mg": 5.9783868100351825,
+    "after_minus_before_mean_mg": 3.6161473379843727,
+    "after_minus_before_percent_of_before_mean": 12.706961912925397,
+    "before_observed_5s_range_mg": [
+      26.59293506263083,
+      33.214154957804006
+    ],
+    "after_mean_within_before_observed_5s_range": true,
+    "after_5s_blocks_within_before_observed_range": 13,
+    "after_valid_5s_blocks": 24,
+    "normal_observed_combined_5s_span_mg": 8.75647817517396,
+    "modified_mean_offset_exceeds_combined_normal_5s_span_for_both_references": false,
+    "observed_5s_range_overlap_before_after_mg": 6.3484168597380055,
+    "caveat": "Observed ranges are neither confidence intervals nor acceptance limits. Returning inside a range does not prove equivalence; outside does not on its own disprove the warmup interval."
+  }
+}

@@ -1,0 +1,13 @@
+phase,recording_id,method,total_windows,valid_windows,invalid_windows,alarms,alarm_fraction_among_valid_windows,condition,false_alarms,false_alarm_rate_among_valid_normal_windows,interpretation
+normal_before,normal_before_75pwm_300s_20260912_073823_494120,rms,194,194,0,1,0.005154639175257732,normal,1.0,0.005154639175257732,
+normal_before,normal_before_75pwm_300s_20260912_073823_494120,isolation_forest,194,194,0,0,0.0,normal,0.0,0.0,
+normal_before,normal_before_75pwm_300s_20260912_073823_494120,tflite_autoencoder,194,194,0,51,0.26288659793814434,normal,51.0,0.26288659793814434,
+airflow_modified,airflow_modified_75pwm_300s_20260912_074845_333651,rms,194,194,0,7,0.03608247422680412,airflow_modified,,,Alarm fraction for a controlled altered operating state; not defect recall.
+airflow_modified,airflow_modified_75pwm_300s_20260912_074845_333651,isolation_forest,194,194,0,4,0.020618556701030927,airflow_modified,,,Alarm fraction for a controlled altered operating state; not defect recall.
+airflow_modified,airflow_modified_75pwm_300s_20260912_074845_333651,tflite_autoencoder,194,194,0,0,0.0,airflow_modified,,,Alarm fraction for a controlled altered operating state; not defect recall.
+normal_after,normal_after_75pwm_300s_20260912_075715_142650,rms,194,194,0,0,0.0,normal,0.0,0.0,
+normal_after,normal_after_75pwm_300s_20260912_075715_142650,isolation_forest,194,194,0,0,0.0,normal,0.0,0.0,
+normal_after,normal_after_75pwm_300s_20260912_075715_142650,tflite_autoencoder,194,194,0,4,0.020618556701030927,normal,4.0,0.020618556701030927,
+normal_references_pooled,whole_normal_recordings_pooled,rms,388,388,0,1,0.002577319587628866,normal,1.0,0.002577319587628866,
+normal_references_pooled,whole_normal_recordings_pooled,isolation_forest,388,388,0,0,0.0,normal,0.0,0.0,
+normal_references_pooled,whole_normal_recordings_pooled,tflite_autoencoder,388,388,0,55,0.14175257731958762,normal,55.0,0.14175257731958762,

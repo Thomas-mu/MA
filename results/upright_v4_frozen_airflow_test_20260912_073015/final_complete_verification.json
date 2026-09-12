@@ -1,0 +1,61 @@
+{
+  "checked_utc": "2026-09-12T08:02:34.462973+00:00",
+  "protected_existing_file_count": 1291,
+  "protected_existing_files_changed": [],
+  "previous_phase_files_changed": [],
+  "frozen_implementation_changed": [],
+  "protocol_sha256": "5375fda6aff23f8f3c7651ac25e638a0dbbfbb52b49a33611e528bade3644a5d",
+  "frozen_bundle_sha256": "cec1859bfb354bafef77a619e6d2c1ffd85b50787c87595aba9a1e20a80cdae5",
+  "final_readback": {
+    "gpio_bcm": 18,
+    "physical_pin": 12,
+    "pwm_chip": 0,
+    "pwm_channel": 2,
+    "pwm_path": "/sys/class/pwm/pwmchip0/pwm2",
+    "rp1_device_path": "/sys/devices/platform/axi/1000120000.pcie/1f00098000.pwm",
+    "pwm_configuration": {
+      "period_ns": 40000,
+      "duty_cycle_ns": 0,
+      "enable": 1,
+      "polarity": "normal",
+      "configured_frequency_hz": 25000.0,
+      "configured_duty_percent": 0.0
+    },
+    "pin_readback": {
+      "mux": "a3",
+      "function": "PWM0_CHAN2",
+      "instantaneous_level": "lo",
+      "raw": "18: a3    pd | lo // GPIO18 = PWM0_CHAN2"
+    },
+    "pwm_mux_confirmed": true,
+    "electrical_waveform_measured": false,
+    "measured_rpm": null,
+    "mechanical_state": "not_measured"
+  },
+  "word_sha256": "a9a5d7d17b28098f554240a3e1650881e252db679f33319a1d11164b3246cbb8",
+  "mechanical_state_after_capture": "not_observed",
+  "sequence_status": "three_phases_completed_and_evaluated",
+  "no_further_start_planned": true,
+  "automatic_restart": false,
+  "source_and_result_hashes_verified": true,
+  "recordings": [
+    {
+      "phase": "normal_before",
+      "recording_id": "normal_before_75pwm_300s_20260912_073823_494120",
+      "csv_sha256": "fdfcec021dc9f9ad2d86b41025a05259a66ed10d29e07a6ed98da3b593ac6960",
+      "summary_sha256": "9a165c0f75f60a6f13722498523fef70093ca727e155631f952f6624ac1bb532"
+    },
+    {
+      "phase": "airflow_modified",
+      "recording_id": "airflow_modified_75pwm_300s_20260912_074845_333651",
+      "csv_sha256": "4627309c3a60dcf2bb941150176ae0995faf6112f42941d6cf986354e2251b3d",
+      "summary_sha256": "d9e617ed03ba4e81cb2ccc3bade2b1c67954d6a960d94c95b95a0d87872e70ef"
+    },
+    {
+      "phase": "normal_after",
+      "recording_id": "normal_after_75pwm_300s_20260912_075715_142650",
+      "csv_sha256": "b68701e7272cc0d109ad51c7aeb827be2d9f9cc370ee0fd7f4d1bd2869367288",
+      "summary_sha256": "7578780f17d3979277d2a428fff0fe3ee8dd70197247c601afd71d16fb5c1e61"
+    }
+  ]
+}

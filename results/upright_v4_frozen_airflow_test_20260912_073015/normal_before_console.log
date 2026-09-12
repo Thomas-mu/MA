@@ -1,0 +1,16 @@
+{"utc": "2026-09-12T07:37:30.247364+00:00", "event": "off_wait", "phase": "normal_before", "additional_seconds": 60, "pwm_percent": 0, "remaining_s": 53.229773742}
+{"utc": "2026-09-12T07:38:00.183603+00:00", "event": "progress", "phase": "normal_before", "status": "additional_off_wait", "elapsed_since_command_s": null}
+{"utc": "2026-09-12T07:38:23.551156+00:00", "event": "capture_start", "phase": "normal_before", "pwm_percent": 75, "frequency_hz": 25000, "duration_s": 300, "csv": "/home/malik/masterarbeit-edge-ai/data/upright_v4_frozen_airflow_test_20260912_073015/normal_before_75pwm_300s_20260912_073823_494120.csv"}
+{"utc": "2026-09-12T07:38:30.183780+00:00", "event": "progress", "phase": "normal_before", "status": "recording", "elapsed_since_command_s": 6.681505581}
+{"utc": "2026-09-12T07:39:00.183894+00:00", "event": "progress", "phase": "normal_before", "status": "recording", "elapsed_since_command_s": 36.681618321}
+{"utc": "2026-09-12T07:39:30.184068+00:00", "event": "progress", "phase": "normal_before", "status": "recording", "elapsed_since_command_s": 66.681791963}
+{"utc": "2026-09-12T07:40:00.184233+00:00", "event": "progress", "phase": "normal_before", "status": "recording", "elapsed_since_command_s": 96.681958956}
+{"utc": "2026-09-12T07:40:30.184401+00:00", "event": "progress", "phase": "normal_before", "status": "recording", "elapsed_since_command_s": 126.682124472}
+{"utc": "2026-09-12T07:41:00.184565+00:00", "event": "progress", "phase": "normal_before", "status": "recording", "elapsed_since_command_s": 156.682289354}
+{"utc": "2026-09-12T07:41:30.184727+00:00", "event": "progress", "phase": "normal_before", "status": "recording", "elapsed_since_command_s": 186.682452542}
+{"utc": "2026-09-12T07:42:00.184900+00:00", "event": "progress", "phase": "normal_before", "status": "recording", "elapsed_since_command_s": 216.682623832}
+{"utc": "2026-09-12T07:42:30.185071+00:00", "event": "progress", "phase": "normal_before", "status": "recording", "elapsed_since_command_s": 246.68279495}
+{"utc": "2026-09-12T07:43:00.185237+00:00", "event": "progress", "phase": "normal_before", "status": "recording", "elapsed_since_command_s": 276.682962372}
+{"utc": "2026-09-12T07:43:23.852535+00:00", "event": "returning_to_zero", "pwm_percent": 0}
+{"utc": "2026-09-12T07:43:23.913875+00:00", "event": "zero_readback_complete", "pwm_percent": 0, "mechanical_state": "not_observed"}
+{"utc": "2026-09-12T07:43:23.937585+00:00", "event": "phase_finished", "phase": "normal_before", "status": "completed", "session": "/home/malik/masterarbeit-edge-ai/results/upright_v4_frozen_airflow_test_20260912_073015/normal_before_session.json", "next_action": "No further start; wait for explicit next-run release"}

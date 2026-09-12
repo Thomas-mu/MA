@@ -1,0 +1,51 @@
+{
+  "late_interval_seconds": [
+    180,
+    300
+  ],
+  "per_phase": {
+    "normal_before": {
+      "interval_seconds": [
+        180,
+        300
+      ],
+      "total_5s_blocks": 24,
+      "valid_5s_blocks": 24,
+      "invalid_5s_blocks": 0,
+      "mean_mg": 28.458000919213134,
+      "std_sample_mg": 1.6183811790313194,
+      "min_mg": 26.59293506263083,
+      "max_mg": 33.214154957804006,
+      "coefficient_of_variation": 0.056869109802392535,
+      "linear_slope_mg_per_min": -0.7066480542786516,
+      "linear_change_over_interval_mg": -1.4132961085573033,
+      "first_half_mean_mg": 28.43487210203196,
+      "second_half_mean_mg": 28.481129736394312,
+      "second_minus_first_half_mg": 0.04625763436235175,
+      "inference": "Descriptive within-recording changes; blocks are not independent replicates."
+    },
+    "airflow_modified": {
+      "interval_seconds": [
+        180,
+        300
+      ],
+      "total_5s_blocks": 24,
+      "valid_5s_blocks": 24,
+      "invalid_5s_blocks": 0,
+      "mean_mg": 38.05253506723269,
+      "std_sample_mg": 1.2990511516813708,
+      "min_mg": 36.38631791947393,
+      "max_mg": 41.675628062155596,
+      "coefficient_of_variation": 0.03413836027970691,
+      "linear_slope_mg_per_min": -0.9029734750207205,
+      "linear_change_over_interval_mg": -1.805946950041441,
+      "first_half_mean_mg": 38.20032491748869,
+      "second_half_mean_mg": 37.90474521697668,
+      "second_minus_first_half_mg": -0.29557970051201465,
+      "inference": "Descriptive within-recording changes; blocks are not independent replicates."
+    }
+  },
+  "warmup_180_seconds_validated": false,
+  "interpretation": "Within-run slopes and between-run means describe different effects. One sequence cannot establish general reproducibility or successful anomaly detection.",
+  "return_comparison": null
+}
