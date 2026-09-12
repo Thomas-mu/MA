@@ -1,0 +1,8 @@
+{
+  "scope": "read-only artifacts and CSV numerical check; no refit/modelload by reviewer",
+  "thresholds_and_decisions_verified": true,
+  "tflite_consistency_verified": true,
+  "nine_recording_method_stats_exactly_recomputed": true,
+  "method_ranking_from_normal_only_data_not_supported": true,
+  "calibration_exceedances_not_independent_false_alarm_estimate": true
+}

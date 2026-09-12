@@ -1,0 +1,151 @@
+{
+  "profile_name": "run_001",
+  "random_seeds": {
+    "python": 42,
+    "numpy": 42,
+    "tensorflow": 42
+  },
+  "normal_data_only": true,
+  "training_files": [
+    "normal_before_75pwm_300s_20260911_104430_339886",
+    "normal_after_75pwm_300s_20260911_111103_206329"
+  ],
+  "validation_files": [
+    "normal_followup_75pwm_300s_20260911_112835_067380"
+  ],
+  "training_windows": 388,
+  "validation_windows": 194,
+  "batch_size": 32,
+  "maximum_epochs": 100,
+  "epochs_trained": 100,
+  "best_epoch": 100,
+  "early_stopping_patience": 10,
+  "final_train_loss": 0.37920045852661133,
+  "final_validation_loss": 0.42963099479675293,
+  "best_train_loss": 0.37920045852661133,
+  "best_validation_loss": 0.42963099479675293,
+  "train_reconstruction_mse": {
+    "mean": 0.37879893219324345,
+    "std": 0.03489183705151016,
+    "minimum": 0.27602558897422586,
+    "maximum": 0.48384471911112215
+  },
+  "validation_reconstruction_mse": {
+    "validation_window_count": 194,
+    "mean_mse": 0.4296310325133084,
+    "standard_deviation_mse": 0.04654379084372203,
+    "median_mse": 0.429325376882336,
+    "percentile_95_mse": 0.5060436979254669,
+    "percentile_99_mse": 0.544357966122261,
+    "maximum_mse": 0.5629633756104105,
+    "minimum_mse": 0.313228475638707
+  },
+  "validation_fraction_above_threshold": 0.010309278350515464,
+  "validation_quality_warning": false,
+  "validation_size_warning": false,
+  "threshold": 0.544357966122261,
+  "threshold_method": "99th percentile of normal validation reconstruction MSE",
+  "tensorflow_version": "2.21.0",
+  "trainable_parameters": 507,
+  "architecture": [
+    {
+      "class_name": "InputLayer",
+      "name": "xyz_window",
+      "config": {}
+    },
+    {
+      "class_name": "Conv1D",
+      "name": "encoder_conv_1",
+      "config": {
+        "filters": 8,
+        "kernel_size": [
+          5
+        ],
+        "padding": "same",
+        "activation": "relu"
+      }
+    },
+    {
+      "class_name": "MaxPooling1D",
+      "name": "encoder_pool_1",
+      "config": {
+        "pool_size": [
+          2
+        ],
+        "padding": "same"
+      }
+    },
+    {
+      "class_name": "Conv1D",
+      "name": "encoder_conv_2",
+      "config": {
+        "filters": 4,
+        "kernel_size": [
+          3
+        ],
+        "padding": "same",
+        "activation": "relu"
+      }
+    },
+    {
+      "class_name": "MaxPooling1D",
+      "name": "bottleneck",
+      "config": {
+        "pool_size": [
+          2
+        ],
+        "padding": "same"
+      }
+    },
+    {
+      "class_name": "Conv1D",
+      "name": "decoder_conv_1",
+      "config": {
+        "filters": 4,
+        "kernel_size": [
+          3
+        ],
+        "padding": "same",
+        "activation": "relu"
+      }
+    },
+    {
+      "class_name": "UpSampling1D",
+      "name": "decoder_upsample_1",
+      "config": {
+        "size": 2
+      }
+    },
+    {
+      "class_name": "Conv1D",
+      "name": "decoder_conv_2",
+      "config": {
+        "filters": 8,
+        "kernel_size": [
+          3
+        ],
+        "padding": "same",
+        "activation": "relu"
+      }
+    },
+    {
+      "class_name": "UpSampling1D",
+      "name": "decoder_upsample_2",
+      "config": {
+        "size": 2
+      }
+    },
+    {
+      "class_name": "Conv1D",
+      "name": "reconstruction",
+      "config": {
+        "filters": 3,
+        "kernel_size": [
+          5
+        ],
+        "padding": "same",
+        "activation": "linear"
+      }
+    }
+  ]
+}

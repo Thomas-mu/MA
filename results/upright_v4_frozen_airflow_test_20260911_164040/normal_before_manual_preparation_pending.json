@@ -1,0 +1,7 @@
+{
+  "user_question": "soll ich das weg stellen?",
+  "instruction_given": "Before the first normal phase, disconnect external 12-V supply, wait for complete stop, move only plate outside airflow, reconnect supply, then confirm readiness without plate.",
+  "required_reply": "Ohne Platte bereit, Lüfter steht, Versorgung angeschlossen.",
+  "physical_completion_confirmed": false,
+  "phase_start_released": false
+}

@@ -1,0 +1,20 @@
+{
+  "created_utc": "2026-09-11T13:06:15.104692+00:00",
+  "operator_message_verbatim": "Starte damit dann",
+  "interpreted_scope": "First technical model training pilot on existing normal v4 data after explanation of training authorization; no hardware runs or new measurements. Existing documents/models unchanged.",
+  "dataset": "/home/malik/masterarbeit-edge-ai/results/upright_v4_pilot_preparation_20260911_123511/dataset",
+  "dataset_manifest_sha256": "399a64466bf8b8735b30a4256645508e326a9ba9848e089fb8b4cbb5e7f11622",
+  "environment_overrides": {
+    "OMP_NUM_THREADS": "2",
+    "OPENBLAS_NUM_THREADS": "2",
+    "TF_NUM_INTRAOP_THREADS": "2",
+    "TF_NUM_INTEROP_THREADS": "1"
+  },
+  "reason_for_thread_limits": "Bounded CPU use on Raspberry Pi; model hyperparameters and split unchanged.",
+  "pwm_sysfs_read_only_before": {
+    "period": "40000",
+    "duty_cycle": "0",
+    "enable": "1",
+    "polarity": "normal"
+  }
+}

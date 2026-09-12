@@ -1,0 +1,92 @@
+{
+  "status": "evaluated_independent_normal_recording",
+  "csv": "/home/malik/masterarbeit-edge-ai/data/upright_v4_independent_normal_20260911_133047/normal_test_01_75pwm_300s_20260911_155959_798760.csv",
+  "csv_sha256": "058f4aec69a567236dbe7e4c0d84590f51f3210ef320a2cd4ae794be5baa8e18",
+  "sidecar": "/home/malik/masterarbeit-edge-ai/data/upright_v4_independent_normal_20260911_133047/normal_test_01_75pwm_300s_20260911_155959_798760.json",
+  "sidecar_sha256": "ed8312083eabed03992da188794f65bc7bd43ecbe315a451dd36b1083b8c8ca2",
+  "session": "/home/malik/masterarbeit-edge-ai/results/upright_v4_independent_normal_20260911_133047/normal_test_01_session.json",
+  "session_sha256": "ee1738029d689be5cb2b67b3ccc18afd430e28ff7a56f4ae6c70088a2b52f20f",
+  "protocol_sha256": "d208261cdbe9e258b4a56ae87769c3700145b2221c4b92fed4fb55eb67fd73a7",
+  "frozen_bundle_sha256": "cec1859bfb354bafef77a619e6d2c1ffd85b50787c87595aba9a1e20a80cdae5",
+  "recording_id": "normal_test_01_75pwm_300s_20260911_155959_798760",
+  "phase": "normal_test_01",
+  "mounting_id": "fan_upright_position_v4_20260911_103726",
+  "condition": "normal",
+  "quality": {
+    "xyz_points": 62133,
+    "individual_axis_values": 186399,
+    "nominal_sensor_odr_hz": 200,
+    "observed_xyz_per_second": 207.1128229089261,
+    "first_to_last_host_span_s": 299.99108277,
+    "first_xyz_after_command_s": 0.093229489,
+    "last_xyz_after_command_s": 300.084312259,
+    "host_interval_p50_ms": 5.5619914999999995,
+    "host_interval_p99_ms": 5.6982563200000005,
+    "host_interval_max_ms": 15.09965,
+    "host_intervals_over_10ms": 3,
+    "host_intervals_over_160ms": 0,
+    "read_duration_max_ms": 5.638205,
+    "fifo_depth_max": 3,
+    "gap_flagged_xyz": 0,
+    "overrun_flagged_xyz": 0,
+    "saturated_flagged_xyz": 0,
+    "nonfinite_xyz_points": 0,
+    "nonmonotonic_host_intervals": 0,
+    "exact_lost_sensor_samples": null,
+    "timebase_limitation": "Host read completion is not a measured sensor conversion clock. Exact physical losses are unknown.",
+    "selected_interval": {
+      "xyz_selected": 24853,
+      "full_model_windows": 194,
+      "trailing_xyz_not_windowed": 21,
+      "quality_valid_windows": 194,
+      "quality_invalid_windows": 0
+    }
+  },
+  "metrics": {
+    "rms": {
+      "total_windows": 194,
+      "valid_windows": 194,
+      "invalid_windows": 0,
+      "false_alarms": 57,
+      "false_alarm_rate_among_valid_normal_windows": 0.29381443298969073
+    },
+    "isolation_forest": {
+      "total_windows": 194,
+      "valid_windows": 194,
+      "invalid_windows": 0,
+      "false_alarms": 34,
+      "false_alarm_rate_among_valid_normal_windows": 0.17525773195876287
+    },
+    "tflite_autoencoder": {
+      "total_windows": 194,
+      "valid_windows": 194,
+      "invalid_windows": 0,
+      "false_alarms": 0,
+      "false_alarm_rate_among_valid_normal_windows": 0.0
+    }
+  },
+  "runtimes": {
+    "rms": "NumPy RMS (standardisiertes H×3-Fenster)",
+    "isolation_forest": "scikit-learn IsolationForest.score_samples",
+    "tflite_autoencoder": "ai_edge_litert.Interpreter (Float32 TFLite)"
+  },
+  "pwm_command_invocation_utc": "2026-09-11T15:59:59.805742+00:00",
+  "pwm_command_invocation_monotonic_ns": 33077249902022,
+  "models_changed": false,
+  "scaler_fitted": false,
+  "thresholds_changed": false,
+  "physical_loss_count": null,
+  "mechanical_stop_measured": false,
+  "selection_seconds_since_pwm_command": [
+    180,
+    300
+  ],
+  "evaluator_sha256": "6210cc61160834ea75dc489cd738118c840aae6573dadb864132ebd454eefc0d",
+  "limitation": "One whole run is one experimental replicate. Adjacent windows are dependent. Normal-only tests do not estimate anomaly recall, F1, or general detection performance.",
+  "artifact_sha256": {
+    "scores.png": "8c8807b3b72b8c0f8daf039ed6808ada1b751bd2dd3c8ee86279b55636aad458",
+    "scores.csv": "32c187609aeff513cf53670a22818aa6fdf6257c81115f16a78e33f6a9fbe739",
+    "scores.pdf": "3f5c6f741a4d12867e59420710f8d8852bebbf5d1b42ba7888aabf1fc4f061d1",
+    "scores.json": "38f5baa3f31edac4bb707fe176c731d5930de91a3fd89d3b0d7bde4340f282f3"
+  }
+}

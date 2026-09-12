@@ -1,0 +1,188 @@
+{
+  "evidence_scope": "training_and_calibration_diagnostics_not_independent_evaluation",
+  "bundle_sha256": "cec1859bfb354bafef77a619e6d2c1ffd85b50787c87595aba9a1e20a80cdae5",
+  "models_or_scaler_fitted": false,
+  "thresholds_adjusted": false,
+  "exact_validation_replay_rows": 582,
+  "runtimes": {
+    "rms": "NumPy RMS (standardisiertes H×3-Fenster)",
+    "isolation_forest": "scikit-learn IsolationForest.score_samples",
+    "tflite_autoencoder": "ai_edge_litert.Interpreter (Float32 TFLite)"
+  },
+  "recordings": [
+    {
+      "recording_id": "normal_before_75pwm_300s_20260911_104430_339886",
+      "original_state": "normal_before",
+      "split": "train",
+      "vector_ac_rms_mg": {
+        "n": 194,
+        "mean": 27.696633034737378,
+        "sd_population": 0.8481188117987596,
+        "min": 25.771231768763837,
+        "p50": 27.669256798027764,
+        "p95": 29.120551036508516,
+        "p99": 29.818733783223063,
+        "max": 30.36630938651805
+      },
+      "methods": {
+        "rms": {
+          "n": 194,
+          "mean": 0.9430651013212663,
+          "sd_population": 0.02950294371200458,
+          "min": 0.8771576389145032,
+          "p50": 0.9411243981070578,
+          "p95": 0.993833551205731,
+          "p99": 1.0078229776604433,
+          "max": 1.0482205821769561,
+          "threshold": 1.2747695377144315,
+          "threshold_exceedances": 0,
+          "invalid_decisions": 0
+        },
+        "isolation_forest": {
+          "n": 194,
+          "mean": 0.4401963065707722,
+          "sd_population": 0.007797080450561803,
+          "min": 0.4176891900483625,
+          "p50": 0.439464449808186,
+          "p95": 0.4525963396511006,
+          "p99": 0.45986090055914025,
+          "max": 0.4626956609089585,
+          "threshold": 0.5045395247064507,
+          "threshold_exceedances": 0,
+          "invalid_decisions": 0
+        },
+        "tflite_autoencoder": {
+          "n": 194,
+          "mean": 0.37763279758028173,
+          "sd_population": 0.03661728084215873,
+          "min": 0.2760255926575153,
+          "p50": 0.3747902933403121,
+          "p95": 0.445523973365773,
+          "p99": 0.46081397247870504,
+          "max": 0.4765025473358408,
+          "threshold": 0.544357966122261,
+          "threshold_exceedances": 0,
+          "invalid_decisions": 0
+        }
+      }
+    },
+    {
+      "recording_id": "normal_after_75pwm_300s_20260911_111103_206329",
+      "original_state": "normal_after",
+      "split": "train",
+      "vector_ac_rms_mg": {
+        "n": 194,
+        "mean": 33.115347985768636,
+        "sd_population": 0.9378636251779845,
+        "min": 30.555477975539034,
+        "p50": 33.07135437110901,
+        "p95": 34.72445746366599,
+        "p99": 35.284609394040245,
+        "max": 35.982304049975944
+      },
+      "methods": {
+        "rms": {
+          "n": 194,
+          "mean": 1.0530572771669555,
+          "sd_population": 0.028776329235892774,
+          "min": 0.9731364568762639,
+          "p50": 1.0537358166075985,
+          "p95": 1.1013680022720758,
+          "p99": 1.1233374219731893,
+          "max": 1.1311634567619435,
+          "threshold": 1.2747695377144315,
+          "threshold_exceedances": 0,
+          "invalid_decisions": 0
+        },
+        "isolation_forest": {
+          "n": 194,
+          "mean": 0.45489883025851297,
+          "sd_population": 0.008629360861073498,
+          "min": 0.4279913872482305,
+          "p50": 0.45460083981683097,
+          "p95": 0.47008683769856785,
+          "p99": 0.4756738975071702,
+          "max": 0.4818691969819586,
+          "threshold": 0.5045395247064507,
+          "threshold_exceedances": 0,
+          "invalid_decisions": 0
+        },
+        "tflite_autoencoder": {
+          "n": 194,
+          "mean": 0.379965065692421,
+          "sd_population": 0.03303537021434068,
+          "min": 0.27643395411593313,
+          "p50": 0.37717845143518725,
+          "p95": 0.43787637665172324,
+          "p99": 0.4690040822243258,
+          "max": 0.4838447181190837,
+          "threshold": 0.544357966122261,
+          "threshold_exceedances": 0,
+          "invalid_decisions": 0
+        }
+      }
+    },
+    {
+      "recording_id": "normal_followup_75pwm_300s_20260911_112835_067380",
+      "original_state": "normal_followup",
+      "split": "validation",
+      "vector_ac_rms_mg": {
+        "n": 194,
+        "mean": 39.10006786296728,
+        "sd_population": 0.8509242693403266,
+        "min": 36.595632546342316,
+        "p50": 39.08368146329201,
+        "p95": 40.496782344417205,
+        "p99": 41.11375145014949,
+        "max": 41.39107631694922
+      },
+      "methods": {
+        "rms": {
+          "n": 194,
+          "mean": 1.2081257739654783,
+          "sd_population": 0.030855428387826258,
+          "min": 1.1194322492377273,
+          "p50": 1.2094589126458,
+          "p95": 1.2497927954348336,
+          "p99": 1.2747695377144315,
+          "max": 1.2934579694070312,
+          "threshold": 1.2747695377144315,
+          "threshold_exceedances": 2,
+          "invalid_decisions": 0
+        },
+        "isolation_forest": {
+          "n": 194,
+          "mean": 0.48144288479802805,
+          "sd_population": 0.010194792881943072,
+          "min": 0.45344243388507904,
+          "p50": 0.4810321063541856,
+          "p95": 0.49871725524566124,
+          "p99": 0.5045395247064507,
+          "max": 0.5078994731386384,
+          "threshold": 0.5045395247064507,
+          "threshold_exceedances": 2,
+          "invalid_decisions": 0
+        },
+        "tflite_autoencoder": {
+          "n": 194,
+          "mean": 0.42963103258488855,
+          "sd_population": 0.046543790674357634,
+          "min": 0.3132284899816709,
+          "p50": 0.42932536841782554,
+          "p95": 0.5060437080420018,
+          "p99": 0.5443579723029637,
+          "max": 0.5629633828731087,
+          "threshold": 0.544357966122261,
+          "threshold_exceedances": 2,
+          "invalid_decisions": 0
+        }
+      }
+    }
+  ],
+  "recording_replicates": {
+    "train": 2,
+    "validation": 1
+  },
+  "windows_are_not_independent_replicates": true,
+  "script_sha256": "18a4932a089d258b8a2beb5d004abde5f72ed46f5848f1905f6190c0bf0af84a"
+}

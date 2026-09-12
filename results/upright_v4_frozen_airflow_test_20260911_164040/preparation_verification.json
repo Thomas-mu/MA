@@ -1,0 +1,21 @@
+{
+  "verified_utc": "2026-09-11T16:54:58.577815+00:00",
+  "protocol_sha256": "c57aa346ee6557294945a5155637adcb0e5c853625e95d25b909f0b851f09192",
+  "software_tests_passed": 166,
+  "excluded_prior_csv_files": 255,
+  "preserved_existing_files": 1241,
+  "existing_files_changed": [],
+  "pwm_sysfs_readback": {
+    "period": "40000",
+    "duty_cycle": "0",
+    "enable": "1",
+    "polarity": "normal"
+  },
+  "pin_readback": "18: a3    pd | lo // GPIO18 = PWM0_CHAN2",
+  "new_raw_captures": [],
+  "new_phase_sessions": [],
+  "current_start_release_accepted": false,
+  "latest_user_message": "ja",
+  "readiness_clarification_pending": "Does ja confirm plate outside airflow, complete mechanical stop and external supply connected?",
+  "models_scaler_thresholds_unchanged": true
+}

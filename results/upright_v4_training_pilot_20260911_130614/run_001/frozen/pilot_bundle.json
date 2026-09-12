@@ -1,0 +1,310 @@
+{
+  "status": "ready_development_only",
+  "contract": {
+    "format": "upright_v4_ac_pilot_bundle_v1",
+    "preprocessing_id": "xyz_window128_axis_mean_removed_unscaled_v1",
+    "window_size": 128,
+    "step_size": 128,
+    "axes": [
+      "x_g",
+      "y_g",
+      "z_g"
+    ],
+    "centering": "per_window_per_axis_float64_then_float32",
+    "scaling": "train_only_axis_StandardScaler_float32_transform",
+    "selection_seconds_since_pwm_command": [
+      180,
+      300
+    ],
+    "time_origin": "pwm_command_invocation_monotonic_ns",
+    "mounting_id": "fan_upright_position_v4_20260911_103726",
+    "sensor": {
+      "model": "ADXL345",
+      "odr_hz": 200,
+      "range_g": 2,
+      "full_resolution": true,
+      "scale_g_per_lsb": 0.0039,
+      "acquisition_mode": "fifo_stream",
+      "register_readback": {
+        "0x2c": "0xb",
+        "0x31": "0x8",
+        "0x2e": "0x0",
+        "0x38": "0x90",
+        "0x2d": "0x8"
+      },
+      "timestamp_source": "host_monotonic_read_completion",
+      "bus_number": 1,
+      "i2c_clock_configured_hz": 100000
+    },
+    "development_only": true,
+    "independent_test": false,
+    "second_pwm_rule": "no_model_scaler_threshold_or_preprocessing_change"
+  },
+  "window_size": 128,
+  "dataset_manifest_sha256": "399a64466bf8b8735b30a4256645508e326a9ba9848e089fb8b4cbb5e7f11622",
+  "scaler": {
+    "mean": [
+      -9.46135282001331e-12,
+      -7.766012346372609e-12,
+      -4.718736283731354e-12
+    ],
+    "scale": [
+      0.009402308446655154,
+      0.011104527543226621,
+      0.026850519317222994
+    ],
+    "fit_samples": 49664,
+    "fit_source": "canonical_normal_train_AC_only"
+  },
+  "if_parameters": {
+    "n_estimators": 200,
+    "max_samples": "auto",
+    "contamination": "auto",
+    "max_features": 1.0,
+    "bootstrap": false,
+    "n_jobs": 1,
+    "random_state": 42
+  },
+  "recordings": [
+    {
+      "state": "normal_before",
+      "split": "train",
+      "recording_id": "normal_before_75pwm_300s_20260911_104430_339886",
+      "csv": "/home/malik/masterarbeit-edge-ai/data/upright_position_v4_sequence_20260911_104025/normal_before_75pwm_300s_20260911_104430_339886.csv",
+      "csv_sha256": "8a141c4284bac2cb64c11f0006fa29d336a54ea2936127946be59b2ea1a9426b",
+      "metadata": "/home/malik/masterarbeit-edge-ai/data/upright_position_v4_sequence_20260911_104025/normal_before_75pwm_300s_20260911_104430_339886.json",
+      "metadata_sha256": "9f476d46357726b9d62150570110311e1b0af5b0f872e806be7129088f452446",
+      "evidence": [
+        {
+          "path": "/home/malik/masterarbeit-edge-ai/results/upright_position_v4_sequence_20260911_104025/normal_before_fan.jsonl",
+          "sha256": "02a5950af3205bab5784c6ad891d3cff9bb29c383bfebdc437be102510cb8c26"
+        },
+        {
+          "path": "/home/malik/masterarbeit-edge-ai/results/upright_position_v4_sequence_20260911_104025/normal_before_session.json",
+          "sha256": "7f68de304326ab81a1d96900404692f9682f7a30b7f6e4495a53e37358b62356"
+        },
+        {
+          "path": "/home/malik/masterarbeit-edge-ai/results/upright_position_v4_sequence_20260911_104025/initial_release.json",
+          "sha256": "60ac00d8684e849fe2955a73786b38885503df2bdea5897e68a1c73e2875710a"
+        }
+      ],
+      "snapshot_directory": "sources/normal_before_75pwm_300s_20260911_104430_339886",
+      "quality_full_recording": {
+        "xyz_points": 62148,
+        "individual_axis_values": 186444,
+        "first_to_last_host_span_s": 299.987994169,
+        "observed_xyz_per_second": 207.16495729155454,
+        "nominal_sensor_odr_hz": 200,
+        "first_xyz_after_command_s": 0.072937627,
+        "last_xyz_after_command_s": 300.060931796,
+        "host_interval_p50_ms": 5.568755,
+        "host_interval_p99_ms": 5.682227719999999,
+        "host_interval_max_ms": 13.467489,
+        "host_intervals_over_10ms": 3,
+        "read_duration_max_ms": 4.159905,
+        "fifo_depth_max": 2,
+        "gap_flagged_xyz": 0,
+        "overrun_flagged_xyz": 0,
+        "saturated_xyz": 0,
+        "exact_lost_sensor_samples": null
+      },
+      "quality_selected_interval": {
+        "xyz_points": 24865,
+        "individual_axis_values": 74595,
+        "first_to_last_host_span_s": 119.99913285,
+        "observed_xyz_per_second": 207.2014972898198,
+        "nominal_sensor_odr_hz": 200,
+        "first_xyz_after_command_s": 180.000250514,
+        "last_xyz_after_command_s": 299.999383364,
+        "host_interval_p50_ms": 5.548181,
+        "host_interval_p99_ms": 5.681807409999999,
+        "host_interval_max_ms": 6.896679,
+        "host_intervals_over_10ms": 0,
+        "read_duration_max_ms": 2.573812,
+        "fifo_depth_max": 1,
+        "gap_flagged_xyz": 0,
+        "overrun_flagged_xyz": 0,
+        "saturated_xyz": 0,
+        "exact_lost_sensor_samples": null
+      },
+      "xyz_selected": 24865,
+      "window_count": 194,
+      "trailing_xyz_dropped": 33,
+      "pwm_command_invocation_utc": "2026-09-11T10:44:30.439605+00:00",
+      "pwm_command_invocation_monotonic_ns": 14147883758832
+    },
+    {
+      "state": "normal_after",
+      "split": "train",
+      "recording_id": "normal_after_75pwm_300s_20260911_111103_206329",
+      "csv": "/home/malik/masterarbeit-edge-ai/data/upright_position_v4_sequence_20260911_104025/normal_after_75pwm_300s_20260911_111103_206329.csv",
+      "csv_sha256": "5357e8d0c0592a6e3765904f16ea037937f2f5f54e7c0d88ba2c42cda6589944",
+      "metadata": "/home/malik/masterarbeit-edge-ai/data/upright_position_v4_sequence_20260911_104025/normal_after_75pwm_300s_20260911_111103_206329.json",
+      "metadata_sha256": "5203831902be0c55c489fae450dd43bfcb7c196c7dcffd933582c4c91738e2ef",
+      "evidence": [
+        {
+          "path": "/home/malik/masterarbeit-edge-ai/results/upright_position_v4_sequence_20260911_104025/normal_after_fan.jsonl",
+          "sha256": "7f931a6d579720ef6714c100c8dc6d19d2ed43b4ab51785595a64bc97e7b0822"
+        },
+        {
+          "path": "/home/malik/masterarbeit-edge-ai/results/upright_position_v4_sequence_20260911_104025/normal_after_session.json",
+          "sha256": "88782e3f05bdfa22f382c945cb2d57a14f4152ef506e869b37a946b049941a67"
+        },
+        {
+          "path": "/home/malik/masterarbeit-edge-ai/results/upright_position_v4_sequence_20260911_104025/normal_after_release.json",
+          "sha256": "e462623dde719dc8033dfe92905d0ea7abf03ccec63326d882c5fdeaabfdfd39"
+        }
+      ],
+      "snapshot_directory": "sources/normal_after_75pwm_300s_20260911_111103_206329",
+      "quality_full_recording": {
+        "xyz_points": 62156,
+        "individual_axis_values": 186468,
+        "first_to_last_host_span_s": 299.992181086,
+        "observed_xyz_per_second": 207.1887333029582,
+        "nominal_sensor_odr_hz": 200,
+        "first_xyz_after_command_s": 0.078117678,
+        "last_xyz_after_command_s": 300.070298764,
+        "host_interval_p50_ms": 5.557736,
+        "host_interval_p99_ms": 5.68381874,
+        "host_interval_max_ms": 9.48303,
+        "host_intervals_over_10ms": 0,
+        "read_duration_max_ms": 7.136012,
+        "fifo_depth_max": 2,
+        "gap_flagged_xyz": 0,
+        "overrun_flagged_xyz": 0,
+        "saturated_xyz": 0,
+        "exact_lost_sensor_samples": null
+      },
+      "quality_selected_interval": {
+        "xyz_points": 24863,
+        "individual_axis_values": 74589,
+        "first_to_last_host_span_s": 119.995790957,
+        "observed_xyz_per_second": 207.1906006178933,
+        "nominal_sensor_odr_hz": 200,
+        "first_xyz_after_command_s": 180.001937958,
+        "last_xyz_after_command_s": 299.997728915,
+        "host_interval_p50_ms": 5.5682735,
+        "host_interval_p99_ms": 5.68883395,
+        "host_interval_max_ms": 9.48303,
+        "host_intervals_over_10ms": 0,
+        "read_duration_max_ms": 5.295088,
+        "fifo_depth_max": 2,
+        "gap_flagged_xyz": 0,
+        "overrun_flagged_xyz": 0,
+        "saturated_xyz": 0,
+        "exact_lost_sensor_samples": null
+      },
+      "xyz_selected": 24863,
+      "window_count": 194,
+      "trailing_xyz_dropped": 31,
+      "pwm_command_invocation_utc": "2026-09-11T11:11:27.590835+00:00",
+      "pwm_command_invocation_monotonic_ns": 15765034991740
+    },
+    {
+      "state": "normal_followup",
+      "split": "validation",
+      "recording_id": "normal_followup_75pwm_300s_20260911_112835_067380",
+      "csv": "/home/malik/masterarbeit-edge-ai/data/upright_v4_normal_followup_20260911_112731/normal_followup_75pwm_300s_20260911_112835_067380.csv",
+      "csv_sha256": "557d1a665573d4f6113a0913e81d0d29191907f4a31b8810f9fd83a2cc9b5f50",
+      "metadata": "/home/malik/masterarbeit-edge-ai/data/upright_v4_normal_followup_20260911_112731/normal_followup_75pwm_300s_20260911_112835_067380.json",
+      "metadata_sha256": "da13050e25d65cdb9436b29ba9e3df477d9d6479661cb9e20393ba36deaac20b",
+      "evidence": [
+        {
+          "path": "/home/malik/masterarbeit-edge-ai/results/upright_v4_normal_followup_20260911_112731/normal_followup_fan.jsonl",
+          "sha256": "1c187b4f348396a4d568856dd8ccbb8cb9181c781cbff52197ce308b1ee845c2"
+        },
+        {
+          "path": "/home/malik/masterarbeit-edge-ai/results/upright_v4_normal_followup_20260911_112731/normal_followup_session.json",
+          "sha256": "b9eb11c8283e090ef27d94992e0ba89f3d5053e8f3ad7330a3c6de00d42b8a29"
+        },
+        {
+          "path": "/home/malik/masterarbeit-edge-ai/results/upright_v4_normal_followup_20260911_112731/normal_followup_release.json",
+          "sha256": "c9b8ec0d9b93cab5f134ed12c7511b9591955acac321e46741d285b9d39e9a7d"
+        }
+      ],
+      "snapshot_directory": "sources/normal_followup_75pwm_300s_20260911_112835_067380",
+      "quality_full_recording": {
+        "xyz_points": 62151,
+        "individual_axis_values": 186453,
+        "first_to_last_host_span_s": 299.993708329,
+        "observed_xyz_per_second": 207.17101150615045,
+        "nominal_sensor_odr_hz": 200,
+        "first_xyz_after_command_s": 0.074582725,
+        "last_xyz_after_command_s": 300.068291054,
+        "host_interval_p50_ms": 5.587566,
+        "host_interval_p99_ms": 5.6697390500000004,
+        "host_interval_max_ms": 8.217274,
+        "host_intervals_over_10ms": 0,
+        "read_duration_max_ms": 6.238457,
+        "fifo_depth_max": 1,
+        "gap_flagged_xyz": 0,
+        "overrun_flagged_xyz": 0,
+        "saturated_xyz": 0,
+        "exact_lost_sensor_samples": null
+      },
+      "quality_selected_interval": {
+        "xyz_points": 24861,
+        "individual_axis_values": 74583,
+        "first_to_last_host_span_s": 119.993759261,
+        "observed_xyz_per_second": 207.17744116947523,
+        "nominal_sensor_odr_hz": 200,
+        "first_xyz_after_command_s": 180.002067779,
+        "last_xyz_after_command_s": 299.99582704,
+        "host_interval_p50_ms": 5.587914,
+        "host_interval_p99_ms": 5.64783776,
+        "host_interval_max_ms": 6.329526,
+        "host_intervals_over_10ms": 0,
+        "read_duration_max_ms": 2.546652,
+        "fifo_depth_max": 1,
+        "gap_flagged_xyz": 0,
+        "overrun_flagged_xyz": 0,
+        "saturated_xyz": 0,
+        "exact_lost_sensor_samples": null
+      },
+      "xyz_selected": 24861,
+      "window_count": 194,
+      "trailing_xyz_dropped": 29,
+      "pwm_command_invocation_utc": "2026-09-11T11:28:35.161292+00:00",
+      "pwm_command_invocation_monotonic_ns": 16792605448841
+    }
+  ],
+  "window_counts": {
+    "train": 388,
+    "validation": 194
+  },
+  "measurement_chain_status": "pilot_limitations_unresolved",
+  "thresholds": {
+    "rms": {
+      "value": 1.2747695377144315,
+      "percentile": 99,
+      "source": "NORMAL_VALIDATION_P99"
+    },
+    "isolation_forest": {
+      "value": 0.5045395247064507,
+      "percentile": 99,
+      "source": "NORMAL_VALIDATION_P99"
+    },
+    "tflite_autoencoder": {
+      "value": 0.544357966122261,
+      "percentile": 99,
+      "source": "FROZEN_KERAS_NORMAL_VALIDATION_P99"
+    }
+  },
+  "ae_runtime_check": {
+    "runtime": "ai_edge_litert.Interpreter (Float32 TFLite)",
+    "maximum_absolute_mse_difference": 6.1482488988851e-08,
+    "acceptance_tolerance": 0.0001,
+    "threshold_recalibrated": false
+  },
+  "artifact_sha256": {
+    "autoencoder_float32.tflite": "ec4f0a93228c4ace9135d0aa7cc3c4f8f20d5a69536b9c749f4c4545aebca1c6",
+    "tflite_consistency.json": "490564bc36e4d612eb940d7d032e0e113b6ee9d6fafacad85a2c4169e96b7480",
+    "prepared_manifest.json": "399a64466bf8b8735b30a4256645508e326a9ba9848e089fb8b4cbb5e7f11622",
+    "isolation_forest.joblib": "2ae0dd0edbc11603311d512bd6490709e40b81e686bd3f87622a339515bd75e3",
+    "adapter_source.py": "6509e7ce5c41a1a82baeba6ca613df5be3792124e71a6d29db763a60e70e12ea",
+    "scaler.joblib": "1cf310db2d872018f72a892288111b99bb0129769b2d9bcf6f3ec5715909e28e",
+    "source_ae_threshold.json": "663af58b45dcbca6208d9867ee77a839c326631af2b3e2fa6372a13aad68dda4",
+    "prepared_plan.json": "ae46b6fcfbfffd7f89a44a393503c4ab82d220213820ea2958add26501ac2ad2",
+    "common_comparison_source.py": "479a3de9263842574ab2c69fca5adaeac8b5418e13bb383bfae3e026ed98d2ca"
+  }
+}

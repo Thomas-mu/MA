@@ -1,0 +1,640 @@
+Epoch 1/100
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+E0000 00:00:1789131993.660647   25678 node_def_util.cc:682] NodeDef mentions attribute use_unbounded_threadpool which is not in the op definition: Op<name=MapDataset; signature=input_dataset:variant, other_arguments: -> handle:variant; attr=f:func; attr=Targuments:list(type),min=0; attr=output_types:list(type),min=1; attr=output_shapes:list(shape),min=1; attr=use_inter_op_parallelism:bool,default=true; attr=preserve_cardinality:bool,default=false; attr=force_synchronous:bool,default=false; attr=metadata:string,default=""> This may be expected if your graph generating binary is newer  than this binary. Unknown attributes will be ignored. NodeDef: {{node ParallelMapDatasetV2/_15}}
+
+Epoch 1: val_loss improved from None to 1.46809, saving model to /home/malik/masterarbeit-edge-ai/results/upright_v4_training_pilot_20260911_130614/run_001/training_stage/models/autoencoder.keras
+
+Epoch 1: finished saving model to /home/malik/masterarbeit-edge-ai/results/upright_v4_training_pilot_20260911_130614/run_001/training_stage/models/autoencoder.keras
+13/13 - 2s - 164ms/step - loss: 1.0333 - val_loss: 1.4681
+Epoch 2/100
+
+Epoch 2: val_loss improved from 1.46809 to 1.45221, saving model to /home/malik/masterarbeit-edge-ai/results/upright_v4_training_pilot_20260911_130614/run_001/training_stage/models/autoencoder.keras
+
+Epoch 2: finished saving model to /home/malik/masterarbeit-edge-ai/results/upright_v4_training_pilot_20260911_130614/run_001/training_stage/models/autoencoder.keras
+13/13 - 0s - 15ms/step - loss: 1.0012 - val_loss: 1.4522
+Epoch 3/100
+
+Epoch 3: val_loss improved from 1.45221 to 1.44447, saving model to /home/malik/masterarbeit-edge-ai/results/upright_v4_training_pilot_20260911_130614/run_001/training_stage/models/autoencoder.keras
+
+Epoch 3: finished saving model to /home/malik/masterarbeit-edge-ai/results/upright_v4_training_pilot_20260911_130614/run_001/training_stage/models/autoencoder.keras
+13/13 - 0s - 15ms/step - loss: 0.9939 - val_loss: 1.4445
+Epoch 4/100
+
+Epoch 4: val_loss improved from 1.44447 to 1.42968, saving model to /home/malik/masterarbeit-edge-ai/results/upright_v4_training_pilot_20260911_130614/run_001/training_stage/models/autoencoder.keras
+
+Epoch 4: finished saving model to /home/malik/masterarbeit-edge-ai/results/upright_v4_training_pilot_20260911_130614/run_001/training_stage/models/autoencoder.keras
+13/13 - 0s - 17ms/step - loss: 0.9879 - val_loss: 1.4297
+Epoch 5/100
+
+Epoch 5: val_loss improved from 1.42968 to 1.39621, saving model to /home/malik/masterarbeit-edge-ai/results/upright_v4_training_pilot_20260911_130614/run_001/training_stage/models/autoencoder.keras
+
+Epoch 5: finished saving model to /home/malik/masterarbeit-edge-ai/results/upright_v4_training_pilot_20260911_130614/run_001/training_stage/models/autoencoder.keras
+13/13 - 0s - 17ms/step - loss: 0.9765 - val_loss: 1.3962
+Epoch 6/100
+
+Epoch 6: val_loss improved from 1.39621 to 1.31765, saving model to /home/malik/masterarbeit-edge-ai/results/upright_v4_training_pilot_20260911_130614/run_001/training_stage/models/autoencoder.keras
+
+Epoch 6: finished saving model to /home/malik/masterarbeit-edge-ai/results/upright_v4_training_pilot_20260911_130614/run_001/training_stage/models/autoencoder.keras
+13/13 - 0s - 15ms/step - loss: 0.9524 - val_loss: 1.3177
+Epoch 7/100
+
+Epoch 7: val_loss improved from 1.31765 to 1.16972, saving model to /home/malik/masterarbeit-edge-ai/results/upright_v4_training_pilot_20260911_130614/run_001/training_stage/models/autoencoder.keras
+
+Epoch 7: finished saving model to /home/malik/masterarbeit-edge-ai/results/upright_v4_training_pilot_20260911_130614/run_001/training_stage/models/autoencoder.keras
+13/13 - 0s - 17ms/step - loss: 0.9018 - val_loss: 1.1697
+Epoch 8/100
+
+Epoch 8: val_loss improved from 1.16972 to 0.98469, saving model to /home/malik/masterarbeit-edge-ai/results/upright_v4_training_pilot_20260911_130614/run_001/training_stage/models/autoencoder.keras
+
+Epoch 8: finished saving model to /home/malik/masterarbeit-edge-ai/results/upright_v4_training_pilot_20260911_130614/run_001/training_stage/models/autoencoder.keras
+13/13 - 0s - 15ms/step - loss: 0.8166 - val_loss: 0.9847
+Epoch 9/100
+
+Epoch 9: val_loss improved from 0.98469 to 0.84072, saving model to /home/malik/masterarbeit-edge-ai/results/upright_v4_training_pilot_20260911_130614/run_001/training_stage/models/autoencoder.keras
+
+Epoch 9: finished saving model to /home/malik/masterarbeit-edge-ai/results/upright_v4_training_pilot_20260911_130614/run_001/training_stage/models/autoencoder.keras
+13/13 - 0s - 15ms/step - loss: 0.7174 - val_loss: 0.8407
+Epoch 10/100
+
+Epoch 10: val_loss improved from 0.84072 to 0.76256, saving model to /home/malik/masterarbeit-edge-ai/results/upright_v4_training_pilot_20260911_130614/run_001/training_stage/models/autoencoder.keras
+
+Epoch 10: finished saving model to /home/malik/masterarbeit-edge-ai/results/upright_v4_training_pilot_20260911_130614/run_001/training_stage/models/autoencoder.keras
+13/13 - 0s - 14ms/step - loss: 0.6445 - val_loss: 0.7626
+Epoch 11/100
+
+Epoch 11: val_loss improved from 0.76256 to 0.70536, saving model to /home/malik/masterarbeit-edge-ai/results/upright_v4_training_pilot_20260911_130614/run_001/training_stage/models/autoencoder.keras
+
+Epoch 11: finished saving model to /home/malik/masterarbeit-edge-ai/results/upright_v4_training_pilot_20260911_130614/run_001/training_stage/models/autoencoder.keras
+13/13 - 0s - 16ms/step - loss: 0.5978 - val_loss: 0.7054
+Epoch 12/100
+
+Epoch 12: val_loss improved from 0.70536 to 0.66165, saving model to /home/malik/masterarbeit-edge-ai/results/upright_v4_training_pilot_20260911_130614/run_001/training_stage/models/autoencoder.keras
+
+Epoch 12: finished saving model to /home/malik/masterarbeit-edge-ai/results/upright_v4_training_pilot_20260911_130614/run_001/training_stage/models/autoencoder.keras
+13/13 - 0s - 19ms/step - loss: 0.5652 - val_loss: 0.6617
+Epoch 13/100
+
+Epoch 13: val_loss improved from 0.66165 to 0.62845, saving model to /home/malik/masterarbeit-edge-ai/results/upright_v4_training_pilot_20260911_130614/run_001/training_stage/models/autoencoder.keras
+
+Epoch 13: finished saving model to /home/malik/masterarbeit-edge-ai/results/upright_v4_training_pilot_20260911_130614/run_001/training_stage/models/autoencoder.keras
+13/13 - 0s - 19ms/step - loss: 0.5408 - val_loss: 0.6285
+Epoch 14/100
+
+Epoch 14: val_loss improved from 0.62845 to 0.60374, saving model to /home/malik/masterarbeit-edge-ai/results/upright_v4_training_pilot_20260911_130614/run_001/training_stage/models/autoencoder.keras
+
+Epoch 14: finished saving model to /home/malik/masterarbeit-edge-ai/results/upright_v4_training_pilot_20260911_130614/run_001/training_stage/models/autoencoder.keras
+13/13 - 0s - 15ms/step - loss: 0.5226 - val_loss: 0.6037
+Epoch 15/100
+
+Epoch 15: val_loss improved from 0.60374 to 0.58666, saving model to /home/malik/masterarbeit-edge-ai/results/upright_v4_training_pilot_20260911_130614/run_001/training_stage/models/autoencoder.keras
+
+Epoch 15: finished saving model to /home/malik/masterarbeit-edge-ai/results/upright_v4_training_pilot_20260911_130614/run_001/training_stage/models/autoencoder.keras
+13/13 - 0s - 15ms/step - loss: 0.5093 - val_loss: 0.5867
+Epoch 16/100
+
+Epoch 16: val_loss improved from 0.58666 to 0.57413, saving model to /home/malik/masterarbeit-edge-ai/results/upright_v4_training_pilot_20260911_130614/run_001/training_stage/models/autoencoder.keras
+
+Epoch 16: finished saving model to /home/malik/masterarbeit-edge-ai/results/upright_v4_training_pilot_20260911_130614/run_001/training_stage/models/autoencoder.keras
+13/13 - 0s - 14ms/step - loss: 0.4996 - val_loss: 0.5741
+Epoch 17/100
+
+Epoch 17: val_loss improved from 0.57413 to 0.56418, saving model to /home/malik/masterarbeit-edge-ai/results/upright_v4_training_pilot_20260911_130614/run_001/training_stage/models/autoencoder.keras
+
+Epoch 17: finished saving model to /home/malik/masterarbeit-edge-ai/results/upright_v4_training_pilot_20260911_130614/run_001/training_stage/models/autoencoder.keras
+13/13 - 0s - 14ms/step - loss: 0.4920 - val_loss: 0.5642
+Epoch 18/100
+
+Epoch 18: val_loss improved from 0.56418 to 0.55625, saving model to /home/malik/masterarbeit-edge-ai/results/upright_v4_training_pilot_20260911_130614/run_001/training_stage/models/autoencoder.keras
+
+Epoch 18: finished saving model to /home/malik/masterarbeit-edge-ai/results/upright_v4_training_pilot_20260911_130614/run_001/training_stage/models/autoencoder.keras
+13/13 - 0s - 15ms/step - loss: 0.4859 - val_loss: 0.5562
+Epoch 19/100
+
+Epoch 19: val_loss improved from 0.55625 to 0.54958, saving model to /home/malik/masterarbeit-edge-ai/results/upright_v4_training_pilot_20260911_130614/run_001/training_stage/models/autoencoder.keras
+
+Epoch 19: finished saving model to /home/malik/masterarbeit-edge-ai/results/upright_v4_training_pilot_20260911_130614/run_001/training_stage/models/autoencoder.keras
+13/13 - 0s - 15ms/step - loss: 0.4807 - val_loss: 0.5496
+Epoch 20/100
+
+Epoch 20: val_loss improved from 0.54958 to 0.54348, saving model to /home/malik/masterarbeit-edge-ai/results/upright_v4_training_pilot_20260911_130614/run_001/training_stage/models/autoencoder.keras
+
+Epoch 20: finished saving model to /home/malik/masterarbeit-edge-ai/results/upright_v4_training_pilot_20260911_130614/run_001/training_stage/models/autoencoder.keras
+13/13 - 0s - 17ms/step - loss: 0.4761 - val_loss: 0.5435
+Epoch 21/100
+
+Epoch 21: val_loss improved from 0.54348 to 0.53845, saving model to /home/malik/masterarbeit-edge-ai/results/upright_v4_training_pilot_20260911_130614/run_001/training_stage/models/autoencoder.keras
+
+Epoch 21: finished saving model to /home/malik/masterarbeit-edge-ai/results/upright_v4_training_pilot_20260911_130614/run_001/training_stage/models/autoencoder.keras
+13/13 - 0s - 14ms/step - loss: 0.4721 - val_loss: 0.5385
+Epoch 22/100
+
+Epoch 22: val_loss improved from 0.53845 to 0.53368, saving model to /home/malik/masterarbeit-edge-ai/results/upright_v4_training_pilot_20260911_130614/run_001/training_stage/models/autoencoder.keras
+
+Epoch 22: finished saving model to /home/malik/masterarbeit-edge-ai/results/upright_v4_training_pilot_20260911_130614/run_001/training_stage/models/autoencoder.keras
+13/13 - 0s - 17ms/step - loss: 0.4684 - val_loss: 0.5337
+Epoch 23/100
+
+Epoch 23: val_loss improved from 0.53368 to 0.52919, saving model to /home/malik/masterarbeit-edge-ai/results/upright_v4_training_pilot_20260911_130614/run_001/training_stage/models/autoencoder.keras
+
+Epoch 23: finished saving model to /home/malik/masterarbeit-edge-ai/results/upright_v4_training_pilot_20260911_130614/run_001/training_stage/models/autoencoder.keras
+13/13 - 0s - 15ms/step - loss: 0.4649 - val_loss: 0.5292
+Epoch 24/100
+
+Epoch 24: val_loss improved from 0.52919 to 0.52503, saving model to /home/malik/masterarbeit-edge-ai/results/upright_v4_training_pilot_20260911_130614/run_001/training_stage/models/autoencoder.keras
+
+Epoch 24: finished saving model to /home/malik/masterarbeit-edge-ai/results/upright_v4_training_pilot_20260911_130614/run_001/training_stage/models/autoencoder.keras
+13/13 - 0s - 14ms/step - loss: 0.4617 - val_loss: 0.5250
+Epoch 25/100
+
+Epoch 25: val_loss improved from 0.52503 to 0.52118, saving model to /home/malik/masterarbeit-edge-ai/results/upright_v4_training_pilot_20260911_130614/run_001/training_stage/models/autoencoder.keras
+
+Epoch 25: finished saving model to /home/malik/masterarbeit-edge-ai/results/upright_v4_training_pilot_20260911_130614/run_001/training_stage/models/autoencoder.keras
+13/13 - 0s - 14ms/step - loss: 0.4587 - val_loss: 0.5212
+Epoch 26/100
+
+Epoch 26: val_loss improved from 0.52118 to 0.51744, saving model to /home/malik/masterarbeit-edge-ai/results/upright_v4_training_pilot_20260911_130614/run_001/training_stage/models/autoencoder.keras
+
+Epoch 26: finished saving model to /home/malik/masterarbeit-edge-ai/results/upright_v4_training_pilot_20260911_130614/run_001/training_stage/models/autoencoder.keras
+13/13 - 0s - 15ms/step - loss: 0.4558 - val_loss: 0.5174
+Epoch 27/100
+
+Epoch 27: val_loss improved from 0.51744 to 0.51414, saving model to /home/malik/masterarbeit-edge-ai/results/upright_v4_training_pilot_20260911_130614/run_001/training_stage/models/autoencoder.keras
+
+Epoch 27: finished saving model to /home/malik/masterarbeit-edge-ai/results/upright_v4_training_pilot_20260911_130614/run_001/training_stage/models/autoencoder.keras
+13/13 - 0s - 14ms/step - loss: 0.4532 - val_loss: 0.5141
+Epoch 28/100
+
+Epoch 28: val_loss improved from 0.51414 to 0.51099, saving model to /home/malik/masterarbeit-edge-ai/results/upright_v4_training_pilot_20260911_130614/run_001/training_stage/models/autoencoder.keras
+
+Epoch 28: finished saving model to /home/malik/masterarbeit-edge-ai/results/upright_v4_training_pilot_20260911_130614/run_001/training_stage/models/autoencoder.keras
+13/13 - 0s - 14ms/step - loss: 0.4506 - val_loss: 0.5110
+Epoch 29/100
+
+Epoch 29: val_loss improved from 0.51099 to 0.50784, saving model to /home/malik/masterarbeit-edge-ai/results/upright_v4_training_pilot_20260911_130614/run_001/training_stage/models/autoencoder.keras
+
+Epoch 29: finished saving model to /home/malik/masterarbeit-edge-ai/results/upright_v4_training_pilot_20260911_130614/run_001/training_stage/models/autoencoder.keras
+13/13 - 0s - 14ms/step - loss: 0.4482 - val_loss: 0.5078
+Epoch 30/100
+
+Epoch 30: val_loss improved from 0.50784 to 0.50502, saving model to /home/malik/masterarbeit-edge-ai/results/upright_v4_training_pilot_20260911_130614/run_001/training_stage/models/autoencoder.keras
+
+Epoch 30: finished saving model to /home/malik/masterarbeit-edge-ai/results/upright_v4_training_pilot_20260911_130614/run_001/training_stage/models/autoencoder.keras
+13/13 - 0s - 14ms/step - loss: 0.4458 - val_loss: 0.5050
+Epoch 31/100
+
+Epoch 31: val_loss improved from 0.50502 to 0.50239, saving model to /home/malik/masterarbeit-edge-ai/results/upright_v4_training_pilot_20260911_130614/run_001/training_stage/models/autoencoder.keras
+
+Epoch 31: finished saving model to /home/malik/masterarbeit-edge-ai/results/upright_v4_training_pilot_20260911_130614/run_001/training_stage/models/autoencoder.keras
+13/13 - 0s - 15ms/step - loss: 0.4436 - val_loss: 0.5024
+Epoch 32/100
+
+Epoch 32: val_loss improved from 0.50239 to 0.49984, saving model to /home/malik/masterarbeit-edge-ai/results/upright_v4_training_pilot_20260911_130614/run_001/training_stage/models/autoencoder.keras
+
+Epoch 32: finished saving model to /home/malik/masterarbeit-edge-ai/results/upright_v4_training_pilot_20260911_130614/run_001/training_stage/models/autoencoder.keras
+13/13 - 0s - 14ms/step - loss: 0.4415 - val_loss: 0.4998
+Epoch 33/100
+
+Epoch 33: val_loss improved from 0.49984 to 0.49739, saving model to /home/malik/masterarbeit-edge-ai/results/upright_v4_training_pilot_20260911_130614/run_001/training_stage/models/autoencoder.keras
+
+Epoch 33: finished saving model to /home/malik/masterarbeit-edge-ai/results/upright_v4_training_pilot_20260911_130614/run_001/training_stage/models/autoencoder.keras
+13/13 - 0s - 14ms/step - loss: 0.4395 - val_loss: 0.4974
+Epoch 34/100
+
+Epoch 34: val_loss improved from 0.49739 to 0.49514, saving model to /home/malik/masterarbeit-edge-ai/results/upright_v4_training_pilot_20260911_130614/run_001/training_stage/models/autoencoder.keras
+
+Epoch 34: finished saving model to /home/malik/masterarbeit-edge-ai/results/upright_v4_training_pilot_20260911_130614/run_001/training_stage/models/autoencoder.keras
+13/13 - 0s - 15ms/step - loss: 0.4376 - val_loss: 0.4951
+Epoch 35/100
+
+Epoch 35: val_loss improved from 0.49514 to 0.49302, saving model to /home/malik/masterarbeit-edge-ai/results/upright_v4_training_pilot_20260911_130614/run_001/training_stage/models/autoencoder.keras
+
+Epoch 35: finished saving model to /home/malik/masterarbeit-edge-ai/results/upright_v4_training_pilot_20260911_130614/run_001/training_stage/models/autoencoder.keras
+13/13 - 0s - 15ms/step - loss: 0.4357 - val_loss: 0.4930
+Epoch 36/100
+
+Epoch 36: val_loss improved from 0.49302 to 0.49068, saving model to /home/malik/masterarbeit-edge-ai/results/upright_v4_training_pilot_20260911_130614/run_001/training_stage/models/autoencoder.keras
+
+Epoch 36: finished saving model to /home/malik/masterarbeit-edge-ai/results/upright_v4_training_pilot_20260911_130614/run_001/training_stage/models/autoencoder.keras
+13/13 - 0s - 15ms/step - loss: 0.4340 - val_loss: 0.4907
+Epoch 37/100
+
+Epoch 37: val_loss improved from 0.49068 to 0.48868, saving model to /home/malik/masterarbeit-edge-ai/results/upright_v4_training_pilot_20260911_130614/run_001/training_stage/models/autoencoder.keras
+
+Epoch 37: finished saving model to /home/malik/masterarbeit-edge-ai/results/upright_v4_training_pilot_20260911_130614/run_001/training_stage/models/autoencoder.keras
+13/13 - 0s - 14ms/step - loss: 0.4323 - val_loss: 0.4887
+Epoch 38/100
+
+Epoch 38: val_loss improved from 0.48868 to 0.48667, saving model to /home/malik/masterarbeit-edge-ai/results/upright_v4_training_pilot_20260911_130614/run_001/training_stage/models/autoencoder.keras
+
+Epoch 38: finished saving model to /home/malik/masterarbeit-edge-ai/results/upright_v4_training_pilot_20260911_130614/run_001/training_stage/models/autoencoder.keras
+13/13 - 0s - 15ms/step - loss: 0.4306 - val_loss: 0.4867
+Epoch 39/100
+
+Epoch 39: val_loss improved from 0.48667 to 0.48494, saving model to /home/malik/masterarbeit-edge-ai/results/upright_v4_training_pilot_20260911_130614/run_001/training_stage/models/autoencoder.keras
+
+Epoch 39: finished saving model to /home/malik/masterarbeit-edge-ai/results/upright_v4_training_pilot_20260911_130614/run_001/training_stage/models/autoencoder.keras
+13/13 - 0s - 14ms/step - loss: 0.4291 - val_loss: 0.4849
+Epoch 40/100
+
+Epoch 40: val_loss improved from 0.48494 to 0.48314, saving model to /home/malik/masterarbeit-edge-ai/results/upright_v4_training_pilot_20260911_130614/run_001/training_stage/models/autoencoder.keras
+
+Epoch 40: finished saving model to /home/malik/masterarbeit-edge-ai/results/upright_v4_training_pilot_20260911_130614/run_001/training_stage/models/autoencoder.keras
+13/13 - 0s - 14ms/step - loss: 0.4276 - val_loss: 0.4831
+Epoch 41/100
+
+Epoch 41: val_loss improved from 0.48314 to 0.48142, saving model to /home/malik/masterarbeit-edge-ai/results/upright_v4_training_pilot_20260911_130614/run_001/training_stage/models/autoencoder.keras
+
+Epoch 41: finished saving model to /home/malik/masterarbeit-edge-ai/results/upright_v4_training_pilot_20260911_130614/run_001/training_stage/models/autoencoder.keras
+13/13 - 0s - 15ms/step - loss: 0.4261 - val_loss: 0.4814
+Epoch 42/100
+
+Epoch 42: val_loss improved from 0.48142 to 0.47978, saving model to /home/malik/masterarbeit-edge-ai/results/upright_v4_training_pilot_20260911_130614/run_001/training_stage/models/autoencoder.keras
+
+Epoch 42: finished saving model to /home/malik/masterarbeit-edge-ai/results/upright_v4_training_pilot_20260911_130614/run_001/training_stage/models/autoencoder.keras
+13/13 - 0s - 15ms/step - loss: 0.4247 - val_loss: 0.4798
+Epoch 43/100
+
+Epoch 43: val_loss improved from 0.47978 to 0.47819, saving model to /home/malik/masterarbeit-edge-ai/results/upright_v4_training_pilot_20260911_130614/run_001/training_stage/models/autoencoder.keras
+
+Epoch 43: finished saving model to /home/malik/masterarbeit-edge-ai/results/upright_v4_training_pilot_20260911_130614/run_001/training_stage/models/autoencoder.keras
+13/13 - 0s - 15ms/step - loss: 0.4233 - val_loss: 0.4782
+Epoch 44/100
+
+Epoch 44: val_loss improved from 0.47819 to 0.47664, saving model to /home/malik/masterarbeit-edge-ai/results/upright_v4_training_pilot_20260911_130614/run_001/training_stage/models/autoencoder.keras
+
+Epoch 44: finished saving model to /home/malik/masterarbeit-edge-ai/results/upright_v4_training_pilot_20260911_130614/run_001/training_stage/models/autoencoder.keras
+13/13 - 0s - 14ms/step - loss: 0.4218 - val_loss: 0.4766
+Epoch 45/100
+
+Epoch 45: val_loss improved from 0.47664 to 0.47515, saving model to /home/malik/masterarbeit-edge-ai/results/upright_v4_training_pilot_20260911_130614/run_001/training_stage/models/autoencoder.keras
+
+Epoch 45: finished saving model to /home/malik/masterarbeit-edge-ai/results/upright_v4_training_pilot_20260911_130614/run_001/training_stage/models/autoencoder.keras
+13/13 - 0s - 15ms/step - loss: 0.4203 - val_loss: 0.4752
+Epoch 46/100
+
+Epoch 46: val_loss improved from 0.47515 to 0.47360, saving model to /home/malik/masterarbeit-edge-ai/results/upright_v4_training_pilot_20260911_130614/run_001/training_stage/models/autoencoder.keras
+
+Epoch 46: finished saving model to /home/malik/masterarbeit-edge-ai/results/upright_v4_training_pilot_20260911_130614/run_001/training_stage/models/autoencoder.keras
+13/13 - 0s - 15ms/step - loss: 0.4188 - val_loss: 0.4736
+Epoch 47/100
+
+Epoch 47: val_loss improved from 0.47360 to 0.47170, saving model to /home/malik/masterarbeit-edge-ai/results/upright_v4_training_pilot_20260911_130614/run_001/training_stage/models/autoencoder.keras
+
+Epoch 47: finished saving model to /home/malik/masterarbeit-edge-ai/results/upright_v4_training_pilot_20260911_130614/run_001/training_stage/models/autoencoder.keras
+13/13 - 0s - 15ms/step - loss: 0.4172 - val_loss: 0.4717
+Epoch 48/100
+
+Epoch 48: val_loss improved from 0.47170 to 0.47020, saving model to /home/malik/masterarbeit-edge-ai/results/upright_v4_training_pilot_20260911_130614/run_001/training_stage/models/autoencoder.keras
+
+Epoch 48: finished saving model to /home/malik/masterarbeit-edge-ai/results/upright_v4_training_pilot_20260911_130614/run_001/training_stage/models/autoencoder.keras
+13/13 - 0s - 14ms/step - loss: 0.4157 - val_loss: 0.4702
+Epoch 49/100
+
+Epoch 49: val_loss improved from 0.47020 to 0.46851, saving model to /home/malik/masterarbeit-edge-ai/results/upright_v4_training_pilot_20260911_130614/run_001/training_stage/models/autoencoder.keras
+
+Epoch 49: finished saving model to /home/malik/masterarbeit-edge-ai/results/upright_v4_training_pilot_20260911_130614/run_001/training_stage/models/autoencoder.keras
+13/13 - 0s - 14ms/step - loss: 0.4143 - val_loss: 0.4685
+Epoch 50/100
+
+Epoch 50: val_loss improved from 0.46851 to 0.46703, saving model to /home/malik/masterarbeit-edge-ai/results/upright_v4_training_pilot_20260911_130614/run_001/training_stage/models/autoencoder.keras
+
+Epoch 50: finished saving model to /home/malik/masterarbeit-edge-ai/results/upright_v4_training_pilot_20260911_130614/run_001/training_stage/models/autoencoder.keras
+13/13 - 0s - 14ms/step - loss: 0.4129 - val_loss: 0.4670
+Epoch 51/100
+
+Epoch 51: val_loss improved from 0.46703 to 0.46540, saving model to /home/malik/masterarbeit-edge-ai/results/upright_v4_training_pilot_20260911_130614/run_001/training_stage/models/autoencoder.keras
+
+Epoch 51: finished saving model to /home/malik/masterarbeit-edge-ai/results/upright_v4_training_pilot_20260911_130614/run_001/training_stage/models/autoencoder.keras
+13/13 - 0s - 14ms/step - loss: 0.4116 - val_loss: 0.4654
+Epoch 52/100
+
+Epoch 52: val_loss improved from 0.46540 to 0.46424, saving model to /home/malik/masterarbeit-edge-ai/results/upright_v4_training_pilot_20260911_130614/run_001/training_stage/models/autoencoder.keras
+
+Epoch 52: finished saving model to /home/malik/masterarbeit-edge-ai/results/upright_v4_training_pilot_20260911_130614/run_001/training_stage/models/autoencoder.keras
+13/13 - 0s - 15ms/step - loss: 0.4104 - val_loss: 0.4642
+Epoch 53/100
+
+Epoch 53: val_loss improved from 0.46424 to 0.46270, saving model to /home/malik/masterarbeit-edge-ai/results/upright_v4_training_pilot_20260911_130614/run_001/training_stage/models/autoencoder.keras
+
+Epoch 53: finished saving model to /home/malik/masterarbeit-edge-ai/results/upright_v4_training_pilot_20260911_130614/run_001/training_stage/models/autoencoder.keras
+13/13 - 0s - 15ms/step - loss: 0.4092 - val_loss: 0.4627
+Epoch 54/100
+
+Epoch 54: val_loss improved from 0.46270 to 0.46168, saving model to /home/malik/masterarbeit-edge-ai/results/upright_v4_training_pilot_20260911_130614/run_001/training_stage/models/autoencoder.keras
+
+Epoch 54: finished saving model to /home/malik/masterarbeit-edge-ai/results/upright_v4_training_pilot_20260911_130614/run_001/training_stage/models/autoencoder.keras
+13/13 - 0s - 14ms/step - loss: 0.4080 - val_loss: 0.4617
+Epoch 55/100
+
+Epoch 55: val_loss improved from 0.46168 to 0.46049, saving model to /home/malik/masterarbeit-edge-ai/results/upright_v4_training_pilot_20260911_130614/run_001/training_stage/models/autoencoder.keras
+
+Epoch 55: finished saving model to /home/malik/masterarbeit-edge-ai/results/upright_v4_training_pilot_20260911_130614/run_001/training_stage/models/autoencoder.keras
+13/13 - 0s - 15ms/step - loss: 0.4069 - val_loss: 0.4605
+Epoch 56/100
+
+Epoch 56: val_loss improved from 0.46049 to 0.45937, saving model to /home/malik/masterarbeit-edge-ai/results/upright_v4_training_pilot_20260911_130614/run_001/training_stage/models/autoencoder.keras
+
+Epoch 56: finished saving model to /home/malik/masterarbeit-edge-ai/results/upright_v4_training_pilot_20260911_130614/run_001/training_stage/models/autoencoder.keras
+13/13 - 0s - 14ms/step - loss: 0.4059 - val_loss: 0.4594
+Epoch 57/100
+
+Epoch 57: val_loss improved from 0.45937 to 0.45814, saving model to /home/malik/masterarbeit-edge-ai/results/upright_v4_training_pilot_20260911_130614/run_001/training_stage/models/autoencoder.keras
+
+Epoch 57: finished saving model to /home/malik/masterarbeit-edge-ai/results/upright_v4_training_pilot_20260911_130614/run_001/training_stage/models/autoencoder.keras
+13/13 - 0s - 14ms/step - loss: 0.4048 - val_loss: 0.4581
+Epoch 58/100
+
+Epoch 58: val_loss improved from 0.45814 to 0.45711, saving model to /home/malik/masterarbeit-edge-ai/results/upright_v4_training_pilot_20260911_130614/run_001/training_stage/models/autoencoder.keras
+
+Epoch 58: finished saving model to /home/malik/masterarbeit-edge-ai/results/upright_v4_training_pilot_20260911_130614/run_001/training_stage/models/autoencoder.keras
+13/13 - 0s - 15ms/step - loss: 0.4039 - val_loss: 0.4571
+Epoch 59/100
+
+Epoch 59: val_loss improved from 0.45711 to 0.45599, saving model to /home/malik/masterarbeit-edge-ai/results/upright_v4_training_pilot_20260911_130614/run_001/training_stage/models/autoencoder.keras
+
+Epoch 59: finished saving model to /home/malik/masterarbeit-edge-ai/results/upright_v4_training_pilot_20260911_130614/run_001/training_stage/models/autoencoder.keras
+13/13 - 0s - 15ms/step - loss: 0.4029 - val_loss: 0.4560
+Epoch 60/100
+
+Epoch 60: val_loss improved from 0.45599 to 0.45488, saving model to /home/malik/masterarbeit-edge-ai/results/upright_v4_training_pilot_20260911_130614/run_001/training_stage/models/autoencoder.keras
+
+Epoch 60: finished saving model to /home/malik/masterarbeit-edge-ai/results/upright_v4_training_pilot_20260911_130614/run_001/training_stage/models/autoencoder.keras
+13/13 - 0s - 14ms/step - loss: 0.4020 - val_loss: 0.4549
+Epoch 61/100
+
+Epoch 61: val_loss improved from 0.45488 to 0.45387, saving model to /home/malik/masterarbeit-edge-ai/results/upright_v4_training_pilot_20260911_130614/run_001/training_stage/models/autoencoder.keras
+
+Epoch 61: finished saving model to /home/malik/masterarbeit-edge-ai/results/upright_v4_training_pilot_20260911_130614/run_001/training_stage/models/autoencoder.keras
+13/13 - 0s - 14ms/step - loss: 0.4010 - val_loss: 0.4539
+Epoch 62/100
+
+Epoch 62: val_loss improved from 0.45387 to 0.45272, saving model to /home/malik/masterarbeit-edge-ai/results/upright_v4_training_pilot_20260911_130614/run_001/training_stage/models/autoencoder.keras
+
+Epoch 62: finished saving model to /home/malik/masterarbeit-edge-ai/results/upright_v4_training_pilot_20260911_130614/run_001/training_stage/models/autoencoder.keras
+13/13 - 0s - 14ms/step - loss: 0.4002 - val_loss: 0.4527
+Epoch 63/100
+
+Epoch 63: val_loss improved from 0.45272 to 0.45198, saving model to /home/malik/masterarbeit-edge-ai/results/upright_v4_training_pilot_20260911_130614/run_001/training_stage/models/autoencoder.keras
+
+Epoch 63: finished saving model to /home/malik/masterarbeit-edge-ai/results/upright_v4_training_pilot_20260911_130614/run_001/training_stage/models/autoencoder.keras
+13/13 - 0s - 14ms/step - loss: 0.3993 - val_loss: 0.4520
+Epoch 64/100
+
+Epoch 64: val_loss improved from 0.45198 to 0.45101, saving model to /home/malik/masterarbeit-edge-ai/results/upright_v4_training_pilot_20260911_130614/run_001/training_stage/models/autoencoder.keras
+
+Epoch 64: finished saving model to /home/malik/masterarbeit-edge-ai/results/upright_v4_training_pilot_20260911_130614/run_001/training_stage/models/autoencoder.keras
+13/13 - 0s - 14ms/step - loss: 0.3985 - val_loss: 0.4510
+Epoch 65/100
+
+Epoch 65: val_loss improved from 0.45101 to 0.45020, saving model to /home/malik/masterarbeit-edge-ai/results/upright_v4_training_pilot_20260911_130614/run_001/training_stage/models/autoencoder.keras
+
+Epoch 65: finished saving model to /home/malik/masterarbeit-edge-ai/results/upright_v4_training_pilot_20260911_130614/run_001/training_stage/models/autoencoder.keras
+13/13 - 0s - 15ms/step - loss: 0.3978 - val_loss: 0.4502
+Epoch 66/100
+
+Epoch 66: val_loss improved from 0.45020 to 0.44933, saving model to /home/malik/masterarbeit-edge-ai/results/upright_v4_training_pilot_20260911_130614/run_001/training_stage/models/autoencoder.keras
+
+Epoch 66: finished saving model to /home/malik/masterarbeit-edge-ai/results/upright_v4_training_pilot_20260911_130614/run_001/training_stage/models/autoencoder.keras
+13/13 - 0s - 15ms/step - loss: 0.3970 - val_loss: 0.4493
+Epoch 67/100
+
+Epoch 67: val_loss improved from 0.44933 to 0.44852, saving model to /home/malik/masterarbeit-edge-ai/results/upright_v4_training_pilot_20260911_130614/run_001/training_stage/models/autoencoder.keras
+
+Epoch 67: finished saving model to /home/malik/masterarbeit-edge-ai/results/upright_v4_training_pilot_20260911_130614/run_001/training_stage/models/autoencoder.keras
+13/13 - 0s - 15ms/step - loss: 0.3963 - val_loss: 0.4485
+Epoch 68/100
+
+Epoch 68: val_loss improved from 0.44852 to 0.44777, saving model to /home/malik/masterarbeit-edge-ai/results/upright_v4_training_pilot_20260911_130614/run_001/training_stage/models/autoencoder.keras
+
+Epoch 68: finished saving model to /home/malik/masterarbeit-edge-ai/results/upright_v4_training_pilot_20260911_130614/run_001/training_stage/models/autoencoder.keras
+13/13 - 0s - 14ms/step - loss: 0.3956 - val_loss: 0.4478
+Epoch 69/100
+
+Epoch 69: val_loss improved from 0.44777 to 0.44701, saving model to /home/malik/masterarbeit-edge-ai/results/upright_v4_training_pilot_20260911_130614/run_001/training_stage/models/autoencoder.keras
+
+Epoch 69: finished saving model to /home/malik/masterarbeit-edge-ai/results/upright_v4_training_pilot_20260911_130614/run_001/training_stage/models/autoencoder.keras
+13/13 - 0s - 16ms/step - loss: 0.3949 - val_loss: 0.4470
+Epoch 70/100
+
+Epoch 70: val_loss improved from 0.44701 to 0.44627, saving model to /home/malik/masterarbeit-edge-ai/results/upright_v4_training_pilot_20260911_130614/run_001/training_stage/models/autoencoder.keras
+
+Epoch 70: finished saving model to /home/malik/masterarbeit-edge-ai/results/upright_v4_training_pilot_20260911_130614/run_001/training_stage/models/autoencoder.keras
+13/13 - 0s - 15ms/step - loss: 0.3942 - val_loss: 0.4463
+Epoch 71/100
+
+Epoch 71: val_loss improved from 0.44627 to 0.44558, saving model to /home/malik/masterarbeit-edge-ai/results/upright_v4_training_pilot_20260911_130614/run_001/training_stage/models/autoencoder.keras
+
+Epoch 71: finished saving model to /home/malik/masterarbeit-edge-ai/results/upright_v4_training_pilot_20260911_130614/run_001/training_stage/models/autoencoder.keras
+13/13 - 0s - 15ms/step - loss: 0.3935 - val_loss: 0.4456
+Epoch 72/100
+
+Epoch 72: val_loss improved from 0.44558 to 0.44484, saving model to /home/malik/masterarbeit-edge-ai/results/upright_v4_training_pilot_20260911_130614/run_001/training_stage/models/autoencoder.keras
+
+Epoch 72: finished saving model to /home/malik/masterarbeit-edge-ai/results/upright_v4_training_pilot_20260911_130614/run_001/training_stage/models/autoencoder.keras
+13/13 - 0s - 15ms/step - loss: 0.3929 - val_loss: 0.4448
+Epoch 73/100
+
+Epoch 73: val_loss improved from 0.44484 to 0.44417, saving model to /home/malik/masterarbeit-edge-ai/results/upright_v4_training_pilot_20260911_130614/run_001/training_stage/models/autoencoder.keras
+
+Epoch 73: finished saving model to /home/malik/masterarbeit-edge-ai/results/upright_v4_training_pilot_20260911_130614/run_001/training_stage/models/autoencoder.keras
+13/13 - 0s - 14ms/step - loss: 0.3922 - val_loss: 0.4442
+Epoch 74/100
+
+Epoch 74: val_loss improved from 0.44417 to 0.44352, saving model to /home/malik/masterarbeit-edge-ai/results/upright_v4_training_pilot_20260911_130614/run_001/training_stage/models/autoencoder.keras
+
+Epoch 74: finished saving model to /home/malik/masterarbeit-edge-ai/results/upright_v4_training_pilot_20260911_130614/run_001/training_stage/models/autoencoder.keras
+13/13 - 0s - 14ms/step - loss: 0.3916 - val_loss: 0.4435
+Epoch 75/100
+
+Epoch 75: val_loss improved from 0.44352 to 0.44288, saving model to /home/malik/masterarbeit-edge-ai/results/upright_v4_training_pilot_20260911_130614/run_001/training_stage/models/autoencoder.keras
+
+Epoch 75: finished saving model to /home/malik/masterarbeit-edge-ai/results/upright_v4_training_pilot_20260911_130614/run_001/training_stage/models/autoencoder.keras
+13/13 - 0s - 14ms/step - loss: 0.3910 - val_loss: 0.4429
+Epoch 76/100
+
+Epoch 76: val_loss improved from 0.44288 to 0.44228, saving model to /home/malik/masterarbeit-edge-ai/results/upright_v4_training_pilot_20260911_130614/run_001/training_stage/models/autoencoder.keras
+
+Epoch 76: finished saving model to /home/malik/masterarbeit-edge-ai/results/upright_v4_training_pilot_20260911_130614/run_001/training_stage/models/autoencoder.keras
+13/13 - 0s - 15ms/step - loss: 0.3905 - val_loss: 0.4423
+Epoch 77/100
+
+Epoch 77: val_loss improved from 0.44228 to 0.44159, saving model to /home/malik/masterarbeit-edge-ai/results/upright_v4_training_pilot_20260911_130614/run_001/training_stage/models/autoencoder.keras
+
+Epoch 77: finished saving model to /home/malik/masterarbeit-edge-ai/results/upright_v4_training_pilot_20260911_130614/run_001/training_stage/models/autoencoder.keras
+13/13 - 0s - 14ms/step - loss: 0.3899 - val_loss: 0.4416
+Epoch 78/100
+
+Epoch 78: val_loss improved from 0.44159 to 0.44098, saving model to /home/malik/masterarbeit-edge-ai/results/upright_v4_training_pilot_20260911_130614/run_001/training_stage/models/autoencoder.keras
+
+Epoch 78: finished saving model to /home/malik/masterarbeit-edge-ai/results/upright_v4_training_pilot_20260911_130614/run_001/training_stage/models/autoencoder.keras
+13/13 - 0s - 14ms/step - loss: 0.3894 - val_loss: 0.4410
+Epoch 79/100
+
+Epoch 79: val_loss improved from 0.44098 to 0.44039, saving model to /home/malik/masterarbeit-edge-ai/results/upright_v4_training_pilot_20260911_130614/run_001/training_stage/models/autoencoder.keras
+
+Epoch 79: finished saving model to /home/malik/masterarbeit-edge-ai/results/upright_v4_training_pilot_20260911_130614/run_001/training_stage/models/autoencoder.keras
+13/13 - 0s - 14ms/step - loss: 0.3888 - val_loss: 0.4404
+Epoch 80/100
+
+Epoch 80: val_loss improved from 0.44039 to 0.43976, saving model to /home/malik/masterarbeit-edge-ai/results/upright_v4_training_pilot_20260911_130614/run_001/training_stage/models/autoencoder.keras
+
+Epoch 80: finished saving model to /home/malik/masterarbeit-edge-ai/results/upright_v4_training_pilot_20260911_130614/run_001/training_stage/models/autoencoder.keras
+13/13 - 0s - 14ms/step - loss: 0.3883 - val_loss: 0.4398
+Epoch 81/100
+
+Epoch 81: val_loss improved from 0.43976 to 0.43914, saving model to /home/malik/masterarbeit-edge-ai/results/upright_v4_training_pilot_20260911_130614/run_001/training_stage/models/autoencoder.keras
+
+Epoch 81: finished saving model to /home/malik/masterarbeit-edge-ai/results/upright_v4_training_pilot_20260911_130614/run_001/training_stage/models/autoencoder.keras
+13/13 - 0s - 14ms/step - loss: 0.3877 - val_loss: 0.4391
+Epoch 82/100
+
+Epoch 82: val_loss improved from 0.43914 to 0.43861, saving model to /home/malik/masterarbeit-edge-ai/results/upright_v4_training_pilot_20260911_130614/run_001/training_stage/models/autoencoder.keras
+
+Epoch 82: finished saving model to /home/malik/masterarbeit-edge-ai/results/upright_v4_training_pilot_20260911_130614/run_001/training_stage/models/autoencoder.keras
+13/13 - 0s - 15ms/step - loss: 0.3872 - val_loss: 0.4386
+Epoch 83/100
+
+Epoch 83: val_loss improved from 0.43861 to 0.43812, saving model to /home/malik/masterarbeit-edge-ai/results/upright_v4_training_pilot_20260911_130614/run_001/training_stage/models/autoencoder.keras
+
+Epoch 83: finished saving model to /home/malik/masterarbeit-edge-ai/results/upright_v4_training_pilot_20260911_130614/run_001/training_stage/models/autoencoder.keras
+13/13 - 0s - 15ms/step - loss: 0.3867 - val_loss: 0.4381
+Epoch 84/100
+
+Epoch 84: val_loss improved from 0.43812 to 0.43761, saving model to /home/malik/masterarbeit-edge-ai/results/upright_v4_training_pilot_20260911_130614/run_001/training_stage/models/autoencoder.keras
+
+Epoch 84: finished saving model to /home/malik/masterarbeit-edge-ai/results/upright_v4_training_pilot_20260911_130614/run_001/training_stage/models/autoencoder.keras
+13/13 - 0s - 15ms/step - loss: 0.3862 - val_loss: 0.4376
+Epoch 85/100
+
+Epoch 85: val_loss improved from 0.43761 to 0.43709, saving model to /home/malik/masterarbeit-edge-ai/results/upright_v4_training_pilot_20260911_130614/run_001/training_stage/models/autoencoder.keras
+
+Epoch 85: finished saving model to /home/malik/masterarbeit-edge-ai/results/upright_v4_training_pilot_20260911_130614/run_001/training_stage/models/autoencoder.keras
+13/13 - 0s - 14ms/step - loss: 0.3857 - val_loss: 0.4371
+Epoch 86/100
+
+Epoch 86: val_loss improved from 0.43709 to 0.43660, saving model to /home/malik/masterarbeit-edge-ai/results/upright_v4_training_pilot_20260911_130614/run_001/training_stage/models/autoencoder.keras
+
+Epoch 86: finished saving model to /home/malik/masterarbeit-edge-ai/results/upright_v4_training_pilot_20260911_130614/run_001/training_stage/models/autoencoder.keras
+13/13 - 0s - 15ms/step - loss: 0.3852 - val_loss: 0.4366
+Epoch 87/100
+
+Epoch 87: val_loss improved from 0.43660 to 0.43608, saving model to /home/malik/masterarbeit-edge-ai/results/upright_v4_training_pilot_20260911_130614/run_001/training_stage/models/autoencoder.keras
+
+Epoch 87: finished saving model to /home/malik/masterarbeit-edge-ai/results/upright_v4_training_pilot_20260911_130614/run_001/training_stage/models/autoencoder.keras
+13/13 - 0s - 14ms/step - loss: 0.3848 - val_loss: 0.4361
+Epoch 88/100
+
+Epoch 88: val_loss improved from 0.43608 to 0.43552, saving model to /home/malik/masterarbeit-edge-ai/results/upright_v4_training_pilot_20260911_130614/run_001/training_stage/models/autoencoder.keras
+
+Epoch 88: finished saving model to /home/malik/masterarbeit-edge-ai/results/upright_v4_training_pilot_20260911_130614/run_001/training_stage/models/autoencoder.keras
+13/13 - 0s - 14ms/step - loss: 0.3843 - val_loss: 0.4355
+Epoch 89/100
+
+Epoch 89: val_loss improved from 0.43552 to 0.43506, saving model to /home/malik/masterarbeit-edge-ai/results/upright_v4_training_pilot_20260911_130614/run_001/training_stage/models/autoencoder.keras
+
+Epoch 89: finished saving model to /home/malik/masterarbeit-edge-ai/results/upright_v4_training_pilot_20260911_130614/run_001/training_stage/models/autoencoder.keras
+13/13 - 0s - 14ms/step - loss: 0.3838 - val_loss: 0.4351
+Epoch 90/100
+
+Epoch 90: val_loss improved from 0.43506 to 0.43459, saving model to /home/malik/masterarbeit-edge-ai/results/upright_v4_training_pilot_20260911_130614/run_001/training_stage/models/autoencoder.keras
+
+Epoch 90: finished saving model to /home/malik/masterarbeit-edge-ai/results/upright_v4_training_pilot_20260911_130614/run_001/training_stage/models/autoencoder.keras
+13/13 - 0s - 16ms/step - loss: 0.3834 - val_loss: 0.4346
+Epoch 91/100
+
+Epoch 91: val_loss improved from 0.43459 to 0.43408, saving model to /home/malik/masterarbeit-edge-ai/results/upright_v4_training_pilot_20260911_130614/run_001/training_stage/models/autoencoder.keras
+
+Epoch 91: finished saving model to /home/malik/masterarbeit-edge-ai/results/upright_v4_training_pilot_20260911_130614/run_001/training_stage/models/autoencoder.keras
+13/13 - 0s - 14ms/step - loss: 0.3829 - val_loss: 0.4341
+Epoch 92/100
+
+Epoch 92: val_loss improved from 0.43408 to 0.43363, saving model to /home/malik/masterarbeit-edge-ai/results/upright_v4_training_pilot_20260911_130614/run_001/training_stage/models/autoencoder.keras
+
+Epoch 92: finished saving model to /home/malik/masterarbeit-edge-ai/results/upright_v4_training_pilot_20260911_130614/run_001/training_stage/models/autoencoder.keras
+13/13 - 0s - 17ms/step - loss: 0.3825 - val_loss: 0.4336
+Epoch 93/100
+
+Epoch 93: val_loss improved from 0.43363 to 0.43317, saving model to /home/malik/masterarbeit-edge-ai/results/upright_v4_training_pilot_20260911_130614/run_001/training_stage/models/autoencoder.keras
+
+Epoch 93: finished saving model to /home/malik/masterarbeit-edge-ai/results/upright_v4_training_pilot_20260911_130614/run_001/training_stage/models/autoencoder.keras
+13/13 - 0s - 16ms/step - loss: 0.3821 - val_loss: 0.4332
+Epoch 94/100
+
+Epoch 94: val_loss improved from 0.43317 to 0.43267, saving model to /home/malik/masterarbeit-edge-ai/results/upright_v4_training_pilot_20260911_130614/run_001/training_stage/models/autoencoder.keras
+
+Epoch 94: finished saving model to /home/malik/masterarbeit-edge-ai/results/upright_v4_training_pilot_20260911_130614/run_001/training_stage/models/autoencoder.keras
+13/13 - 0s - 17ms/step - loss: 0.3816 - val_loss: 0.4327
+Epoch 95/100
+
+Epoch 95: val_loss improved from 0.43267 to 0.43212, saving model to /home/malik/masterarbeit-edge-ai/results/upright_v4_training_pilot_20260911_130614/run_001/training_stage/models/autoencoder.keras
+
+Epoch 95: finished saving model to /home/malik/masterarbeit-edge-ai/results/upright_v4_training_pilot_20260911_130614/run_001/training_stage/models/autoencoder.keras
+13/13 - 0s - 15ms/step - loss: 0.3812 - val_loss: 0.4321
+Epoch 96/100
+
+Epoch 96: val_loss improved from 0.43212 to 0.43160, saving model to /home/malik/masterarbeit-edge-ai/results/upright_v4_training_pilot_20260911_130614/run_001/training_stage/models/autoencoder.keras
+
+Epoch 96: finished saving model to /home/malik/masterarbeit-edge-ai/results/upright_v4_training_pilot_20260911_130614/run_001/training_stage/models/autoencoder.keras
+13/13 - 0s - 15ms/step - loss: 0.3808 - val_loss: 0.4316
+Epoch 97/100
+
+Epoch 97: val_loss improved from 0.43160 to 0.43108, saving model to /home/malik/masterarbeit-edge-ai/results/upright_v4_training_pilot_20260911_130614/run_001/training_stage/models/autoencoder.keras
+
+Epoch 97: finished saving model to /home/malik/masterarbeit-edge-ai/results/upright_v4_training_pilot_20260911_130614/run_001/training_stage/models/autoencoder.keras
+13/13 - 0s - 15ms/step - loss: 0.3804 - val_loss: 0.4311
+Epoch 98/100
+
+Epoch 98: val_loss improved from 0.43108 to 0.43059, saving model to /home/malik/masterarbeit-edge-ai/results/upright_v4_training_pilot_20260911_130614/run_001/training_stage/models/autoencoder.keras
+
+Epoch 98: finished saving model to /home/malik/masterarbeit-edge-ai/results/upright_v4_training_pilot_20260911_130614/run_001/training_stage/models/autoencoder.keras
+13/13 - 0s - 14ms/step - loss: 0.3800 - val_loss: 0.4306
+Epoch 99/100
+
+Epoch 99: val_loss improved from 0.43059 to 0.43017, saving model to /home/malik/masterarbeit-edge-ai/results/upright_v4_training_pilot_20260911_130614/run_001/training_stage/models/autoencoder.keras
+
+Epoch 99: finished saving model to /home/malik/masterarbeit-edge-ai/results/upright_v4_training_pilot_20260911_130614/run_001/training_stage/models/autoencoder.keras
+13/13 - 0s - 15ms/step - loss: 0.3796 - val_loss: 0.4302
+Epoch 100/100
+
+Epoch 100: val_loss improved from 0.43017 to 0.42963, saving model to /home/malik/masterarbeit-edge-ai/results/upright_v4_training_pilot_20260911_130614/run_001/training_stage/models/autoencoder.keras
+
+Epoch 100: finished saving model to /home/malik/masterarbeit-edge-ai/results/upright_v4_training_pilot_20260911_130614/run_001/training_stage/models/autoencoder.keras
+13/13 - 0s - 17ms/step - loss: 0.3792 - val_loss: 0.4296
+Restoring model weights from the end of the best epoch: 100.
+Reconstruction Errors werden berechnet ...
+E0000 00:00:1789132015.139432   25678 node_def_util.cc:682] NodeDef mentions attribute use_unbounded_threadpool which is not in the op definition: Op<name=MapDataset; signature=input_dataset:variant, other_arguments: -> handle:variant; attr=f:func; attr=Targuments:list(type),min=0; attr=output_types:list(type),min=1; attr=output_shapes:list(shape),min=1; attr=use_inter_op_parallelism:bool,default=true; attr=preserve_cardinality:bool,default=false; attr=force_synchronous:bool,default=false; attr=metadata:string,default=""> This may be expected if your graph generating binary is newer  than this binary. Unknown attributes will be ignored. NodeDef: {{node ParallelMapDatasetV2/_14}}
+Validation-P99-Threshold wird bestimmt ...
+Float32-TFLite-Modell wird erzeugt ...
+Saved artifact at '/tmp/tmpk37gz9_g'. The following endpoints are available:
+
+* Endpoint 'serve'
+  args_0 (POSITIONAL_ONLY): TensorSpec(shape=(None, 128, 3), dtype=tf.float32, name='xyz_window')
+Output Type:
+  TensorSpec(shape=(None, 128, 3), dtype=tf.float32, name=None)
+Captures:
+  140735058744656: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  140735058743120: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  140735058742736: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  140735058741200: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  140735058741392: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  140735058740240: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  140735058741008: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  140735058739280: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  140735058739664: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  140735058743888: TensorSpec(shape=(), dtype=tf.resource, name=None)
+Numerischer Keras-vs.-TFLite-Konsistenztest ...
+/home/malik/masterarbeit-edge-ai/.venv/lib/python3.13/site-packages/tensorflow/lite/python/interpreter.py:457: UserWarning:     Warning: tf.lite.Interpreter is deprecated and is scheduled for deletion in
+    TF 2.20. Please use the LiteRT interpreter from the ai_edge_litert package.
+    See the [migration guide](https://ai.google.dev/edge/litert/migration)
+    for details.
+    
+  warnings.warn(_INTERPRETER_DELETION_WARNING)
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+{
+  "status": "ready_development_only",
+  "window_counts": {
+    "train": 388,
+    "validation": 194
+  }
+}

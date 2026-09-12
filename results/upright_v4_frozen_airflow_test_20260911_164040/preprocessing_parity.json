@@ -1,0 +1,35 @@
+{
+  "verified_utc": "2026-09-11T16:54:15.866095+00:00",
+  "new_evaluator_uses_identical_build_windows_function": true,
+  "training_parity_source": "/home/malik/masterarbeit-edge-ai/results/upright_v4_independent_normal_20260911_133047/training_test_preprocessing_parity.json",
+  "training_parity_source_sha256": "19edfa56bea1cd8c3f924487b168cb7c1c8fe2a8e35bf35e31e1dd800a5ab56c",
+  "original_training_and_validation_parity": {
+    "scope": "software parity on old sources only; these are excluded from independent tests",
+    "original_sources": [
+      {
+        "source": "/home/malik/masterarbeit-edge-ai/data/upright_position_v4_sequence_20260911_104025/normal_before_75pwm_300s_20260911_104430_339886.csv",
+        "sha256": "8a141c4284bac2cb64c11f0006fa29d336a54ea2936127946be59b2ea1a9426b",
+        "windows": 194
+      },
+      {
+        "source": "/home/malik/masterarbeit-edge-ai/data/upright_position_v4_sequence_20260911_104025/normal_after_75pwm_300s_20260911_111103_206329.csv",
+        "sha256": "5357e8d0c0592a6e3765904f16ea037937f2f5f54e7c0d88ba2c42cda6589944",
+        "windows": 194
+      },
+      {
+        "source": "/home/malik/masterarbeit-edge-ai/data/upright_v4_normal_followup_20260911_112731/normal_followup_75pwm_300s_20260911_112835_067380.csv",
+        "sha256": "557d1a665573d4f6113a0913e81d0d29191907f4a31b8810f9fd83a2cc9b5f50",
+        "windows": 194
+      }
+    ],
+    "float64_window_centering_then_float32_then_frozen_scaler_exact": true,
+    "training_windows": 388,
+    "validation_windows": 194,
+    "evaluator_sha256": "6210cc61160834ea75dc489cd738118c840aae6573dadb864132ebd454eefc0d",
+    "frozen_bundle_sha256": "cec1859bfb354bafef77a619e6d2c1ffd85b50787c87595aba9a1e20a80cdae5",
+    "no_scaler_fit_no_training": true
+  },
+  "shared_helpers_and_frozen_package_unchanged": true,
+  "new_synthetic_integration_tests_passed": 166,
+  "old_sources_are_not_new_test_data": true
+}

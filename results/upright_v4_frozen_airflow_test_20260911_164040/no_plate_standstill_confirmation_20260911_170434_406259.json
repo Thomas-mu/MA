@@ -1,0 +1,23 @@
+{
+  "recorded_utc": "2026-09-11T17:04:34.406259+00:00",
+  "source": "explicit_user_message",
+  "operator_message_verbatim": "Ohne Platte bereit, Lüfter steht, Versorgung angeschlossen  ",
+  "observed_conditions": {
+    "plate_absent": true,
+    "mechanical_standstill_confirmed": true,
+    "external_supply_connected": true
+  },
+  "already_completed_phase": "normal_before",
+  "already_completed_recording": "normal_before_75pwm_300s_20260911_165633_681800",
+  "required_next_phase": "airflow_modified",
+  "next_phase_released": false,
+  "interpretation": "Explicit no-plate condition does not release the planned plate phase; completed normal_before is not repeated.",
+  "pwm_sysfs_readback": {
+    "period": "40000",
+    "duty_cycle": "0",
+    "enable": "1",
+    "polarity": "normal"
+  },
+  "pin_readback": "18: a3    pd | lo // GPIO18 = PWM0_CHAN2",
+  "hardware_changed": false
+}

@@ -1,0 +1,15 @@
+{
+  "utc": "2026-09-11T13:30:47.582444+00:00",
+  "bundle": "/home/malik/masterarbeit-edge-ai/results/upright_v4_training_pilot_20260911_130614/run_001/frozen",
+  "bundle_sha256": "cec1859bfb354bafef77a619e6d2c1ffd85b50787c87595aba9a1e20a80cdae5",
+  "bundle_status": "ready_development_only",
+  "pwm_read_only": {
+    "period": "40000",
+    "duty_cycle": "0",
+    "enable": "1",
+    "polarity": "normal"
+  },
+  "pin_read_only": "18: a3 pd | lo // GPIO18 = PWM0_CHAN2",
+  "device_holder_check": "fuser checked,no holders reported; status1",
+  "mechanical_state": "not freshly observed"
+}

@@ -1,0 +1,43 @@
+{
+  "recorded_utc": "2026-09-11T17:06:39.242107+00:00",
+  "received_monotonic_ns": 37076686279994,
+  "source": "explicit_user_message",
+  "operator_message_verbatim": "Platte wie beschrieben befestigt, Lüfter steht, Versorgung angeschlossen, Plattenlauf freigegebe  ",
+  "phase": "airflow_modified",
+  "phase_authorization_received": true,
+  "conditions": {
+    "ready": true,
+    "plate_present": true,
+    "plate_absent": false,
+    "mechanical_standstill_confirmed": true,
+    "external_supply_connected": true,
+    "mounting_unchanged": true,
+    "manual_change_power_disconnected": true,
+    "no_fan_sensor_movement": true
+  },
+  "confirmation_basis": "User confirms plate installed as described in the preceding instructions; numeric geometry, separate holder, no contact and unchanged fan/sensor position are operator confirmations, not independent measurements.",
+  "plate_geometry": {
+    "source": "operator_report",
+    "width_mm": 120,
+    "height_mm": 120,
+    "distance_mm": 100,
+    "distance_reference": "outlet_frame_plane_to_nearest_plate_face",
+    "outlet_identification": null,
+    "parallel_to_outlet": true,
+    "centered_on_outlet": true,
+    "separate_stable_holder": true,
+    "no_contact": true,
+    "independently_measured": false
+  },
+  "remaining_missing_information": [
+    "outlet_identification"
+  ],
+  "hardware_start_performed": false,
+  "pwm_sysfs_readback": {
+    "period": "40000",
+    "duty_cycle": "0",
+    "enable": "1",
+    "polarity": "normal"
+  },
+  "pin_readback": "18: a3    pd | lo // GPIO18 = PWM0_CHAN2"
+}

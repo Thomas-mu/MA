@@ -1,0 +1,59 @@
+{
+  "checked_utc": "2026-09-11T16:33:41.837696+00:00",
+  "historical_files_checked": 1172,
+  "historical_files_changed": [],
+  "protocol_sha256": "d208261cdbe9e258b4a56ae87769c3700145b2221c4b92fed4fb55eb67fd73a7",
+  "protocol_hash_matches": true,
+  "frozen_bundle_sha256": "cec1859bfb354bafef77a619e6d2c1ffd85b50787c87595aba9a1e20a80cdae5",
+  "frozen_bundle_hash_matches": true,
+  "implementation_hashes_unchanged": true,
+  "source_and_result_hash_mismatches": [],
+  "distinct_recording_identities": {
+    "recording_id": 3,
+    "csv_sha256": 3,
+    "csv": 3,
+    "phase": 3
+  },
+  "per_run_artifact_hashes": [
+    {
+      "phase": "normal_test_01",
+      "summary_sha256": "f82172ff3f1e631fe16366b8ed33cad80a80460b158e6503ff713089ef6a0cd8",
+      "csv_sha256": "058f4aec69a567236dbe7e4c0d84590f51f3210ef320a2cd4ae794be5baa8e18",
+      "sidecar_sha256": "ed8312083eabed03992da188794f65bc7bd43ecbe315a451dd36b1083b8c8ca2",
+      "session_sha256": "ee1738029d689be5cb2b67b3ccc18afd430e28ff7a56f4ae6c70088a2b52f20f"
+    },
+    {
+      "phase": "normal_test_02",
+      "summary_sha256": "26f57f528458d07c8084c09c8227e4ad47a6295b711abead960c78a8e4bcf370",
+      "csv_sha256": "20760adbcad23554c0b49745b6163444e7974a01be20412b040304a1ff1708f2",
+      "sidecar_sha256": "0f12e0c2923da48218589fa1e7d34e1916bce597f4198d95f662bd3fc134800c",
+      "session_sha256": "479f8117834a7f97d0c019ab21beea2a9a1ad258eeeb1dd8ed0c9a8e847cc24a"
+    },
+    {
+      "phase": "normal_test_03",
+      "summary_sha256": "7b3ea3628f1bee5c32533b1f878dd0bf3121064fe4815649c23803b79d534ba8",
+      "csv_sha256": "ca13bde6fe4e7e72a13e81d90b688568bbdd8ce223869f56f397a0e4875013c6",
+      "sidecar_sha256": "ff8a42b31d8676fd951b5bbab069c78e87d98ae18632da25619f272235950342",
+      "session_sha256": "2b30793066100ae860b2df6bac3ba31d9d8177f05396faa4d6a704f1b576c5f0"
+    }
+  ],
+  "comparison_summary_sha256": "9b254710f01b452a33339ed5f83305a5383af9af2c73f1ed64fd1676f7c59a40",
+  "completed_runs": 3,
+  "comparison_status": "complete",
+  "pwm_sysfs_readback": {
+    "period": "40000",
+    "duty_cycle": "0",
+    "enable": "1",
+    "polarity": "normal"
+  },
+  "pin_readback": "18: a3    pd | lo // GPIO18 = PWM0_CHAN2",
+  "pin_exit_code": 0,
+  "hardware_holders_check": {
+    "exit_code": 1,
+    "stdout": "",
+    "stderr": ""
+  },
+  "mechanical_standstill_after_run_03": "not_confirmed",
+  "further_starts_planned": false,
+  "word_sha256": "a9a5d7d17b28098f554240a3e1650881e252db679f33319a1d11164b3246cbb8"
+}

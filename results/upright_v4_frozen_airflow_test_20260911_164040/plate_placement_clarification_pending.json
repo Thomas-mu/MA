@@ -1,0 +1,8 @@
+{
+  "recorded_user_update": "ich habe die Platte hingelegt",
+  "interpretation": "Position ambiguous; could mean laid aside or placed in airflow. Not a start release and not a geometry confirmation.",
+  "followup_question": "Für den ersten Normallauf muss die Platte außerhalb des Luftstroms liegen. Wo genau hast du sie hingelegt?",
+  "current_fan_start_allowed": false,
+  "plate_actual_geometry": null,
+  "normal_before_readiness_pending": true
+}

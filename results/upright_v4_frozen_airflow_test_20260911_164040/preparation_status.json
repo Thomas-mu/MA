@@ -1,0 +1,7 @@
+{
+  "status": "preparing_protocol_no_capture_authorized_yet",
+  "current_user_instruction": "Dann fange an und wenn du mich brauchst schick mir hier kurz was ich zu tun habe und warte bis ich mich melde",
+  "first_current_standstill_and_readiness_pending": true,
+  "data_directory": "/home/malik/masterarbeit-edge-ai/data/upright_v4_frozen_airflow_test_20260911_164040",
+  "existing_safe_v4_mounting_retained": true
+}

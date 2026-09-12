@@ -1,0 +1,10 @@
+{
+  "issued_utc": "2026-09-11T17:03:33.669595+00:00",
+  "phase_completed": "normal_before",
+  "next_phase": "airflow_modified",
+  "current_pwm_readback_percent": 0,
+  "mechanical_standstill": "not_confirmed",
+  "instruction": "Disconnect external 12-V supply; wait for complete stop. Fix 120x120-mm plate separately and tip resistant, parallel and centered at outlet, 100 mm perpendicular from stationary outer outlet frame plane to nearest plate face; verify dimensions, distance and actual outlet identification. No contact or movement of fan/sensor. Reconnect supply. Report completion, complete stop, connected supply, phase release and how outlet was identified.",
+  "plate_geometry_confirmed": false,
+  "next_start_released": false
+}

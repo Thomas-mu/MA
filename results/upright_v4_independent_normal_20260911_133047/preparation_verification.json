@@ -1,0 +1,35 @@
+{
+  "utc": "2026-09-11T13:45:55.174638+00:00",
+  "status": "prepared_waiting_for_first_current_readiness",
+  "tests_passed": 112,
+  "test_failures": 0,
+  "protected_existing_files": 1172,
+  "changed_existing_files": [],
+  "protocol_sha256": "d208261cdbe9e258b4a56ae87769c3700145b2221c4b92fed4fb55eb67fd73a7",
+  "frozen_bundle_sha256": "cec1859bfb354bafef77a619e6d2c1ffd85b50787c87595aba9a1e20a80cdae5",
+  "exact_training_preprocessing_windows": 582,
+  "recording_started": false,
+  "fan_started": false,
+  "no_retraining_scaling_threshold_changes": true,
+  "missing_release_blocks_start_before_hardware": true,
+  "sensor_preflight_passed": true,
+  "current_phase": "normal_test_01",
+  "pwm_readback": {
+    "period": "40000",
+    "duty_cycle": "0",
+    "enable": "1",
+    "polarity": "normal"
+  },
+  "mechanical_state": "awaiting_current_user_confirmation",
+  "artifacts_sha256": {
+    "protocol.json": "d208261cdbe9e258b4a56ae87769c3700145b2221c4b92fed4fb55eb67fd73a7",
+    "protocol.sha256": "505d8c07005ddf5e329c4a65316432e0b0e5f8d41097f34f17f245ad3c758d07",
+    "preservation_baseline.json": "d7edf95b611b905d217efedc030fce0264b00e4be038339c64615f471f3871ac",
+    "initial_status.json": "944b5537d08f6d97f66e7eb19bb6890d3f368bb7fc61bb008b02e8425310a123",
+    "sensor_preflight.json": "db358ec8cdfcc5d6e74e3411672c9f526ab4d39940463639d0373475250d717d",
+    "preflight_readonly_fan.jsonl": "f20894bfb24d3684b35ccdeb1a68c64cbbe7a4783012843b2be5c590ffbfd2ef",
+    "test_protocol.md": "ea401e0d49eb0de5f56896f5a3c40dafba6c64d03768dd806c19fbb8f9a90441",
+    "training_test_preprocessing_parity.json": "19edfa56bea1cd8c3f924487b168cb7c1c8fe2a8e35bf35e31e1dd800a5ab56c",
+    "software_tests.xml": "26065b0f6c165b7e567f5310c59732654dcb0bb337cf134b7d8b7b789da8ec86"
+  }
+}

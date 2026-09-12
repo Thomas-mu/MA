@@ -1,0 +1,26 @@
+{
+  "source": "explicit_user_message",
+  "released": true,
+  "phase": "normal_test_03",
+  "authorized_phases": [
+    "normal_test_03"
+  ],
+  "protocol_id": "upright_v4_independent_normal_20260911_133047",
+  "protocol_sha256": "d208261cdbe9e258b4a56ae87769c3700145b2221c4b92fed4fb55eb67fd73a7",
+  "mounting_id": "fan_upright_position_v4_20260911_103726",
+  "boot_id": "e0207b92-50ab-43c9-b686-57d9dae9d7bb",
+  "accepted_monotonic_ns": 34662925318267,
+  "accepted_utc": "2026-09-11T16:26:25.481178+00:00",
+  "operator_message_verbatim": "„Lüfter steht, nächster Lauf freigegeben“  ",
+  "ready_normal_no_plate": true,
+  "external_supply_connected": true,
+  "mechanical_standstill_confirmed": true,
+  "mounting_unchanged": true,
+  "readiness_basis": "Fresh explicit standstill and next-run release. Previously confirmed connected supply, safe v4 mounting and no-plate condition persist; no intervening change reported.",
+  "planned_additional_off_s": 60,
+  "pwm_percent": 75,
+  "pwm_frequency_hz": 25000,
+  "duration_s": 300,
+  "running_observation_requested": false,
+  "no_response_deadline": true
+}

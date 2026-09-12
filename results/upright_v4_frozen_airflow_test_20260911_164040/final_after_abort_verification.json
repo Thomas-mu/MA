@@ -1,0 +1,42 @@
+{
+  "checked_utc": "2026-09-11T17:15:11.348751+00:00",
+  "experiment_status": "incomplete_aborted_before_airflow_capture",
+  "phase_status": {
+    "normal_before": "completed_and_evaluated",
+    "airflow_modified": "preflight_error_no_75_command_no_recording",
+    "normal_after": "not_started"
+  },
+  "protected_existing_file_count": 1241,
+  "protected_existing_files_changed": [],
+  "frozen_implementation_files_changed": [],
+  "protocol_sha256": "c57aa346ee6557294945a5155637adcb0e5c853625e95d25b909f0b851f09192",
+  "protocol_matches_anchor": true,
+  "frozen_bundle_sha256": "cec1859bfb354bafef77a619e6d2c1ffd85b50787c87595aba9a1e20a80cdae5",
+  "frozen_bundle_matches_anchor": true,
+  "normal_before_source_or_result_hash_mismatches": [],
+  "pwm_sysfs_readback": {
+    "period": "40000",
+    "duty_cycle": "0",
+    "enable": "1",
+    "polarity": "normal"
+  },
+  "pin_readback": "18: a3    pd | lo // GPIO18 = PWM0_CHAN2",
+  "pin_exit_code": 0,
+  "mechanical_state": "not_measured_or_newly_observed_after_abort",
+  "automatic_restart_performed": false,
+  "plate_current_position": "last operator-confirmed installed; no subsequent removal confirmation",
+  "manual_removal_by_software_possible": false,
+  "data_files": [
+    "/home/malik/masterarbeit-edge-ai/data/upright_v4_frozen_airflow_test_20260911_164040/normal_before_75pwm_300s_20260911_165633_681800.csv",
+    "/home/malik/masterarbeit-edge-ai/data/upright_v4_frozen_airflow_test_20260911_164040/normal_before_75pwm_300s_20260911_165633_681800.json"
+  ],
+  "word_sha256": "a9a5d7d17b28098f554240a3e1650881e252db679f33319a1d11164b3246cbb8",
+  "error_evidence_sha256": {
+    "airflow_modified_session.json": "cf8846d914394e9e551e5e7715d81e86a7bf4d18c47688c5c518d2bef064023b",
+    "airflow_modified_fan.jsonl": "c3f8f494e4c6200b1b77d25310b3f2179959330d5e3057f377c26ac2d06fe269",
+    "airflow_modified_console.log": "f82a9a20fe9522c4fde6102bfe2feffbc6d2a53244d271a4fd37ab7c25393ee2",
+    "airflow_modified_release.json": "ba49a4b906a902fc34bf8d041175161c4318565ccd538596c0f1a68dc1040f55",
+    "abort_diagnosis.json": "fd1d1baa92d7a0fdefcf6a7ce95e1cede8dd3389cc3e4718cb341e72604e2832",
+    "post_abort_pin_observation.json": "42fb1123dd0e97b2c3ffe8082756feeca65b976ff56cfe07bc6b574480a1c51b"
+  }
+}

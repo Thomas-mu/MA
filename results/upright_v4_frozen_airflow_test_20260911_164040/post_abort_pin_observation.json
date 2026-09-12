@@ -1,0 +1,91 @@
+{
+  "scope": "Read-only 30-second post-abort snapshot; not proof of absence of earlier or future external writers.",
+  "readings": [
+    {
+      "utc": "2026-09-11T17:12:11.955435+00:00",
+      "monotonic_ns": 37409399607054,
+      "pwm": {
+        "period": "40000",
+        "duty_cycle": "0",
+        "enable": "1",
+        "polarity": "normal"
+      },
+      "pin": "18: a3    pd | lo // GPIO18 = PWM0_CHAN2",
+      "pin_exit_code": 0
+    },
+    {
+      "utc": "2026-09-11T17:12:16.958081+00:00",
+      "monotonic_ns": 37414402247671,
+      "pwm": {
+        "period": "40000",
+        "duty_cycle": "0",
+        "enable": "1",
+        "polarity": "normal"
+      },
+      "pin": "18: a3    pd | lo // GPIO18 = PWM0_CHAN2",
+      "pin_exit_code": 0
+    },
+    {
+      "utc": "2026-09-11T17:12:21.960043+00:00",
+      "monotonic_ns": 37419404204863,
+      "pwm": {
+        "period": "40000",
+        "duty_cycle": "0",
+        "enable": "1",
+        "polarity": "normal"
+      },
+      "pin": "18: a3    pd | lo // GPIO18 = PWM0_CHAN2",
+      "pin_exit_code": 0
+    },
+    {
+      "utc": "2026-09-11T17:12:26.962446+00:00",
+      "monotonic_ns": 37424406612334,
+      "pwm": {
+        "period": "40000",
+        "duty_cycle": "0",
+        "enable": "1",
+        "polarity": "normal"
+      },
+      "pin": "18: a3    pd | lo // GPIO18 = PWM0_CHAN2",
+      "pin_exit_code": 0
+    },
+    {
+      "utc": "2026-09-11T17:12:31.965028+00:00",
+      "monotonic_ns": 37429409195529,
+      "pwm": {
+        "period": "40000",
+        "duty_cycle": "0",
+        "enable": "1",
+        "polarity": "normal"
+      },
+      "pin": "18: a3    pd | lo // GPIO18 = PWM0_CHAN2",
+      "pin_exit_code": 0
+    },
+    {
+      "utc": "2026-09-11T17:12:36.967536+00:00",
+      "monotonic_ns": 37434411702742,
+      "pwm": {
+        "period": "40000",
+        "duty_cycle": "0",
+        "enable": "1",
+        "polarity": "normal"
+      },
+      "pin": "18: a3    pd | lo // GPIO18 = PWM0_CHAN2",
+      "pin_exit_code": 0
+    },
+    {
+      "utc": "2026-09-11T17:12:41.970086+00:00",
+      "monotonic_ns": 37439414253031,
+      "pwm": {
+        "period": "40000",
+        "duty_cycle": "0",
+        "enable": "1",
+        "polarity": "normal"
+      },
+      "pin": "18: a3    pd | lo // GPIO18 = PWM0_CHAN2",
+      "pin_exit_code": 0
+    }
+  ],
+  "hardware_changed": false,
+  "automatic_restart": false
+}

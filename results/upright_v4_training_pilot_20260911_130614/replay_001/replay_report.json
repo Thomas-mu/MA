@@ -1,0 +1,235 @@
+{
+  "evidence_scope": "existing_development_validation_replay_not_independent_test",
+  "bundle_sha256": "cec1859bfb354bafef77a619e6d2c1ffd85b50787c87595aba9a1e20a80cdae5",
+  "models_or_scaler_fitted": false,
+  "thresholds_recalibrated": false,
+  "runtimes": {
+    "rms": "NumPy RMS (standardisiertes H×3-Fenster)",
+    "isolation_forest": "scikit-learn IsolationForest.score_samples",
+    "tflite_autoencoder": "ai_edge_litert.Interpreter (Float32 TFLite)"
+  },
+  "metrics": {
+    "rms": {
+      "all": {
+        "attempted_windows": 194,
+        "invalid_windows": 0,
+        "valid_decision_fraction": 1.0,
+        "metrics_on_valid_decisions_only": {
+          "windows": 194,
+          "normal_windows": 194,
+          "anomaly_windows": 0,
+          "normal_fraction": 1.0,
+          "anomaly_fraction": 0.0,
+          "tn": 192,
+          "fp": 2,
+          "fn": 0,
+          "tp": 0,
+          "accuracy": 0.9896907216494846,
+          "precision": 0.0,
+          "recall": null,
+          "specificity": 0.9896907216494846,
+          "false_positive_rate": 0.010309278350515464,
+          "false_negative_rate": null,
+          "f1": 0.0,
+          "undefined_metric_representation": "null (Nenner 0)"
+        }
+      },
+      "recording:/home/malik/masterarbeit-edge-ai/data/upright_v4_normal_followup_20260911_112731/normal_followup_75pwm_300s_20260911_112835_067380.csv": {
+        "attempted_windows": 194,
+        "invalid_windows": 0,
+        "valid_decision_fraction": 1.0,
+        "metrics_on_valid_decisions_only": {
+          "windows": 194,
+          "normal_windows": 194,
+          "anomaly_windows": 0,
+          "normal_fraction": 1.0,
+          "anomaly_fraction": 0.0,
+          "tn": 192,
+          "fp": 2,
+          "fn": 0,
+          "tp": 0,
+          "accuracy": 0.9896907216494846,
+          "precision": 0.0,
+          "recall": null,
+          "specificity": 0.9896907216494846,
+          "false_positive_rate": 0.010309278350515464,
+          "false_negative_rate": null,
+          "f1": 0.0,
+          "undefined_metric_representation": "null (Nenner 0)"
+        }
+      },
+      "state:normal_followup": {
+        "attempted_windows": 194,
+        "invalid_windows": 0,
+        "valid_decision_fraction": 1.0,
+        "metrics_on_valid_decisions_only": {
+          "windows": 194,
+          "normal_windows": 194,
+          "anomaly_windows": 0,
+          "normal_fraction": 1.0,
+          "anomaly_fraction": 0.0,
+          "tn": 192,
+          "fp": 2,
+          "fn": 0,
+          "tp": 0,
+          "accuracy": 0.9896907216494846,
+          "precision": 0.0,
+          "recall": null,
+          "specificity": 0.9896907216494846,
+          "false_positive_rate": 0.010309278350515464,
+          "false_negative_rate": null,
+          "f1": 0.0,
+          "undefined_metric_representation": "null (Nenner 0)"
+        }
+      }
+    },
+    "isolation_forest": {
+      "all": {
+        "attempted_windows": 194,
+        "invalid_windows": 0,
+        "valid_decision_fraction": 1.0,
+        "metrics_on_valid_decisions_only": {
+          "windows": 194,
+          "normal_windows": 194,
+          "anomaly_windows": 0,
+          "normal_fraction": 1.0,
+          "anomaly_fraction": 0.0,
+          "tn": 192,
+          "fp": 2,
+          "fn": 0,
+          "tp": 0,
+          "accuracy": 0.9896907216494846,
+          "precision": 0.0,
+          "recall": null,
+          "specificity": 0.9896907216494846,
+          "false_positive_rate": 0.010309278350515464,
+          "false_negative_rate": null,
+          "f1": 0.0,
+          "undefined_metric_representation": "null (Nenner 0)"
+        }
+      },
+      "recording:/home/malik/masterarbeit-edge-ai/data/upright_v4_normal_followup_20260911_112731/normal_followup_75pwm_300s_20260911_112835_067380.csv": {
+        "attempted_windows": 194,
+        "invalid_windows": 0,
+        "valid_decision_fraction": 1.0,
+        "metrics_on_valid_decisions_only": {
+          "windows": 194,
+          "normal_windows": 194,
+          "anomaly_windows": 0,
+          "normal_fraction": 1.0,
+          "anomaly_fraction": 0.0,
+          "tn": 192,
+          "fp": 2,
+          "fn": 0,
+          "tp": 0,
+          "accuracy": 0.9896907216494846,
+          "precision": 0.0,
+          "recall": null,
+          "specificity": 0.9896907216494846,
+          "false_positive_rate": 0.010309278350515464,
+          "false_negative_rate": null,
+          "f1": 0.0,
+          "undefined_metric_representation": "null (Nenner 0)"
+        }
+      },
+      "state:normal_followup": {
+        "attempted_windows": 194,
+        "invalid_windows": 0,
+        "valid_decision_fraction": 1.0,
+        "metrics_on_valid_decisions_only": {
+          "windows": 194,
+          "normal_windows": 194,
+          "anomaly_windows": 0,
+          "normal_fraction": 1.0,
+          "anomaly_fraction": 0.0,
+          "tn": 192,
+          "fp": 2,
+          "fn": 0,
+          "tp": 0,
+          "accuracy": 0.9896907216494846,
+          "precision": 0.0,
+          "recall": null,
+          "specificity": 0.9896907216494846,
+          "false_positive_rate": 0.010309278350515464,
+          "false_negative_rate": null,
+          "f1": 0.0,
+          "undefined_metric_representation": "null (Nenner 0)"
+        }
+      }
+    },
+    "tflite_autoencoder": {
+      "all": {
+        "attempted_windows": 194,
+        "invalid_windows": 0,
+        "valid_decision_fraction": 1.0,
+        "metrics_on_valid_decisions_only": {
+          "windows": 194,
+          "normal_windows": 194,
+          "anomaly_windows": 0,
+          "normal_fraction": 1.0,
+          "anomaly_fraction": 0.0,
+          "tn": 192,
+          "fp": 2,
+          "fn": 0,
+          "tp": 0,
+          "accuracy": 0.9896907216494846,
+          "precision": 0.0,
+          "recall": null,
+          "specificity": 0.9896907216494846,
+          "false_positive_rate": 0.010309278350515464,
+          "false_negative_rate": null,
+          "f1": 0.0,
+          "undefined_metric_representation": "null (Nenner 0)"
+        }
+      },
+      "recording:/home/malik/masterarbeit-edge-ai/data/upright_v4_normal_followup_20260911_112731/normal_followup_75pwm_300s_20260911_112835_067380.csv": {
+        "attempted_windows": 194,
+        "invalid_windows": 0,
+        "valid_decision_fraction": 1.0,
+        "metrics_on_valid_decisions_only": {
+          "windows": 194,
+          "normal_windows": 194,
+          "anomaly_windows": 0,
+          "normal_fraction": 1.0,
+          "anomaly_fraction": 0.0,
+          "tn": 192,
+          "fp": 2,
+          "fn": 0,
+          "tp": 0,
+          "accuracy": 0.9896907216494846,
+          "precision": 0.0,
+          "recall": null,
+          "specificity": 0.9896907216494846,
+          "false_positive_rate": 0.010309278350515464,
+          "false_negative_rate": null,
+          "f1": 0.0,
+          "undefined_metric_representation": "null (Nenner 0)"
+        }
+      },
+      "state:normal_followup": {
+        "attempted_windows": 194,
+        "invalid_windows": 0,
+        "valid_decision_fraction": 1.0,
+        "metrics_on_valid_decisions_only": {
+          "windows": 194,
+          "normal_windows": 194,
+          "anomaly_windows": 0,
+          "normal_fraction": 1.0,
+          "anomaly_fraction": 0.0,
+          "tn": 192,
+          "fp": 2,
+          "fn": 0,
+          "tp": 0,
+          "accuracy": 0.9896907216494846,
+          "precision": 0.0,
+          "recall": null,
+          "specificity": 0.9896907216494846,
+          "false_positive_rate": 0.010309278350515464,
+          "false_negative_rate": null,
+          "f1": 0.0,
+          "undefined_metric_representation": "null (Nenner 0)"
+        }
+      }
+    }
+  }
+}

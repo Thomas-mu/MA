@@ -1,0 +1,207 @@
+{
+  "status": "evaluated_controlled_airflow_recording",
+  "csv": "/home/malik/masterarbeit-edge-ai/data/upright_v4_frozen_airflow_test_20260911_164040/normal_before_75pwm_300s_20260911_165633_681800.csv",
+  "csv_sha256": "40becf29b0c2049f0fb5e3d36465b8fc1cf628b666cbbdd50a5cf984e8e9becc",
+  "sidecar": "/home/malik/masterarbeit-edge-ai/data/upright_v4_frozen_airflow_test_20260911_164040/normal_before_75pwm_300s_20260911_165633_681800.json",
+  "sidecar_sha256": "473854f22d84ff9a4115fa15c26aaa9caa85dc1d010a21ce2cd9f400a60038f2",
+  "session": "/home/malik/masterarbeit-edge-ai/results/upright_v4_frozen_airflow_test_20260911_164040/normal_before_session.json",
+  "session_sha256": "f5b537ce4b160ce648c2a11ba9c734a6b5c5fac100660768fce02c2af4506519",
+  "protocol_sha256": "c57aa346ee6557294945a5155637adcb0e5c853625e95d25b909f0b851f09192",
+  "frozen_bundle_sha256": "cec1859bfb354bafef77a619e6d2c1ffd85b50787c87595aba9a1e20a80cdae5",
+  "recording_id": "normal_before_75pwm_300s_20260911_165633_681800",
+  "phase": "normal_before",
+  "mounting_id": "fan_upright_position_v4_20260911_103726",
+  "condition": "normal",
+  "quality": {
+    "xyz_points": 62134,
+    "individual_axis_values": 186402,
+    "nominal_sensor_odr_hz": 200,
+    "observed_xyz_per_second": 207.11709683280344,
+    "first_to_last_host_span_s": 299.98972055,
+    "first_xyz_after_command_s": 0.359989037,
+    "last_xyz_after_command_s": 300.349709587,
+    "host_interval_p50_ms": 5.576803,
+    "host_interval_p99_ms": 5.6847308000000005,
+    "host_interval_max_ms": 10.09646,
+    "host_intervals_over_10ms": 1,
+    "host_intervals_over_160ms": 0,
+    "read_duration_max_ms": 5.792487,
+    "fifo_depth_max": 2,
+    "gap_flagged_xyz": 0,
+    "overrun_flagged_xyz": 0,
+    "saturated_flagged_xyz": 0,
+    "nonfinite_xyz_points": 0,
+    "nonmonotonic_host_intervals": 0,
+    "exact_lost_sensor_samples": null,
+    "timebase_limitation": "Host read completion is not a measured sensor conversion clock. Exact physical losses are unknown.",
+    "selected_interval": {
+      "xyz_selected": 24854,
+      "full_model_windows": 194,
+      "trailing_xyz_not_windowed": 22,
+      "quality_valid_windows": 194,
+      "quality_invalid_windows": 0
+    }
+  },
+  "sensor": {
+    "model": "ADXL345",
+    "odr_hz": 200,
+    "range_g": 2,
+    "full_resolution": true,
+    "scale_g_per_lsb": 0.0039,
+    "acquisition_mode": "fifo_stream",
+    "register_readback": {
+      "0x2c": "0xb",
+      "0x31": "0x8",
+      "0x2e": "0x0",
+      "0x38": "0x90",
+      "0x2d": "0x8"
+    },
+    "timestamp_source": "host_monotonic_read_completion",
+    "sensor_time_estimate": "sample_index / nominal ODR; not measured sensor time",
+    "lost_samples_exact": null,
+    "bus_number": 1,
+    "i2c_clock_configured_hz": 100000
+  },
+  "acquisition_timing": {
+    "first_xyz_monotonic_ns": 36471506471446,
+    "last_xyz_monotonic_ns": 36771496191996,
+    "first_xyz_after_command_invocation_s": 0.359989037,
+    "first_xyz_after_command_completion_s": 0.038829044,
+    "first_to_last_xyz_s": 299.98972055,
+    "last_xyz_after_command_invocation_s": 300.349709587,
+    "first_xyz_utc_estimate": "2026-09-11T16:56:34.062308+00:00",
+    "electrical_signal_and_rotor_start_measured": false
+  },
+  "metrics": {
+    "rms": {
+      "total_windows": 194,
+      "valid_windows": 194,
+      "invalid_windows": 0,
+      "alarms": 2,
+      "alarm_fraction_among_valid_windows": 0.010309278350515464,
+      "condition": "normal",
+      "false_alarms": 2,
+      "false_alarm_rate_among_valid_normal_windows": 0.010309278350515464
+    },
+    "isolation_forest": {
+      "total_windows": 194,
+      "valid_windows": 194,
+      "invalid_windows": 0,
+      "alarms": 1,
+      "alarm_fraction_among_valid_windows": 0.005154639175257732,
+      "condition": "normal",
+      "false_alarms": 1,
+      "false_alarm_rate_among_valid_normal_windows": 0.005154639175257732
+    },
+    "tflite_autoencoder": {
+      "total_windows": 194,
+      "valid_windows": 194,
+      "invalid_windows": 0,
+      "alarms": 9,
+      "alarm_fraction_among_valid_windows": 0.04639175257731959,
+      "condition": "normal",
+      "false_alarms": 9,
+      "false_alarm_rate_among_valid_normal_windows": 0.04639175257731959
+    }
+  },
+  "runtimes": {
+    "rms": "NumPy RMS (standardisiertes H×3-Fenster)",
+    "isolation_forest": "scikit-learn IsolationForest.score_samples",
+    "tflite_autoencoder": "ai_edge_litert.Interpreter (Float32 TFLite)"
+  },
+  "rms_5s_summary": {
+    "interval_seconds": [
+      180,
+      300
+    ],
+    "total_5s_blocks": 24,
+    "valid_5s_blocks": 24,
+    "invalid_5s_blocks": 0,
+    "mean_mg": 32.180669356871995,
+    "std_sample_mg": 1.1234792168509744,
+    "min_mg": 30.317304073350453,
+    "max_mg": 34.65471066669817,
+    "coefficient_of_variation": 0.034911617418270445,
+    "linear_slope_mg_per_min": 1.1165107147854212,
+    "linear_change_over_interval_mg": 2.2330214295708424,
+    "first_half_mean_mg": 31.618890633625657,
+    "second_half_mean_mg": 32.74244808011834,
+    "second_minus_first_half_mg": 1.1235574464926863,
+    "inference": "Descriptive within-recording changes; blocks are not independent replicates."
+  },
+  "rms_full_run_summary": {
+    "interval_seconds": [
+      0,
+      300
+    ],
+    "total_5s_blocks": 60,
+    "valid_5s_blocks": 60,
+    "invalid_5s_blocks": 0,
+    "mean_mg": 30.903152197988998,
+    "std_sample_mg": 3.6444937520820258,
+    "min_mg": 15.804417106399265,
+    "max_mg": 34.69938272895995,
+    "coefficient_of_variation": 0.11793275096121711,
+    "linear_slope_mg_per_min": 1.484088433011352,
+    "linear_change_over_interval_mg": 7.420442165056761,
+    "first_half_mean_mg": 29.46094876873447,
+    "second_half_mean_mg": 32.345355627243514,
+    "second_minus_first_half_mg": 2.884406858509042,
+    "inference": "Descriptive within-recording changes; blocks are not independent replicates."
+  },
+  "pwm_command_invocation_utc": "2026-09-11T16:56:33.702319+00:00",
+  "pwm_command_invocation_monotonic_ns": 36471146482409,
+  "zero_command_completed_monotonic_ns": 36772084223853,
+  "zero_command_completed_utc": "2026-09-11T17:01:34.640082+00:00",
+  "additional_off_from_release_actual_s": 60.085976872,
+  "total_off_since_previous_zero_s": 1447.803610348,
+  "total_off_time_note": "Software zero-completion to start-command interval; exact mechanical stop, supply-disconnection, and cooling intervals unknown. Total off-time is unknown if no verified reference exists.",
+  "plate_geometry": null,
+  "models_changed": false,
+  "scaler_fitted": false,
+  "thresholds_changed": false,
+  "physical_loss_count": null,
+  "mechanical_stop_measured": false,
+  "final_readback": {
+    "gpio_bcm": 18,
+    "physical_pin": 12,
+    "pwm_chip": 0,
+    "pwm_channel": 2,
+    "pwm_path": "/sys/class/pwm/pwmchip0/pwm2",
+    "rp1_device_path": "/sys/devices/platform/axi/1000120000.pcie/1f00098000.pwm",
+    "pwm_configuration": {
+      "period_ns": 40000,
+      "duty_cycle_ns": 0,
+      "enable": 1,
+      "polarity": "normal",
+      "configured_frequency_hz": 25000.0,
+      "configured_duty_percent": 0.0
+    },
+    "pin_readback": {
+      "mux": "a3",
+      "function": "PWM0_CHAN2",
+      "instantaneous_level": "lo",
+      "raw": "18: a3    pd | lo // GPIO18 = PWM0_CHAN2"
+    },
+    "pwm_mux_confirmed": true,
+    "electrical_waveform_measured": false,
+    "measured_rpm": null,
+    "mechanical_state": "not_measured"
+  },
+  "selection_seconds_since_pwm_command": [
+    180,
+    300
+  ],
+  "evaluator_sha256": "f1b96a2867e74a3a73648fcd533d9ba1b36ebcf8cc58b9b0c7efce906773628c",
+  "limitation": "One sequence is not general reproducibility. The altered state is not a verified defect; no defect recall, F1 or general detection performance is inferred. Adjacent windows are dependent.",
+  "artifact_sha256": {
+    "scores.png": "77dcd698204a890585ecacca3496aa349d0140b3b9104d720a11a5c2ba8a1b0a",
+    "scores.csv": "02e057e40060d12316c117f2b8fdbac8847bd6757c6fb7bca75fab19eb517db2",
+    "rms_5s.json": "50ce7962eb9736146ef47d6b9b53f77d17896222eedd527ade2d3960a8b601dc",
+    "rms_5s.pdf": "05195913082cd607b24b8c5a14568c621363ce723cff78063bf67c7084349292",
+    "rms_5s.csv": "d0746df4dca6e3c236bd13ec18744426739b4848efc7e37fd1ee479ce862ecc8",
+    "rms_5s.png": "b7af3e05a14c2714b189dc43fbe36916b9deb48c983a167fc2250291422e334a",
+    "scores.pdf": "850f793b0d71c04cab28f006e632b44f362992660c7488b81392b13d192257d4",
+    "scores.json": "a397d9d8470eee3954e38f303d4acaaf297612456967a371198fdd7ff85315b0"
+  }
+}

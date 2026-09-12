@@ -1,0 +1,52 @@
+{
+  "recorded_utc": "2026-09-11T17:15:11.348241+00:00",
+  "failure": "Initial GPIO18 function op/digital low instead of a3/PWM0_CHAN2 while sysfs duty remained zero.",
+  "failed_phase_75_percent_command_issued": false,
+  "failed_phase_sensor_access_or_recording_started": false,
+  "failed_phase_csv": null,
+  "failed_phase_transactions_requested_percent": [
+    0.0
+  ],
+  "initial_digital_mode_preceded_own_cleanup_writes": true,
+  "underlying_writer_or_manual_cause": "unknown",
+  "current_device_holders": {
+    "/dev/i2c-1": {
+      "exit": 1,
+      "stdout": "",
+      "stderr": ""
+    },
+    "/dev/gpiochip0": {
+      "exit": 1,
+      "stdout": "",
+      "stderr": ""
+    },
+    "/dev/gpiochip4": {
+      "exit": 1,
+      "stdout": "",
+      "stderr": ""
+    },
+    "/dev/gpiomem0": {
+      "exit": 1,
+      "stdout": "",
+      "stderr": ""
+    },
+    "/dev/gpiomem4": {
+      "exit": 1,
+      "stdout": "",
+      "stderr": ""
+    },
+    "/dev/mem": {
+      "exit": 1,
+      "stdout": "",
+      "stderr": ""
+    }
+  },
+  "boot_pwm_service_state": "Restart=no\nExecMainStartTimestamp=Thu 2026-09-10 19:25:21 CEST\nExecMainExitTimestamp=Thu 2026-09-10 19:25:22 CEST\nActiveState=active\nSubState=exited\nUnitFileState=enabled\n",
+  "boot_pwm_service_recent_journal": "-- No entries --\n",
+  "boot_pwm_service_script_sha256": "836ff8df518775fec3a49e585710fd83d35c9a63ec1cdde48a343cf790b73830",
+  "boot_pwm_service_unit_sha256": "8d3cbda60e366fcb3914a6f05d075cfcb4b9741fc1eae7f9824fb89cf61477f6",
+  "service_causality_established": false,
+  "shell_history_causality_established": false,
+  "hardware_changes_in_diagnosis": false,
+  "note": "Current process snapshots and 30-s pin observation cannot exclude earlier, intermittent, or future external commands."
+}

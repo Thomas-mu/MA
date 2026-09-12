@@ -1,0 +1,7 @@
+{
+  "status": "post_training_diagnostic_serialization_check_failed",
+  "error": "CSV error column empty->NaN float64 versus in-memory None object; pandas dtype mismatch",
+  "training_failed": false,
+  "frozen_model_changes": false,
+  "remedy": "Compare in-memory diagnostic records after the same CSV serialization/readback; retain exact comparison of every score and decision. No retraining."
+}

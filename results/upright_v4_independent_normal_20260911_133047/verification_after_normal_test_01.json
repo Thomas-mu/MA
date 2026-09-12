@@ -1,0 +1,20 @@
+{
+  "checked_utc": "2026-09-11T16:05:53.065656+00:00",
+  "historical_files_checked": 1172,
+  "historical_files_changed": [],
+  "pwm_sysfs_readback": {
+    "period": "40000",
+    "duty_cycle": "0",
+    "enable": "1",
+    "polarity": "normal"
+  },
+  "pin_readback": "18: a3    pd | lo // GPIO18 = PWM0_CHAN2",
+  "pin_exit_code": 0,
+  "hardware_holders_check": {
+    "exit_code": 1,
+    "stdout": "",
+    "stderr": ""
+  },
+  "mechanical_standstill_after_run_01": "not_confirmed",
+  "next_phase_requires_new_explicit_release": true
+}

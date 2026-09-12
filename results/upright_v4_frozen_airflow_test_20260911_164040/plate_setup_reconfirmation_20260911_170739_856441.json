@@ -1,0 +1,22 @@
+{
+  "recorded_utc": "2026-09-11T17:07:39.856441+00:00",
+  "received_monotonic_ns": 37137300960988,
+  "source": "explicit_user_message",
+  "operator_message_verbatim": "Platte wie beschrieben befestigt, Lüfter steht, Versorgung angeschlossen,   ",
+  "confirmed_again": [
+    "plate_installed_as_described",
+    "mechanical_standstill",
+    "external_supply_connected"
+  ],
+  "existing_phase_authorization_retained": true,
+  "remaining_missing_information": "outlet_identification",
+  "next_clarification": "Does the straight airflow arrow on the fan frame point toward the plate? If no arrow is visible, report that instead of confirming.",
+  "pwm_sysfs_readback": {
+    "period": "40000",
+    "duty_cycle": "0",
+    "enable": "1",
+    "polarity": "normal"
+  },
+  "hardware_changed": false,
+  "measurement_started": false
+}

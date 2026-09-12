@@ -1,0 +1,16 @@
+{
+  "checked_utc": "2026-09-11T17:02:09.522153+00:00",
+  "preserved_existing_files": 1241,
+  "existing_files_changed": [],
+  "pwm_sysfs_readback": {
+    "period": "40000",
+    "duty_cycle": "0",
+    "enable": "1",
+    "polarity": "normal"
+  },
+  "pin_readback": "18: a3    pd | lo // GPIO18 = PWM0_CHAN2",
+  "phase": "normal_before",
+  "capture_status": "completed",
+  "mechanical_standstill_after_capture": "not_confirmed",
+  "next_phase_start_released": false
+}

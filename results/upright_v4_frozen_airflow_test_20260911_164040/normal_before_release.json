@@ -1,0 +1,30 @@
+{
+  "source": "explicit_user_message",
+  "released": true,
+  "phase": "normal_before",
+  "authorized_phases": [
+    "normal_before"
+  ],
+  "protocol_id": "upright_v4_frozen_airflow_test_20260911_164040",
+  "protocol_sha256": "c57aa346ee6557294945a5155637adcb0e5c853625e95d25b909f0b851f09192",
+  "mounting_id": "fan_upright_position_v4_20260911_103726",
+  "boot_id": "e0207b92-50ab-43c9-b686-57d9dae9d7bb",
+  "accepted_monotonic_ns": 36411060505537,
+  "accepted_utc": "2026-09-11T16:55:33.616366+00:00",
+  "operator_message_verbatim": "ja",
+  "question_answered": "Bezieht sich dein ja auf alle drei Punkte: Platte außerhalb des Luftstroms, Lüfter vollständig still und externe 12-V-Versorgung wieder angeschlossen?",
+  "ready": true,
+  "external_supply_connected": true,
+  "mechanical_standstill_confirmed": true,
+  "mounting_unchanged": true,
+  "plate_absent": true,
+  "plate_present": false,
+  "plate_geometry": null,
+  "readiness_basis": "Explicit yes to the full current readiness question. Existing safe v4 fan and sensor mounting retained; no change reported.",
+  "planned_additional_off_s": 60,
+  "pwm_percent": 75,
+  "pwm_frequency_hz": 25000,
+  "duration_s": 300,
+  "running_observation_requested": false,
+  "no_response_deadline": true
+}
