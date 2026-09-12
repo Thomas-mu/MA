@@ -1,0 +1,134 @@
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+{
+  "windows_dropped": 0,
+  "queue_high_watermark": 1,
+  "source_mode": "offline_replay",
+  "paced_replay": true,
+  "physical_lost_samples": null,
+  "source_error": null,
+  "raw_write_and_assembly_in_sensor_thread": true,
+  "decision_interval_seconds": [
+    180,
+    300
+  ],
+  "warmup_invocations": 0,
+  "raw_xyz": 62140,
+  "selected_xyz": 24854,
+  "complete_windows": 194,
+  "trailing_selected_xyz": 22,
+  "decision_rows": 582,
+  "status": "completed",
+  "processing_error": null,
+  "invalid_decisions": 0,
+  "latency_scope": "complete-to-decision including assembly and queue; scorer_call includes transfer and scoring, not isolated model invoke",
+  "model_package_sha256": "cec1859bfb354bafef77a619e6d2c1ffd85b50787c87595aba9a1e20a80cdae5",
+  "source_csv": "/home/malik/masterarbeit-edge-ai/data/upright_v4_frozen_airflow_test_20260912_073015/normal_before_75pwm_300s_20260912_073823_494120.csv",
+  "source_csv_sha256": "fdfcec021dc9f9ad2d86b41025a05259a66ed10d29e07a6ed98da3b593ac6960",
+  "source_session": "/home/malik/masterarbeit-edge-ai/results/upright_v4_frozen_airflow_test_20260912_073015/normal_before_session.json",
+  "source_session_sha256": "7df949cebb90d134ee7a65fe642c9c1e10069c076a11d9407567deb96eb9c18f",
+  "source_quality": {
+    "xyz_points": 62140,
+    "individual_axis_values": 186420,
+    "nominal_sensor_odr_hz": 200,
+    "observed_xyz_per_second": 207.13690890038643,
+    "first_to_last_host_span_s": 299.989993719,
+    "first_xyz_after_command_s": 0.095443892,
+    "last_xyz_after_command_s": 300.085437611,
+    "host_interval_p50_ms": 5.588826,
+    "host_interval_p99_ms": 5.69486396,
+    "host_interval_max_ms": 13.437473,
+    "host_intervals_over_10ms": 1,
+    "host_intervals_over_160ms": 0,
+    "read_duration_max_ms": 8.056658,
+    "fifo_depth_max": 2,
+    "gap_flagged_xyz": 0,
+    "overrun_flagged_xyz": 0,
+    "saturated_flagged_xyz": 0,
+    "nonfinite_xyz_points": 0,
+    "nonmonotonic_host_intervals": 0,
+    "exact_lost_sensor_samples": null,
+    "timebase_limitation": "Host read completion is not a measured sensor conversion clock. Exact physical losses are unknown."
+  },
+  "replay_finished_utc": "2026-09-12T09:11:45.520106+00:00",
+  "sensor_live_measured": false,
+  "pwm_access": false,
+  "fresh_process_methods": [
+    "rms",
+    "isolation_forest",
+    "tflite_autoencoder"
+  ],
+  "machine": "Linux-6.18.34+rpt-rpi-2712-aarch64-with-glibc2.41",
+  "deadline_s": 0.617948779285666,
+  "nominal_deadline_s": 0.64,
+  "note": "Unpaced replay is throughput evidence only. Paced replay uses mapped host arrival times; neither measures a live sensor or GUI load.",
+  "per_method": {
+    "rms": {
+      "valid_windows": 194,
+      "invalid_windows": 0,
+      "false_alarms": 1,
+      "false_alarm_rate": 0.005154639175257732,
+      "complete_to_decision_ms": {
+        "p50": 5.7865994999999995,
+        "p95": 6.30698585,
+        "p99": 6.51879793,
+        "max": 6.807682
+      },
+      "scorer_call_ms": {
+        "p50": 0.054297,
+        "p95": 0.058013300000000004,
+        "p99": 0.06770592,
+        "max": 0.069353
+      },
+      "deadline_misses": 0
+    },
+    "isolation_forest": {
+      "valid_windows": 194,
+      "invalid_windows": 0,
+      "false_alarms": 0,
+      "false_alarm_rate": 0.0,
+      "complete_to_decision_ms": {
+        "p50": 27.4343005,
+        "p95": 28.05172645,
+        "p99": 28.244204889999995,
+        "max": 33.048982
+      },
+      "scorer_call_ms": {
+        "p50": 21.598229,
+        "p95": 21.945261,
+        "p99": 22.17679447,
+        "max": 28.096126
+      },
+      "deadline_misses": 0
+    },
+    "tflite_autoencoder": {
+      "valid_windows": 194,
+      "invalid_windows": 0,
+      "false_alarms": 51,
+      "false_alarm_rate": 0.26288659793814434,
+      "complete_to_decision_ms": {
+        "p50": 27.715784,
+        "p95": 28.3620307,
+        "p99": 28.569288009999998,
+        "max": 33.215076
+      },
+      "scorer_call_ms": {
+        "p50": 0.2705685,
+        "p95": 0.325152,
+        "p99": 0.3402615799999999,
+        "max": 0.425338
+      },
+      "deadline_misses": 0
+    }
+  },
+  "implementation_sha256": {
+    "/home/malik/masterarbeit-edge-ai/src/pilot_runtime_replay.py": "07bbbc6c295a9082b4fd4db14a56d608c3c4a7d821eb2590b0a146b00aabd519",
+    "/home/malik/masterarbeit-edge-ai/src/pilot_live_adapter.py": "436d66782ba398be621e8757f3bb38b211d0fcddda10fb13508c624860062b7c"
+  },
+  "artifacts_sha256": {
+    "raw.csv": "fdfcec021dc9f9ad2d86b41025a05259a66ed10d29e07a6ed98da3b593ac6960",
+    "events.jsonl": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "summary.json": "c910d67465e9613a9d98f75039d15681778d7141057d6064fc388cc429bb67d8",
+    "decisions.jsonl": "2b462f06e4354cff468f7edaeb567a23e46be13ea81c4c045bcba42ce4eed1ae",
+    "resources.csv": "1b333339fd3063c2d66419007f28d73c69ffa04918d4a54b59ed288b5a89e93b"
+  }
+}

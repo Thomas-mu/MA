@@ -1,0 +1,109 @@
+{
+  "id": "offline_replay_rms_02",
+  "mode": "offline_replay",
+  "method": "rms",
+  "repeat": 2,
+  "status": "completed",
+  "started_utc": "2026-09-12T12:02:37.445763+00:00",
+  "protocol_sha256": "7e3d0bc807b0d4b9868d4bf507dac944ecc015bc65bc595f2f77981d899f1da6",
+  "boot_id": "e0207b92-50ab-43c9-b686-57d9dae9d7bb",
+  "frozen_bundle_sha256": "cec1859bfb354bafef77a619e6d2c1ffd85b50787c87595aba9a1e20a80cdae5",
+  "automatic_restarts": false,
+  "physical_stop_observed": false,
+  "environment_before": {
+    "utc": "2026-09-12T12:02:37.755482+00:00",
+    "platform": "Linux-6.18.34+rpt-rpi-2712-aarch64-with-glibc2.41",
+    "python": "3.13.5 (main, Jun 13 2026, 14:18:01) [GCC 14.2.0]",
+    "versions": {
+      "numpy": "2.5.1",
+      "pandas": "3.0.3",
+      "scikit-learn": "1.9.0",
+      "ai-edge-litert": "2.1.6",
+      "psutil": "7.2.2"
+    },
+    "thread_environment": {
+      "OMP_NUM_THREADS": "1",
+      "OPENBLAS_NUM_THREADS": "1",
+      "MKL_NUM_THREADS": "1"
+    },
+    "cpu_count": 4,
+    "system_cpu_percent_1s": 0.0,
+    "process_memory": {
+      "rss": 76283904,
+      "vms": 166346752,
+      "shared": 27836416,
+      "text": 6094848,
+      "lib": 0,
+      "data": 83132416,
+      "dirty": 0
+    },
+    "temperature_mC": 50150,
+    "cpu_frequency_kHz": 2400000,
+    "throttled_readback": "throttled=0x0"
+  },
+  "model_load_ns": 5051329,
+  "model_warmup_ns": 429462,
+  "process_entry_to_ready_ns": 1343680434,
+  "command_invocation_monotonic_ns": 89380946412686,
+  "source_csv": "/home/malik/masterarbeit-edge-ai/data/upright_v4_frozen_airflow_test_20260912_073015/normal_before_75pwm_300s_20260912_073823_494120.csv",
+  "source_csv_sha256": "fdfcec021dc9f9ad2d86b41025a05259a66ed10d29e07a6ed98da3b593ac6960",
+  "recording": {
+    "windows_dropped": 0,
+    "queue_high_watermark": 1,
+    "source_mode": "offline_replay",
+    "paced_replay": true,
+    "physical_lost_samples": null,
+    "source_error": null,
+    "raw_write_and_assembly_in_sensor_thread": true,
+    "decision_interval_seconds": [
+      180,
+      300
+    ],
+    "warmup_invocations": 20,
+    "raw_xyz": 62140,
+    "selected_xyz": 24854,
+    "complete_windows": 194,
+    "trailing_selected_xyz": 22,
+    "decision_rows": 194,
+    "status": "completed",
+    "processing_error": null,
+    "invalid_decisions": 0,
+    "unprocessed_windows": 0,
+    "model_load_ns": 5051329,
+    "warmup_ns": 429462,
+    "latency_scope": "complete-to-decision including assembly and queue; scorer_call includes transfer and scoring, not isolated model invoke",
+    "model_package_sha256": "cec1859bfb354bafef77a619e6d2c1ffd85b50787c87595aba9a1e20a80cdae5"
+  },
+  "environment_after": {
+    "utc": "2026-09-12T12:07:39.444693+00:00",
+    "platform": "Linux-6.18.34+rpt-rpi-2712-aarch64-with-glibc2.41",
+    "python": "3.13.5 (main, Jun 13 2026, 14:18:01) [GCC 14.2.0]",
+    "versions": {
+      "numpy": "2.5.1",
+      "pandas": "3.0.3",
+      "scikit-learn": "1.9.0",
+      "ai-edge-litert": "2.1.6",
+      "psutil": "7.2.2"
+    },
+    "thread_environment": {
+      "OMP_NUM_THREADS": "1",
+      "OPENBLAS_NUM_THREADS": "1",
+      "MKL_NUM_THREADS": "1"
+    },
+    "cpu_count": 4,
+    "system_cpu_percent_1s": 0.0,
+    "process_memory": {
+      "rss": 106119168,
+      "vms": 357777408,
+      "shared": 29884416,
+      "text": 6094848,
+      "lib": 0,
+      "data": 140673024,
+      "dirty": 0
+    },
+    "temperature_mC": 47950,
+    "cpu_frequency_kHz": 1500000,
+    "throttled_readback": "throttled=0x0"
+  },
+  "finished_utc": "2026-09-12T12:07:40.464464+00:00"
+}

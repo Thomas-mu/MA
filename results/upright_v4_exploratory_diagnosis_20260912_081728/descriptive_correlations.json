@@ -1,0 +1,15 @@
+{
+  "scope": "normal_before same 194 windows; dependent observations, no p-values or causal claim",
+  "pearson": {
+    "physical_vector_ac_rms_mg": 0.15846807002833418,
+    "x_rms_mg": 0.8207125581803987,
+    "y_rms_mg": 0.12259189338488109,
+    "z_rms_mg": 0.0021174020265818288,
+    "rms": 0.5555133111543917,
+    "isolation_forest": 0.4033156218272373,
+    "x_ae_mse": 0.9213000737821389,
+    "y_ae_mse": 0.7785749834456226,
+    "z_ae_mse": 0.425873307795042,
+    "standard_high_fraction": 0.09760389918090875
+  }
+}

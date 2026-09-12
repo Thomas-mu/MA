@@ -1,0 +1,62 @@
+{
+  "pwm50_runs": 3,
+  "pwm75_historical_runs": 6,
+  "pooled50": {
+    "rms": {
+      "total_windows": 582,
+      "valid_windows": 582,
+      "invalid_windows": 0,
+      "false_alarms": 3,
+      "false_alarm_rate_among_valid_normal_windows": 0.005154639175257732
+    },
+    "isolation_forest": {
+      "total_windows": 582,
+      "valid_windows": 582,
+      "invalid_windows": 0,
+      "false_alarms": 1,
+      "false_alarm_rate_among_valid_normal_windows": 0.001718213058419244
+    },
+    "tflite_autoencoder": {
+      "total_windows": 582,
+      "valid_windows": 582,
+      "invalid_windows": 0,
+      "false_alarms": 35,
+      "false_alarm_rate_among_valid_normal_windows": 0.06013745704467354
+    }
+  },
+  "pooled75": {
+    "rms": {
+      "total_windows": 1164,
+      "valid_windows": 1164,
+      "invalid_windows": 0,
+      "false_alarms": 60,
+      "false_alarm_rate_among_valid_normal_windows": 0.05154639175257732
+    },
+    "isolation_forest": {
+      "total_windows": 1164,
+      "valid_windows": 1164,
+      "invalid_windows": 0,
+      "false_alarms": 35,
+      "false_alarm_rate_among_valid_normal_windows": 0.03006872852233677
+    },
+    "tflite_autoencoder": {
+      "total_windows": 1164,
+      "valid_windows": 1164,
+      "invalid_windows": 0,
+      "false_alarms": 64,
+      "false_alarm_rate_among_valid_normal_windows": 0.054982817869415807
+    }
+  },
+  "no_training": true,
+  "no_threshold_change": true,
+  "selection_seconds": [
+    180,
+    300
+  ],
+  "model_window_xyz": 128,
+  "step_xyz": 128,
+  "physical_losses_unknown": true,
+  "mechanical_stop_between_automated_runs_not_observed": true,
+  "contemporaneous_comparison": false,
+  "anomaly_recall_or_f1_evaluated": false
+}

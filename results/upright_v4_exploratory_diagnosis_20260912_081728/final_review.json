@@ -1,0 +1,78 @@
+{
+  "checked_utc": "2026-09-12T08:38:24.483709+00:00",
+  "protected_file_count": 1383,
+  "changed_protected_files": [],
+  "word_sha256": "a9a5d7d17b28098f554240a3e1650881e252db679f33319a1d11164b3246cbb8",
+  "source_score_and_metadata_hashes_verified": true,
+  "windows_diagnosed": 1940,
+  "existing_test_scores_exactly_reproduced": 4074,
+  "training_validation_ac_arrays_exact": 582,
+  "new_window_exclusions": 0,
+  "new_training": false,
+  "pwm_access_or_commands": false,
+  "sensor_access": false,
+  "new_resource_benchmark": false,
+  "reports": {
+    "second_pwm_protocol.md": {
+      "links_checked": 3,
+      "tables_checked": 1,
+      "word_count": 1189,
+      "sha256": "fa55ee78035c3c87d3ff01cb83af2256cf4e3e4c02ed03c80a0241c1fb60065c"
+    },
+    "live_evidence_plan.md": {
+      "links_checked": 6,
+      "tables_checked": 2,
+      "word_count": 1467,
+      "sha256": "a7f161bd4b1dfc024bdd858b345acd7f0aa9dc822a600d818b1d40777aaaedd8"
+    },
+    "diagnosis_report.md": {
+      "links_checked": 11,
+      "tables_checked": 2,
+      "word_count": 1542,
+      "sha256": "6389afe16654602b8259ae2cba6886898010bffb4f4c8672d01a9c9d259048dc"
+    },
+    "remaining_evidence_plan.md": {
+      "links_checked": 4,
+      "tables_checked": 4,
+      "word_count": 1230,
+      "sha256": "059f8e2c11be639395ed886d5d5e8561ebf4bb9969644e0cced8c4a0cf390bc6"
+    }
+  },
+  "graphics_visually_reviewed": [
+    "axis_decomposition.png",
+    "normal_false_alarm_timing.png",
+    "spectral_diagnosis.png",
+    "normal_variability_overlap.png"
+  ],
+  "new_files_sha256": {
+    "recording_summary.json": "9afa8d4346dfbd997d20f4f492d21b6510047708ddb2581742fa7b6041a57a95",
+    "false_alarm_feature_groups.csv": "66f2cfffdf81b6c117b5e770b98196c810314033033c193a43e7909c86c8e36f",
+    "summarize.py": "3097cb4cb46072d7ccf5503452a9c399eb7a3fa7b424c15145eb81cd39c838bb",
+    "false_alarm_timing_30s.csv": "475b8cd5d527a59915ecc25c05d08f0d3031e395795df035d24347b6d2817a82",
+    "axis_decomposition.pdf": "052804715801545379099a0b99d49d28a5839b6dedfd6d64545bb8638647e14b",
+    "static_live_audit.json": "4fbe2462db330536e100691921ce9e10410849689a00dcd6fb1310277afa552c",
+    "second_pwm_protocol_design.json": "8781f4c1458f4c12ed8af60a461e7103165f614d774a7dedf93b7e29e99294e8",
+    "normal_false_alarm_timing.png": "e4a168b46750dbc1006718a089ed7cde817930de7eae41470d2ed92881a01d94",
+    "axis_decomposition.png": "01e3eea3a53d962673087509a774dda5edb3911d484f83c636f5922a2701deed",
+    "window_diagnostics.csv": "24cf86e410b78b9b207215a01e2a83dde5f1a535c510944162780833a4872d9d",
+    "descriptive_correlations.json": "6ab2a0baf50a1a5ea6effdab4522969a3a0ab0d3f6690cfd399431729c9b3609",
+    "second_pwm_protocol.md": "fa55ee78035c3c87d3ff01cb83af2256cf4e3e4c02ed03c80a0241c1fb60065c",
+    "spectral_diagnosis.png": "9af345f2da1aab16c86c62c6a7131ab9a09751b1ef70cab92a07691b8ffe410a",
+    "normal_false_alarm_timing.pdf": "2fc17bea9f85bc47a4f904d37a9af0b6e51179fbe20307fda5a2ce2d2910e678",
+    "spectral_diagnosis.pdf": "67d5381a3d0d4ceac7be2bf7c1a7e98319b0f7fcbe2233da6bcfc507f80214c8",
+    "live_evidence_plan.md": "a7f161bd4b1dfc024bdd858b345acd7f0aa9dc822a600d818b1d40777aaaedd8",
+    "normal_variability_overlap.png": "92f281bb5766c67b70d4a2d3c414cd3c50eba8a5b0d50ccc5095e26c66ffe485",
+    "normal_envelope_overlap.csv": "bf4539d2d12f308f846bf5a5d81b45f8b736219791cb11da748c4e599cc01eb3",
+    "analyze.py": "83d9811add14f4a7b53959409bb582ce7a3185e8ccccea32229c51d1b7c42e17",
+    "normal_variability_overlap.pdf": "4e79434dfc9df391466074da2aab70bebc4a9fc7492747d757499d2fc2f724ec",
+    "axis_algebra.json": "712d6c8f5df21ca9bafc32b3f3bd390d26cbf871084072044c5bd19be1fa57d9",
+    "preservation_inventory.json": "93d08d14715101c5b2975f5ab82e03f1f94dcd7c45da43040d912ed22f43feee",
+    "verification.json": "e23ca1e3027de6fbb2422b73ea937a59c4a861bad8b152c44b2c04bba82969e0",
+    "diagnosis_report.md": "6389afe16654602b8259ae2cba6886898010bffb4f4c8672d01a9c9d259048dc",
+    "remaining_evidence_plan.md": "059f8e2c11be639395ed886d5d5e8561ebf4bb9969644e0cced8c4a0cf390bc6",
+    "requirements_extract.txt": "315ba7b3590f14fd0f38fd6406cbfc158df62ecbd28f80083fc05e2d2bfe03c9",
+    "spectra_and_reconstruction.npz": "aff802dbcde85300dc1062a4e5c75319cb312c93b65644aa84f03c97f4a6e274",
+    "source_inventory.json": "8729c9a1bf9c0be7df11c7b181f2e8e50e429c6ee757d756e47b50f8155eb008",
+    "scope.json": "914bec4e28bd783c3ed54bcc9c1219316d8d0145917dcc14a79b4d24aeae97bb"
+  }
+}

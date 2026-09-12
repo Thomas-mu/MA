@@ -1,0 +1,24 @@
+{
+  "status": "completed",
+  "completed_utc": "2026-09-12T10:22:36.509888+00:00",
+  "protocol_sha256": "4e7fcf7525c74449fd548faaf61fe070851e61bf42fe9fccef449a5fe0218c21",
+  "script_sha256": "38bbc51a46365bf7c3981c5a22df07bd60ff5458c71999d9ba79bf1ba23cded7",
+  "outputs": [
+    "/home/malik/masterarbeit-edge-ai/results/upright_v4_second_pwm50_20260912_091000/evaluation_normal_pwm50_01",
+    "/home/malik/masterarbeit-edge-ai/results/upright_v4_second_pwm50_20260912_091000/evaluation_normal_pwm50_02",
+    "/home/malik/masterarbeit-edge-ai/results/upright_v4_second_pwm50_20260912_091000/evaluation_normal_pwm50_03"
+  ],
+  "comparison": "/home/malik/masterarbeit-edge-ai/results/upright_v4_second_pwm50_20260912_091000/comparison_50_vs_75",
+  "artifacts_sha256": {
+    "comparison_50_vs_75/false_alarm_comparison.pdf": "35679571d425570a8dbfcd358b6bc7941fb275a723869db2ab3a907414dddf67",
+    "comparison_50_vs_75/comparison.json": "63763aef13e95351fdef9508049e54bb5d25f16e9e29666b9ce5589c0c864349",
+    "comparison_50_vs_75/false_alarm_comparison.csv": "54db30c0afec82b33d19d3ea61badf41cbeebfd8dd758dba323765a3895ec915",
+    "comparison_50_vs_75/all_scores.csv": "ed2d811b1f75f49d4480e2ae0c138c667f9892f0ad5f77a8c798827ee2d1c395",
+    "comparison_50_vs_75/rms_5s.pdf": "69ea88a419417fdf3673abaf5c144c3d4d99dfa28bc019dea1f61379b4551f89",
+    "comparison_50_vs_75/baseline_provenance.json": "7e306edae849fc94dcf30870c77151ef6b3ad59cb45694dc17483400e5b3abb0",
+    "comparison_50_vs_75/rms_5s.csv": "f6c559b64abab30e41c7599c5a6eebbc8a392367eff9ba1c29238253142ea928",
+    "comparison_50_vs_75/rms_5s.png": "50a52826ebfb66521e8b4872220fa031b41954cb9bf0ee72154e731087a2c046",
+    "comparison_50_vs_75/false_alarm_comparison.png": "8868f3db625b32911955b5adb68bf4f7e447c214e9bf70f38a708508e01b9e25",
+    "comparison_50_vs_75/acquisition_quality.json": "5c26dfaaa6883fe27bce1936e24cab1b1df7f342ed2228335445ae71ce2be641"
+  }
+}

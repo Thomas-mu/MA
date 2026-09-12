@@ -1,0 +1,28 @@
+{
+  "checked_utc": "2026-09-12T10:03:03.285990+00:00",
+  "protocol_sha256": "4e7fcf7525c74449fd548faaf61fe070851e61bf42fe9fccef449a5fe0218c21",
+  "read_only": true,
+  "preflight_environment_note": "Initial system-python import lacked pandas; stopped before hardware access. Continued in project .venv; no capture/start attempt occurred.",
+  "pin": {
+    "returncode": 0,
+    "stdout": "18: a3    pd | lo // GPIO18 = PWM0_CHAN2\n",
+    "stderr": ""
+  },
+  "holders": {
+    "returncode": 1,
+    "stdout": "",
+    "stderr": ""
+  },
+  "service": {
+    "returncode": 0,
+    "stdout": "MainPID=0\nExecMainStartTimestamp=Thu 2026-09-10 19:25:21 CEST\nActiveState=active\nSubState=exited\n",
+    "stderr": ""
+  },
+  "pwm": {
+    "period": "40000",
+    "duty_cycle": "0",
+    "enable": "1",
+    "polarity": "normal"
+  },
+  "relevant_processes": []
+}

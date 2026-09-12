@@ -1,0 +1,159 @@
+{
+  "schema_version": 1,
+  "status": "design_ready_runtime_adapter_missing_not_authorized_to_capture",
+  "created_utc": "2026-09-12T08:37:06.803048+00:00",
+  "purpose": "independent_second_normal_pwm_test",
+  "research_questions": [
+    "FF4",
+    "H3",
+    "A10"
+  ],
+  "mounting_id": "fan_upright_position_v4_20260911_103726",
+  "condition": "normal_pwm50",
+  "state": "normal",
+  "label": 0,
+  "plate_absent": true,
+  "pwm_percent": 50,
+  "pwm_frequency_hz": 25000,
+  "period_ns": 40000,
+  "duty_cycle_ns": 20000,
+  "sensor": {
+    "model": "ADXL345",
+    "odr_hz": 200,
+    "range_g": 2,
+    "full_resolution": true,
+    "scale_g_per_lsb": 0.0039,
+    "acquisition_mode": "fifo_stream",
+    "register_readback": {
+      "0x2c": "0xb",
+      "0x31": "0x8",
+      "0x2e": "0x0",
+      "0x38": "0x90",
+      "0x2d": "0x8"
+    },
+    "timestamp_source": "host_monotonic_read_completion",
+    "bus_number": 1,
+    "i2c_clock_configured_hz": 100000
+  },
+  "planned_recordings": [
+    "normal_pwm50_01",
+    "normal_pwm50_02",
+    "normal_pwm50_03"
+  ],
+  "duration_s": 300,
+  "additional_off_after_release_s": 60,
+  "selection_seconds_since_pwm_command": [
+    180,
+    300
+  ],
+  "window_size": 128,
+  "step_size": 128,
+  "preprocessing": "original_float64_F_order_per_axis_window_centering_then_float32_then_saved_scaler",
+  "frozen_bundle": {
+    "directory": "/home/malik/masterarbeit-edge-ai/results/upright_v4_training_pilot_20260911_130614/run_001/frozen",
+    "sha256": "cec1859bfb354bafef77a619e6d2c1ffd85b50787c87595aba9a1e20a80cdae5"
+  },
+  "thresholds": {
+    "rms": {
+      "value": 1.2747695377144315,
+      "percentile": 99,
+      "source": "NORMAL_VALIDATION_P99"
+    },
+    "isolation_forest": {
+      "value": 0.5045395247064507,
+      "percentile": 99,
+      "source": "NORMAL_VALIDATION_P99"
+    },
+    "tflite_autoencoder": {
+      "value": 0.544357966122261,
+      "percentile": 99,
+      "source": "FROZEN_KERAS_NORMAL_VALIDATION_P99"
+    }
+  },
+  "quality_policy": {
+    "raw_span_minimum_s": 299.8,
+    "first_xyz_delay_maximum_exclusive_s": 1.0,
+    "full_original_saved": true,
+    "structural_integrity_error": "Reject whole source; preserve raw/journals and explicit rejection report; do not count as NORMAL or conceal missing test run",
+    "window_invalid_if": [
+      "gap",
+      "overrun",
+      "saturated",
+      "host_interval_over_160ms",
+      "fifo_full",
+      "raw_saturation_rail",
+      "nonfinite_xyz"
+    ],
+    "host_interval_over_10ms": "Report as host spacing; alone not proof of loss",
+    "exact_lost_sensor_samples": null,
+    "incomplete_trailing_window": "Retain raw; report count; no padding or cross-record joining"
+  },
+  "baseline_75_normal_recordings": [
+    {
+      "name": "normal_test_01",
+      "recording_id": "normal_test_01_75pwm_300s_20260911_155959_798760",
+      "csv": "/home/malik/masterarbeit-edge-ai/data/upright_v4_independent_normal_20260911_133047/normal_test_01_75pwm_300s_20260911_155959_798760.csv",
+      "csv_sha256": "058f4aec69a567236dbe7e4c0d84590f51f3210ef320a2cd4ae794be5baa8e18",
+      "session": "/home/malik/masterarbeit-edge-ai/results/upright_v4_independent_normal_20260911_133047/normal_test_01_session.json",
+      "session_sha256": "ee1738029d689be5cb2b67b3ccc18afd430e28ff7a56f4ae6c70088a2b52f20f"
+    },
+    {
+      "name": "normal_test_02",
+      "recording_id": "normal_test_02_75pwm_300s_20260911_161306_321362",
+      "csv": "/home/malik/masterarbeit-edge-ai/data/upright_v4_independent_normal_20260911_133047/normal_test_02_75pwm_300s_20260911_161306_321362.csv",
+      "csv_sha256": "20760adbcad23554c0b49745b6163444e7974a01be20412b040304a1ff1708f2",
+      "session": "/home/malik/masterarbeit-edge-ai/results/upright_v4_independent_normal_20260911_133047/normal_test_02_session.json",
+      "session_sha256": "479f8117834a7f97d0c019ab21beea2a9a1ad258eeeb1dd8ed0c9a8e847cc24a"
+    },
+    {
+      "name": "normal_test_03",
+      "recording_id": "normal_test_03_75pwm_300s_20260911_162725_498007",
+      "csv": "/home/malik/masterarbeit-edge-ai/data/upright_v4_independent_normal_20260911_133047/normal_test_03_75pwm_300s_20260911_162725_498007.csv",
+      "csv_sha256": "ca13bde6fe4e7e72a13e81d90b688568bbdd8ce223869f56f397a0e4875013c6",
+      "session": "/home/malik/masterarbeit-edge-ai/results/upright_v4_independent_normal_20260911_133047/normal_test_03_session.json",
+      "session_sha256": "2b30793066100ae860b2df6bac3ba31d9d8177f05396faa4d6a704f1b576c5f0"
+    },
+    {
+      "name": "normal_sep11",
+      "recording_id": "normal_before_75pwm_300s_20260911_165633_681800",
+      "csv": "/home/malik/masterarbeit-edge-ai/data/upright_v4_frozen_airflow_test_20260911_164040/normal_before_75pwm_300s_20260911_165633_681800.csv",
+      "csv_sha256": "40becf29b0c2049f0fb5e3d36465b8fc1cf628b666cbbdd50a5cf984e8e9becc",
+      "session": "/home/malik/masterarbeit-edge-ai/results/upright_v4_frozen_airflow_test_20260911_164040/normal_before_session.json",
+      "session_sha256": "f5b537ce4b160ce648c2a11ba9c734a6b5c5fac100660768fce02c2af4506519"
+    },
+    {
+      "name": "normal_before",
+      "recording_id": "normal_before_75pwm_300s_20260912_073823_494120",
+      "csv": "/home/malik/masterarbeit-edge-ai/data/upright_v4_frozen_airflow_test_20260912_073015/normal_before_75pwm_300s_20260912_073823_494120.csv",
+      "csv_sha256": "fdfcec021dc9f9ad2d86b41025a05259a66ed10d29e07a6ed98da3b593ac6960",
+      "session": "/home/malik/masterarbeit-edge-ai/results/upright_v4_frozen_airflow_test_20260912_073015/normal_before_session.json",
+      "session_sha256": "7df949cebb90d134ee7a65fe642c9c1e10069c076a11d9407567deb96eb9c18f"
+    },
+    {
+      "name": "normal_after",
+      "recording_id": "normal_after_75pwm_300s_20260912_075715_142650",
+      "csv": "/home/malik/masterarbeit-edge-ai/data/upright_v4_frozen_airflow_test_20260912_073015/normal_after_75pwm_300s_20260912_075715_142650.csv",
+      "csv_sha256": "b68701e7272cc0d109ad51c7aeb827be2d9f9cc370ee0fd7f4d1bd2869367288",
+      "session": "/home/malik/masterarbeit-edge-ai/results/upright_v4_frozen_airflow_test_20260912_073015/normal_after_session.json",
+      "session_sha256": "3f963c0c114759692b2d81144a35d04ec31d18dc27d75e7960ba2e00c3f4dcc2"
+    }
+  ],
+  "baseline_comparison": "All six previous independent normal v4 test recordings; per recording and pooled, never include training or validation in test denominators. Noncontemporaneous comparison, no isolated PWM causal claim.",
+  "new_runtime_adapter_required": true,
+  "existing_75_percent_runner_may_be_reused_unmodified": false,
+  "new_capture_authorized": false,
+  "no_retraining": true,
+  "no_threshold_changes": true,
+  "no_new_test_exclusions_based_on_scores": true,
+  "invalid_is_not_normal": true,
+  "exact_physical_losses": null,
+  "actual_rpm": null,
+  "no_automatic_restarts": true,
+  "manual_readiness_per_run_required": true,
+  "human_protocol": {
+    "path": "/home/malik/masterarbeit-edge-ai/results/upright_v4_exploratory_diagnosis_20260912_081728/second_pwm_protocol.md",
+    "sha256": "fa55ee78035c3c87d3ff01cb83af2256cf4e3e4c02ed03c80a0241c1fb60065c"
+  },
+  "implementation_freeze_before_capture_required": true,
+  "future_fresh_exclusion_inventory_required": true
+}

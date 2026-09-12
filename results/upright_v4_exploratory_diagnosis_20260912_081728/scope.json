@@ -1,0 +1,16 @@
+{
+  "purpose": "exploratory_post_test_error_analysis_and_planning",
+  "created_utc": "2026-09-12T08:17:28.931090+00:00",
+  "hardware_access": false,
+  "pwm_changes": false,
+  "training": false,
+  "new_model": false,
+  "frozen_interval_s": [
+    180,
+    300
+  ],
+  "window_size": 128,
+  "stride": 128,
+  "spectral_diagnostic": "Hann periodogram per same 128 samples at nominal 200 Hz; exploratory bands 0-20,20-60,60-100 Hz; no resampling. Host-rate-adjusted frequency shown separately, sensor clock unknown.",
+  "new_exclusions": false
+}

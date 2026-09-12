@@ -1,0 +1,35 @@
+Reading package lists...
+Building dependency tree...
+Reading state information...
+The following additional packages will be installed:
+  libreoffice-uiconfig-math
+The following NEW packages will be installed:
+  libreoffice-math libreoffice-uiconfig-math
+0 upgraded, 2 newly installed, 0 to remove and 115 not upgraded.
+Need to get 528 kB of archives.
+After this operation, 2256 kB of additional disk space will be used.
+Get:1 http://deb.debian.org/debian trixie/main arm64 libreoffice-uiconfig-math all 4:25.2.3-2+deb13u6 [58.6 kB]
+Get:2 http://deb.debian.org/debian trixie/main arm64 libreoffice-math arm64 4:25.2.3-2+deb13u6 [470 kB]
+debconf: unable to initialize frontend: Dialog
+debconf: (Dialog frontend will not work on a dumb terminal, an emacs shell buffer, or without a controlling terminal.)
+debconf: falling back to frontend: Readline
+debconf: unable to initialize frontend: Readline
+debconf: (This frontend requires a controlling tty.)
+debconf: falling back to frontend: Teletype
+debconf: unable to initialize frontend: Teletype
+debconf: (This frontend requires a controlling tty.)
+debconf: falling back to frontend: Noninteractive
+Fetched 528 kB in 0s (3620 kB/s)
+Selecting previously unselected package libreoffice-uiconfig-math.
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 132105 files and directories currently installed.)
+Preparing to unpack .../libreoffice-uiconfig-math_4%3a25.2.3-2+deb13u6_all.deb ...
+Unpacking libreoffice-uiconfig-math (4:25.2.3-2+deb13u6) ...
+Selecting previously unselected package libreoffice-math.
+Preparing to unpack .../libreoffice-math_4%3a25.2.3-2+deb13u6_arm64.deb ...
+Unpacking libreoffice-math (4:25.2.3-2+deb13u6) ...
+Setting up libreoffice-uiconfig-math (4:25.2.3-2+deb13u6) ...
+Setting up libreoffice-math (4:25.2.3-2+deb13u6) ...
+Processing triggers for man-db (2.13.1-1) ...
+Processing triggers for libreoffice-common (4:25.2.3-2+deb13u6) ...
+Processing triggers for mailcap (3.74) ...
+Processing triggers for desktop-file-utils (0.28-1) ...

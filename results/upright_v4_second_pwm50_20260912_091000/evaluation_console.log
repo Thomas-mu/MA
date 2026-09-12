@@ -1,0 +1,318 @@
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+{
+  "pooled50": {
+    "rms": {
+      "total_windows": 582,
+      "valid_windows": 582,
+      "invalid_windows": 0,
+      "false_alarms": 3,
+      "false_alarm_rate_among_valid_normal_windows": 0.005154639175257732
+    },
+    "isolation_forest": {
+      "total_windows": 582,
+      "valid_windows": 582,
+      "invalid_windows": 0,
+      "false_alarms": 1,
+      "false_alarm_rate_among_valid_normal_windows": 0.001718213058419244
+    },
+    "tflite_autoencoder": {
+      "total_windows": 582,
+      "valid_windows": 582,
+      "invalid_windows": 0,
+      "false_alarms": 35,
+      "false_alarm_rate_among_valid_normal_windows": 0.06013745704467354
+    }
+  },
+  "pooled75": {
+    "rms": {
+      "total_windows": 1164,
+      "valid_windows": 1164,
+      "invalid_windows": 0,
+      "false_alarms": 60,
+      "false_alarm_rate_among_valid_normal_windows": 0.05154639175257732
+    },
+    "isolation_forest": {
+      "total_windows": 1164,
+      "valid_windows": 1164,
+      "invalid_windows": 0,
+      "false_alarms": 35,
+      "false_alarm_rate_among_valid_normal_windows": 0.03006872852233677
+    },
+    "tflite_autoencoder": {
+      "total_windows": 1164,
+      "valid_windows": 1164,
+      "invalid_windows": 0,
+      "false_alarms": 64,
+      "false_alarm_rate_among_valid_normal_windows": 0.054982817869415807
+    }
+  },
+  "acquisition": [
+    {
+      "phase": "normal_pwm50_01",
+      "recording_id": "normal_pwm50_01_50pwm_300s_20260912_100420_756309",
+      "command_utc": "2026-09-12T10:04:20.761822+00:00",
+      "first_xyz_utc_estimate": "2026-09-12T10:04:20.860247+00:00",
+      "first_xyz_delay_s": 0.098425076,
+      "additional_off_from_release_s": 60.027279638,
+      "total_off_since_previous_zero_s": null,
+      "zero_command_completed_utc": "2026-09-12T10:09:21.167985+00:00",
+      "final_readback": {
+        "gpio_bcm": 18,
+        "physical_pin": 12,
+        "pwm_chip": 0,
+        "pwm_channel": 2,
+        "pwm_path": "/sys/class/pwm/pwmchip0/pwm2",
+        "rp1_device_path": "/sys/devices/platform/axi/1000120000.pcie/1f00098000.pwm",
+        "pwm_configuration": {
+          "period_ns": 40000,
+          "duty_cycle_ns": 0,
+          "enable": 1,
+          "polarity": "normal",
+          "configured_frequency_hz": 25000.0,
+          "configured_duty_percent": 0.0
+        },
+        "pin_readback": {
+          "mux": "a3",
+          "function": "PWM0_CHAN2",
+          "instantaneous_level": "lo",
+          "raw": "18: a3    pd | lo // GPIO18 = PWM0_CHAN2"
+        },
+        "pwm_mux_confirmed": true,
+        "electrical_waveform_measured": false,
+        "measured_rpm": null,
+        "mechanical_state": "not_measured"
+      },
+      "quality": {
+        "xyz_points": 62142,
+        "individual_axis_values": 186426,
+        "nominal_sensor_odr_hz": 200,
+        "observed_xyz_per_second": 207.1442027930276,
+        "first_to_last_host_span_s": 299.989085681,
+        "first_xyz_after_command_s": 0.098425076,
+        "last_xyz_after_command_s": 300.087510757,
+        "host_interval_p50_ms": 5.587326,
+        "host_interval_p99_ms": 5.6905212,
+        "host_interval_max_ms": 8.575693,
+        "host_intervals_over_10ms": 0,
+        "host_intervals_over_160ms": 0,
+        "read_duration_max_ms": 6.497547,
+        "fifo_depth_max": 1,
+        "gap_flagged_xyz": 0,
+        "overrun_flagged_xyz": 0,
+        "saturated_flagged_xyz": 0,
+        "nonfinite_xyz_points": 0,
+        "nonmonotonic_host_intervals": 0,
+        "exact_lost_sensor_samples": null,
+        "timebase_limitation": "Host read completion is not a measured sensor conversion clock. Exact physical losses are unknown.",
+        "selected_interval": {
+          "xyz_selected": 24857,
+          "full_model_windows": 194,
+          "trailing_xyz_not_windowed": 25,
+          "quality_valid_windows": 194,
+          "quality_invalid_windows": 0
+        }
+      },
+      "rms_5s_late": {
+        "interval_seconds": [
+          180,
+          300
+        ],
+        "total_5s_blocks": 24,
+        "valid_5s_blocks": 24,
+        "invalid_5s_blocks": 0,
+        "mean_mg": 16.76087088694074,
+        "std_sample_mg": 0.6895888854482286,
+        "min_mg": 15.881842475457438,
+        "max_mg": 18.792051006109844,
+        "coefficient_of_variation": 0.041142783695417816,
+        "linear_slope_mg_per_min": 0.47651271780430393,
+        "linear_change_over_interval_mg": 0.9530254356086079,
+        "first_half_mean_mg": 16.479746855105386,
+        "second_half_mean_mg": 17.041994918776094,
+        "second_minus_first_half_mg": 0.5622480636707081,
+        "inference": "Descriptive within-recording changes; blocks are not independent replicates."
+      },
+      "mechanical_standstill_before_start": true,
+      "release_source": "explicit_user_message",
+      "physical_lost_samples": null
+    },
+    {
+      "phase": "normal_pwm50_02",
+      "recording_id": "normal_pwm50_02_50pwm_300s_20260912_101021_347673",
+      "command_utc": "2026-09-12T10:10:21.354513+00:00",
+      "first_xyz_utc_estimate": "2026-09-12T10:10:21.451585+00:00",
+      "first_xyz_delay_s": 0.097072305,
+      "additional_off_from_release_s": 60.023910823,
+      "total_off_since_previous_zero_s": 60.18654593,
+      "zero_command_completed_utc": "2026-09-12T10:15:21.720051+00:00",
+      "final_readback": {
+        "gpio_bcm": 18,
+        "physical_pin": 12,
+        "pwm_chip": 0,
+        "pwm_channel": 2,
+        "pwm_path": "/sys/class/pwm/pwmchip0/pwm2",
+        "rp1_device_path": "/sys/devices/platform/axi/1000120000.pcie/1f00098000.pwm",
+        "pwm_configuration": {
+          "period_ns": 40000,
+          "duty_cycle_ns": 0,
+          "enable": 1,
+          "polarity": "normal",
+          "configured_frequency_hz": 25000.0,
+          "configured_duty_percent": 0.0
+        },
+        "pin_readback": {
+          "mux": "a3",
+          "function": "PWM0_CHAN2",
+          "instantaneous_level": "lo",
+          "raw": "18: a3    pd | lo // GPIO18 = PWM0_CHAN2"
+        },
+        "pwm_mux_confirmed": true,
+        "electrical_waveform_measured": false,
+        "measured_rpm": null,
+        "mechanical_state": "not_measured"
+      },
+      "quality": {
+        "xyz_points": 62133,
+        "individual_axis_values": 186399,
+        "nominal_sensor_odr_hz": 200,
+        "observed_xyz_per_second": 207.11176863312178,
+        "first_to_last_host_span_s": 299.992609836,
+        "first_xyz_after_command_s": 0.097072305,
+        "last_xyz_after_command_s": 300.089682141,
+        "host_interval_p50_ms": 5.584927,
+        "host_interval_p99_ms": 5.691788430000001,
+        "host_interval_max_ms": 9.790041,
+        "host_intervals_over_10ms": 0,
+        "host_intervals_over_160ms": 0,
+        "read_duration_max_ms": 5.41428,
+        "fifo_depth_max": 2,
+        "gap_flagged_xyz": 0,
+        "overrun_flagged_xyz": 0,
+        "saturated_flagged_xyz": 0,
+        "nonfinite_xyz_points": 0,
+        "nonmonotonic_host_intervals": 0,
+        "exact_lost_sensor_samples": null,
+        "timebase_limitation": "Host read completion is not a measured sensor conversion clock. Exact physical losses are unknown.",
+        "selected_interval": {
+          "xyz_selected": 24852,
+          "full_model_windows": 194,
+          "trailing_xyz_not_windowed": 20,
+          "quality_valid_windows": 194,
+          "quality_invalid_windows": 0
+        }
+      },
+      "rms_5s_late": {
+        "interval_seconds": [
+          180,
+          300
+        ],
+        "total_5s_blocks": 24,
+        "valid_5s_blocks": 24,
+        "invalid_5s_blocks": 0,
+        "mean_mg": 16.60016975229183,
+        "std_sample_mg": 1.2264547529196892,
+        "min_mg": 15.573895332799975,
+        "max_mg": 21.91816943726782,
+        "coefficient_of_variation": 0.07388206091991102,
+        "linear_slope_mg_per_min": 0.6911529575904579,
+        "linear_change_over_interval_mg": 1.3823059151809158,
+        "first_half_mean_mg": 16.34443208375549,
+        "second_half_mean_mg": 16.855907420828164,
+        "second_minus_first_half_mg": 0.5114753370726746,
+        "inference": "Descriptive within-recording changes; blocks are not independent replicates."
+      },
+      "mechanical_standstill_before_start": null,
+      "release_source": "authorized_sequence_continuation",
+      "physical_lost_samples": null
+    },
+    {
+      "phase": "normal_pwm50_03",
+      "recording_id": "normal_pwm50_03_50pwm_300s_20260912_101621_906596",
+      "command_utc": "2026-09-12T10:16:21.911950+00:00",
+      "first_xyz_utc_estimate": "2026-09-12T10:16:22.006806+00:00",
+      "first_xyz_delay_s": 0.094856231,
+      "additional_off_from_release_s": 60.023959157,
+      "total_off_since_previous_zero_s": 60.191916111,
+      "zero_command_completed_utc": "2026-09-12T10:21:22.317320+00:00",
+      "final_readback": {
+        "gpio_bcm": 18,
+        "physical_pin": 12,
+        "pwm_chip": 0,
+        "pwm_channel": 2,
+        "pwm_path": "/sys/class/pwm/pwmchip0/pwm2",
+        "rp1_device_path": "/sys/devices/platform/axi/1000120000.pcie/1f00098000.pwm",
+        "pwm_configuration": {
+          "period_ns": 40000,
+          "duty_cycle_ns": 0,
+          "enable": 1,
+          "polarity": "normal",
+          "configured_frequency_hz": 25000.0,
+          "configured_duty_percent": 0.0
+        },
+        "pin_readback": {
+          "mux": "a3",
+          "function": "PWM0_CHAN2",
+          "instantaneous_level": "lo",
+          "raw": "18: a3    pd | lo // GPIO18 = PWM0_CHAN2"
+        },
+        "pwm_mux_confirmed": true,
+        "electrical_waveform_measured": false,
+        "measured_rpm": null,
+        "mechanical_state": "not_measured"
+      },
+      "quality": {
+        "xyz_points": 62133,
+        "individual_axis_values": 186399,
+        "nominal_sensor_odr_hz": 200,
+        "observed_xyz_per_second": 207.11449749184067,
+        "first_to_last_host_span_s": 299.988657252,
+        "first_xyz_after_command_s": 0.094856231,
+        "last_xyz_after_command_s": 300.083513483,
+        "host_interval_p50_ms": 5.592496499999999,
+        "host_interval_p99_ms": 5.69449215,
+        "host_interval_max_ms": 9.426877,
+        "host_intervals_over_10ms": 0,
+        "host_intervals_over_160ms": 0,
+        "read_duration_max_ms": 5.707004,
+        "fifo_depth_max": 2,
+        "gap_flagged_xyz": 0,
+        "overrun_flagged_xyz": 0,
+        "saturated_flagged_xyz": 0,
+        "nonfinite_xyz_points": 0,
+        "nonmonotonic_host_intervals": 0,
+        "exact_lost_sensor_samples": null,
+        "timebase_limitation": "Host read completion is not a measured sensor conversion clock. Exact physical losses are unknown.",
+        "selected_interval": {
+          "xyz_selected": 24854,
+          "full_model_windows": 194,
+          "trailing_xyz_not_windowed": 22,
+          "quality_valid_windows": 194,
+          "quality_invalid_windows": 0
+        }
+      },
+      "rms_5s_late": {
+        "interval_seconds": [
+          180,
+          300
+        ],
+        "total_5s_blocks": 24,
+        "valid_5s_blocks": 24,
+        "invalid_5s_blocks": 0,
+        "mean_mg": 16.48527766460117,
+        "std_sample_mg": 0.30839750573870406,
+        "min_mg": 16.00344965204353,
+        "max_mg": 17.13173736924556,
+        "coefficient_of_variation": 0.01870744988426406,
+        "linear_slope_mg_per_min": -0.0749548221513093,
+        "linear_change_over_interval_mg": -0.1499096443026186,
+        "first_half_mean_mg": 16.481215880649074,
+        "second_half_mean_mg": 16.48933944855327,
+        "second_minus_first_half_mg": 0.008123567904195994,
+        "inference": "Descriptive within-recording changes; blocks are not independent replicates."
+      },
+      "mechanical_standstill_before_start": null,
+      "release_source": "authorized_sequence_continuation",
+      "physical_lost_samples": null
+    }
+  ]
+}

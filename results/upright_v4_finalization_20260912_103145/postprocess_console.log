@@ -1,0 +1,32 @@
+START analysis
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+sensor_live_rms_01 194 valid; exact scores verified
+sensor_live_isolation_forest_01 194 valid; exact scores verified
+sensor_live_tflite_autoencoder_01 194 valid; exact scores verified
+sensor_live_isolation_forest_02 194 valid; exact scores verified
+sensor_live_tflite_autoencoder_02 194 valid; exact scores verified
+sensor_live_rms_02 194 valid; exact scores verified
+sensor_live_tflite_autoencoder_03 194 valid; exact scores verified
+sensor_live_rms_03 194 valid; exact scores verified
+sensor_live_isolation_forest_03 194 valid; exact scores verified
+offline_replay_rms_01 194 valid; exact scores verified
+offline_replay_isolation_forest_01 194 valid; exact scores verified
+offline_replay_tflite_autoencoder_01 194 valid; exact scores verified
+offline_replay_isolation_forest_02 194 valid; exact scores verified
+offline_replay_tflite_autoencoder_02 194 valid; exact scores verified
+offline_replay_rms_02 194 valid; exact scores verified
+offline_replay_tflite_autoencoder_03 194 valid; exact scores verified
+offline_replay_rms_03 194 valid; exact scores verified
+offline_replay_isolation_forest_03 194 valid; exact scores verified
+COMPLETE analysis
+START memory_probe
+{'phase': 'after_pass_1', 'elapsed_s': 6.978344959, 'windows': 194, 'rss_bytes': 132464640, 'traced_current_bytes': 180622, 'traced_peak_bytes': 445676, 'gc_count': (453, 1, 0), 'tracked_objects': 54588}
+{'phase': 'after_pass_2', 'elapsed_s': 13.998639979, 'windows': 388, 'rss_bytes': 132579328, 'traced_current_bytes': 292611, 'traced_peak_bytes': 624801, 'gc_count': (593, 2, 0), 'tracked_objects': 54589}
+{'phase': 'after_pass_3', 'elapsed_s': 20.996653313, 'windows': 582, 'rss_bytes': 132661248, 'traced_current_bytes': 367749, 'traced_peak_bytes': 736840, 'gc_count': (65, 3, 0), 'tracked_objects': 54590}
+{'phase': 'after_pass_4', 'elapsed_s': 27.957606597, 'windows': 776, 'rss_bytes': 133005312, 'traced_current_bytes': 396338, 'traced_peak_bytes': 811945, 'gc_count': (454, 3, 0), 'tracked_objects': 54592}
+{'phase': 'after_pass_5', 'elapsed_s': 34.916295351, 'windows': 970, 'rss_bytes': 133021696, 'traced_current_bytes': 424842, 'traced_peak_bytes': 840615, 'gc_count': (843, 3, 0), 'tracked_objects': 54594}
+{'phase': 'after_pass_6', 'elapsed_s': 41.895721696, 'windows': 1164, 'rss_bytes': 133054464, 'traced_current_bytes': 453413, 'traced_peak_bytes': 869120, 'gc_count': (1232, 3, 0), 'tracked_objects': 54596}
+COMPLETE memory_probe
+START word_figures
+COMPLETE word_figures
+Postprocessing complete; Word assembly/review still pending.

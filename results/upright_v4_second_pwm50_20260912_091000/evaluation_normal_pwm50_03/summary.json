@@ -1,0 +1,92 @@
+{
+  "status": "evaluated_independent_normal_recording",
+  "csv": "/home/malik/masterarbeit-edge-ai/data/upright_v4_second_pwm50_20260912_091000/normal_pwm50_03_50pwm_300s_20260912_101621_906596.csv",
+  "csv_sha256": "a9a0aa5067d8f8725083b23e192426de7f355d3e50d22e6432e90d0b7c143f60",
+  "sidecar": "/home/malik/masterarbeit-edge-ai/data/upright_v4_second_pwm50_20260912_091000/normal_pwm50_03_50pwm_300s_20260912_101621_906596.json",
+  "sidecar_sha256": "1481cb3ee258781e60f0e23de7dac31265762984c10ca3603528cd532a654d37",
+  "session": "/home/malik/masterarbeit-edge-ai/results/upright_v4_second_pwm50_20260912_091000/normal_pwm50_03_session.json",
+  "session_sha256": "9e6df9be0cb4a7519792743512989291a2bbc60029e84b8335e14fbd6c12647a",
+  "protocol_sha256": "4e7fcf7525c74449fd548faaf61fe070851e61bf42fe9fccef449a5fe0218c21",
+  "frozen_bundle_sha256": "cec1859bfb354bafef77a619e6d2c1ffd85b50787c87595aba9a1e20a80cdae5",
+  "recording_id": "normal_pwm50_03_50pwm_300s_20260912_101621_906596",
+  "phase": "normal_pwm50_03",
+  "mounting_id": "fan_upright_position_v4_20260911_103726",
+  "condition": "normal",
+  "quality": {
+    "xyz_points": 62133,
+    "individual_axis_values": 186399,
+    "nominal_sensor_odr_hz": 200,
+    "observed_xyz_per_second": 207.11449749184067,
+    "first_to_last_host_span_s": 299.988657252,
+    "first_xyz_after_command_s": 0.094856231,
+    "last_xyz_after_command_s": 300.083513483,
+    "host_interval_p50_ms": 5.592496499999999,
+    "host_interval_p99_ms": 5.69449215,
+    "host_interval_max_ms": 9.426877,
+    "host_intervals_over_10ms": 0,
+    "host_intervals_over_160ms": 0,
+    "read_duration_max_ms": 5.707004,
+    "fifo_depth_max": 2,
+    "gap_flagged_xyz": 0,
+    "overrun_flagged_xyz": 0,
+    "saturated_flagged_xyz": 0,
+    "nonfinite_xyz_points": 0,
+    "nonmonotonic_host_intervals": 0,
+    "exact_lost_sensor_samples": null,
+    "timebase_limitation": "Host read completion is not a measured sensor conversion clock. Exact physical losses are unknown.",
+    "selected_interval": {
+      "xyz_selected": 24854,
+      "full_model_windows": 194,
+      "trailing_xyz_not_windowed": 22,
+      "quality_valid_windows": 194,
+      "quality_invalid_windows": 0
+    }
+  },
+  "metrics": {
+    "rms": {
+      "total_windows": 194,
+      "valid_windows": 194,
+      "invalid_windows": 0,
+      "false_alarms": 0,
+      "false_alarm_rate_among_valid_normal_windows": 0.0
+    },
+    "isolation_forest": {
+      "total_windows": 194,
+      "valid_windows": 194,
+      "invalid_windows": 0,
+      "false_alarms": 0,
+      "false_alarm_rate_among_valid_normal_windows": 0.0
+    },
+    "tflite_autoencoder": {
+      "total_windows": 194,
+      "valid_windows": 194,
+      "invalid_windows": 0,
+      "false_alarms": 7,
+      "false_alarm_rate_among_valid_normal_windows": 0.03608247422680412
+    }
+  },
+  "runtimes": {
+    "rms": "NumPy RMS (standardisiertes H×3-Fenster)",
+    "isolation_forest": "scikit-learn IsolationForest.score_samples",
+    "tflite_autoencoder": "ai_edge_litert.Interpreter (Float32 TFLite)"
+  },
+  "pwm_command_invocation_utc": "2026-09-12T10:16:21.911950+00:00",
+  "pwm_command_invocation_monotonic_ns": 98859356110819,
+  "models_changed": false,
+  "scaler_fitted": false,
+  "thresholds_changed": false,
+  "physical_loss_count": null,
+  "mechanical_stop_measured": false,
+  "selection_seconds_since_pwm_command": [
+    180,
+    300
+  ],
+  "evaluator_sha256": "f02613004cfd7671aad64735ea679484b32c1edda9747d6075cb4d353b592613",
+  "limitation": "One whole run is one experimental replicate. Adjacent windows are dependent. Normal-only tests do not estimate anomaly recall, F1, or general detection performance.",
+  "artifact_sha256": {
+    "scores.png": "774b8c1729bf8761e646288c818f7a33e9c20e1f464b88583356a37e7129c173",
+    "scores.csv": "1fc4c8c317b49807224d0fcafed325da1b8ad8d0ea901210116a751407bafc92",
+    "scores.pdf": "99d0061ce9a7d56c1aecc8a99d6d40d1b592df674b844b012147553831704cc8",
+    "scores.json": "adc6177cdb66c0ac271b9f3107dd35f06786c29c1525f03e1d4aa5e7628601d0"
+  }
+}

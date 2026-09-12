@@ -1,0 +1,24 @@
+{
+  "scripts": [
+    {
+      "script": "evaluate_sequence.py",
+      "sha256": "38bbc51a46365bf7c3981c5a22df07bd60ff5458c71999d9ba79bf1ba23cded7",
+      "syntax_valid": true
+    },
+    {
+      "script": "write_measurement_report.py",
+      "sha256": "72677412bcc0a4c7d277e5012b6d6f3df7ef224a531def38b495dbb1520edfc1",
+      "syntax_valid": true
+    }
+  ],
+  "execute_after_all_captures_and_final_zero": true,
+  "same_frozen_thresholds": true,
+  "selection_seconds": [
+    180,
+    300
+  ],
+  "baseline_recordings_count": 6,
+  "new_model_training": false,
+  "hardware_capture_has_no_model_inference": true,
+  "report_diagnostics_are_not_parameter_selection": true
+}

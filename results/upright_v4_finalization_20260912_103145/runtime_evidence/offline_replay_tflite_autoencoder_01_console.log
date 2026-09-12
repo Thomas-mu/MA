@@ -1,0 +1,2 @@
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+{"trial": "offline_replay_tflite_autoencoder_01", "status": "completed", "error": null}

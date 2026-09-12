@@ -1,0 +1,87 @@
+170: Forschungsfragen und Hypothesen
+171: Zentrale Forschungsfrage: Wie lässt sich eine lokale Anomalieerkennung für mehrkanalige Beschleunigungsdaten auf ressourcenbeschränkter Edge-Hardware umsetzen und hinsichtlich Erkennungsqualität, Ressourcenbedarf, Zeitverhalten und veränderter Normalbedingungen bewerten?
+172: FF1: Welche Anforderungen ergeben sich aus der Aufgabe, und wie begründen sie die Auswahl von Versuchsaufbau, Sensorik, Hardware und Verfahren?
+173: FF2: Wie unterscheiden sich Hauptverfahren und Baselines bei gleichen Testfenstern und einer einheitlichen Schwellenwertkalibrierung auf Normaldaten hinsichtlich Precision, Recall, F1-Score und Fehlalarmrate?
+174: FF3: Wie viel Speicher und Rechenleistung benötigt die lokale Pipeline, und wie häufig überschreitet ihre Verarbeitung das Zeitbudget bis zum nächsten Fenster?
+175: FF4: Wie verändert sich die Fehlalarmrate bei gezielt geänderten Normalbedingungen, wenn Vorverarbeitung, Modell und Schwelle unverändert bleiben?
+176: Die Arbeitshypothesen legen die Vergleichsgrößen fest. Bereits zur Entwicklung verwendete Daten werden explorativ ausgewertet. Eine unabhängige Bestätigung erfordert neue Testaufnahmen und ein vor deren Auswertung festgelegtes Versuchsprotokoll.
+177: H1 – Erkennungsqualität: Das neuronale Hauptverfahren erreicht bei den definierten Versuchsanomalien einen höheren F1-Score als die statistische Baseline. Diese Erwartung beruht auf der möglichen Nutzung von Informationen, die ein einzelner Kennwert nicht abbildet. Bewertet werden die F1-Differenz auf derselben Testmenge sowie Fehlalarme und übersehene Anomalien.
+178: H2 – Zeitverhalten: Das empirische 99. Perzentil (P99) der Verarbeitungslatenz liegt unter dem Fensterintervall S/fₛ. Die Latenz reicht vom vollständigen Fenster bis zur verfügbaren Entscheidung. S bezeichnet die Schrittweite in Messzeitpunkten, fₛ die aus Zeitstempeln ermittelte Erfassungsrate. Fristüberschreitungen werden zusätzlich gezählt; P99 garantiert keine fristgerechte Ausgabe jeder Entscheidung.
+179: H3 – Veränderte Normalbedingungen: Bei unveränderter Pipeline steigt die Fehlalarmrate unter der untersuchten veränderten Normalbedingung. Verglichen werden die Fehlalarmraten vor und nach der Änderung. Eine Ursache lässt sich nur bei kontrollierten weiteren Einflüssen zuordnen.
+180: Abgrenzung der Arbeit
+279: Anforderungsanalyse
+280: Dieses Kapitel leitet aus den Forschungsfragen, den Grundlagen und den Grenzen der Vorarbeiten überprüfbare Anforderungen ab. Sie beschreiben die benötigten Funktionen und Bewertungskriterien unabhängig von einer konkreten technischen Lösung.
+281: Messdaten und Vergleichsbasis
+282: Für die Untersuchung muss ein reproduzierbarer Testaufbau realisiert werden (A11). Er muss Messungen im Normalzustand und unter gezielt hergestellten Anomaliebedingungen ermöglichen. Eine Normalbedingung muss für FF4 unabhängig von der Anomaliedefinition veränderbar sein (A10). Ein sicherer Betrieb ist Voraussetzung für die Messläufe. Versuchsbedingungen, Rücksetzbarkeit und Ablauf sind so zu dokumentieren, dass Messläufe wiederholt werden können.
+283: Die Messdaten müssen die benötigten Beschleunigungskanäle mit Einheit, Zeitstempeln und Aufnahmekennung enthalten (A1). Messbereich, nutzbare Bandbreite, Signal-Rausch-Abstand und zeitliche Erfassung sind für die Versuchszustände zu prüfen. Akzeptanzgrenzen werden vor der abschließenden Testserie festgelegt. Datenlücken, ungültige Werte und Sättigung sind zu kennzeichnen. Für Normal- und Anomaliedaten muss feststehen, ob die Kennzeichnung ganze Aufnahmen oder einzelne Zeitabschnitte beschreibt.
+284: Vollständige Aufnahmen werden vor der Fensterbildung getrennt Training, Validierung oder Test zugeordnet. Fenster dürfen keine Aufnahmegrenzen überschreiten. Training und Schwellenwertkalibrierung verwenden nur Normaldaten. Die Vorverarbeitung wird nach den Regeln aus Abschnitt 2.4 angepasst und unverändert auf spätere Daten angewendet.
+285: Das neuronale Hauptverfahren und die beiden Baselines müssen dieselben Testfenster und Labels verwenden. Fensterlänge und Schrittweite werden gemeinsam festgelegt. Unterschiedliche Eingabedarstellungen und der Umgang mit unvollständigen Fenstern sind zu dokumentieren. Die Schwellen folgen derselben Kalibrierungsregel auf separaten Normaldaten. Modellwahl und Kalibrierung müssen vor der Testauswertung abgeschlossen sein.
+286: Lokale Verarbeitung und Zeitverhalten
+287: Datenerfassung, Vorverarbeitung und Entscheidung müssen nach dem Start automatisch und ohne Cloud-Dienst auf der Zielhardware laufen (A4). Die Softwareumgebung muss die benötigten Modelloperationen und Schnittstellen unterstützen; Abhängigkeiten und Versionen sind zu dokumentieren (A5, A6). Für jedes gültige Fenster sind Score, Schwelle und die Entscheidung normal/anomal zu speichern. Ungültige Fenster dürfen nicht als normal bewertet werden. Der Betrieb muss ohne Speicherabbruch und ohne stetig wachsenden Verarbeitungsrückstand möglich sein (A8).
+288: Messläufe müssen gezielt gestartet und geordnet beendet werden können (A13). Jeder Lauf erhält eine eindeutige Kennung. Beim Beenden müssen die bis dahin vollständig erfassten Daten und Ergebnisse gespeichert bleiben. Messdaten, Entscheidungen und die zugehörigen Angaben müssen maschinenlesbar vorliegen und eindeutig zusammengehören (A5).
+289: Als optionale Erweiterung kann eine grafische Benutzeroberfläche zur Live-Anzeige (Live-GUI) entwickelt werden (A12). Sie zeigt den aktuellen Erfassungsstatus sowie Score, Schwelle, Entscheidung und Zeitstempel des zuletzt ausgewerteten Fensters. Fehlende oder veraltete Daten müssen erkennbar sein. Die Anzeige verwendet die Ergebnisse der Verarbeitung und verändert weder Modell noch Schwelle. Der Messbetrieb und die Evaluation müssen auch ohne diese Oberfläche möglich sein.
+290: Für FF3 werden Inferenzzeit und Verarbeitungslatenz nach Abschnitt 2.7 getrennt gemessen. Das Ziel aus H2 ist P99 der Verarbeitungslatenz < S/fₛ. Zusätzlich sind Anzahl und Anteil der Fristüberschreitungen sowie Erfassungspausen zwischen Fenstern zu berichten.
+291: Evaluation
+292: Für FF2 werden die Kennzahlen aus Abschnitt 2.6 auf derselben Testmenge ermittelt. Anzahl der Aufnahmen, Klassenverteilung und Ergebnisse je Aufnahme sind anzugeben (A9). Für FF3 werden Modellgröße, CPU-Auslastung und Prozessspeicher einschließlich Bibliotheken und Vorverarbeitung auf derselben Zielhardware gemessen (A8). Messbedingungen sowie Software-, Code- und Modellstand müssen nachvollziehbar sein (A5). Bei einer Modellkonvertierung sind numerische Abweichungen und Entscheidungen gegenüber dem Ausgangsmodell zu prüfen; die Prüfdaten und Akzeptanzgrenzen werden vor der Testauswertung festgelegt (A6). Wird die Live-GUI umgesetzt, ist ihr zusätzlicher Einfluss auf Latenz und Ressourcenbedarf bei ansonsten gleichen Bedingungen mit und ohne Anzeige zu messen.
+293: Für FF4 wird eine dokumentierte Normalbedingung gezielt verändert. Vorverarbeitung, Modell und Schwelle bleiben dabei unverändert. Verglichen werden die Fehlalarmraten unter der ursprünglichen und der veränderten Bedingung. Eine Nachkalibrierung ist getrennt auszuwerten.
+294: Kernanforderungen und Nachweis
+295: Tabelle 4-1 enthält die Anforderungen A1–A13 mit Art, Priorität und Nachweis. F kennzeichnet funktionale Anforderungen an Systemfunktionen. NF bezeichnet nichtfunktionale Anforderungen an Nachvollziehbarkeit, Zeitverhalten und Betriebsstabilität. Methodische Anforderungen (M) betreffen Versuchsplanung und wissenschaftliche Auswertung. MUSS ist verbindlich; KANN bezeichnet die optionale Live-GUI. Ihr Nachweis ist nur bei Umsetzung erforderlich. Kapitel 6 dokumentiert Umsetzung und Prüfprotokoll. Kapitel 7 bewertet die Erfüllung und prüft die Hypothesen. Nichterfüllte technische Ziele und nicht bestätigte Hypothesen werden als Ergebnisse offengelegt.
+296: Tabelle 4-1: Anforderungen, Prioritäten und Nachweise
+297: ID
+298: Art /Priorität
+299: Anforderung
+300: Nachweis
+301: A1
+302: FMUSS
+303: Messdaten mit überprüfter Qualität erfassen
+304: Kanäle, Einheiten und Zeitstempel prüfen; Bandbreite, Signal-Rausch-Abstand, Sättigung und Datenlücken anhand vorab festgelegter Grenzen bewerten
+305: A2
+306: MMUSS
+307: Datenbasis nach Aufnahmen trennen
+308: Ganze Aufnahmen zuordnen; Training und Kalibrierung nur mit Normaldaten; Vorverarbeitung nur an Trainingsdaten anpassen
+309: A3
+310: MMUSS
+311: Verfahren einheitlich vergleichen
+312: Gleiche Testfenster und Labels; gemeinsame Kalibrierungsregel und dokumentierte Eingaben
+313: A4
+314: FMUSS
+315: Automatisch und lokal auswerten
+316: Versuchslauf ohne Cloud-Dienst; Score, Schwelle und Entscheidung je gültigem Fenster; ungültige Fenster kennzeichnen
+317: A5
+318: NFMUSS
+319: Daten und Softwarestände nachvollziehbar zuordnen
+320: Lauf, Fenster, Code, Modell, Vorverarbeitung sowie Softwareabhängigkeiten und Versionen maschinenlesbar dokumentieren
+321: A6
+322: MMUSS
+323: Zielkompatibilität und ausgeführtes Modell prüfen
+324: Modelloperationen auf der Zielhardware prüfen; bei Konvertierung Scores und Entscheidungen nach vorab festgelegten Akzeptanzgrenzen vergleichen
+325: A7
+326: NFMUSS
+327: Latenzziel aus H2 erfüllen: P99 < S/fₛ
+328: Inferenzzeit und Verarbeitungslatenz getrennt erfassen; Latenzverteilung, Fristüberschreitungen und Erfassungspausen berichten
+329: A8
+330: NFMUSS
+331: Ohne Speicherabbruch und wachsenden Rückstand laufen
+332: Modellgröße, Prozessspeicher, CPU und Rückstand über dokumentierte Messdauer erfassen; Aufwärmphase und Hintergrundlast angeben
+333: A9
+334: MMUSS
+335: Erkennungsqualität bewerten
+336: Konfusionsmatrix, Precision, Recall, F1, Fehlalarmrate und Accuracy auf derselben Testmenge; Ergebnisse je Aufnahme
+337: A10
+338: MMUSS
+339: Geänderte Normalbedingungen prüfen
+340: Fehlalarmraten bei unveränderter Vorverarbeitung, unverändertem Modell und unveränderter Schwelle vergleichen
+341: A11
+342: MMUSS
+343: Reproduzierbaren Testaufbau realisieren
+344: Aufbau und Protokoll dokumentieren; sicheren Betrieb herstellen; Normal- und Anomaliezustände wiederholen; Rücksetzbarkeit und kontrollierte Veränderung prüfen
+345: A12
+346: FKANN
+347: Live-GUI zur Ergebnisanzeige entwickeln
+348: Angezeigte Werte mit gespeicherten Ergebnissen abgleichen; veraltete und fehlende Daten prüfen; Zusatzaufwand messen
+349: A13
+350: FMUSS
+351: Messläufe starten und geordnet beenden
+352: Start und Stopp prüfen; eindeutige Laufkennung und Erhalt vollständig erfasster Daten und Ergebnisse nachweisen
+353: Kapitel 5 leitet aus A1–A13 Kriterien für Prüfstand, Messkette, Verarbeitung und Evaluation ab. MUSS-Prioritäten sind keine Gewichte: Bekannte Nichterfüllungen dürfen nicht durch Vorteile anderer Kriterien ausgeglichen werden. Noch offene Nachweise begrenzen die Vorauswahl. Die konkrete Lösung wird erst im Variantenvergleich festgelegt.
+427: Als konkrete Variante wird der ARCTIC P12 Pro PST vorgesehen, dessen Datenblatt PWM-Ansteuerung und ein Drehzahlsignal ausweist (ARCTIC, o. J.). Ein PWM-Tastgrad ist eine Stellgröße und kein Nachweis einer konstanten Drehzahl; die tatsächliche Drehzahl ist zu erfassen. Für FF4 wird ein zweiter normaler Betriebspunkt bei unveränderter Montage untersucht. Art und Rücksetzbarkeit der Versuchsanomalien, Schutzmaßnahmen und Messablauf werden in Kapitel 6 vor der abschließenden Testserie festgelegt.

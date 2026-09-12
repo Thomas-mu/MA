@@ -1,0 +1,4 @@
+method,true_positive,false_negative,false_positive,true_negative,valid_windows,invalid_windows,positive_windows,negative_windows,precision,recall,f1,false_positive_rate,accuracy
+rms,7,187,1,387,582,0,194,388,0.875,0.03608247422680412,0.06930693069306931,0.002577319587628866,0.6769759450171822
+isolation_forest,4,190,0,388,582,0,194,388,1.0,0.020618556701030927,0.04040404040404041,0.0,0.6735395189003437
+tflite_autoencoder,0,194,55,333,582,0,194,388,0.0,0.0,0.0,0.14175257731958762,0.5721649484536082

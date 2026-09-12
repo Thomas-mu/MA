@@ -1,0 +1,360 @@
+{
+  "input": "results/upright_v4_finalization_20260912_103145/thesis_unformatted.docx",
+  "output": "results/upright_v4_finalization_20260912_103145/thesis_final.docx",
+  "indexes_count": 3,
+  "indexes": [
+    {
+      "name": "Table of Contents1",
+      "service": [
+        "com.sun.star.text.BaseIndex",
+        "com.sun.star.text.ContentIndex"
+      ],
+      "text": "\tErklärung\ti\n\tAbbildungsverzeichnis\tiv\n\tTabellenverzeichnis\tv\n\tAbkürzungsverzeichnis\tvi\n1\tEinleitung, Problemstellung und Zielsetzung\t1\n1.1\tAusgangssituation und Motivation\t1\n1.2\tWissenschaftliche Problemstellung\t1\n1.3\tZielsetzung der Arbeit\t1\n1.4\tForschungsfragen und Hypothesen\t2\n1.5\tAbgrenzung der Arbeit\t2\n1.6\tAufbau der Arbeit\t3\n2\tTheoretische Grundlagen\t4\n2.1\tZustandsüberwachung und Anomalieerkennung\t4\n2.2\tVerfahrensklassen für die Anomalieentscheidung\t4\n2.2.1\tStatistische Schwellenwertverfahren\t4\n2.2.2\tKlassische Verfahren im Normaldaten-Szenario\t4\n2.2.3\tAutoencoder\t5\n2.3\tMessdaten und Fensterbildung\t5\n2.4\tDatenaufteilung und Vorverarbeitung\t5\n2.5\tSchwellenwertkalibrierung\t6\n2.6\tErkennungsqualität und Aussagekraft der Evaluation\t6\n2.7\tLokale Ausführung und Zeitverhalten\t7\n2.8\tVeränderte Normalbedingungen\t7\n3\tStand der Technik und verwandte Arbeiten\t8\n3.1\tDatenbasis und Messbedingungen\t8\n3.2\tVerfahren und Edge-Ausführung\t8\n3.3\tVergleich ausgewählter Arbeiten\t9\n3.4\tForschungslücke und Einordnung der eigenen Arbeit\t9\n4\tAnforderungsanalyse\t10\n4.1\tMessdaten und Vergleichsbasis\t10\n4.2\tLokale Verarbeitung und Zeitverhalten\t10\n4.3\tEvaluation\t11\n4.4\tKernanforderungen und Nachweis\t11\n5\tVariantenvergleich und Systementscheidung\t14\n5.1\tBewertungsrahmen und Vorgehen\t14\n5.2\tBewertung der Prüfstandsalternativen\t15\n5.3\tAuswahl von Sensorik und Edge-Plattform\t17\n5.4\tDatenbasis, Signalrepräsentation und Verfahren\t19\n5.5\tKriterienbasierte Bewertung der Softwarealternativen\t21\n5.6\tSystementscheidung und Übergang zur Implementierung\t23\n6\tImplementierung\t25\n6.1\tPrüfstand, Aufbauversionen und Zustandsnachweise\t25\n6.2\tHardware-PWM und Ablaufsteuerung\t26\n6.3\tSensorerfassung, Zeitbasis und Qualitätskennzeichnung\t27\n6.4\tGemeinsame Fensterbildung und Vorverarbeitung\t28\n6.5\tModellpaket, Training und Kalibrierung\t29\n6.6\tLokaler Datenweg und Ressourceninstrumentierung\t31\n6.7\tFestgelegte Versuche und Nachweisgrenzen\t32\n7\tEvaluation und Ergebnisse\t33\n7.1\tDatenbasis und Auswertungseinheit\t33\n7.2\tErfassungsqualität und physikalische Zeitbasis\t34\n7.3\tFehlalarme bei unverändertem Normalbetrieb\t35\n7.4\tKontrollierte Luftstromveränderung und Rückkehrreferenz\t35\n7.5\tExplorative Fehleranalyse der Modellentscheidungen\t38\n7.6\tZweiter normaler Betriebspunkt bei 50 % PWM\t40\n7.7\tLaufzeit, Ressourcen und lokaler Sensorbetrieb\t41\n7.8\tErfüllungsgrad der Anforderungen\t46\n8\tDiskussion\t48\n8.1\tAussagekraft des Methodenvergleichs\t48\n8.2\tEinlaufzeit, Aufstellung und Vorverarbeitung\t48\n8.3\tTechnische Grenzen und Übertragbarkeit\t49\n9\tAusblick und verbleibende Nachweise\t51\n10\tFazit\t53\n\tAnhang\t54\n\tDigitale Belege und Zuordnung\t54\n\tErgänzende Kennzahlen des kontrollierten Zustandslabels\t55\n\tLesen der Messdateien\t55\n\tLiteraturverzeichnis\t57"
+    },
+    {
+      "name": "Table of Contents2",
+      "service": [
+        "com.sun.star.text.BaseIndex",
+        "com.sun.star.text.ContentIndex"
+      ],
+      "text": "\tAbbildung 7-1: Eingefrorene Scores auf identischen 128er-Fenstern der unabhängigen Folge. Die gestrichelten Linien sind die vorab fixierten Schwellen. Diese Verläufe sind von den 5-s-RMS-Werten zu unterscheiden. Quelle: eigene unveränderte Testauswertung.\t36\n\tAbbildung 7-2: Vollständige 5-s-RMS-Verläufe der unabhängigen Folge Normal → Platte → Normal. Die Markierung bei 180 s kennzeichnet den vorab gewählten Prüfabschnitt. Quelle: eigene Messungen vom 12.09.2026.\t37\n\tAbbildung 7-3: Achsenbeiträge zur physischen Energie, zur standardisierten Energie und zum Autoencoder-Fehler auf denselben 128er-Fenstern. Dargestellt sind Mittelwerte je Aufnahme; sie ersetzen nicht die Entscheidungen einzelner Fenster. Quelle: eigene explorative Auswertung.\t39\n\tAbbildung 7-4: Fehlalarmraten je vollständiger Normalaufnahme und zusammengefasst bei 75 % und 50 % PWM mit demselben eingefrorenen Paket. Die Aufnahmen sind nicht zeitgleich oder randomisiert gepaart. Quelle: eigene Testauswertung.\t41\n\tAbbildung 7-5: Verarbeitungslatenz aus drei eigenen Prozessen je Methode und Betriebsart. Punkte zeigen P99, Linien den Bereich vom Median zum Maximum; die gestrichelte Linie kennzeichnet das kleinste beobachtete Fensterintervall. Quelle: eigene Laufzeitmessungen.\t43\n\tAbbildung 7-6: CPU- und RSS-Verläufe im Sensor-Livebetrieb. Zur Darstellung wurden die CPU-Werte in 1-s-Abschnitten zeitgewichtet und die RSS-Werte gemittelt; die Kennwerte der Tabelle verwenden die ursprünglichen zeitgewichteten Messintervalle. Quelle: eigene Laufzeitmessungen.\t44"
+    },
+    {
+      "name": "Table of Contents3",
+      "service": [
+        "com.sun.star.text.BaseIndex",
+        "com.sun.star.text.ContentIndex"
+      ],
+      "text": "\tTabelle 2-1: Kennzahlen der binären Anomalieerkennung\t6\n\tTabelle 3-1: Ausgewählte Vorarbeiten und ihre Bedeutung für die Untersuchung\t9\n\tTabelle 4-1: Anforderungen, Prioritäten und Nachweise\t12\n\tTabelle 5-1: Bewertung der Prüfstandsalternativen\t15\n\tTabelle 5-2: Kriterien und Gewichte für den Prüfstand\t16\n\tTabelle 5-3: Gewichtete Bewertung der Prüfstandsalternativen\t16\n\tTabelle 5-4: Vergleich der Sensorik und Messketten\t17\n\tTabelle 5-5: Bewertung der Edge-Plattformen\t18\n\tTabelle 5-6: Kriterien und Gewichte für die Edge-Plattform\t18\n\tTabelle 5-7: Gewichtete Bewertung der Edge-Plattformen\t18\n\tTabelle 5-8: Bewertung der Signalrepräsentationen\t19\n\tTabelle 5-9: Auswahl der Anomalieverfahren\t20\n\tTabelle 5-10: Kriterienbasierter Vergleich der Softwarealternativen\t21\n\tTabelle 5-11: Kriterien und Gewichte für die Softwareauswahl\t22\n\tTabelle 5-12: Gewichtete Bewertung der Softwarealternativen\t22\n\tTabelle 5-13: Systementscheidungen und ausstehende Nachweise\t23\n\tTabelle 6-1: Prüfstand und Bedeutung der dokumentierten Größen\t25\n\tTabelle 6-2: Unveränderte Sensorkonfiguration der v4-Messkette\t27\n\tTabelle 6-3: Architektur des ausgeführten Autoencoders\t29\n\tTabelle 6-4: Scores und eingefrorene Entscheidungsschwellen\t30\n\tTabelle 6-5: Komponenten des geprüften Datenwegs\t31\n\tTabelle 7-1: Aufnahmen für Entwicklung und unabhängige Erkennungsprüfung\t33\n\tTabelle 7-2: Unabhängige Normalaufnahmen bei 75 % PWM\t35\n\tTabelle 7-3: Entscheidungen der drei Methoden in der vollständigen Plattenfolge\t35\n\tTabelle 7-4: Physikalischer Vektor-AC-RMS der 5-s-Abschnitte von 180 bis 300 s\t36\n\tTabelle 7-5: Mittlerer Autoencoder-Rekonstruktionsfehler je Achse auf identischen Modellfenstern\t38\n\tTabelle 7-6: Fehlalarme im zweiten normalen Betriebspunkt\t40\n\tTabelle 7-7: Latenz je Methode und Betriebsart; Bereich der drei getrennten Prozesse\t42\n\tTabelle 7-8: Prozessressourcen im aktiven Abschnitt [180,300) s; Bereich der drei Prozesse\t43\n\tTabelle 7-9: Nachweisstand der Anforderungen A1–A13\t46\n\tTabelle A-1: Verzeichnis der maßgeblichen digitalen Belege\t54\n\tTabelle A-2: Verwechslungszahlen der einen Plattenfolge auf identischen Fenstern\t55\n\tTabelle A-3: Deskriptive Kennzahlen für das Zustandslabel; alle Angaben in Prozent\t55"
+    }
+  ],
+  "tables": 34,
+  "headings": [
+    {
+      "text": "Erklärung",
+      "style": "Heading 1",
+      "list_label": ""
+    },
+    {
+      "text": "Einleitung, Problemstellung und Zielsetzung",
+      "style": "Heading 1",
+      "list_label": "1"
+    },
+    {
+      "text": "Ausgangssituation und Motivation",
+      "style": "Heading 2",
+      "list_label": "1.1"
+    },
+    {
+      "text": "Wissenschaftliche Problemstellung",
+      "style": "Heading 2",
+      "list_label": "1.2"
+    },
+    {
+      "text": "Zielsetzung der Arbeit",
+      "style": "Heading 2",
+      "list_label": "1.3"
+    },
+    {
+      "text": "Forschungsfragen und Hypothesen",
+      "style": "Heading 2",
+      "list_label": "1.4"
+    },
+    {
+      "text": "Abgrenzung der Arbeit",
+      "style": "Heading 2",
+      "list_label": "1.5"
+    },
+    {
+      "text": "Aufbau der Arbeit",
+      "style": "Heading 2",
+      "list_label": "1.6"
+    },
+    {
+      "text": "Theoretische Grundlagen",
+      "style": "Heading 1",
+      "list_label": "2"
+    },
+    {
+      "text": "Zustandsüberwachung und Anomalieerkennung",
+      "style": "Heading 2",
+      "list_label": "2.1"
+    },
+    {
+      "text": "Verfahrensklassen für die Anomalieentscheidung",
+      "style": "Heading 2",
+      "list_label": "2.2"
+    },
+    {
+      "text": "Statistische Schwellenwertverfahren",
+      "style": "Heading 3",
+      "list_label": "2.2.1"
+    },
+    {
+      "text": "Klassische Verfahren im Normaldaten-Szenario",
+      "style": "Heading 3",
+      "list_label": "2.2.2"
+    },
+    {
+      "text": "Autoencoder",
+      "style": "Heading 3",
+      "list_label": "2.2.3"
+    },
+    {
+      "text": "Messdaten und Fensterbildung",
+      "style": "Heading 2",
+      "list_label": "2.3"
+    },
+    {
+      "text": "Datenaufteilung und Vorverarbeitung",
+      "style": "Heading 2",
+      "list_label": "2.4"
+    },
+    {
+      "text": "Schwellenwertkalibrierung",
+      "style": "Heading 2",
+      "list_label": "2.5"
+    },
+    {
+      "text": "Erkennungsqualität und Aussagekraft der Evaluation",
+      "style": "Heading 2",
+      "list_label": "2.6"
+    },
+    {
+      "text": "Lokale Ausführung und Zeitverhalten",
+      "style": "Heading 2",
+      "list_label": "2.7"
+    },
+    {
+      "text": "Veränderte Normalbedingungen",
+      "style": "Heading 2",
+      "list_label": "2.8"
+    },
+    {
+      "text": "Stand der Technik und verwandte Arbeiten",
+      "style": "Heading 1",
+      "list_label": "3"
+    },
+    {
+      "text": "Datenbasis und Messbedingungen",
+      "style": "Heading 2",
+      "list_label": "3.1"
+    },
+    {
+      "text": "Verfahren und Edge-Ausführung",
+      "style": "Heading 2",
+      "list_label": "3.2"
+    },
+    {
+      "text": "Vergleich ausgewählter Arbeiten",
+      "style": "Heading 2",
+      "list_label": "3.3"
+    },
+    {
+      "text": "Forschungslücke und Einordnung der eigenen Arbeit",
+      "style": "Heading 2",
+      "list_label": "3.4"
+    },
+    {
+      "text": "Anforderungsanalyse",
+      "style": "Heading 1",
+      "list_label": "4"
+    },
+    {
+      "text": "Messdaten und Vergleichsbasis",
+      "style": "Heading 2",
+      "list_label": "4.1"
+    },
+    {
+      "text": "Lokale Verarbeitung und Zeitverhalten",
+      "style": "Heading 2",
+      "list_label": "4.2"
+    },
+    {
+      "text": "Evaluation",
+      "style": "Heading 2",
+      "list_label": "4.3"
+    },
+    {
+      "text": "Kernanforderungen und Nachweis",
+      "style": "Heading 2",
+      "list_label": "4.4"
+    },
+    {
+      "text": "Variantenvergleich und Systementscheidung",
+      "style": "Heading 1",
+      "list_label": "5"
+    },
+    {
+      "text": "Bewertungsrahmen und Vorgehen",
+      "style": "Heading 2",
+      "list_label": "5.1"
+    },
+    {
+      "text": "Bewertung der Prüfstandsalternativen",
+      "style": "Heading 2",
+      "list_label": "5.2"
+    },
+    {
+      "text": "Auswahl von Sensorik und Edge-Plattform",
+      "style": "Heading 2",
+      "list_label": "5.3"
+    },
+    {
+      "text": "Datenbasis, Signalrepräsentation und Verfahren",
+      "style": "Heading 2",
+      "list_label": "5.4"
+    },
+    {
+      "text": "Kriterienbasierte Bewertung der Softwarealternativen",
+      "style": "Heading 2",
+      "list_label": "5.5"
+    },
+    {
+      "text": "Systementscheidung und Übergang zur Implementierung",
+      "style": "Heading 2",
+      "list_label": "5.6"
+    },
+    {
+      "text": "Implementierung",
+      "style": "Heading 1",
+      "list_label": "6"
+    },
+    {
+      "text": "Prüfstand, Aufbauversionen und Zustandsnachweise",
+      "style": "Heading 2",
+      "list_label": "6.1"
+    },
+    {
+      "text": "Hardware-PWM und Ablaufsteuerung",
+      "style": "Heading 2",
+      "list_label": "6.2"
+    },
+    {
+      "text": "Sensorerfassung, Zeitbasis und Qualitätskennzeichnung",
+      "style": "Heading 2",
+      "list_label": "6.3"
+    },
+    {
+      "text": "Gemeinsame Fensterbildung und Vorverarbeitung",
+      "style": "Heading 2",
+      "list_label": "6.4"
+    },
+    {
+      "text": "Modellpaket, Training und Kalibrierung",
+      "style": "Heading 2",
+      "list_label": "6.5"
+    },
+    {
+      "text": "Lokaler Datenweg und Ressourceninstrumentierung",
+      "style": "Heading 2",
+      "list_label": "6.6"
+    },
+    {
+      "text": "Festgelegte Versuche und Nachweisgrenzen",
+      "style": "Heading 2",
+      "list_label": "6.7"
+    },
+    {
+      "text": "Evaluation und Ergebnisse",
+      "style": "Heading 1",
+      "list_label": "7"
+    },
+    {
+      "text": "Datenbasis und Auswertungseinheit",
+      "style": "Heading 2",
+      "list_label": "7.1"
+    },
+    {
+      "text": "Erfassungsqualität und physikalische Zeitbasis",
+      "style": "Heading 2",
+      "list_label": "7.2"
+    },
+    {
+      "text": "Fehlalarme bei unverändertem Normalbetrieb",
+      "style": "Heading 2",
+      "list_label": "7.3"
+    },
+    {
+      "text": "Kontrollierte Luftstromveränderung und Rückkehrreferenz",
+      "style": "Heading 2",
+      "list_label": "7.4"
+    },
+    {
+      "text": "Explorative Fehleranalyse der Modellentscheidungen",
+      "style": "Heading 2",
+      "list_label": "7.5"
+    },
+    {
+      "text": "Zweiter normaler Betriebspunkt bei 50 % PWM",
+      "style": "Heading 2",
+      "list_label": "7.6"
+    },
+    {
+      "text": "Laufzeit, Ressourcen und lokaler Sensorbetrieb",
+      "style": "Heading 2",
+      "list_label": "7.7"
+    },
+    {
+      "text": "Erfüllungsgrad der Anforderungen",
+      "style": "Heading 2",
+      "list_label": "7.8"
+    },
+    {
+      "text": "Diskussion",
+      "style": "Heading 1",
+      "list_label": "8"
+    },
+    {
+      "text": "Aussagekraft des Methodenvergleichs",
+      "style": "Heading 2",
+      "list_label": "8.1"
+    },
+    {
+      "text": "Einlaufzeit, Aufstellung und Vorverarbeitung",
+      "style": "Heading 2",
+      "list_label": "8.2"
+    },
+    {
+      "text": "Technische Grenzen und Übertragbarkeit",
+      "style": "Heading 2",
+      "list_label": "8.3"
+    },
+    {
+      "text": "Ausblick und verbleibende Nachweise",
+      "style": "Heading 1",
+      "list_label": "9"
+    },
+    {
+      "text": "Fazit",
+      "style": "Heading 1",
+      "list_label": "10"
+    },
+    {
+      "text": "Anhang",
+      "style": "Heading 1",
+      "list_label": ""
+    },
+    {
+      "text": "Digitale Belege und Zuordnung",
+      "style": "Heading 2",
+      "list_label": ""
+    },
+    {
+      "text": "Ergänzende Kennzahlen des kontrollierten Zustandslabels",
+      "style": "Heading 2",
+      "list_label": ""
+    },
+    {
+      "text": "Lesen der Messdateien",
+      "style": "Heading 2",
+      "list_label": ""
+    },
+    {
+      "text": "Literaturverzeichnis",
+      "style": "Heading 1",
+      "list_label": ""
+    }
+  ],
+  "pdf": "results/upright_v4_finalization_20260912_103145/thesis_final.pdf"
+}

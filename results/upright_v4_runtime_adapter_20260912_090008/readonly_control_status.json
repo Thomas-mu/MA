@@ -1,0 +1,21 @@
+{
+  "checked_utc": "2026-09-12T09:09:05.938256+00:00",
+  "action": "read_only_no_PWM_changes",
+  "physical_stop_observed": false,
+  "pin": {
+    "returncode": 0,
+    "stdout": "18: a3    pd | lo // GPIO18 = PWM0_CHAN2\n",
+    "stderr": ""
+  },
+  "device_holders": {
+    "returncode": 1,
+    "stdout": "",
+    "stderr": ""
+  },
+  "pwm_configuration": {
+    "period": "40000",
+    "duty_cycle": "0",
+    "enable": "1",
+    "polarity": "normal"
+  }
+}

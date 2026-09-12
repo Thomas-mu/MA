@@ -1,0 +1,352 @@
+{"utc": "2026-09-12T10:38:57.268974+00:00", "event": "trial_begin", "id": "sensor_live_rms_01", "mode": "sensor_live", "method": "rms", "repeat": 1}
+{"utc": "2026-09-12T10:39:17.269874+00:00", "trial": "sensor_live_rms_01", "status": "preflight", "elapsed_command_s": null}
+{"utc": "2026-09-12T10:39:37.270250+00:00", "trial": "sensor_live_rms_01", "status": "preflight", "elapsed_command_s": null}
+{"utc": "2026-09-12T10:39:57.270630+00:00", "trial": "sensor_live_rms_01", "status": "preflight", "elapsed_command_s": null}
+{"utc": "2026-09-12T10:40:17.271036+00:00", "trial": "sensor_live_rms_01", "status": "recording", "elapsed_command_s": 18.548370467}
+{"utc": "2026-09-12T10:40:37.271465+00:00", "trial": "sensor_live_rms_01", "status": "recording", "elapsed_command_s": 38.548788915}
+{"utc": "2026-09-12T10:40:57.271886+00:00", "trial": "sensor_live_rms_01", "status": "recording", "elapsed_command_s": 58.549209866}
+{"utc": "2026-09-12T10:41:17.272278+00:00", "trial": "sensor_live_rms_01", "status": "recording", "elapsed_command_s": 78.54960048}
+{"utc": "2026-09-12T10:41:37.272666+00:00", "trial": "sensor_live_rms_01", "status": "recording", "elapsed_command_s": 98.549988805}
+{"utc": "2026-09-12T10:41:57.273071+00:00", "trial": "sensor_live_rms_01", "status": "recording", "elapsed_command_s": 118.5503938}
+{"utc": "2026-09-12T10:42:17.273470+00:00", "trial": "sensor_live_rms_01", "status": "recording", "elapsed_command_s": 138.550792904}
+{"utc": "2026-09-12T10:42:37.273873+00:00", "trial": "sensor_live_rms_01", "status": "recording", "elapsed_command_s": 158.551195337}
+{"utc": "2026-09-12T10:42:57.274261+00:00", "trial": "sensor_live_rms_01", "status": "recording", "elapsed_command_s": 178.551582836}
+{"utc": "2026-09-12T10:43:17.274676+00:00", "trial": "sensor_live_rms_01", "status": "recording", "elapsed_command_s": 198.551998251}
+{"utc": "2026-09-12T10:43:37.275074+00:00", "trial": "sensor_live_rms_01", "status": "recording", "elapsed_command_s": 218.552395305}
+{"utc": "2026-09-12T10:43:57.275487+00:00", "trial": "sensor_live_rms_01", "status": "recording", "elapsed_command_s": 238.552808718}
+{"utc": "2026-09-12T10:44:17.275899+00:00", "trial": "sensor_live_rms_01", "status": "recording", "elapsed_command_s": 258.553222121}
+{"utc": "2026-09-12T10:44:37.276294+00:00", "trial": "sensor_live_rms_01", "status": "recording", "elapsed_command_s": 278.553616811}
+{"utc": "2026-09-12T10:44:57.276692+00:00", "trial": "sensor_live_rms_01", "status": "recording", "elapsed_command_s": 298.55401455}
+{"utc": "2026-09-12T10:45:17.277290+00:00", "trial": "sensor_live_rms_01", "status": "completed", "elapsed_command_s": 318.554616154}
+{"event": "trial_complete", "trial": "sensor_live_rms_01", "final_zero_readback": 0}
+{"utc": "2026-09-12T10:45:17.277927+00:00", "event": "trial_begin", "id": "sensor_live_isolation_forest_01", "mode": "sensor_live", "method": "isolation_forest", "repeat": 1}
+{"utc": "2026-09-12T10:45:37.278761+00:00", "trial": "sensor_live_isolation_forest_01", "status": "preflight", "elapsed_command_s": null}
+{"utc": "2026-09-12T10:45:57.279167+00:00", "trial": "sensor_live_isolation_forest_01", "status": "preflight", "elapsed_command_s": null}
+{"utc": "2026-09-12T10:46:17.279588+00:00", "trial": "sensor_live_isolation_forest_01", "status": "preflight", "elapsed_command_s": null}
+{"utc": "2026-09-12T10:46:37.280014+00:00", "trial": "sensor_live_isolation_forest_01", "status": "recording", "elapsed_command_s": 17.256434496}
+{"utc": "2026-09-12T10:46:57.280420+00:00", "trial": "sensor_live_isolation_forest_01", "status": "recording", "elapsed_command_s": 37.256841356}
+{"utc": "2026-09-12T10:47:17.280828+00:00", "trial": "sensor_live_isolation_forest_01", "status": "recording", "elapsed_command_s": 57.257247536}
+{"utc": "2026-09-12T10:47:37.281217+00:00", "trial": "sensor_live_isolation_forest_01", "status": "recording", "elapsed_command_s": 77.257637706}
+{"utc": "2026-09-12T10:47:57.281627+00:00", "trial": "sensor_live_isolation_forest_01", "status": "recording", "elapsed_command_s": 97.258048912}
+{"utc": "2026-09-12T10:48:17.282047+00:00", "trial": "sensor_live_isolation_forest_01", "status": "recording", "elapsed_command_s": 117.258469531}
+{"utc": "2026-09-12T10:48:37.282470+00:00", "trial": "sensor_live_isolation_forest_01", "status": "recording", "elapsed_command_s": 137.258892162}
+{"utc": "2026-09-12T10:48:57.282864+00:00", "trial": "sensor_live_isolation_forest_01", "status": "recording", "elapsed_command_s": 157.259284389}
+{"utc": "2026-09-12T10:49:17.283259+00:00", "trial": "sensor_live_isolation_forest_01", "status": "recording", "elapsed_command_s": 177.259679146}
+{"utc": "2026-09-12T10:49:37.283673+00:00", "trial": "sensor_live_isolation_forest_01", "status": "recording", "elapsed_command_s": 197.260094497}
+{"utc": "2026-09-12T10:49:57.284079+00:00", "trial": "sensor_live_isolation_forest_01", "status": "recording", "elapsed_command_s": 217.260499062}
+{"utc": "2026-09-12T10:50:17.284492+00:00", "trial": "sensor_live_isolation_forest_01", "status": "recording", "elapsed_command_s": 237.260914536}
+{"utc": "2026-09-12T10:50:37.284933+00:00", "trial": "sensor_live_isolation_forest_01", "status": "recording", "elapsed_command_s": 257.261354244}
+{"utc": "2026-09-12T10:50:57.285357+00:00", "trial": "sensor_live_isolation_forest_01", "status": "recording", "elapsed_command_s": 277.261779104}
+{"utc": "2026-09-12T10:51:17.285780+00:00", "trial": "sensor_live_isolation_forest_01", "status": "recording", "elapsed_command_s": 297.262202552}
+{"utc": "2026-09-12T10:51:37.286401+00:00", "trial": "sensor_live_isolation_forest_01", "status": "completed", "elapsed_command_s": 317.262825451}
+{"event": "trial_complete", "trial": "sensor_live_isolation_forest_01", "final_zero_readback": 0}
+{"utc": "2026-09-12T10:51:37.287039+00:00", "event": "trial_begin", "id": "sensor_live_tflite_autoencoder_01", "mode": "sensor_live", "method": "tflite_autoencoder", "repeat": 1}
+{"utc": "2026-09-12T10:51:57.287838+00:00", "trial": "sensor_live_tflite_autoencoder_01", "status": "preflight", "elapsed_command_s": null}
+{"utc": "2026-09-12T10:52:17.288247+00:00", "trial": "sensor_live_tflite_autoencoder_01", "status": "preflight", "elapsed_command_s": null}
+{"utc": "2026-09-12T10:52:37.288591+00:00", "trial": "sensor_live_tflite_autoencoder_01", "status": "preflight", "elapsed_command_s": null}
+{"utc": "2026-09-12T10:52:57.288989+00:00", "trial": "sensor_live_tflite_autoencoder_01", "status": "recording", "elapsed_command_s": 18.540860956}
+{"utc": "2026-09-12T10:53:17.289428+00:00", "trial": "sensor_live_tflite_autoencoder_01", "status": "recording", "elapsed_command_s": 38.541302634}
+{"utc": "2026-09-12T10:53:37.289843+00:00", "trial": "sensor_live_tflite_autoencoder_01", "status": "recording", "elapsed_command_s": 58.541715185}
+{"utc": "2026-09-12T10:53:57.290250+00:00", "trial": "sensor_live_tflite_autoencoder_01", "status": "recording", "elapsed_command_s": 78.542121901}
+{"utc": "2026-09-12T10:54:17.290667+00:00", "trial": "sensor_live_tflite_autoencoder_01", "status": "recording", "elapsed_command_s": 98.542539738}
+{"utc": "2026-09-12T10:54:37.291069+00:00", "trial": "sensor_live_tflite_autoencoder_01", "status": "recording", "elapsed_command_s": 118.542940414}
+{"utc": "2026-09-12T10:54:57.291472+00:00", "trial": "sensor_live_tflite_autoencoder_01", "status": "recording", "elapsed_command_s": 138.543343737}
+{"utc": "2026-09-12T10:55:17.291896+00:00", "trial": "sensor_live_tflite_autoencoder_01", "status": "recording", "elapsed_command_s": 158.54376801}
+{"utc": "2026-09-12T10:55:37.292317+00:00", "trial": "sensor_live_tflite_autoencoder_01", "status": "recording", "elapsed_command_s": 178.544189615}
+{"utc": "2026-09-12T10:55:57.292751+00:00", "trial": "sensor_live_tflite_autoencoder_01", "status": "recording", "elapsed_command_s": 198.544623975}
+{"utc": "2026-09-12T10:56:17.293185+00:00", "trial": "sensor_live_tflite_autoencoder_01", "status": "recording", "elapsed_command_s": 218.545057534}
+{"utc": "2026-09-12T10:56:37.293619+00:00", "trial": "sensor_live_tflite_autoencoder_01", "status": "recording", "elapsed_command_s": 238.545490486}
+{"utc": "2026-09-12T10:56:57.294028+00:00", "trial": "sensor_live_tflite_autoencoder_01", "status": "recording", "elapsed_command_s": 258.545899417}
+{"utc": "2026-09-12T10:57:17.294453+00:00", "trial": "sensor_live_tflite_autoencoder_01", "status": "recording", "elapsed_command_s": 278.546325399}
+{"utc": "2026-09-12T10:57:37.294853+00:00", "trial": "sensor_live_tflite_autoencoder_01", "status": "recording", "elapsed_command_s": 298.54672464}
+{"utc": "2026-09-12T10:57:57.295327+00:00", "trial": "sensor_live_tflite_autoencoder_01", "status": "completed", "elapsed_command_s": 318.547197066}
+{"event": "trial_complete", "trial": "sensor_live_tflite_autoencoder_01", "final_zero_readback": 0}
+{"utc": "2026-09-12T10:57:57.295784+00:00", "event": "trial_begin", "id": "sensor_live_isolation_forest_02", "mode": "sensor_live", "method": "isolation_forest", "repeat": 2}
+{"utc": "2026-09-12T10:58:17.296486+00:00", "trial": "sensor_live_isolation_forest_02", "status": "preflight", "elapsed_command_s": null}
+{"utc": "2026-09-12T10:58:37.296895+00:00", "trial": "sensor_live_isolation_forest_02", "status": "preflight", "elapsed_command_s": null}
+{"utc": "2026-09-12T10:58:57.297299+00:00", "trial": "sensor_live_isolation_forest_02", "status": "preflight", "elapsed_command_s": null}
+{"utc": "2026-09-12T10:59:17.297731+00:00", "trial": "sensor_live_isolation_forest_02", "status": "recording", "elapsed_command_s": 17.288812336}
+{"utc": "2026-09-12T10:59:37.298141+00:00", "trial": "sensor_live_isolation_forest_02", "status": "recording", "elapsed_command_s": 37.289222237}
+{"utc": "2026-09-12T10:59:57.298565+00:00", "trial": "sensor_live_isolation_forest_02", "status": "recording", "elapsed_command_s": 57.289646162}
+{"utc": "2026-09-12T11:00:17.298990+00:00", "trial": "sensor_live_isolation_forest_02", "status": "recording", "elapsed_command_s": 77.290071778}
+{"utc": "2026-09-12T11:00:37.299412+00:00", "trial": "sensor_live_isolation_forest_02", "status": "recording", "elapsed_command_s": 97.29049248}
+{"utc": "2026-09-12T11:00:57.299834+00:00", "trial": "sensor_live_isolation_forest_02", "status": "recording", "elapsed_command_s": 117.290928051}
+{"utc": "2026-09-12T11:01:17.300269+00:00", "trial": "sensor_live_isolation_forest_02", "status": "recording", "elapsed_command_s": 137.291350171}
+{"utc": "2026-09-12T11:01:37.300693+00:00", "trial": "sensor_live_isolation_forest_02", "status": "recording", "elapsed_command_s": 157.291774593}
+{"utc": "2026-09-12T11:01:57.301127+00:00", "trial": "sensor_live_isolation_forest_02", "status": "recording", "elapsed_command_s": 177.292208075}
+{"utc": "2026-09-12T11:02:17.301549+00:00", "trial": "sensor_live_isolation_forest_02", "status": "recording", "elapsed_command_s": 197.292629656}
+{"utc": "2026-09-12T11:02:37.301966+00:00", "trial": "sensor_live_isolation_forest_02", "status": "recording", "elapsed_command_s": 217.29304686}
+{"utc": "2026-09-12T11:02:57.302390+00:00", "trial": "sensor_live_isolation_forest_02", "status": "recording", "elapsed_command_s": 237.293470765}
+{"utc": "2026-09-12T11:03:17.302820+00:00", "trial": "sensor_live_isolation_forest_02", "status": "recording", "elapsed_command_s": 257.293900754}
+{"utc": "2026-09-12T11:03:37.303237+00:00", "trial": "sensor_live_isolation_forest_02", "status": "recording", "elapsed_command_s": 277.294317577}
+{"utc": "2026-09-12T11:03:57.303661+00:00", "trial": "sensor_live_isolation_forest_02", "status": "recording", "elapsed_command_s": 297.29474175}
+{"utc": "2026-09-12T11:04:17.304280+00:00", "trial": "sensor_live_isolation_forest_02", "status": "completed", "elapsed_command_s": 317.29536364}
+{"event": "trial_complete", "trial": "sensor_live_isolation_forest_02", "final_zero_readback": 0}
+{"utc": "2026-09-12T11:04:17.304889+00:00", "event": "trial_begin", "id": "sensor_live_tflite_autoencoder_02", "mode": "sensor_live", "method": "tflite_autoencoder", "repeat": 2}
+{"utc": "2026-09-12T11:04:37.305696+00:00", "trial": "sensor_live_tflite_autoencoder_02", "status": "preflight", "elapsed_command_s": null}
+{"utc": "2026-09-12T11:04:57.306084+00:00", "trial": "sensor_live_tflite_autoencoder_02", "status": "preflight", "elapsed_command_s": null}
+{"utc": "2026-09-12T11:05:17.306477+00:00", "trial": "sensor_live_tflite_autoencoder_02", "status": "preflight", "elapsed_command_s": null}
+{"utc": "2026-09-12T11:05:37.306874+00:00", "trial": "sensor_live_tflite_autoencoder_02", "status": "recording", "elapsed_command_s": 18.535433964}
+{"utc": "2026-09-12T11:05:57.307280+00:00", "trial": "sensor_live_tflite_autoencoder_02", "status": "recording", "elapsed_command_s": 38.535841121}
+{"utc": "2026-09-12T11:06:17.307693+00:00", "trial": "sensor_live_tflite_autoencoder_02", "status": "recording", "elapsed_command_s": 58.536254529}
+{"utc": "2026-09-12T11:06:37.308104+00:00", "trial": "sensor_live_tflite_autoencoder_02", "status": "recording", "elapsed_command_s": 78.536664643}
+{"utc": "2026-09-12T11:06:57.308498+00:00", "trial": "sensor_live_tflite_autoencoder_02", "status": "recording", "elapsed_command_s": 98.537057848}
+{"utc": "2026-09-12T11:07:17.308904+00:00", "trial": "sensor_live_tflite_autoencoder_02", "status": "recording", "elapsed_command_s": 118.537464658}
+{"utc": "2026-09-12T11:07:37.309315+00:00", "trial": "sensor_live_tflite_autoencoder_02", "status": "recording", "elapsed_command_s": 138.537876572}
+{"utc": "2026-09-12T11:07:57.309732+00:00", "trial": "sensor_live_tflite_autoencoder_02", "status": "recording", "elapsed_command_s": 158.53829359}
+{"utc": "2026-09-12T11:08:17.310132+00:00", "trial": "sensor_live_tflite_autoencoder_02", "status": "recording", "elapsed_command_s": 178.538691897}
+{"utc": "2026-09-12T11:08:37.310550+00:00", "trial": "sensor_live_tflite_autoencoder_02", "status": "recording", "elapsed_command_s": 198.539110756}
+{"utc": "2026-09-12T11:08:57.310967+00:00", "trial": "sensor_live_tflite_autoencoder_02", "status": "recording", "elapsed_command_s": 218.539527355}
+{"utc": "2026-09-12T11:09:17.311378+00:00", "trial": "sensor_live_tflite_autoencoder_02", "status": "recording", "elapsed_command_s": 238.539938904}
+{"utc": "2026-09-12T11:09:37.311802+00:00", "trial": "sensor_live_tflite_autoencoder_02", "status": "recording", "elapsed_command_s": 258.540364057}
+{"utc": "2026-09-12T11:09:57.312232+00:00", "trial": "sensor_live_tflite_autoencoder_02", "status": "recording", "elapsed_command_s": 278.540793561}
+{"utc": "2026-09-12T11:10:17.312648+00:00", "trial": "sensor_live_tflite_autoencoder_02", "status": "recording", "elapsed_command_s": 298.541210056}
+{"utc": "2026-09-12T11:10:37.313250+00:00", "trial": "sensor_live_tflite_autoencoder_02", "status": "completed", "elapsed_command_s": 318.541813976}
+{"event": "trial_complete", "trial": "sensor_live_tflite_autoencoder_02", "final_zero_readback": 0}
+{"utc": "2026-09-12T11:10:37.313929+00:00", "event": "trial_begin", "id": "sensor_live_rms_02", "mode": "sensor_live", "method": "rms", "repeat": 2}
+{"utc": "2026-09-12T11:10:57.314773+00:00", "trial": "sensor_live_rms_02", "status": "preflight", "elapsed_command_s": null}
+{"utc": "2026-09-12T11:11:17.315171+00:00", "trial": "sensor_live_rms_02", "status": "preflight", "elapsed_command_s": null}
+{"utc": "2026-09-12T11:11:37.315555+00:00", "trial": "sensor_live_rms_02", "status": "preflight", "elapsed_command_s": null}
+{"utc": "2026-09-12T11:11:57.315977+00:00", "trial": "sensor_live_rms_02", "status": "recording", "elapsed_command_s": 18.542526294}
+{"utc": "2026-09-12T11:12:17.316393+00:00", "trial": "sensor_live_rms_02", "status": "recording", "elapsed_command_s": 38.542942599}
+{"utc": "2026-09-12T11:12:37.316802+00:00", "trial": "sensor_live_rms_02", "status": "recording", "elapsed_command_s": 58.543350836}
+{"utc": "2026-09-12T11:12:57.317206+00:00", "trial": "sensor_live_rms_02", "status": "recording", "elapsed_command_s": 78.543754926}
+{"utc": "2026-09-12T11:13:17.317617+00:00", "trial": "sensor_live_rms_02", "status": "recording", "elapsed_command_s": 98.544166352}
+{"utc": "2026-09-12T11:13:37.318041+00:00", "trial": "sensor_live_rms_02", "status": "recording", "elapsed_command_s": 118.544590851}
+{"utc": "2026-09-12T11:13:57.318457+00:00", "trial": "sensor_live_rms_02", "status": "recording", "elapsed_command_s": 138.545005648}
+{"utc": "2026-09-12T11:14:17.318812+00:00", "trial": "sensor_live_rms_02", "status": "recording", "elapsed_command_s": 158.545356223}
+{"utc": "2026-09-12T11:14:37.319200+00:00", "trial": "sensor_live_rms_02", "status": "recording", "elapsed_command_s": 178.54574845}
+{"utc": "2026-09-12T11:14:57.319628+00:00", "trial": "sensor_live_rms_02", "status": "recording", "elapsed_command_s": 198.546178032}
+{"utc": "2026-09-12T11:15:17.320047+00:00", "trial": "sensor_live_rms_02", "status": "recording", "elapsed_command_s": 218.546594197}
+{"utc": "2026-09-12T11:15:37.320456+00:00", "trial": "sensor_live_rms_02", "status": "recording", "elapsed_command_s": 238.547004631}
+{"utc": "2026-09-12T11:15:57.320863+00:00", "trial": "sensor_live_rms_02", "status": "recording", "elapsed_command_s": 258.547410932}
+{"utc": "2026-09-12T11:16:17.321257+00:00", "trial": "sensor_live_rms_02", "status": "recording", "elapsed_command_s": 278.5478044}
+{"utc": "2026-09-12T11:16:37.321667+00:00", "trial": "sensor_live_rms_02", "status": "recording", "elapsed_command_s": 298.54821593}
+{"utc": "2026-09-12T11:16:57.322275+00:00", "trial": "sensor_live_rms_02", "status": "completed", "elapsed_command_s": 318.548826932}
+{"event": "trial_complete", "trial": "sensor_live_rms_02", "final_zero_readback": 0}
+{"utc": "2026-09-12T11:16:57.322898+00:00", "event": "trial_begin", "id": "sensor_live_tflite_autoencoder_03", "mode": "sensor_live", "method": "tflite_autoencoder", "repeat": 3}
+{"utc": "2026-09-12T11:17:17.323704+00:00", "trial": "sensor_live_tflite_autoencoder_03", "status": "preflight", "elapsed_command_s": null}
+{"utc": "2026-09-12T11:17:37.324105+00:00", "trial": "sensor_live_tflite_autoencoder_03", "status": "preflight", "elapsed_command_s": null}
+{"utc": "2026-09-12T11:17:57.324509+00:00", "trial": "sensor_live_tflite_autoencoder_03", "status": "preflight", "elapsed_command_s": null}
+{"utc": "2026-09-12T11:18:17.324926+00:00", "trial": "sensor_live_tflite_autoencoder_03", "status": "recording", "elapsed_command_s": 18.502878906}
+{"utc": "2026-09-12T11:18:37.325342+00:00", "trial": "sensor_live_tflite_autoencoder_03", "status": "recording", "elapsed_command_s": 38.503294787}
+{"utc": "2026-09-12T11:18:57.325752+00:00", "trial": "sensor_live_tflite_autoencoder_03", "status": "recording", "elapsed_command_s": 58.503704796}
+{"utc": "2026-09-12T11:19:17.326175+00:00", "trial": "sensor_live_tflite_autoencoder_03", "status": "recording", "elapsed_command_s": 78.504126757}
+{"utc": "2026-09-12T11:19:37.326606+00:00", "trial": "sensor_live_tflite_autoencoder_03", "status": "recording", "elapsed_command_s": 98.504558827}
+{"utc": "2026-09-12T11:19:57.327028+00:00", "trial": "sensor_live_tflite_autoencoder_03", "status": "recording", "elapsed_command_s": 118.504979774}
+{"utc": "2026-09-12T11:20:17.327443+00:00", "trial": "sensor_live_tflite_autoencoder_03", "status": "recording", "elapsed_command_s": 138.505395811}
+{"utc": "2026-09-12T11:20:37.327850+00:00", "trial": "sensor_live_tflite_autoencoder_03", "status": "recording", "elapsed_command_s": 158.505811728}
+{"utc": "2026-09-12T11:20:57.328276+00:00", "trial": "sensor_live_tflite_autoencoder_03", "status": "recording", "elapsed_command_s": 178.506229552}
+{"utc": "2026-09-12T11:21:17.328680+00:00", "trial": "sensor_live_tflite_autoencoder_03", "status": "recording", "elapsed_command_s": 198.506631609}
+{"utc": "2026-09-12T11:21:37.329028+00:00", "trial": "sensor_live_tflite_autoencoder_03", "status": "recording", "elapsed_command_s": 218.506976132}
+{"utc": "2026-09-12T11:21:57.329433+00:00", "trial": "sensor_live_tflite_autoencoder_03", "status": "recording", "elapsed_command_s": 238.5073858}
+{"utc": "2026-09-12T11:22:17.329851+00:00", "trial": "sensor_live_tflite_autoencoder_03", "status": "recording", "elapsed_command_s": 258.507802475}
+{"utc": "2026-09-12T11:22:37.330273+00:00", "trial": "sensor_live_tflite_autoencoder_03", "status": "recording", "elapsed_command_s": 278.508226337}
+{"utc": "2026-09-12T11:22:57.330695+00:00", "trial": "sensor_live_tflite_autoencoder_03", "status": "recording", "elapsed_command_s": 298.508649452}
+{"utc": "2026-09-12T11:23:17.331320+00:00", "trial": "sensor_live_tflite_autoencoder_03", "status": "completed", "elapsed_command_s": 318.509275963}
+{"event": "trial_complete", "trial": "sensor_live_tflite_autoencoder_03", "final_zero_readback": 0}
+{"utc": "2026-09-12T11:23:17.331969+00:00", "event": "trial_begin", "id": "sensor_live_rms_03", "mode": "sensor_live", "method": "rms", "repeat": 3}
+{"utc": "2026-09-12T11:23:37.332780+00:00", "trial": "sensor_live_rms_03", "status": "preflight", "elapsed_command_s": null}
+{"utc": "2026-09-12T11:23:57.333191+00:00", "trial": "sensor_live_rms_03", "status": "preflight", "elapsed_command_s": null}
+{"utc": "2026-09-12T11:24:17.333584+00:00", "trial": "sensor_live_rms_03", "status": "preflight", "elapsed_command_s": null}
+{"utc": "2026-09-12T11:24:37.334010+00:00", "trial": "sensor_live_rms_03", "status": "recording", "elapsed_command_s": 18.541924949}
+{"utc": "2026-09-12T11:24:57.334440+00:00", "trial": "sensor_live_rms_03", "status": "recording", "elapsed_command_s": 38.542355965}
+{"utc": "2026-09-12T11:25:17.334858+00:00", "trial": "sensor_live_rms_03", "status": "recording", "elapsed_command_s": 58.542772827}
+{"utc": "2026-09-12T11:25:37.335275+00:00", "trial": "sensor_live_rms_03", "status": "recording", "elapsed_command_s": 78.543189954}
+{"utc": "2026-09-12T11:25:57.335709+00:00", "trial": "sensor_live_rms_03", "status": "recording", "elapsed_command_s": 98.543625695}
+{"utc": "2026-09-12T11:26:17.336147+00:00", "trial": "sensor_live_rms_03", "status": "recording", "elapsed_command_s": 118.544061953}
+{"utc": "2026-09-12T11:26:37.336600+00:00", "trial": "sensor_live_rms_03", "status": "recording", "elapsed_command_s": 138.544514908}
+{"utc": "2026-09-12T11:26:57.337012+00:00", "trial": "sensor_live_rms_03", "status": "recording", "elapsed_command_s": 158.544926797}
+{"utc": "2026-09-12T11:27:17.337441+00:00", "trial": "sensor_live_rms_03", "status": "recording", "elapsed_command_s": 178.545355875}
+{"utc": "2026-09-12T11:27:37.337880+00:00", "trial": "sensor_live_rms_03", "status": "recording", "elapsed_command_s": 198.545795066}
+{"utc": "2026-09-12T11:27:57.338315+00:00", "trial": "sensor_live_rms_03", "status": "recording", "elapsed_command_s": 218.546229975}
+{"utc": "2026-09-12T11:28:17.338725+00:00", "trial": "sensor_live_rms_03", "status": "recording", "elapsed_command_s": 238.546638953}
+{"utc": "2026-09-12T11:28:37.339149+00:00", "trial": "sensor_live_rms_03", "status": "recording", "elapsed_command_s": 258.547063291}
+{"utc": "2026-09-12T11:28:57.339578+00:00", "trial": "sensor_live_rms_03", "status": "recording", "elapsed_command_s": 278.547493357}
+{"utc": "2026-09-12T11:29:17.340021+00:00", "trial": "sensor_live_rms_03", "status": "recording", "elapsed_command_s": 298.547937298}
+{"utc": "2026-09-12T11:29:37.340652+00:00", "trial": "sensor_live_rms_03", "status": "completed", "elapsed_command_s": 318.54856928}
+{"event": "trial_complete", "trial": "sensor_live_rms_03", "final_zero_readback": 0}
+{"utc": "2026-09-12T11:29:37.341267+00:00", "event": "trial_begin", "id": "sensor_live_isolation_forest_03", "mode": "sensor_live", "method": "isolation_forest", "repeat": 3}
+{"utc": "2026-09-12T11:29:57.342064+00:00", "trial": "sensor_live_isolation_forest_03", "status": "preflight", "elapsed_command_s": null}
+{"utc": "2026-09-12T11:30:17.342463+00:00", "trial": "sensor_live_isolation_forest_03", "status": "preflight", "elapsed_command_s": null}
+{"utc": "2026-09-12T11:30:37.342864+00:00", "trial": "sensor_live_isolation_forest_03", "status": "preflight", "elapsed_command_s": null}
+{"utc": "2026-09-12T11:30:57.343296+00:00", "trial": "sensor_live_isolation_forest_03", "status": "recording", "elapsed_command_s": 17.29154109}
+{"utc": "2026-09-12T11:31:17.343726+00:00", "trial": "sensor_live_isolation_forest_03", "status": "recording", "elapsed_command_s": 37.291971084}
+{"utc": "2026-09-12T11:31:37.344126+00:00", "trial": "sensor_live_isolation_forest_03", "status": "recording", "elapsed_command_s": 57.292371119}
+{"utc": "2026-09-12T11:31:57.344477+00:00", "trial": "sensor_live_isolation_forest_03", "status": "recording", "elapsed_command_s": 77.292716541}
+{"utc": "2026-09-12T11:32:17.344862+00:00", "trial": "sensor_live_isolation_forest_03", "status": "recording", "elapsed_command_s": 97.293105456}
+{"utc": "2026-09-12T11:32:37.345272+00:00", "trial": "sensor_live_isolation_forest_03", "status": "recording", "elapsed_command_s": 117.293517675}
+{"utc": "2026-09-12T11:32:57.345673+00:00", "trial": "sensor_live_isolation_forest_03", "status": "recording", "elapsed_command_s": 137.293917306}
+{"utc": "2026-09-12T11:33:17.346072+00:00", "trial": "sensor_live_isolation_forest_03", "status": "recording", "elapsed_command_s": 157.294316587}
+{"utc": "2026-09-12T11:33:37.346486+00:00", "trial": "sensor_live_isolation_forest_03", "status": "recording", "elapsed_command_s": 177.294730611}
+{"utc": "2026-09-12T11:33:57.346919+00:00", "trial": "sensor_live_isolation_forest_03", "status": "recording", "elapsed_command_s": 197.295164968}
+{"utc": "2026-09-12T11:34:17.347359+00:00", "trial": "sensor_live_isolation_forest_03", "status": "recording", "elapsed_command_s": 217.295604621}
+{"utc": "2026-09-12T11:34:37.347788+00:00", "trial": "sensor_live_isolation_forest_03", "status": "recording", "elapsed_command_s": 237.296032572}
+{"utc": "2026-09-12T11:34:57.348217+00:00", "trial": "sensor_live_isolation_forest_03", "status": "recording", "elapsed_command_s": 257.2964611}
+{"utc": "2026-09-12T11:35:17.348629+00:00", "trial": "sensor_live_isolation_forest_03", "status": "recording", "elapsed_command_s": 277.296873206}
+{"utc": "2026-09-12T11:35:37.349048+00:00", "trial": "sensor_live_isolation_forest_03", "status": "recording", "elapsed_command_s": 297.297293356}
+{"utc": "2026-09-12T11:35:57.349659+00:00", "trial": "sensor_live_isolation_forest_03", "status": "completed", "elapsed_command_s": 317.297906313}
+{"event": "trial_complete", "trial": "sensor_live_isolation_forest_03", "final_zero_readback": 0}
+{"utc": "2026-09-12T11:35:57.350259+00:00", "event": "trial_begin", "id": "offline_replay_rms_01", "mode": "offline_replay", "method": "rms", "repeat": 1}
+{"utc": "2026-09-12T11:36:17.351006+00:00", "trial": "offline_replay_rms_01", "status": "preflight", "elapsed_command_s": null}
+{"utc": "2026-09-12T11:36:37.351323+00:00", "trial": "offline_replay_rms_01", "status": "preflight", "elapsed_command_s": null}
+{"utc": "2026-09-12T11:36:57.351633+00:00", "trial": "offline_replay_rms_01", "status": "preflight", "elapsed_command_s": null}
+{"utc": "2026-09-12T11:37:17.351962+00:00", "trial": "offline_replay_rms_01", "status": "preflight", "elapsed_command_s": null}
+{"utc": "2026-09-12T11:37:37.352272+00:00", "trial": "offline_replay_rms_01", "status": "preflight", "elapsed_command_s": null}
+{"utc": "2026-09-12T11:37:57.352589+00:00", "trial": "offline_replay_rms_01", "status": "preflight", "elapsed_command_s": null}
+{"utc": "2026-09-12T11:38:17.352919+00:00", "trial": "offline_replay_rms_01", "status": "preflight", "elapsed_command_s": null}
+{"utc": "2026-09-12T11:38:37.353203+00:00", "trial": "offline_replay_rms_01", "status": "preflight", "elapsed_command_s": null}
+{"utc": "2026-09-12T11:38:57.353503+00:00", "trial": "offline_replay_rms_01", "status": "preflight", "elapsed_command_s": null}
+{"utc": "2026-09-12T11:39:17.353825+00:00", "trial": "offline_replay_rms_01", "status": "preflight", "elapsed_command_s": null}
+{"utc": "2026-09-12T11:39:37.354142+00:00", "trial": "offline_replay_rms_01", "status": "preflight", "elapsed_command_s": null}
+{"utc": "2026-09-12T11:39:57.354448+00:00", "trial": "offline_replay_rms_01", "status": "preflight", "elapsed_command_s": null}
+{"utc": "2026-09-12T11:40:17.354755+00:00", "trial": "offline_replay_rms_01", "status": "preflight", "elapsed_command_s": null}
+{"utc": "2026-09-12T11:40:37.355086+00:00", "trial": "offline_replay_rms_01", "status": "preflight", "elapsed_command_s": null}
+{"utc": "2026-09-12T11:40:57.355428+00:00", "trial": "offline_replay_rms_01", "status": "preflight", "elapsed_command_s": null}
+{"utc": "2026-09-12T11:41:17.355844+00:00", "trial": "offline_replay_rms_01", "status": "completed", "elapsed_command_s": null}
+{"event": "trial_complete", "trial": "offline_replay_rms_01", "final_zero_readback": null}
+{"utc": "2026-09-12T11:41:17.356244+00:00", "event": "trial_begin", "id": "offline_replay_isolation_forest_01", "mode": "offline_replay", "method": "isolation_forest", "repeat": 1}
+{"utc": "2026-09-12T11:41:37.356982+00:00", "trial": "offline_replay_isolation_forest_01", "status": "preflight", "elapsed_command_s": null}
+{"utc": "2026-09-12T11:41:57.357311+00:00", "trial": "offline_replay_isolation_forest_01", "status": "preflight", "elapsed_command_s": null}
+{"utc": "2026-09-12T11:42:17.357628+00:00", "trial": "offline_replay_isolation_forest_01", "status": "preflight", "elapsed_command_s": null}
+{"utc": "2026-09-12T11:42:37.357948+00:00", "trial": "offline_replay_isolation_forest_01", "status": "preflight", "elapsed_command_s": null}
+{"utc": "2026-09-12T11:42:57.358263+00:00", "trial": "offline_replay_isolation_forest_01", "status": "preflight", "elapsed_command_s": null}
+{"utc": "2026-09-12T11:43:17.358583+00:00", "trial": "offline_replay_isolation_forest_01", "status": "preflight", "elapsed_command_s": null}
+{"utc": "2026-09-12T11:43:37.358902+00:00", "trial": "offline_replay_isolation_forest_01", "status": "preflight", "elapsed_command_s": null}
+{"utc": "2026-09-12T11:43:57.359229+00:00", "trial": "offline_replay_isolation_forest_01", "status": "preflight", "elapsed_command_s": null}
+{"utc": "2026-09-12T11:44:17.359550+00:00", "trial": "offline_replay_isolation_forest_01", "status": "preflight", "elapsed_command_s": null}
+{"utc": "2026-09-12T11:44:37.359890+00:00", "trial": "offline_replay_isolation_forest_01", "status": "preflight", "elapsed_command_s": null}
+{"utc": "2026-09-12T11:44:57.360206+00:00", "trial": "offline_replay_isolation_forest_01", "status": "preflight", "elapsed_command_s": null}
+{"utc": "2026-09-12T11:45:17.360528+00:00", "trial": "offline_replay_isolation_forest_01", "status": "preflight", "elapsed_command_s": null}
+{"utc": "2026-09-12T11:45:37.360843+00:00", "trial": "offline_replay_isolation_forest_01", "status": "preflight", "elapsed_command_s": null}
+{"utc": "2026-09-12T11:45:57.361151+00:00", "trial": "offline_replay_isolation_forest_01", "status": "preflight", "elapsed_command_s": null}
+{"utc": "2026-09-12T11:46:17.361451+00:00", "trial": "offline_replay_isolation_forest_01", "status": "preflight", "elapsed_command_s": null}
+{"utc": "2026-09-12T11:46:37.361838+00:00", "trial": "offline_replay_isolation_forest_01", "status": "completed", "elapsed_command_s": null}
+{"event": "trial_complete", "trial": "offline_replay_isolation_forest_01", "final_zero_readback": null}
+{"utc": "2026-09-12T11:46:37.362222+00:00", "event": "trial_begin", "id": "offline_replay_tflite_autoencoder_01", "mode": "offline_replay", "method": "tflite_autoencoder", "repeat": 1}
+{"utc": "2026-09-12T11:46:57.362940+00:00", "trial": "offline_replay_tflite_autoencoder_01", "status": "preflight", "elapsed_command_s": null}
+{"utc": "2026-09-12T11:47:17.363256+00:00", "trial": "offline_replay_tflite_autoencoder_01", "status": "preflight", "elapsed_command_s": null}
+{"utc": "2026-09-12T11:47:37.363568+00:00", "trial": "offline_replay_tflite_autoencoder_01", "status": "preflight", "elapsed_command_s": null}
+{"utc": "2026-09-12T11:47:57.363897+00:00", "trial": "offline_replay_tflite_autoencoder_01", "status": "preflight", "elapsed_command_s": null}
+{"utc": "2026-09-12T11:48:17.364210+00:00", "trial": "offline_replay_tflite_autoencoder_01", "status": "preflight", "elapsed_command_s": null}
+{"utc": "2026-09-12T11:48:37.364527+00:00", "trial": "offline_replay_tflite_autoencoder_01", "status": "preflight", "elapsed_command_s": null}
+{"utc": "2026-09-12T11:48:57.364841+00:00", "trial": "offline_replay_tflite_autoencoder_01", "status": "preflight", "elapsed_command_s": null}
+{"utc": "2026-09-12T11:49:17.365162+00:00", "trial": "offline_replay_tflite_autoencoder_01", "status": "preflight", "elapsed_command_s": null}
+{"utc": "2026-09-12T11:49:37.365442+00:00", "trial": "offline_replay_tflite_autoencoder_01", "status": "preflight", "elapsed_command_s": null}
+{"utc": "2026-09-12T11:49:57.365745+00:00", "trial": "offline_replay_tflite_autoencoder_01", "status": "preflight", "elapsed_command_s": null}
+{"utc": "2026-09-12T11:50:17.366052+00:00", "trial": "offline_replay_tflite_autoencoder_01", "status": "preflight", "elapsed_command_s": null}
+{"utc": "2026-09-12T11:50:37.366369+00:00", "trial": "offline_replay_tflite_autoencoder_01", "status": "preflight", "elapsed_command_s": null}
+{"utc": "2026-09-12T11:50:57.366672+00:00", "trial": "offline_replay_tflite_autoencoder_01", "status": "preflight", "elapsed_command_s": null}
+{"utc": "2026-09-12T11:51:17.367006+00:00", "trial": "offline_replay_tflite_autoencoder_01", "status": "preflight", "elapsed_command_s": null}
+{"utc": "2026-09-12T11:51:37.367332+00:00", "trial": "offline_replay_tflite_autoencoder_01", "status": "preflight", "elapsed_command_s": null}
+{"utc": "2026-09-12T11:51:57.367731+00:00", "trial": "offline_replay_tflite_autoencoder_01", "status": "completed", "elapsed_command_s": null}
+{"event": "trial_complete", "trial": "offline_replay_tflite_autoencoder_01", "final_zero_readback": null}
+{"utc": "2026-09-12T11:51:57.368154+00:00", "event": "trial_begin", "id": "offline_replay_isolation_forest_02", "mode": "offline_replay", "method": "isolation_forest", "repeat": 2}
+{"utc": "2026-09-12T11:52:17.368878+00:00", "trial": "offline_replay_isolation_forest_02", "status": "preflight", "elapsed_command_s": null}
+{"utc": "2026-09-12T11:52:37.369197+00:00", "trial": "offline_replay_isolation_forest_02", "status": "preflight", "elapsed_command_s": null}
+{"utc": "2026-09-12T11:52:57.369507+00:00", "trial": "offline_replay_isolation_forest_02", "status": "preflight", "elapsed_command_s": null}
+{"utc": "2026-09-12T11:53:17.369816+00:00", "trial": "offline_replay_isolation_forest_02", "status": "preflight", "elapsed_command_s": null}
+{"utc": "2026-09-12T11:53:37.370138+00:00", "trial": "offline_replay_isolation_forest_02", "status": "preflight", "elapsed_command_s": null}
+{"utc": "2026-09-12T11:53:57.370446+00:00", "trial": "offline_replay_isolation_forest_02", "status": "preflight", "elapsed_command_s": null}
+{"utc": "2026-09-12T11:54:17.370780+00:00", "trial": "offline_replay_isolation_forest_02", "status": "preflight", "elapsed_command_s": null}
+{"utc": "2026-09-12T11:54:37.371106+00:00", "trial": "offline_replay_isolation_forest_02", "status": "preflight", "elapsed_command_s": null}
+{"utc": "2026-09-12T11:54:57.371415+00:00", "trial": "offline_replay_isolation_forest_02", "status": "preflight", "elapsed_command_s": null}
+{"utc": "2026-09-12T11:55:17.371730+00:00", "trial": "offline_replay_isolation_forest_02", "status": "preflight", "elapsed_command_s": null}
+{"utc": "2026-09-12T11:55:37.372038+00:00", "trial": "offline_replay_isolation_forest_02", "status": "preflight", "elapsed_command_s": null}
+{"utc": "2026-09-12T11:55:57.372310+00:00", "trial": "offline_replay_isolation_forest_02", "status": "preflight", "elapsed_command_s": null}
+{"utc": "2026-09-12T11:56:17.372600+00:00", "trial": "offline_replay_isolation_forest_02", "status": "preflight", "elapsed_command_s": null}
+{"utc": "2026-09-12T11:56:37.372907+00:00", "trial": "offline_replay_isolation_forest_02", "status": "preflight", "elapsed_command_s": null}
+{"utc": "2026-09-12T11:56:57.373204+00:00", "trial": "offline_replay_isolation_forest_02", "status": "preflight", "elapsed_command_s": null}
+{"utc": "2026-09-12T11:57:17.373601+00:00", "trial": "offline_replay_isolation_forest_02", "status": "completed", "elapsed_command_s": null}
+{"event": "trial_complete", "trial": "offline_replay_isolation_forest_02", "final_zero_readback": null}
+{"utc": "2026-09-12T11:57:17.373989+00:00", "event": "trial_begin", "id": "offline_replay_tflite_autoencoder_02", "mode": "offline_replay", "method": "tflite_autoencoder", "repeat": 2}
+{"utc": "2026-09-12T11:57:37.374719+00:00", "trial": "offline_replay_tflite_autoencoder_02", "status": "preflight", "elapsed_command_s": null}
+{"utc": "2026-09-12T11:57:57.375042+00:00", "trial": "offline_replay_tflite_autoencoder_02", "status": "preflight", "elapsed_command_s": null}
+{"utc": "2026-09-12T11:58:17.375363+00:00", "trial": "offline_replay_tflite_autoencoder_02", "status": "preflight", "elapsed_command_s": null}
+{"utc": "2026-09-12T11:58:37.375673+00:00", "trial": "offline_replay_tflite_autoencoder_02", "status": "preflight", "elapsed_command_s": null}
+{"utc": "2026-09-12T11:58:57.375995+00:00", "trial": "offline_replay_tflite_autoencoder_02", "status": "preflight", "elapsed_command_s": null}
+{"utc": "2026-09-12T11:59:17.376310+00:00", "trial": "offline_replay_tflite_autoencoder_02", "status": "preflight", "elapsed_command_s": null}
+{"utc": "2026-09-12T11:59:37.376625+00:00", "trial": "offline_replay_tflite_autoencoder_02", "status": "preflight", "elapsed_command_s": null}
+{"utc": "2026-09-12T11:59:57.376978+00:00", "trial": "offline_replay_tflite_autoencoder_02", "status": "preflight", "elapsed_command_s": null}
+{"utc": "2026-09-12T12:00:17.377290+00:00", "trial": "offline_replay_tflite_autoencoder_02", "status": "preflight", "elapsed_command_s": null}
+{"utc": "2026-09-12T12:00:37.377599+00:00", "trial": "offline_replay_tflite_autoencoder_02", "status": "preflight", "elapsed_command_s": null}
+{"utc": "2026-09-12T12:00:57.377911+00:00", "trial": "offline_replay_tflite_autoencoder_02", "status": "preflight", "elapsed_command_s": null}
+{"utc": "2026-09-12T12:01:17.378216+00:00", "trial": "offline_replay_tflite_autoencoder_02", "status": "preflight", "elapsed_command_s": null}
+{"utc": "2026-09-12T12:01:37.378522+00:00", "trial": "offline_replay_tflite_autoencoder_02", "status": "preflight", "elapsed_command_s": null}
+{"utc": "2026-09-12T12:01:57.378843+00:00", "trial": "offline_replay_tflite_autoencoder_02", "status": "preflight", "elapsed_command_s": null}
+{"utc": "2026-09-12T12:02:17.379203+00:00", "trial": "offline_replay_tflite_autoencoder_02", "status": "preflight", "elapsed_command_s": null}
+{"utc": "2026-09-12T12:02:37.379627+00:00", "trial": "offline_replay_tflite_autoencoder_02", "status": "completed", "elapsed_command_s": null}
+{"event": "trial_complete", "trial": "offline_replay_tflite_autoencoder_02", "final_zero_readback": null}
+{"utc": "2026-09-12T12:02:37.380156+00:00", "event": "trial_begin", "id": "offline_replay_rms_02", "mode": "offline_replay", "method": "rms", "repeat": 2}
+{"utc": "2026-09-12T12:02:57.380920+00:00", "trial": "offline_replay_rms_02", "status": "preflight", "elapsed_command_s": null}
+{"utc": "2026-09-12T12:03:17.381232+00:00", "trial": "offline_replay_rms_02", "status": "preflight", "elapsed_command_s": null}
+{"utc": "2026-09-12T12:03:37.381554+00:00", "trial": "offline_replay_rms_02", "status": "preflight", "elapsed_command_s": null}
+{"utc": "2026-09-12T12:03:57.381870+00:00", "trial": "offline_replay_rms_02", "status": "preflight", "elapsed_command_s": null}
+{"utc": "2026-09-12T12:04:17.382184+00:00", "trial": "offline_replay_rms_02", "status": "preflight", "elapsed_command_s": null}
+{"utc": "2026-09-12T12:04:37.382499+00:00", "trial": "offline_replay_rms_02", "status": "preflight", "elapsed_command_s": null}
+{"utc": "2026-09-12T12:04:57.382810+00:00", "trial": "offline_replay_rms_02", "status": "preflight", "elapsed_command_s": null}
+{"utc": "2026-09-12T12:05:17.383116+00:00", "trial": "offline_replay_rms_02", "status": "preflight", "elapsed_command_s": null}
+{"utc": "2026-09-12T12:05:37.383417+00:00", "trial": "offline_replay_rms_02", "status": "preflight", "elapsed_command_s": null}
+{"utc": "2026-09-12T12:05:57.383719+00:00", "trial": "offline_replay_rms_02", "status": "preflight", "elapsed_command_s": null}
+{"utc": "2026-09-12T12:06:17.384032+00:00", "trial": "offline_replay_rms_02", "status": "preflight", "elapsed_command_s": null}
+{"utc": "2026-09-12T12:06:37.384335+00:00", "trial": "offline_replay_rms_02", "status": "preflight", "elapsed_command_s": null}
+{"utc": "2026-09-12T12:06:57.384633+00:00", "trial": "offline_replay_rms_02", "status": "preflight", "elapsed_command_s": null}
+{"utc": "2026-09-12T12:07:17.384940+00:00", "trial": "offline_replay_rms_02", "status": "preflight", "elapsed_command_s": null}
+{"utc": "2026-09-12T12:07:37.385243+00:00", "trial": "offline_replay_rms_02", "status": "preflight", "elapsed_command_s": null}
+{"utc": "2026-09-12T12:07:57.385629+00:00", "trial": "offline_replay_rms_02", "status": "completed", "elapsed_command_s": null}
+{"event": "trial_complete", "trial": "offline_replay_rms_02", "final_zero_readback": null}
+{"utc": "2026-09-12T12:07:57.385985+00:00", "event": "trial_begin", "id": "offline_replay_tflite_autoencoder_03", "mode": "offline_replay", "method": "tflite_autoencoder", "repeat": 3}
+{"utc": "2026-09-12T12:08:17.386781+00:00", "trial": "offline_replay_tflite_autoencoder_03", "status": "preflight", "elapsed_command_s": null}
+{"utc": "2026-09-12T12:08:37.387091+00:00", "trial": "offline_replay_tflite_autoencoder_03", "status": "preflight", "elapsed_command_s": null}
+{"utc": "2026-09-12T12:08:57.387389+00:00", "trial": "offline_replay_tflite_autoencoder_03", "status": "preflight", "elapsed_command_s": null}
+{"utc": "2026-09-12T12:09:17.387689+00:00", "trial": "offline_replay_tflite_autoencoder_03", "status": "preflight", "elapsed_command_s": null}
+{"utc": "2026-09-12T12:09:37.387994+00:00", "trial": "offline_replay_tflite_autoencoder_03", "status": "preflight", "elapsed_command_s": null}
+{"utc": "2026-09-12T12:09:57.388272+00:00", "trial": "offline_replay_tflite_autoencoder_03", "status": "preflight", "elapsed_command_s": null}
+{"utc": "2026-09-12T12:10:17.388628+00:00", "trial": "offline_replay_tflite_autoencoder_03", "status": "preflight", "elapsed_command_s": null}
+{"utc": "2026-09-12T12:10:37.388953+00:00", "trial": "offline_replay_tflite_autoencoder_03", "status": "preflight", "elapsed_command_s": null}
+{"utc": "2026-09-12T12:10:57.389238+00:00", "trial": "offline_replay_tflite_autoencoder_03", "status": "preflight", "elapsed_command_s": null}
+{"utc": "2026-09-12T12:11:17.389524+00:00", "trial": "offline_replay_tflite_autoencoder_03", "status": "preflight", "elapsed_command_s": null}
+{"utc": "2026-09-12T12:11:37.389827+00:00", "trial": "offline_replay_tflite_autoencoder_03", "status": "preflight", "elapsed_command_s": null}
+{"utc": "2026-09-12T12:11:57.390146+00:00", "trial": "offline_replay_tflite_autoencoder_03", "status": "preflight", "elapsed_command_s": null}
+{"utc": "2026-09-12T12:12:17.390468+00:00", "trial": "offline_replay_tflite_autoencoder_03", "status": "preflight", "elapsed_command_s": null}
+{"utc": "2026-09-12T12:12:37.390791+00:00", "trial": "offline_replay_tflite_autoencoder_03", "status": "preflight", "elapsed_command_s": null}
+{"utc": "2026-09-12T12:12:57.391107+00:00", "trial": "offline_replay_tflite_autoencoder_03", "status": "preflight", "elapsed_command_s": null}
+{"utc": "2026-09-12T12:13:17.391456+00:00", "trial": "offline_replay_tflite_autoencoder_03", "status": "completed", "elapsed_command_s": null}
+{"event": "trial_complete", "trial": "offline_replay_tflite_autoencoder_03", "final_zero_readback": null}
+{"utc": "2026-09-12T12:13:17.391764+00:00", "event": "trial_begin", "id": "offline_replay_rms_03", "mode": "offline_replay", "method": "rms", "repeat": 3}
+{"utc": "2026-09-12T12:13:37.392423+00:00", "trial": "offline_replay_rms_03", "status": "preflight", "elapsed_command_s": null}
+{"utc": "2026-09-12T12:13:57.392750+00:00", "trial": "offline_replay_rms_03", "status": "preflight", "elapsed_command_s": null}
+{"utc": "2026-09-12T12:14:17.393086+00:00", "trial": "offline_replay_rms_03", "status": "preflight", "elapsed_command_s": null}
+{"utc": "2026-09-12T12:14:37.393425+00:00", "trial": "offline_replay_rms_03", "status": "preflight", "elapsed_command_s": null}
+{"utc": "2026-09-12T12:14:57.393756+00:00", "trial": "offline_replay_rms_03", "status": "preflight", "elapsed_command_s": null}
+{"utc": "2026-09-12T12:15:17.394104+00:00", "trial": "offline_replay_rms_03", "status": "preflight", "elapsed_command_s": null}
+{"utc": "2026-09-12T12:15:37.394426+00:00", "trial": "offline_replay_rms_03", "status": "preflight", "elapsed_command_s": null}
+{"utc": "2026-09-12T12:15:57.394751+00:00", "trial": "offline_replay_rms_03", "status": "preflight", "elapsed_command_s": null}
+{"utc": "2026-09-12T12:16:17.395063+00:00", "trial": "offline_replay_rms_03", "status": "preflight", "elapsed_command_s": null}
+{"utc": "2026-09-12T12:16:37.395414+00:00", "trial": "offline_replay_rms_03", "status": "preflight", "elapsed_command_s": null}
+{"utc": "2026-09-12T12:16:57.395768+00:00", "trial": "offline_replay_rms_03", "status": "preflight", "elapsed_command_s": null}
+{"utc": "2026-09-12T12:17:17.396105+00:00", "trial": "offline_replay_rms_03", "status": "preflight", "elapsed_command_s": null}
+{"utc": "2026-09-12T12:17:37.396418+00:00", "trial": "offline_replay_rms_03", "status": "preflight", "elapsed_command_s": null}
+{"utc": "2026-09-12T12:17:57.396708+00:00", "trial": "offline_replay_rms_03", "status": "preflight", "elapsed_command_s": null}
+{"utc": "2026-09-12T12:18:17.397008+00:00", "trial": "offline_replay_rms_03", "status": "preflight", "elapsed_command_s": null}
+{"utc": "2026-09-12T12:18:37.397421+00:00", "trial": "offline_replay_rms_03", "status": "completed", "elapsed_command_s": null}
+{"event": "trial_complete", "trial": "offline_replay_rms_03", "final_zero_readback": null}
+{"utc": "2026-09-12T12:18:37.397820+00:00", "event": "trial_begin", "id": "offline_replay_isolation_forest_03", "mode": "offline_replay", "method": "isolation_forest", "repeat": 3}
+{"utc": "2026-09-12T12:18:57.398549+00:00", "trial": "offline_replay_isolation_forest_03", "status": "preflight", "elapsed_command_s": null}
+{"utc": "2026-09-12T12:19:17.398882+00:00", "trial": "offline_replay_isolation_forest_03", "status": "preflight", "elapsed_command_s": null}
+{"utc": "2026-09-12T12:19:37.399202+00:00", "trial": "offline_replay_isolation_forest_03", "status": "preflight", "elapsed_command_s": null}
+{"utc": "2026-09-12T12:19:57.399535+00:00", "trial": "offline_replay_isolation_forest_03", "status": "preflight", "elapsed_command_s": null}
+{"utc": "2026-09-12T12:20:17.399892+00:00", "trial": "offline_replay_isolation_forest_03", "status": "preflight", "elapsed_command_s": null}
+{"utc": "2026-09-12T12:20:37.400238+00:00", "trial": "offline_replay_isolation_forest_03", "status": "preflight", "elapsed_command_s": null}
+{"utc": "2026-09-12T12:20:57.400553+00:00", "trial": "offline_replay_isolation_forest_03", "status": "preflight", "elapsed_command_s": null}
+{"utc": "2026-09-12T12:21:17.400861+00:00", "trial": "offline_replay_isolation_forest_03", "status": "preflight", "elapsed_command_s": null}
+{"utc": "2026-09-12T12:21:37.401187+00:00", "trial": "offline_replay_isolation_forest_03", "status": "preflight", "elapsed_command_s": null}
+{"utc": "2026-09-12T12:21:57.401529+00:00", "trial": "offline_replay_isolation_forest_03", "status": "preflight", "elapsed_command_s": null}
+{"utc": "2026-09-12T12:22:17.401863+00:00", "trial": "offline_replay_isolation_forest_03", "status": "preflight", "elapsed_command_s": null}
+{"utc": "2026-09-12T12:22:37.402166+00:00", "trial": "offline_replay_isolation_forest_03", "status": "preflight", "elapsed_command_s": null}
+{"utc": "2026-09-12T12:22:57.402434+00:00", "trial": "offline_replay_isolation_forest_03", "status": "preflight", "elapsed_command_s": null}
+{"utc": "2026-09-12T12:23:17.402710+00:00", "trial": "offline_replay_isolation_forest_03", "status": "preflight", "elapsed_command_s": null}
+{"utc": "2026-09-12T12:23:37.402974+00:00", "trial": "offline_replay_isolation_forest_03", "status": "preflight", "elapsed_command_s": null}
+{"utc": "2026-09-12T12:23:57.403342+00:00", "trial": "offline_replay_isolation_forest_03", "status": "completed", "elapsed_command_s": null}
+{"event": "trial_complete", "trial": "offline_replay_isolation_forest_03", "final_zero_readback": null}
+{"status": "completed", "planned_trials": 18}

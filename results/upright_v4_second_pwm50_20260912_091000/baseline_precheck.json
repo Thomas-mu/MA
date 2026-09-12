@@ -1,0 +1,224 @@
+{
+  "baseline_recordings": [
+    {
+      "recording_id": "normal_test_01_75pwm_300s_20260911_155959_798760",
+      "summary": "/home/malik/masterarbeit-edge-ai/results/upright_v4_independent_normal_20260911_133047/evaluation_normal_test_01/summary.json",
+      "rows": 582,
+      "method_metrics": {
+        "rms": {
+          "total_windows": 194,
+          "valid_windows": 194,
+          "invalid_windows": 0,
+          "false_alarms": 57,
+          "false_alarm_rate_among_valid_normal_windows": 0.29381443298969073
+        },
+        "isolation_forest": {
+          "total_windows": 194,
+          "valid_windows": 194,
+          "invalid_windows": 0,
+          "false_alarms": 34,
+          "false_alarm_rate_among_valid_normal_windows": 0.17525773195876287
+        },
+        "tflite_autoencoder": {
+          "total_windows": 194,
+          "valid_windows": 194,
+          "invalid_windows": 0,
+          "false_alarms": 0,
+          "false_alarm_rate_among_valid_normal_windows": 0.0
+        }
+      }
+    },
+    {
+      "recording_id": "normal_test_02_75pwm_300s_20260911_161306_321362",
+      "summary": "/home/malik/masterarbeit-edge-ai/results/upright_v4_independent_normal_20260911_133047/evaluation_normal_test_02/summary.json",
+      "rows": 582,
+      "method_metrics": {
+        "rms": {
+          "total_windows": 194,
+          "valid_windows": 194,
+          "invalid_windows": 0,
+          "false_alarms": 0,
+          "false_alarm_rate_among_valid_normal_windows": 0.0
+        },
+        "isolation_forest": {
+          "total_windows": 194,
+          "valid_windows": 194,
+          "invalid_windows": 0,
+          "false_alarms": 0,
+          "false_alarm_rate_among_valid_normal_windows": 0.0
+        },
+        "tflite_autoencoder": {
+          "total_windows": 194,
+          "valid_windows": 194,
+          "invalid_windows": 0,
+          "false_alarms": 0,
+          "false_alarm_rate_among_valid_normal_windows": 0.0
+        }
+      }
+    },
+    {
+      "recording_id": "normal_test_03_75pwm_300s_20260911_162725_498007",
+      "summary": "/home/malik/masterarbeit-edge-ai/results/upright_v4_independent_normal_20260911_133047/evaluation_normal_test_03/summary.json",
+      "rows": 582,
+      "method_metrics": {
+        "rms": {
+          "total_windows": 194,
+          "valid_windows": 194,
+          "invalid_windows": 0,
+          "false_alarms": 0,
+          "false_alarm_rate_among_valid_normal_windows": 0.0
+        },
+        "isolation_forest": {
+          "total_windows": 194,
+          "valid_windows": 194,
+          "invalid_windows": 0,
+          "false_alarms": 0,
+          "false_alarm_rate_among_valid_normal_windows": 0.0
+        },
+        "tflite_autoencoder": {
+          "total_windows": 194,
+          "valid_windows": 194,
+          "invalid_windows": 0,
+          "false_alarms": 0,
+          "false_alarm_rate_among_valid_normal_windows": 0.0
+        }
+      }
+    },
+    {
+      "recording_id": "normal_before_75pwm_300s_20260911_165633_681800",
+      "summary": "/home/malik/masterarbeit-edge-ai/results/upright_v4_frozen_airflow_test_20260911_164040/evaluation_normal_before/summary.json",
+      "rows": 582,
+      "method_metrics": {
+        "rms": {
+          "total_windows": 194,
+          "valid_windows": 194,
+          "invalid_windows": 0,
+          "alarms": 2,
+          "alarm_fraction_among_valid_windows": 0.010309278350515464,
+          "condition": "normal",
+          "false_alarms": 2,
+          "false_alarm_rate_among_valid_normal_windows": 0.010309278350515464
+        },
+        "isolation_forest": {
+          "total_windows": 194,
+          "valid_windows": 194,
+          "invalid_windows": 0,
+          "alarms": 1,
+          "alarm_fraction_among_valid_windows": 0.005154639175257732,
+          "condition": "normal",
+          "false_alarms": 1,
+          "false_alarm_rate_among_valid_normal_windows": 0.005154639175257732
+        },
+        "tflite_autoencoder": {
+          "total_windows": 194,
+          "valid_windows": 194,
+          "invalid_windows": 0,
+          "alarms": 9,
+          "alarm_fraction_among_valid_windows": 0.04639175257731959,
+          "condition": "normal",
+          "false_alarms": 9,
+          "false_alarm_rate_among_valid_normal_windows": 0.04639175257731959
+        }
+      }
+    },
+    {
+      "recording_id": "normal_before_75pwm_300s_20260912_073823_494120",
+      "summary": "/home/malik/masterarbeit-edge-ai/results/upright_v4_frozen_airflow_test_20260912_073015/evaluation_normal_before/summary.json",
+      "rows": 582,
+      "method_metrics": {
+        "rms": {
+          "total_windows": 194,
+          "valid_windows": 194,
+          "invalid_windows": 0,
+          "alarms": 1,
+          "alarm_fraction_among_valid_windows": 0.005154639175257732,
+          "condition": "normal",
+          "false_alarms": 1,
+          "false_alarm_rate_among_valid_normal_windows": 0.005154639175257732
+        },
+        "isolation_forest": {
+          "total_windows": 194,
+          "valid_windows": 194,
+          "invalid_windows": 0,
+          "alarms": 0,
+          "alarm_fraction_among_valid_windows": 0.0,
+          "condition": "normal",
+          "false_alarms": 0,
+          "false_alarm_rate_among_valid_normal_windows": 0.0
+        },
+        "tflite_autoencoder": {
+          "total_windows": 194,
+          "valid_windows": 194,
+          "invalid_windows": 0,
+          "alarms": 51,
+          "alarm_fraction_among_valid_windows": 0.26288659793814434,
+          "condition": "normal",
+          "false_alarms": 51,
+          "false_alarm_rate_among_valid_normal_windows": 0.26288659793814434
+        }
+      }
+    },
+    {
+      "recording_id": "normal_after_75pwm_300s_20260912_075715_142650",
+      "summary": "/home/malik/masterarbeit-edge-ai/results/upright_v4_frozen_airflow_test_20260912_073015/evaluation_normal_after/summary.json",
+      "rows": 582,
+      "method_metrics": {
+        "rms": {
+          "total_windows": 194,
+          "valid_windows": 194,
+          "invalid_windows": 0,
+          "alarms": 0,
+          "alarm_fraction_among_valid_windows": 0.0,
+          "condition": "normal",
+          "false_alarms": 0,
+          "false_alarm_rate_among_valid_normal_windows": 0.0
+        },
+        "isolation_forest": {
+          "total_windows": 194,
+          "valid_windows": 194,
+          "invalid_windows": 0,
+          "alarms": 0,
+          "alarm_fraction_among_valid_windows": 0.0,
+          "condition": "normal",
+          "false_alarms": 0,
+          "false_alarm_rate_among_valid_normal_windows": 0.0
+        },
+        "tflite_autoencoder": {
+          "total_windows": 194,
+          "valid_windows": 194,
+          "invalid_windows": 0,
+          "alarms": 4,
+          "alarm_fraction_among_valid_windows": 0.020618556701030927,
+          "condition": "normal",
+          "false_alarms": 4,
+          "false_alarm_rate_among_valid_normal_windows": 0.020618556701030927
+        }
+      }
+    }
+  ],
+  "pooled": {
+    "rms": {
+      "total_windows": 1164,
+      "valid_windows": 1164,
+      "invalid_windows": 0,
+      "false_alarms": 60,
+      "false_alarm_rate_among_valid_normal_windows": 0.05154639175257732
+    },
+    "isolation_forest": {
+      "total_windows": 1164,
+      "valid_windows": 1164,
+      "invalid_windows": 0,
+      "false_alarms": 35,
+      "false_alarm_rate_among_valid_normal_windows": 0.03006872852233677
+    },
+    "tflite_autoencoder": {
+      "total_windows": 1164,
+      "valid_windows": 1164,
+      "invalid_windows": 0,
+      "false_alarms": 64,
+      "false_alarm_rate_among_valid_normal_windows": 0.054982817869415807
+    }
+  },
+  "selection": "All six predeclared independent 75-percent normal recordings; no train/validation denominators",
+  "used_50_percent_test_scores": false
+}

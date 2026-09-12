@@ -1,0 +1,27 @@
+{
+  "windows_dropped": 0,
+  "queue_high_watermark": 1,
+  "source_mode": "offline_replay",
+  "paced_replay": true,
+  "physical_lost_samples": null,
+  "source_error": null,
+  "raw_write_and_assembly_in_sensor_thread": true,
+  "decision_interval_seconds": [
+    180,
+    300
+  ],
+  "warmup_invocations": 20,
+  "raw_xyz": 62140,
+  "selected_xyz": 24854,
+  "complete_windows": 194,
+  "trailing_selected_xyz": 22,
+  "decision_rows": 194,
+  "status": "completed",
+  "processing_error": null,
+  "invalid_decisions": 0,
+  "unprocessed_windows": 0,
+  "model_load_ns": 997023499,
+  "warmup_ns": 264265378,
+  "latency_scope": "complete-to-decision including assembly and queue; scorer_call includes transfer and scoring, not isolated model invoke",
+  "model_package_sha256": "cec1859bfb354bafef77a619e6d2c1ffd85b50787c87595aba9a1e20a80cdae5"
+}

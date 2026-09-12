@@ -1,0 +1,27 @@
+{
+  "created_utc": "2026-09-12T08:37:06.803805+00:00",
+  "mode": "static_source_review_no_hardware",
+  "source_sha256": {
+    "src/live_pipeline.py": "128b92f6fe822a964ad8b1566fbbf0faeb5ef22847e1beb006b31fd1422fad9c",
+    "src/live_tflite_monitor.py": "a1c421860bd03711b71ea01158398631039e728a6c390107f42a34365269a09c",
+    "src/live_tflite_gui.py": "7dbdfb2f733e778404b66f3cabc946ae9b8ce6e5b709b3b3db425af8bad5876b",
+    "src/live_tflite_fan_control.py": "72ffe0b8f4e4a6a8e98171fbecc44ab04814149244345939ae595cad9f92cd46",
+    "src/measure_resources.py": "026c8c90b79eec97f2c7858d499dac545805b17cdf4ea00c76e8fd96993928c4",
+    "src/run_independent_normal_test.py": "43204af5abc1747333c3fc929be17d406d86843117f69f5c815992ec362a7f72",
+    "src/independent_normal_test.py": "6210cc61160834ea75dc489cd738118c840aae6573dadb864132ebd454eefc0d",
+    "src/pilot_method_comparison.py": "6509e7ce5c41a1a82baeba6ca613df5be3792124e71a6d29db763a60e70e12ea"
+  },
+  "requirements_docx_sha256": "a9a5d7d17b28098f554240a3e1650881e252db679f33319a1d11164b3246cbb8",
+  "findings": {
+    "buffered_raw_array": "np.array from Python float tuples currently defaults to Float64, row-major; do not repeat obsolete claim that current buffer necessarily casts Float32",
+    "live_scaling": "legacy scale_window casts uncentered raw values to Float32; incompatible with required pilot AC centering",
+    "live_package_loader": "legacy profile format, no current pilot manifest integration",
+    "window_alignment": "legacy forms windows from acquisition start, not first selected point at 180 s",
+    "live_quality": "aggregate gap/overrun/saturation checks exist; full frozen importer quality contract must be shared",
+    "resources": "old hardcoded clean comparison and 500 Hz; cannot reuse as v4 package resource proof",
+    "current_sensor_live_evidence": "not established for new package",
+    "second_pwm_adapter": "existing fixed75 runner/test contracts reject50; distinct adapter required"
+  },
+  "hardware_access": false,
+  "pwm_changed": false
+}

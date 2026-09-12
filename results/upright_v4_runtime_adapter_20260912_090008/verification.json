@@ -1,0 +1,22 @@
+{
+  "protected_files": 1277,
+  "changed_protected_files": [],
+  "tests_passed": 130,
+  "exact_stream_windows": 194,
+  "exact_replay_scores_and_decisions": 582,
+  "new_hardware_captures": 0,
+  "PWM_writes": 0,
+  "current_initial_readiness_received": false,
+  "protocol_path": "results/upright_v4_second_pwm50_20260912_091000/protocol.json",
+  "new_sources_sha256": {
+    "src/second_pwm_normal_test.py": "f02613004cfd7671aad64735ea679484b32c1edda9747d6075cb4d353b592613",
+    "src/run_second_pwm_normal_test.py": "b54f878546815183c34ac81acc2f63c09eb9ba81d2e78ded45e719bd8b4edd25",
+    "src/run_second_pwm_sequence.py": "8edd7a0c77c6895d85356b2750636aa03517ea9e6e42a920ff4cc76d24585943",
+    "src/prepare_second_pwm_protocol.py": "4ed3584aa0f1cead719c6106a71e630ac8ec1d6d72d868a48560471c28249438",
+    "src/pilot_sensor_source.py": "8c65868b8d160ffd4cd419b0c73151d73fca3b70dede4dc661412e4acfe7df4a",
+    "src/pilot_runtime_replay.py": "07bbbc6c295a9082b4fd4db14a56d608c3c4a7d821eb2590b0a146b00aabd519",
+    "src/pilot_live_adapter.py": "436d66782ba398be621e8757f3bb38b211d0fcddda10fb13508c624860062b7c",
+    "src/second_pwm_release.py": "7b5ba3c7345d06c1d3a5230c13b35623a320b2e4c1fab469797d7c3f47987198",
+    "src/pilot_live_recorder.py": "ff45a58974d00d47935da7ab46c13faf9a4f18f30c220ba3d2826f63f13c50a2"
+  }
+}

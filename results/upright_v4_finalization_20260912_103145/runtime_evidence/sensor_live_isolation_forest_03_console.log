@@ -1,0 +1,3 @@
+{"utc": "2026-09-12T11:35:40.496597+00:00", "event": "returning_to_zero", "pwm_percent": 0}
+{"utc": "2026-09-12T11:35:40.557505+00:00", "event": "zero_readback_complete", "pwm_percent": 0, "mechanical_state": "not_observed"}
+{"trial": "sensor_live_isolation_forest_03", "status": "completed", "error": null}

@@ -1,0 +1,459 @@
+{
+  "backup_sha256": "a9a5d7d17b28098f554240a3e1650881e252db679f33319a1d11164b3246cbb8",
+  "output": "results/upright_v4_finalization_20260912_103145/word_draft.docx",
+  "draft": true,
+  "main_chapters_1_5_text_preserved": true,
+  "headings": [
+    {
+      "level": 0,
+      "title": "1 Einleitung, Problemstellung und Zielsetzung",
+      "bookmark": "FinalHeading_10000"
+    },
+    {
+      "level": 1,
+      "title": "1.1 Ausgangssituation und Motivation",
+      "bookmark": "FinalHeading_10001"
+    },
+    {
+      "level": 1,
+      "title": "1.2 Wissenschaftliche Problemstellung",
+      "bookmark": "FinalHeading_10002"
+    },
+    {
+      "level": 1,
+      "title": "1.3 Zielsetzung der Arbeit",
+      "bookmark": "FinalHeading_10003"
+    },
+    {
+      "level": 1,
+      "title": "1.4 Forschungsfragen und Hypothesen",
+      "bookmark": "FinalHeading_10004"
+    },
+    {
+      "level": 1,
+      "title": "1.5 Abgrenzung der Arbeit",
+      "bookmark": "FinalHeading_10005"
+    },
+    {
+      "level": 1,
+      "title": "1.6 Aufbau der Arbeit",
+      "bookmark": "FinalHeading_10006"
+    },
+    {
+      "level": 0,
+      "title": "2 Theoretische Grundlagen",
+      "bookmark": "FinalHeading_10007"
+    },
+    {
+      "level": 1,
+      "title": "2.1 Zustandsüberwachung und Anomalieerkennung",
+      "bookmark": "FinalHeading_10008"
+    },
+    {
+      "level": 1,
+      "title": "2.2 Verfahrensklassen für die Anomalieentscheidung",
+      "bookmark": "FinalHeading_10009"
+    },
+    {
+      "level": 2,
+      "title": "2.2.1 Statistische Schwellenwertverfahren",
+      "bookmark": "FinalHeading_10010"
+    },
+    {
+      "level": 2,
+      "title": "2.2.2 Klassische Verfahren im Normaldaten-Szenario",
+      "bookmark": "FinalHeading_10011"
+    },
+    {
+      "level": 2,
+      "title": "2.2.3 Autoencoder",
+      "bookmark": "FinalHeading_10012"
+    },
+    {
+      "level": 1,
+      "title": "2.3 Messdaten und Fensterbildung",
+      "bookmark": "FinalHeading_10013"
+    },
+    {
+      "level": 1,
+      "title": "2.4 Datenaufteilung und Vorverarbeitung",
+      "bookmark": "FinalHeading_10014"
+    },
+    {
+      "level": 1,
+      "title": "2.5 Schwellenwertkalibrierung",
+      "bookmark": "FinalHeading_10015"
+    },
+    {
+      "level": 1,
+      "title": "2.6 Erkennungsqualität und Aussagekraft der Evaluation",
+      "bookmark": "FinalHeading_10016"
+    },
+    {
+      "level": 1,
+      "title": "2.7 Lokale Ausführung und Zeitverhalten",
+      "bookmark": "FinalHeading_10018"
+    },
+    {
+      "level": 1,
+      "title": "2.8 Veränderte Normalbedingungen",
+      "bookmark": "FinalHeading_10019"
+    },
+    {
+      "level": 0,
+      "title": "3 Stand der Technik und verwandte Arbeiten",
+      "bookmark": "FinalHeading_10020"
+    },
+    {
+      "level": 1,
+      "title": "3.1 Datenbasis und Messbedingungen",
+      "bookmark": "FinalHeading_10021"
+    },
+    {
+      "level": 1,
+      "title": "3.2 Verfahren und Edge-Ausführung",
+      "bookmark": "FinalHeading_10022"
+    },
+    {
+      "level": 1,
+      "title": "3.3 Vergleich ausgewählter Arbeiten",
+      "bookmark": "FinalHeading_10023"
+    },
+    {
+      "level": 1,
+      "title": "3.4 Forschungslücke und Einordnung der eigenen Arbeit",
+      "bookmark": "FinalHeading_10025"
+    },
+    {
+      "level": 0,
+      "title": "4 Anforderungsanalyse",
+      "bookmark": "FinalHeading_10026"
+    },
+    {
+      "level": 1,
+      "title": "4.1 Messdaten und Vergleichsbasis",
+      "bookmark": "FinalHeading_10027"
+    },
+    {
+      "level": 1,
+      "title": "4.2 Lokale Verarbeitung und Zeitverhalten",
+      "bookmark": "FinalHeading_10028"
+    },
+    {
+      "level": 1,
+      "title": "4.3 Evaluation",
+      "bookmark": "FinalHeading_10029"
+    },
+    {
+      "level": 1,
+      "title": "4.4 Kernanforderungen und Nachweis",
+      "bookmark": "FinalHeading_10030"
+    },
+    {
+      "level": 0,
+      "title": "5 Variantenvergleich und Systementscheidung",
+      "bookmark": "FinalHeading_10032"
+    },
+    {
+      "level": 1,
+      "title": "5.1 Bewertungsrahmen und Vorgehen",
+      "bookmark": "FinalHeading_10033"
+    },
+    {
+      "level": 1,
+      "title": "5.2 Bewertung der Prüfstandsalternativen",
+      "bookmark": "FinalHeading_10034"
+    },
+    {
+      "level": 1,
+      "title": "5.3 Auswahl von Sensorik und Edge-Plattform",
+      "bookmark": "FinalHeading_10038"
+    },
+    {
+      "level": 1,
+      "title": "5.4 Datenbasis, Signalrepräsentation und Verfahren",
+      "bookmark": "FinalHeading_10043"
+    },
+    {
+      "level": 1,
+      "title": "5.5 Kriterienbasierte Bewertung der Softwarealternativen",
+      "bookmark": "FinalHeading_10046"
+    },
+    {
+      "level": 1,
+      "title": "5.6 Systementscheidung und Übergang zur Implementierung",
+      "bookmark": "FinalHeading_10050"
+    },
+    {
+      "level": 0,
+      "title": "6 Implementierung",
+      "bookmark": "FinalHeading_10052"
+    },
+    {
+      "level": 1,
+      "title": "6.1 Prüfstand, Aufbauversionen und Zustandsnachweise",
+      "bookmark": "FinalHeading_10053"
+    },
+    {
+      "level": 1,
+      "title": "6.2 Hardware-PWM und Ablaufsteuerung",
+      "bookmark": "FinalHeading_10055"
+    },
+    {
+      "level": 1,
+      "title": "6.3 Sensorerfassung, Zeitbasis und Qualitätskennzeichnung",
+      "bookmark": "FinalHeading_10056"
+    },
+    {
+      "level": 1,
+      "title": "6.4 Gemeinsame Fensterbildung und Vorverarbeitung",
+      "bookmark": "FinalHeading_10058"
+    },
+    {
+      "level": 1,
+      "title": "6.5 Modellpaket, Training und Kalibrierung",
+      "bookmark": "FinalHeading_10059"
+    },
+    {
+      "level": 1,
+      "title": "6.6 Lokaler Datenweg und Ressourceninstrumentierung",
+      "bookmark": "FinalHeading_10062"
+    },
+    {
+      "level": 1,
+      "title": "6.7 Festgelegte Versuche und Nachweisgrenzen",
+      "bookmark": "FinalHeading_10064"
+    },
+    {
+      "level": 0,
+      "title": "7 Evaluation und Ergebnisse",
+      "bookmark": "FinalHeading_10065"
+    },
+    {
+      "level": 1,
+      "title": "7.1 Datenbasis und Auswertungseinheit",
+      "bookmark": "FinalHeading_10066"
+    },
+    {
+      "level": 1,
+      "title": "7.2 Erfassungsqualität und physikalische Zeitbasis",
+      "bookmark": "FinalHeading_10068"
+    },
+    {
+      "level": 1,
+      "title": "7.3 Fehlalarme bei unverändertem Normalbetrieb",
+      "bookmark": "FinalHeading_10069"
+    },
+    {
+      "level": 1,
+      "title": "7.4 Kontrollierte Luftstromveränderung und Rückkehrreferenz",
+      "bookmark": "FinalHeading_10071"
+    },
+    {
+      "level": 1,
+      "title": "7.5 Explorative Fehleranalyse der Modellentscheidungen",
+      "bookmark": "FinalHeading_10075"
+    },
+    {
+      "level": 1,
+      "title": "7.6 Zweiter normaler Betriebspunkt bei 50 % PWM",
+      "bookmark": "FinalHeading_10078"
+    },
+    {
+      "level": 1,
+      "title": "7.7 Laufzeit, Ressourcen und lokaler Sensorbetrieb",
+      "bookmark": "FinalHeading_10081"
+    },
+    {
+      "level": 1,
+      "title": "7.8 Erfüllungsgrad der Anforderungen",
+      "bookmark": "FinalHeading_10082"
+    },
+    {
+      "level": 0,
+      "title": "8 Diskussion",
+      "bookmark": "FinalHeading_10084"
+    },
+    {
+      "level": 1,
+      "title": "8.1 Aussagekraft des Methodenvergleichs",
+      "bookmark": "FinalHeading_10085"
+    },
+    {
+      "level": 1,
+      "title": "8.2 Einlaufzeit, Aufstellung und Vorverarbeitung",
+      "bookmark": "FinalHeading_10086"
+    },
+    {
+      "level": 1,
+      "title": "8.3 Technische Grenzen und Übertragbarkeit",
+      "bookmark": "FinalHeading_10087"
+    },
+    {
+      "level": 0,
+      "title": "9 Ausblick und verbleibende Nachweise",
+      "bookmark": "FinalHeading_10088"
+    },
+    {
+      "level": 0,
+      "title": "10 Fazit",
+      "bookmark": "FinalHeading_10089"
+    },
+    {
+      "level": 0,
+      "title": "Anhang",
+      "bookmark": "FinalHeading_10090"
+    },
+    {
+      "level": 1,
+      "title": "Digitale Belege und Zuordnung",
+      "bookmark": "FinalHeading_10091"
+    },
+    {
+      "level": 1,
+      "title": "Lesen der Messdateien",
+      "bookmark": "FinalHeading_10093"
+    },
+    {
+      "level": 0,
+      "title": "Literaturverzeichnis",
+      "bookmark": "FinalHeading_10094"
+    }
+  ],
+  "tables": [
+    {
+      "title": "Tabelle 2-1: Kennzahlen der binären Anomalieerkennung",
+      "bookmark": "FinalCaption_10017"
+    },
+    {
+      "title": "Tabelle 3-1: Ausgewählte Vorarbeiten und ihre Bedeutung für die Untersuchung",
+      "bookmark": "FinalCaption_10024"
+    },
+    {
+      "title": "Tabelle 4-1: Anforderungen, Prioritäten und Nachweise",
+      "bookmark": "FinalCaption_10031"
+    },
+    {
+      "title": "Tabelle 5-1: Bewertung der Prüfstandsalternativen",
+      "bookmark": "FinalCaption_10035"
+    },
+    {
+      "title": "Tabelle 5-2: Kriterien und Gewichte für den Prüfstand",
+      "bookmark": "FinalCaption_10036"
+    },
+    {
+      "title": "Tabelle 5-3: Gewichtete Bewertung der Prüfstandsalternativen",
+      "bookmark": "FinalCaption_10037"
+    },
+    {
+      "title": "Tabelle 5-4: Vergleich der Sensorik und Messketten",
+      "bookmark": "FinalCaption_10039"
+    },
+    {
+      "title": "Tabelle 5-5: Bewertung der Edge-Plattformen",
+      "bookmark": "FinalCaption_10040"
+    },
+    {
+      "title": "Tabelle 5-6: Kriterien und Gewichte für die Edge-Plattform",
+      "bookmark": "FinalCaption_10041"
+    },
+    {
+      "title": "Tabelle 5-7: Gewichtete Bewertung der Edge-Plattformen",
+      "bookmark": "FinalCaption_10042"
+    },
+    {
+      "title": "Tabelle 5-8: Bewertung der Signalrepräsentationen",
+      "bookmark": "FinalCaption_10044"
+    },
+    {
+      "title": "Tabelle 5-9: Auswahl der Anomalieverfahren",
+      "bookmark": "FinalCaption_10045"
+    },
+    {
+      "title": "Tabelle 5-10: Kriterienbasierter Vergleich der Softwarealternativen",
+      "bookmark": "FinalCaption_10047"
+    },
+    {
+      "title": "Tabelle 5-11: Kriterien und Gewichte für die Softwareauswahl",
+      "bookmark": "FinalCaption_10048"
+    },
+    {
+      "title": "Tabelle 5-12: Gewichtete Bewertung der Softwarealternativen",
+      "bookmark": "FinalCaption_10049"
+    },
+    {
+      "title": "Tabelle 5-13: Systementscheidungen und ausstehende Nachweise",
+      "bookmark": "FinalCaption_10051"
+    },
+    {
+      "title": "Tabelle 6-1: Prüfstand und Bedeutung der dokumentierten Größen",
+      "bookmark": "FinalCaption_10054"
+    },
+    {
+      "title": "Tabelle 6-2: Unveränderte Sensorkonfiguration der v4-Messkette",
+      "bookmark": "FinalCaption_10057"
+    },
+    {
+      "title": "Tabelle 6-3: Architektur des ausgeführten Autoencoders",
+      "bookmark": "FinalCaption_10060"
+    },
+    {
+      "title": "Tabelle 6-4: Scores und eingefrorene Entscheidungsschwellen",
+      "bookmark": "FinalCaption_10061"
+    },
+    {
+      "title": "Tabelle 6-5: Komponenten des geprüften Datenwegs",
+      "bookmark": "FinalCaption_10063"
+    },
+    {
+      "title": "Tabelle 7-1: Aufnahmen für Entwicklung und unabhängige Erkennungsprüfung",
+      "bookmark": "FinalCaption_10067"
+    },
+    {
+      "title": "Tabelle 7-2: Unabhängige Normalaufnahmen bei 75 % PWM",
+      "bookmark": "FinalCaption_10070"
+    },
+    {
+      "title": "Tabelle 7-3: Entscheidungen der drei Methoden in der vollständigen Plattenfolge",
+      "bookmark": "FinalCaption_10072"
+    },
+    {
+      "title": "Tabelle 7-4: Physikalischer Vektor-AC-RMS der 5-s-Abschnitte von 180 bis 300 s",
+      "bookmark": "FinalCaption_10073"
+    },
+    {
+      "title": "Tabelle 7-5: Mittlerer Autoencoder-Rekonstruktionsfehler je Achse auf identischen Modellfenstern",
+      "bookmark": "FinalCaption_10076"
+    },
+    {
+      "title": "Tabelle 7-6: Fehlalarme im zweiten normalen Betriebspunkt",
+      "bookmark": "FinalCaption_10079"
+    },
+    {
+      "title": "Tabelle 7-9: Nachweisstand der Anforderungen A1–A13",
+      "bookmark": "FinalCaption_10083"
+    },
+    {
+      "title": "Tabelle A-1: Verzeichnis der maßgeblichen digitalen Belege",
+      "bookmark": "FinalCaption_10092"
+    }
+  ],
+  "figures": [
+    {
+      "title": "Abbildung 7-1: Vollständige 5-s-RMS-Verläufe der unabhängigen Folge Normal → Platte → Normal. Die Markierung bei 180 s kennzeichnet den vorab gewählten Prüfabschnitt. Quelle: eigene Messungen vom 12.09.2026.",
+      "bookmark": "FinalCaption_10074"
+    },
+    {
+      "title": "Abbildung 7-2: Achsenbeiträge zur physischen Energie, zur standardisierten Energie und zum Autoencoder-Fehler auf denselben 128er-Fenstern. Dargestellt sind Mittelwerte je Aufnahme; sie ersetzen nicht die Entscheidungen einzelner Fenster. Quelle: eigene explorative Auswertung.",
+      "bookmark": "FinalCaption_10077"
+    },
+    {
+      "title": "Abbildung 7-3: Fehlalarmraten je vollständiger Normalaufnahme und zusammengefasst bei 75 % und 50 % PWM mit demselben eingefrorenen Paket. Die Aufnahmen sind nicht zeitgleich oder randomisiert gepaart. Quelle: eigene Testauswertung.",
+      "bookmark": "FinalCaption_10080"
+    }
+  ],
+  "table_count": 30,
+  "paragraph_count": 398,
+  "text_word_count": 11975,
+  "output_sha256": "bfa855f0fec40f81322cbee66cebc147e9c8c505d09985f007bd50d79bcd1735"
+}

@@ -1,0 +1,65 @@
+{
+  "created_utc": "2026-09-12T11:38:33.382767+00:00",
+  "analysis_status": "post_hoc_descriptive_state_label_counts",
+  "positive_class": "airflow_modified, a controlled changed operating condition, NOT a proven defect",
+  "negative_class": "normal, before and after from the SAME complete sequence",
+  "independent_positive_recordings": 1,
+  "independent_sequence_replicates": 1,
+  "note": "Existing labels, predictions, thresholds and [180,300) selection unchanged. No new inference, calibration or exclusion. Dependent windows are not independent replicates. These are descriptive metrics of this one sequence; no general defect recall/F1 is claimed.",
+  "source_sha256": {
+    "/home/malik/masterarbeit-edge-ai/results/upright_v4_frozen_airflow_test_20260912_073015/evaluation_normal_before/scores.csv": "d1e76a96afff48252860956af0fa64c345f30c4f93bda04ddbae8695a7b7534c",
+    "/home/malik/masterarbeit-edge-ai/results/upright_v4_frozen_airflow_test_20260912_073015/evaluation_airflow_modified/scores.csv": "f9c4219c6090218ca1e8890a06e27eae6a74041db8de74d2582ac9694b8cbd93",
+    "/home/malik/masterarbeit-edge-ai/results/upright_v4_frozen_airflow_test_20260912_073015/evaluation_normal_after/scores.csv": "97b5a91df6091a8088cdef8872c5a76c9b3138f755291ddeb989891deffcaf7d"
+  },
+  "script_sha256": "4609059c4d2b69b46da5aa1f81e5bbb8019edb2e3d34a615763cfdc61092b6e6",
+  "results": [
+    {
+      "method": "rms",
+      "true_positive": 7,
+      "false_negative": 187,
+      "false_positive": 1,
+      "true_negative": 387,
+      "valid_windows": 582,
+      "invalid_windows": 0,
+      "positive_windows": 194,
+      "negative_windows": 388,
+      "precision": 0.875,
+      "recall": 0.03608247422680412,
+      "f1": 0.06930693069306931,
+      "false_positive_rate": 0.002577319587628866,
+      "accuracy": 0.6769759450171822
+    },
+    {
+      "method": "isolation_forest",
+      "true_positive": 4,
+      "false_negative": 190,
+      "false_positive": 0,
+      "true_negative": 388,
+      "valid_windows": 582,
+      "invalid_windows": 0,
+      "positive_windows": 194,
+      "negative_windows": 388,
+      "precision": 1.0,
+      "recall": 0.020618556701030927,
+      "f1": 0.04040404040404041,
+      "false_positive_rate": 0.0,
+      "accuracy": 0.6735395189003437
+    },
+    {
+      "method": "tflite_autoencoder",
+      "true_positive": 0,
+      "false_negative": 194,
+      "false_positive": 55,
+      "true_negative": 333,
+      "valid_windows": 582,
+      "invalid_windows": 0,
+      "positive_windows": 194,
+      "negative_windows": 388,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "false_positive_rate": 0.14175257731958762,
+      "accuracy": 0.5721649484536082
+    }
+  ]
+}

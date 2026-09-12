@@ -1,0 +1,92 @@
+{
+  "status": "evaluated_independent_normal_recording",
+  "csv": "/home/malik/masterarbeit-edge-ai/data/upright_v4_second_pwm50_20260912_091000/normal_pwm50_02_50pwm_300s_20260912_101021_347673.csv",
+  "csv_sha256": "dd47b8d046f067c47913fd7be5b76405f803c2ef359ab80e87e313675c3ff730",
+  "sidecar": "/home/malik/masterarbeit-edge-ai/data/upright_v4_second_pwm50_20260912_091000/normal_pwm50_02_50pwm_300s_20260912_101021_347673.json",
+  "sidecar_sha256": "b9926acecf576f31c38c758de08df007d879b7beeee0d557032d5d3a0379bb31",
+  "session": "/home/malik/masterarbeit-edge-ai/results/upright_v4_second_pwm50_20260912_091000/normal_pwm50_02_session.json",
+  "session_sha256": "51292f748baab310c35a9f19c1a558cf8180ee0dcca01ae25419ec5ea1c9fcc8",
+  "protocol_sha256": "4e7fcf7525c74449fd548faaf61fe070851e61bf42fe9fccef449a5fe0218c21",
+  "frozen_bundle_sha256": "cec1859bfb354bafef77a619e6d2c1ffd85b50787c87595aba9a1e20a80cdae5",
+  "recording_id": "normal_pwm50_02_50pwm_300s_20260912_101021_347673",
+  "phase": "normal_pwm50_02",
+  "mounting_id": "fan_upright_position_v4_20260911_103726",
+  "condition": "normal",
+  "quality": {
+    "xyz_points": 62133,
+    "individual_axis_values": 186399,
+    "nominal_sensor_odr_hz": 200,
+    "observed_xyz_per_second": 207.11176863312178,
+    "first_to_last_host_span_s": 299.992609836,
+    "first_xyz_after_command_s": 0.097072305,
+    "last_xyz_after_command_s": 300.089682141,
+    "host_interval_p50_ms": 5.584927,
+    "host_interval_p99_ms": 5.691788430000001,
+    "host_interval_max_ms": 9.790041,
+    "host_intervals_over_10ms": 0,
+    "host_intervals_over_160ms": 0,
+    "read_duration_max_ms": 5.41428,
+    "fifo_depth_max": 2,
+    "gap_flagged_xyz": 0,
+    "overrun_flagged_xyz": 0,
+    "saturated_flagged_xyz": 0,
+    "nonfinite_xyz_points": 0,
+    "nonmonotonic_host_intervals": 0,
+    "exact_lost_sensor_samples": null,
+    "timebase_limitation": "Host read completion is not a measured sensor conversion clock. Exact physical losses are unknown.",
+    "selected_interval": {
+      "xyz_selected": 24852,
+      "full_model_windows": 194,
+      "trailing_xyz_not_windowed": 20,
+      "quality_valid_windows": 194,
+      "quality_invalid_windows": 0
+    }
+  },
+  "metrics": {
+    "rms": {
+      "total_windows": 194,
+      "valid_windows": 194,
+      "invalid_windows": 0,
+      "false_alarms": 2,
+      "false_alarm_rate_among_valid_normal_windows": 0.010309278350515464
+    },
+    "isolation_forest": {
+      "total_windows": 194,
+      "valid_windows": 194,
+      "invalid_windows": 0,
+      "false_alarms": 1,
+      "false_alarm_rate_among_valid_normal_windows": 0.005154639175257732
+    },
+    "tflite_autoencoder": {
+      "total_windows": 194,
+      "valid_windows": 194,
+      "invalid_windows": 0,
+      "false_alarms": 11,
+      "false_alarm_rate_among_valid_normal_windows": 0.05670103092783505
+    }
+  },
+  "runtimes": {
+    "rms": "NumPy RMS (standardisiertes H×3-Fenster)",
+    "isolation_forest": "scikit-learn IsolationForest.score_samples",
+    "tflite_autoencoder": "ai_edge_litert.Interpreter (Float32 TFLite)"
+  },
+  "pwm_command_invocation_utc": "2026-09-12T10:10:21.354513+00:00",
+  "pwm_command_invocation_monotonic_ns": 98498798674033,
+  "models_changed": false,
+  "scaler_fitted": false,
+  "thresholds_changed": false,
+  "physical_loss_count": null,
+  "mechanical_stop_measured": false,
+  "selection_seconds_since_pwm_command": [
+    180,
+    300
+  ],
+  "evaluator_sha256": "f02613004cfd7671aad64735ea679484b32c1edda9747d6075cb4d353b592613",
+  "limitation": "One whole run is one experimental replicate. Adjacent windows are dependent. Normal-only tests do not estimate anomaly recall, F1, or general detection performance.",
+  "artifact_sha256": {
+    "scores.png": "70036b511229b600b2a49526c582c67442ff4f9d40dc58625de2b20016a5782b",
+    "scores.csv": "1d8ce67755fd67436a77df182823e3859cff978cf02beecabd55badbad5cc56b",
+    "scores.pdf": "0aacb7e2a233db462f2b52dcd40b40d6c5b58488640d809246864e04ebe52843",
+    "scores.json": "7299af1dedf865007238e01dbcd4243feb8236aebf65a5386eecf4cdc858a52e"
+  }
+}

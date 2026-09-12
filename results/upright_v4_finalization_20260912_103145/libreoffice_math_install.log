@@ -1,0 +1,11 @@
+Reading package lists...
+Building dependency tree...
+Reading state information...
+The following additional packages will be installed:
+  libreoffice-uiconfig-math
+The following NEW packages will be installed:
+  libreoffice-math libreoffice-uiconfig-math
+0 upgraded, 2 newly installed, 0 to remove and 115 not upgraded.
+Need to get 528 kB of archives.
+After this operation, 2256 kB of additional disk space will be used.
+Do you want to continue? [Y/n] Abort.

@@ -1,0 +1,27 @@
+{
+  "inputs_sha256": {
+    "/home/malik/masterarbeit-edge-ai/results/upright_v4_frozen_airflow_test_20260912_073015/evaluation_normal_before/rms_5s.csv": "46dc9fc53ce9c06ff8546a93f41c7b0452df567c377d0f8ee09bd1638130d84c",
+    "/home/malik/masterarbeit-edge-ai/results/upright_v4_frozen_airflow_test_20260912_073015/evaluation_airflow_modified/rms_5s.csv": "b41eef16954143404359cbc86aaebe44f03fc850a5a0150b051c794a0b4a02fb",
+    "/home/malik/masterarbeit-edge-ai/results/upright_v4_frozen_airflow_test_20260912_073015/evaluation_normal_after/rms_5s.csv": "b6c6fb8994f6628430777a79765b7c252f21bd8e20bc0a91cd4aade5ec1f70cb",
+    "/home/malik/masterarbeit-edge-ai/results/upright_v4_exploratory_diagnosis_20260912_081728/window_diagnostics.csv": "24cf86e410b78b9b207215a01e2a83dde5f1a535c510944162780833a4872d9d",
+    "/home/malik/masterarbeit-edge-ai/results/upright_v4_second_pwm50_20260912_091000/comparison_50_vs_75/false_alarm_comparison.csv": "54db30c0afec82b33d19d3ea61badf41cbeebfd8dd758dba323765a3895ec915",
+    "/home/malik/masterarbeit-edge-ai/results/upright_v4_finalization_20260912_103145/runtime_analysis/analysis.json": "7ace1857627cba0341f45858e2603137f851e0d073e9aa29894d2a79253d710b",
+    "/home/malik/masterarbeit-edge-ai/results/upright_v4_finalization_20260912_103145/runtime_analysis/all_resources.csv": "a5673643c1bee1f3b6dc2bbc839acba868047be187741908ec66c7955c3c73c0"
+  },
+  "script_sha256": "0e2d9ea63aee9530c765bd9504a58246324797f070d749b3c8a0eda60892ec41",
+  "note": "Neu gesetzte Darstellungen aus unveränderten vorhandenen Ergebnissen; keine Neu-Kalibrierung oder Fensterselektion.",
+  "outputs_sha256": {
+    "false_alarm_comparison.pdf": "bd1a39c9646a1a2f1b942058e232a14abb05159e27af57429f0ee5a6e71184f2",
+    "axis_decomposition.pdf": "18354618f0d1e6450ae8829f21cb0c12a57645e7497a00f3dacde7814f7e7d7c",
+    "sensor_live_resources.png": "70303f0fd131a7ed8d2d6adf980bdae54073cbfa6a59da4aed8f8506d39b9b77",
+    "axis_decomposition.png": "bbc577e1ee015bcd10e87733bf2b4e785532c89bcdf1b4622e85ac48cc356f70",
+    "sensor_live_resources.pdf": "10724d48218255ac40e362d7f7d95d7cc3eb0bba20bd01473e389d742271fc90",
+    "latency_comparison.pdf": "ad42a783ae063a56ba6e730775838f777286fbb46705291a16c073d41be97f9c",
+    "plate_rms.pdf": "9000b46d8097c7cc8e2ddc2d929b5fb55362c3650acc6e34be8a2819df54d95a",
+    "plate_scores.png": "876f92dccabc0c1b06de4e9eb4a72b96c7b189c93c01f94cf026aecb0e14dcf6",
+    "plate_rms.png": "81b4b4a5684efdf8cb3e965384124376e11c5171da96b7058ddba4d207207c1f",
+    "plate_scores.pdf": "809d4cabfea94b0d977c54106e4448bb0043e04e10877969dbb51440926e25e7",
+    "false_alarm_comparison.png": "0f3a7ccd23ea405e7f76a2470fe2d558874fc56d0a03e0114d02ddf08f34f3ea",
+    "latency_comparison.png": "b84d759514b74fe2554cb8d764c9e19da98deb0ba634991cb2917dd86dc0785e"
+  }
+}

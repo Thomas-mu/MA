@@ -1,0 +1,13 @@
+phase,recording_id,method,total_windows,valid_windows,invalid_windows,false_alarms,false_alarm_rate_among_valid_normal_windows
+normal_pwm50_01,normal_pwm50_01_50pwm_300s_20260912_100420_756309,rms,194,194,0,1,0.005154639175257732
+normal_pwm50_01,normal_pwm50_01_50pwm_300s_20260912_100420_756309,isolation_forest,194,194,0,0,0.0
+normal_pwm50_01,normal_pwm50_01_50pwm_300s_20260912_100420_756309,tflite_autoencoder,194,194,0,17,0.08762886597938144
+normal_pwm50_02,normal_pwm50_02_50pwm_300s_20260912_101021_347673,rms,194,194,0,2,0.010309278350515464
+normal_pwm50_02,normal_pwm50_02_50pwm_300s_20260912_101021_347673,isolation_forest,194,194,0,1,0.005154639175257732
+normal_pwm50_02,normal_pwm50_02_50pwm_300s_20260912_101021_347673,tflite_autoencoder,194,194,0,11,0.05670103092783505
+normal_pwm50_03,normal_pwm50_03_50pwm_300s_20260912_101621_906596,rms,194,194,0,0,0.0
+normal_pwm50_03,normal_pwm50_03_50pwm_300s_20260912_101621_906596,isolation_forest,194,194,0,0,0.0
+normal_pwm50_03,normal_pwm50_03_50pwm_300s_20260912_101621_906596,tflite_autoencoder,194,194,0,7,0.03608247422680412
+pooled,whole_recordings_pooled,rms,582,582,0,3,0.005154639175257732
+pooled,whole_recordings_pooled,isolation_forest,582,582,0,1,0.001718213058419244
+pooled,whole_recordings_pooled,tflite_autoencoder,582,582,0,35,0.06013745704467354

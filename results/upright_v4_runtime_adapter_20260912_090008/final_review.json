@@ -1,0 +1,10 @@
+{
+  "protected_pre_diagnosis_files": 1383,
+  "changed_protected_files": [],
+  "graphic_visually_reviewed": true,
+  "report_links_valid": true,
+  "word_sha256": "a9a5d7d17b28098f554240a3e1650881e252db679f33319a1d11164b3246cbb8",
+  "actual_hardware_starts": 0,
+  "read_only_pwm_check_percent": 0,
+  "resources_scope": "Single shared-method paced replay, development background load, not isolated sensor-live benchmark"
+}

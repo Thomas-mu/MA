@@ -1,0 +1,8 @@
+{
+  "created_utc": "2026-09-12T10:31:45.234644+00:00",
+  "word": "docs/Akz_Masterarbeit_Bericht(3).docx",
+  "word_initial_sha256": "a9a5d7d17b28098f554240a3e1650881e252db679f33319a1d11164b3246cbb8",
+  "word_backup": "docs/backups/Akz_Masterarbeit_Bericht(3)_vor_abschluss_20260912_103145.docx",
+  "frozen_bundle": "results/upright_v4_training_pilot_20260911_130614/run_001/frozen",
+  "scope": "Live integration, finite runtime evidence, thesis update; frozen models and historical sources preserved. User authorized autonomous starts/stops; no mount change reported."
+}

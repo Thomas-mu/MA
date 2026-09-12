@@ -1,0 +1,117 @@
+{
+  "status": "verified_complete",
+  "protocol_sha256": "4e7fcf7525c74449fd548faaf61fe070851e61bf42fe9fccef449a5fe0218c21",
+  "protected_file_count": 1383,
+  "changed_protected_files": [],
+  "frozen_package_sha256": "cec1859bfb354bafef77a619e6d2c1ffd85b50787c87595aba9a1e20a80cdae5",
+  "new_hardware_recordings": [
+    {
+      "phase": "normal_pwm50_01",
+      "csv": "/home/malik/masterarbeit-edge-ai/data/upright_v4_second_pwm50_20260912_091000/normal_pwm50_01_50pwm_300s_20260912_100420_756309.csv",
+      "csv_sha256": "431aa57c708d5f7bb6061287330e5790d0dd3a31fd9d68e31cc1985030e3d859",
+      "xyz_points": 62142
+    },
+    {
+      "phase": "normal_pwm50_02",
+      "csv": "/home/malik/masterarbeit-edge-ai/data/upright_v4_second_pwm50_20260912_091000/normal_pwm50_02_50pwm_300s_20260912_101021_347673.csv",
+      "csv_sha256": "dd47b8d046f067c47913fd7be5b76405f803c2ef359ab80e87e313675c3ff730",
+      "xyz_points": 62133
+    },
+    {
+      "phase": "normal_pwm50_03",
+      "csv": "/home/malik/masterarbeit-edge-ai/data/upright_v4_second_pwm50_20260912_091000/normal_pwm50_03_50pwm_300s_20260912_101621_906596.csv",
+      "csv_sha256": "a9a0aa5067d8f8725083b23e192426de7f355d3e50d22e6432e90d0b7c143f60",
+      "xyz_points": 62133
+    }
+  ],
+  "successful_50_percent_commands": 3,
+  "successful_zero_commands": 3,
+  "automatic_retries": 0,
+  "final_pwm_percent": 0,
+  "mechanical_standstill_at_end_confirmed": false,
+  "all_methods_same_windows": true,
+  "valid_windows_per_method": 582,
+  "invalid_windows_per_method": 0,
+  "reports": {
+    "measurement_report.md": {
+      "links_checked": 3,
+      "table_data_rows": [
+        3,
+        3,
+        3,
+        33,
+        3
+      ],
+      "word_count": 1556
+    },
+    "result_summary.md": {
+      "links_checked": 4,
+      "table_data_rows": [
+        3
+      ],
+      "word_count": 616
+    }
+  },
+  "graphics_visually_checked": [
+    "comparison_50_only/scores.png",
+    "comparison_50_vs_75/rms_5s.png",
+    "comparison_50_vs_75/false_alarm_comparison.png"
+  ],
+  "word_sha256": "a9a5d7d17b28098f554240a3e1650881e252db679f33319a1d11164b3246cbb8",
+  "artifact_sha256": {
+    "protocol.md": "c6fbec56498294fd7b154a2c448d399efcc4901480c8cffcefec439fbaa907a9",
+    "result_summary.md": "d344be6c721918b7dfabed16d4bed0db9519b67ac469ff8cf9926885c689974e",
+    "normal_pwm50_03_session.json": "9e6df9be0cb4a7519792743512989291a2bbc60029e84b8335e14fbd6c12647a",
+    "protocol.json": "4e7fcf7525c74449fd548faaf61fe070851e61bf42fe9fccef449a5fe0218c21",
+    "normal_pwm50_02_fan.jsonl": "6b1874eba654c133f0926c6b4c9ec8f4e828ac748051274d4b243b9ce340ff6b",
+    "final_control_readonly.jsonl": "8e4862d9b114d60c48869cd6cbd5062720e317321eabd64d4ffe1a31c04bcc9b",
+    "normal_pwm50_03_fan.jsonl": "32f08c8f62fbc47c4d4d394720cf275186f6ea2034ea4380199ff6c061686fe4",
+    "protocol.sha256": "67ab58da4966f02d97f8531bb01cb790b7e14208965098fed6b8ab63d6a59013",
+    "write_measurement_report.py": "72677412bcc0a4c7d277e5012b6d6f3df7ef224a531def38b495dbb1520edfc1",
+    "final_control_status.json": "d48a400204835560c96a5abd25b04a7211636d8e211407dba74c964453ff6750",
+    "normal_pwm50_02_release.json": "5a851ebd98a87fbe36e58137cdf2d3c2f8c993dd7d8b6c219aa6510c2ad962a8",
+    "baseline_precheck.json": "b5ae616648d874226303721eee28eec5c31d4ce113b53b58bbe82cb66333f2a3",
+    "measurement_report.md": "3702b29578cab0262d49ff369a8b588757399871e0ead24fc3d09e3d18ec1d3f",
+    "sequence_console.log": "a3aa4dbb25f064d7d58a004cb257cdd956241cbdd366461061b28b04a88954b7",
+    "normal_pwm50_01_session.json": "84347d8ce340d7c78aea27a9c691d8931e7211d1baea439b5c8b0a34c5712ee4",
+    "evaluation_completion.json": "0b316625541e87c2d2df6e342f7064cd140b5ac14cf782cc93bda2ac02a8ebbe",
+    "initial_readonly_preflight.json": "d7353bb4cb97167286da3bbe90f2bccff1156412bc774c944a18d13a65c58d1a",
+    "normal_pwm50_02_session.json": "51292f748baab310c35a9f19c1a558cf8180ee0dcca01ae25419ec5ea1c9fcc8",
+    "normal_pwm50_01_fan.jsonl": "a3a7adb1d1672111ca5844ba75ba792638940bb58a08f4dddb6e2fcc09f99bb4",
+    "normal_pwm50_03_release.json": "f3a71ba943674865e7ed2e55b41d255d2bbb9747498ef2576c935d0fdc677978",
+    "evaluate_sequence.py": "38bbc51a46365bf7c3981c5a22df07bd60ff5458c71999d9ba79bf1ba23cded7",
+    "normal_pwm50_01_release.json": "83a1e67aac40e1f613bd2c11063161d37e584164aaa1573fa83e473c36af03ca",
+    "postcapture_analysis_plan.json": "4f8962408f05d851fd6f50a32a2f55bf86c5fc91625e7c35c8ef7e7e5d59f5f4",
+    "evaluation_console.log": "bbddfbf5655bc00ee6aaffd3d1a5d5037fe7defbd3b3d37696823144854064b1",
+    "comparison_50_vs_75/false_alarm_comparison.pdf": "35679571d425570a8dbfcd358b6bc7941fb275a723869db2ab3a907414dddf67",
+    "comparison_50_vs_75/comparison.json": "63763aef13e95351fdef9508049e54bb5d25f16e9e29666b9ce5589c0c864349",
+    "comparison_50_vs_75/false_alarm_comparison.csv": "54db30c0afec82b33d19d3ea61badf41cbeebfd8dd758dba323765a3895ec915",
+    "comparison_50_vs_75/all_scores.csv": "ed2d811b1f75f49d4480e2ae0c138c667f9892f0ad5f77a8c798827ee2d1c395",
+    "comparison_50_vs_75/rms_5s.pdf": "69ea88a419417fdf3673abaf5c144c3d4d99dfa28bc019dea1f61379b4551f89",
+    "comparison_50_vs_75/baseline_provenance.json": "7e306edae849fc94dcf30870c77151ef6b3ad59cb45694dc17483400e5b3abb0",
+    "comparison_50_vs_75/rms_5s.csv": "f6c559b64abab30e41c7599c5a6eebbc8a392367eff9ba1c29238253142ea928",
+    "comparison_50_vs_75/rms_5s.png": "50a52826ebfb66521e8b4872220fa031b41954cb9bf0ee72154e731087a2c046",
+    "comparison_50_vs_75/false_alarm_comparison.png": "8868f3db625b32911955b5adb68bf4f7e447c214e9bf70f38a708508e01b9e25",
+    "comparison_50_vs_75/acquisition_quality.json": "5c26dfaaa6883fe27bce1936e24cab1b1df7f342ed2228335445ae71ce2be641",
+    "comparison_50_only/scores.png": "55ece7aa59fcbcbc0df45633e5b41b2ee43d335d3c0cdddd0e7bc96aa3969f56",
+    "comparison_50_only/comparison.json": "f172ee64e199198ea4bcd45349ed6eace7071fd1afa136cbcaad4067ae8ab497",
+    "comparison_50_only/comparison.csv": "d0dd02634a43dc90f87c374e26bc68a56ca455da2fd12ed68ec82e8f10b493f0",
+    "comparison_50_only/report.md": "130ec4e17205d53a7988e02aaa85fd7857bbb58d376c96462fc73cc18c4105a2",
+    "comparison_50_only/scores.pdf": "c33d05a6b8d040d9301e21b8eaaec9ba9a29ef9446f7ffdce6cf553f2a1aa759",
+    "evaluation_normal_pwm50_03/scores.png": "774b8c1729bf8761e646288c818f7a33e9c20e1f464b88583356a37e7129c173",
+    "evaluation_normal_pwm50_03/scores.csv": "1fc4c8c317b49807224d0fcafed325da1b8ad8d0ea901210116a751407bafc92",
+    "evaluation_normal_pwm50_03/summary.json": "40a98d39bb6d76e55049967820b9b1f03c9907b6db2ed0a30bffafcf2dd17ffe",
+    "evaluation_normal_pwm50_03/scores.pdf": "99d0061ce9a7d56c1aecc8a99d6d40d1b592df674b844b012147553831704cc8",
+    "evaluation_normal_pwm50_03/scores.json": "adc6177cdb66c0ac271b9f3107dd35f06786c29c1525f03e1d4aa5e7628601d0",
+    "evaluation_normal_pwm50_02/scores.png": "70036b511229b600b2a49526c582c67442ff4f9d40dc58625de2b20016a5782b",
+    "evaluation_normal_pwm50_02/scores.csv": "1d8ce67755fd67436a77df182823e3859cff978cf02beecabd55badbad5cc56b",
+    "evaluation_normal_pwm50_02/summary.json": "4b9851e4ac2d6effac6f2d63435e6befe93d935234483f10c75bc862a6098cae",
+    "evaluation_normal_pwm50_02/scores.pdf": "0aacb7e2a233db462f2b52dcd40b40d6c5b58488640d809246864e04ebe52843",
+    "evaluation_normal_pwm50_02/scores.json": "7299af1dedf865007238e01dbcd4243feb8236aebf65a5386eecf4cdc858a52e",
+    "evaluation_normal_pwm50_01/scores.png": "24c9de3e9b75c6e4b903359fb4feb0078999cb0eae94abb8eaa89c5ce42bcb66",
+    "evaluation_normal_pwm50_01/scores.csv": "135220182c5a020b31fdb596cd7ef610ed31fa77ddbc9fb30a018f89846eddcc",
+    "evaluation_normal_pwm50_01/summary.json": "279245d24cabb21dded25a9f53f1330e0a49b2b13b8eee1a071f164e732c6cfc",
+    "evaluation_normal_pwm50_01/scores.pdf": "cdcd96bb8e6a88bd70d725d5b0843ed053f7e23afd8a188da896463b4e578cc8",
+    "evaluation_normal_pwm50_01/scores.json": "b272ba7f411888323f0bf752e3ffed39921505afb81e7cba5f6d28f1230e0771"
+  }
+}

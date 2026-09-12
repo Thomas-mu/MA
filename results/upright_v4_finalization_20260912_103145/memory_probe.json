@@ -1,0 +1,556 @@
+{
+  "purpose": "exploratory_memory_probe_not_timing_evidence",
+  "scope": "six unpaced passes through same stored source, WindowAssembler plus RMS engine; excludes queue, journal and actual sensor",
+  "no_new_sensor_measurement": true,
+  "no_model_change": true,
+  "tracemalloc_enabled": true,
+  "normal_gc_enabled": true,
+  "explicit_gc_collected_objects": 0,
+  "source_csv": "/home/malik/masterarbeit-edge-ai/data/upright_v4_frozen_airflow_test_20260912_073015/normal_before_75pwm_300s_20260912_073823_494120.csv",
+  "source_sha256": "fdfcec021dc9f9ad2d86b41025a05259a66ed10d29e07a6ed98da3b593ac6960",
+  "samples": [
+    {
+      "phase": "before",
+      "elapsed_s": 3.1111e-05,
+      "windows": 0,
+      "rss_bytes": 131432448,
+      "traced_current_bytes": 368,
+      "traced_peak_bytes": 368,
+      "gc_count": [
+        15,
+        0,
+        0
+      ],
+      "tracked_objects": 54516
+    },
+    {
+      "phase": "after_pass_1",
+      "elapsed_s": 6.978344959,
+      "windows": 194,
+      "rss_bytes": 132464640,
+      "traced_current_bytes": 180622,
+      "traced_peak_bytes": 445676,
+      "gc_count": [
+        453,
+        1,
+        0
+      ],
+      "tracked_objects": 54588
+    },
+    {
+      "phase": "after_pass_2",
+      "elapsed_s": 13.998639979,
+      "windows": 388,
+      "rss_bytes": 132579328,
+      "traced_current_bytes": 292611,
+      "traced_peak_bytes": 624801,
+      "gc_count": [
+        593,
+        2,
+        0
+      ],
+      "tracked_objects": 54589
+    },
+    {
+      "phase": "after_pass_3",
+      "elapsed_s": 20.996653313,
+      "windows": 582,
+      "rss_bytes": 132661248,
+      "traced_current_bytes": 367749,
+      "traced_peak_bytes": 736840,
+      "gc_count": [
+        65,
+        3,
+        0
+      ],
+      "tracked_objects": 54590
+    },
+    {
+      "phase": "after_pass_4",
+      "elapsed_s": 27.957606597,
+      "windows": 776,
+      "rss_bytes": 133005312,
+      "traced_current_bytes": 396338,
+      "traced_peak_bytes": 811945,
+      "gc_count": [
+        454,
+        3,
+        0
+      ],
+      "tracked_objects": 54592
+    },
+    {
+      "phase": "after_pass_5",
+      "elapsed_s": 34.916295351,
+      "windows": 970,
+      "rss_bytes": 133021696,
+      "traced_current_bytes": 424842,
+      "traced_peak_bytes": 840615,
+      "gc_count": [
+        843,
+        3,
+        0
+      ],
+      "tracked_objects": 54594
+    },
+    {
+      "phase": "after_pass_6",
+      "elapsed_s": 41.895721696,
+      "windows": 1164,
+      "rss_bytes": 133054464,
+      "traced_current_bytes": 453413,
+      "traced_peak_bytes": 869120,
+      "gc_count": [
+        1232,
+        3,
+        0
+      ],
+      "tracked_objects": 54596
+    },
+    {
+      "phase": "after_explicit_gc",
+      "elapsed_s": 41.935506808,
+      "windows": 1164,
+      "rss_bytes": 133775360,
+      "traced_current_bytes": 90779,
+      "traced_peak_bytes": 897642,
+      "gc_count": [
+        11,
+        0,
+        0
+      ],
+      "tracked_objects": 62226
+    }
+  ],
+  "top_allocation_differences": {
+    "before_gc": [
+      {
+        "size_diff": 191216,
+        "count_diff": 2821,
+        "traceback": [
+          "/home/malik/masterarbeit-edge-ai/.venv/lib/python3.13/site-packages/pandas/core/frame.py:845",
+          "/home/malik/masterarbeit-edge-ai/.venv/lib/python3.13/site-packages/pandas/core/internals/construction.py:150",
+          "/home/malik/masterarbeit-edge-ai/.venv/lib/python3.13/site-packages/pandas/core/internals/managers.py:2337",
+          "/home/malik/masterarbeit-edge-ai/.venv/lib/python3.13/site-packages/pandas/core/internals/managers.py:2410",
+          "/home/malik/masterarbeit-edge-ai/.venv/lib/python3.13/site-packages/pandas/core/internals/managers.py:2445"
+        ]
+      },
+      {
+        "size_diff": 83880,
+        "count_diff": 1497,
+        "traceback": [
+          "/home/malik/masterarbeit-edge-ai/.venv/lib/python3.13/site-packages/pandas/core/internals/managers.py:2342",
+          "/home/malik/masterarbeit-edge-ai/.venv/lib/python3.13/site-packages/pandas/core/internals/managers.py:1964",
+          "/home/malik/masterarbeit-edge-ai/.venv/lib/python3.13/site-packages/pandas/core/internals/managers.py:2467",
+          "/home/malik/masterarbeit-edge-ai/.venv/lib/python3.13/site-packages/pandas/core/internals/managers.py:2492",
+          "/home/malik/masterarbeit-edge-ai/.venv/lib/python3.13/site-packages/numpy/_core/shape_base.py:287"
+        ]
+      },
+      {
+        "size_diff": 27848,
+        "count_diff": 497,
+        "traceback": [
+          "/home/malik/masterarbeit-edge-ai/.venv/lib/python3.13/site-packages/pandas/core/internals/managers.py:1964",
+          "/home/malik/masterarbeit-edge-ai/.venv/lib/python3.13/site-packages/pandas/core/internals/managers.py:2467",
+          "/home/malik/masterarbeit-edge-ai/.venv/lib/python3.13/site-packages/pandas/core/internals/managers.py:2492",
+          "/home/malik/masterarbeit-edge-ai/.venv/lib/python3.13/site-packages/numpy/_core/shape_base.py:287",
+          "/home/malik/masterarbeit-edge-ai/.venv/lib/python3.13/site-packages/numpy/_core/shape_base.py:130"
+        ]
+      },
+      {
+        "size_diff": 23952,
+        "count_diff": 499,
+        "traceback": [
+          "/home/malik/masterarbeit-edge-ai/.venv/lib/python3.13/site-packages/pandas/core/strings/accessor.py:396",
+          "/home/malik/masterarbeit-edge-ai/.venv/lib/python3.13/site-packages/pandas/core/series.py:518",
+          "/home/malik/masterarbeit-edge-ai/.venv/lib/python3.13/site-packages/pandas/core/generic.py:6219",
+          "/home/malik/masterarbeit-edge-ai/.venv/lib/python3.13/site-packages/pandas/core/series.py:739",
+          "/home/malik/masterarbeit-edge-ai/.venv/lib/python3.13/site-packages/pandas/core/generic.py:6206"
+        ]
+      },
+      {
+        "size_diff": 23952,
+        "count_diff": 499,
+        "traceback": [
+          "/home/malik/masterarbeit-edge-ai/.venv/lib/python3.13/site-packages/pandas/core/series.py:6077",
+          "/home/malik/masterarbeit-edge-ai/.venv/lib/python3.13/site-packages/pandas/core/series.py:518",
+          "/home/malik/masterarbeit-edge-ai/.venv/lib/python3.13/site-packages/pandas/core/generic.py:6219",
+          "/home/malik/masterarbeit-edge-ai/.venv/lib/python3.13/site-packages/pandas/core/series.py:739",
+          "/home/malik/masterarbeit-edge-ai/.venv/lib/python3.13/site-packages/pandas/core/generic.py:6206"
+        ]
+      },
+      {
+        "size_diff": 23952,
+        "count_diff": 499,
+        "traceback": [
+          "/home/malik/masterarbeit-edge-ai/.venv/lib/python3.13/site-packages/pandas/core/internals/construction.py:889",
+          "/home/malik/masterarbeit-edge-ai/.venv/lib/python3.13/site-packages/pandas/core/indexes/base.py:7973",
+          "/home/malik/masterarbeit-edge-ai/.venv/lib/python3.13/site-packages/pandas/core/indexes/base.py:580",
+          "/home/malik/masterarbeit-edge-ai/.venv/lib/python3.13/site-packages/pandas/core/construction.py:671",
+          "/home/malik/masterarbeit-edge-ai/.venv/lib/python3.13/site-packages/pandas/core/arrays/string_.py:222"
+        ]
+      },
+      {
+        "size_diff": 10927,
+        "count_diff": 223,
+        "traceback": [
+          "/home/malik/masterarbeit-edge-ai/results/upright_v4_finalization_20260912_103145/probe_memory.py:31",
+          "/home/malik/masterarbeit-edge-ai/src/pilot_stream_final.py:56",
+          "/home/malik/masterarbeit-edge-ai/src/independent_normal_test.py:123",
+          "/home/malik/masterarbeit-edge-ai/src/independent_normal_test.py:81",
+          "/home/malik/masterarbeit-edge-ai/.venv/lib/python3.13/site-packages/pandas/core/base.py:696"
+        ]
+      },
+      {
+        "size_diff": 8650,
+        "count_diff": 173,
+        "traceback": [
+          "/home/malik/masterarbeit-edge-ai/src/independent_normal_test.py:123",
+          "/home/malik/masterarbeit-edge-ai/src/independent_normal_test.py:79",
+          "/home/malik/masterarbeit-edge-ai/.venv/lib/python3.13/site-packages/pandas/core/series.py:6076",
+          "/home/malik/masterarbeit-edge-ai/.venv/lib/python3.13/site-packages/pandas/core/algorithms.py:520",
+          "/home/malik/masterarbeit-edge-ai/.venv/lib/python3.13/site-packages/pandas/core/algorithms.py:245"
+        ]
+      },
+      {
+        "size_diff": 7400,
+        "count_diff": 148,
+        "traceback": [
+          "/home/malik/masterarbeit-edge-ai/src/independent_normal_test.py:123",
+          "/home/malik/masterarbeit-edge-ai/src/independent_normal_test.py:81",
+          "/home/malik/masterarbeit-edge-ai/.venv/lib/python3.13/site-packages/pandas/core/series.py:6076",
+          "/home/malik/masterarbeit-edge-ai/.venv/lib/python3.13/site-packages/pandas/core/algorithms.py:520",
+          "/home/malik/masterarbeit-edge-ai/.venv/lib/python3.13/site-packages/pandas/core/algorithms.py:245"
+        ]
+      },
+      {
+        "size_diff": 5574,
+        "count_diff": 111,
+        "traceback": [
+          "/home/malik/masterarbeit-edge-ai/.venv/lib/python3.13/site-packages/pandas/core/internals/managers.py:2342",
+          "/home/malik/masterarbeit-edge-ai/.venv/lib/python3.13/site-packages/pandas/core/internals/managers.py:1964",
+          "/home/malik/masterarbeit-edge-ai/.venv/lib/python3.13/site-packages/pandas/core/internals/managers.py:2463",
+          "/home/malik/masterarbeit-edge-ai/.venv/lib/python3.13/site-packages/pandas/core/internals/managers.py:2462",
+          "/home/malik/masterarbeit-edge-ai/.venv/lib/python3.13/site-packages/pandas/core/internals/blocks.py:182"
+        ]
+      },
+      {
+        "size_diff": 4320,
+        "count_diff": 36,
+        "traceback": [
+          "/home/malik/masterarbeit-edge-ai/src/independent_normal_test.py:123",
+          "/home/malik/masterarbeit-edge-ai/src/independent_normal_test.py:78",
+          "/home/malik/masterarbeit-edge-ai/.venv/lib/python3.13/site-packages/pandas/core/generic.py:6541",
+          "/home/malik/masterarbeit-edge-ai/.venv/lib/python3.13/site-packages/pandas/core/internals/managers.py:614",
+          "/home/malik/masterarbeit-edge-ai/.venv/lib/python3.13/site-packages/pandas/core/internals/managers.py:445"
+        ]
+      },
+      {
+        "size_diff": 4224,
+        "count_diff": 66,
+        "traceback": [
+          "/home/malik/masterarbeit-edge-ai/results/upright_v4_finalization_20260912_103145/probe_memory.py:52",
+          "/home/malik/masterarbeit-edge-ai/results/upright_v4_finalization_20260912_103145/probe_memory.py:31",
+          "/home/malik/masterarbeit-edge-ai/src/pilot_stream_final.py:36"
+        ]
+      },
+      {
+        "size_diff": 4116,
+        "count_diff": 84,
+        "traceback": [
+          "/home/malik/masterarbeit-edge-ai/results/upright_v4_finalization_20260912_103145/probe_memory.py:31",
+          "/home/malik/masterarbeit-edge-ai/src/pilot_stream_final.py:56",
+          "/home/malik/masterarbeit-edge-ai/src/independent_normal_test.py:109",
+          "/home/malik/masterarbeit-edge-ai/src/prepare_pilot_dataset.py:48",
+          "/home/malik/masterarbeit-edge-ai/.venv/lib/python3.13/site-packages/pandas/core/base.py:696"
+        ]
+      },
+      {
+        "size_diff": 3904,
+        "count_diff": 33,
+        "traceback": [
+          "/home/malik/masterarbeit-edge-ai/.venv/lib/python3.13/site-packages/pandas/core/internals/managers.py:1964",
+          "/home/malik/masterarbeit-edge-ai/.venv/lib/python3.13/site-packages/pandas/core/internals/managers.py:2467",
+          "/home/malik/masterarbeit-edge-ai/.venv/lib/python3.13/site-packages/pandas/core/internals/managers.py:2498",
+          "/home/malik/masterarbeit-edge-ai/.venv/lib/python3.13/site-packages/numpy/_core/fromnumeric.py:1246",
+          "/home/malik/masterarbeit-edge-ai/.venv/lib/python3.13/site-packages/numpy/_core/fromnumeric.py:54"
+        ]
+      },
+      {
+        "size_diff": 3822,
+        "count_diff": 78,
+        "traceback": [
+          "/home/malik/masterarbeit-edge-ai/results/upright_v4_finalization_20260912_103145/probe_memory.py:52",
+          "/home/malik/masterarbeit-edge-ai/results/upright_v4_finalization_20260912_103145/probe_memory.py:31",
+          "/home/malik/masterarbeit-edge-ai/src/pilot_stream_final.py:56",
+          "/home/malik/masterarbeit-edge-ai/src/independent_normal_test.py:118",
+          "/home/malik/masterarbeit-edge-ai/.venv/lib/python3.13/site-packages/pandas/core/base.py:696"
+        ]
+      },
+      {
+        "size_diff": 3472,
+        "count_diff": 62,
+        "traceback": [
+          "/home/malik/masterarbeit-edge-ai/.venv/lib/python3.13/site-packages/pandas/core/frame.py:837",
+          "/home/malik/masterarbeit-edge-ai/.venv/lib/python3.13/site-packages/pandas/core/internals/construction.py:477",
+          "/home/malik/masterarbeit-edge-ai/.venv/lib/python3.13/site-packages/pandas/core/internals/construction.py:804",
+          "/home/malik/masterarbeit-edge-ai/.venv/lib/python3.13/site-packages/pandas/core/internals/construction.py:888",
+          "/home/malik/masterarbeit-edge-ai/.venv/lib/python3.13/site-packages/pandas/core/internals/construction.py:886"
+        ]
+      },
+      {
+        "size_diff": 3234,
+        "count_diff": 66,
+        "traceback": [
+          "/home/malik/masterarbeit-edge-ai/results/upright_v4_finalization_20260912_103145/probe_memory.py:31",
+          "/home/malik/masterarbeit-edge-ai/src/pilot_stream_final.py:56",
+          "/home/malik/masterarbeit-edge-ai/src/independent_normal_test.py:116",
+          "/home/malik/masterarbeit-edge-ai/.venv/lib/python3.13/site-packages/pandas/core/frame.py:2081",
+          "/home/malik/masterarbeit-edge-ai/.venv/lib/python3.13/site-packages/pandas/core/internals/managers.py:1870"
+        ]
+      },
+      {
+        "size_diff": 1840,
+        "count_diff": 19,
+        "traceback": [
+          "/home/malik/masterarbeit-edge-ai/results/upright_v4_finalization_20260912_103145/probe_memory.py:52",
+          "/home/malik/masterarbeit-edge-ai/results/upright_v4_finalization_20260912_103145/probe_memory.py:37",
+          "/home/malik/masterarbeit-edge-ai/results/upright_v4_finalization_20260912_103145/probe_memory.py:24"
+        ]
+      },
+      {
+        "size_diff": 1642,
+        "count_diff": 23,
+        "traceback": [
+          "/home/malik/masterarbeit-edge-ai/.venv/lib/python3.13/site-packages/pandas/core/internals/construction.py:474",
+          "/home/malik/masterarbeit-edge-ai/.venv/lib/python3.13/site-packages/pandas/core/dtypes/inference.py:384",
+          "<frozen abc>:119",
+          "<frozen abc>:123",
+          "<frozen abc>:123"
+        ]
+      },
+      {
+        "size_diff": 1242,
+        "count_diff": 18,
+        "traceback": [
+          "/home/malik/masterarbeit-edge-ai/.venv/lib/python3.13/site-packages/pandas/core/series.py:464",
+          "<frozen abc>:119",
+          "<frozen abc>:123",
+          "<frozen abc>:123",
+          "<frozen abc>:123"
+        ]
+      }
+    ],
+    "after_gc": [
+      {
+        "size_diff": 32368,
+        "count_diff": 543,
+        "traceback": [
+          "/home/malik/masterarbeit-edge-ai/results/upright_v4_finalization_20260912_103145/probe_memory.py:52",
+          "/home/malik/masterarbeit-edge-ai/results/upright_v4_finalization_20260912_103145/probe_memory.py:39",
+          "/usr/lib/python3.13/tracemalloc.py:558"
+        ]
+      },
+      {
+        "size_diff": 10878,
+        "count_diff": 222,
+        "traceback": [
+          "/home/malik/masterarbeit-edge-ai/results/upright_v4_finalization_20260912_103145/probe_memory.py:31",
+          "/home/malik/masterarbeit-edge-ai/src/pilot_stream_final.py:56",
+          "/home/malik/masterarbeit-edge-ai/src/independent_normal_test.py:123",
+          "/home/malik/masterarbeit-edge-ai/src/independent_normal_test.py:81",
+          "/home/malik/masterarbeit-edge-ai/.venv/lib/python3.13/site-packages/pandas/core/base.py:696"
+        ]
+      },
+      {
+        "size_diff": 8600,
+        "count_diff": 172,
+        "traceback": [
+          "/home/malik/masterarbeit-edge-ai/src/independent_normal_test.py:123",
+          "/home/malik/masterarbeit-edge-ai/src/independent_normal_test.py:79",
+          "/home/malik/masterarbeit-edge-ai/.venv/lib/python3.13/site-packages/pandas/core/series.py:6076",
+          "/home/malik/masterarbeit-edge-ai/.venv/lib/python3.13/site-packages/pandas/core/algorithms.py:520",
+          "/home/malik/masterarbeit-edge-ai/.venv/lib/python3.13/site-packages/pandas/core/algorithms.py:245"
+        ]
+      },
+      {
+        "size_diff": 7400,
+        "count_diff": 148,
+        "traceback": [
+          "/home/malik/masterarbeit-edge-ai/src/independent_normal_test.py:123",
+          "/home/malik/masterarbeit-edge-ai/src/independent_normal_test.py:81",
+          "/home/malik/masterarbeit-edge-ai/.venv/lib/python3.13/site-packages/pandas/core/series.py:6076",
+          "/home/malik/masterarbeit-edge-ai/.venv/lib/python3.13/site-packages/pandas/core/algorithms.py:520",
+          "/home/malik/masterarbeit-edge-ai/.venv/lib/python3.13/site-packages/pandas/core/algorithms.py:245"
+        ]
+      },
+      {
+        "size_diff": 5300,
+        "count_diff": 106,
+        "traceback": [
+          "/home/malik/masterarbeit-edge-ai/.venv/lib/python3.13/site-packages/pandas/core/internals/managers.py:2342",
+          "/home/malik/masterarbeit-edge-ai/.venv/lib/python3.13/site-packages/pandas/core/internals/managers.py:1964",
+          "/home/malik/masterarbeit-edge-ai/.venv/lib/python3.13/site-packages/pandas/core/internals/managers.py:2463",
+          "/home/malik/masterarbeit-edge-ai/.venv/lib/python3.13/site-packages/pandas/core/internals/managers.py:2462",
+          "/home/malik/masterarbeit-edge-ai/.venv/lib/python3.13/site-packages/pandas/core/internals/blocks.py:182"
+        ]
+      },
+      {
+        "size_diff": 4116,
+        "count_diff": 84,
+        "traceback": [
+          "/home/malik/masterarbeit-edge-ai/results/upright_v4_finalization_20260912_103145/probe_memory.py:31",
+          "/home/malik/masterarbeit-edge-ai/src/pilot_stream_final.py:56",
+          "/home/malik/masterarbeit-edge-ai/src/independent_normal_test.py:109",
+          "/home/malik/masterarbeit-edge-ai/src/prepare_pilot_dataset.py:48",
+          "/home/malik/masterarbeit-edge-ai/.venv/lib/python3.13/site-packages/pandas/core/base.py:696"
+        ]
+      },
+      {
+        "size_diff": 3822,
+        "count_diff": 78,
+        "traceback": [
+          "/home/malik/masterarbeit-edge-ai/results/upright_v4_finalization_20260912_103145/probe_memory.py:52",
+          "/home/malik/masterarbeit-edge-ai/results/upright_v4_finalization_20260912_103145/probe_memory.py:31",
+          "/home/malik/masterarbeit-edge-ai/src/pilot_stream_final.py:56",
+          "/home/malik/masterarbeit-edge-ai/src/independent_normal_test.py:118",
+          "/home/malik/masterarbeit-edge-ai/.venv/lib/python3.13/site-packages/pandas/core/base.py:696"
+        ]
+      },
+      {
+        "size_diff": 3234,
+        "count_diff": 66,
+        "traceback": [
+          "/home/malik/masterarbeit-edge-ai/results/upright_v4_finalization_20260912_103145/probe_memory.py:31",
+          "/home/malik/masterarbeit-edge-ai/src/pilot_stream_final.py:56",
+          "/home/malik/masterarbeit-edge-ai/src/independent_normal_test.py:116",
+          "/home/malik/masterarbeit-edge-ai/.venv/lib/python3.13/site-packages/pandas/core/frame.py:2081",
+          "/home/malik/masterarbeit-edge-ai/.venv/lib/python3.13/site-packages/pandas/core/internals/managers.py:1870"
+        ]
+      },
+      {
+        "size_diff": 1840,
+        "count_diff": 19,
+        "traceback": [
+          "/home/malik/masterarbeit-edge-ai/results/upright_v4_finalization_20260912_103145/probe_memory.py:52",
+          "/home/malik/masterarbeit-edge-ai/results/upright_v4_finalization_20260912_103145/probe_memory.py:37",
+          "/home/malik/masterarbeit-edge-ai/results/upright_v4_finalization_20260912_103145/probe_memory.py:24"
+        ]
+      },
+      {
+        "size_diff": 1642,
+        "count_diff": 23,
+        "traceback": [
+          "/home/malik/masterarbeit-edge-ai/.venv/lib/python3.13/site-packages/pandas/core/internals/construction.py:474",
+          "/home/malik/masterarbeit-edge-ai/.venv/lib/python3.13/site-packages/pandas/core/dtypes/inference.py:384",
+          "<frozen abc>:119",
+          "<frozen abc>:123",
+          "<frozen abc>:123"
+        ]
+      },
+      {
+        "size_diff": 1242,
+        "count_diff": 18,
+        "traceback": [
+          "/home/malik/masterarbeit-edge-ai/.venv/lib/python3.13/site-packages/pandas/core/series.py:464",
+          "<frozen abc>:119",
+          "<frozen abc>:123",
+          "<frozen abc>:123",
+          "<frozen abc>:123"
+        ]
+      },
+      {
+        "size_diff": 712,
+        "count_diff": 17,
+        "traceback": [
+          "/home/malik/masterarbeit-edge-ai/results/upright_v4_finalization_20260912_103145/probe_memory.py:52",
+          "/home/malik/masterarbeit-edge-ai/results/upright_v4_finalization_20260912_103145/probe_memory.py:37",
+          "/home/malik/masterarbeit-edge-ai/results/upright_v4_finalization_20260912_103145/probe_memory.py:26"
+        ]
+      },
+      {
+        "size_diff": 621,
+        "count_diff": 9,
+        "traceback": [
+          "/home/malik/masterarbeit-edge-ai/.venv/lib/python3.13/site-packages/pandas/core/strings/accessor.py:396",
+          "/home/malik/masterarbeit-edge-ai/.venv/lib/python3.13/site-packages/pandas/core/series.py:464",
+          "<frozen abc>:119",
+          "<frozen abc>:123",
+          "<frozen abc>:123"
+        ]
+      },
+      {
+        "size_diff": 582,
+        "count_diff": 2,
+        "traceback": [
+          "/home/malik/masterarbeit-edge-ai/results/upright_v4_finalization_20260912_103145/probe_memory.py:52",
+          "/home/malik/masterarbeit-edge-ai/results/upright_v4_finalization_20260912_103145/probe_memory.py:31",
+          "/home/malik/masterarbeit-edge-ai/src/pilot_stream_final.py:56",
+          "/home/malik/masterarbeit-edge-ai/src/independent_normal_test.py:135",
+          "/home/malik/masterarbeit-edge-ai/src/pilot_method_comparison.py:44"
+        ]
+      },
+      {
+        "size_diff": 560,
+        "count_diff": 2,
+        "traceback": [
+          "/home/malik/masterarbeit-edge-ai/results/upright_v4_finalization_20260912_103145/probe_memory.py:52",
+          "/home/malik/masterarbeit-edge-ai/results/upright_v4_finalization_20260912_103145/probe_memory.py:31",
+          "/home/malik/masterarbeit-edge-ai/src/pilot_stream_final.py:56",
+          "/home/malik/masterarbeit-edge-ai/src/independent_normal_test.py:121"
+        ]
+      },
+      {
+        "size_diff": 536,
+        "count_diff": 1,
+        "traceback": [
+          "/home/malik/masterarbeit-edge-ai/results/upright_v4_finalization_20260912_103145/probe_memory.py:52",
+          "/home/malik/masterarbeit-edge-ai/results/upright_v4_finalization_20260912_103145/probe_memory.py:31",
+          "/home/malik/masterarbeit-edge-ai/src/pilot_stream_final.py:56",
+          "/home/malik/masterarbeit-edge-ai/src/independent_normal_test.py:141"
+        ]
+      },
+      {
+        "size_diff": 536,
+        "count_diff": 1,
+        "traceback": [
+          "/home/malik/masterarbeit-edge-ai/results/upright_v4_finalization_20260912_103145/probe_memory.py:31",
+          "/home/malik/masterarbeit-edge-ai/src/pilot_stream_final.py:56",
+          "/home/malik/masterarbeit-edge-ai/src/independent_normal_test.py:135",
+          "/home/malik/masterarbeit-edge-ai/src/pilot_method_comparison.py:44",
+          "/home/malik/masterarbeit-edge-ai/.venv/lib/python3.13/site-packages/numpy/_core/_methods.py:132"
+        ]
+      },
+      {
+        "size_diff": 478,
+        "count_diff": 11,
+        "traceback": [
+          "/home/malik/masterarbeit-edge-ai/results/upright_v4_finalization_20260912_103145/probe_memory.py:52",
+          "/home/malik/masterarbeit-edge-ai/results/upright_v4_finalization_20260912_103145/probe_memory.py:37"
+        ]
+      },
+      {
+        "size_diff": 448,
+        "count_diff": 4,
+        "traceback": [
+          "/home/malik/masterarbeit-edge-ai/results/upright_v4_finalization_20260912_103145/probe_memory.py:31",
+          "/home/malik/masterarbeit-edge-ai/src/pilot_stream_final.py:54",
+          "/home/malik/masterarbeit-edge-ai/.venv/lib/python3.13/site-packages/pandas/core/frame.py:824",
+          "<frozen abc>:119",
+          "<frozen abc>:123"
+        ]
+      },
+      {
+        "size_diff": 384,
+        "count_diff": 12,
+        "traceback": [
+          "/home/malik/masterarbeit-edge-ai/results/upright_v4_finalization_20260912_103145/probe_memory.py:52",
+          "/home/malik/masterarbeit-edge-ai/results/upright_v4_finalization_20260912_103145/probe_memory.py:37",
+          "/home/malik/masterarbeit-edge-ai/results/upright_v4_finalization_20260912_103145/probe_memory.py:23"
+        ]
+      }
+    ]
+  },
+  "warning": "Tracemalloc adds CPU/RAM overhead; these values must not be mixed with timed runtime evidence. RSS retention alone cannot prove an unbounded leak.",
+  "script_sha256": "6a3098c7d0e9ed4e426c73e2c627aa9d11d6ff0de585845d1b4042a187123bc0"
+}

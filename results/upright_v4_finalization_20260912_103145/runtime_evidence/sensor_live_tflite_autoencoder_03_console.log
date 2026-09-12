@@ -1,0 +1,4 @@
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+{"utc": "2026-09-12T11:22:59.298249+00:00", "event": "returning_to_zero", "pwm_percent": 0}
+{"utc": "2026-09-12T11:22:59.407951+00:00", "event": "zero_readback_complete", "pwm_percent": 0, "mechanical_state": "not_observed"}
+{"trial": "sensor_live_tflite_autoencoder_03", "status": "completed", "error": null}

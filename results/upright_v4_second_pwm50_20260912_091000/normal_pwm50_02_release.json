@@ -1,0 +1,23 @@
+{
+  "source": "authorized_sequence_continuation",
+  "released": true,
+  "phase": "normal_pwm50_02",
+  "authorized_phases": [
+    "normal_pwm50_02"
+  ],
+  "protocol_id": "upright_v4_second_pwm50_20260912_091000",
+  "protocol_sha256": "4e7fcf7525c74449fd548faaf61fe070851e61bf42fe9fccef449a5fe0218c21",
+  "mounting_id": "fan_upright_position_v4_20260911_103726",
+  "boot_id": "e0207b92-50ab-43c9-b686-57d9dae9d7bb",
+  "accepted_utc": "2026-09-12T10:09:21.330596+00:00",
+  "accepted_monotonic_ns": 98438774763210,
+  "ready_normal_no_plate": true,
+  "external_supply_connected": true,
+  "mechanical_standstill_confirmed": null,
+  "mounting_unchanged": true,
+  "verbatim_message": "Platte entfernt, Aufbau v4 unver\u00e4ndert, L\u00fcfter still, Versorgung angeschlossen.",
+  "sequence_authorization_note": "Earlier explicit permission for all planned starts and stops is anchored in protocol; current message supplies the initial readiness.",
+  "software_zero_confirmed": true,
+  "sequence_initial_release_sha256": "83a1e67aac40e1f613bd2c11063161d37e584164aaa1573fa83e473c36af03ca",
+  "observation_note": "No new physical observation; unchanged setup under explicit unattended authorization"
+}
