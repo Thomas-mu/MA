@@ -1,0 +1,146 @@
+{
+  "status": "passed",
+  "scope": "Extracted pure configuration/preprocessing functions only; synthetic input; no complete GUI/runtime/inference/hardware test",
+  "checks": [
+    "all four existing legacy profiles resolve with stored artifact hashes",
+    "all four reject nominal 200-Hz acquisition without explicit development override",
+    "saved frozen scaler matches bundle",
+    "GUI and v4 preprocessing differ for the same raw synthetic XYZ window"
+  ],
+  "functions": {
+    "sha256_file": {
+      "file": "src/live_tflite_monitor.py",
+      "lines": [
+        144,
+        149
+      ]
+    },
+    "validate_profile_name": {
+      "file": "src/live_tflite_monitor.py",
+      "lines": [
+        185,
+        190
+      ]
+    },
+    "verify_profile_hash": {
+      "file": "src/live_tflite_monitor.py",
+      "lines": [
+        193,
+        203
+      ]
+    },
+    "resolve_live_configuration": {
+      "file": "src/live_tflite_monitor.py",
+      "lines": [
+        206,
+        286
+      ]
+    },
+    "scale_window": {
+      "file": "src/live_tflite_monitor.py",
+      "lines": [
+        393,
+        408
+      ]
+    },
+    "validate_acquisition_options": {
+      "file": "src/live_tflite_monitor.py",
+      "lines": [
+        495,
+        509
+      ]
+    },
+    "center_raw_window": {
+      "file": "src/pilot_method_comparison.py",
+      "lines": [
+        39,
+        44
+      ]
+    },
+    "standardize": {
+      "file": "src/common_comparison.py",
+      "lines": [
+        209,
+        223
+      ]
+    }
+  },
+  "profiles": [
+    {
+      "path": "profiles/fan_25/profile.json",
+      "profile_name": "fan_25",
+      "profile_hz": 500.0,
+      "resolved": true,
+      "model_sha256": "d5f5edbfa0bfc0a22834bf163121b218f40a40a8d6d8400e356c8112247fcb2b",
+      "scaler_sha256": "6a8cfa8b24b31aa571a1c4b227455e0699b748c5e8c72390904229f7e71c0b96",
+      "threshold": 0.18673839128379896,
+      "default_200hz_rejected": true,
+      "reason": "Sensor-ODR 200 Hz != Profil 500 Hz. Neue kompatible Kalibrierung erforderlich; --allow-sampling-mismatch nur für Entwicklung.",
+      "explicit_development_override_passes_configuration_check": true
+    },
+    {
+      "path": "profiles/fan_50/profile.json",
+      "profile_name": "fan_50",
+      "profile_hz": 500.0,
+      "resolved": true,
+      "model_sha256": "472a7d4413837ea5c69885ea06d72345d231a4c978a135f07807903218fd7d27",
+      "scaler_sha256": "a3e7fc88a9404e5ad272f7e98ca0a5c5de86eb7d9023464f07b62a1fa371a840",
+      "threshold": 0.22105744905736202,
+      "default_200hz_rejected": true,
+      "reason": "Sensor-ODR 200 Hz != Profil 500 Hz. Neue kompatible Kalibrierung erforderlich; --allow-sampling-mismatch nur für Entwicklung.",
+      "explicit_development_override_passes_configuration_check": true
+    },
+    {
+      "path": "profiles/home/profile.json",
+      "profile_name": "home",
+      "profile_hz": 500.0,
+      "resolved": true,
+      "model_sha256": "05b6846be6e1c8f6aa4ecd1504cf1f409dcd0ed6bf5a50b10b1a720d732e4d40",
+      "scaler_sha256": "b720de14f8b184e358a4dc085f78206425c7aabe7609d207d679a7ec09a267d8",
+      "threshold": 0.08138438331902553,
+      "default_200hz_rejected": true,
+      "reason": "Sensor-ODR 200 Hz != Profil 500 Hz. Neue kompatible Kalibrierung erforderlich; --allow-sampling-mismatch nur für Entwicklung.",
+      "explicit_development_override_passes_configuration_check": true
+    },
+    {
+      "path": "profiles/home_v001/profile.json",
+      "profile_name": "home_v001",
+      "profile_hz": 500.0,
+      "resolved": true,
+      "model_sha256": "e1d12ebdc3cc6f57ad244fc65ec0ea80e7af730d5498349667edc48ced0c37f4",
+      "scaler_sha256": "e83a4e30c75c8fcca47333b3c8d9986d28103b2637fbe65c572952ebdcb0dcfc",
+      "threshold": 0.07985480720896662,
+      "default_200hz_rejected": true,
+      "reason": "Sensor-ODR 200 Hz != Profil 500 Hz. Neue kompatible Kalibrierung erforderlich; --allow-sampling-mismatch nur für Entwicklung.",
+      "explicit_development_override_passes_configuration_check": true
+    }
+  ],
+  "preprocessing_counterexample": {
+    "input": "synthetic constant XYZ in g, 128 repetitions of [0.125, -0.25, -1.0]; no measurement",
+    "saved_scaler_matches_bundle": true,
+    "both_output_dtype": "float32",
+    "both_output_shape": [
+      128,
+      3
+    ],
+    "legacy_standardized_axis_mean": [
+      13.294607162475586,
+      -22.513338088989258,
+      -37.24322509765625
+    ],
+    "v4_standardized_axis_mean": [
+      1.0062797262122558e-09,
+      6.993555179413136e-10,
+      1.7574096344841195e-10
+    ],
+    "outputs_identical": false,
+    "maximum_absolute_output_difference": 37.24322509765625,
+    "model_scores_computed": false
+  },
+  "frozen_bundle_sha256": "cec1859bfb354bafef77a619e6d2c1ffd85b50787c87595aba9a1e20a80cdae5",
+  "source_sha256": {
+    "src/live_tflite_monitor.py": "a1c421860bd03711b71ea01158398631039e728a6c390107f42a34365269a09c",
+    "src/pilot_method_comparison.py": "6509e7ce5c41a1a82baeba6ca613df5be3792124e71a6d29db763a60e70e12ea",
+    "src/common_comparison.py": "479a3de9263842574ab2c69fca5adaeac8b5418e13bb383bfae3e026ed98d2ca"
+  }
+}

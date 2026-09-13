@@ -1,0 +1,12 @@
+{
+  "utc": "2026-09-13T09:01:01.424873+00:00",
+  "before_sha256": "df1cee6b3d857ca3a788a660b0dfea7abab9d842a1238730be2e7d4b8365ae72",
+  "after_sha256": "4ce3e32845f33e958aedea26f4d70736c4b9dfd1e5e1001a629ceef85bd700e1",
+  "changes": [
+    {
+      "before": "http://schemas.openxmlformats.org/officedocument/2006/relationships/metadata/core-properties",
+      "after": "http://schemas.openxmlformats.org/package/2006/relationships/metadata/core-properties"
+    }
+  ],
+  "body_and_layout_unchanged": true
+}

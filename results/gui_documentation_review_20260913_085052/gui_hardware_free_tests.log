@@ -1,0 +1,7 @@
+Existing GUI helper/mock regressions only; no Tk window, sensor, actuator, inference or training was started.
+Command: .venv/bin/python -m pytest tests/test_live_pipeline.py -q -k "test_gui_queue_is_bounded_and_preserves_terminal_error or test_gui_log_path_survives_measurement_overflow_and_opens_journal or test_fresh_decision_on_old_window_is_stale_in_actual_gui_update" -p no:cacheprovider --junitxml=results/gui_documentation_review_20260913_085052/gui_hardware_free_tests.xml
+Environment: {"PYTHONDONTWRITEBYTECODE": "1", "MPLCONFIGDIR": "/home/malik/masterarbeit-edge-ai/results/gui_documentation_review_20260913_085052/mpl_cache", "TMPDIR": "/home/malik/masterarbeit-edge-ai/results/gui_documentation_review_20260913_085052"}
+
+...                                                                      [100%]
+3 passed, 10 deselected in 1.06s
+Exit code: 0

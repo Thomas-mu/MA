@@ -1,0 +1,244 @@
+{
+  "utc": "2026-09-13T09:00:17.589485+00:00",
+  "input_sha256": "6a6fc9e6861d8371cdd7a692c6fb8f6b03898d854c4305263b964b252a0decfa",
+  "draft_sha256": "1df1bc05e639df5716ffd926a209aa6581b914a24d3d8a49822861bb97c2fad7",
+  "changes": [
+    {
+      "kind": "paragraph",
+      "before": "Der Ressourcenvergleich verwendet je Methode einen eigenen Prozess. Im Sensorbetrieb werden neue Normaldaten aufgenommen; im Offline-Replay wird dieselbe gespeicherte Aufnahme mit ihren ursprünglichen Host-Abständen wiedergegeben. Die Wiedergabe hält die Eingabedaten vorab im Speicher. Ihre RSS-Werte sind deshalb nicht unmittelbar als Speicherbedarf der Sensorerfassung zu interpretieren. Die beiden Betriebsarten erhalten getrennte Ergebnistabellen. Eine grafische Oberfläche ist im nachgewiesenen Kern nicht enthalten. Der vorhandene frühere GUI-Prototyp ist damit keine validierte Bedienoberfläche des neuen Pakets.",
+      "after": "Der Ressourcenvergleich verwendet je Methode einen eigenen Prozess. Im Sensorbetrieb werden neue Normaldaten aufgenommen; im Offline-Replay wird dieselbe gespeicherte Aufnahme mit ihren ursprünglichen Host-Abständen wiedergegeben. Die Wiedergabe hält die Eingabedaten vorab im Speicher. Ihre RSS-Werte sind deshalb nicht unmittelbar als Speicherbedarf der Sensorerfassung zu interpretieren. Die beiden Betriebsarten erhalten getrennte Ergebnistabellen. Die Messläufe enthalten keine GUI. Implementierung und Einbindung der vorhandenen Oberfläche werden in Abschnitt 6.8 getrennt beschrieben.",
+      "reason": "Separate measured headless runtime path from actually implemented GUI; explain integration in the dedicated subsection."
+    },
+    {
+      "kind": "requirement_row",
+      "before": [
+        "A12",
+        "Optional, nicht Teil des Nachweises",
+        "Frühere Oberfläche vorhanden; Integration und Zusatzlast des eingefrorenen Pakets nicht als geprüft ausgewiesen."
+      ],
+      "after": [
+        "A12",
+        "GUI umgesetzt; Nachweis unvollständig",
+        "Profilbasierte Oberfläche und begrenzte Softwaretests vorhanden. Finale v4-Anbindung, Bildschirm-/Ergebnisabgleich und Vergleich mit/ohne GUI nicht nachgewiesen."
+      ],
+      "reason": "Implemented optional feature still lacks the original conditional validation requirements; do not classify as absent or exempt."
+    },
+    {
+      "kind": "paragraph",
+      "before": "Die Latenzmessung beginnt beim hostseitig vollständigen Fenster; Fensterfüllzeit und unbekannte Verzögerungen vor dem Host-Leseabschluss sind ausgeschlossen. Endliche Tests unter gewöhnlichem Linux belegen keine harte Echtzeit. Die optionale GUI ist im abschließenden Messweg nicht enthalten; ihre Zusatzlast mit dem neuen Paket wurde nicht geprüft.",
+      "after": "Die Latenzmessung beginnt beim hostseitig vollständigen Fenster; Fensterfüllzeit und unbekannte Verzögerungen vor dem Host-Leseabschluss sind ausgeschlossen. Endliche Tests unter gewöhnlichem Linux belegen keine harte Echtzeit. Die GUI ist umgesetzt, verwendet jedoch einen abweichenden Profilweg. Ihre Existenz und die hardwarefreien Teilprüfungen erfüllen A12 nicht vollständig; insbesondere bleibt der geforderte Vergleich der Zusatzlast offen.",
+      "reason": "Discuss implementation and incomplete A12 evidence without changing latency endpoints or other limitations."
+    },
+    {
+      "kind": "paragraph",
+      "before": "Die GUI bleibt eine optionale Erweiterung. Für ihre Einbindung müssten die gespeicherten Entscheidungen des validierten Datenwegs angezeigt, ungültige oder veraltete Ausgaben erkennbar gemacht und zusätzliche CPU-, RAM- und Latenzkosten unter ansonsten gleichen Bedingungen gemessen werden. Dies ist eine getrennte Software- und Messaufgabe; es ist keine Voraussetzung dafür, den bereits geprüften Betrieb ohne Oberfläche nachvollziehbar zu berichten.",
+      "after": "Für eine spätere v4-Einbindung müsste die bestehende Anzeige ihre Entscheidungen aus dem finalen Datenweg erhalten, einschließlich eingefrorener Vorverarbeitung, Artefaktprüfung, Schwellen und Gültigkeitskennzeichnung. Der vorhandene Profil-Auswerter darf dabei nicht stillschweigend weiterverwendet werden. Anschließend wären angezeigte Werte gegen gespeicherte Fensterentscheidungen sowie Fehler-, Veraltungs- und Beendigungsfälle zu prüfen. Der ursprüngliche Nachweis verlangt außerdem einen Vergleich mit und ohne GUI bei ansonsten gleichen Eingaben, Methoden und Bedingungen: Verarbeitung bis zur Entscheidung und bis zum protokollierten Zeichenabschluss, CPU, RAM, Pufferverluste und ungültige Ausgaben. Offline-Replay und Sensor-Livebetrieb müssten getrennt ausgewiesen werden. Diese Integrations- und Messschritte sind nicht durchgeführt; der geprüfte Betrieb ohne Oberfläche bleibt davon getrennt.",
+      "reason": "Name missing integration and original GUI comparison explicitly, without implementing it or waiving requirements."
+    },
+    {
+      "kind": "whole_table",
+      "before": [
+        [
+          "ID",
+          "Inhalt",
+          "Projektpfad"
+        ],
+        [
+          "B1",
+          "Eingefrorenes Modellpaket und Trainingsnachweis",
+          "results/upright_v4_training_pilot_20260911_130614/run_001/"
+        ],
+        [
+          "B2",
+          "Drei unabhängige normale 75-%-Tests",
+          "results/upright_v4_independent_normal_20260911_133047/"
+        ],
+        [
+          "B3",
+          "Zusätzlicher Normaltest und dokumentierter abgebrochener Plattenstart",
+          "results/upright_v4_frozen_airflow_test_20260911_164040/"
+        ],
+        [
+          "B4",
+          "Vollständiger unabhängiger Test Normal → Platte → Normal",
+          "results/upright_v4_frozen_airflow_test_20260912_073015/"
+        ],
+        [
+          "B5",
+          "Explorative Fehleranalyse auf identischen Modellfenstern",
+          "results/upright_v4_exploratory_diagnosis_20260912_081728/"
+        ],
+        [
+          "B6",
+          "Drei unabhängige normale 50-%-Tests",
+          "results/upright_v4_second_pwm50_20260912_091000/"
+        ],
+        [
+          "B7",
+          "Abschließende Sensor-/Replay-Laufzeitprüfung und Erhaltungsnachweis",
+          "results/upright_v4_finalization_20260912_103145/"
+        ],
+        [
+          "B8",
+          "Vor dem Training erstellte Spektralprüfung der Entwicklungsaufnahmen",
+          "results/upright_v4_spectral_review_20260911_114502/"
+        ],
+        [
+          "B9",
+          "Fachreview und unveränderte Zählung je Aufnahme vom 12.09.2026",
+          "results/upright_v4_followup_closure_20260912/"
+        ],
+        [
+          "B10",
+          "Abschluss als begrenzte Pilotstudie: Quellen-, Statistik- und Konsistenzprüfung; Änderungs- und Erhaltungsnachweis",
+          "results/upright_v4_pilot_manuscript_20260913_064035/"
+        ]
+      ],
+      "after": [
+        [
+          "ID",
+          "Inhalt",
+          "Projektpfad"
+        ],
+        [
+          "B1",
+          "Eingefrorenes Modellpaket und Trainingsnachweis",
+          "results/upright_v4_training_pilot_20260911_130614/run_001/"
+        ],
+        [
+          "B2",
+          "Drei unabhängige normale 75-%-Tests",
+          "results/upright_v4_independent_normal_20260911_133047/"
+        ],
+        [
+          "B3",
+          "Zusätzlicher Normaltest und dokumentierter abgebrochener Plattenstart",
+          "results/upright_v4_frozen_airflow_test_20260911_164040/"
+        ],
+        [
+          "B4",
+          "Vollständiger unabhängiger Test Normal → Platte → Normal",
+          "results/upright_v4_frozen_airflow_test_20260912_073015/"
+        ],
+        [
+          "B5",
+          "Explorative Fehleranalyse auf identischen Modellfenstern",
+          "results/upright_v4_exploratory_diagnosis_20260912_081728/"
+        ],
+        [
+          "B6",
+          "Drei unabhängige normale 50-%-Tests",
+          "results/upright_v4_second_pwm50_20260912_091000/"
+        ],
+        [
+          "B7",
+          "Abschließende Sensor-/Replay-Laufzeitprüfung und Erhaltungsnachweis",
+          "results/upright_v4_finalization_20260912_103145/"
+        ],
+        [
+          "B8",
+          "Vor dem Training erstellte Spektralprüfung der Entwicklungsaufnahmen",
+          "results/upright_v4_spectral_review_20260911_114502/"
+        ],
+        [
+          "B9",
+          "Fachreview und unveränderte Zählung je Aufnahme vom 12.09.2026",
+          "results/upright_v4_followup_closure_20260912/"
+        ],
+        [
+          "B10",
+          "Abschluss als begrenzte Pilotstudie: Quellen-, Statistik- und Konsistenzprüfung; Änderungs- und Erhaltungsnachweis",
+          "results/upright_v4_pilot_manuscript_20260913_064035/"
+        ],
+        [
+          "B11",
+          "Gezielte GUI-Dokumentation: Quell-/Profilprüfung, historische Nachweise, hardwarefreie Tests und Word-Änderungsnachweis",
+          "results/gui_documentation_review_20260913_085052/"
+        ]
+      ],
+      "reason": "Add separate GUI audit evidence without editing historical artifacts."
+    }
+  ],
+  "additions": [
+    {
+      "kind": "paragraph",
+      "text": "Grafische Benutzeroberfläche und Integrationsstand",
+      "anchor": "Evaluation und Ergebnisse"
+    },
+    {
+      "kind": "paragraph",
+      "text": "Die Oberfläche in src/live_tflite_gui.py ist als profilgebundener Entwicklungsstand umgesetzt (Belege: B11). Tkinter und Matplotlib zeigen Profilkennung, Rekonstruktionsfehler, Schwelle, Entscheidung, Zeitstempel sowie Angaben zu Erfassung, Inferenz und Pufferung. Der MSE-Verlauf enthält höchstens 100 Fenster; ungültige und veraltete Entscheidungen erhalten die Zustände ERROR beziehungsweise STALE. Start, Stop und Exit steuern die Messung, nicht den Lüfter. Ein Hintergrundthread führt die Auswertung aus; der Hauptthread aktualisiert die Anzeige. Eine begrenzte Nachrichtenqueue verhindert, dass eine verzögerte Anzeige den Auswerter beim Übergeben von Meldungen blockiert. Verworfene Anzeigemeldungen werden getrennt gezählt.",
+      "anchor": "Evaluation und Ergebnisse"
+    },
+    {
+      "kind": "paragraph",
+      "text": "Die GUI verwendet live_tflite_monitor.py und live_pipeline.BufferedAcquisition mit der bereits korrigierten FIFO-Erfassung frischer Sensorwerte. Sie verarbeitet vollständige 128er-XYZ-Fenster fortlaufend, ohne die an einen Stellbefehl gebundene Abschnittsauswahl [180,300) s des finalen Tests. Ausgewertet wird der TFLite-Autoencoder eines per Kommandozeile gewählten Profils; RMS und Isolation Forest sind nicht eingebunden. scale_window wandelt Rohachsen zuerst in Float32 um und wendet den Profil-Scaler an. Die bei v4 vorgeschriebene achsenweise Mittelwertentfernung je Fenster in Float64 fehlt. Gleiche Tensorformen von 1 × 128 × 3 belegen daher keine gleiche Modelleingabe.",
+      "anchor": "Evaluation und Ergebnisse"
+    },
+    {
+      "kind": "paragraph",
+      "text": "Die Profilauflösung verlangt profile.json mit Status ready sowie dazu passende Modell-, Scaler- und Schwellenartefakte. Das finale pilot_bundle.json besitzt ein anderes Schema und wird von der GUI nicht geladen. Alle vier vorhandenen Altprofile nennen 500 Hz; die voreingestellte Sensorerfassung liegt bei 200 Hz. Ohne Entwicklungsübersteuerung weist die Konsistenzprüfung diese Kombination zurück. Eine solche Übersteuerung oder ein bloßer Dateiaustausch stellt die v4-Vorverarbeitung nicht her. Die optionale Kommandozeilenüberschreibung der GUI-Schwelle ist ebenfalls keine zulässige Einstellung des eingefrorenen Methodenvergleichs.",
+      "anchor": "Evaluation und Ergebnisse"
+    },
+    {
+      "kind": "paragraph",
+      "text": "Tabelle 6-7: Implementierung und Nachweisgrenzen der vorhandenen GUI",
+      "anchor": "Evaluation und Ergebnisse"
+    },
+    {
+      "kind": "table",
+      "caption": "Tabelle 6-7: Implementierung und Nachweisgrenzen der vorhandenen GUI",
+      "rows": [
+        [
+          "Bereich",
+          "Umgesetzter Stand",
+          "Grenze für das finale Paket"
+        ],
+        [
+          "Anzeige und Bedienung",
+          "Status, MSE-Verlauf, Schwelle, Zeit-/Pufferangaben; Start, Stop, Exit.",
+          "Keine Lüftersteuerung; kein Drei-Methoden-Vergleich in der Oberfläche."
+        ],
+        [
+          "Daten- und Modellweg",
+          "Profil-Autoencoder über live_tflite_monitor; Rohachsen → Float32 → Profil-Scaler.",
+          "Keine Anbindung an den finalen FrozenEngine-/WindowAssembler-Weg; Fensterzentrierung fehlt."
+        ],
+        [
+          "Protokollierung",
+          "Monitor: Rohdaten, Entscheidungen und Ressourcen; GUI: Matplotlib-Zeichenabschluss und Meldungsverluste.",
+          "Kein Nachweis des physikalischen Anzeigezeitpunkts oder einer vergleichbaren Messreihe."
+        ],
+        [
+          "Softwareprüfung",
+          "Simulationsmodus; Tests für Queue, Kontrollmeldungen, Journal und Veralterung.",
+          "Keine Aussage über tatsächliche Bildschirmanzeige, Sensor-Livebetrieb oder GUI-Zusatzlast mit v4."
+        ]
+      ],
+      "anchor": "Evaluation und Ergebnisse"
+    },
+    {
+      "kind": "paragraph",
+      "text": "Für die GUI liegen 16 historische CSV-Dateien vom 23. bis 26. August 2026 mit insgesamt 30.075 Entscheidungszeilen vor. Sie sind den damaligen Profilen home_v001, fan_50 und fan_25 zugeordnet und enthalten sieben Felder einschließlich Score, Schwelle, Entscheidung, Zeitangabe und beobachteter Rate. Diese Dateien dokumentieren Ausgaben des damaligen GUI-Wegs. Sie enthalten jedoch keine ausreichende Zuordnung zum aktuellen Quellstand oder zum v4-Paket und keinen vollständigen CPU-, RAM- oder Anzeigezeitvergleich. Ein Abgleich tatsächlich dargestellter Bildschirmwerte mit den CSV-Werten ist dadurch nicht belegt.",
+      "anchor": "Erfüllungsgrad der Anforderungen"
+    },
+    {
+      "kind": "paragraph",
+      "text": "Die ergänzende Prüfung vom 13. September 2026 ist eine Softwareprüfung ohne Hardware: Drei vorhandene GUI-Regressionen prüfen begrenzte Queues, erhaltene Kontrollmeldungen und Journalanlage sowie STALE bei alten Fenstern trotz frischer Entscheidung. Ein separater synthetischer Funktionstest bestätigt die unterschiedliche Mittelwertbehandlung des GUI- und v4-Wegs; er verwendet keine gemessenen Beschleunigungen und führt keine Modellinferenz aus. Diese Prüfungen ersetzen weder einen sichtbaren GUI-Funktionstest noch einen Sensorversuch. Die 18 Laufzeitprozesse aus Abschnitt 7.7 liefen ohne Oberfläche. Der in Abschnitt 4.3 geforderte Vergleich mit und ohne GUI bei ansonsten gleichen Bedingungen ist nicht erbracht; die vorhandenen Laufzeitwerte dürfen nicht als GUI-Messwerte verwendet werden.",
+      "anchor": "Erfüllungsgrad der Anforderungen"
+    }
+  ],
+  "layout_changes": [
+    {
+      "anchor": "Erfüllungsgrad der Anforderungen",
+      "page_break_before": true,
+      "reason": "Keep requirements table and following FF/H table legible without splitting the compact FF/H table."
+    }
+  ],
+  "table_count": 37,
+  "scope": "GUI documentation only",
+  "new_hardware_measurements": false,
+  "model_or_threshold_changes": false,
+  "new_gui_integration": false,
+  "original_requirements_research_questions_conclusions_preserved": true
+}

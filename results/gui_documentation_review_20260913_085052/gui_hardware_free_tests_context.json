@@ -1,0 +1,17 @@
+{
+  "test_scope": "three existing GUI mock/helper regression tests only; no hardware, model inference, display, simulation or training",
+  "python_command": ".venv/bin/python -m pytest tests/test_live_pipeline.py -q -k \"test_gui_queue_is_bounded_and_preserves_terminal_error or test_gui_log_path_survives_measurement_overflow_and_opens_journal or test_fresh_decision_on_old_window_is_stale_in_actual_gui_update\" -p no:cacheprovider --junitxml=results/gui_documentation_review_20260913_085052/gui_hardware_free_tests.xml",
+  "environment": {
+    "PYTHONDONTWRITEBYTECODE": "1",
+    "MPLCONFIGDIR": "/home/malik/masterarbeit-edge-ai/results/gui_documentation_review_20260913_085052/mpl_cache",
+    "TMPDIR": "/home/malik/masterarbeit-edge-ai/results/gui_documentation_review_20260913_085052"
+  },
+  "result": "3 passed, 10 deselected in 1.06s",
+  "exit_code": 0,
+  "source_sha256": {
+    "tests/test_live_pipeline.py": "2e3567458eb07354c5124da98234978a43b375b22a654ed6bc7abcbc4f08832b",
+    "src/live_tflite_gui.py": "7dbdfb2f733e778404b66f3cabc946ae9b8ce6e5b709b3b3db425af8bad5876b",
+    "src/live_tflite_monitor.py": "a1c421860bd03711b71ea01158398631039e728a6c390107f42a34365269a09c",
+    "src/live_pipeline.py": "128b92f6fe822a964ad8b1566fbbf0faeb5ef22847e1beb006b31fd1422fad9c"
+  }
+}

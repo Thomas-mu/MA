@@ -1,0 +1,14 @@
+{
+  "utc": "2026-09-13T08:50:53.358385+00:00",
+  "base": "/home/malik/masterarbeit-edge-ai/results/gui_documentation_review_20260913_085052",
+  "input_word": "/home/malik/masterarbeit-edge-ai/docs/Akz_Masterarbeit_Bericht(3).docx",
+  "backup": "/home/malik/masterarbeit-edge-ai/docs/backups/Akz_Masterarbeit_Bericht(3)_vor_gui_dokumentation_20260913_085052.docx",
+  "input_word_sha256": "6a6fc9e6861d8371cdd7a692c6fb8f6b03898d854c4305263b964b252a0decfa",
+  "head": "62e93abc6a919f9b7f525fbb1522445b09779f2d",
+  "remote_head": "62e93abc6a919f9b7f525fbb1522445b09779f2d\tHEAD",
+  "scope": "GUI documentation only; no hardware, PWM, model changes or integration",
+  "git_status_after_backup_creation": "?? docs/backups/Akz_Masterarbeit_Bericht(3)_vor_gui_dokumentation_20260913_085052.docx\n",
+  "git_status_at_task_entry": "## main...origin/main\n",
+  "user_worktree_clean_at_task_entry": true,
+  "newer_default_branch_commit_than_requested_found": false
+}

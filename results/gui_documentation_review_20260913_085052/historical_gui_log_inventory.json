@@ -1,0 +1,641 @@
+[
+  {
+    "path": "profiles/fan_25/results/live_tflite_gui_20260825_161129_988401.csv",
+    "rows": 293,
+    "fields": [
+      "timestamp",
+      "window_index",
+      "reconstruction_error",
+      "threshold",
+      "predicted_label",
+      "inference_time_ms",
+      "measured_sampling_rate_hz"
+    ],
+    "first": {
+      "timestamp": "2026-08-25T16:11:30.267+02:00",
+      "window_index": "1",
+      "reconstruction_error": "0.15012070156425705",
+      "threshold": "0.18673839128379896",
+      "predicted_label": "0",
+      "inference_time_ms": "0.137167",
+      "measured_sampling_rate_hz": "500.4664781072869"
+    },
+    "last": {
+      "timestamp": "2026-08-25T16:12:45.314+02:00",
+      "window_index": "293",
+      "reconstruction_error": "0.11703498711445304",
+      "threshold": "0.18673839128379896",
+      "predicted_label": "0",
+      "inference_time_ms": "0.126056",
+      "measured_sampling_rate_hz": "499.97293453599895"
+    },
+    "values": {
+      "threshold": [
+        "0.18673839128379896"
+      ],
+      "predicted_label": [
+        "0",
+        "1"
+      ]
+    }
+  },
+  {
+    "path": "profiles/fan_25/results/live_tflite_gui_20260825_161256_644777.csv",
+    "rows": 5073,
+    "fields": [
+      "timestamp",
+      "window_index",
+      "reconstruction_error",
+      "threshold",
+      "predicted_label",
+      "inference_time_ms",
+      "measured_sampling_rate_hz"
+    ],
+    "first": {
+      "timestamp": "2026-08-25T16:12:56.923+02:00",
+      "window_index": "1",
+      "reconstruction_error": "0.10215849966542712",
+      "threshold": "0.3",
+      "predicted_label": "0",
+      "inference_time_ms": "0.13137",
+      "measured_sampling_rate_hz": "500.1141441674751"
+    },
+    "last": {
+      "timestamp": "2026-08-25T16:34:40.349+02:00",
+      "window_index": "5073",
+      "reconstruction_error": "0.10200290561190432",
+      "threshold": "0.3",
+      "predicted_label": "0",
+      "inference_time_ms": "0.14287",
+      "measured_sampling_rate_hz": "499.9075584268116"
+    },
+    "values": {
+      "threshold": [
+        "0.3"
+      ],
+      "predicted_label": [
+        "0",
+        "1"
+      ]
+    }
+  },
+  {
+    "path": "profiles/fan_25/results/live_tflite_gui_20260826_103307_098923.csv",
+    "rows": 135,
+    "fields": [
+      "timestamp",
+      "window_index",
+      "reconstruction_error",
+      "threshold",
+      "predicted_label",
+      "inference_time_ms",
+      "measured_sampling_rate_hz"
+    ],
+    "first": {
+      "timestamp": "2026-08-26T10:33:07.399+02:00",
+      "window_index": "1",
+      "reconstruction_error": "61.53716964286275",
+      "threshold": "0.18673839128379896",
+      "predicted_label": "1",
+      "inference_time_ms": "0.128516",
+      "measured_sampling_rate_hz": "499.9797705035535"
+    },
+    "last": {
+      "timestamp": "2026-08-26T10:33:41.824+02:00",
+      "window_index": "135",
+      "reconstruction_error": "0.09910073168992876",
+      "threshold": "0.18673839128379896",
+      "predicted_label": "0",
+      "inference_time_ms": "0.163055",
+      "measured_sampling_rate_hz": "499.9619576191137"
+    },
+    "values": {
+      "threshold": [
+        "0.18673839128379896"
+      ],
+      "predicted_label": [
+        "0",
+        "1"
+      ]
+    }
+  },
+  {
+    "path": "profiles/fan_25/results/live_tflite_gui_20260826_103431_951170.csv",
+    "rows": 78,
+    "fields": [
+      "timestamp",
+      "window_index",
+      "reconstruction_error",
+      "threshold",
+      "predicted_label",
+      "inference_time_ms",
+      "measured_sampling_rate_hz"
+    ],
+    "first": {
+      "timestamp": "2026-08-26T10:34:32.212+02:00",
+      "window_index": "1",
+      "reconstruction_error": "0.06879914687386963",
+      "threshold": "0.3",
+      "predicted_label": "0",
+      "inference_time_ms": "0.125684",
+      "measured_sampling_rate_hz": "500.2145703878265"
+    },
+    "last": {
+      "timestamp": "2026-08-26T10:34:51.987+02:00",
+      "window_index": "78",
+      "reconstruction_error": "0.1107358531625285",
+      "threshold": "0.3",
+      "predicted_label": "0",
+      "inference_time_ms": "0.104185",
+      "measured_sampling_rate_hz": "499.9261329615253"
+    },
+    "values": {
+      "threshold": [
+        "0.3"
+      ],
+      "predicted_label": [
+        "0",
+        "1"
+      ]
+    }
+  },
+  {
+    "path": "profiles/fan_25/results/live_tflite_gui_20260826_140730_902708.csv",
+    "rows": 10244,
+    "fields": [
+      "timestamp",
+      "window_index",
+      "reconstruction_error",
+      "threshold",
+      "predicted_label",
+      "inference_time_ms",
+      "measured_sampling_rate_hz"
+    ],
+    "first": {
+      "timestamp": "2026-08-26T14:07:31.200+02:00",
+      "window_index": "1",
+      "reconstruction_error": "62.213437196003014",
+      "threshold": "0.3",
+      "predicted_label": "1",
+      "inference_time_ms": "0.116425",
+      "measured_sampling_rate_hz": "499.9638648165356"
+    },
+    "last": {
+      "timestamp": "2026-08-26T14:51:21.753+02:00",
+      "window_index": "10244",
+      "reconstruction_error": "0.39789668793066824",
+      "threshold": "0.3",
+      "predicted_label": "1",
+      "inference_time_ms": "0.134704",
+      "measured_sampling_rate_hz": "499.93873782291746"
+    },
+    "values": {
+      "threshold": [
+        "0.3"
+      ],
+      "predicted_label": [
+        "0",
+        "1"
+      ]
+    }
+  },
+  {
+    "path": "profiles/fan_25/results/live_tflite_gui_20260826_145133_447866.csv",
+    "rows": 82,
+    "fields": [
+      "timestamp",
+      "window_index",
+      "reconstruction_error",
+      "threshold",
+      "predicted_label",
+      "inference_time_ms",
+      "measured_sampling_rate_hz"
+    ],
+    "first": {
+      "timestamp": "2026-08-26T14:51:33.709+02:00",
+      "window_index": "1",
+      "reconstruction_error": "0.44100358152490077",
+      "threshold": "0.3",
+      "predicted_label": "1",
+      "inference_time_ms": "0.143296",
+      "measured_sampling_rate_hz": "500.1432043889889"
+    },
+    "last": {
+      "timestamp": "2026-08-26T14:51:54.511+02:00",
+      "window_index": "82",
+      "reconstruction_error": "0.41573735776515736",
+      "threshold": "0.3",
+      "predicted_label": "1",
+      "inference_time_ms": "0.127852",
+      "measured_sampling_rate_hz": "499.94189651723093"
+    },
+    "values": {
+      "threshold": [
+        "0.3"
+      ],
+      "predicted_label": [
+        "1"
+      ]
+    }
+  },
+  {
+    "path": "profiles/fan_25/results/live_tflite_gui_20260826_145235_456535.csv",
+    "rows": 7209,
+    "fields": [
+      "timestamp",
+      "window_index",
+      "reconstruction_error",
+      "threshold",
+      "predicted_label",
+      "inference_time_ms",
+      "measured_sampling_rate_hz"
+    ],
+    "first": {
+      "timestamp": "2026-08-26T14:52:35.718+02:00",
+      "window_index": "1",
+      "reconstruction_error": "0.45570106830820006",
+      "threshold": "0.9",
+      "predicted_label": "0",
+      "inference_time_ms": "0.132536",
+      "measured_sampling_rate_hz": "500.3470616024889"
+    },
+    "last": {
+      "timestamp": "2026-08-26T15:23:30.087+02:00",
+      "window_index": "7209",
+      "reconstruction_error": "0.6136206706999857",
+      "threshold": "0.9",
+      "predicted_label": "0",
+      "inference_time_ms": "0.230293",
+      "measured_sampling_rate_hz": "499.9523096660866"
+    },
+    "values": {
+      "threshold": [
+        "0.9"
+      ],
+      "predicted_label": [
+        "0",
+        "1"
+      ]
+    }
+  },
+  {
+    "path": "profiles/fan_50/results/live_tflite_gui_20260824_104135_081561.csv",
+    "rows": 474,
+    "fields": [
+      "timestamp",
+      "window_index",
+      "reconstruction_error",
+      "threshold",
+      "predicted_label",
+      "inference_time_ms",
+      "measured_sampling_rate_hz"
+    ],
+    "first": {
+      "timestamp": "2026-08-24T10:41:35.367+02:00",
+      "window_index": "1",
+      "reconstruction_error": "0.10949867367714194",
+      "threshold": "0.22105744905736202",
+      "predicted_label": "0",
+      "inference_time_ms": "0.253296",
+      "measured_sampling_rate_hz": "500.19633296643883"
+    },
+    "last": {
+      "timestamp": "2026-08-24T10:43:37.108+02:00",
+      "window_index": "474",
+      "reconstruction_error": "0.26458988848264864",
+      "threshold": "0.22105744905736202",
+      "predicted_label": "1",
+      "inference_time_ms": "0.126573",
+      "measured_sampling_rate_hz": "499.92546386963346"
+    },
+    "values": {
+      "threshold": [
+        "0.22105744905736202"
+      ],
+      "predicted_label": [
+        "0",
+        "1"
+      ]
+    }
+  },
+  {
+    "path": "profiles/fan_50/results/live_tflite_gui_20260824_104404_821414.csv",
+    "rows": 414,
+    "fields": [
+      "timestamp",
+      "window_index",
+      "reconstruction_error",
+      "threshold",
+      "predicted_label",
+      "inference_time_ms",
+      "measured_sampling_rate_hz"
+    ],
+    "first": {
+      "timestamp": "2026-08-24T10:44:05.080+02:00",
+      "window_index": "1",
+      "reconstruction_error": "0.197222007860423",
+      "threshold": "0.22105744905736202",
+      "predicted_label": "0",
+      "inference_time_ms": "0.314203",
+      "measured_sampling_rate_hz": "504.91069582842107"
+    },
+    "last": {
+      "timestamp": "2026-08-24T10:45:51.882+02:00",
+      "window_index": "414",
+      "reconstruction_error": "0.13094104818124067",
+      "threshold": "0.22105744905736202",
+      "predicted_label": "0",
+      "inference_time_ms": "0.136388",
+      "measured_sampling_rate_hz": "499.96119395486716"
+    },
+    "values": {
+      "threshold": [
+        "0.22105744905736202"
+      ],
+      "predicted_label": [
+        "0",
+        "1"
+      ]
+    }
+  },
+  {
+    "path": "profiles/fan_50/results/live_tflite_gui_20260824_104644_822194.csv",
+    "rows": 121,
+    "fields": [
+      "timestamp",
+      "window_index",
+      "reconstruction_error",
+      "threshold",
+      "predicted_label",
+      "inference_time_ms",
+      "measured_sampling_rate_hz"
+    ],
+    "first": {
+      "timestamp": "2026-08-24T10:46:45.100+02:00",
+      "window_index": "1",
+      "reconstruction_error": "0.13930350883979278",
+      "threshold": "0.22105744905736202",
+      "predicted_label": "0",
+      "inference_time_ms": "0.127408",
+      "measured_sampling_rate_hz": "500.189526536931"
+    },
+    "last": {
+      "timestamp": "2026-08-24T10:47:16.014+02:00",
+      "window_index": "121",
+      "reconstruction_error": "0.1555807634890741",
+      "threshold": "0.22105744905736202",
+      "predicted_label": "0",
+      "inference_time_ms": "0.728183",
+      "measured_sampling_rate_hz": "497.1419115754046"
+    },
+    "values": {
+      "threshold": [
+        "0.22105744905736202"
+      ],
+      "predicted_label": [
+        "0",
+        "1"
+      ]
+    }
+  },
+  {
+    "path": "profiles/fan_50/results/live_tflite_gui_20260824_104722_817090.csv",
+    "rows": 207,
+    "fields": [
+      "timestamp",
+      "window_index",
+      "reconstruction_error",
+      "threshold",
+      "predicted_label",
+      "inference_time_ms",
+      "measured_sampling_rate_hz"
+    ],
+    "first": {
+      "timestamp": "2026-08-24T10:47:23.095+02:00",
+      "window_index": "1",
+      "reconstruction_error": "0.20788033294092342",
+      "threshold": "0.22105744905736202",
+      "predicted_label": "0",
+      "inference_time_ms": "0.127481",
+      "measured_sampling_rate_hz": "500.11174544127243"
+    },
+    "last": {
+      "timestamp": "2026-08-24T10:48:16.080+02:00",
+      "window_index": "207",
+      "reconstruction_error": "0.2127812020517131",
+      "threshold": "0.22105744905736202",
+      "predicted_label": "0",
+      "inference_time_ms": "0.284648",
+      "measured_sampling_rate_hz": "499.902393075074"
+    },
+    "values": {
+      "threshold": [
+        "0.22105744905736202"
+      ],
+      "predicted_label": [
+        "0",
+        "1"
+      ]
+    }
+  },
+  {
+    "path": "profiles/fan_50/results/live_tflite_gui_20260824_104850_461641.csv",
+    "rows": 4,
+    "fields": [
+      "timestamp",
+      "window_index",
+      "reconstruction_error",
+      "threshold",
+      "predicted_label",
+      "inference_time_ms",
+      "measured_sampling_rate_hz"
+    ],
+    "first": {
+      "timestamp": "2026-08-24T10:48:50.739+02:00",
+      "window_index": "1",
+      "reconstruction_error": "0.14480228681917603",
+      "threshold": "0.22105744905736202",
+      "predicted_label": "0",
+      "inference_time_ms": "0.148852",
+      "measured_sampling_rate_hz": "500.0488453226381"
+    },
+    "last": {
+      "timestamp": "2026-08-24T10:48:51.511+02:00",
+      "window_index": "4",
+      "reconstruction_error": "0.20238309424614442",
+      "threshold": "0.22105744905736202",
+      "predicted_label": "0",
+      "inference_time_ms": "0.126185",
+      "measured_sampling_rate_hz": "499.93216078104916"
+    },
+    "values": {
+      "threshold": [
+        "0.22105744905736202"
+      ],
+      "predicted_label": [
+        "0",
+        "1"
+      ]
+    }
+  },
+  {
+    "path": "profiles/fan_50/results/live_tflite_gui_20260824_105955_578019.csv",
+    "rows": 200,
+    "fields": [
+      "timestamp",
+      "window_index",
+      "reconstruction_error",
+      "threshold",
+      "predicted_label",
+      "inference_time_ms",
+      "measured_sampling_rate_hz"
+    ],
+    "first": {
+      "timestamp": "2026-08-24T10:59:55.856+02:00",
+      "window_index": "1",
+      "reconstruction_error": "0.17897346492348642",
+      "threshold": "0.22105744905736202",
+      "predicted_label": "0",
+      "inference_time_ms": "0.126667",
+      "measured_sampling_rate_hz": "500.19482785422156"
+    },
+    "last": {
+      "timestamp": "2026-08-24T11:00:47.005+02:00",
+      "window_index": "200",
+      "reconstruction_error": "0.17701926543449298",
+      "threshold": "0.22105744905736202",
+      "predicted_label": "0",
+      "inference_time_ms": "0.174314",
+      "measured_sampling_rate_hz": "499.9101224600274"
+    },
+    "values": {
+      "threshold": [
+        "0.22105744905736202"
+      ],
+      "predicted_label": [
+        "0",
+        "1"
+      ]
+    }
+  },
+  {
+    "path": "profiles/fan_50/results/live_tflite_gui_20260824_111345_708897.csv",
+    "rows": 88,
+    "fields": [
+      "timestamp",
+      "window_index",
+      "reconstruction_error",
+      "threshold",
+      "predicted_label",
+      "inference_time_ms",
+      "measured_sampling_rate_hz"
+    ],
+    "first": {
+      "timestamp": "2026-08-24T11:13:46.001+02:00",
+      "window_index": "1",
+      "reconstruction_error": "0.15808030517119262",
+      "threshold": "0.3",
+      "predicted_label": "0",
+      "inference_time_ms": "0.308148",
+      "measured_sampling_rate_hz": "500.3666170436634"
+    },
+    "last": {
+      "timestamp": "2026-08-24T11:14:08.445+02:00",
+      "window_index": "88",
+      "reconstruction_error": "0.2034736656088493",
+      "threshold": "0.3",
+      "predicted_label": "0",
+      "inference_time_ms": "0.146018",
+      "measured_sampling_rate_hz": "499.94099318524843"
+    },
+    "values": {
+      "threshold": [
+        "0.3"
+      ],
+      "predicted_label": [
+        "0",
+        "1"
+      ]
+    }
+  },
+  {
+    "path": "profiles/fan_50/results/live_tflite_gui_20260824_111418_322717.csv",
+    "rows": 4948,
+    "fields": [
+      "timestamp",
+      "window_index",
+      "reconstruction_error",
+      "threshold",
+      "predicted_label",
+      "inference_time_ms",
+      "measured_sampling_rate_hz"
+    ],
+    "first": {
+      "timestamp": "2026-08-24T11:14:18.602+02:00",
+      "window_index": "1",
+      "reconstruction_error": "0.1398105700569546",
+      "threshold": "0.3",
+      "predicted_label": "0",
+      "inference_time_ms": "0.134963",
+      "measured_sampling_rate_hz": "500.20706406380555"
+    },
+    "last": {
+      "timestamp": "2026-08-24T11:35:29.603+02:00",
+      "window_index": "4948",
+      "reconstruction_error": "0.18716366107569607",
+      "threshold": "0.3",
+      "predicted_label": "0",
+      "inference_time_ms": "0.159073",
+      "measured_sampling_rate_hz": "499.96438049315697"
+    },
+    "values": {
+      "threshold": [
+        "0.3"
+      ],
+      "predicted_label": [
+        "0",
+        "1"
+      ]
+    }
+  },
+  {
+    "path": "profiles/home_v001/results/live_tflite_gui_20260823_165053_058349.csv",
+    "rows": 505,
+    "fields": [
+      "timestamp",
+      "window_index",
+      "reconstruction_error",
+      "threshold",
+      "predicted_label",
+      "inference_time_ms",
+      "measured_sampling_rate_hz"
+    ],
+    "first": {
+      "timestamp": "2026-08-23T16:50:53.336+02:00",
+      "window_index": "1",
+      "reconstruction_error": "0.05977202941020909",
+      "threshold": "0.07985480720896662",
+      "predicted_label": "0",
+      "inference_time_ms": "0.132907",
+      "measured_sampling_rate_hz": "500.0661327617031"
+    },
+    "last": {
+      "timestamp": "2026-08-23T16:53:02.788+02:00",
+      "window_index": "505",
+      "reconstruction_error": "0.046344710515853094",
+      "threshold": "0.07985480720896662",
+      "predicted_label": "0",
+      "inference_time_ms": "0.129",
+      "measured_sampling_rate_hz": "499.94570668329203"
+    },
+    "values": {
+      "threshold": [
+        "0.07985480720896662"
+      ],
+      "predicted_label": [
+        "0",
+        "1"
+      ]
+    }
+  }
+]
