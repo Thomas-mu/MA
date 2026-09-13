@@ -1,0 +1,78 @@
+{
+  "normal_before": {
+    "rms": {
+      "valid": 194,
+      "invalid": 0,
+      "alarms": 1
+    },
+    "isolation_forest": {
+      "valid": 194,
+      "invalid": 0,
+      "alarms": 0
+    },
+    "tflite_autoencoder": {
+      "valid": 194,
+      "invalid": 0,
+      "alarms": 51
+    }
+  },
+  "airflow_modified": {
+    "rms": {
+      "valid": 194,
+      "invalid": 0,
+      "alarms": 7
+    },
+    "isolation_forest": {
+      "valid": 194,
+      "invalid": 0,
+      "alarms": 4
+    },
+    "tflite_autoencoder": {
+      "valid": 194,
+      "invalid": 0,
+      "alarms": 0
+    }
+  },
+  "normal_after": {
+    "rms": {
+      "valid": 194,
+      "invalid": 0,
+      "alarms": 0
+    },
+    "isolation_forest": {
+      "valid": 194,
+      "invalid": 0,
+      "alarms": 0
+    },
+    "tflite_autoencoder": {
+      "valid": 194,
+      "invalid": 0,
+      "alarms": 4
+    }
+  },
+  "runtime": {
+    "trials": 18,
+    "sensor_xyz_total": 559130,
+    "scores_compared": 3492,
+    "max_score_difference": 0.0,
+    "invalid_decisions": 0
+  },
+  "review_scope": "Read-only independent check of reported metadata and archived decisions; no new inference, measurement or model change.",
+  "sources_sha256": {
+    "results/upright_v4_frozen_airflow_test_20260912_073015/evaluation_normal_before/scores.csv": "d1e76a96afff48252860956af0fa64c345f30c4f93bda04ddbae8695a7b7534c",
+    "results/upright_v4_frozen_airflow_test_20260912_073015/evaluation_airflow_modified/scores.csv": "f9c4219c6090218ca1e8890a06e27eae6a74041db8de74d2582ac9694b8cbd93",
+    "results/upright_v4_frozen_airflow_test_20260912_073015/evaluation_normal_after/scores.csv": "97b5a91df6091a8088cdef8872c5a76c9b3138f755291ddeb989891deffcaf7d"
+  },
+  "reviewed_word_sha256": "fc92abeb7893f391f3df6b10dea06921dd76425bc3645e9c8da6b4eb8b8b8d8d",
+  "primary_source_check": {
+    "publication": "Antonini et al. (2023), DOI 10.3390/s23042344",
+    "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC9962960/fullTextXML",
+    "checked_sections": [
+      "4",
+      "5.1",
+      "5.2"
+    ],
+    "archived_xml_sha256": "00d572a9ae94dd23ff7a8a3acf2c7153e30366b3bdf2bded1aef742dc05766d3",
+    "finding": "Pump monitoring is target application; evaluation uses sprung PC-fan test bench. No contradictory physical setup claim once roles are explicit."
+  }
+}

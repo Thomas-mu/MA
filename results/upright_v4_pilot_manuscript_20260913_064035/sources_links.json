@@ -1,0 +1,442 @@
+{
+  "review_date": "2026-09-13",
+  "input_file": "input_readable.txt",
+  "scope": "Six central original studies and formal citation matching in chapters 1-5; not a complete literature verification.",
+  "paragraph_numbering": "Leading source paragraph numbers in input_readable.txt; table citations use the table container number.",
+  "central_sources": [
+    {
+      "key": "Ren2021",
+      "doi": "10.1109/IJCNN52387.2021.9533927",
+      "primary_urls": [
+        "https://arxiv.org/html/2103.08295v3",
+        "https://api.crossref.org/works/10.1109/IJCNN52387.2021.9533927"
+      ],
+      "read_sections": [
+        "III-B1",
+        "III-C",
+        "IV-B / Figure 7"
+      ],
+      "manuscript_paragraphs": [
+        113,
+        119,
+        454
+      ],
+      "status": "central_claims_and_bibliographic_fields_confirmed"
+    },
+    {
+      "key": "Antonini2023",
+      "doi": "10.3390/s23042344",
+      "primary_urls": [
+        "https://mdpi-res.com/d_attachment/sensors/sensors-23-02344/article_deploy/sensors-23-02344.pdf",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC9962960/"
+      ],
+      "read_sections": [
+        "3",
+        "4 / Figure 4 / pages 11-12",
+        "5.1 / page 13",
+        "5.2-5.4"
+      ],
+      "manuscript_paragraphs": [
+        114,
+        119,
+        428
+      ],
+      "status": "central_claims_and_bibliographic_fields_confirmed",
+      "access_note": "MDPI HTML and PMC direct access partly blocked; publisher PDF successfully read."
+    },
+    {
+      "key": "Garay2026",
+      "doi": "10.3390/s26144536",
+      "primary_urls": [
+        "https://mdpi-res.com/d_attachment/sensors/sensors-26-04536/article_deploy/sensors-26-04536.pdf",
+        "https://oulurepo.oulu.fi/handle/10024/64560"
+      ],
+      "read_sections": [
+        "4.2 / pages 12-13",
+        "6.4 / pages 26-27"
+      ],
+      "manuscript_paragraphs": [
+        115,
+        119,
+        433
+      ],
+      "status": "central_claims_and_bibliographic_fields_confirmed",
+      "qualification": "The non-isolation of the remount effect is the manuscript author’s critical interpretation; the paper reports remounting and an ambient ramp from 16 to 23 degrees Celsius.",
+      "pdf_sha256": "d086139cf33ba1b47f08bbef79f9e5914173b929baf5bd2d005c651c6d82a914",
+      "pdf_bytes": 5896740,
+      "pdf_pages": 32
+    },
+    {
+      "key": "Lessmeier2016",
+      "doi": "10.36001/phme.2016.v3i1.1577",
+      "primary_urls": [
+        "https://papers.phmsociety.org/index.php/phme/article/view/1577",
+        "https://www.papers.phmsociety.org/index.php/phme/article/download/1577/542"
+      ],
+      "read_sections": [
+        "3.2 / page 6",
+        "7.2-7.5 / pages 11-14"
+      ],
+      "manuscript_paragraphs": [
+        109,
+        442
+      ],
+      "status": "central_claims_and_bibliographic_fields_confirmed",
+      "optional_edit": "Add verified DOI and PHM Society European Conference 3(1)."
+    },
+    {
+      "key": "Pittino2020",
+      "doi": "10.3390/s20082344",
+      "primary_urls": [
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC7219248/",
+        "https://mdpi-res.com/d_attachment/sensors/sensors-20-02344/article_deploy/sensors-20-02344.pdf"
+      ],
+      "read_sections": [
+        "2 / Data Acquisition",
+        "3",
+        "4",
+        "5"
+      ],
+      "manuscript_paragraphs": [
+        110,
+        449
+      ],
+      "status": "central_claims_and_bibliographic_fields_confirmed"
+    },
+    {
+      "key": "Knap2026",
+      "doi": "10.36001/phme.2026.v9i1.4924",
+      "primary_urls": [
+        "https://papers.phmsociety.org/index.php/phme/article/view/4924",
+        "https://papers.phmsociety.org/index.php/phme/article/download/4924/2931"
+      ],
+      "read_sections": [
+        "Abstract",
+        "1.2",
+        "2.1-2.2 / page 3",
+        "3.1"
+      ],
+      "manuscript_paragraphs": [
+        111,
+        441
+      ],
+      "status": "central_claims_and_bibliographic_fields_confirmed",
+      "limitation": "Published protocol inspected; implementation not independently reproduced."
+    }
+  ],
+  "citation_matching": {
+    "bibliography_entry_count": 39,
+    "entries_with_matching_chapters_1_5_citation": 39,
+    "observed_unmatched_citation_keys": [],
+    "method": "Manual author/year/suffix matching supported by text extraction; not only substring occurrence counting.",
+    "entries": [
+      {
+        "bibliography_paragraph": 426,
+        "citation_key": "Analog Devices (2022)",
+        "chapter_1_5_paragraphs": [
+          72,
+          82,
+          174,
+          176
+        ]
+      },
+      {
+        "bibliography_paragraph": 427,
+        "citation_key": "Analog Devices (2025)",
+        "chapter_1_5_paragraphs": [
+          174
+        ]
+      },
+      {
+        "bibliography_paragraph": 428,
+        "citation_key": "Antonini et al. (2023)",
+        "chapter_1_5_paragraphs": [
+          114,
+          119
+        ]
+      },
+      {
+        "bibliography_paragraph": 429,
+        "citation_key": "ARCTIC (o. J.)",
+        "chapter_1_5_paragraphs": [
+          158,
+          169
+        ]
+      },
+      {
+        "bibliography_paragraph": 430,
+        "citation_key": "Buttazzo (2011)",
+        "chapter_1_5_paragraphs": [
+          101
+        ]
+      },
+      {
+        "bibliography_paragraph": 431,
+        "citation_key": "Chandola et al. (2009)",
+        "chapter_1_5_paragraphs": [
+          42,
+          66
+        ]
+      },
+      {
+        "bibliography_paragraph": 432,
+        "citation_key": "Department for Communities and Local Government (2009)",
+        "chapter_1_5_paragraphs": [
+          150
+        ]
+      },
+      {
+        "bibliography_paragraph": 433,
+        "citation_key": "Garay et al. (2026)",
+        "chapter_1_5_paragraphs": [
+          115,
+          119
+        ]
+      },
+      {
+        "bibliography_paragraph": 434,
+        "citation_key": "Goodfellow et al. (2016)",
+        "chapter_1_5_paragraphs": [
+          77
+        ]
+      },
+      {
+        "bibliography_paragraph": 435,
+        "citation_key": "Google (2026a)",
+        "chapter_1_5_paragraphs": [
+          102,
+          206,
+          213,
+          216
+        ]
+      },
+      {
+        "bibliography_paragraph": 436,
+        "citation_key": "Google (2026b)",
+        "chapter_1_5_paragraphs": [
+          217
+        ]
+      },
+      {
+        "bibliography_paragraph": 437,
+        "citation_key": "Google (2026c)",
+        "chapter_1_5_paragraphs": [
+          206,
+          207,
+          213
+        ]
+      },
+      {
+        "bibliography_paragraph": 438,
+        "citation_key": "Google (2026d)",
+        "chapter_1_5_paragraphs": [
+          206,
+          213
+        ]
+      },
+      {
+        "bibliography_paragraph": 439,
+        "citation_key": "Jardine et al. (2006)",
+        "chapter_1_5_paragraphs": [
+          65
+        ]
+      },
+      {
+        "bibliography_paragraph": 440,
+        "citation_key": "Kaufman et al. (2012)",
+        "chapter_1_5_paragraphs": [
+          43
+        ]
+      },
+      {
+        "bibliography_paragraph": 441,
+        "citation_key": "Knap et al. (2026)",
+        "chapter_1_5_paragraphs": [
+          111
+        ]
+      },
+      {
+        "bibliography_paragraph": 442,
+        "citation_key": "Lessmeier et al. (2016)",
+        "chapter_1_5_paragraphs": [
+          109
+        ]
+      },
+      {
+        "bibliography_paragraph": 443,
+        "citation_key": "Liu et al. (2008)",
+        "chapter_1_5_paragraphs": [
+          74,
+          199
+        ]
+      },
+      {
+        "bibliography_paragraph": 444,
+        "citation_key": "NASA (2023)",
+        "chapter_1_5_paragraphs": [
+          147,
+          153,
+          215
+        ]
+      },
+      {
+        "bibliography_paragraph": 445,
+        "citation_key": "NVIDIA (o. J.)",
+        "chapter_1_5_paragraphs": [
+          180
+        ]
+      },
+      {
+        "bibliography_paragraph": 446,
+        "citation_key": "ONNX Runtime developers (o. J.)",
+        "chapter_1_5_paragraphs": [
+          206,
+          213
+        ]
+      },
+      {
+        "bibliography_paragraph": 447,
+        "citation_key": "Oriental Motor (o. J.)",
+        "chapter_1_5_paragraphs": [
+          158
+        ]
+      },
+      {
+        "bibliography_paragraph": 448,
+        "citation_key": "PCB Piezotronics (o. J.)",
+        "chapter_1_5_paragraphs": [
+          174
+        ]
+      },
+      {
+        "bibliography_paragraph": 449,
+        "citation_key": "Pittino et al. (2020)",
+        "chapter_1_5_paragraphs": [
+          110
+        ]
+      },
+      {
+        "bibliography_paragraph": 450,
+        "citation_key": "PyTorch (o. J.)",
+        "chapter_1_5_paragraphs": [
+          206,
+          213
+        ]
+      },
+      {
+        "bibliography_paragraph": 451,
+        "citation_key": "Randall und Antoni (2011)",
+        "chapter_1_5_paragraphs": [
+          39
+        ]
+      },
+      {
+        "bibliography_paragraph": 452,
+        "citation_key": "Raspberry Pi Ltd. (o. J.)",
+        "chapter_1_5_paragraphs": [
+          180
+        ]
+      },
+      {
+        "bibliography_paragraph": 453,
+        "citation_key": "Raspberry Pi Ltd. (2026)",
+        "chapter_1_5_paragraphs": [
+          180
+        ]
+      },
+      {
+        "bibliography_paragraph": 454,
+        "citation_key": "Ren et al. (2021)",
+        "chapter_1_5_paragraphs": [
+          113,
+          119
+        ]
+      },
+      {
+        "bibliography_paragraph": 455,
+        "citation_key": "Ruff et al. (2021)",
+        "chapter_1_5_paragraphs": [
+          67,
+          80,
+          104,
+          194,
+          199
+        ]
+      },
+      {
+        "bibliography_paragraph": 456,
+        "citation_key": "scikit-learn developers (o. J. a)",
+        "chapter_1_5_paragraphs": [
+          87,
+          92
+        ]
+      },
+      {
+        "bibliography_paragraph": 457,
+        "citation_key": "scikit-learn developers (o. J. b)",
+        "chapter_1_5_paragraphs": [
+          86
+        ]
+      },
+      {
+        "bibliography_paragraph": 458,
+        "citation_key": "scikit-learn developers (o. J. c)",
+        "chapter_1_5_paragraphs": [
+          94
+        ]
+      },
+      {
+        "bibliography_paragraph": 459,
+        "citation_key": "scikit-learn developers (o. J. d)",
+        "chapter_1_5_paragraphs": [
+          199
+        ]
+      },
+      {
+        "bibliography_paragraph": 460,
+        "citation_key": "SciPy developers (o. J. a)",
+        "chapter_1_5_paragraphs": [
+          194,
+          195
+        ]
+      },
+      {
+        "bibliography_paragraph": 461,
+        "citation_key": "SciPy developers (o. J. b)",
+        "chapter_1_5_paragraphs": [
+          194,
+          195
+        ]
+      },
+      {
+        "bibliography_paragraph": 462,
+        "citation_key": "Shi et al. (2016)",
+        "chapter_1_5_paragraphs": [
+          40,
+          99
+        ]
+      },
+      {
+        "bibliography_paragraph": 463,
+        "citation_key": "STMicroelectronics (2026)",
+        "chapter_1_5_paragraphs": [
+          180
+        ]
+      },
+      {
+        "bibliography_paragraph": 464,
+        "citation_key": "Universität Paderborn (o. J.)",
+        "chapter_1_5_paragraphs": [
+          158
+        ]
+      }
+    ]
+  },
+  "institutional_ai_guidance": {
+    "primary_url": "https://www.frankfurt-university.de/pdf-Impulspapier-KI",
+    "redirect_url": "https://www.frankfurt-university.de/fileadmin/standard/Hochschule/Bibliothek/Lehren_Lernen_und_Schreiben_mit_generativen_KIAnwendungen_BeSt_BiB_Schreibwerkstatt_V4.2.pdf",
+    "inspection": "Official-domain indexed extract including page 17; full document direct retrieval failed with 403/404.",
+    "confirmed_from_index": "Guidance discusses identifying AI tools, URLs, used functions and adopted generated passages.",
+    "unresolved": "Current applicability and exact binding requirements for the user’s specific degree programme and examination were not established."
+  }
+}

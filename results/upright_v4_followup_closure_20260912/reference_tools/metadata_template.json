@@ -1,0 +1,27 @@
+{
+  "schema_version": 1,
+  "dataset_kind": "MEASUREMENT",
+  "source": null,
+  "instrument": null,
+  "clock_relation": "unknown",
+  "clock_relation_basis": null,
+  "time_accuracy_s": null,
+  "time_accuracy_basis": null,
+  "capture_integrity_confirmed": false,
+  "capture_integrity_evidence": null,
+  "channels": {
+    "tach": {
+      "kind": "tachometer",
+      "selected_edge": "rising",
+      "pulses_per_revolution": null,
+      "ppr_confirmed": false,
+      "ppr_evidence": null
+    },
+    "drdy": {
+      "kind": "adxl_data_ready",
+      "selected_edge": "rising",
+      "one_edge_per_sample_confirmed": false,
+      "one_edge_per_sample_evidence": null
+    }
+  }
+}

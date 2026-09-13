@@ -1,0 +1,20 @@
+{
+  "utc": "2026-09-12T13:40:49.042862+00:00",
+  "operation": "read_only_sysfs_pinctrl_proc",
+  "pwm_sysfs": "/sys/class/pwm/pwmchip0/pwm2",
+  "readback": {
+    "period": "40000",
+    "duty_cycle": "0",
+    "enable": "1",
+    "polarity": "normal"
+  },
+  "commanded_percent": 0.0,
+  "frequency_hz": 25000.0,
+  "pinctrl_get18_returncode": 0,
+  "pinctrl_get18_output": "18: a3    pd | lo // GPIO18 = PWM0_CHAN2",
+  "matching_known_control_capture_processes": [],
+  "process_check_scope": "Names of known Python capture/control entrypoints; not proof against every possible external client",
+  "hardware_mutations_in_this_followup": false,
+  "new_mechanical_observation": null,
+  "rpm_measurement": null
+}

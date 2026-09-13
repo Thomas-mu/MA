@@ -1,0 +1,398 @@
+{
+  "utc": "2026-09-13T07:08:49.624270+00:00",
+  "input_sha256": "21a4fcb6f3a59e9b5eb7f885fd4bf64b7abade5201f016b1e47a2f6e9c6bd432",
+  "draft_sha256": "2ad421a70b2c202d8bec83b056b9ea8a47f0f0c3716161a6ba5c56989650e9aa",
+  "changes": [
+    {
+      "kind": "paragraph",
+      "before": "Die Arbeitshypothesen legen die Vergleichsgrößen fest. Bereits zur Entwicklung verwendete Daten werden explorativ ausgewertet. Eine unabhängige Bestätigung erfordert neue Testaufnahmen und ein vor deren Auswertung festgelegtes Versuchsprotokoll.",
+      "after": "Die Arbeitshypothesen legen die Vergleichsgrößen fest. Bereits zur Entwicklung verwendete Daten werden explorativ ausgewertet. Die unabhängige Prüfung verwendet davon getrennte Testaufnahmen und ein vor ihrer Auswertung festgelegtes Versuchsprotokoll. Ihre Aussagekraft bleibt durch Zahl und Vielfalt der vollständigen Aufnahmen begrenzt.",
+      "reason": "Distinguish completed independent tests from unperformed further replication."
+    },
+    {
+      "kind": "paragraph",
+      "before": "Kapitel 4 übersetzt diesen Untersuchungsbedarf in überprüfbare Anforderungen und beantwortet damit den ersten Teil von FF1. Kapitel 5 vergleicht anschließend geeignete Lösungsvarianten und begründet die Auswahl des Systems und des Versuchsaufbaus.",
+      "after": "Kapitel 4 und 5 konkretisieren Anforderungen und Systemauswahl.",
+      "reason": "Shorten redundant chapter transition to prevent a nearly empty continuation page."
+    },
+    {
+      "kind": "paragraph",
+      "before": "Kapitel 6 dokumentiert Aufbau, Software, Eignungsprüfungen und das vor der Testauswertung festgelegte Versuchsprotokoll. Entwicklungsaufnahmen bleiben explorativ; eine unabhängige Bestätigung benötigt neue Testaufnahmen gemäß Abschnitt 1.4. Kapitel 7 bewertet Anforderungen und Hypothesen. Nicht bestätigte Hypothesen werden berichtet; eine nachträgliche Anpassung an die Testdaten ist ausgeschlossen.",
+      "after": "Kapitel 6 dokumentiert Implementierung und Testprotokoll; Kapitel 7 bewertet die unabhängigen Tests anhand unveränderter Anforderungen und Hypothesen.",
+      "reason": "Shorten redundant transition; preserve test separation and unchanged assessment criteria."
+    },
+    {
+      "kind": "paragraph",
+      "before": "Als konkrete Variante wird der ARCTIC P12 Pro PST vorgesehen, dessen Datenblatt PWM-Ansteuerung und ein Drehzahlsignal ausweist (ARCTIC, o. J.). Ein PWM-Tastgrad ist eine Stellgröße und kein Nachweis einer konstanten Drehzahl; die tatsächliche Drehzahl ist zu erfassen. Für FF4 wird ein zweiter normaler Betriebspunkt bei unveränderter Montage untersucht. Art und Rücksetzbarkeit der Versuchsanomalien, Schutzmaßnahmen und Messablauf werden in Kapitel 6 vor der abschließenden Testserie festgelegt.",
+      "after": "Als konkrete Variante wurde der ARCTIC P12 Pro PST vorgesehen, dessen Datenblatt PWM-Ansteuerung und ein Drehzahlsignal ausweist (ARCTIC, o. J.). Ein PWM-Tastgrad ist eine Stellgröße und kein Nachweis einer konstanten Drehzahl. Die Konzeption sah deshalb die Erfassung der tatsächlichen Drehzahl vor. Dieser Nachweis wurde in der abgeschlossenen Pilotstudie nicht erbracht; die Betriebspunkte werden entsprechend durch ihre dokumentierten PWM-Vorgaben beschrieben. Für FF4 wurde ein zweiter normaler Betriebspunkt bei unveränderter Montage untersucht. Versuchszustand, Schutzmaßnahmen und Messablauf sind in Kapitel 6 dokumentiert; den begrenzten Nachweis der Rücksetzbarkeit bewertet Kapitel 7.",
+      "reason": "Retain original RPM requirement while declaring the actual unmeasured status."
+    },
+    {
+      "kind": "paragraph",
+      "before": "Ein exklusiver Prozess-Lock koordiniert Programme, die diesen Steuerweg verwenden. Vor Hardwareläufen werden zusätzlich mögliche konkurrierende Steuer- und Sensorprozesse geprüft. Fremde Programme können diese Sperre umgehen; der Lock ist deshalb kein elektrischer Verriegelungsmechanismus. Die Messläufe halten die vorgegebene PWM konstant. Modellentscheidungen verändern sie während des Methodenvergleichs nicht. Damit hängt der beobachtete Betriebszustand nicht von dem jeweils untersuchten Verfahren ab.",
+      "after": "Ein exklusiver Prozess-Lock koordiniert Programme, die diesen Steuerweg verwenden. Vor Hardwareläufen werden zusätzlich mögliche konkurrierende Steuer- und Sensorprozesse geprüft. Fremde Programme können diese Sperre umgehen; der Lock ist deshalb kein elektrischer Verriegelungsmechanismus. Die Messläufe halten die vorgegebene PWM konstant. Modellentscheidungen verändern diese Stellvorgabe während des Methodenvergleichs nicht; eine Rückwirkung über die Ansteuerung ist damit ausgeschlossen. Ob die tatsächliche Drehzahl und weitere physikalische Bedingungen zwischen getrennten Läufen identisch waren, ist dadurch nicht nachgewiesen.",
+      "reason": "Constant commanded PWM does not prove identical physical states across runs."
+    },
+    {
+      "kind": "paragraph",
+      "before": "Der Gesamtfehler ist das arithmetische Mittel der drei Achsenfehler. Der mit Platte geringfügig höhere Z-Fehler wird durch kleinere X- und Y-Fehler überkompensiert. Die gespeicherte obere Schwelle von rund 0,54436 wird deshalb seltener und in dieser Aufnahme überhaupt nicht überschritten. Ein größerer physischer Vektor-RMS muss bei dieser Vorverarbeitung und diesem Modell somit keinen größeren Anomaliescore verursachen. Auch der RMS-Modellscore wird aus standardisierten Werten berechnet und ist nicht identisch mit dem physischen Vektor-AC-RMS.",
+      "after": "Der mittlere Gesamtfehler ist das arithmetische Mittel der drei mittleren Achsenfehler. Die kleineren X- und Y-Fehler überkompensieren den mit Platte geringfügig höheren Z-Fehler. Zusätzlich zeigt die Prüfung der einzelnen Modellfenster, dass in dieser Aufnahme kein Gesamtfehler die eingefrorene Schwelle von rund 0,54436 überschreitet. Ein kleinerer Gruppenmittelwert allein würde diesen Nullbefund nicht belegen. Ein größerer physischer Vektor-RMS muss bei dieser Vorverarbeitung und diesem Modell keinen größeren Anomaliescore verursachen. Auch der RMS-Modellscore wird aus standardisierten Werten berechnet und ist nicht identisch mit dem physischen Vektor-AC-RMS.",
+      "reason": "Separate comparison of group means from the independently verified absence of individual threshold crossings."
+    },
+    {
+      "kind": "paragraph",
+      "before": "Vierzig der 51 Autoencoder-Fehlalarme in normal_before liegen in den ersten 60 s des ausgewerteten Abschnitts, also zwischen 180 und 240 s ab dem Stellbefehl. Innerhalb dieser Aufnahme besteht ein starker positiver Zusammenhang des Fehlers mit der X-Schwingungsstärke; die explorativ berechnete Korrelation beträgt ungefähr 0,82. Mit der Z-Schwingungsstärke besteht kein vergleichbar ausgeprägter Zusammenhang. Die Fehlalarme kennzeichnen daher keine einfache Überschreitung der Gesamtvibration.",
+      "after": "Vierzig der 51 Autoencoder-Fehlalarme in normal_before liegen zwischen 180 und 240 s ab dem Stellbefehl. Über alle 194 Modellfenster dieser Aufnahme beträgt die explorative Pearson-Korrelation zwischen Autoencoder-Score und physischer X-Achsen-RMS ungefähr r = 0,821. Die Fenster sind zeitlich abhängig; der Koeffizient beschreibt diesen Verlauf und ist kein unabhängiger Kausalnachweis. Mit der Z-Achsen-RMS beträgt die entsprechende Korrelation nur rund 0,002. Die Fehlalarme kennzeichnen daher keine einfache Überschreitung der Gesamtvibration.",
+      "reason": "Specify Pearson correlation, full 194-window population and dependence from the archived exploratory analysis."
+    },
+    {
+      "kind": "paragraph",
+      "before": "Die Softwareprüfung des abschließenden Livewegs umfasst 18 gezielte Tests. Sie prüft die Übereinstimmung der Scores auf realen eingefrorenen Referenzfenstern sowie Fehlerpfade für Datenqualität, Überlast und geordnetes Beenden. Die zusätzlichen Hardwareläufe liefern den Nachweis der tatsächlichen lokalen Verarbeitung. Eine nachgewiesene Defektklasse, eine unabhängige Drehzahlmessung und eine vollständig kalibrierte physikalische Zeitbasis gehören weiterhin zu den offenen Nachweisen. Kapitel 7 bewertet die Anforderungen deshalb einzeln und setzt eine erfolgreiche Programmausführung nicht mit der vollständigen Erfüllung aller MUSS-Anforderungen gleich.",
+      "after": "18 Softwaretests prüfen Referenzscores, Datenqualität und Fehlerpfade. Die Hardwareläufe belegen die lokale Verarbeitung im gemessenen Umfang. Kapitel 7 bewertet die Anforderungen einschließlich offener Drehzahl-, Messketten- und Wiederholungsnachweise.",
+      "reason": "Remove residual contradiction about a required proven defect class; retain actual missing evidence."
+    },
+    {
+      "kind": "paragraph",
+      "before": "Bei RMS und Isolation Forest sinkt der zusammengefasste Fehlalarmanteil im vorliegenden Vergleich. Beim Autoencoder steigt er von 5,50 % auf 6,01 %, also um ungefähr 0,52 Prozentpunkte. Innerhalb der drei 50-%-Starts nimmt sein Anteil von 8,76 % auf 3,61 % ab. Das erlaubt keine allgemeine Aussage, eine niedrigere PWM sei günstiger oder ungünstiger. Die Methoden reagieren unterschiedlich, und die zeitlich getrennten Reihen isolieren die PWM nicht von sämtlichen weiteren Einflüssen. H3 wird deshalb nicht als allgemeine oder kausal nachgewiesene Zunahme bestätigt.",
+      "after": "Bei RMS und Isolation Forest sinkt der zusammengefasste Fehlalarmanteil im vorliegenden Vergleich. Beim Autoencoder steigt er von 5,50 % auf 6,01 %, also um ungefähr 0,52 Prozentpunkte. Die sechs 75-%-Normalaufnahmen reichen beim Autoencoder jedoch von 0 bis 26,29 % Fehlalarmen; innerhalb der drei 50-%-Starts sinkt der Anteil von 8,76 auf 3,61 %. Die kleine gepoolte Zunahme beschreibt somit keine über alle Starts einheitliche Verschiebung und hängt von der festgelegten Zusammensetzung der Normalreferenzen ab. Die zeitlich getrennten Reihen isolieren die PWM nicht von weiteren Einflüssen. H3 ist für den Autoencoder nur mit der Richtung des zusammengefassten Anteils vereinbar und weder allgemein noch kausal bestätigt; für RMS und Isolation Forest zeigt der zusammengefasste Vergleich die entgegengesetzte Richtung.",
+      "reason": "Clarify H3 pooling, run variability and causal boundary without changing reference selection."
+    },
+    {
+      "kind": "requirement_row",
+      "before": [
+        "A7",
+        "Siehe Abschnitt 7.7",
+        "P99 und Fristüberschreitungen gegen das beobachtete Fensterintervall geprüft; keine harte Echtzeitgarantie."
+      ],
+      "after": [
+        "A7",
+        "Im Messumfang nachgewiesen",
+        "P99 der Verarbeitung liegt in allen geprüften Läufen unter dem beobachteten Fensterintervall; keine gezählte Fristüberschreitung. Hostseitige Grenze; keine harte Echtzeitgarantie."
+      ],
+      "reason": "State the evidenced H2 result explicitly rather than only referring to a section."
+    },
+    {
+      "kind": "requirement_row",
+      "before": [
+        "A8",
+        "Für endliche Läufe geprüft",
+        "CPU, RSS, Modellgrößen, Queue und Verluste gemessen; kein Nachweis unbegrenzten Dauerbetriebs."
+      ],
+      "after": [
+        "A8",
+        "Für endliche Läufe geprüft",
+        "CPU, RSS, Modellgrößen und Queue erfasst; verworfene Entscheidungsfenster gezählt. Kein Nachweis unbegrenzten Dauerbetriebs oder unbekannter physischer Verluste."
+      ],
+      "reason": "Specify software decision-window drops rather than imply all physical losses measured."
+    },
+    {
+      "kind": "requirement_row",
+      "before": [
+        "A10",
+        "Nachgewiesen",
+        "Drei normale 50-%-Tests bei unverändertem Paket; Vergleich zu den vorab bestimmten 75-%-Normalreferenzen."
+      ],
+      "after": [
+        "A10",
+        "Im festgelegten Vergleich nachgewiesen",
+        "Drei normale 50-%-Tests bei unverändertem Paket; Vergleich mit den vorab bestimmten 75-%-Normalreferenzen. Keine randomisierte Paarung und kein isolierter kausaler PWM-Effekt."
+      ],
+      "reason": "Separate performed comparison from general or causal inference."
+    },
+    {
+      "kind": "paragraph",
+      "before": "Die lokale Laufzeitprüfung beantwortet eine andere Frage als die Erkennungstests: ob die gespeicherte Verarbeitung auf der Zielhardware im festgelegten Messumfang Schritt halten kann. Numerische Konsistenz und kurze Latenz machen eine fachlich ungeeignete Entscheidung nicht richtig. Ebenso bedeutet eine schwache Zustandstrennung nicht, dass der Erfassungs- oder Ausführungsweg falsch implementiert ist. Die getrennten Nachweise verhindern diese Vermischung.",
+      "after": "Die Laufzeitprüfung zeigt, ob die gespeicherte Verarbeitung im gemessenen Umfang Schritt hält. Numerische Konsistenz und geringe Latenz belegen keine richtige Zustandsentscheidung. Umgekehrt bedeutet schwache Zustandstrennung allein keinen Implementierungsfehler.",
+      "reason": "Condense repeated distinction between technical execution and recognition, avoiding a nearly empty continuation page."
+    },
+    {
+      "kind": "paragraph",
+      "before": "Die Zeitbewertung beginnt mit dem hostseitig vollständigen Fenster. Sie enthält weder die physikalische Fensterfüllzeit noch eine unbekannte Verzögerung zwischen Sensorwandlung und Host-Leseabschluss. Ein endlicher Test unter gewöhnlichem Linux ist keine harte Echtzeitzusage. Die optionale GUI wurde aus dem abschließenden Messweg ausgeschlossen; ihre frühere Existenz ersetzt keinen Nachweis ihrer Zusatzlast mit dem neuen Paket.",
+      "after": "Die Latenzmessung beginnt beim hostseitig vollständigen Fenster; Fensterfüllzeit und unbekannte Verzögerungen vor dem Host-Leseabschluss sind ausgeschlossen. Endliche Tests unter gewöhnlichem Linux belegen keine harte Echtzeit. Die optionale GUI ist im abschließenden Messweg nicht enthalten; ihre Zusatzlast mit dem neuen Paket wurde nicht geprüft.",
+      "reason": "Preserve latency endpoints, non-real-time limitation and unmeasured GUI overhead in concise form."
+    },
+    {
+      "kind": "paragraph",
+      "before": "Ausblick und verbleibende Nachweise",
+      "after": "Nicht erbrachte Nachweise und Ausblick",
+      "reason": "Present missing measurements as final limitations, not as work claimed completed."
+    },
+    {
+      "kind": "paragraph",
+      "before": "Der vorhandene Modellstand sollte als abgeschlossener Pilotstand erhalten bleiben. Für die Dokumentation ist keine weitere Wiederholung gleicher Normalstarts erforderlich, nur um eine günstigere durchschnittliche Kennzahl zu erreichen. Künftige Messungen sollten jeweils eine benannte offene Frage beantworten und vorab einen eigenen Auswertungsplan erhalten.",
+      "after": "Der empirische Teil dieser Fassung wird mit der vorhandenen Datenbasis abgeschlossen. Zwei zusätzliche Plattenfolgen sowie unabhängige Drehzahl- und Sensortaktmessungen wurden vorbereitet, aber nicht durchgeführt. Die damit verbundenen Grenzen bleiben Teil des Ergebnisses: A1 und A11 sind weiterhin nur teilweise nachgewiesen, und die tatsächliche Drehzahl bleibt unbekannt. Die folgende Beschreibung ordnet mögliche Anschlussuntersuchungen ein; sie ist kein Nachweis ihrer Ausführung und verändert den Status des eingefrorenen Entwicklungspakets nicht. Für die wissenschaftliche Dokumentation werden weder weitere Normalstarts zur Verbesserung eines Mittelwerts noch eine nachträgliche Schwellenanpassung vorgenommen.",
+      "reason": "Explicitly close empirical scope without erasing unmet requirements or pretending future work done."
+    },
+    {
+      "kind": "paragraph",
+      "before": "Ein geeigneter Folgeplan würde mehrere vollständige unabhängige Normal–Änderung–Normal-Folgen vorsehen. Geometrie, Stellvorgabe, Auszeiten, Messdauer, Bewertungsabschnitt und Labels werden vorher fixiert. Die Rückkehrreferenzen prüfen, ob das Entfernen der Änderung das zuvor beobachtete Signal wiederherstellt. Die Reihenfolge und weitere Störeinflüsse sind so zu planen, dass Zustands- und Zeitunterschiede besser unterscheidbar werden. Die Anzahl der Wiederholungen folgt der gewünschten Genauigkeit auf Aufnahmeebene und nicht der bloßen Zahl verfügbarer Fenster.",
+      "after": "Ein vorbereiteter Anschlussversuch umfasst zwei zusätzliche vollständige Normal–Änderung–Normal-Folgen, sodass zusammen mit der vorhandenen Folge drei unabhängige veränderte Aufnahmen vorlägen. Auch dies wäre ein begrenzter Pilotumfang. Geometrie, Stellvorgabe, Auszeiten, Messdauer, Bewertungsabschnitt und Labels müssten vor Beginn festgelegt bleiben. Die Rückkehrreferenzen würden mit der normalen Variabilität verglichen; genau gleiche RMS-Mittelwerte wären kein notwendiges Rücksetzkriterium. Für weitergehende Aussagen müsste die Zahl unabhängiger Folgen anhand der gewünschten Genauigkeit geplant werden. Weitere Instrumentierung oder Modelländerungen erforderten eine gesondert dokumentierte Versuchs- beziehungsweise Modellversion.",
+      "reason": "Describe prepared, unperformed follow-up with correct number of independent replicates."
+    },
+    {
+      "kind": "paragraph",
+      "before": "FF3 wird durch getrennte Ressourcen- und Latenzmessungen im Sensorbetrieb und im zeitgetreuen Replay konkretisiert. Die Angaben in Abschnitt 7.7 beziehen sich auf definierte Prozessgrenzen, eine endliche Messdauer und das beobachtete Fensterintervall. Sie beschreiben die technische Ausführbarkeit des Datenwegs und ersetzen keine Beurteilung der fachlichen Richtigkeit seiner Entscheidungen.",
+      "after": "FF3 wird durch getrennte Ressourcen- und Latenzmessungen im Sensorbetrieb und zeitgetreuen Replay beantwortet. H2 ist im gemessenen Umfang erfüllt: In allen 18 Prozessen liegt P99 unter dem beobachteten Fensterintervall; es gibt keine gezählte Fristüberschreitung. Gemessen wird hostseitige Verarbeitung in 300-s-Prozessen mit 120 s Modellbewertung. Harte Echtzeit, unbegrenzter Dauerbetrieb und fachlich richtige Zustandsentscheidungen folgen daraus nicht.",
+      "reason": "Explicitly answer H2 with observed latency and its endpoint boundary."
+    },
+    {
+      "kind": "paragraph",
+      "before": "FF4 ist durch einen zweiten normalen Betriebspunkt bei 50 % PWM untersucht. Das Paket wurde dafür nicht angepasst. RMS und Isolation Forest zeigen in diesen Aufnahmen geringere zusammengefasste Fehlalarmraten als in den festgelegten 75-%-Normalreferenzen; beim Autoencoder ist der Anteil geringfügig höher. Die zeitlich getrennten Reihen begründen keine allgemeine kausale Wirkung des Tastgrads. H3 wird daher nur methodenspezifisch beschrieben und nicht pauschal bestätigt.",
+      "after": "FF4 ist durch drei unabhängige Normalaufnahmen bei 50 % PWM mit unverändertem Paket untersucht. Gegenüber den festgelegten sechs 75-%-Normalreferenzen sinken die gepoolten Fehlalarmraten von RMS und Isolation Forest; beim Autoencoder steigt der Anteil geringfügig von 5,50 auf 6,01 %. Die Richtung ist nicht über alle Starts einheitlich und belegt keinen isolierten kausalen Tastgradeffekt. H3 wird deshalb nicht pauschal bestätigt.",
+      "reason": "Keep final H3 answer consistent with run-level evidence."
+    },
+    {
+      "kind": "paragraph",
+      "before": "Der wissenschaftliche Beitrag liegt in der konsistenten und überprüfbaren Umsetzung sowie in der offenen Bewertung ihrer Grenzen. Die Messungen zeigen, dass stärkere physische Vibration, ein größerer Modellscore und eine richtige Anomalieentscheidung verschiedene Sachverhalte sind. Das dokumentierte Pilotpaket bildet eine Grundlage für gezielt geplante weitere Untersuchungen. Es ist kein vollständig validiertes Defekterkennungssystem, und die nicht bestätigten Erwartungen bleiben als Ergebnisse der Arbeit erhalten.",
+      "after": "Der Beitrag liegt in der überprüfbaren Umsetzung und offenen Bewertung eines begrenzten Methodenvergleichs. Stärkere Vibration, höherer Modellscore und richtige Zustandsentscheidung sind verschiedene Sachverhalte. Eine zuverlässige Erkennung der Luftstromänderung ist nicht belegt. Die Pilotstudie ist mit diesem negativen Ergebnis abschließbar; Wiederholungs-, Drehzahl- und physikalische Messkettennachweise bleiben teilweise unerbracht. Vollständige Anforderungserfüllung oder betriebsfertig validierte Defekterkennung werden nicht beansprucht.",
+      "reason": "Close with concrete contribution, negative result and remaining evidence gaps."
+    },
+    {
+      "kind": "paragraph",
+      "before": "Die folgenden Verwechslungszahlen beziehen sich jeweils auf eine vollständige Aufnahme und Methode. Jede Aufnahme enthält eine Zustandsklasse. Der Anteil bezeichnet deshalb entweder Fehlalarme im Normalzustand oder markierte Fenster der kontrollierten Änderung. Kennzahlen der vollständigen Folge stehen in Tabelle A-3.",
+      "after": "Die folgenden Verwechslungszahlen sind nach vollständigen Aufnahmen gruppiert, beziehen sich jedoch ausschließlich auf die 194 gültigen Modellfenster im Abschnitt [180,300) s des jeweiligen 300-s-Laufs. Jede Aufnahme enthält eine Zustandsklasse. Der Anteil bezeichnet deshalb entweder Fehlalarme im Normalzustand oder markierte Fenster der kontrollierten Änderung. Kennzahlen der vollständigen Folge stehen in Tabelle A-3.",
+      "reason": "Clarify full recording as grouping unit versus only prespecified 120-s score interval."
+    },
+    {
+      "kind": "paragraph",
+      "before": "Tabelle A-4: Verwechslungszahlen je vollständiger Aufnahme und Methode",
+      "after": "Tabelle A-4: Verwechslungszahlen je Aufnahme und Methode im Abschnitt [180,300) s",
+      "reason": "Avoid suggesting scoring of the entire 300-s acquisition."
+    },
+    {
+      "kind": "whole_table",
+      "before": [
+        [
+          "Kennung",
+          "Inhalt",
+          "Projektpfad"
+        ],
+        [
+          "B1",
+          "Eingefrorenes Modellpaket und Trainingsnachweis",
+          "results/upright_v4_training_pilot_20260911_130614/run_001/"
+        ],
+        [
+          "B2",
+          "Drei unabhängige normale 75-%-Tests",
+          "results/upright_v4_independent_normal_20260911_133047/"
+        ],
+        [
+          "B3",
+          "Zusätzlicher Normaltest und dokumentierter abgebrochener Plattenstart",
+          "results/upright_v4_frozen_airflow_test_20260911_164040/"
+        ],
+        [
+          "B4",
+          "Vollständiger unabhängiger Test Normal → Platte → Normal",
+          "results/upright_v4_frozen_airflow_test_20260912_073015/"
+        ],
+        [
+          "B5",
+          "Explorative Fehleranalyse auf identischen Modellfenstern",
+          "results/upright_v4_exploratory_diagnosis_20260912_081728/"
+        ],
+        [
+          "B6",
+          "Drei unabhängige normale 50-%-Tests",
+          "results/upright_v4_second_pwm50_20260912_091000/"
+        ],
+        [
+          "B7",
+          "Abschließende Sensor-/Replay-Laufzeitprüfung und Erhaltungsnachweis",
+          "results/upright_v4_finalization_20260912_103145/"
+        ],
+        [
+          "B8",
+          "Vor dem Training erstellte Spektralprüfung der Entwicklungsaufnahmen",
+          "results/upright_v4_spectral_review_20260911_114502/"
+        ]
+      ],
+      "after": [
+        [
+          "ID",
+          "Inhalt",
+          "Projektpfad"
+        ],
+        [
+          "B1",
+          "Eingefrorenes Modellpaket und Trainingsnachweis",
+          "results/upright_v4_training_pilot_20260911_130614/run_001/"
+        ],
+        [
+          "B2",
+          "Drei unabhängige normale 75-%-Tests",
+          "results/upright_v4_independent_normal_20260911_133047/"
+        ],
+        [
+          "B3",
+          "Zusätzlicher Normaltest und dokumentierter abgebrochener Plattenstart",
+          "results/upright_v4_frozen_airflow_test_20260911_164040/"
+        ],
+        [
+          "B4",
+          "Vollständiger unabhängiger Test Normal → Platte → Normal",
+          "results/upright_v4_frozen_airflow_test_20260912_073015/"
+        ],
+        [
+          "B5",
+          "Explorative Fehleranalyse auf identischen Modellfenstern",
+          "results/upright_v4_exploratory_diagnosis_20260912_081728/"
+        ],
+        [
+          "B6",
+          "Drei unabhängige normale 50-%-Tests",
+          "results/upright_v4_second_pwm50_20260912_091000/"
+        ],
+        [
+          "B7",
+          "Abschließende Sensor-/Replay-Laufzeitprüfung und Erhaltungsnachweis",
+          "results/upright_v4_finalization_20260912_103145/"
+        ],
+        [
+          "B8",
+          "Vor dem Training erstellte Spektralprüfung der Entwicklungsaufnahmen",
+          "results/upright_v4_spectral_review_20260911_114502/"
+        ],
+        [
+          "B9",
+          "Fachreview und unveränderte Zählung je Aufnahme vom 12.09.2026",
+          "results/upright_v4_followup_closure_20260912/"
+        ],
+        [
+          "B10",
+          "Abschluss als begrenzte Pilotstudie: Quellen-, Statistik- und Konsistenzprüfung; Änderungs- und Erhaltungsnachweis",
+          "results/upright_v4_pilot_manuscript_20260913_064035/"
+        ]
+      ],
+      "reason": "Expose new review provenance as separate digital artifacts."
+    },
+    {
+      "kind": "paragraph",
+      "before": "Garay et al. (2026) vergleichen vier Algorithmen in fünf Varianten, darunter Isolation Forest und einen Autoencoder, auf einem Cortex-M4F. Nach einer Sensorneumontage treten mehr Fehlalarme auf; gleichzeitig verändert sich die Umgebungstemperatur. Ein isolierter Montageeffekt ist daraus nicht ableitbar. Die Autoren untersuchen außerdem eine Nachkalibrierung von Skalierung und Schwelle. Beim Isolation Forest stammen die Erkennungskennzahlen vom Modell mit 100 Bäumen, die Mikrocontrollerwerte von einer Variante mit sechs Bäumen. Beide Größen beschreiben somit unterschiedliche Modellstände.",
+      "after": "Garay et al. (2026) vergleichen vier Algorithmen in fünf Varianten, darunter Isolation Forest und einen Autoencoder, auf einem Cortex-M4F. Nach einer Sensorneumontage treten mehr Fehlalarme auf; gleichzeitig verändert sich die Umgebungstemperatur. Für die Einordnung in dieser Arbeit wird die Fehlalarmänderung deshalb nicht als isolierter Montageeffekt behandelt. Die Autoren untersuchen außerdem eine Nachkalibrierung von Skalierung und Schwelle. Beim Isolation Forest stammen die Erkennungskennzahlen vom Modell mit 100 Bäumen, die Mikrocontrollerwerte von einer Variante mit sechs Bäumen. Beide Größen beschreiben somit unterschiedliche Modellstände.",
+      "reason": "Mark causal-isolation statement as the manuscript’s own critical interpretation of verified original study."
+    },
+    {
+      "kind": "paragraph",
+      "before": "Lessmeier, C., Kimotho, J. K., Zimmer, D., & Sextro, W. (2016). Condition Monitoring of Bearing Damage in Electromechanical Drive Systems by Using Motor Current Signals of Electric Motors: A Benchmark Data Set for Data-Driven Classification. European Conference of the Prognostics and Health Management Society. https://mb.uni-paderborn.de/fileadmin-mb/kat/PDF/Veroeffentlichungen/20160703_PHME16_CM_bearing.pdf (Abruf: 12.09.2026.)",
+      "after": "Lessmeier, C., Kimotho, J. K., Zimmer, D., & Sextro, W. (2016). Condition Monitoring of Bearing Damage in Electromechanical Drive Systems by Using Motor Current Signals of Electric Motors: A Benchmark Data Set for Data-Driven Classification. PHM Society European Conference, 3(1). https://doi.org/10.36001/phme.2016.v3i1.1577. https://mb.uni-paderborn.de/fileadmin-mb/kat/PDF/Veroeffentlichungen/20160703_PHME16_CM_bearing.pdf (Abruf: 12.09.2026.)",
+      "reason": "Add publisher-verified volume/issue and DOI; preserve historical URL and access date."
+    }
+  ],
+  "additions": [
+    {
+      "kind": "paragraph",
+      "text": "Zusammenfassung",
+      "anchor": "Inhaltsverzeichnis"
+    },
+    {
+      "kind": "paragraph",
+      "text": "Diese Arbeit untersucht einen lokalen Methodenvergleich zur normalitätsbasierten Anomalieerkennung an einem Lüfterprüfstand. Ein ADXL345 erfasst dreiachsige Beschleunigungen; ein Raspberry Pi 5 verarbeitet identische, nicht überlappende Fenster mit 128 XYZ-Punkten. Verglichen werden eine RMS-Schwelle auf standardisierten Werten, Isolation Forest und ein TFLite-Autoencoder. Vollständige Aufnahmen sind Training, Validierung oder Test zugeordnet. Modelle, Skalierung und Schwellen bleiben in den unabhängigen Tests unverändert.",
+      "anchor": "Inhaltsverzeichnis"
+    },
+    {
+      "kind": "paragraph",
+      "text": "Die kontrollierte Testfolge umfasst Normalbetrieb, eine äußere Luftstromveränderung durch eine separat befestigte Platte und eine normale Rückkehrreferenz bei 75 % PWM. Bewertet wird jeweils der vorab festgelegte Abschnitt [180,300) s einer 300-s-Aufnahme. Von 194 gültigen Fenstern des veränderten Zustands markieren RMS sieben, Isolation Forest vier und der Autoencoder keines. Die F1-Werte der vollständigen Folge betragen 6,93 %, 4,04 % und 0 %. Die erwartete Überlegenheit des Autoencoders ist in dieser Folge nicht bestätigt. Zusätzliche Normaltests bei 50 % PWM zeigen methoden- und aufnahmeabhängige Fehlalarme.",
+      "anchor": "Inhaltsverzeichnis"
+    },
+    {
+      "kind": "paragraph",
+      "text": "In der getrennten Laufzeitprüfung liegt das empirische P99 der gesamten Verarbeitungslatenz im Sensorbetrieb je nach Methode und Lauf zwischen 6,113 und 28,577 ms; das beobachtete Fensterintervall beträgt etwa 618 ms. Die Studie belegt damit die lokale Ausführbarkeit im gemessenen Umfang, jedoch keine zuverlässige Erkennung der untersuchten Luftstromänderung. Eine einzige unabhängige veränderte Aufnahme, die ungemessene Drehzahl und die nicht unabhängig geklärte Abweichung zwischen nominell 200 Hz und etwa 207 XYZ/s begrenzen die Aussagekraft. Der Abschluss erfolgt als Pilotstudie mit erhaltenen negativen Ergebnissen und ausdrücklich offenen Nachweisen.",
+      "anchor": "Inhaltsverzeichnis"
+    },
+    {
+      "kind": "paragraph",
+      "text": "Die folgende Darstellung rekonstruiert die Systementscheidung und die dabei festgelegten Prüfvorbehalte. Die Anforderungen beschreiben den ursprünglichen Zielmaßstab. Ob die jeweiligen Nachweise im vorhandenen Datenstand erbracht wurden, bewertet Kapitel 7.",
+      "after": "Dieses Kapitel begründet die Systemauswahl anhand der Anforderungen A1–A13 und beantwortet damit den zweiten Teil von FF1. Zunächst wird der Prüfstand ausgewählt. Darauf folgen Sensorik und Edge-Plattform, Datenrepräsentation und Verfahren sowie die Entwicklungs- und Inferenzumgebung. Die abschließende Systementscheidung verbindet diese Teilauswahlen mit den noch ausstehenden Nachweisen."
+    },
+    {
+      "kind": "paragraph",
+      "text": "Für die vollständige Folge wird airflow_modified als vorab festgelegtes positives Zustandslabel ausgewertet. Auf denselben 582 gültigen Fenstern ergeben sich F1-Werte von 6,93 % für RMS, 4,04 % für Isolation Forest und 0 % für den Autoencoder. Die F1-Differenz des Autoencoders zur statistischen Baseline beträgt somit −6,93 Prozentpunkte; H1 ist in dieser Folge nicht bestätigt. Die vollständigen Konfusionszahlen und Kennzahlen stehen im Anhang. Die 194 positiven Fenster stammen aus einer einzigen Aufnahme und belegen keine Wiederholbarkeit des Ergebnisses.",
+      "after": "Bei den Normalreferenzen sind die auffälligen Entscheidungen Fehlalarme. Für die Plattenaufnahme wird der Alarmanteil unter einem kontrolliert veränderten Betriebszustand angegeben. Er ist kein allgemeiner Defekt-Recall. Der Autoencoder markiert keinen ihrer 194 Fenster als auffällig, obwohl die physikalische Vibrationsstärke gegenüber beiden benachbarten Normalreferenzen steigt. RMS und Isolation Forest reagieren nur auf wenige Fenster. Eine zuverlässige Unterscheidung dieses veränderten Zustands ist mit dem Paket damit nicht belegt."
+    },
+    {
+      "kind": "paragraph",
+      "text": "Die Abschlussfassung verwendet die bis zum 12. September 2026 vorhandenen Messungen; die abschließende Auswertung und Redaktion erfolgen am 13. September 2026. Weitere Plattenwiederholungen und unabhängige Drehzahl- oder Sensortaktmessungen werden in dieser Fassung nicht als durchgeführt behandelt. Diese Begrenzung des tatsächlich erbrachten Umfangs wird nach der Versuchsauswertung offengelegt. Die ursprünglichen Anforderungen und Hypothesen bleiben als Bewertungsmaßstab erhalten; insbesondere werden Teilnachweise der Messqualität und Wiederholbarkeit nicht nachträglich zu vollständiger Erfüllung erklärt.",
+      "after": "Der Kernversuch bewertet die lokale Inferenz eines zuvor trainierten Modells auf einer Zielplattform. Die Pipeline bleibt dabei unverändert. Eine mögliche spätere Nachkalibrierung wäre als eigener Versuch auszuwerten. Sie ist nicht Bestandteil des hier abgeschlossenen eingefrorenen Vergleichs."
+    },
+    {
+      "kind": "paragraph",
+      "text": "Dieselbe normale Validierungsaufnahme dient sowohl zur Auswahl der gespeicherten Autoencoder-Epoche als auch zur Schwellenkalibrierung. Sie ist damit keine von der Modellauswahl unabhängige zusätzliche Kalibrierungsstichprobe. Die unabhängigen Testaufnahmen bleiben davon getrennt. Zwei Trainingsstarts und ein Validierungsstart erfassen nur einen kleinen Teil der möglichen Normalvariation; die große Zahl benachbarter Fenster ersetzt keine zusätzliche unabhängige Aufnahme.",
+      "after": "Das eingefrorene Paket run_001 enthält die Modellartefakte, den Scaler, die Schwellen, den Vorverarbeitungsvertrag, ein Manifest der Ursprungsaufnahmen und die zugehörigen SHA-256-Prüfsummen. Das Training verwendete zwei vollständige normale 300-s-Aufnahmen; eine dritte normale Aufnahme diente der Validierung und Schwellenkalibrierung. Nach der festgelegten Abschnittsauswahl ergeben sich 388 Trainings- und 194 Validierungsfenster. Der Scaler wurde auf 49.664 XYZ-Punkten aus den kanonischen Trainingsfenstern angepasst. Keine unabhängige Testaufnahme war daran beteiligt."
+    },
+    {
+      "kind": "paragraph",
+      "text": "Beim Isolation Forest wird der negierte Wert von score_samples mit der gespeicherten gemeinsamen Quantilschwelle verglichen. Die bibliotheksinterne Einstellung contamination = auto wird nicht als Fehlalarmvorgabe verwendet; die Entscheidung folgt nicht der unveränderten predict-Grenze der Bibliothek. Damit bleibt die tatsächlich ausgewertete Scoredefinition von einer angenommenen Ausreißerquote getrennt.",
+      "after": "Die RMS-Baseline ist dimensionslos. Sie ist nicht mit dem physikalischen Vektor-AC-RMS in g gleichzusetzen. Der Isolation Forest verwendet die Fensterwerte als einen 384-dimensionalen Vektor; er besitzt keine explizite zeitliche Nachbarschaftsstruktur. Seine Parameter umfassen 200 Bäume, max_samples = auto, einen Ausführungsthread und den Zufallsstartwert 42. Die Richtung des Scores wird so vereinheitlicht, dass größere Werte für alle drei Verfahren stärkere Auffälligkeit bedeuten."
+    },
+    {
+      "kind": "paragraph",
+      "text": "Tabelle 7-10 fasst die Antworten auf die Forschungsfragen und den Stand der Hypothesen zusammen. Die Aussagen beziehen sich auf die festgelegten Daten und Messgrenzen; aus einer Fensterzahl wird keine zusätzliche Zahl unabhängiger Versuche abgeleitet.",
+      "anchor": "Diskussion"
+    },
+    {
+      "kind": "paragraph",
+      "text": "Tabelle 7-10: Forschungsfragen, Hypothesen und Gültigkeitsgrenzen",
+      "anchor": "Diskussion"
+    },
+    {
+      "kind": "table",
+      "caption": "Tabelle 7-10: Forschungsfragen, Hypothesen und Gültigkeitsgrenzen",
+      "rows": [
+        [
+          "Bezug",
+          "Beobachteter Befund",
+          "Einordnung und Grenze"
+        ],
+        [
+          "FF1",
+          "Anforderungen, Variantenvergleich und realisierte Mess-/Auswertekette dokumentiert.",
+          "Auswahl und Implementierung nachvollziehbar; A1 und A11 nur teilweise nachgewiesen. Drehzahl ungemessen."
+        ],
+        [
+          "FF2 / H1",
+          "F1 der Plattenfolge: RMS 6,93 %, IF 4,04 %, AE 0 %.",
+          "H1 in dieser Folge nicht bestätigt. Eine positive Aufnahme; kein allgemeiner Defektnachweis."
+        ],
+        [
+          "FF3 / H2",
+          "P99 unter dem beobachteten Fensterintervall in allen 18 Sensor-/Replay-Läufen; keine gezählte Überschreitung.",
+          "H2 im gemessenen Umfang erfüllt. Latenz ab hostseitig vollständigem Fenster; kein unbegrenzter Echtzeit- oder Dauerbetriebsnachweis."
+        ],
+        [
+          "FF4 / H3",
+          "50-%-Normaltests mit unverändertem Paket: gepoolte Fehlalarme bei RMS/IF geringer, beim AE geringfügig höher.",
+          "H3 nicht pauschal bestätigt. AE-Richtung nur deskriptiv; Startvariabilität und zeitlich getrennte Reihen begrenzen die Zuordnung."
+        ]
+      ],
+      "anchor": "Diskussion"
+    },
+    {
+      "kind": "paragraph",
+      "text": "Die Erkennungskennzahlen sind deskriptive Ergebnisse des vorab definierten Zustandslabels. Für den veränderten Zustand liegt nur eine unabhängige Aufnahme vor; ihre 194 Fenster sind zeitlich abhängig. Ein Konfidenzintervall oder Signifikanztest, der diese Fenster als unabhängige Replikate behandelte, würde die verfügbare Evidenz überschätzen. Deshalb werden Einzelaufnahmen, zeitliche Verläufe und Zählungen berichtet, ohne aus der Fensterzahl eine populationsweite Genauigkeit abzuleiten. Auch der explorative Zusammenhang zwischen Achsenenergie und Modellfehler ist kein kausaler Nachweis.",
+      "after": "Die Normaltests zeigen, dass die Normalvalidierung die tatsächlich beobachtete Variation zwischen Starts nur begrenzt repräsentiert. Eine auf einem normalen Validierungslauf kalibrierte obere 99-%-Schwelle ergibt nicht automatisch 1 % Fehlalarme in späteren normalen Aufnahmen. Die Unterschiede betreffen sowohl das physische Signal als auch die achsenabhängigen Modellfehler. Weitere Normalläufe könnten die Variation genauer beschreiben, würden aber die bereits gemessenen Fehlalarmraten des eingefrorenen Pakets nicht rückwirkend ändern."
+    },
+    {
+      "kind": "paragraph",
+      "text": "Dokumentation der KI-Unterstützung",
+      "anchor": "Lesen der Messdateien"
+    },
+    {
+      "kind": "paragraph",
+      "text": "Bei der Bearbeitung wurde Codex von OpenAI als KI-gestütztes Werkzeug für Softwareentwicklung und Fehlersuche, Datenauswertung und Grafikaufbereitung, Quellenprüfung sowie die Formulierung, Überarbeitung und Formatprüfung des Berichts verwendet. Dies umfasst auch generierte und überarbeitete Textpassagen; die Unterstützung beschränkt sich nicht auf Rechtschreibkorrekturen. Die physische Einrichtung und die im Kontrolljournal ausgewiesenen Sichtbeobachtungen stammen aus Nutzerangaben. KI-Ausgaben gelten nicht als eigenständige wissenschaftliche Quellen oder als Ersatz für Messnachweise.",
+      "anchor": "Lesen der Messdateien"
+    },
+    {
+      "kind": "paragraph",
+      "text": "Der digitale Nachweis B10 enthält den Unterstützungsbericht, dokumentierte Änderungen dieser Abschlussfassung sowie die Quellen-, Zahlen- und Erhaltungsprüfungen. Frühere Bearbeitungsartefakte sind unter B7 und B9 zugeordnet. Diese Unterlagen dokumentieren nachvollziehbare Bearbeitungsschritte, jedoch keine lückenlose Passagenzuordnung sämtlicher früherer Fassungen. Eine persönliche fachliche Prüfung, die Eigenständigkeitserklärung und die Einhaltung der für diese Arbeit geltenden Hilfsmittelregeln können nicht durch die Software bestätigt werden.",
+      "anchor": "Lesen der Messdateien"
+    }
+  ],
+  "table_count": 36,
+  "measurement_cutoff": "2026-09-12",
+  "new_hardware_measurements": false,
+  "model_or_threshold_changes": false,
+  "original_requirements_and_hypotheses_preserved": true,
+  "personal_declaration_and_signature_unchanged": true
+}

@@ -1,0 +1,8 @@
+{
+  "utc": "2026-09-13T06:40:35.528892+00:00",
+  "base": "/home/malik/masterarbeit-edge-ai/results/upright_v4_pilot_manuscript_20260913_064035",
+  "input_word": "/home/malik/masterarbeit-edge-ai/docs/Akz_Masterarbeit_Bericht(3).docx",
+  "backup": "/home/malik/masterarbeit-edge-ai/docs/backups/Akz_Masterarbeit_Bericht(3)_vor_pilotabschluss_20260913_064035.docx",
+  "input_word_sha256": "21a4fcb6f3a59e9b5eb7f885fd4bf64b7abade5201f016b1e47a2f6e9c6bd432",
+  "scope": "Abschluss mit vorhandenen Daten als begrenzte Pilotstudie; keine neue Hardwaremessung, keine PWM-Änderung, kein Nachtraining, keine Behauptung vollständiger Nachweise oder Notengarantie"
+}

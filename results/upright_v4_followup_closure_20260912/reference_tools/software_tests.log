@@ -1,0 +1,31 @@
+test_both_edges_are_never_double_counted (test_reference_edges.SyntheticReferenceTests.test_both_edges_are_never_double_counted) ... ok
+test_cli_accepts_synthetic_input_and_exclusively_writes_output (test_reference_edges.SyntheticReferenceTests.test_cli_accepts_synthetic_input_and_exclusively_writes_output) ... ok
+test_cli_rejects_overflow_without_partial_output (test_reference_edges.SyntheticReferenceTests.test_cli_rejects_overflow_without_partial_output) ... ok
+test_confirmations_require_evidence (test_reference_edges.SyntheticReferenceTests.test_confirmations_require_evidence) ... ok
+test_cross_channel_reordering_rejected (test_reference_edges.SyntheticReferenceTests.test_cross_channel_reordering_rejected) ... ok
+test_duplicate_same_channel_time_rejected (test_reference_edges.SyntheticReferenceTests.test_duplicate_same_channel_time_rejected) ... ok
+test_finite_timestamps_with_overflowing_derivatives_rejected_before_output (test_reference_edges.SyntheticReferenceTests.test_finite_timestamps_with_overflowing_derivatives_rejected_before_output) ... ok
+test_flagged_edges_not_bridged (test_reference_edges.SyntheticReferenceTests.test_flagged_edges_not_bridged) ... ok
+test_held_data_ready_is_not_odr (test_reference_edges.SyntheticReferenceTests.test_held_data_ready_is_not_odr) ... ok
+test_host_time_or_unknown_accuracy_not_independent_odr_reference (test_reference_edges.SyntheticReferenceTests.test_host_time_or_unknown_accuracy_not_independent_odr_reference) ... ok
+test_invalid_input_creates_no_output (test_reference_edges.SyntheticReferenceTests.test_invalid_input_creates_no_output) ... ok
+test_measurement_label_and_mapping_claim_never_verify_physical_odr (test_reference_edges.SyntheticReferenceTests.test_measurement_label_and_mapping_claim_never_verify_physical_odr) ... ok
+test_measurement_label_and_ppr_claim_never_verify_physical_rpm (test_reference_edges.SyntheticReferenceTests.test_measurement_label_and_ppr_claim_never_verify_physical_rpm) ... ok
+test_missing_quality_is_explicitly_unknown (test_reference_edges.SyntheticReferenceTests.test_missing_quality_is_explicitly_unknown) ... ok
+test_nonfinite_metadata_rejected_before_output (test_reference_edges.SyntheticReferenceTests.test_nonfinite_metadata_rejected_before_output) ... ok
+test_nonmonotone_and_nonfinite_times_rejected (test_reference_edges.SyntheticReferenceTests.test_nonmonotone_and_nonfinite_times_rejected) ... ok
+test_output_never_overwritten (test_reference_edges.SyntheticReferenceTests.test_output_never_overwritten) ... ok
+test_rpm_arithmetic_overflow_rejected_before_output (test_reference_edges.SyntheticReferenceTests.test_rpm_arithmetic_overflow_rejected_before_output) ... ok
+test_same_time_different_channels_allowed (test_reference_edges.SyntheticReferenceTests.test_same_time_different_channels_allowed) ... ok
+test_source_hashes_match (test_reference_edges.SyntheticReferenceTests.test_source_hashes_match) ... ok
+test_synthetic_200_hz_and_207_hz (test_reference_edges.SyntheticReferenceTests.test_synthetic_200_hz_and_207_hz) ... ok
+test_synthetic_data_never_eligible_as_physical_odr_evidence (test_reference_edges.SyntheticReferenceTests.test_synthetic_data_never_eligible_as_physical_odr_evidence) ... ok
+test_tachometer_confirmed_two_ppr_is_synthetic_example (test_reference_edges.SyntheticReferenceTests.test_tachometer_confirmed_two_ppr_is_synthetic_example) ... ok
+test_unknown_flags_rejected (test_reference_edges.SyntheticReferenceTests.test_unknown_flags_rejected) ... ok
+test_unknown_or_unconfirmed_ppr_never_produces_rpm (test_reference_edges.SyntheticReferenceTests.test_unknown_or_unconfirmed_ppr_never_produces_rpm) ... ok
+test_zero_edges_not_standstill (test_reference_edges.SyntheticReferenceTests.test_zero_edges_not_standstill) ... ok
+
+----------------------------------------------------------------------
+Ran 26 tests in 0.208s
+
+OK

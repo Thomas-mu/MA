@@ -1,0 +1,25 @@
+{
+  "utc": "2026-09-12T13:41:06.250375+00:00",
+  "pdf_sha256": "f7621d0e9118825ce6618c4020ae999ef334c6d515f16b97dfaa4b756f30c0b8",
+  "pdf_pages": 67,
+  "inspection": "All-page contact sheets; changed table A-4 additionally at 125 dpi; affected final pages rechecked after layout corrections",
+  "contact_sheets": [
+    "contact_001_012.png",
+    "contact_013_024.png",
+    "contact_025_036.png",
+    "contact_037_048.png",
+    "contact_049_060.png",
+    "contact_061_067.png"
+  ],
+  "targeted_detail": "final_detail-64.png",
+  "findings_corrected": [
+    "Kept new table caption and table together",
+    "Removed avoidable spill of last appendix paragraph onto a separate page",
+    "Regenerated contact sheets without stale pages from earlier layout iterations"
+  ],
+  "visible_clipping_or_overlap_found": false,
+  "table_A4_complete_on_printed_page": 57,
+  "main_chapter_numbering": "1–10",
+  "footers": "i–vi, then 1–60",
+  "personal_author_approval": false
+}

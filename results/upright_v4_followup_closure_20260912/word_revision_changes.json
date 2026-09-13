@@ -1,0 +1,77 @@
+{
+  "input_sha256": "fc92abeb7893f391f3df6b10dea06921dd76425bc3645e9c8da6b4eb8b8b8d8d",
+  "output_sha256": "3dc32cf14d9ceac8fda6d77f94a7a91176b769bdcfa5f373eed18848ebad32c0",
+  "changes": [
+    {
+      "kind": "paragraph",
+      "before": "Der Kernversuch bewertet die lokale Inferenz eines zuvor trainierten Modells auf einer Zielplattform. Die Pipeline bleibt dabei unverändert. Eine ergänzende Nachkalibrierung wird gesondert ausgewertet.",
+      "after": "Der Kernversuch bewertet die lokale Inferenz eines zuvor trainierten Modells auf einer Zielplattform. Die Pipeline bleibt dabei unverändert. Eine mögliche spätere Nachkalibrierung wäre als eigener Versuch auszuwerten. Sie ist nicht Bestandteil des hier abgeschlossenen eingefrorenen Vergleichs."
+    },
+    {
+      "kind": "paragraph",
+      "before": "Antonini et al. (2023) entwickeln einen ESP32-Sensorknoten für die Pumpenüberwachung. Merkmalsbildung, Isolation-Forest-Training und Inferenz laufen lokal; das Training setzt normalen Betrieb voraus. Die Ressourcenmessungen erfolgen am Prüfstand und unterscheiden Laden, Training und Inferenz. Eine Bewertung der Erkennungsgenauigkeit ist ausdrücklich nicht Gegenstand der Studie.",
+      "after": "Antonini et al. (2023) entwickeln einen ESP32-Sensorknoten für die Überwachung von Unterwasserpumpen. Die Evaluation erfolgt an einer Platine auf einem gefederten PC-Lüfterprüfstand und beschreibt damit keinen gemessenen Pumpenbetrieb. Merkmalsbildung, Isolation-Forest-Training und Inferenz laufen lokal; das Training setzt normalen Betrieb voraus. Die Ressourcenmessungen unterscheiden Laden, Training und Inferenz. Die Erkennungsgenauigkeit wird nicht bewertet."
+    },
+    {
+      "kind": "paragraph",
+      "before": "H1 setzt einen Vergleich der F1-Werte unter definierten Versuchsanomalien voraus. Die äußere Luftstromveränderung ist zwar absichtlich herbeigeführt, aber kein nachgewiesener Defekt. Zudem liegt nur eine unabhängige veränderte Aufnahme vor. Ein allgemeiner F1-Nachweis für Defekterkennung wird deshalb nicht beansprucht. Der beobachtete Alarmanteil ist für den konkret geänderten Zustand beschreibbar; eine geeignete Fehlerklasse oder deren spätere Häufigkeit wird dadurch nicht festgelegt. Die ergänzend im Anhang berechneten F1-Werte beziehen sich ausschließlich auf das bereits vorab vergebene Zustandslabel der einen Plattenfolge. Sie betragen 6,93 % für RMS, 4,04 % für Isolation Forest und 0 % für den Autoencoder. Für dieses begrenzte Label ist H1 somit nicht bestätigt; eine Überlegenheit des neuronalen Hauptverfahrens oder eine allgemeine Defektleistung ist nicht belegt.",
+      "after": "H1 vergleicht die Erkennungsqualität für die vorab definierten Versuchsanomalien; sie verlangt keine gesicherte Schadensdiagnose. In der vorliegenden Folge ist die äußere Luftstromveränderung das vorab vergebene positive Zustandslabel. Die deskriptiven F1-Werte betragen 6,93 % für RMS, 4,04 % für Isolation Forest und 0 % für den Autoencoder. Die erwartete Überlegenheit des neuronalen Verfahrens ist damit in dieser Folge nicht bestätigt. Das negative Ergebnis ist eine gültige Bewertung des eingefrorenen Pakets. Eine einzige unabhängige veränderte Aufnahme belegt jedoch keine allgemeine Wiederholbarkeit. Die Platte bleibt ein kontrolliert veränderter Betriebszustand und wird nicht als nachgewiesener Defekt bezeichnet."
+    },
+    {
+      "kind": "paragraph",
+      "before": "Zu FF2 liegen vergleichbare Entscheidungen auf identischen unabhängigen Testfenstern vor. Die Methoden zeigen unterschiedliche Fehlalarme zwischen normalen Starts. Der Autoencoder erkennt die untersuchte Plattenänderung in keinem der 194 gültigen Fenster, während RMS sieben und Isolation Forest vier Fenster markieren. Die explorative Fehleranalyse erklärt diesen Befund durch die gespeicherte Achsenskalierung, geringere X- und Y-Rekonstruktionsfehler und Überschneidungen mit bekannter normaler Variation. Eine allgemein erfolgreiche Anomalieerkennung oder eine Überlegenheit des Autoencoders ist daraus nicht ableitbar. Der ursprünglich angestrebte umfassende Defektvergleich bleibt ein Teilnachweis.",
+      "after": "FF2 wird für den vorab definierten kontrolliert veränderten Betriebszustand durch Kennzahlen auf identischen Testfenstern beantwortet. In der untersuchten Folge beträgt der F1-Wert 6,93 % für RMS, 4,04 % für Isolation Forest und 0 % für den Autoencoder. H1 ist in dieser Folge nicht bestätigt. Die explorative Fehleranalyse erklärt die beobachteten Scores anhand der gespeicherten Achsenskalierung, geringerer X- und Y-Rekonstruktionsfehler im Plattenzustand und Überschneidungen mit bekannter normaler Variation. Die eine veränderte Aufnahme begrenzt die Aussage über Wiederholbarkeit und Übertragbarkeit. Ein allgemeiner Defektnachweis ist nicht Gegenstand dieser abgegrenzten Pilotbewertung; die schlechte Zustandserkennung bleibt als Ergebnis erhalten."
+    },
+    {
+      "kind": "paragraph",
+      "before": "Die erste offene physikalische Frage betrifft die Zeitbasis. Ein kleinster gezielter Versuch wäre eine unabhängig referenzierte Messung des Data-Ready-Takts beziehungsweise eines bekannten Anregungssignals zusammen mit dem unveränderten FIFO-Datenweg. Dafür müssen geeignete Messmittel, Signalanbindung und zulässige elektrische Pegel vorab geklärt werden. Das Ergebnis könnte die Abweichung zwischen nominaler ODR und Host-Durchsatz einordnen; aus den vorhandenen Dateien allein ist diese Ursache nicht sicher auflösbar.",
+      "after": "Die erste offene physikalische Frage betrifft die Zeitbasis. Ein kleinster gezielter Versuch wäre eine 60-s-Sensorprobe bei 0 % PWM mit externem Mitschnitt von DATA_READY, SCL und SDA sowie gleichzeitig gespeicherter FIFO-Rohdatei. Gerät, Zeitbasisgenauigkeit und Signalanbindung müssen vorab bekannt sein. Die Interruptausgabe wäre eine eigene dokumentierte Instrumentierungsfassung mit anschließender Wiederherstellung der Register; die bisherige ODR, Auflösung und FIFO-Konfiguration bleiben gleich. DATA_READY kann aktiv bleiben, solange Daten ausstehen. Nur nachgewiesen einzeln aufgelöste Bereitstellungen dürfen zur Periodenmessung dienen; eine Flankenzahl ist nicht automatisch eine Sensorwertzahl. Nicht zuordenbare Abschnitte bleiben erhalten. Aus den vorhandenen Dateien allein ist die genaue Ursache der Abweichung nicht sicher auflösbar."
+    },
+    {
+      "kind": "paragraph",
+      "before": "Für einen erweiterten Erkennungsnachweis muss zunächst festgelegt werden, welcher kontrolliert veränderte Zustand die Zielklasse bilden soll. Eine weitere äußere Luftstromänderung könnte die Empfindlichkeit gegenüber diesem Betriebszustand untersuchen, wäre aber weiterhin kein automatischer Defektnachweis. Manipulationen an einem laufenden Rotor sind ausgeschlossen. Änderungen erfolgen ausschließlich nach Trennen der externen Versorgung und bestätigtem Stillstand; Sensor und Aufstellung bleiben für einen Modellvergleich unverändert. Die konkreten sicheren Grenzen einer neuen Änderung sind vor ihrer Umsetzung zu prüfen.",
+      "after": "Die äußere Luftstromveränderung ist als kontrollierte positive Versuchsklasse bereits festgelegt. Für eine Prüfung ihrer Wiederholbarkeit sind weitere vollständige unabhängige Normal–Änderung–Normal-Folgen mit derselben Platte und Geometrie zweckmäßig. Sie würden die vorhandene Folge ergänzen, ohne den Zustand nachträglich umzubenennen oder Schwellen zu ändern. Ein tatsächlicher Defekt muss dafür nicht erzeugt werden. Die Änderung erfolgt ausschließlich bei getrennter externer Versorgung und bestätigtem Stillstand; Sensor und Lüfteraufstellung bleiben unverändert. An einem laufenden Rotor wird nicht gearbeitet."
+    },
+    {
+      "kind": "paragraph",
+      "before": "Die unabhängigen Normaltests umfassen drei separate Starts bei 75 % PWM. Der kontrolliert veränderte Testzustand wird in einer vollständigen Folge Normal → Platte → Normal bei gleicher PWM untersucht. Ein weiterer Versuch verwendet drei normale Starts bei 50 % PWM mit unverändertem Paket. Die Modelle bewerten durchgehend dieselbe Art von 128er-Fenstern im zuvor festgelegten Abschnitt [180,300). Hohe Fehlalarmraten werden als Ergebnisse erhalten. Die Abschnittsauswahl, Skalierung und Schwellen werden nach Sichtung der Testdaten nicht geändert.",
+      "after": "Die erste unabhängige Normaltestserie umfasst drei separate Starts bei 75 % PWM. Der kontrolliert veränderte Testzustand wird in einer vollständigen Folge Normal → Platte → Normal bei gleicher PWM untersucht. Ein weiterer Versuch verwendet drei normale Starts bei 50 % PWM mit unverändertem Paket. Die Modelle bewerten durchgehend dieselbe Art von 128er-Fenstern im zuvor festgelegten Abschnitt [180,300). Hohe Fehlalarmraten werden als Ergebnisse erhalten. Die Abschnittsauswahl, Skalierung und Schwellen werden nach Sichtung der Testdaten nicht geändert."
+    },
+    {
+      "kind": "table_cell",
+      "before": "Lüfterprüfstand; Isolation Forest mit Normaltraining",
+      "after": "Unterwasserpumpe als Zielanwendung; Evaluation am gefederten Lüfterprüfstand; Isolation Forest mit Normaltraining"
+    },
+    {
+      "kind": "requirement_row",
+      "before": [
+        "A9",
+        "Teilweise nachgewiesen",
+        "Fehlalarme je Normalaufnahme sowie Verwechslungszahlen und deskriptive Kennzahlen der kontrollierten Änderung; keine belastbare allgemeine Defektleistung."
+      ],
+      "after": [
+        "A9",
+        "Im Pilotumfang ausgewertet",
+        "Kennzahlen derselben Zustandsfolge und Verwechslungszahlen je Aufnahme berechnet (Anhang). Geringe Erkennung ist ein gültiges Ergebnis. Nur eine veränderte Aufnahme; Wiederholungsnachweis unter A11 offen."
+      ]
+    },
+    {
+      "kind": "requirement_row",
+      "before": [
+        "A11",
+        "Teilweise nachgewiesen",
+        "Aufbauversionen und Schritte dokumentiert; unabhängige Normalstarts vorhanden, aber nur eine abgeschlossene unabhängige Plattenfolge und keine vollständige Rückkehr zum vorigen Mittelwert."
+      ],
+      "after": [
+        "A11",
+        "Teilweise nachgewiesen",
+        "Aufbau und Protokoll dokumentiert; Normalstarts wiederholt, eine unabhängige Plattenfolge abgeschlossen. Wiederholungen der veränderten Bedingung fehlen. Ein anderer Rückkehrmittelwert allein belegt keine mechanisch misslungene Rücksetzung."
+      ]
+    }
+  ],
+  "added_table": "Tabelle A-4",
+  "existing_frozen_results_unchanged": true,
+  "original_document_backup": "/home/malik/masterarbeit-edge-ai/docs/backups/Akz_Masterarbeit_Bericht(3)_vor_fachreview_20260912_131657.docx",
+  "new_table_count": 35,
+  "scope": "Fachliche Konsistenzprüfung; keine persönliche Autoren- oder Betreuerfreigabe"
+}

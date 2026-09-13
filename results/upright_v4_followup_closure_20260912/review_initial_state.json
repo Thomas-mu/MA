@@ -1,0 +1,16 @@
+{
+  "utc": "2026-09-12T13:16:57.317953+00:00",
+  "word_input": "/home/malik/masterarbeit-edge-ai/docs/Akz_Masterarbeit_Bericht(3).docx",
+  "backup": "/home/malik/masterarbeit-edge-ai/docs/backups/Akz_Masterarbeit_Bericht(3)_vor_fachreview_20260912_131657.docx",
+  "word_sha256": "fc92abeb7893f391f3df6b10dea06921dd76425bc3645e9c8da6b4eb8b8b8d8d",
+  "frozen_bundle": "results/upright_v4_training_pilot_20260911_130614/run_001/frozen/pilot_bundle.json",
+  "hardware_action": "none; sysfs readback only",
+  "pwm_readback": {
+    "period": "40000",
+    "duty_cycle": "0",
+    "enable": "1",
+    "polarity": "normal"
+  },
+  "independent_instrument_devices_detected": [],
+  "clocksource": "arch_sys_counter"
+}

@@ -1,0 +1,12 @@
+[
+  {
+    "prefix": "Garay et al. (2026) vergleichen vier Algorithmen",
+    "replacement": "Garay et al. (2026) vergleichen vier Algorithmen in fünf Varianten, darunter Isolation Forest und einen Autoencoder, auf einem Cortex-M4F. Nach einer Sensorneumontage treten mehr Fehlalarme auf; gleichzeitig verändert sich die Umgebungstemperatur. Für die Einordnung in dieser Arbeit wird die Fehlalarmänderung deshalb nicht als isolierter Montageeffekt behandelt. Die Autoren untersuchen außerdem eine Nachkalibrierung von Skalierung und Schwelle. Beim Isolation Forest stammen die Erkennungskennzahlen vom Modell mit 100 Bäumen, die Mikrocontrollerwerte von einer Variante mit sechs Bäumen. Beide Größen beschreiben somit unterschiedliche Modellstände.",
+    "reason": "Mark causal-isolation statement as the manuscript’s own critical interpretation of verified original study."
+  },
+  {
+    "prefix": "Lessmeier, C., Kimotho, J. K., Zimmer, D., & Sextro, W. (2016).",
+    "replacement": "Lessmeier, C., Kimotho, J. K., Zimmer, D., & Sextro, W. (2016). Condition Monitoring of Bearing Damage in Electromechanical Drive Systems by Using Motor Current Signals of Electric Motors: A Benchmark Data Set for Data-Driven Classification. PHM Society European Conference, 3(1). https://doi.org/10.36001/phme.2016.v3i1.1577. https://mb.uni-paderborn.de/fileadmin-mb/kat/PDF/Veroeffentlichungen/20160703_PHME16_CM_bearing.pdf (Abruf: 12.09.2026.)",
+    "reason": "Add publisher-verified volume/issue and DOI; preserve historical URL and access date."
+  }
+]
