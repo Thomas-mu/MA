@@ -1,0 +1,15 @@
+{
+  "kind": "real_headless_browser_screenshot_of_local_evidence_report",
+  "report": "evidence_report.html",
+  "report_sha256": "c65002fe3498ef70e86f4e928365a4365c27fd42f43b3a354fa958de5f569396",
+  "screenshot": "assets/evidence_report_screenshot.png",
+  "sha256": "9c5f203350ffef2e652944e1121c6e8bc29020ac704f5b60377188ce1b7626c9",
+  "viewport": [
+    1600,
+    1100
+  ],
+  "desktop_captured": false,
+  "live_gui_captured": false,
+  "physical_setup_photographed": false,
+  "captured_utc": "2026-09-19T10:32:33.055612+00:00"
+}

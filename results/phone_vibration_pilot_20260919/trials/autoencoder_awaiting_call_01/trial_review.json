@@ -1,0 +1,8 @@
+{
+  "review_status": "repeat_requested_possible_early_call",
+  "user_statement": "starte es neu weil ich vielleicht früher angerufen habe",
+  "raw_data_preserved": true,
+  "include_in_detection_speed_comparison": false,
+  "reason": "Alarme bereits vor Chat-Zeitmarke; Nutzer meldet möglicherweise früheren Anruf. Physischer Vibrationsbeginn weiterhin unbekannt.",
+  "replacement_run": "autoencoder_awaiting_call_02"
+}

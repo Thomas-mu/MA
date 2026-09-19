@@ -1,0 +1,140 @@
+{
+  "autoencoder": {
+    "windows": 184,
+    "invalid_windows": 0,
+    "alarm_windows": 11,
+    "processing_median_ms": 0.4590275,
+    "processing_p95_ms": 0.5848862499999999,
+    "sampled_peak_rss_mib": 48.796875,
+    "true_detection_delay_ms": null,
+    "detection_rate": null,
+    "false_alarm_rate": null,
+    "reason": "Kein unabhängig gemessener physischer Störungsbeginn/-ende vorhanden.",
+    "call_requests": 1,
+    "one_call_request": true,
+    "purpose": "exploratory_phone_pilot",
+    "phases": {
+      "pre_cue": {
+        "windows": 83,
+        "alarm_windows": 0
+      },
+      "between_cues": {
+        "windows": 52,
+        "alarm_windows": 11
+      },
+      "post_cue": {
+        "windows": 47,
+        "alarm_windows": 0
+      },
+      "straddling": {
+        "windows": 2,
+        "alarm_windows": 0
+      }
+    },
+    "median_process_cpu_percent_one_core": 9.71769804581433,
+    "cpu_frequency_khz_range": [
+      1500000.0,
+      2400000.0
+    ],
+    "temperature_c_range": [
+      55.1,
+      60.6
+    ],
+    "complete_span_s": 113.633504096,
+    "cue_start_s": 51.648510062,
+    "cue_end_s": 84.525370528,
+    "source_run": "autoencoder_awaiting_call_03"
+  },
+  "isolation_forest": {
+    "windows": 196,
+    "invalid_windows": 0,
+    "alarm_windows": 6,
+    "processing_median_ms": 23.428910000000002,
+    "processing_p95_ms": 32.060565499999996,
+    "sampled_peak_rss_mib": 167.109375,
+    "true_detection_delay_ms": null,
+    "detection_rate": null,
+    "false_alarm_rate": null,
+    "reason": "Kein unabhängig gemessener physischer Störungsbeginn/-ende vorhanden.",
+    "call_requests": 1,
+    "one_call_request": true,
+    "purpose": "exploratory_phone_pilot",
+    "phases": {
+      "pre_cue": {
+        "windows": 76,
+        "alarm_windows": 0
+      },
+      "between_cues": {
+        "windows": 59,
+        "alarm_windows": 6
+      },
+      "post_cue": {
+        "windows": 59,
+        "alarm_windows": 0
+      },
+      "straddling": {
+        "windows": 2,
+        "alarm_windows": 0
+      }
+    },
+    "median_process_cpu_percent_one_core": 12.975807387049269,
+    "cpu_frequency_khz_range": [
+      1500000.0,
+      2400000.0
+    ],
+    "temperature_c_range": [
+      52.35,
+      61.15
+    ],
+    "complete_span_s": 121.051369209,
+    "cue_start_s": 47.492907006,
+    "cue_end_s": 84.314888855,
+    "source_run": "isolation_forest_awaiting_call_02"
+  },
+  "rms": {
+    "windows": 234,
+    "invalid_windows": 0,
+    "alarm_windows": 6,
+    "processing_median_ms": 0.284862,
+    "processing_p95_ms": 0.35245555,
+    "sampled_peak_rss_mib": 39.3125,
+    "true_detection_delay_ms": null,
+    "detection_rate": null,
+    "false_alarm_rate": null,
+    "reason": "Kein unabhängig gemessener physischer Störungsbeginn/-ende vorhanden.",
+    "call_requests": 1,
+    "one_call_request": true,
+    "purpose": "exploratory_phone_pilot",
+    "phases": {
+      "pre_cue": {
+        "windows": 83,
+        "alarm_windows": 0
+      },
+      "between_cues": {
+        "windows": 109,
+        "alarm_windows": 6
+      },
+      "post_cue": {
+        "windows": 40,
+        "alarm_windows": 0
+      },
+      "straddling": {
+        "windows": 2,
+        "alarm_windows": 0
+      }
+    },
+    "median_process_cpu_percent_one_core": 9.69168492676043,
+    "cpu_frequency_khz_range": [
+      1500000.0,
+      2400000.0
+    ],
+    "temperature_c_range": [
+      51.8,
+      60.05
+    ],
+    "complete_span_s": 144.521097659,
+    "cue_start_s": 51.304096684,
+    "cue_end_s": 119.240889715,
+    "source_run": "rms_awaiting_call_01"
+  }
+}

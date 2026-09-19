@@ -1,0 +1,51 @@
+{
+  "created_utc": "2026-09-19T10:11:40.356384+00:00",
+  "status": "awaiting_final_phone_setup",
+  "pwm_percent": 75.0,
+  "methods": [
+    "rms",
+    "isolation_forest",
+    "tflite_autoencoder"
+  ],
+  "events_per_method": 1,
+  "normal_lead_in_seconds": 30,
+  "suggested_vibration_seconds": 5,
+  "minimum_rest_seconds": 15,
+  "bundle_sha256": "dbfad8529b642d1e4c74119b3865b0600c3a7668198328e1112707c7502b2eb1",
+  "thresholds": {
+    "rms": {
+      "value": 1.296361072562011,
+      "source": "P99_NORMAL_VALIDATION",
+      "percentile": 99
+    },
+    "isolation_forest": {
+      "value": 0.4833547401595273,
+      "source": "P99_NORMAL_VALIDATION",
+      "percentile": 99
+    },
+    "tflite_autoencoder": {
+      "value": 0.47720259914362284,
+      "source": "PROFILE/P99_FROZEN_KERAS_CALIBRATION",
+      "percentile": 99
+    }
+  },
+  "sampling_rate_hz": 200,
+  "window_size": 128,
+  "ground_truth": "Call cues only; actual physical onset/end not measured.",
+  "evidence_scope": "pilot_only_until_final_setup_calibration_and_independent_onset_reference",
+  "setup_confirmed": false,
+  "phone_description": null,
+  "limitations": [
+    "Validierung ist Schwellenkalibrierung, keine unabhängige Testgüte.",
+    "Profil-AE verwendete dieselbe Normalvalidierung auch für Trainingsüberwachung/Early Stopping; kein dritter Kalibrierungssplit.",
+    "Software-Zeitstempel belegen keine Sensor-ODR oder neue Messwerte.",
+    "Zweites separat trainiertes Profil ist kein Betriebspunktwechsel mit eingefrorenem Modell."
+  ],
+  "operator_tasks": [
+    "record cues",
+    "capture raw data",
+    "single-method resources",
+    "export figures",
+    "archive provenance and failures"
+  ]
+}

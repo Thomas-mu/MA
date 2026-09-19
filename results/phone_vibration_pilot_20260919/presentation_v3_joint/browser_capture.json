@@ -1,0 +1,22 @@
+{
+  "captured_utc": "2026-09-19T11:46:07.533581+00:00",
+  "type": "actual_browser_screenshot_of_saved_report",
+  "live_gui": false,
+  "physical_setup_photo": false,
+  "command": [
+    "chromium",
+    "--headless",
+    "--no-sandbox",
+    "--disable-gpu",
+    "--disable-background-networking",
+    "--no-first-run",
+    "--user-data-dir=/tmp/joint-pilot-report-uhhazzsw",
+    "--hide-scrollbars",
+    "--window-size=1600,1080",
+    "--virtual-time-budget=1500",
+    "--screenshot=/home/malik/masterarbeit-edge-ai/results/phone_vibration_pilot_20260919/presentation_v3_joint/joint_report_screenshot.png",
+    "file:///home/malik/masterarbeit-edge-ai/results/phone_vibration_pilot_20260919/presentation_v3_joint/joint_report.html"
+  ],
+  "html_sha256": "ac040941dedef24c8fdcfb1fdc5b48f80554b8b20c2396ac476ce19a0792a8ca",
+  "screenshot_sha256": "78987f9423e54ace6efcb1e7d4782f557b57eb522c33dc8f3a3b232fe7df0832"
+}

@@ -1,0 +1,133 @@
+{
+  "shared_windows": 197,
+  "shared_input_verified": true,
+  "methods": {
+    "tflite_autoencoder": {
+      "windows": 197,
+      "invalid_windows": 0,
+      "alarm_windows": 11,
+      "first_alarm_window_between_cues": 108,
+      "phases": {
+        "pre_cue": {
+          "valid_windows": 77,
+          "alarm_windows": 0
+        },
+        "between_cues": {
+          "valid_windows": 79,
+          "alarm_windows": 11
+        },
+        "post_cue": {
+          "valid_windows": 39,
+          "alarm_windows": 0
+        },
+        "straddling": {
+          "valid_windows": 2,
+          "alarm_windows": 0
+        }
+      },
+      "first_alarm_window_rank": 1,
+      "processing_median_ms": 2.039719,
+      "processing_p95_ms": 5.571111599999998,
+      "first_alarm_decision_ns": 10203502017899,
+      "first_alarm_output_rank": 1,
+      "first_alarm_output_after_earliest_ms": 0.0
+    },
+    "isolation_forest": {
+      "windows": 197,
+      "invalid_windows": 0,
+      "alarm_windows": 7,
+      "first_alarm_window_between_cues": 108,
+      "phases": {
+        "pre_cue": {
+          "valid_windows": 77,
+          "alarm_windows": 0
+        },
+        "between_cues": {
+          "valid_windows": 79,
+          "alarm_windows": 7
+        },
+        "post_cue": {
+          "valid_windows": 39,
+          "alarm_windows": 0
+        },
+        "straddling": {
+          "valid_windows": 2,
+          "alarm_windows": 0
+        }
+      },
+      "first_alarm_window_rank": 1,
+      "processing_median_ms": 23.237494,
+      "processing_p95_ms": 31.52713959999998,
+      "first_alarm_decision_ns": 10203521079006,
+      "first_alarm_output_rank": 2,
+      "first_alarm_output_after_earliest_ms": 19.061107
+    },
+    "rms": {
+      "windows": 197,
+      "invalid_windows": 0,
+      "alarm_windows": 6,
+      "first_alarm_window_between_cues": 109,
+      "phases": {
+        "pre_cue": {
+          "valid_windows": 77,
+          "alarm_windows": 0
+        },
+        "between_cues": {
+          "valid_windows": 79,
+          "alarm_windows": 6
+        },
+        "post_cue": {
+          "valid_windows": 39,
+          "alarm_windows": 0
+        },
+        "straddling": {
+          "valid_windows": 2,
+          "alarm_windows": 0
+        }
+      },
+      "first_alarm_window_rank": 2,
+      "processing_median_ms": 0.264203,
+      "processing_p95_ms": 0.3169298,
+      "first_alarm_decision_ns": 10204117676676,
+      "first_alarm_output_rank": 3,
+      "first_alarm_output_after_earliest_ms": 615.658777
+    }
+  },
+  "true_detection_delay_ms": null,
+  "reason": "No independent physical onset reference",
+  "source_run": "/home/malik/masterarbeit-edge-ai/results/phone_vibration_pilot_20260919/joint_trials/all_methods_01",
+  "resource_scope": "combined_process_all_methods",
+  "verification": {
+    "reproduced_decisions": 591,
+    "maximum_score_difference": 0.0,
+    "raw_hashes_verified": 197
+  },
+  "acquisition": {
+    "samples_captured": 25270,
+    "windows_formed": 197,
+    "windows_dropped": 0,
+    "samples_in_dropped_windows": 0,
+    "gap_events": 0,
+    "overrun_events": 0,
+    "saturated_samples": 0,
+    "queue_high_watermark": 1,
+    "partial_samples_saved": 54,
+    "first_sample_host_monotonic_ns": 10136816784484,
+    "last_sample_host_monotonic_ns": 10258713659780,
+    "queue_capacity_windows": 4,
+    "queue_pending_windows": 0,
+    "drop_policy": "drop_newest",
+    "acquisition_error": null
+  },
+  "cue_start_s": 48.018727013,
+  "cue_end_s": 97.322138982,
+  "resources": {
+    "cpu_median_percent_one_core": 13.044146837208924,
+    "max_sampled_rss_mib": 174.421875,
+    "batch_median_ms": 24.308234,
+    "cpu_frequency_khz_range": [
+      1500000.0,
+      2400000.0
+    ]
+  }
+}

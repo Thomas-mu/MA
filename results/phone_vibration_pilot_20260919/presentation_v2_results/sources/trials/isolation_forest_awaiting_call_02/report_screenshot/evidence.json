@@ -1,0 +1,28 @@
+{
+  "captured_utc": "2026-09-19T10:39:20.132612+00:00",
+  "type": "actual_browser_screenshot_of_saved_report",
+  "not_live_gui": true,
+  "source_run": "/home/malik/masterarbeit-edge-ai/results/phone_vibration_pilot_20260919/trials/isolation_forest_awaiting_call_02",
+  "command": [
+    "chromium",
+    "--headless",
+    "--no-sandbox",
+    "--disable-gpu",
+    "--disable-background-networking",
+    "--no-first-run",
+    "--user-data-dir=/tmp/phone-report-browser-ofzym2t0",
+    "--hide-scrollbars",
+    "--window-size=1440,1080",
+    "--virtual-time-budget=1000",
+    "--screenshot=/home/malik/masterarbeit-edge-ai/results/phone_vibration_pilot_20260919/trials/isolation_forest_awaiting_call_02/report_screenshot/report.png",
+    "file:///home/malik/masterarbeit-edge-ai/results/phone_vibration_pilot_20260919/trials/isolation_forest_awaiting_call_02/report_screenshot/report.html"
+  ],
+  "source_hashes": {
+    "/home/malik/masterarbeit-edge-ai/results/phone_vibration_pilot_20260919/trials/isolation_forest_awaiting_call_02/run.json": "ae042c398c874fd7e729eff20ad7d55fd3695e46437b7331200483d50df9ee49",
+    "/home/malik/masterarbeit-edge-ai/results/phone_vibration_pilot_20260919/trials/isolation_forest_awaiting_call_02/decisions.csv": "7c5ca79511335fbb8d369967894654adaaa387155cf3fb1d5ce1a5c1773a4976",
+    "/home/malik/masterarbeit-edge-ai/results/phone_vibration_pilot_20260919/trials/isolation_forest_awaiting_call_02/cues.jsonl": "7bfd0281fb027c9c73a6955d47e07c5b67a324519e9d74c4bd5baec3809d713b",
+    "/home/malik/masterarbeit-edge-ai/results/phone_vibration_pilot_20260919/trials/isolation_forest_awaiting_call_02/figures/overview.png": "242eb34c50793d6160fad8f3241a025f24df053b23237741e607b966a4662ecd",
+    "/home/malik/masterarbeit-edge-ai/results/phone_vibration_pilot_20260919/trials/isolation_forest_awaiting_call_02/report_screenshot/report.html": "5c107e67d1ebbebf9fbef48bab59d27737e91f3b00b13a345c1127c30706ad54"
+  },
+  "screenshot_sha256": "d1f99339f0735f30f081b7ccd6d46092c1089aa45542d476048ed5fbd508f449"
+}

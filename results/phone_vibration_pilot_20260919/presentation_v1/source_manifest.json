@@ -1,0 +1,187 @@
+{
+  "created_utc": "2026-09-19T10:32:30.044491+00:00",
+  "scope": "completed_technical_checks_only_no_phone_trials",
+  "script_sha256": "01b8b95e03f1a8f94e4553e4dc547cef3bdf0e3669ead589978e6334b16337ea",
+  "sources": [
+    {
+      "original": "/home/malik/masterarbeit-edge-ai/results/phone_vibration_pilot_20260919/plan.json",
+      "snapshot": "sources/plan.json",
+      "sha256": "aa4f1d513fc02c400c3c0fe1da8ef81f589b0e25bc3fd0e946ec0b8648ac9b95",
+      "size_bytes": 1681
+    },
+    {
+      "original": "/home/malik/masterarbeit-edge-ai/results/phone_vibration_pilot_20260919/protocol.md",
+      "snapshot": "sources/protocol.md",
+      "sha256": "4157658ed15f62cee7cfb8b67123b7b92f00b5419070b760cdbf6d95368e6415",
+      "size_bytes": 2789
+    },
+    {
+      "original": "/home/malik/masterarbeit-edge-ai/results/phone_vibration_pilot_20260919/bundle/bundle.json",
+      "snapshot": "sources/bundle/bundle.json",
+      "sha256": "dbfad8529b642d1e4c74119b3865b0600c3a7668198328e1112707c7502b2eb1",
+      "size_bytes": 14393
+    },
+    {
+      "original": "/home/malik/masterarbeit-edge-ai/results/phone_vibration_pilot_20260919/technical_checks/autoencoder/run.json",
+      "snapshot": "sources/technical_checks/autoencoder/run.json",
+      "sha256": "664efb103a81b3b58bf8762597fda203fd6cc48a61925eef4b4df16862d521be",
+      "size_bytes": 4379
+    },
+    {
+      "original": "/home/malik/masterarbeit-edge-ai/results/phone_vibration_pilot_20260919/technical_checks/autoencoder/summary.json",
+      "snapshot": "sources/technical_checks/autoencoder/summary.json",
+      "sha256": "9d2d1ac0f5ed49b2d72cd4797925c54e6862370404bd9708b55f969166521a88",
+      "size_bytes": 452
+    },
+    {
+      "original": "/home/malik/masterarbeit-edge-ai/results/phone_vibration_pilot_20260919/technical_checks/autoencoder/raw.csv",
+      "snapshot": "sources/technical_checks/autoencoder/raw.csv",
+      "sha256": "a74661f06d43e6da7049cf546ae9055a254edd89f1786a458e674e3c26ccdbf7",
+      "size_bytes": 71428
+    },
+    {
+      "original": "/home/malik/masterarbeit-edge-ai/results/phone_vibration_pilot_20260919/technical_checks/autoencoder/decisions.csv",
+      "snapshot": "sources/technical_checks/autoencoder/decisions.csv",
+      "sha256": "a69d90e90e0898b9b6eebf37eed6ef05e2ea43e926cd4e8abb6ff6ffb96cbeaa",
+      "size_bytes": 950
+    },
+    {
+      "original": "/home/malik/masterarbeit-edge-ai/results/phone_vibration_pilot_20260919/technical_checks/autoencoder/cues.jsonl",
+      "snapshot": "sources/technical_checks/autoencoder/cues.jsonl",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size_bytes": 0
+    },
+    {
+      "original": "/home/malik/masterarbeit-edge-ai/results/phone_vibration_pilot_20260919/technical_checks/autoencoder/started.json",
+      "snapshot": "sources/technical_checks/autoencoder/started.json",
+      "sha256": "0b169eeb31e113b253eed2403c4032ffc6fc427326ac2f0a0719ab9c8e3bb677",
+      "size_bytes": 3244
+    },
+    {
+      "original": "/home/malik/masterarbeit-edge-ai/results/phone_vibration_pilot_20260919/technical_checks/autoencoder/raw.events.jsonl",
+      "snapshot": "sources/technical_checks/autoencoder/raw.events.jsonl",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size_bytes": 0
+    },
+    {
+      "original": "/home/malik/masterarbeit-edge-ai/results/phone_vibration_pilot_20260919/technical_checks/autoencoder/report.md",
+      "snapshot": "sources/technical_checks/autoencoder/report.md",
+      "sha256": "f5c202b8d70dd1014389655a9cde470c1cf2d0885f5c9974defff61cc2d720bb",
+      "size_bytes": 825
+    },
+    {
+      "original": "/home/malik/masterarbeit-edge-ai/results/phone_vibration_pilot_20260919/technical_checks/isolation_forest/run.json",
+      "snapshot": "sources/technical_checks/isolation_forest/run.json",
+      "sha256": "1ae4b762855269eac5f29613e62a15a08b0a49e4e324089c3357bffc939c79c3",
+      "size_bytes": 4499
+    },
+    {
+      "original": "/home/malik/masterarbeit-edge-ai/results/phone_vibration_pilot_20260919/technical_checks/isolation_forest/summary.json",
+      "snapshot": "sources/technical_checks/isolation_forest/summary.json",
+      "sha256": "861dc035301418afa4b41fc6087d61f25c5b8ea366ea8a0f736c851f4f2092d8",
+      "size_bytes": 435
+    },
+    {
+      "original": "/home/malik/masterarbeit-edge-ai/results/phone_vibration_pilot_20260919/technical_checks/isolation_forest/raw.csv",
+      "snapshot": "sources/technical_checks/isolation_forest/raw.csv",
+      "sha256": "5f095cf224dc8ce232e467be38c26d13a8691e8239881a546a0f0b141a1b4353",
+      "size_bytes": 71827
+    },
+    {
+      "original": "/home/malik/masterarbeit-edge-ai/results/phone_vibration_pilot_20260919/technical_checks/isolation_forest/decisions.csv",
+      "snapshot": "sources/technical_checks/isolation_forest/decisions.csv",
+      "sha256": "1b1f8a34a8e5dcc9b0286e9d4546d25ae1e6a4a150aac811113afbec4952f945",
+      "size_bytes": 961
+    },
+    {
+      "original": "/home/malik/masterarbeit-edge-ai/results/phone_vibration_pilot_20260919/technical_checks/isolation_forest/cues.jsonl",
+      "snapshot": "sources/technical_checks/isolation_forest/cues.jsonl",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size_bytes": 0
+    },
+    {
+      "original": "/home/malik/masterarbeit-edge-ai/results/phone_vibration_pilot_20260919/technical_checks/isolation_forest/started.json",
+      "snapshot": "sources/technical_checks/isolation_forest/started.json",
+      "sha256": "0d231a75713e02e938b99e7999844a28d4e98a5d7752fe24885ba8a45172f5a4",
+      "size_bytes": 3271
+    },
+    {
+      "original": "/home/malik/masterarbeit-edge-ai/results/phone_vibration_pilot_20260919/technical_checks/isolation_forest/raw.events.jsonl",
+      "snapshot": "sources/technical_checks/isolation_forest/raw.events.jsonl",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size_bytes": 0
+    },
+    {
+      "original": "/home/malik/masterarbeit-edge-ai/results/phone_vibration_pilot_20260919/technical_checks/isolation_forest/report.md",
+      "snapshot": "sources/technical_checks/isolation_forest/report.md",
+      "sha256": "ee719ab3a45f177b2586ed9faf73ae613e81841f5819013b4f156fb7170d948f",
+      "size_bytes": 806
+    },
+    {
+      "original": "/home/malik/masterarbeit-edge-ai/results/phone_vibration_pilot_20260919/technical_checks/isolation_forest/capture_source.py",
+      "snapshot": "sources/technical_checks/isolation_forest/capture_source.py",
+      "sha256": "7d8caa3d9799172d8a28b46d881f7fb3b7538343e98d5d3327ac83c79f5d2a5e",
+      "size_bytes": 18390
+    },
+    {
+      "original": "/home/malik/masterarbeit-edge-ai/results/phone_vibration_pilot_20260919/technical_checks/rms/run.json",
+      "snapshot": "sources/technical_checks/rms/run.json",
+      "sha256": "1dfae8e8a6fcf2e37304e6db171c1a71ed6904bc6712fdda083d29490a873c91",
+      "size_bytes": 4445
+    },
+    {
+      "original": "/home/malik/masterarbeit-edge-ai/results/phone_vibration_pilot_20260919/technical_checks/rms/summary.json",
+      "snapshot": "sources/technical_checks/rms/summary.json",
+      "sha256": "24059d7c7acc9891983c13d6cce2a3fd585df127513a8c523e65638f95f2eee1",
+      "size_bytes": 442
+    },
+    {
+      "original": "/home/malik/masterarbeit-edge-ai/results/phone_vibration_pilot_20260919/technical_checks/rms/raw.csv",
+      "snapshot": "sources/technical_checks/rms/raw.csv",
+      "sha256": "423337b7034cd60d01aaeea6e8a5fdf424b11cd93c0cdf21bfa0c410878336fb",
+      "size_bytes": 71755
+    },
+    {
+      "original": "/home/malik/masterarbeit-edge-ai/results/phone_vibration_pilot_20260919/technical_checks/rms/decisions.csv",
+      "snapshot": "sources/technical_checks/rms/decisions.csv",
+      "sha256": "a77b365df8423e23a70872094ea5bb6c57d6d0e08e9eca31074fd04663f12df9",
+      "size_bytes": 939
+    },
+    {
+      "original": "/home/malik/masterarbeit-edge-ai/results/phone_vibration_pilot_20260919/technical_checks/rms/cues.jsonl",
+      "snapshot": "sources/technical_checks/rms/cues.jsonl",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size_bytes": 0
+    },
+    {
+      "original": "/home/malik/masterarbeit-edge-ai/results/phone_vibration_pilot_20260919/technical_checks/rms/started.json",
+      "snapshot": "sources/technical_checks/rms/started.json",
+      "sha256": "6ac0050cad8716ed4f7329406c74433523bd088c191312621f11bdbbb386415c",
+      "size_bytes": 3217
+    },
+    {
+      "original": "/home/malik/masterarbeit-edge-ai/results/phone_vibration_pilot_20260919/technical_checks/rms/raw.events.jsonl",
+      "snapshot": "sources/technical_checks/rms/raw.events.jsonl",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size_bytes": 0
+    },
+    {
+      "original": "/home/malik/masterarbeit-edge-ai/results/phone_vibration_pilot_20260919/technical_checks/rms/report.md",
+      "snapshot": "sources/technical_checks/rms/report.md",
+      "sha256": "be2af2cf6afccb4a4588e26db4e3a2046455619b34d9aec9d87f1183050442aa",
+      "size_bytes": 800
+    },
+    {
+      "original": "/home/malik/masterarbeit-edge-ai/results/phone_vibration_pilot_20260919/technical_checks/rms/capture_source.py",
+      "snapshot": "sources/technical_checks/rms/capture_source.py",
+      "sha256": "7d8caa3d9799172d8a28b46d881f7fb3b7538343e98d5d3327ac83c79f5d2a5e",
+      "size_bytes": 18390
+    },
+    {
+      "original": "/home/malik/masterarbeit-edge-ai/src/build_phone_presentation.py",
+      "snapshot": "sources/build_phone_presentation.py",
+      "sha256": "01b8b95e03f1a8f94e4553e4dc547cef3bdf0e3669ead589978e6334b16337ea",
+      "size_bytes": 39787
+    }
+  ]
+}

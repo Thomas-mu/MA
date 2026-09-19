@@ -1,0 +1,13 @@
+<!doctype html><html lang="de"><meta charset="utf-8"><title>Gemeinsamer Live-Anruf – gespeicherter Bericht</title>
+<style>*{box-sizing:border-box}body{margin:0;padding:30px 42px;background:#F5F8FA;color:#142D42;font:18px "DejaVu Sans",sans-serif}
+h1{font-size:33px;margin:10px 0}h2{font-size:23px}small{color:#587084}.grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:22px}
+.card{background:white;padding:22px;border-radius:12px}table{border-collapse:collapse;width:100%}td,th{text-align:left;padding:10px;border-bottom:1px solid #dae2ea}
+p{line-height:1.45}.figure{background:white;margin-top:24px;border-radius:12px;padding:12px 20px}img{width:100%}.note{color:#87500F;font-size:17px}
+footer{margin-top:17px;font-size:13px;color:#587084}</style>
+<small>RASPBERRY PI 5 · GEMEINSAMER LIVE-VERSUCH · GESPEICHERTE AUSWERTUNG</small>
+<h1>Gleiche Sensordaten: Autoencoder, Isolation Forest und RMS</h1>
+<div class="grid"><div class="card"><h2>Ein Anruf, 197 gemeinsame Fenster</h2><table><tr><th>Methode</th><th>Erster Alarm</th><th>Alarmfenster</th></tr><tr><td>Autoencoder</td><td>108</td><td>11</td></tr><tr><td>Isolation Forest</td><td>108</td><td>7</td></tr><tr><td>RMS</td><td>109</td><td>6</td></tr></table><p>591 gültige Entscheidungen · 0 verworfene Fenster<br>Gleiche Rohwerte und Fenstergrenzen nachgeprüft.</p></div>
+<div class="card"><h2>Fenstererkennung ≠ Ausgabezeit</h2><p>AE und IF: erstes Alarmfenster 108.<br>RMS: erstes Alarmfenster 109.</p>
+<p>AE-Ausgabe rund 19 ms vor IF.<br>RMS-Ausgabe rund 616 ms nach AE.</p><p class="note">Relative Ausgabeabstände dieses Laufs, keine gemessene Verzögerung ab physischem Vibrationsbeginn.</p></div></div>
+<div class="figure"><img src="assets/joint_alarm_order.png" alt="Fensterrang und Rang der ersten Alarmentscheidung"></div>
+<footer>Echter Browserbericht nach Messende · keine Live-GUI · kein Foto des Aufbaus · PWM 75 % · Original: joint_trials/all_methods_01</footer></html>

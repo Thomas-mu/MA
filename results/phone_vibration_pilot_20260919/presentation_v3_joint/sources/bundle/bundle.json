@@ -1,0 +1,376 @@
+{
+  "schema_version": 1,
+  "profile_name": "standlauf_pwm75_200hz",
+  "source_profile_path": "/home/malik/masterarbeit-edge-ai/profiles/standlauf_pwm75_200hz/profile.json",
+  "provenance": {
+    "created_at_utc": "2026-09-18T16:29:01.252066+00:00",
+    "command": [
+      "src/common_comparison.py",
+      "calibrate",
+      "--profile",
+      "profiles/standlauf_pwm75_200hz/profile.json",
+      "--output",
+      "profiles/standlauf_pwm75_200hz/comparison_bundle",
+      "--runtime",
+      "litert",
+      "--threads",
+      "1"
+    ],
+    "working_directory": "/home/malik/masterarbeit-edge-ai",
+    "code_commit": "72f0bb7d53b44365772dacd497284852faf32e84",
+    "git_status_porcelain": "?? profiles/standlauf_pwm75_200hz/\n?? results/airflow_pwm100_sequence_20260918_173731/\n?? results/live_gui_pwm100_20260918_173301/\n?? results/live_runs/\n?? results/manual_fan_75_20260918_161633_959871.jsonl",
+    "implementation_sha256": "479a3de9263842574ab2c69fca5adaeac8b5418e13bb383bfae3e026ed98d2ca",
+    "python": "3.13.5 (main, Jun 13 2026, 14:18:01) [GCC 14.2.0]",
+    "python_executable": "/home/malik/masterarbeit-edge-ai/.venv/bin/python",
+    "platform": "Linux-6.18.34+rpt-rpi-2712-aarch64-with-glibc2.41",
+    "hostname": "edgepi",
+    "device_model": "Raspberry Pi 5 Model B Rev 1.0",
+    "logical_cpu_count": 4,
+    "packages": {
+      "numpy": "2.5.1",
+      "scikit-learn": "1.9.0",
+      "joblib": "1.5.3",
+      "psutil": "7.2.2",
+      "tensorflow": "2.21.0",
+      "ai-edge-litert": "2.1.6",
+      "tflite-runtime": null
+    }
+  },
+  "window_size": 128,
+  "step_size": 128,
+  "axes": [
+    "x_g",
+    "y_g",
+    "z_g"
+  ],
+  "sampling_rate_hz": 200,
+  "measurement_chain_status": "unverified_legacy",
+  "sensor": {
+    "model": "ADXL345",
+    "axes": [
+      "x_g",
+      "y_g",
+      "z_g"
+    ],
+    "access_module": "src/adxl345.py",
+    "connect_function": "connect",
+    "read_function": "read_fresh_sample",
+    "requested_odr_hz": 200,
+    "requested_range_g": 2,
+    "internal_odr_note": "ODR/range/full-resolution/FIFO are explicitly configured and read back; each row is a fresh FIFO sample. Host read timestamps are distinct from nominal sensor time estimates.",
+    "quality_status": "recording_integrity_checks_passed_bandwidth_and_snr_open",
+    "open_evidence": [
+      "usable_bandwidth",
+      "signal_to_noise_ratio",
+      "pilot_acceptance_limits"
+    ],
+    "configuration_readback": {
+      "model": "ADXL345",
+      "odr_hz": 200,
+      "range_g": 2,
+      "full_resolution": true,
+      "scale_g_per_lsb": 0.0039,
+      "acquisition_mode": "fifo_stream",
+      "register_readback": {
+        "0x2c": "0xb",
+        "0x31": "0x8",
+        "0x2e": "0x0",
+        "0x38": "0x90",
+        "0x2d": "0x8"
+      },
+      "timestamp_source": "host_monotonic_read_completion",
+      "sensor_time_estimate": "sample_index / nominal ODR; not measured sensor time",
+      "lost_samples_exact": null,
+      "bus_number": 1,
+      "i2c_clock_configured_hz": 100000
+    },
+    "odr_hz": 200,
+    "range_g": 2,
+    "full_resolution": true,
+    "scale_g_per_lsb": 0.0039,
+    "acquisition_mode": "fifo_stream",
+    "register_readback": {
+      "0x2c": "0xb",
+      "0x31": "0x8",
+      "0x2e": "0x0",
+      "0x38": "0x90",
+      "0x2d": "0x8"
+    },
+    "timestamp_source": "host_monotonic_read_completion",
+    "sensor_time_estimate": "sample_index / nominal ODR; not measured sensor time",
+    "lost_samples_exact": null,
+    "bus_number": 1,
+    "i2c_clock_configured_hz": 100000
+  },
+  "mounting": "current_fixed_mount_20260918_user_confirmed",
+  "scaler": {
+    "mean": [
+      -0.624318715367351,
+      -0.7109172889367514,
+      0.0961169699128488
+    ],
+    "scale": [
+      0.02877779256557175,
+      0.024151855815081915,
+      0.08047085293542439
+    ],
+    "fit_samples": 37248,
+    "fit_source": "normal_train_windows_only",
+    "verified_against_train_only_refit": true
+  },
+  "recordings": [
+    {
+      "path": "/home/malik/masterarbeit-edge-ai/profiles/standlauf_pwm75_200hz/data/raw/normal_001.csv",
+      "sha256": "00021e0285fb70cdf2ca808ac3dc059ebe97e73271d5d1171df1815aeabe7300",
+      "sample_content_sha256": "b435c932d124205f4549e78a126c382606b2e5610d8aa9bd8b39fa949878b1f0",
+      "sample_count": 12424,
+      "label": 0,
+      "state": "normal_standlauf_pwm75",
+      "timestamp_rate_hz": 207.08361137166264,
+      "timestamp_interval_median_s": 0.005573150000000027,
+      "timestamp_interval_max_s": 0.01102430099999907,
+      "quality_flags_present": true,
+      "quality_flag_counts": {
+        "gap": 0,
+        "overrun": 0,
+        "saturated": 0
+      },
+      "quality_note": "Fehlende Flags bedeuten unbekannt; keine nachträgliche Frischwertgarantie.",
+      "timestamp_note": "Zeitstempelrate belegt allein keine neuen Sensorwerte.",
+      "split": "train",
+      "profile_sidecar_hash_verified": true,
+      "acquisition_sidecar": {
+        "path": "/home/malik/masterarbeit-edge-ai/profiles/standlauf_pwm75_200hz/data/raw/normal_001.json",
+        "sha256": "47c79f40603a37829901814ad5631a185ca05599e835b216f1f64b2dd75b94ac",
+        "sensor": {
+          "model": "ADXL345",
+          "odr_hz": 200,
+          "range_g": 2,
+          "full_resolution": true,
+          "scale_g_per_lsb": 0.0039,
+          "acquisition_mode": "fifo_stream",
+          "register_readback": {
+            "0x2c": "0xb",
+            "0x31": "0x8",
+            "0x2e": "0x0",
+            "0x38": "0x90",
+            "0x2d": "0x8"
+          },
+          "timestamp_source": "host_monotonic_read_completion",
+          "sensor_time_estimate": "sample_index / nominal ODR; not measured sensor time",
+          "lost_samples_exact": null,
+          "bus_number": 1,
+          "i2c_clock_configured_hz": 100000
+        },
+        "mounting": "current_fixed_mount_20260918_user_confirmed"
+      },
+      "windows": 97,
+      "trailing_samples_excluded": 8
+    },
+    {
+      "path": "/home/malik/masterarbeit-edge-ai/profiles/standlauf_pwm75_200hz/data/raw/normal_002.csv",
+      "sha256": "fd61cf5fde1c3f0c31049cadd105001520ea769ba77c0789d5e03d0482014f0b",
+      "sample_content_sha256": "4b2852f81afec5b10a70ad811f6daf4bf72c0a7fc3f7005b906a3900aa0fcdcf",
+      "sample_count": 12425,
+      "label": 0,
+      "state": "normal_standlauf_pwm75",
+      "timestamp_rate_hz": 207.10534920663773,
+      "timestamp_interval_median_s": 0.00557108600000028,
+      "timestamp_interval_max_s": 0.011299172000001079,
+      "quality_flags_present": true,
+      "quality_flag_counts": {
+        "gap": 0,
+        "overrun": 0,
+        "saturated": 0
+      },
+      "quality_note": "Fehlende Flags bedeuten unbekannt; keine nachträgliche Frischwertgarantie.",
+      "timestamp_note": "Zeitstempelrate belegt allein keine neuen Sensorwerte.",
+      "split": "train",
+      "profile_sidecar_hash_verified": true,
+      "acquisition_sidecar": {
+        "path": "/home/malik/masterarbeit-edge-ai/profiles/standlauf_pwm75_200hz/data/raw/normal_002.json",
+        "sha256": "6d4e17b617405ffd1a4912df72e3acb5dd93208d7acd468d546a40dee9766dd1",
+        "sensor": {
+          "model": "ADXL345",
+          "odr_hz": 200,
+          "range_g": 2,
+          "full_resolution": true,
+          "scale_g_per_lsb": 0.0039,
+          "acquisition_mode": "fifo_stream",
+          "register_readback": {
+            "0x2c": "0xb",
+            "0x31": "0x8",
+            "0x2e": "0x0",
+            "0x38": "0x90",
+            "0x2d": "0x8"
+          },
+          "timestamp_source": "host_monotonic_read_completion",
+          "sensor_time_estimate": "sample_index / nominal ODR; not measured sensor time",
+          "lost_samples_exact": null,
+          "bus_number": 1,
+          "i2c_clock_configured_hz": 100000
+        },
+        "mounting": "current_fixed_mount_20260918_user_confirmed"
+      },
+      "windows": 97,
+      "trailing_samples_excluded": 9
+    },
+    {
+      "path": "/home/malik/masterarbeit-edge-ai/profiles/standlauf_pwm75_200hz/data/raw/normal_003.csv",
+      "sha256": "0e46c5d39b5b24267d5c99fb234fd27d4e21d77b4749876a1847e8eef73fe3f9",
+      "sample_content_sha256": "fe1af1ebf89db964031e2b8cf8f240a077743c7120a6edcf6907fa4222371af6",
+      "sample_count": 12425,
+      "label": 0,
+      "state": "normal_standlauf_pwm75",
+      "timestamp_rate_hz": 207.09674502168787,
+      "timestamp_interval_median_s": 0.005566928500001955,
+      "timestamp_interval_max_s": 0.013729211000004682,
+      "quality_flags_present": true,
+      "quality_flag_counts": {
+        "gap": 0,
+        "overrun": 0,
+        "saturated": 0
+      },
+      "quality_note": "Fehlende Flags bedeuten unbekannt; keine nachträgliche Frischwertgarantie.",
+      "timestamp_note": "Zeitstempelrate belegt allein keine neuen Sensorwerte.",
+      "split": "train",
+      "profile_sidecar_hash_verified": true,
+      "acquisition_sidecar": {
+        "path": "/home/malik/masterarbeit-edge-ai/profiles/standlauf_pwm75_200hz/data/raw/normal_003.json",
+        "sha256": "6ae8db32e28efcbe27e2adcb06b7afb74c7784ca2534e65aa058827ac1ab9258",
+        "sensor": {
+          "model": "ADXL345",
+          "odr_hz": 200,
+          "range_g": 2,
+          "full_resolution": true,
+          "scale_g_per_lsb": 0.0039,
+          "acquisition_mode": "fifo_stream",
+          "register_readback": {
+            "0x2c": "0xb",
+            "0x31": "0x8",
+            "0x2e": "0x0",
+            "0x38": "0x90",
+            "0x2d": "0x8"
+          },
+          "timestamp_source": "host_monotonic_read_completion",
+          "sensor_time_estimate": "sample_index / nominal ODR; not measured sensor time",
+          "lost_samples_exact": null,
+          "bus_number": 1,
+          "i2c_clock_configured_hz": 100000
+        },
+        "mounting": "current_fixed_mount_20260918_user_confirmed"
+      },
+      "windows": 97,
+      "trailing_samples_excluded": 9
+    },
+    {
+      "path": "/home/malik/masterarbeit-edge-ai/profiles/standlauf_pwm75_200hz/data/raw/normal_004.csv",
+      "sha256": "5a59e2d7902a5432380020a535bb5bf75c0cd142f7c5cb990b369dca2b9a2f49",
+      "sample_content_sha256": "9c592382537f1b3951f513f1aeae7c793c2c29e8cdd373b2eeb9d3a318eb4657",
+      "sample_count": 12425,
+      "label": 0,
+      "state": "normal_standlauf_pwm75",
+      "timestamp_rate_hz": 207.10288177076666,
+      "timestamp_interval_median_s": 0.0055729845000001554,
+      "timestamp_interval_max_s": 0.144667471,
+      "quality_flags_present": true,
+      "quality_flag_counts": {
+        "gap": 0,
+        "overrun": 0,
+        "saturated": 0
+      },
+      "quality_note": "Fehlende Flags bedeuten unbekannt; keine nachträgliche Frischwertgarantie.",
+      "timestamp_note": "Zeitstempelrate belegt allein keine neuen Sensorwerte.",
+      "split": "validation",
+      "profile_sidecar_hash_verified": true,
+      "acquisition_sidecar": {
+        "path": "/home/malik/masterarbeit-edge-ai/profiles/standlauf_pwm75_200hz/data/raw/normal_004.json",
+        "sha256": "586f64e3b83a6dc5189300aaf1ea5806ab6871f4c418e01ca516debfae157da8",
+        "sensor": {
+          "model": "ADXL345",
+          "odr_hz": 200,
+          "range_g": 2,
+          "full_resolution": true,
+          "scale_g_per_lsb": 0.0039,
+          "acquisition_mode": "fifo_stream",
+          "register_readback": {
+            "0x2c": "0xb",
+            "0x31": "0x8",
+            "0x2e": "0x0",
+            "0x38": "0x90",
+            "0x2d": "0x8"
+          },
+          "timestamp_source": "host_monotonic_read_completion",
+          "sensor_time_estimate": "sample_index / nominal ODR; not measured sensor time",
+          "lost_samples_exact": null,
+          "bus_number": 1,
+          "i2c_clock_configured_hz": 100000
+        },
+        "mounting": "current_fixed_mount_20260918_user_confirmed"
+      },
+      "windows": 97,
+      "trailing_samples_excluded": 9
+    }
+  ],
+  "window_counts": {
+    "train": 291,
+    "validation": 97
+  },
+  "if_parameters": {
+    "n_estimators": 200,
+    "max_samples": "auto",
+    "contamination": "auto",
+    "max_features": 1.0,
+    "bootstrap": false,
+    "n_jobs": 1,
+    "random_state": 42
+  },
+  "score_definitions": {
+    "rms": "sqrt(mean(square(standardized_Hx3)))",
+    "isolation_forest": "-score_samples(standardized_Hx3.flatten(order=C))",
+    "tflite_autoencoder": "mean(square(standardized_Hx3 - reconstruction), dtype=float64)"
+  },
+  "thresholds": {
+    "rms": {
+      "value": 1.296361072562011,
+      "source": "P99_NORMAL_VALIDATION",
+      "percentile": 99
+    },
+    "isolation_forest": {
+      "value": 0.4833547401595273,
+      "source": "P99_NORMAL_VALIDATION",
+      "percentile": 99
+    },
+    "tflite_autoencoder": {
+      "value": 0.47720259914362284,
+      "source": "PROFILE/P99_FROZEN_KERAS_CALIBRATION",
+      "percentile": 99
+    }
+  },
+  "decision_rule": "score > threshold = ANOMALY; <= = NORMAL; nonfinite = INVALID",
+  "development_only": true,
+  "limitations": [
+    "Validierung ist Schwellenkalibrierung, keine unabhängige Testgüte.",
+    "Profil-AE verwendete dieselbe Normalvalidierung auch für Trainingsüberwachung/Early Stopping; kein dritter Kalibrierungssplit.",
+    "Software-Zeitstempel belegen keine Sensor-ODR oder neue Messwerte.",
+    "Zweites separat trainiertes Profil ist kein Betriebspunktwechsel mit eingefrorenem Modell."
+  ],
+  "ae_validation_check": {
+    "runtime": "ai_edge_litert.Interpreter (Float32 TFLite)",
+    "tflite_p99_observed": 0.47720259207068855,
+    "frozen_threshold_used": 0.47720259914362284,
+    "absolute_difference": 7.072934293805844e-09,
+    "acceptance_tolerance": 0.0001,
+    "threshold_recalibrated": false
+  },
+  "artifact_sha256": {
+    "validation_raw.npy": "71aab25b602b4f4ef1162b4e236e0b8b1a874328f023d044280775f6b8c9b8a2",
+    "autoencoder_float32.tflite": "e84030d8523862eed516ee3d6bd1fa58fabd7f777c53f332b55c4e6b95cc9b4d",
+    "validation_windows.json": "47bd4c25f283e9a07c9969e25c1275f553c2d1b10459315dabd0ac84806102d8",
+    "isolation_forest.joblib": "eb093761a38fc7db97926b09430c7207ea53ceaa7af2ad4ee5d4ca6a70bd4e1f",
+    "source_profile.json": "c163677d8530064668a98f923da7f432f7300e604e52317a69b06aa27c50348f",
+    "scaler.joblib": "33318a0ea924f9822a0597734f313c05dc86d773ad1eb7ef08359acb3fd82b45",
+    "comparison_implementation.py": "479a3de9263842574ab2c69fca5adaeac8b5418e13bb383bfae3e026ed98d2ca",
+    "source_ae_threshold.json": "03067d96ed8b675c17e55bdb91abe764af17135e2ed881883cdd900d71b3fa24"
+  }
+}

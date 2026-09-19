@@ -1,0 +1,9 @@
+{
+  "verified_method_decisions": 1842,
+  "verified_shared_windows": 614,
+  "maximum_score_difference": 0.0,
+  "changed_thresholds": false,
+  "scope": "offline_concurrent_worker_preflight_no_hardware",
+  "bundle_sha256": "dbfad8529b642d1e4c74119b3865b0600c3a7668198328e1112707c7502b2eb1",
+  "implementation_sha256": "d4bc8d316ec8347854c487152edbba3a15895ffae6f5f730ace27d94a97729e1"
+}

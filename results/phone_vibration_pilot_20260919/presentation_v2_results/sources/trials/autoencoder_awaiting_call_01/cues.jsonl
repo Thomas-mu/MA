@@ -1,0 +1,2 @@
+{"event": "call_requested", "number": 1, "note": "Nutzer bestätigt: ich werde jetzt anrufen. Dies ist eine Chat-Ankündigung, kein gemessener physischer Vibrationsbeginn.", "utc": "2026-09-19T10:21:43.091446+00:00", "monotonic_ns": 5512767684524, "physical_onset_verified": false}
+{"event": "end_reported", "number": 1, "note": "Nutzer meldet fertig. Chat-Rückmeldung, physisches Vibrationsende nicht unabhängig gemessen.", "utc": "2026-09-19T10:22:12.599324+00:00", "monotonic_ns": 5542275584335, "physical_onset_verified": false}

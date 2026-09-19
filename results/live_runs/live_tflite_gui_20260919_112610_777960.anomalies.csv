@@ -1,0 +1,190 @@
+event_id,method,method_label,result,detection_timestamp,detection_window,first_alarm_timestamp,first_alarm_window,delay_windows_from_first,delay_ms_from_first,detection_rank,is_fastest,first_methods
+1,autoencoder,Autoencoder,DETECTED,2026-09-19T11:26:37.513+02:00,43,2026-09-19T11:26:37.513+02:00,43,0,0.0,1,1,autoencoder+isolation_forest+rms
+1,isolation_forest,Isolation Forest,DETECTED,2026-09-19T11:26:37.513+02:00,43,2026-09-19T11:26:37.513+02:00,43,0,0.0,1,1,autoencoder+isolation_forest+rms
+1,rms,RMS,DETECTED,2026-09-19T11:26:37.513+02:00,43,2026-09-19T11:26:37.513+02:00,43,0,0.0,1,1,autoencoder+isolation_forest+rms
+2,autoencoder,Autoencoder,DETECTED,2026-09-19T11:26:40.592+02:00,48,2026-09-19T11:26:40.592+02:00,48,0,0.0,1,1,autoencoder+rms
+2,rms,RMS,DETECTED,2026-09-19T11:26:40.592+02:00,48,2026-09-19T11:26:40.592+02:00,48,0,0.0,1,1,autoencoder+rms
+2,isolation_forest,Isolation Forest,NOT_DETECTED,,,2026-09-19T11:26:40.592+02:00,48,,,,0,autoencoder+rms
+3,autoencoder,Autoencoder,DETECTED,2026-09-19T11:26:44.911+02:00,55,2026-09-19T11:26:44.911+02:00,55,0,0.0,1,1,autoencoder
+3,rms,RMS,DETECTED,2026-09-19T11:26:45.530+02:00,56,2026-09-19T11:26:44.911+02:00,55,1,618.597795,2,0,autoencoder
+3,isolation_forest,Isolation Forest,NOT_DETECTED,,,2026-09-19T11:26:44.911+02:00,55,,,,0,autoencoder
+4,autoencoder,Autoencoder,DETECTED,2026-09-19T11:26:47.380+02:00,59,2026-09-19T11:26:47.380+02:00,59,0,0.0,1,1,autoencoder
+4,rms,RMS,DETECTED,2026-09-19T11:26:48.622+02:00,61,2026-09-19T11:26:47.380+02:00,59,2,1242.733754,2,0,autoencoder
+4,isolation_forest,Isolation Forest,NOT_DETECTED,,,2026-09-19T11:26:47.380+02:00,59,,,,0,autoencoder
+5,autoencoder,Autoencoder,DETECTED,2026-09-19T11:26:50.467+02:00,64,2026-09-19T11:26:50.467+02:00,64,0,0.0,1,1,autoencoder
+5,isolation_forest,Isolation Forest,NOT_DETECTED,,,2026-09-19T11:26:50.467+02:00,64,,,,0,autoencoder
+5,rms,RMS,NOT_DETECTED,,,2026-09-19T11:26:50.467+02:00,64,,,,0,autoencoder
+6,autoencoder,Autoencoder,DETECTED,2026-09-19T11:26:54.788+02:00,71,2026-09-19T11:26:54.788+02:00,71,0,0.0,1,1,autoencoder+rms
+6,rms,RMS,DETECTED,2026-09-19T11:26:54.788+02:00,71,2026-09-19T11:26:54.788+02:00,71,0,0.0,1,1,autoencoder+rms
+6,isolation_forest,Isolation Forest,NOT_DETECTED,,,2026-09-19T11:26:54.788+02:00,71,,,,0,autoencoder+rms
+7,autoencoder,Autoencoder,DETECTED,2026-09-19T11:26:57.257+02:00,75,2026-09-19T11:26:57.257+02:00,75,0,0.0,1,1,autoencoder+rms
+7,rms,RMS,DETECTED,2026-09-19T11:26:57.257+02:00,75,2026-09-19T11:26:57.257+02:00,75,0,0.0,1,1,autoencoder+rms
+7,isolation_forest,Isolation Forest,NOT_DETECTED,,,2026-09-19T11:26:57.257+02:00,75,,,,0,autoencoder+rms
+8,autoencoder,Autoencoder,DETECTED,2026-09-19T11:27:04.670+02:00,87,2026-09-19T11:27:04.670+02:00,87,0,0.0,1,1,autoencoder+rms
+8,rms,RMS,DETECTED,2026-09-19T11:27:04.670+02:00,87,2026-09-19T11:27:04.670+02:00,87,0,0.0,1,1,autoencoder+rms
+8,isolation_forest,Isolation Forest,NOT_DETECTED,,,2026-09-19T11:27:04.670+02:00,87,,,,0,autoencoder+rms
+9,autoencoder,Autoencoder,DETECTED,2026-09-19T11:27:07.748+02:00,92,2026-09-19T11:27:07.748+02:00,92,0,0.0,1,1,autoencoder
+9,isolation_forest,Isolation Forest,NOT_DETECTED,,,2026-09-19T11:27:07.748+02:00,92,,,,0,autoencoder
+9,rms,RMS,NOT_DETECTED,,,2026-09-19T11:27:07.748+02:00,92,,,,0,autoencoder
+10,autoencoder,Autoencoder,DETECTED,2026-09-19T11:30:02.599+02:00,375,2026-09-19T11:30:02.599+02:00,375,0,0.0,1,1,autoencoder
+10,isolation_forest,Isolation Forest,NOT_DETECTED,,,2026-09-19T11:30:02.599+02:00,375,,,,0,autoencoder
+10,rms,RMS,NOT_DETECTED,,,2026-09-19T11:30:02.599+02:00,375,,,,0,autoencoder
+11,autoencoder,Autoencoder,DETECTED,2026-09-19T11:30:06.302+02:00,381,2026-09-19T11:30:06.302+02:00,381,0,0.0,1,1,autoencoder
+11,isolation_forest,Isolation Forest,NOT_DETECTED,,,2026-09-19T11:30:06.302+02:00,381,,,,0,autoencoder
+11,rms,RMS,NOT_DETECTED,,,2026-09-19T11:30:06.302+02:00,381,,,,0,autoencoder
+12,autoencoder,Autoencoder,DETECTED,2026-09-19T11:31:00.761+02:00,469,2026-09-19T11:31:00.761+02:00,469,0,0.0,1,1,autoencoder+rms
+12,rms,RMS,DETECTED,2026-09-19T11:31:00.761+02:00,469,2026-09-19T11:31:00.761+02:00,469,0,0.0,1,1,autoencoder+rms
+12,isolation_forest,Isolation Forest,DETECTED,2026-09-19T11:31:03.224+02:00,473,2026-09-19T11:31:00.761+02:00,469,4,2462.528685,2,0,autoencoder+rms
+13,autoencoder,Autoencoder,DETECTED,2026-09-19T11:35:08.074+02:00,869,2026-09-19T11:35:08.074+02:00,869,0,0.0,1,1,autoencoder+rms
+13,rms,RMS,DETECTED,2026-09-19T11:35:08.074+02:00,869,2026-09-19T11:35:08.074+02:00,869,0,0.0,1,1,autoencoder+rms
+13,isolation_forest,Isolation Forest,NOT_DETECTED,,,2026-09-19T11:35:08.074+02:00,869,,,,0,autoencoder+rms
+14,autoencoder,Autoencoder,DETECTED,2026-09-19T11:35:36.460+02:00,915,2026-09-19T11:35:36.460+02:00,915,0,0.0,1,1,autoencoder
+14,isolation_forest,Isolation Forest,NOT_DETECTED,,,2026-09-19T11:35:36.460+02:00,915,,,,0,autoencoder
+14,rms,RMS,NOT_DETECTED,,,2026-09-19T11:35:36.460+02:00,915,,,,0,autoencoder
+15,autoencoder,Autoencoder,DETECTED,2026-09-19T11:36:44.349+02:00,1025,2026-09-19T11:36:44.349+02:00,1025,0,0.0,1,1,autoencoder+rms
+15,rms,RMS,DETECTED,2026-09-19T11:36:44.349+02:00,1025,2026-09-19T11:36:44.349+02:00,1025,0,0.0,1,1,autoencoder+rms
+15,isolation_forest,Isolation Forest,NOT_DETECTED,,,2026-09-19T11:36:44.349+02:00,1025,,,,0,autoencoder+rms
+16,autoencoder,Autoencoder,DETECTED,2026-09-19T11:37:26.938+02:00,1094,2026-09-19T11:37:26.938+02:00,1094,0,0.0,1,1,autoencoder
+16,isolation_forest,Isolation Forest,NOT_DETECTED,,,2026-09-19T11:37:26.938+02:00,1094,,,,0,autoencoder
+16,rms,RMS,NOT_DETECTED,,,2026-09-19T11:37:26.938+02:00,1094,,,,0,autoencoder
+17,autoencoder,Autoencoder,DETECTED,2026-09-19T11:37:28.788+02:00,1097,2026-09-19T11:37:28.788+02:00,1097,0,0.0,1,1,autoencoder
+17,isolation_forest,Isolation Forest,NOT_DETECTED,,,2026-09-19T11:37:28.788+02:00,1097,,,,0,autoencoder
+17,rms,RMS,NOT_DETECTED,,,2026-09-19T11:37:28.788+02:00,1097,,,,0,autoencoder
+18,autoencoder,Autoencoder,DETECTED,2026-09-19T11:37:31.257+02:00,1101,2026-09-19T11:37:31.257+02:00,1101,0,0.0,1,1,autoencoder
+18,isolation_forest,Isolation Forest,NOT_DETECTED,,,2026-09-19T11:37:31.257+02:00,1101,,,,0,autoencoder
+18,rms,RMS,NOT_DETECTED,,,2026-09-19T11:37:31.257+02:00,1101,,,,0,autoencoder
+19,autoencoder,Autoencoder,DETECTED,2026-09-19T11:37:54.734+02:00,1139,2026-09-19T11:37:54.734+02:00,1139,0,0.0,1,1,autoencoder+rms
+19,rms,RMS,DETECTED,2026-09-19T11:37:54.734+02:00,1139,2026-09-19T11:37:54.734+02:00,1139,0,0.0,1,1,autoencoder+rms
+19,isolation_forest,Isolation Forest,NOT_DETECTED,,,2026-09-19T11:37:54.734+02:00,1139,,,,0,autoencoder+rms
+20,autoencoder,Autoencoder,DETECTED,2026-09-19T11:39:17.490+02:00,1273,2026-09-19T11:39:17.490+02:00,1273,0,0.0,1,1,autoencoder
+20,isolation_forest,Isolation Forest,NOT_DETECTED,,,2026-09-19T11:39:17.490+02:00,1273,,,,0,autoencoder
+20,rms,RMS,NOT_DETECTED,,,2026-09-19T11:39:17.490+02:00,1273,,,,0,autoencoder
+21,autoencoder,Autoencoder,DETECTED,2026-09-19T11:40:18.598+02:00,1372,2026-09-19T11:40:18.598+02:00,1372,0,0.0,1,1,autoencoder+rms
+21,rms,RMS,DETECTED,2026-09-19T11:40:18.598+02:00,1372,2026-09-19T11:40:18.598+02:00,1372,0,0.0,1,1,autoencoder+rms
+21,isolation_forest,Isolation Forest,NOT_DETECTED,,,2026-09-19T11:40:18.598+02:00,1372,,,,0,autoencoder+rms
+22,autoencoder,Autoencoder,DETECTED,2026-09-19T11:42:36.911+02:00,1596,2026-09-19T11:42:36.911+02:00,1596,0,0.0,1,1,autoencoder
+22,isolation_forest,Isolation Forest,NOT_DETECTED,,,2026-09-19T11:42:36.911+02:00,1596,,,,0,autoencoder
+22,rms,RMS,NOT_DETECTED,,,2026-09-19T11:42:36.911+02:00,1596,,,,0,autoencoder
+23,autoencoder,Autoencoder,DETECTED,2026-09-19T11:47:07.330+02:00,2034,2026-09-19T11:47:07.330+02:00,2034,0,0.0,1,1,autoencoder
+23,isolation_forest,Isolation Forest,NOT_DETECTED,,,2026-09-19T11:47:07.330+02:00,2034,,,,0,autoencoder
+23,rms,RMS,NOT_DETECTED,,,2026-09-19T11:47:07.330+02:00,2034,,,,0,autoencoder
+24,autoencoder,Autoencoder,DETECTED,2026-09-19T11:47:09.180+02:00,2037,2026-09-19T11:47:09.180+02:00,2037,0,0.0,1,1,autoencoder
+24,isolation_forest,Isolation Forest,NOT_DETECTED,,,2026-09-19T11:47:09.180+02:00,2037,,,,0,autoencoder
+24,rms,RMS,NOT_DETECTED,,,2026-09-19T11:47:09.180+02:00,2037,,,,0,autoencoder
+25,autoencoder,Autoencoder,DETECTED,2026-09-19T11:47:14.122+02:00,2045,2026-09-19T11:47:14.122+02:00,2045,0,0.0,1,1,autoencoder
+25,rms,RMS,DETECTED,2026-09-19T11:47:14.742+02:00,2046,2026-09-19T11:47:14.122+02:00,2045,1,620.202013,2,0,autoencoder
+25,isolation_forest,Isolation Forest,NOT_DETECTED,,,2026-09-19T11:47:14.122+02:00,2045,,,,0,autoencoder
+26,autoencoder,Autoencoder,DETECTED,2026-09-19T11:48:05.384+02:00,2128,2026-09-19T11:48:05.384+02:00,2128,0,0.0,1,1,autoencoder
+26,rms,RMS,DETECTED,2026-09-19T11:48:07.239+02:00,2131,2026-09-19T11:48:05.384+02:00,2128,3,1855.354364,2,0,autoencoder
+26,isolation_forest,Isolation Forest,NOT_DETECTED,,,2026-09-19T11:48:05.384+02:00,2128,,,,0,autoencoder
+27,autoencoder,Autoencoder,DETECTED,2026-09-19T11:49:23.826+02:00,2255,2026-09-19T11:49:23.826+02:00,2255,0,0.0,1,1,autoencoder
+27,isolation_forest,Isolation Forest,NOT_DETECTED,,,2026-09-19T11:49:23.826+02:00,2255,,,,0,autoencoder
+27,rms,RMS,NOT_DETECTED,,,2026-09-19T11:49:23.826+02:00,2255,,,,0,autoencoder
+28,autoencoder,Autoencoder,DETECTED,2026-09-19T11:49:36.178+02:00,2275,2026-09-19T11:49:36.178+02:00,2275,0,0.0,1,1,autoencoder
+28,isolation_forest,Isolation Forest,NOT_DETECTED,,,2026-09-19T11:49:36.178+02:00,2275,,,,0,autoencoder
+28,rms,RMS,NOT_DETECTED,,,2026-09-19T11:49:36.178+02:00,2275,,,,0,autoencoder
+29,autoencoder,Autoencoder,DETECTED,2026-09-19T11:49:41.743+02:00,2284,2026-09-19T11:49:41.743+02:00,2284,0,0.0,1,1,autoencoder+rms
+29,rms,RMS,DETECTED,2026-09-19T11:49:41.743+02:00,2284,2026-09-19T11:49:41.743+02:00,2284,0,0.0,1,1,autoencoder+rms
+29,isolation_forest,Isolation Forest,NOT_DETECTED,,,2026-09-19T11:49:41.743+02:00,2284,,,,0,autoencoder+rms
+30,autoencoder,Autoencoder,DETECTED,2026-09-19T11:49:43.589+02:00,2287,2026-09-19T11:49:43.589+02:00,2287,0,0.0,1,1,autoencoder
+30,rms,RMS,DETECTED,2026-09-19T11:49:44.825+02:00,2289,2026-09-19T11:49:43.589+02:00,2287,2,1235.881268,2,0,autoencoder
+30,isolation_forest,Isolation Forest,NOT_DETECTED,,,2026-09-19T11:49:43.589+02:00,2287,,,,0,autoencoder
+31,autoencoder,Autoencoder,DETECTED,2026-09-19T11:50:00.263+02:00,2314,2026-09-19T11:50:00.263+02:00,2314,0,0.0,1,1,autoencoder
+31,isolation_forest,Isolation Forest,DETECTED,2026-09-19T11:50:00.880+02:00,2315,2026-09-19T11:50:00.263+02:00,2314,1,616.619946,2,0,autoencoder
+31,rms,RMS,DETECTED,2026-09-19T11:50:00.880+02:00,2315,2026-09-19T11:50:00.263+02:00,2314,1,616.619946,2,0,autoencoder
+32,autoencoder,Autoencoder,DETECTED,2026-09-19T11:50:02.742+02:00,2318,2026-09-19T11:50:02.742+02:00,2318,0,0.0,1,1,autoencoder
+32,isolation_forest,Isolation Forest,NOT_DETECTED,,,2026-09-19T11:50:02.742+02:00,2318,,,,0,autoencoder
+32,rms,RMS,NOT_DETECTED,,,2026-09-19T11:50:02.742+02:00,2318,,,,0,autoencoder
+33,autoencoder,Autoencoder,DETECTED,2026-09-19T11:51:05.098+02:00,2419,2026-09-19T11:51:05.098+02:00,2419,0,0.0,1,1,autoencoder
+33,rms,RMS,DETECTED,2026-09-19T11:51:05.717+02:00,2420,2026-09-19T11:51:05.098+02:00,2419,1,618.771279,2,0,autoencoder
+33,isolation_forest,Isolation Forest,NOT_DETECTED,,,2026-09-19T11:51:05.098+02:00,2419,,,,0,autoencoder
+34,autoencoder,Autoencoder,DETECTED,2026-09-19T11:51:09.423+02:00,2426,2026-09-19T11:51:09.423+02:00,2426,0,0.0,1,1,autoencoder
+34,isolation_forest,Isolation Forest,NOT_DETECTED,,,2026-09-19T11:51:09.423+02:00,2426,,,,0,autoencoder
+34,rms,RMS,NOT_DETECTED,,,2026-09-19T11:51:09.423+02:00,2426,,,,0,autoencoder
+35,autoencoder,Autoencoder,DETECTED,2026-09-19T11:51:33.505+02:00,2465,2026-09-19T11:51:33.505+02:00,2465,0,0.0,1,1,autoencoder
+35,isolation_forest,Isolation Forest,NOT_DETECTED,,,2026-09-19T11:51:33.505+02:00,2465,,,,0,autoencoder
+35,rms,RMS,NOT_DETECTED,,,2026-09-19T11:51:33.505+02:00,2465,,,,0,autoencoder
+36,autoencoder,Autoencoder,DETECTED,2026-09-19T11:53:17.250+02:00,2633,2026-09-19T11:53:17.250+02:00,2633,0,0.0,1,1,autoencoder+rms
+36,rms,RMS,DETECTED,2026-09-19T11:53:17.250+02:00,2633,2026-09-19T11:53:17.250+02:00,2633,0,0.0,1,1,autoencoder+rms
+36,isolation_forest,Isolation Forest,NOT_DETECTED,,,2026-09-19T11:53:17.250+02:00,2633,,,,0,autoencoder+rms
+37,autoencoder,Autoencoder,DETECTED,2026-09-19T11:55:39.889+02:00,2864,2026-09-19T11:55:39.889+02:00,2864,0,0.0,1,1,autoencoder+isolation_forest+rms
+37,isolation_forest,Isolation Forest,DETECTED,2026-09-19T11:55:39.889+02:00,2864,2026-09-19T11:55:39.889+02:00,2864,0,0.0,1,1,autoencoder+isolation_forest+rms
+37,rms,RMS,DETECTED,2026-09-19T11:55:39.889+02:00,2864,2026-09-19T11:55:39.889+02:00,2864,0,0.0,1,1,autoencoder+isolation_forest+rms
+38,autoencoder,Autoencoder,DETECTED,2026-09-19T11:55:54.092+02:00,2887,2026-09-19T11:55:54.092+02:00,2887,0,0.0,1,1,autoencoder+rms
+38,rms,RMS,DETECTED,2026-09-19T11:55:54.092+02:00,2887,2026-09-19T11:55:54.092+02:00,2887,0,0.0,1,1,autoencoder+rms
+38,isolation_forest,Isolation Forest,NOT_DETECTED,,,2026-09-19T11:55:54.092+02:00,2887,,,,0,autoencoder+rms
+39,autoencoder,Autoencoder,DETECTED,2026-09-19T11:55:59.032+02:00,2895,2026-09-19T11:55:59.032+02:00,2895,0,0.0,1,1,autoencoder+rms
+39,rms,RMS,DETECTED,2026-09-19T11:55:59.032+02:00,2895,2026-09-19T11:55:59.032+02:00,2895,0,0.0,1,1,autoencoder+rms
+39,isolation_forest,Isolation Forest,NOT_DETECTED,,,2026-09-19T11:55:59.032+02:00,2895,,,,0,autoencoder+rms
+40,autoencoder,Autoencoder,DETECTED,2026-09-19T11:56:12.001+02:00,2916,2026-09-19T11:56:12.001+02:00,2916,0,0.0,1,1,autoencoder
+40,isolation_forest,Isolation Forest,NOT_DETECTED,,,2026-09-19T11:56:12.001+02:00,2916,,,,0,autoencoder
+40,rms,RMS,NOT_DETECTED,,,2026-09-19T11:56:12.001+02:00,2916,,,,0,autoencoder
+41,autoencoder,Autoencoder,DETECTED,2026-09-19T11:56:18.176+02:00,2926,2026-09-19T11:56:18.176+02:00,2926,0,0.0,1,1,autoencoder+isolation_forest+rms
+41,isolation_forest,Isolation Forest,DETECTED,2026-09-19T11:56:18.176+02:00,2926,2026-09-19T11:56:18.176+02:00,2926,0,0.0,1,1,autoencoder+isolation_forest+rms
+41,rms,RMS,DETECTED,2026-09-19T11:56:18.176+02:00,2926,2026-09-19T11:56:18.176+02:00,2926,0,0.0,1,1,autoencoder+isolation_forest+rms
+42,autoencoder,Autoencoder,DETECTED,2026-09-19T11:57:13.753+02:00,3016,2026-09-19T11:57:13.753+02:00,3016,0,0.0,1,1,autoencoder
+42,isolation_forest,Isolation Forest,DETECTED,2026-09-19T11:57:14.370+02:00,3017,2026-09-19T11:57:13.753+02:00,3016,1,617.350697,2,0,autoencoder
+42,rms,RMS,DETECTED,2026-09-19T11:57:14.370+02:00,3017,2026-09-19T11:57:13.753+02:00,3016,1,617.350697,2,0,autoencoder
+43,autoencoder,Autoencoder,DETECTED,2026-09-19T11:57:29.189+02:00,3041,2026-09-19T11:57:29.189+02:00,3041,0,0.0,1,1,autoencoder+isolation_forest+rms
+43,isolation_forest,Isolation Forest,DETECTED,2026-09-19T11:57:29.189+02:00,3041,2026-09-19T11:57:29.189+02:00,3041,0,0.0,1,1,autoencoder+isolation_forest+rms
+43,rms,RMS,DETECTED,2026-09-19T11:57:29.189+02:00,3041,2026-09-19T11:57:29.189+02:00,3041,0,0.0,1,1,autoencoder+isolation_forest+rms
+44,autoencoder,Autoencoder,DETECTED,2026-09-19T11:57:42.775+02:00,3063,2026-09-19T11:57:42.775+02:00,3063,0,0.0,1,1,autoencoder
+44,isolation_forest,Isolation Forest,NOT_DETECTED,,,2026-09-19T11:57:42.775+02:00,3063,,,,0,autoencoder
+44,rms,RMS,NOT_DETECTED,,,2026-09-19T11:57:42.775+02:00,3063,,,,0,autoencoder
+45,autoencoder,Autoencoder,DETECTED,2026-09-19T11:57:51.418+02:00,3077,2026-09-19T11:57:51.418+02:00,3077,0,0.0,1,1,autoencoder+rms
+45,rms,RMS,DETECTED,2026-09-19T11:57:51.418+02:00,3077,2026-09-19T11:57:51.418+02:00,3077,0,0.0,1,1,autoencoder+rms
+45,isolation_forest,Isolation Forest,NOT_DETECTED,,,2026-09-19T11:57:51.418+02:00,3077,,,,0,autoencoder+rms
+46,autoencoder,Autoencoder,DETECTED,2026-09-19T11:58:01.916+02:00,3094,2026-09-19T11:58:01.916+02:00,3094,0,0.0,1,1,autoencoder
+46,isolation_forest,Isolation Forest,NOT_DETECTED,,,2026-09-19T11:58:01.916+02:00,3094,,,,0,autoencoder
+46,rms,RMS,NOT_DETECTED,,,2026-09-19T11:58:01.916+02:00,3094,,,,0,autoencoder
+47,autoencoder,Autoencoder,DETECTED,2026-09-19T11:58:16.739+02:00,3118,2026-09-19T11:58:16.739+02:00,3118,0,0.0,1,1,autoencoder
+47,isolation_forest,Isolation Forest,NOT_DETECTED,,,2026-09-19T11:58:16.739+02:00,3118,,,,0,autoencoder
+47,rms,RMS,NOT_DETECTED,,,2026-09-19T11:58:16.739+02:00,3118,,,,0,autoencoder
+48,autoencoder,Autoencoder,DETECTED,2026-09-19T11:58:55.033+02:00,3180,2026-09-19T11:58:55.033+02:00,3180,0,0.0,1,1,autoencoder
+48,isolation_forest,Isolation Forest,NOT_DETECTED,,,2026-09-19T11:58:55.033+02:00,3180,,,,0,autoencoder
+48,rms,RMS,NOT_DETECTED,,,2026-09-19T11:58:55.033+02:00,3180,,,,0,autoencoder
+49,autoencoder,Autoencoder,DETECTED,2026-09-19T11:58:56.885+02:00,3183,2026-09-19T11:58:56.885+02:00,3183,0,0.0,1,1,autoencoder+rms
+49,rms,RMS,DETECTED,2026-09-19T11:58:56.885+02:00,3183,2026-09-19T11:58:56.885+02:00,3183,0,0.0,1,1,autoencoder+rms
+49,isolation_forest,Isolation Forest,NOT_DETECTED,,,2026-09-19T11:58:56.885+02:00,3183,,,,0,autoencoder+rms
+50,autoencoder,Autoencoder,DETECTED,2026-09-19T11:59:12.325+02:00,3208,2026-09-19T11:59:12.325+02:00,3208,0,0.0,1,1,autoencoder
+50,rms,RMS,DETECTED,2026-09-19T11:59:13.565+02:00,3210,2026-09-19T11:59:12.325+02:00,3208,2,1240.196236,2,0,autoencoder
+50,isolation_forest,Isolation Forest,NOT_DETECTED,,,2026-09-19T11:59:12.325+02:00,3208,,,,0,autoencoder
+51,autoencoder,Autoencoder,DETECTED,2026-09-19T11:59:39.500+02:00,3252,2026-09-19T11:59:39.500+02:00,3252,0,0.0,1,1,autoencoder
+51,rms,RMS,DETECTED,2026-09-19T11:59:40.736+02:00,3254,2026-09-19T11:59:39.500+02:00,3252,2,1236.318161,2,0,autoencoder
+51,isolation_forest,Isolation Forest,NOT_DETECTED,,,2026-09-19T11:59:39.500+02:00,3252,,,,0,autoencoder
+52,autoencoder,Autoencoder,DETECTED,2026-09-19T12:00:04.203+02:00,3292,2026-09-19T12:00:04.203+02:00,3292,0,0.0,1,1,autoencoder
+52,isolation_forest,Isolation Forest,NOT_DETECTED,,,2026-09-19T12:00:04.203+02:00,3292,,,,0,autoencoder
+52,rms,RMS,NOT_DETECTED,,,2026-09-19T12:00:04.203+02:00,3292,,,,0,autoencoder
+53,autoencoder,Autoencoder,DETECTED,2026-09-19T12:00:10.380+02:00,3302,2026-09-19T12:00:10.380+02:00,3302,0,0.0,1,1,autoencoder
+53,rms,RMS,DETECTED,2026-09-19T12:00:10.998+02:00,3303,2026-09-19T12:00:10.380+02:00,3302,1,617.392196,2,0,autoencoder
+53,isolation_forest,Isolation Forest,NOT_DETECTED,,,2026-09-19T12:00:10.380+02:00,3302,,,,0,autoencoder
+54,autoencoder,Autoencoder,DETECTED,2026-09-19T12:00:24.585+02:00,3325,2026-09-19T12:00:24.585+02:00,3325,0,0.0,1,1,autoencoder+rms
+54,rms,RMS,DETECTED,2026-09-19T12:00:24.585+02:00,3325,2026-09-19T12:00:24.585+02:00,3325,0,0.0,1,1,autoencoder+rms
+54,isolation_forest,Isolation Forest,DETECTED,2026-09-19T12:00:25.202+02:00,3326,2026-09-19T12:00:24.585+02:00,3325,1,616.34703,2,0,autoencoder+rms
+55,autoencoder,Autoencoder,DETECTED,2026-09-19T12:00:54.389+02:00,3373,2026-09-19T12:00:54.389+02:00,3373,0,0.0,1,1,autoencoder
+55,isolation_forest,Isolation Forest,DETECTED,2026-09-19T12:00:55.007+02:00,3374,2026-09-19T12:00:54.389+02:00,3373,1,618.391591,2,0,autoencoder
+55,rms,RMS,DETECTED,2026-09-19T12:00:55.007+02:00,3374,2026-09-19T12:00:54.389+02:00,3373,1,618.391591,2,0,autoencoder
+56,autoencoder,Autoencoder,DETECTED,2026-09-19T12:01:03.031+02:00,3387,2026-09-19T12:01:03.031+02:00,3387,0,0.0,1,1,autoencoder+rms
+56,rms,RMS,DETECTED,2026-09-19T12:01:03.031+02:00,3387,2026-09-19T12:01:03.031+02:00,3387,0,0.0,1,1,autoencoder+rms
+56,isolation_forest,Isolation Forest,DETECTED,2026-09-19T12:01:06.118+02:00,3392,2026-09-19T12:01:03.031+02:00,3387,5,3087.054698,2,0,autoencoder+rms
+57,autoencoder,Autoencoder,DETECTED,2026-09-19T12:01:07.969+02:00,3395,2026-09-19T12:01:07.969+02:00,3395,0,0.0,1,1,autoencoder
+57,isolation_forest,Isolation Forest,DETECTED,2026-09-19T12:01:08.587+02:00,3396,2026-09-19T12:01:07.969+02:00,3395,1,618.169636,2,0,autoencoder
+57,rms,RMS,DETECTED,2026-09-19T12:01:08.587+02:00,3396,2026-09-19T12:01:07.969+02:00,3395,1,618.169636,2,0,autoencoder
+58,autoencoder,Autoencoder,DETECTED,2026-09-19T12:01:11.058+02:00,3400,2026-09-19T12:01:11.058+02:00,3400,0,0.0,1,1,autoencoder+isolation_forest+rms
+58,isolation_forest,Isolation Forest,DETECTED,2026-09-19T12:01:11.058+02:00,3400,2026-09-19T12:01:11.058+02:00,3400,0,0.0,1,1,autoencoder+isolation_forest+rms
+58,rms,RMS,DETECTED,2026-09-19T12:01:11.058+02:00,3400,2026-09-19T12:01:11.058+02:00,3400,0,0.0,1,1,autoencoder+isolation_forest+rms
+59,autoencoder,Autoencoder,DETECTED,2026-09-19T12:01:18.470+02:00,3412,2026-09-19T12:01:18.470+02:00,3412,0,0.0,1,1,autoencoder+rms
+59,rms,RMS,DETECTED,2026-09-19T12:01:18.470+02:00,3412,2026-09-19T12:01:18.470+02:00,3412,0,0.0,1,1,autoencoder+rms
+59,isolation_forest,Isolation Forest,NOT_DETECTED,,,2026-09-19T12:01:18.470+02:00,3412,,,,0,autoencoder+rms
+60,autoencoder,Autoencoder,DETECTED,2026-09-19T12:01:47.498+02:00,3459,2026-09-19T12:01:47.498+02:00,3459,0,0.0,1,1,autoencoder
+60,isolation_forest,Isolation Forest,NOT_DETECTED,,,2026-09-19T12:01:47.498+02:00,3459,,,,0,autoencoder
+60,rms,RMS,NOT_DETECTED,,,2026-09-19T12:01:47.498+02:00,3459,,,,0,autoencoder
+61,autoencoder,Autoencoder,DETECTED,2026-09-19T12:01:49.967+02:00,3463,2026-09-19T12:01:49.967+02:00,3463,0,0.0,1,1,autoencoder
+61,isolation_forest,Isolation Forest,NOT_DETECTED,,,2026-09-19T12:01:49.967+02:00,3463,,,,0,autoencoder
+61,rms,RMS,NOT_DETECTED,,,2026-09-19T12:01:49.967+02:00,3463,,,,0,autoencoder
+62,autoencoder,Autoencoder,DETECTED,2026-09-19T12:02:10.352+02:00,3496,2026-09-19T12:02:10.352+02:00,3496,0,0.0,1,1,autoencoder+rms
+62,rms,RMS,DETECTED,2026-09-19T12:02:10.352+02:00,3496,2026-09-19T12:02:10.352+02:00,3496,0,0.0,1,1,autoencoder+rms
+62,isolation_forest,Isolation Forest,NOT_DETECTED,,,2026-09-19T12:02:10.352+02:00,3496,,,,0,autoencoder+rms
+63,autoencoder,Autoencoder,DETECTED,2026-09-19T12:06:47.691+02:00,3945,2026-09-19T12:06:47.691+02:00,3945,0,0.0,1,1,autoencoder
+63,isolation_forest,Isolation Forest,NOT_DETECTED,,,2026-09-19T12:06:47.691+02:00,3945,,,,0,autoencoder
+63,rms,RMS,NOT_DETECTED,,,2026-09-19T12:06:47.691+02:00,3945,,,,0,autoencoder

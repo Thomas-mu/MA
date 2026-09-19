@@ -1,0 +1,28 @@
+{
+  "captured_utc": "2026-09-19T10:32:16.159649+00:00",
+  "type": "actual_browser_screenshot_of_saved_report",
+  "not_live_gui": true,
+  "source_run": "/home/malik/masterarbeit-edge-ai/results/phone_vibration_pilot_20260919/trials/autoencoder_awaiting_call_03",
+  "command": [
+    "chromium",
+    "--headless",
+    "--no-sandbox",
+    "--disable-gpu",
+    "--disable-background-networking",
+    "--no-first-run",
+    "--user-data-dir=/tmp/phone-report-browser-wvw9jpf4",
+    "--hide-scrollbars",
+    "--window-size=1440,1080",
+    "--virtual-time-budget=1000",
+    "--screenshot=/home/malik/masterarbeit-edge-ai/results/phone_vibration_pilot_20260919/trials/autoencoder_awaiting_call_03/report_screenshot/report.png",
+    "file:///home/malik/masterarbeit-edge-ai/results/phone_vibration_pilot_20260919/trials/autoencoder_awaiting_call_03/report_screenshot/report.html"
+  ],
+  "source_hashes": {
+    "/home/malik/masterarbeit-edge-ai/results/phone_vibration_pilot_20260919/trials/autoencoder_awaiting_call_03/run.json": "52069a211ed0fa6b2ea063f735256f39f89d1c1e571df8a3f4764353bbaa7139",
+    "/home/malik/masterarbeit-edge-ai/results/phone_vibration_pilot_20260919/trials/autoencoder_awaiting_call_03/decisions.csv": "e62d2cb0ddad69eada6f3e5b5889a6c12940ad2e12ce9fbe25fedb81350e9db6",
+    "/home/malik/masterarbeit-edge-ai/results/phone_vibration_pilot_20260919/trials/autoencoder_awaiting_call_03/cues.jsonl": "508859377792c80c5c37d23d1ab0ed56ba3a06e3416224ff49f26ff6324f9343",
+    "/home/malik/masterarbeit-edge-ai/results/phone_vibration_pilot_20260919/trials/autoencoder_awaiting_call_03/figures/overview.png": "1d8321887ac34de163c1a24cc14af71bc287ce638569e72ba5a93bad8fc27239",
+    "/home/malik/masterarbeit-edge-ai/results/phone_vibration_pilot_20260919/trials/autoencoder_awaiting_call_03/report_screenshot/report.html": "b9bcba4551ec721e94e13259094eeeb90f8730cd1ba3d376e9e0cda60c5e4bda"
+  },
+  "screenshot_sha256": "7a9cc2f71e1e03b1f3ac5febca078a8aff39fee47e8c73e4db2f7e7ddf8d6f1f"
+}

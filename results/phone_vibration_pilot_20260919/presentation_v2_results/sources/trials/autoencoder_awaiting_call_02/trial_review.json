@@ -1,0 +1,8 @@
+{
+  "review_status": "repeat_requested_early_call",
+  "user_statement": "starte neu weil ich früher angerufen habe",
+  "raw_data_preserved": true,
+  "include_in_detection_speed_comparison": false,
+  "reason": "Nutzer bestätigt vorzeitigen Anruf. Die gespeicherte call_requested-Markierung lag vor der noch nicht gesendeten Freigabenachricht und kennzeichnet keinen physisch verifizierten Beginn.",
+  "replacement_run": "autoencoder_awaiting_call_03"
+}

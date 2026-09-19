@@ -1,0 +1,9 @@
+{
+  "review_status": "repeat_requested_call_coordination_unclear",
+  "raw_data_preserved": true,
+  "include_in_descriptive_call_comparison": false,
+  "include_in_true_detection_speed_comparison": false,
+  "verified_physical_onset": false,
+  "replacement_run": "isolation_forest_awaiting_call_02",
+  "reason": "Nutzer bat um Neustart, weil er den Anruf verpasst habe. Es wurde noch keine Anruf-Freigabe protokolliert; sieben Alarmfenster waren bereits vor einer Freigabe beobachtet worden. Zeitpunkt und Ursache der Vibration sind unbestätigt."
+}

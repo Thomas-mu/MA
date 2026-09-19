@@ -1,0 +1,199 @@
+{
+  "scope": "offline_same_raw_windows_not_live_latency_benchmark",
+  "true_detection_delay_ms": null,
+  "physical_onset_verified": false,
+  "thresholds_changed": false,
+  "bundle_sha256": "dbfad8529b642d1e4c74119b3865b0600c3a7668198328e1112707c7502b2eb1",
+  "provenance": {
+    "created_at_utc": "2026-09-19T10:44:57.922843+00:00",
+    "command": [
+      "src/replay_phone_pilot.py",
+      "--source",
+      "results/phone_vibration_pilot_20260919",
+      "--output",
+      "results/phone_vibration_pilot_20260919/replay_v1"
+    ],
+    "working_directory": "/home/malik/masterarbeit-edge-ai",
+    "code_commit": "12263edd5a780b21d1668c6c1d25f2ac91e9f0ca",
+    "git_status_porcelain": "?? results/live_runs/live_tflite_gui_20260919_112610_777960.anomalies.csv\n?? results/live_runs/live_tflite_gui_20260919_112610_777960.csv\n?? results/live_runs/live_tflite_gui_20260919_112610_777960.gui.csv\n?? results/live_runs/live_tflite_gui_20260919_112610_777960.raw.csv\n?? results/live_runs/live_tflite_gui_20260919_112610_777960.raw.events.jsonl\n?? results/live_runs/live_tflite_gui_20260919_112610_777960.run.json\n?? results/manual_fan_75_20260919_120053_482720.jsonl\n?? results/phone_vibration_pilot_20260919/\n?? src/build_phone_presentation.py\n?? src/phone_vibration_experiment.py\n?? src/replay_phone_pilot.py\n?? src/snapshot_phone_report.py\n?? tests/test_phone_vibration_experiment.py",
+    "implementation_sha256": "479a3de9263842574ab2c69fca5adaeac8b5418e13bb383bfae3e026ed98d2ca",
+    "python": "3.13.5 (main, Jun 13 2026, 14:18:01) [GCC 14.2.0]",
+    "python_executable": "/home/malik/masterarbeit-edge-ai/.venv/bin/python",
+    "platform": "Linux-6.18.34+rpt-rpi-2712-aarch64-with-glibc2.41",
+    "hostname": "edgepi",
+    "device_model": "Raspberry Pi 5 Model B Rev 1.0",
+    "logical_cpu_count": 4,
+    "packages": {
+      "numpy": "2.5.1",
+      "scikit-learn": "1.9.0",
+      "joblib": "1.5.3",
+      "psutil": "7.2.2",
+      "tensorflow": "2.21.0",
+      "ai-edge-litert": "2.1.6",
+      "tflite-runtime": null
+    }
+  },
+  "recordings": {
+    "autoencoder_awaiting_call_03": {
+      "original_live_method": "tflite_autoencoder",
+      "windows": 184,
+      "partial_samples_excluded": 65,
+      "methods": {
+        "rms": {
+          "alarm_windows_by_phase": {
+            "pre_cue": 0,
+            "between_cues": 8,
+            "post_cue": 0,
+            "straddling": 0
+          },
+          "alarm_windows_total": 8,
+          "first_alarm_window_between_cues": 97,
+          "live_prediction_mismatches": null,
+          "maximum_live_score_difference": null,
+          "first_alarm_window_rank": 1
+        },
+        "isolation_forest": {
+          "alarm_windows_by_phase": {
+            "pre_cue": 0,
+            "between_cues": 6,
+            "post_cue": 0,
+            "straddling": 0
+          },
+          "alarm_windows_total": 6,
+          "first_alarm_window_between_cues": 97,
+          "live_prediction_mismatches": null,
+          "maximum_live_score_difference": null,
+          "first_alarm_window_rank": 1
+        },
+        "tflite_autoencoder": {
+          "alarm_windows_by_phase": {
+            "pre_cue": 0,
+            "between_cues": 11,
+            "post_cue": 0,
+            "straddling": 0
+          },
+          "alarm_windows_total": 11,
+          "first_alarm_window_between_cues": 97,
+          "live_prediction_mismatches": 0,
+          "maximum_live_score_difference": 0.0,
+          "first_alarm_window_rank": 1
+        }
+      },
+      "ranking_has_no_precue_alarms": true
+    },
+    "isolation_forest_awaiting_call_02": {
+      "original_live_method": "isolation_forest",
+      "windows": 196,
+      "partial_samples_excluded": 82,
+      "methods": {
+        "rms": {
+          "alarm_windows_by_phase": {
+            "pre_cue": 0,
+            "between_cues": 6,
+            "post_cue": 0,
+            "straddling": 0
+          },
+          "alarm_windows_total": 6,
+          "first_alarm_window_between_cues": 94,
+          "live_prediction_mismatches": null,
+          "maximum_live_score_difference": null,
+          "first_alarm_window_rank": 2
+        },
+        "isolation_forest": {
+          "alarm_windows_by_phase": {
+            "pre_cue": 0,
+            "between_cues": 6,
+            "post_cue": 0,
+            "straddling": 0
+          },
+          "alarm_windows_total": 6,
+          "first_alarm_window_between_cues": 94,
+          "live_prediction_mismatches": 0,
+          "maximum_live_score_difference": 0.0,
+          "first_alarm_window_rank": 2
+        },
+        "tflite_autoencoder": {
+          "alarm_windows_by_phase": {
+            "pre_cue": 0,
+            "between_cues": 9,
+            "post_cue": 0,
+            "straddling": 0
+          },
+          "alarm_windows_total": 9,
+          "first_alarm_window_between_cues": 93,
+          "live_prediction_mismatches": null,
+          "maximum_live_score_difference": null,
+          "first_alarm_window_rank": 1
+        }
+      },
+      "ranking_has_no_precue_alarms": true
+    },
+    "rms_awaiting_call_01": {
+      "original_live_method": "rms",
+      "windows": 234,
+      "partial_samples_excluded": 104,
+      "methods": {
+        "rms": {
+          "alarm_windows_by_phase": {
+            "pre_cue": 0,
+            "between_cues": 6,
+            "post_cue": 0,
+            "straddling": 0
+          },
+          "alarm_windows_total": 6,
+          "first_alarm_window_between_cues": 155,
+          "live_prediction_mismatches": 0,
+          "maximum_live_score_difference": 0.0,
+          "first_alarm_window_rank": 1
+        },
+        "isolation_forest": {
+          "alarm_windows_by_phase": {
+            "pre_cue": 0,
+            "between_cues": 6,
+            "post_cue": 0,
+            "straddling": 0
+          },
+          "alarm_windows_total": 6,
+          "first_alarm_window_between_cues": 155,
+          "live_prediction_mismatches": null,
+          "maximum_live_score_difference": null,
+          "first_alarm_window_rank": 1
+        },
+        "tflite_autoencoder": {
+          "alarm_windows_by_phase": {
+            "pre_cue": 0,
+            "between_cues": 9,
+            "post_cue": 0,
+            "straddling": 0
+          },
+          "alarm_windows_total": 9,
+          "first_alarm_window_between_cues": 155,
+          "live_prediction_mismatches": null,
+          "maximum_live_score_difference": null,
+          "first_alarm_window_rank": 1
+        }
+      },
+      "ranking_has_no_precue_alarms": true
+    }
+  },
+  "source_hashes": {
+    "/home/malik/masterarbeit-edge-ai/results/phone_vibration_pilot_20260919/trials/autoencoder_awaiting_call_03/run.json": "52069a211ed0fa6b2ea063f735256f39f89d1c1e571df8a3f4764353bbaa7139",
+    "/home/malik/masterarbeit-edge-ai/results/phone_vibration_pilot_20260919/trials/autoencoder_awaiting_call_03/raw.csv": "00ad2204207a0f5416e95e5bc31a88cb2fbba7918043d7bb054a4c37e797aa09",
+    "/home/malik/masterarbeit-edge-ai/results/phone_vibration_pilot_20260919/trials/autoencoder_awaiting_call_03/decisions.csv": "e62d2cb0ddad69eada6f3e5b5889a6c12940ad2e12ce9fbe25fedb81350e9db6",
+    "/home/malik/masterarbeit-edge-ai/results/phone_vibration_pilot_20260919/trials/autoencoder_awaiting_call_03/cues.jsonl": "508859377792c80c5c37d23d1ab0ed56ba3a06e3416224ff49f26ff6324f9343",
+    "/home/malik/masterarbeit-edge-ai/results/phone_vibration_pilot_20260919/trials/autoencoder_awaiting_call_03/trial_review.json": "e88355da75dbe150d685dbca7cca076807d4187773fa1c4f2950ad07b6dd758c",
+    "/home/malik/masterarbeit-edge-ai/results/phone_vibration_pilot_20260919/trials/autoencoder_awaiting_call_03/capture_source.py": "7d8caa3d9799172d8a28b46d881f7fb3b7538343e98d5d3327ac83c79f5d2a5e",
+    "/home/malik/masterarbeit-edge-ai/results/phone_vibration_pilot_20260919/trials/isolation_forest_awaiting_call_02/run.json": "ae042c398c874fd7e729eff20ad7d55fd3695e46437b7331200483d50df9ee49",
+    "/home/malik/masterarbeit-edge-ai/results/phone_vibration_pilot_20260919/trials/isolation_forest_awaiting_call_02/raw.csv": "fdae1be17bd570969d6dee9f260d7426970aebfcd13bdfd0a0ce914874c25e74",
+    "/home/malik/masterarbeit-edge-ai/results/phone_vibration_pilot_20260919/trials/isolation_forest_awaiting_call_02/decisions.csv": "7c5ca79511335fbb8d369967894654adaaa387155cf3fb1d5ce1a5c1773a4976",
+    "/home/malik/masterarbeit-edge-ai/results/phone_vibration_pilot_20260919/trials/isolation_forest_awaiting_call_02/cues.jsonl": "7bfd0281fb027c9c73a6955d47e07c5b67a324519e9d74c4bd5baec3809d713b",
+    "/home/malik/masterarbeit-edge-ai/results/phone_vibration_pilot_20260919/trials/isolation_forest_awaiting_call_02/trial_review.json": "c7ebb6ebbffba5582e19933bfbd169f51a8a113e6a4964697c22dff9d5c43bc7",
+    "/home/malik/masterarbeit-edge-ai/results/phone_vibration_pilot_20260919/trials/isolation_forest_awaiting_call_02/capture_source.py": "7d8caa3d9799172d8a28b46d881f7fb3b7538343e98d5d3327ac83c79f5d2a5e",
+    "/home/malik/masterarbeit-edge-ai/results/phone_vibration_pilot_20260919/trials/rms_awaiting_call_01/run.json": "148e783da389ff91408a06007141865e1109496c14f2c5c4dd2f51f2c35e8aec",
+    "/home/malik/masterarbeit-edge-ai/results/phone_vibration_pilot_20260919/trials/rms_awaiting_call_01/raw.csv": "acfb58339143db02761c6f0302a0394ef6cac74647c2ebaeeea7cba1844cba4c",
+    "/home/malik/masterarbeit-edge-ai/results/phone_vibration_pilot_20260919/trials/rms_awaiting_call_01/decisions.csv": "1f7480eba708bbfde5df9d7ad29fac2c603fbaced6543e7569fae2ba5fb08ccd",
+    "/home/malik/masterarbeit-edge-ai/results/phone_vibration_pilot_20260919/trials/rms_awaiting_call_01/cues.jsonl": "f42a4a1bcc3240462167987f8f5657b84cd0e73ad19e9cb3af89d19455ea19d8",
+    "/home/malik/masterarbeit-edge-ai/results/phone_vibration_pilot_20260919/trials/rms_awaiting_call_01/trial_review.json": "697c96336b28272bc026f8a1132a4c6ce239820a755ca3ca8f188ef3e5805788",
+    "/home/malik/masterarbeit-edge-ai/results/phone_vibration_pilot_20260919/trials/rms_awaiting_call_01/capture_source.py": "7d8caa3d9799172d8a28b46d881f7fb3b7538343e98d5d3327ac83c79f5d2a5e"
+  }
+}

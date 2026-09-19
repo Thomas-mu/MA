@@ -1,0 +1,15 @@
+{
+  "windows": 234,
+  "invalid_windows": 0,
+  "alarm_windows": 6,
+  "processing_median_ms": 0.284862,
+  "processing_p95_ms": 0.35245555,
+  "sampled_peak_rss_mib": 39.3125,
+  "true_detection_delay_ms": null,
+  "detection_rate": null,
+  "false_alarm_rate": null,
+  "reason": "Kein unabhängig gemessener physischer Störungsbeginn/-ende vorhanden.",
+  "call_requests": 1,
+  "one_call_request": true,
+  "purpose": "exploratory_phone_pilot"
+}

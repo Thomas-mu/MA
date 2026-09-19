@@ -1,0 +1,261 @@
+{
+  "created_utc": "2026-09-19T11:48:10.150788+00:00",
+  "files": [
+    {
+      "path": "assets/joint_alarm_order.pdf",
+      "sha256": "a0e1968347f262e655765fe95e8f0f63f080ebbf5aba0371d3fcaaa234c57050"
+    },
+    {
+      "path": "assets/joint_alarm_order.png",
+      "sha256": "2c36a69be1eaa4cf065b0e59b0b478bf9a18981e31055bc7ce6ef34b1e108373"
+    },
+    {
+      "path": "assets/joint_resources.pdf",
+      "sha256": "f46336853a66609450cd730743c4c77c4ba8f1be837865b083c89d762686d206"
+    },
+    {
+      "path": "assets/joint_resources.png",
+      "sha256": "40e812453e347ce8ddb440e49d4024f9ca57883e205cb15dbfa1530709dc8a18"
+    },
+    {
+      "path": "assets/joint_scores.pdf",
+      "sha256": "ad3aeef7776551e77bd5d30797961335f562e0ca44b784dfd3bab6a692607f3c"
+    },
+    {
+      "path": "assets/joint_scores.png",
+      "sha256": "64a7db90786070888ef2246600555a470c5313da3d0c779735d8b7969cd1e8f0"
+    },
+    {
+      "path": "browser_capture.json",
+      "sha256": "b1c83a45d84f81e1e736ed554b7c1fbaf6bfa8cff9358a1556cdd8333b1b7b15"
+    },
+    {
+      "path": "browser_capture.log",
+      "sha256": "5de3142a7fd3c1876bcb4964322956b108aaddc8b634e7b2d9f91f474255e365"
+    },
+    {
+      "path": "handyvibration_mit_gemeinsamem_liveversuch.pdf",
+      "sha256": "af1e088c3a6b3ad2eb77e8a9f2545e8c81fbdfb73cccd757b1457a519834b9b6"
+    },
+    {
+      "path": "handyvibration_mit_gemeinsamem_liveversuch.pptx",
+      "sha256": "21445479896cf1092eeb10897fbeebd53c6fc80edae88eb655fd4c3aef6a5178"
+    },
+    {
+      "path": "joint_report.html",
+      "sha256": "ac040941dedef24c8fdcfb1fdc5b48f80554b8b20c2396ac476ce19a0792a8ca"
+    },
+    {
+      "path": "joint_report.md",
+      "sha256": "e516aea2cc719bb84fdd4218401cef892c0d4f8223541ca3a6df999a38394e38"
+    },
+    {
+      "path": "joint_report_screenshot.png",
+      "sha256": "78987f9423e54ace6efcb1e7d4782f557b57eb522c33dc8f3a3b232fe7df0832"
+    },
+    {
+      "path": "joint_summary.json",
+      "sha256": "37f2ea7a9ff4f1aa5c9f23efbb987526a484a5da6e0fe326f717666ee391b301"
+    },
+    {
+      "path": "pdf_export.json",
+      "sha256": "bd7f77e80a11f73481d30a5e008d7f2a18cb546b8b407a3219617625f9298599"
+    },
+    {
+      "path": "pdf_export.log",
+      "sha256": "1952a3538dc61165e506075dfd33516655c5c8638d5ab6cb5d5c15769f78b0b7"
+    },
+    {
+      "path": "presentation_print.html",
+      "sha256": "58ce89a68133837d62961a003fa43a8dd6b566c860d8916348a204aa02a7aa50"
+    },
+    {
+      "path": "previews/contact_sheet.jpg",
+      "sha256": "89b871c10efad62fd97e2a2149fc9870a8238b3f5dac13e5654abb1ee4d129bc"
+    },
+    {
+      "path": "previews/slide-01.png",
+      "sha256": "6b893d17c599954179d24f622a15eb388b322880d787d49bb230044654b4c425"
+    },
+    {
+      "path": "previews/slide-02.png",
+      "sha256": "9c141f2408a889700c4c4cb3ad592706735f744ce9d2e054cc365dfc0548a662"
+    },
+    {
+      "path": "previews/slide-03.png",
+      "sha256": "887b428e39001680d98655d41036b14c0b9a6812b06787f37541c1be1e694a9e"
+    },
+    {
+      "path": "previews/slide-04.png",
+      "sha256": "a26b9c1dd0b5ff19bba89070d113dc2d7ccc8924372b7737a7e6c403ef7dadfc"
+    },
+    {
+      "path": "previews/slide-05.png",
+      "sha256": "7f39ae6174a5199200659760c52fbc776bbac32b120adb8d5742246670dcb690"
+    },
+    {
+      "path": "previews/slide-06.png",
+      "sha256": "ba86fc3305ed2022e426022863b8318250e6c3715f6510ed39c798ec33daf64a"
+    },
+    {
+      "path": "previews/slide-07.png",
+      "sha256": "f61b34b522283dd2dd9af2c6a77f1d97dbf7454cc855362ccd49d7983dd9d227"
+    },
+    {
+      "path": "previews/slide-08.png",
+      "sha256": "463317ae427a17c692b985da3254c80b328375a63cce7383897a28593a8cb345"
+    },
+    {
+      "path": "previews/slide-09.png",
+      "sha256": "29d2cad611f87a8f6f7d5f487f3345baeb3171038c48c23200987a346fd00fdc"
+    },
+    {
+      "path": "previews/slide-10.png",
+      "sha256": "abeee8dc6fbdd7acd3ce41d4660efe57444b0c1251563b024c41fb62217c1ade"
+    },
+    {
+      "path": "previews/slide-11.png",
+      "sha256": "3d7b83995a0bff8f7b186386b4c5644b1f00187a554d87f882f794d998146968"
+    },
+    {
+      "path": "previews/slide-12.png",
+      "sha256": "e4d81ee15107edefd14ffb17e09600d9eccf402daf0c466be12c6ef5e97c3555"
+    },
+    {
+      "path": "previews/slide-13.png",
+      "sha256": "492bfe1d8076bc6adc6ad9c3e2fb2f6f1b131467ab7b1b23b52d0a39c22d582e"
+    },
+    {
+      "path": "previews/slide-14.png",
+      "sha256": "52feeef2a740c068d1164b6e2c4428dfc3919edec781764d4ca3175d0442f226"
+    },
+    {
+      "path": "source_manifest.json",
+      "sha256": "d36a1ac1c24e575b9728763c3f844dedf249f883e3ddf0af74ea84c3bc89178b"
+    },
+    {
+      "path": "sources/build_joint_phone_results.py",
+      "sha256": "acaccb7cbaff2b757d0099ad7e3697c515b1b2d9fc67cfc8690a2e081eaf4bdd"
+    },
+    {
+      "path": "sources/build_phone_presentation.py",
+      "sha256": "c58104f1ee8082fba343282f3d52b624f5189c0588e2cd05f6320185d9431937"
+    },
+    {
+      "path": "sources/bundle/autoencoder_float32.tflite",
+      "sha256": "e84030d8523862eed516ee3d6bd1fa58fabd7f777c53f332b55c4e6b95cc9b4d"
+    },
+    {
+      "path": "sources/bundle/bundle.json",
+      "sha256": "dbfad8529b642d1e4c74119b3865b0600c3a7668198328e1112707c7502b2eb1"
+    },
+    {
+      "path": "sources/bundle/comparison_implementation.py",
+      "sha256": "479a3de9263842574ab2c69fca5adaeac8b5418e13bb383bfae3e026ed98d2ca"
+    },
+    {
+      "path": "sources/bundle/isolation_forest.joblib",
+      "sha256": "eb093761a38fc7db97926b09430c7207ea53ceaa7af2ad4ee5d4ca6a70bd4e1f"
+    },
+    {
+      "path": "sources/bundle/scaler.joblib",
+      "sha256": "33318a0ea924f9822a0597734f313c05dc86d773ad1eb7ef08359acb3fd82b45"
+    },
+    {
+      "path": "sources/bundle/source_ae_threshold.json",
+      "sha256": "03067d96ed8b675c17e55bdb91abe764af17135e2ed881883cdd900d71b3fa24"
+    },
+    {
+      "path": "sources/bundle/source_profile.json",
+      "sha256": "c163677d8530064668a98f923da7f432f7300e604e52317a69b06aa27c50348f"
+    },
+    {
+      "path": "sources/bundle/validation_diagnostics.json",
+      "sha256": "81b4d2810f81a0d6e1ba2db46c0593132a167b7450d6874e1b7d477fbe832990"
+    },
+    {
+      "path": "sources/bundle/validation_predictions.csv",
+      "sha256": "96193b651f3608d51205d926eafee9934da3551d298b3bff8dd11facde3810a0"
+    },
+    {
+      "path": "sources/bundle/validation_raw.npy",
+      "sha256": "71aab25b602b4f4ef1162b4e236e0b8b1a874328f023d044280775f6b8c9b8a2"
+    },
+    {
+      "path": "sources/bundle/validation_windows.json",
+      "sha256": "47bd4c25f283e9a07c9969e25c1275f553c2d1b10459315dabd0ac84806102d8"
+    },
+    {
+      "path": "sources/joint_phone_vibration_experiment.py",
+      "sha256": "d4bc8d316ec8347854c487152edbba3a15895ffae6f5f730ace27d94a97729e1"
+    },
+    {
+      "path": "sources/joint_run/bundle.json",
+      "sha256": "dbfad8529b642d1e4c74119b3865b0600c3a7668198328e1112707c7502b2eb1"
+    },
+    {
+      "path": "sources/joint_run/capture_source.py",
+      "sha256": "d4bc8d316ec8347854c487152edbba3a15895ffae6f5f730ace27d94a97729e1"
+    },
+    {
+      "path": "sources/joint_run/common_comparison_source.py",
+      "sha256": "479a3de9263842574ab2c69fca5adaeac8b5418e13bb383bfae3e026ed98d2ca"
+    },
+    {
+      "path": "sources/joint_run/cues.jsonl",
+      "sha256": "379a101e542d6960f20783c11282081901a5781d77c5d4b2dde2294e8317ef94"
+    },
+    {
+      "path": "sources/joint_run/decisions.csv",
+      "sha256": "28e36df9fc68f2bf656796ddf69622e23e21a8603d26d18639b60b7e0dbf376e"
+    },
+    {
+      "path": "sources/joint_run/plan.json",
+      "sha256": "f0b5fc2ebd5a6cb5462d8a09ebdeeb7dd11a4c66b35d44f2f0cd92034a998d77"
+    },
+    {
+      "path": "sources/joint_run/protocol.md",
+      "sha256": "886e00026efcd5222e31cae6bc251033b96669efdd3c36f926d9ee801f18b8e2"
+    },
+    {
+      "path": "sources/joint_run/raw.csv",
+      "sha256": "241d333071ad320bc2f1282b5722a30f54fd06ae968ecc2a9250056eb93a1074"
+    },
+    {
+      "path": "sources/joint_run/raw.events.jsonl",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "sources/joint_run/resources.csv",
+      "sha256": "cfd3398a5454452d811f93a9409b9e18f356ac5fc7613100fe8138f9aac4ac70"
+    },
+    {
+      "path": "sources/joint_run/run.json",
+      "sha256": "a74890d420403316b328dee1819467338bde61095918277224c8ca88bef8710d"
+    },
+    {
+      "path": "sources/joint_run/source_plan.json",
+      "sha256": "aa4f1d513fc02c400c3c0fe1da8ef81f589b0e25bc3fd0e946ec0b8648ac9b95"
+    },
+    {
+      "path": "sources/joint_run/source_protocol.md",
+      "sha256": "4157658ed15f62cee7cfb8b67123b7b92f00b5419070b760cdbf6d95368e6415"
+    },
+    {
+      "path": "sources/joint_run/started.json",
+      "sha256": "8be01869b1c3ccf089edce60f3b3a14c0377be8cafb9e90d9e66b7b33666e90a"
+    },
+    {
+      "path": "sources/prior_deck/handyvibration_ergebnisse.pptx",
+      "sha256": "21564672e4d329dedef18b34870d39ee5b60a83be38c62f37cf1ef7569f8a7ff"
+    },
+    {
+      "path": "sources/prior_deck/speaker_notes.md",
+      "sha256": "ac5df7dd3b656c6d076fdce6b74d742f632b8ee865fffe2b36ba5017d284502d"
+    },
+    {
+      "path": "speaker_notes.md",
+      "sha256": "9479879d7eb02830e54898d556721ee8dbd25e5ae370eb557ba8551718c68b7e"
+    }
+  ]
+}

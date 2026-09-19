@@ -1,0 +1,9 @@
+{
+  "review_status": "exploratory_call_pilot_completed",
+  "raw_data_preserved": true,
+  "replaces_runs": ["autoencoder_awaiting_call_01", "autoencoder_awaiting_call_02"],
+  "include_in_descriptive_call_comparison": true,
+  "include_in_true_detection_speed_comparison": false,
+  "verified_physical_onset": false,
+  "reason": "Kein Alarm vor Operator-Freigabe; elf Alarmfenster zwischen Freigabe und Rückmeldung, danach keine. Physischer Vibrationsbeginn weiterhin unbekannt."
+}

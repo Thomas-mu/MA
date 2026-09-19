@@ -1,0 +1,28 @@
+<!doctype html><html lang="de"><meta charset="utf-8">
+<title>Vorbereitungsstand | Handyvibration auf dem Raspberry Pi</title>
+<style>*{box-sizing:border-box}body{margin:0;padding:36px 54px;background:#F5F8FA;color:#142D42;
+font-family:"DejaVu Sans",sans-serif}header{border-bottom:3px solid #007F86;padding-bottom:20px}
+.eyebrow{color:#007F86;letter-spacing:2px;font-size:15px;font-weight:700}h1{font-size:34px;margin:12px 0}
+.sub{font-size:18px;color:#587084}.grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:24px}
+.card{background:white;border:1px solid #DCE6EC;border-radius:12px;padding:24px}h2{font-size:23px;margin:0 0 14px}
+table{border-collapse:collapse;width:100%;font-size:17px}th,td{text-align:left;padding:13px 9px;border-bottom:1px solid #DCE6EC}
+th{font-size:13px;color:#587084}p{font-size:17px;line-height:1.55;margin:12px 0}
+.tag{display:inline-block;background:#FFF1DB;color:#87500F;padding:8px 12px;border-radius:6px;font-size:14px;font-weight:bold}
+img{width:100%;display:block}.note{font-size:14px;color:#587084}.full{margin-top:24px}
+footer{margin-top:20px;font-size:13px;color:#587084}</style>
+<header><div class="eyebrow">EDGE AI / DOKUMENTIERTER VORBEREITUNGSSTAND</div>
+<h1>Handyvibration: drei Methoden, ein gemeinsames Prüfkonzept</h1>
+<div class="sub">Raspberry Pi 5 · 75 % PWM · 128 × 3 Werte je Fenster · 200 Hz nominal</div></header>
+<div class="grid"><section class="card"><h2>Abgeschlossene Techniktests</h2>
+<table><tr><th>METHODE</th><th>FENSTER</th><th>UNGÜLTIG</th><th>ALARME</th><th>ANRUFE*</th></tr><tr><td><span style="color:#007F86">●</span> Autoencoder</td><td>4</td><td>0</td><td>0</td><td>0</td></tr><tr><td><span style="color:#7454C4">●</span> Isolation Forest</td><td>4</td><td>0</td><td>0</td><td>0</td></tr><tr><td><span style="color:#D67B19">●</span> RMS</td><td>4</td><td>0</td><td>0</td><td>0</td></tr></table><p class="note">Jeweils 3 s angefordert; unabhängige kurze Aufnahmen.
+* Keine Anrufaufforderung protokolliert. Keine Störungsversuche in dieser Datengrundlage.</p></section>
+<section class="card"><h2>Was diese Daten belegen</h2><p>Die drei Einzelprozesse können Sensordaten
+aufzeichnen, Scores berechnen und Entscheidungen speichern.</p>
+<span class="tag">Keine Rangfolge der Fehlererkennung</span><p>Physischer Vibrationsbeginn,
+endgültiger Handyaufbau und dessen Kalibrierung sind noch offen.</p></section></div>
+<section class="card full"><h2>Scoreverlauf der vier Fenster je Techniktest</h2>
+<img src="assets/scores.png" alt="Drei Scoreverläufe relativ zu ihrer eigenen Schwelle">
+<p class="note">Gestrichelt: eigener Schwellenwert. Score/Schwelle ist keine Wahrscheinlichkeit
+und macht unterschiedliche Scores nicht zu gleicher Empfindlichkeit.</p></section>
+<footer>Nachträglich erzeugter Evidenzbericht · keine Live-GUI · keine Aufnahme des Versuchsaufbaus.<br>
+Quellen: sources/technical_checks/*/{run.json, decisions.csv, summary.json} · Erstellt: 2026-09-19T10:32:30.044491+00:00</footer></html>

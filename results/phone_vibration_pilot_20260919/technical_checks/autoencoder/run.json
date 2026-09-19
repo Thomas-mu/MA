@@ -1,0 +1,115 @@
+{
+  "method": "tflite_autoencoder",
+  "started_utc": "2026-09-19T10:11:49.385332+00:00",
+  "status": "completed",
+  "purpose": "technical_check",
+  "gui_enabled": false,
+  "methods_active": [
+    "tflite_autoencoder"
+  ],
+  "pwm_before": {
+    "period": 40000,
+    "duty_cycle": 30000,
+    "enable": 1,
+    "percent": 75.0
+  },
+  "plan_sha256": "aa4f1d513fc02c400c3c0fe1da8ef81f589b0e25bc3fd0e946ec0b8648ac9b95",
+  "bundle_sha256": "dbfad8529b642d1e4c74119b3865b0600c3a7668198328e1112707c7502b2eb1",
+  "provenance": {
+    "created_at_utc": "2026-09-19T10:11:49.422381+00:00",
+    "command": [
+      "src/phone_vibration_experiment.py",
+      "record",
+      "--plan",
+      "results/phone_vibration_pilot_20260919",
+      "--method",
+      "tflite_autoencoder",
+      "--output",
+      "results/phone_vibration_pilot_20260919/technical_checks/autoencoder",
+      "--seconds",
+      "3",
+      "--technical-check"
+    ],
+    "working_directory": "/home/malik/masterarbeit-edge-ai",
+    "code_commit": "12263edd5a780b21d1668c6c1d25f2ac91e9f0ca",
+    "git_status_porcelain": "?? results/live_runs/live_tflite_gui_20260919_112610_777960.anomalies.csv\n?? results/live_runs/live_tflite_gui_20260919_112610_777960.csv\n?? results/live_runs/live_tflite_gui_20260919_112610_777960.gui.csv\n?? results/live_runs/live_tflite_gui_20260919_112610_777960.raw.csv\n?? results/live_runs/live_tflite_gui_20260919_112610_777960.raw.events.jsonl\n?? results/live_runs/live_tflite_gui_20260919_112610_777960.run.json\n?? results/manual_fan_75_20260919_120053_482720.jsonl\n?? results/phone_vibration_pilot_20260919/\n?? src/phone_vibration_experiment.py",
+    "implementation_sha256": "479a3de9263842574ab2c69fca5adaeac8b5418e13bb383bfae3e026ed98d2ca",
+    "python": "3.13.5 (main, Jun 13 2026, 14:18:01) [GCC 14.2.0]",
+    "python_executable": "/home/malik/masterarbeit-edge-ai/.venv/bin/python",
+    "platform": "Linux-6.18.34+rpt-rpi-2712-aarch64-with-glibc2.41",
+    "hostname": "edgepi",
+    "device_model": "Raspberry Pi 5 Model B Rev 1.0",
+    "logical_cpu_count": 4,
+    "packages": {
+      "numpy": "2.5.1",
+      "scikit-learn": "1.9.0",
+      "joblib": "1.5.3",
+      "psutil": "7.2.2",
+      "tensorflow": "2.21.0",
+      "ai-edge-litert": "2.1.6",
+      "tflite-runtime": null
+    }
+  },
+  "implementation_sha256": "00a3b78054903e4f8084d0a74b742a3a0deb59f40f4aa3f49baee78a9717edc8",
+  "requested_seconds": 3.0,
+  "ground_truth_verified": false,
+  "threshold": {
+    "value": 0.47720259914362284,
+    "source": "PROFILE/P99_FROZEN_KERAS_CALIBRATION",
+    "percentile": 99
+  },
+  "warmup_windows": 20,
+  "runtime": "ai_edge_litert.Interpreter (Float32 TFLite)",
+  "sensor": {
+    "model": "ADXL345",
+    "odr_hz": 200,
+    "range_g": 2,
+    "full_resolution": true,
+    "scale_g_per_lsb": 0.0039,
+    "acquisition_mode": "fifo_stream",
+    "register_readback": {
+      "0x2c": "0xb",
+      "0x31": "0x8",
+      "0x2e": "0x0",
+      "0x38": "0x90",
+      "0x2d": "0x8"
+    },
+    "timestamp_source": "host_monotonic_read_completion",
+    "sensor_time_estimate": "sample_index / nominal ODR; not measured sensor time",
+    "lost_samples_exact": null,
+    "bus_number": 1,
+    "i2c_clock_configured_hz": 100000
+  },
+  "start_monotonic_ns": 4919142525394,
+  "acquisition": {
+    "samples_captured": 621,
+    "windows_formed": 4,
+    "windows_dropped": 0,
+    "samples_in_dropped_windows": 0,
+    "gap_events": 0,
+    "overrun_events": 0,
+    "saturated_samples": 0,
+    "queue_high_watermark": 1,
+    "partial_samples_saved": 109,
+    "first_sample_host_monotonic_ns": 4919155180020,
+    "last_sample_host_monotonic_ns": 4922146691628,
+    "queue_capacity_windows": 4,
+    "queue_pending_windows": 0,
+    "drop_policy": "drop_newest",
+    "acquisition_error": null
+  },
+  "finished_utc": "2026-09-19T10:11:52.554727+00:00",
+  "pwm_after": {
+    "period": 40000,
+    "duty_cycle": 30000,
+    "enable": 1,
+    "percent": 75.0
+  },
+  "file_sha256": {
+    "raw.csv": "a74661f06d43e6da7049cf546ae9055a254edd89f1786a458e674e3c26ccdbf7",
+    "cues.jsonl": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "started.json": "0b169eeb31e113b253eed2403c4032ffc6fc427326ac2f0a0719ab9c8e3bb677",
+    "decisions.csv": "a69d90e90e0898b9b6eebf37eed6ef05e2ea43e926cd4e8abb6ff6ffb96cbeaa",
+    "raw.events.jsonl": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  }
+}

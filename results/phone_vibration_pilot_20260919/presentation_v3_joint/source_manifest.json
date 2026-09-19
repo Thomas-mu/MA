@@ -1,0 +1,155 @@
+{
+  "created_utc": "2026-09-19T11:46:04.194318+00:00",
+  "sources": [
+    {
+      "original": "/home/malik/masterarbeit-edge-ai/results/phone_vibration_pilot_20260919/joint_trials/all_methods_01/protocol.md",
+      "snapshot": "sources/joint_run/protocol.md",
+      "sha256": "886e00026efcd5222e31cae6bc251033b96669efdd3c36f926d9ee801f18b8e2"
+    },
+    {
+      "original": "/home/malik/masterarbeit-edge-ai/results/phone_vibration_pilot_20260919/joint_trials/all_methods_01/raw.csv",
+      "snapshot": "sources/joint_run/raw.csv",
+      "sha256": "241d333071ad320bc2f1282b5722a30f54fd06ae968ecc2a9250056eb93a1074"
+    },
+    {
+      "original": "/home/malik/masterarbeit-edge-ai/results/phone_vibration_pilot_20260919/joint_trials/all_methods_01/run.json",
+      "snapshot": "sources/joint_run/run.json",
+      "sha256": "a74890d420403316b328dee1819467338bde61095918277224c8ca88bef8710d"
+    },
+    {
+      "original": "/home/malik/masterarbeit-edge-ai/results/phone_vibration_pilot_20260919/joint_trials/all_methods_01/cues.jsonl",
+      "snapshot": "sources/joint_run/cues.jsonl",
+      "sha256": "379a101e542d6960f20783c11282081901a5781d77c5d4b2dde2294e8317ef94"
+    },
+    {
+      "original": "/home/malik/masterarbeit-edge-ai/results/phone_vibration_pilot_20260919/joint_trials/all_methods_01/source_plan.json",
+      "snapshot": "sources/joint_run/source_plan.json",
+      "sha256": "aa4f1d513fc02c400c3c0fe1da8ef81f589b0e25bc3fd0e946ec0b8648ac9b95"
+    },
+    {
+      "original": "/home/malik/masterarbeit-edge-ai/results/phone_vibration_pilot_20260919/joint_trials/all_methods_01/source_protocol.md",
+      "snapshot": "sources/joint_run/source_protocol.md",
+      "sha256": "4157658ed15f62cee7cfb8b67123b7b92f00b5419070b760cdbf6d95368e6415"
+    },
+    {
+      "original": "/home/malik/masterarbeit-edge-ai/results/phone_vibration_pilot_20260919/joint_trials/all_methods_01/started.json",
+      "snapshot": "sources/joint_run/started.json",
+      "sha256": "8be01869b1c3ccf089edce60f3b3a14c0377be8cafb9e90d9e66b7b33666e90a"
+    },
+    {
+      "original": "/home/malik/masterarbeit-edge-ai/results/phone_vibration_pilot_20260919/joint_trials/all_methods_01/bundle.json",
+      "snapshot": "sources/joint_run/bundle.json",
+      "sha256": "dbfad8529b642d1e4c74119b3865b0600c3a7668198328e1112707c7502b2eb1"
+    },
+    {
+      "original": "/home/malik/masterarbeit-edge-ai/results/phone_vibration_pilot_20260919/joint_trials/all_methods_01/resources.csv",
+      "snapshot": "sources/joint_run/resources.csv",
+      "sha256": "cfd3398a5454452d811f93a9409b9e18f356ac5fc7613100fe8138f9aac4ac70"
+    },
+    {
+      "original": "/home/malik/masterarbeit-edge-ai/results/phone_vibration_pilot_20260919/joint_trials/all_methods_01/decisions.csv",
+      "snapshot": "sources/joint_run/decisions.csv",
+      "sha256": "28e36df9fc68f2bf656796ddf69622e23e21a8603d26d18639b60b7e0dbf376e"
+    },
+    {
+      "original": "/home/malik/masterarbeit-edge-ai/results/phone_vibration_pilot_20260919/joint_trials/all_methods_01/plan.json",
+      "snapshot": "sources/joint_run/plan.json",
+      "sha256": "f0b5fc2ebd5a6cb5462d8a09ebdeeb7dd11a4c66b35d44f2f0cd92034a998d77"
+    },
+    {
+      "original": "/home/malik/masterarbeit-edge-ai/results/phone_vibration_pilot_20260919/joint_trials/all_methods_01/capture_source.py",
+      "snapshot": "sources/joint_run/capture_source.py",
+      "sha256": "d4bc8d316ec8347854c487152edbba3a15895ffae6f5f730ace27d94a97729e1"
+    },
+    {
+      "original": "/home/malik/masterarbeit-edge-ai/results/phone_vibration_pilot_20260919/joint_trials/all_methods_01/common_comparison_source.py",
+      "snapshot": "sources/joint_run/common_comparison_source.py",
+      "sha256": "479a3de9263842574ab2c69fca5adaeac8b5418e13bb383bfae3e026ed98d2ca"
+    },
+    {
+      "original": "/home/malik/masterarbeit-edge-ai/results/phone_vibration_pilot_20260919/joint_trials/all_methods_01/raw.events.jsonl",
+      "snapshot": "sources/joint_run/raw.events.jsonl",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "original": "/home/malik/masterarbeit-edge-ai/results/phone_vibration_pilot_20260919/bundle/validation_raw.npy",
+      "snapshot": "sources/bundle/validation_raw.npy",
+      "sha256": "71aab25b602b4f4ef1162b4e236e0b8b1a874328f023d044280775f6b8c9b8a2"
+    },
+    {
+      "original": "/home/malik/masterarbeit-edge-ai/results/phone_vibration_pilot_20260919/bundle/autoencoder_float32.tflite",
+      "snapshot": "sources/bundle/autoencoder_float32.tflite",
+      "sha256": "e84030d8523862eed516ee3d6bd1fa58fabd7f777c53f332b55c4e6b95cc9b4d"
+    },
+    {
+      "original": "/home/malik/masterarbeit-edge-ai/results/phone_vibration_pilot_20260919/bundle/validation_windows.json",
+      "snapshot": "sources/bundle/validation_windows.json",
+      "sha256": "47bd4c25f283e9a07c9969e25c1275f553c2d1b10459315dabd0ac84806102d8"
+    },
+    {
+      "original": "/home/malik/masterarbeit-edge-ai/results/phone_vibration_pilot_20260919/bundle/isolation_forest.joblib",
+      "snapshot": "sources/bundle/isolation_forest.joblib",
+      "sha256": "eb093761a38fc7db97926b09430c7207ea53ceaa7af2ad4ee5d4ca6a70bd4e1f"
+    },
+    {
+      "original": "/home/malik/masterarbeit-edge-ai/results/phone_vibration_pilot_20260919/bundle/validation_predictions.csv",
+      "snapshot": "sources/bundle/validation_predictions.csv",
+      "sha256": "96193b651f3608d51205d926eafee9934da3551d298b3bff8dd11facde3810a0"
+    },
+    {
+      "original": "/home/malik/masterarbeit-edge-ai/results/phone_vibration_pilot_20260919/bundle/validation_diagnostics.json",
+      "snapshot": "sources/bundle/validation_diagnostics.json",
+      "sha256": "81b4d2810f81a0d6e1ba2db46c0593132a167b7450d6874e1b7d477fbe832990"
+    },
+    {
+      "original": "/home/malik/masterarbeit-edge-ai/results/phone_vibration_pilot_20260919/bundle/source_profile.json",
+      "snapshot": "sources/bundle/source_profile.json",
+      "sha256": "c163677d8530064668a98f923da7f432f7300e604e52317a69b06aa27c50348f"
+    },
+    {
+      "original": "/home/malik/masterarbeit-edge-ai/results/phone_vibration_pilot_20260919/bundle/bundle.json",
+      "snapshot": "sources/bundle/bundle.json",
+      "sha256": "dbfad8529b642d1e4c74119b3865b0600c3a7668198328e1112707c7502b2eb1"
+    },
+    {
+      "original": "/home/malik/masterarbeit-edge-ai/results/phone_vibration_pilot_20260919/bundle/scaler.joblib",
+      "snapshot": "sources/bundle/scaler.joblib",
+      "sha256": "33318a0ea924f9822a0597734f313c05dc86d773ad1eb7ef08359acb3fd82b45"
+    },
+    {
+      "original": "/home/malik/masterarbeit-edge-ai/results/phone_vibration_pilot_20260919/bundle/comparison_implementation.py",
+      "snapshot": "sources/bundle/comparison_implementation.py",
+      "sha256": "479a3de9263842574ab2c69fca5adaeac8b5418e13bb383bfae3e026ed98d2ca"
+    },
+    {
+      "original": "/home/malik/masterarbeit-edge-ai/results/phone_vibration_pilot_20260919/bundle/source_ae_threshold.json",
+      "snapshot": "sources/bundle/source_ae_threshold.json",
+      "sha256": "03067d96ed8b675c17e55bdb91abe764af17135e2ed881883cdd900d71b3fa24"
+    },
+    {
+      "original": "/home/malik/masterarbeit-edge-ai/results/phone_vibration_pilot_20260919/presentation_v2_results/handyvibration_ergebnisse.pptx",
+      "snapshot": "sources/prior_deck/handyvibration_ergebnisse.pptx",
+      "sha256": "21564672e4d329dedef18b34870d39ee5b60a83be38c62f37cf1ef7569f8a7ff"
+    },
+    {
+      "original": "/home/malik/masterarbeit-edge-ai/results/phone_vibration_pilot_20260919/presentation_v2_results/speaker_notes.md",
+      "snapshot": "sources/prior_deck/speaker_notes.md",
+      "sha256": "ac5df7dd3b656c6d076fdce6b74d742f632b8ee865fffe2b36ba5017d284502d"
+    },
+    {
+      "original": "/home/malik/masterarbeit-edge-ai/src/build_joint_phone_results.py",
+      "snapshot": "sources/build_joint_phone_results.py",
+      "sha256": "acaccb7cbaff2b757d0099ad7e3697c515b1b2d9fc67cfc8690a2e081eaf4bdd"
+    },
+    {
+      "original": "/home/malik/masterarbeit-edge-ai/src/build_phone_presentation.py",
+      "snapshot": "sources/build_phone_presentation.py",
+      "sha256": "c58104f1ee8082fba343282f3d52b624f5189c0588e2cd05f6320185d9431937"
+    },
+    {
+      "original": "/home/malik/masterarbeit-edge-ai/src/joint_phone_vibration_experiment.py",
+      "snapshot": "sources/joint_phone_vibration_experiment.py",
+      "sha256": "d4bc8d316ec8347854c487152edbba3a15895ffae6f5f730ace27d94a97729e1"
+    }
+  ]
+}
