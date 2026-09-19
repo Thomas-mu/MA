@@ -13,6 +13,7 @@ import hashlib
 import importlib.util
 import importlib.metadata
 import json
+import math
 import os
 import re
 import platform
@@ -71,6 +72,11 @@ CSV_FIELDS = [
     "total_window_pipeline_time_ms", "queue_pending_windows", "windows_dropped",
     "gap_count", "overrun_count", "saturated_count", "process_cpu_percent_one_core",
     "process_rss_bytes", "process_lifetime_peak_rss_bytes",
+    "isolation_forest_score", "isolation_forest_threshold",
+    "isolation_forest_predicted_label", "isolation_forest_inference_time_ms",
+    "isolation_forest_status", "isolation_forest_runtime",
+    "rms_score", "rms_threshold", "rms_predicted_label",
+    "rms_inference_time_ms", "rms_status", "rms_runtime",
 ]
 
 
@@ -552,11 +558,32 @@ def iter_live_measurements(runtime: TFLiteRuntime, scaler: Any, configuration: L
                            allow_sampling_mismatch: bool = False,
                            fan_pwm_setpoint: float | None = None,
                            measured_rpm: float | None = None, rpm_source: str | None = None,
-                           before_acquisition: Callable[[], Any] | None = None):
+                           before_acquisition: Callable[[], Any] | None = None,
+                           isolation_forest_scorer: Callable[[np.ndarray], float] | None = None,
+                           isolation_forest_threshold: float | None = None,
+                           isolation_forest_runtime: str | None = None,
+                           isolation_forest_provenance: dict[str, Any] | None = None,
+                           rms_scorer: Callable[[np.ndarray], float] | None = None,
+                           rms_threshold: float | None = None,
+                           rms_runtime: str | None = None,
+                           rms_provenance: dict[str, Any] | None = None):
     options = dict(sensor_odr=sensor_odr, sensor_range=sensor_range, buffer_windows=buffer_windows,
                    allow_sampling_mismatch=allow_sampling_mismatch, fan_pwm_setpoint=fan_pwm_setpoint,
                    measured_rpm=measured_rpm, rpm_source=rpm_source)
     validate_acquisition_options(configuration, **options)
+    if (isolation_forest_scorer is None) != (isolation_forest_threshold is None):
+        raise ValueError("Isolation Forest benötigt gemeinsam Scorer und Threshold.")
+    if isolation_forest_threshold is not None and (
+        not math.isfinite(isolation_forest_threshold)
+        or isolation_forest_threshold < 0
+    ):
+        raise ValueError("Isolation-Forest-Threshold muss endlich und nichtnegativ sein.")
+    if (rms_scorer is None) != (rms_threshold is None):
+        raise ValueError("RMS benötigt gemeinsam Scorer und Threshold.")
+    if rms_threshold is not None and (
+        not math.isfinite(rms_threshold) or rms_threshold < 0
+    ):
+        raise ValueError("RMS-Threshold muss endlich und nichtnegativ sein.")
     stop = stop_event or threading.Event()
     output_path.parent.mkdir(parents=True, exist_ok=True)
     manifest_path = output_path.with_suffix(".run.json")
@@ -565,6 +592,18 @@ def iter_live_measurements(runtime: TFLiteRuntime, scaler: Any, configuration: L
         if path.exists():
             raise FileExistsError(f"Ergebnis wird nicht überschrieben: {path}")
     manifest = run_provenance(configuration, runtime, options, gui_enabled=gui_enabled, mode=mode)
+    manifest["isolation_forest"] = {
+        "enabled": isolation_forest_scorer is not None,
+        "threshold": isolation_forest_threshold,
+        "runtime": isolation_forest_runtime,
+        "provenance": isolation_forest_provenance,
+    }
+    manifest["rms"] = {
+        "enabled": rms_scorer is not None,
+        "threshold": rms_threshold,
+        "runtime": rms_runtime,
+        "provenance": rms_provenance,
+    }
     with manifest_path.open("x", encoding="utf-8") as handle:
         json.dump(manifest, handle, indent=2, ensure_ascii=False)
         handle.flush()
@@ -607,6 +646,8 @@ def iter_live_measurements(runtime: TFLiteRuntime, scaler: Any, configuration: L
                     error_message = ""
                     fatal = False
                     score, prediction, inference_ms, preprocessing_ms = float("nan"), -1, 0.0, 0.0
+                    if_score, if_prediction, if_inference_ms = float("nan"), -1, 0.0
+                    rms_value, rms_prediction, rms_inference_ms = float("nan"), -1, 0.0
                     try:
                         if window.gap_count or window.overrun_count or window.saturated_count:
                             raise ValueError("Sensorfenster mit Lücke, Overrun oder Sättigung; Entscheidung ungültig")
@@ -617,6 +658,32 @@ def iter_live_measurements(runtime: TFLiteRuntime, scaler: Any, configuration: L
                         error_message = f"{type(error).__name__}: {error}"
                         invalid += 1
                         fatal = not (window.gap_count or window.overrun_count or window.saturated_count)
+                    if not error_message and isolation_forest_scorer is not None:
+                        if_start_ns = time.perf_counter_ns()
+                        try:
+                            if_score = float(isolation_forest_scorer(scaled))
+                            if not math.isfinite(if_score):
+                                raise ValueError("Isolation Forest lieferte keinen endlichen Score.")
+                            if_prediction = int(if_score > isolation_forest_threshold)
+                        except Exception as error:
+                            error_message = f"Isolation Forest: {type(error).__name__}: {error}"
+                            invalid += 1
+                            fatal = True
+                        finally:
+                            if_inference_ms = (time.perf_counter_ns() - if_start_ns) / 1e6
+                    if not error_message and rms_scorer is not None:
+                        rms_start_ns = time.perf_counter_ns()
+                        try:
+                            rms_value = float(rms_scorer(scaled))
+                            if not math.isfinite(rms_value):
+                                raise ValueError("RMS lieferte keinen endlichen Score.")
+                            rms_prediction = int(rms_value > rms_threshold)
+                        except Exception as error:
+                            error_message = f"RMS: {type(error).__name__}: {error}"
+                            invalid += 1
+                            fatal = True
+                        finally:
+                            rms_inference_ms = (time.perf_counter_ns() - rms_start_ns) / 1e6
                     decision_ns = time.monotonic_ns()
                     snapshot = acquisition.snapshot()
                     row = {"timestamp": datetime.now().astimezone().isoformat(timespec="milliseconds"),
@@ -634,7 +701,26 @@ def iter_live_measurements(runtime: TFLiteRuntime, scaler: Any, configuration: L
                            "total_window_pipeline_time_ms": (decision_ns - window.first_sample_ns) / 1e6,
                            "queue_pending_windows": snapshot["queue_pending_windows"], "windows_dropped": snapshot["windows_dropped"],
                            "gap_count": window.gap_count, "overrun_count": window.overrun_count,
-                           "saturated_count": window.saturated_count, **metrics.sample()}
+                           "saturated_count": window.saturated_count,
+                           "isolation_forest_score": if_score,
+                           "isolation_forest_threshold": isolation_forest_threshold,
+                           "isolation_forest_predicted_label": if_prediction,
+                           "isolation_forest_inference_time_ms": if_inference_ms,
+                           "isolation_forest_status": (
+                               decision_status(if_prediction, if_score, isolation_forest_threshold)
+                               if isolation_forest_scorer is not None else "NOT_CONFIGURED"
+                           ),
+                           "isolation_forest_runtime": isolation_forest_runtime,
+                           "rms_score": rms_value,
+                           "rms_threshold": rms_threshold,
+                           "rms_predicted_label": rms_prediction,
+                           "rms_inference_time_ms": rms_inference_ms,
+                           "rms_status": (
+                               decision_status(rms_prediction, rms_value, rms_threshold)
+                               if rms_scorer is not None else "NOT_CONFIGURED"
+                           ),
+                           "rms_runtime": rms_runtime,
+                           **metrics.sample()}
                     writer.writerow(row)
                     handle.flush()
                     processed += 1

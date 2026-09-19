@@ -1,0 +1,37 @@
+event_id,method,method_label,result,detection_timestamp,detection_window,first_alarm_timestamp,first_alarm_window,delay_windows_from_first,delay_ms_from_first,detection_rank,is_fastest,first_methods
+1,autoencoder,Autoencoder,DETECTED,2026-09-18T19:28:21.439+02:00,402,2026-09-18T19:28:21.439+02:00,402,0,0.0,1,1,autoencoder+rms
+1,rms,RMS,DETECTED,2026-09-18T19:28:21.439+02:00,402,2026-09-18T19:28:21.439+02:00,402,0,0.0,1,1,autoencoder+rms
+1,isolation_forest,Isolation Forest,DETECTED,2026-09-18T19:28:22.055+02:00,403,2026-09-18T19:28:21.439+02:00,402,1,615.711327,2,0,autoencoder+rms
+2,autoencoder,Autoencoder,DETECTED,2026-09-18T19:28:30.704+02:00,417,2026-09-18T19:28:30.704+02:00,417,0,0.0,1,1,autoencoder+rms
+2,rms,RMS,DETECTED,2026-09-18T19:28:30.704+02:00,417,2026-09-18T19:28:30.704+02:00,417,0,0.0,1,1,autoencoder+rms
+2,isolation_forest,Isolation Forest,DETECTED,2026-09-18T19:28:31.322+02:00,418,2026-09-18T19:28:30.704+02:00,417,1,617.372421,2,0,autoencoder+rms
+3,autoencoder,Autoencoder,DETECTED,2026-09-18T19:28:40.591+02:00,433,2026-09-18T19:28:40.591+02:00,433,0,0.0,1,1,autoencoder+isolation_forest+rms
+3,isolation_forest,Isolation Forest,DETECTED,2026-09-18T19:28:40.591+02:00,433,2026-09-18T19:28:40.591+02:00,433,0,0.0,1,1,autoencoder+isolation_forest+rms
+3,rms,RMS,DETECTED,2026-09-18T19:28:40.591+02:00,433,2026-09-18T19:28:40.591+02:00,433,0,0.0,1,1,autoencoder+isolation_forest+rms
+4,autoencoder,Autoencoder,DETECTED,2026-09-18T19:31:53.434+02:00,745,2026-09-18T19:31:53.434+02:00,745,0,0.0,1,1,autoencoder+rms
+4,rms,RMS,DETECTED,2026-09-18T19:31:53.434+02:00,745,2026-09-18T19:31:53.434+02:00,745,0,0.0,1,1,autoencoder+rms
+4,isolation_forest,Isolation Forest,NOT_DETECTED,,,2026-09-18T19:31:53.434+02:00,745,,,,0,autoencoder+rms
+5,autoencoder,Autoencoder,DETECTED,2026-09-18T19:32:00.232+02:00,756,2026-09-18T19:32:00.232+02:00,756,0,0.0,1,1,autoencoder+rms
+5,rms,RMS,DETECTED,2026-09-18T19:32:00.232+02:00,756,2026-09-18T19:32:00.232+02:00,756,0,0.0,1,1,autoencoder+rms
+5,isolation_forest,Isolation Forest,DETECTED,2026-09-18T19:32:02.087+02:00,759,2026-09-18T19:32:00.232+02:00,756,3,1855.296068,2,0,autoencoder+rms
+6,autoencoder,Autoencoder,DETECTED,2026-09-18T19:32:07.037+02:00,767,2026-09-18T19:32:07.037+02:00,767,0,0.0,1,1,autoencoder+rms
+6,rms,RMS,DETECTED,2026-09-18T19:32:07.037+02:00,767,2026-09-18T19:32:07.037+02:00,767,0,0.0,1,1,autoencoder+rms
+6,isolation_forest,Isolation Forest,NOT_DETECTED,,,2026-09-18T19:32:07.037+02:00,767,,,,0,autoencoder+rms
+7,autoencoder,Autoencoder,DETECTED,2026-09-18T19:32:08.884+02:00,770,2026-09-18T19:32:08.884+02:00,770,0,0.0,1,1,autoencoder+rms
+7,rms,RMS,DETECTED,2026-09-18T19:32:08.884+02:00,770,2026-09-18T19:32:08.884+02:00,770,0,0.0,1,1,autoencoder+rms
+7,isolation_forest,Isolation Forest,NOT_DETECTED,,,2026-09-18T19:32:08.884+02:00,770,,,,0,autoencoder+rms
+8,autoencoder,Autoencoder,DETECTED,2026-09-18T19:32:10.737+02:00,773,2026-09-18T19:32:10.737+02:00,773,0,0.0,1,1,autoencoder+rms
+8,rms,RMS,DETECTED,2026-09-18T19:32:10.737+02:00,773,2026-09-18T19:32:10.737+02:00,773,0,0.0,1,1,autoencoder+rms
+8,isolation_forest,Isolation Forest,NOT_DETECTED,,,2026-09-18T19:32:10.737+02:00,773,,,,0,autoencoder+rms
+9,autoencoder,Autoencoder,DETECTED,2026-09-18T19:32:13.829+02:00,778,2026-09-18T19:32:13.829+02:00,778,0,0.0,1,1,autoencoder+rms
+9,rms,RMS,DETECTED,2026-09-18T19:32:13.829+02:00,778,2026-09-18T19:32:13.829+02:00,778,0,0.0,1,1,autoencoder+rms
+9,isolation_forest,Isolation Forest,DETECTED,2026-09-18T19:32:16.918+02:00,783,2026-09-18T19:32:13.829+02:00,778,5,3088.934309,2,0,autoencoder+rms
+10,autoencoder,Autoencoder,DETECTED,2026-09-18T19:33:02.677+02:00,857,2026-09-18T19:33:02.677+02:00,857,0,0.0,1,1,autoencoder
+10,rms,RMS,DETECTED,2026-09-18T19:33:03.913+02:00,859,2026-09-18T19:33:02.677+02:00,857,2,1236.48391,2,0,autoencoder
+10,isolation_forest,Isolation Forest,DETECTED,2026-09-18T19:33:05.149+02:00,861,2026-09-18T19:33:02.677+02:00,857,4,2471.825284,3,0,autoencoder
+11,autoencoder,Autoencoder,DETECTED,2026-09-18T19:37:18.463+02:00,1271,2026-09-18T19:37:18.463+02:00,1271,0,0.0,1,1,autoencoder
+11,rms,RMS,DETECTED,2026-09-18T19:37:19.077+02:00,1272,2026-09-18T19:37:18.463+02:00,1271,1,614.296219,2,0,autoencoder
+11,isolation_forest,Isolation Forest,NOT_DETECTED,,,2026-09-18T19:37:18.463+02:00,1271,,,,0,autoencoder
+12,autoencoder,Autoencoder,DETECTED,2026-09-18T19:37:37.663+02:00,1302,2026-09-18T19:37:37.663+02:00,1302,0,0.0,1,1,autoencoder+rms
+12,rms,RMS,DETECTED,2026-09-18T19:37:37.663+02:00,1302,2026-09-18T19:37:37.663+02:00,1302,0,0.0,1,1,autoencoder+rms
+12,isolation_forest,Isolation Forest,NOT_DETECTED,,,2026-09-18T19:37:37.663+02:00,1302,,,,0,autoencoder+rms

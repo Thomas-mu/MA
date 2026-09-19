@@ -1,0 +1,42 @@
+{
+  "checks": {
+    "completed": true,
+    "pwm_100_before": true,
+    "pwm_100_after": true,
+    "pwm_final_zero": true,
+    "complete_duration": true,
+    "sources_unchanged": true,
+    "same_window_count_all_methods": true,
+    "invalid_not_normal": true
+  },
+  "quality": {
+    "xyz_points": 62143,
+    "individual_axis_values": 186429,
+    "nominal_sensor_odr_hz": 200,
+    "observed_xyz_per_second": 207.14745923776593,
+    "first_to_last_host_span_s": 299.989197206,
+    "first_xyz_after_command_s": 0.086418446,
+    "last_xyz_after_command_s": 300.075615652,
+    "host_interval_p50_ms": 5.550484,
+    "host_interval_p99_ms": 5.94841137,
+    "host_interval_max_ms": 91.197367,
+    "host_intervals_over_10ms": 6,
+    "host_intervals_over_160ms": 0,
+    "read_duration_max_ms": 87.374733,
+    "fifo_depth_max": 18,
+    "gap_flagged_xyz": 0,
+    "overrun_flagged_xyz": 0,
+    "saturated_flagged_xyz": 0,
+    "nonfinite_xyz_points": 0,
+    "nonmonotonic_host_intervals": 0,
+    "exact_lost_sensor_samples": null,
+    "timebase_limitation": "Host read completion is not a measured sensor conversion clock. Exact physical losses are unknown."
+  },
+  "selection": {
+    "xyz_selected": 24859,
+    "full_model_windows": 194,
+    "trailing_xyz_not_windowed": 27,
+    "quality_valid_windows": 194,
+    "quality_invalid_windows": 0
+  }
+}

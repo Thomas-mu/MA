@@ -1,0 +1,299 @@
+{
+  "completed_utc": "2026-09-18T16:01:35.864161+00:00",
+  "status": "completed",
+  "pwm_percent": 100,
+  "duration_s_per_phase": 300,
+  "model_reference_pwm_percent": 75,
+  "phases": {
+    "normal_before": {
+      "title": "Ohne Platte (vorher)",
+      "metrics": {
+        "rms": {
+          "total_windows": 192,
+          "valid_windows": 191,
+          "invalid_windows": 1,
+          "alarm_windows": 191,
+          "alarm_fraction": 1.0,
+          "mean_score": 2.2617896908302586,
+          "threshold": 1.2747695377144315
+        },
+        "isolation_forest": {
+          "total_windows": 192,
+          "valid_windows": 191,
+          "invalid_windows": 1,
+          "alarm_windows": 191,
+          "alarm_fraction": 1.0,
+          "mean_score": 0.6126323249365027,
+          "threshold": 0.5045395247064507
+        },
+        "tflite_autoencoder": {
+          "total_windows": 192,
+          "valid_windows": 191,
+          "invalid_windows": 1,
+          "alarm_windows": 191,
+          "alarm_fraction": 1.0,
+          "mean_score": 4.919559164979158,
+          "threshold": 0.544357966122261
+        }
+      },
+      "quality": {
+        "xyz_points": 61893,
+        "individual_axis_values": 185679,
+        "nominal_sensor_odr_hz": 200,
+        "observed_xyz_per_second": 206.3122910773859,
+        "first_to_last_host_span_s": 299.991821509,
+        "first_xyz_after_command_s": 0.102577521,
+        "last_xyz_after_command_s": 300.09439903,
+        "host_interval_p50_ms": 4.9520219999999995,
+        "host_interval_p99_ms": 7.177428709999986,
+        "host_interval_max_ms": 1235.814436,
+        "host_intervals_over_10ms": 120,
+        "host_intervals_over_160ms": 4,
+        "read_duration_max_ms": 86.578595,
+        "fifo_depth_max": 32,
+        "gap_flagged_xyz": 4,
+        "overrun_flagged_xyz": 4,
+        "saturated_flagged_xyz": 0,
+        "nonfinite_xyz_points": 0,
+        "nonmonotonic_host_intervals": 0,
+        "exact_lost_sensor_samples": null,
+        "timebase_limitation": "Host read completion is not a measured sensor conversion clock. Exact physical losses are unknown."
+      },
+      "selection": {
+        "xyz_selected": 24636,
+        "full_model_windows": 192,
+        "trailing_xyz_not_windowed": 60,
+        "quality_valid_windows": 191,
+        "quality_invalid_windows": 1
+      },
+      "physical_vector_ac_rms": {
+        "interval_s": [
+          180,
+          300
+        ],
+        "block_seconds": 5,
+        "all_blocks": 24,
+        "blocks_without_sensor_flags": 23,
+        "mean_all_blocks_g": 0.056497023287461534,
+        "mean_blocks_without_sensor_flags_g": 0.05649955854730972,
+        "min_blocks_without_sensor_flags_g": 0.0558708449672391,
+        "max_blocks_without_sensor_flags_g": 0.0571874392921643
+      }
+    },
+    "airflow_modified": {
+      "title": "Mit Platte",
+      "metrics": {
+        "rms": {
+          "total_windows": 194,
+          "valid_windows": 194,
+          "invalid_windows": 0,
+          "alarm_windows": 194,
+          "alarm_fraction": 1.0,
+          "mean_score": 2.7803287644491013,
+          "threshold": 1.2747695377144315
+        },
+        "isolation_forest": {
+          "total_windows": 194,
+          "valid_windows": 194,
+          "invalid_windows": 0,
+          "alarm_windows": 194,
+          "alarm_fraction": 1.0,
+          "mean_score": 0.6247229281976049,
+          "threshold": 0.5045395247064507
+        },
+        "tflite_autoencoder": {
+          "total_windows": 194,
+          "valid_windows": 194,
+          "invalid_windows": 0,
+          "alarm_windows": 194,
+          "alarm_fraction": 1.0,
+          "mean_score": 7.363184499512429,
+          "threshold": 0.544357966122261
+        }
+      },
+      "quality": {
+        "xyz_points": 62143,
+        "individual_axis_values": 186429,
+        "nominal_sensor_odr_hz": 200,
+        "observed_xyz_per_second": 207.14745923776593,
+        "first_to_last_host_span_s": 299.989197206,
+        "first_xyz_after_command_s": 0.086418446,
+        "last_xyz_after_command_s": 300.075615652,
+        "host_interval_p50_ms": 5.550484,
+        "host_interval_p99_ms": 5.94841137,
+        "host_interval_max_ms": 91.197367,
+        "host_intervals_over_10ms": 6,
+        "host_intervals_over_160ms": 0,
+        "read_duration_max_ms": 87.374733,
+        "fifo_depth_max": 18,
+        "gap_flagged_xyz": 0,
+        "overrun_flagged_xyz": 0,
+        "saturated_flagged_xyz": 0,
+        "nonfinite_xyz_points": 0,
+        "nonmonotonic_host_intervals": 0,
+        "exact_lost_sensor_samples": null,
+        "timebase_limitation": "Host read completion is not a measured sensor conversion clock. Exact physical losses are unknown."
+      },
+      "selection": {
+        "xyz_selected": 24859,
+        "full_model_windows": 194,
+        "trailing_xyz_not_windowed": 27,
+        "quality_valid_windows": 194,
+        "quality_invalid_windows": 0
+      },
+      "physical_vector_ac_rms": {
+        "interval_s": [
+          180,
+          300
+        ],
+        "block_seconds": 5,
+        "all_blocks": 24,
+        "blocks_without_sensor_flags": 24,
+        "mean_all_blocks_g": 0.07087022186463525,
+        "mean_blocks_without_sensor_flags_g": 0.07087022186463525,
+        "min_blocks_without_sensor_flags_g": 0.0655119356790897,
+        "max_blocks_without_sensor_flags_g": 0.0778461946021169
+      }
+    },
+    "normal_after": {
+      "title": "Ohne Platte (nachher)",
+      "metrics": {
+        "rms": {
+          "total_windows": 194,
+          "valid_windows": 194,
+          "invalid_windows": 0,
+          "alarm_windows": 194,
+          "alarm_fraction": 1.0,
+          "mean_score": 2.108808462777451,
+          "threshold": 1.2747695377144315
+        },
+        "isolation_forest": {
+          "total_windows": 194,
+          "valid_windows": 194,
+          "invalid_windows": 0,
+          "alarm_windows": 194,
+          "alarm_fraction": 1.0,
+          "mean_score": 0.6025347969271877,
+          "threshold": 0.5045395247064507
+        },
+        "tflite_autoencoder": {
+          "total_windows": 194,
+          "valid_windows": 194,
+          "invalid_windows": 0,
+          "alarm_windows": 194,
+          "alarm_fraction": 1.0,
+          "mean_score": 4.245063151748527,
+          "threshold": 0.544357966122261
+        }
+      },
+      "quality": {
+        "xyz_points": 62134,
+        "individual_axis_values": 186402,
+        "nominal_sensor_odr_hz": 200,
+        "observed_xyz_per_second": 207.11688817195827,
+        "first_to_last_host_span_s": 299.990022776,
+        "first_xyz_after_command_s": 0.1031298,
+        "last_xyz_after_command_s": 300.093152576,
+        "host_interval_p50_ms": 5.559146,
+        "host_interval_p99_ms": 5.952702400000001,
+        "host_interval_max_ms": 92.786512,
+        "host_intervals_over_10ms": 4,
+        "host_intervals_over_160ms": 0,
+        "read_duration_max_ms": 90.732869,
+        "fifo_depth_max": 18,
+        "gap_flagged_xyz": 0,
+        "overrun_flagged_xyz": 0,
+        "saturated_flagged_xyz": 0,
+        "nonfinite_xyz_points": 0,
+        "nonmonotonic_host_intervals": 0,
+        "exact_lost_sensor_samples": null,
+        "timebase_limitation": "Host read completion is not a measured sensor conversion clock. Exact physical losses are unknown."
+      },
+      "selection": {
+        "xyz_selected": 24853,
+        "full_model_windows": 194,
+        "trailing_xyz_not_windowed": 21,
+        "quality_valid_windows": 194,
+        "quality_invalid_windows": 0
+      },
+      "physical_vector_ac_rms": {
+        "interval_s": [
+          180,
+          300
+        ],
+        "block_seconds": 5,
+        "all_blocks": 24,
+        "blocks_without_sensor_flags": 24,
+        "mean_all_blocks_g": 0.060750547322933,
+        "mean_blocks_without_sensor_flags_g": 0.060750547322933,
+        "min_blocks_without_sensor_flags_g": 0.0600793114433697,
+        "max_blocks_without_sensor_flags_g": 0.0622682624480286
+      }
+    }
+  },
+  "physical_rms_differences": {
+    "plate_vs_before_percent": 25.435001063401774,
+    "plate_vs_after_percent": 16.657750403315497,
+    "after_vs_before_percent": 7.523932726064997
+  },
+  "verification": {
+    "frozen_source_files_unchanged": true,
+    "normal_before": {
+      "completed": true,
+      "correct_physical_condition_report": true,
+      "pwm100_before_and_after": true,
+      "final_pwm_zero": true,
+      "capture_span_at_least_299_8s": true,
+      "first_sample_within_one_second": true,
+      "raw_csv_hash_matches_sidecar": true,
+      "plan_unchanged": true,
+      "frozen_bundle_unchanged": true,
+      "invalid_windows_not_classified": true,
+      "same_windows_for_all_methods": true,
+      "window_count_matches_decisions": true,
+      "selected_times_in_interval": true,
+      "no_overlapping_phases": true
+    },
+    "airflow_modified": {
+      "completed": true,
+      "correct_physical_condition_report": true,
+      "pwm100_before_and_after": true,
+      "final_pwm_zero": true,
+      "capture_span_at_least_299_8s": true,
+      "first_sample_within_one_second": true,
+      "raw_csv_hash_matches_sidecar": true,
+      "plan_unchanged": true,
+      "frozen_bundle_unchanged": true,
+      "invalid_windows_not_classified": true,
+      "same_windows_for_all_methods": true,
+      "window_count_matches_decisions": true,
+      "selected_times_in_interval": true,
+      "no_overlapping_phases": true
+    },
+    "normal_after": {
+      "completed": true,
+      "correct_physical_condition_report": true,
+      "pwm100_before_and_after": true,
+      "final_pwm_zero": true,
+      "capture_span_at_least_299_8s": true,
+      "first_sample_within_one_second": true,
+      "raw_csv_hash_matches_sidecar": true,
+      "plan_unchanged": true,
+      "frozen_bundle_unchanged": true,
+      "invalid_windows_not_classified": true,
+      "same_windows_for_all_methods": true,
+      "window_count_matches_decisions": true,
+      "selected_times_in_interval": true,
+      "no_overlapping_phases": true
+    }
+  },
+  "limitations": [
+    "One sequence, no independent repetition.",
+    "Frozen model calibrated at 75%, not recalibrated for 100%.",
+    "Plate geometry and mounting equivalence to v4 were not measured in this run.",
+    "Plate-present labels denote operator-reported condition, not defect truth.",
+    "Physical RMS comparison uses unflagged 5-second blocks; flagged data remain stored.",
+    "RPM, electrical waveform and exact sensor losses were not independently measured."
+  ],
+  "operational_note": "First phase-2 attempt stopped at sensor-lock preflight without a PWM start; its records are archived. Conflicting legacy GUI was terminated gracefully before the successful phase-2 start."
+}

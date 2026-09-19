@@ -1,0 +1,16 @@
+{
+  "completed": true,
+  "correct_physical_condition_report": true,
+  "pwm100_before_and_after": true,
+  "final_pwm_zero": true,
+  "capture_span_at_least_299_8s": true,
+  "first_sample_within_one_second": true,
+  "raw_csv_hash_matches_sidecar": true,
+  "plan_unchanged": true,
+  "frozen_bundle_unchanged": true,
+  "invalid_windows_not_classified": true,
+  "same_windows_for_all_methods": true,
+  "window_count_matches_decisions": true,
+  "selected_times_in_interval": true,
+  "no_overlapping_phases": true
+}

@@ -1,0 +1,10 @@
+{
+  "phase": "normal_after",
+  "plate_present": false,
+  "ready": true,
+  "source": "explicit_user_message",
+  "verbatim": "Platte entfernt, Versorgung angeschlossen, bereit",
+  "external_supply_connected_operator_report": true,
+  "accepted_utc": "2026-09-18T15:55:14.500667+00:00",
+  "accepted_monotonic_ns": 10566704058245
+}

@@ -1,0 +1,46 @@
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+normal_after: recording 300 seconds at verified 100% PWM.
+{"phase": "normal_after", "elapsed_s": 30.0, "target_s": 300}
+{"phase": "normal_after", "elapsed_s": 60.0, "target_s": 300}
+{"phase": "normal_after", "elapsed_s": 90.0, "target_s": 300}
+{"phase": "normal_after", "elapsed_s": 120.0, "target_s": 300}
+{"phase": "normal_after", "elapsed_s": 150.0, "target_s": 300}
+{"phase": "normal_after", "elapsed_s": 180.0, "target_s": 300}
+{"phase": "normal_after", "elapsed_s": 210.0, "target_s": 300}
+{"phase": "normal_after", "elapsed_s": 240.1, "target_s": 300}
+{"phase": "normal_after", "elapsed_s": 270.1, "target_s": 300}
+{"phase": "normal_after", "elapsed_s": 300.1, "target_s": 300}
+PWM set to verified 0%; phase capture ended.
+{
+  "phase": "normal_after",
+  "status": "completed",
+  "metrics": {
+    "rms": {
+      "total_windows": 194,
+      "valid_windows": 194,
+      "invalid_windows": 0,
+      "alarm_windows": 194,
+      "alarm_fraction": 1.0,
+      "mean_score": 2.108808462777451,
+      "threshold": 1.2747695377144315
+    },
+    "isolation_forest": {
+      "total_windows": 194,
+      "valid_windows": 194,
+      "invalid_windows": 0,
+      "alarm_windows": 194,
+      "alarm_fraction": 1.0,
+      "mean_score": 0.6025347969271877,
+      "threshold": 0.5045395247064507
+    },
+    "tflite_autoencoder": {
+      "total_windows": 194,
+      "valid_windows": 194,
+      "invalid_windows": 0,
+      "alarm_windows": 194,
+      "alarm_fraction": 1.0,
+      "mean_score": 4.245063151748527,
+      "threshold": 0.544357966122261
+    }
+  }
+}

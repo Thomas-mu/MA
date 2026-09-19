@@ -1,0 +1,17 @@
+{
+  "checks": {
+    "session_completed": true,
+    "pwm100_readback": true,
+    "pwm25_restored": true,
+    "screenshot_values_match_csv": true,
+    "no_dropped_windows": true,
+    "no_sensor_flags": true
+  },
+  "window_count": 109,
+  "statuses": {
+    "ANOMALY": 109
+  },
+  "run_status": "stopped",
+  "screenshot_window": 101,
+  "pwm100_elapsed_s": 70.10703467199892
+}

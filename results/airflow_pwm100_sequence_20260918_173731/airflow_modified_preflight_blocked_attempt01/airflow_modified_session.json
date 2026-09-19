@@ -1,0 +1,42 @@
+{
+  "phase": "airflow_modified",
+  "status": "error",
+  "started_utc": "2026-09-18T15:47:15.770397+00:00",
+  "plan_sha256": "e5ca7dca4069b78f605fc369e364120f7d048782acf988d905369c9f98227c52",
+  "condition": {
+    "phase": "airflow_modified",
+    "plate_present": true,
+    "ready": true,
+    "source": "explicit_user_message",
+    "verbatim": "eingesetzt",
+    "reply_context": "Response to request to report plate installed, power reconnected and setup ready",
+    "accepted_utc": "2026-09-18T15:47:15.666551+00:00",
+    "accepted_monotonic_ns": 10087869940306,
+    "plate_geometry": "not_reported_for_this_run"
+  },
+  "condition_sha256": "50102cfc89d3f520e156bd615cf9aced159848838c5d2d86b98b7b70183f1db4",
+  "pwm_percent": 100,
+  "duration_s": 300,
+  "evaluation_mode": "offline_after_capture",
+  "condition_is_defect_truth": false,
+  "bundle_sha256": "cec1859bfb354bafef77a619e6d2c1ffd85b50787c87595aba9a1e20a80cdae5",
+  "thresholds": {
+    "rms": {
+      "value": 1.2747695377144315,
+      "percentile": 99,
+      "source": "NORMAL_VALIDATION_P99"
+    },
+    "isolation_forest": {
+      "value": 0.5045395247064507,
+      "percentile": 99,
+      "source": "NORMAL_VALIDATION_P99"
+    },
+    "tflite_autoencoder": {
+      "value": 0.544357966122261,
+      "percentile": 99,
+      "source": "FROZEN_KERAS_NORMAL_VALIDATION_P99"
+    }
+  },
+  "error": "RuntimeError: ADXL345 wird bereits von einem Erfassungsprozess verwendet",
+  "finished_utc": "2026-09-18T15:48:15.675263+00:00"
+}

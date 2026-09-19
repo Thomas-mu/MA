@@ -1,0 +1,129 @@
+{
+  "profile_name": "standlauf_pwm75_200hz",
+  "normal_data_only": true,
+  "split_level": "source_file",
+  "train_files": [
+    "normal_001.csv",
+    "normal_002.csv",
+    "normal_003.csv"
+  ],
+  "validation_files": [
+    "normal_004.csv"
+  ],
+  "window_size": 128,
+  "step_size": 128,
+  "window_overlap_samples": 0,
+  "axis_columns": [
+    "x_g",
+    "y_g",
+    "z_g"
+  ],
+  "incomplete_window_rule": "Trailing incomplete samples per file are dropped.",
+  "files": [
+    {
+      "source_file": "normal_001.csv",
+      "sample_count": 12424,
+      "created_windows": 97,
+      "trailing_samples_dropped": 8,
+      "point_label_distribution": {
+        "normal": 12424,
+        "anomaly": 0,
+        "total": 12424
+      },
+      "window_label_distribution": {
+        "normal": 97,
+        "anomaly": 0,
+        "total": 97
+      },
+      "anomaly_types": [
+        "normal_standlauf_pwm75"
+      ],
+      "split": "train",
+      "path": "profiles/standlauf_pwm75_200hz/data/raw/normal_001.csv",
+      "sha256": "00021e0285fb70cdf2ca808ac3dc059ebe97e73271d5d1171df1815aeabe7300"
+    },
+    {
+      "source_file": "normal_002.csv",
+      "sample_count": 12425,
+      "created_windows": 97,
+      "trailing_samples_dropped": 9,
+      "point_label_distribution": {
+        "normal": 12425,
+        "anomaly": 0,
+        "total": 12425
+      },
+      "window_label_distribution": {
+        "normal": 97,
+        "anomaly": 0,
+        "total": 97
+      },
+      "anomaly_types": [
+        "normal_standlauf_pwm75"
+      ],
+      "split": "train",
+      "path": "profiles/standlauf_pwm75_200hz/data/raw/normal_002.csv",
+      "sha256": "fd61cf5fde1c3f0c31049cadd105001520ea769ba77c0789d5e03d0482014f0b"
+    },
+    {
+      "source_file": "normal_003.csv",
+      "sample_count": 12425,
+      "created_windows": 97,
+      "trailing_samples_dropped": 9,
+      "point_label_distribution": {
+        "normal": 12425,
+        "anomaly": 0,
+        "total": 12425
+      },
+      "window_label_distribution": {
+        "normal": 97,
+        "anomaly": 0,
+        "total": 97
+      },
+      "anomaly_types": [
+        "normal_standlauf_pwm75"
+      ],
+      "split": "train",
+      "path": "profiles/standlauf_pwm75_200hz/data/raw/normal_003.csv",
+      "sha256": "0e46c5d39b5b24267d5c99fb234fd27d4e21d77b4749876a1847e8eef73fe3f9"
+    },
+    {
+      "source_file": "normal_004.csv",
+      "sample_count": 12425,
+      "created_windows": 97,
+      "trailing_samples_dropped": 9,
+      "point_label_distribution": {
+        "normal": 12425,
+        "anomaly": 0,
+        "total": 12425
+      },
+      "window_label_distribution": {
+        "normal": 97,
+        "anomaly": 0,
+        "total": 97
+      },
+      "anomaly_types": [
+        "normal_standlauf_pwm75"
+      ],
+      "split": "validation",
+      "path": "profiles/standlauf_pwm75_200hz/data/raw/normal_004.csv",
+      "sha256": "5a59e2d7902a5432380020a535bb5bf75c0cd142f7c5cb990b369dca2b9a2f49"
+    }
+  ],
+  "training_window_count": 291,
+  "validation_window_count": 97,
+  "scaler": {
+    "type": "sklearn.preprocessing.StandardScaler",
+    "fit_data": "Normal training samples only",
+    "mean": [
+      -0.624318715367351,
+      -0.7109172889367514,
+      0.0961169699128488
+    ],
+    "scale": [
+      0.02877779256557175,
+      0.024151855815081915,
+      0.08047085293542439
+    ],
+    "n_samples_seen": 37248.0
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "phase": "airflow_modified",
+  "plate_present": true,
+  "ready": true,
+  "source": "explicit_user_message",
+  "verbatim": "eingesetzt",
+  "reply_context": "Response to request to report plate installed, power reconnected and setup ready",
+  "accepted_utc": "2026-09-18T15:47:15.666551+00:00",
+  "accepted_monotonic_ns": 10087869940306,
+  "plate_geometry": "not_reported_for_this_run"
+}

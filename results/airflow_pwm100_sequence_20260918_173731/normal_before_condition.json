@@ -1,0 +1,9 @@
+{
+  "phase": "normal_before",
+  "plate_present": false,
+  "ready": true,
+  "source": "explicit_user_message",
+  "verbatim": "Platte entfernt, Aufbau bereit",
+  "accepted_utc": "2026-09-18T15:39:04.126683+00:00",
+  "accepted_monotonic_ns": 9596330054005
+}

@@ -150,6 +150,68 @@ class LivePipelineTests(unittest.TestCase):
             self.assertGreaterEqual(row['decision_latency_ms'], row['inference_time_ms'])
             self.assertGreater(row['process_rss_bytes'], 0)
 
+    def test_dual_model_session_scores_same_window_and_logs_both_models(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            artifact = root / 'artifact'
+            artifact.write_text('test artifact')
+            config = monitor.LiveConfiguration(
+                None, artifact, artifact, artifact, 0.2, root / 'decisions.csv',
+                threshold_source='MANUAL', profile_sampling_rate_hz=200,
+            )
+            bus = types.SimpleNamespace(closed=False)
+            bus.close = lambda: setattr(bus, 'closed', True)
+            count = 0
+
+            def read(bus, stop_event=None):
+                nonlocal count
+                count += 1
+                return types.SimpleNamespace(
+                    xyz_g=(0, 0, 0), monotonic_ns=time.monotonic_ns(),
+                    gap=False, overrun=False, saturated=False, sample_index=count,
+                    sensor_time_estimate_s=count / 200, fifo_depth=1,
+                    read_duration_ns=100,
+                )
+
+            fake_sensor = types.SimpleNamespace(
+                read_fresh_sample=read,
+                sensor_configuration=lambda bus: {'odr_hz': 200},
+                reset_fifo=lambda bus: None,
+            )
+            if_scorer = Mock(return_value=0.3)
+            rms_scorer = Mock(return_value=0.4)
+            with patch.dict(sys.modules, {'adxl345': fake_sensor}), \
+                    patch.object(monitor, 'load_sensor_access', return_value=(lambda **kwargs: bus, None)):
+                rows = list(monitor.iter_live_measurements(
+                    runtime(), IdentityScaler(), config, config.default_log_path,
+                    max_windows=1, isolation_forest_scorer=if_scorer,
+                    isolation_forest_threshold=0.2,
+                    isolation_forest_runtime='FAKE IF TEST ONLY',
+                    isolation_forest_provenance={'test_only': True},
+                    rms_scorer=rms_scorer, rms_threshold=0.5,
+                    rms_runtime='FAKE RMS TEST ONLY',
+                    rms_provenance={'test_only': True},
+                ))
+            self.assertEqual(len(rows), 1)
+            row = rows[0]
+            self.assertEqual(row['status'], 'NORMAL')
+            self.assertEqual(row['isolation_forest_status'], 'ANOMALY')
+            self.assertEqual(row['isolation_forest_score'], 0.3)
+            self.assertEqual(row['isolation_forest_predicted_label'], 1)
+            self.assertGreaterEqual(row['isolation_forest_inference_time_ms'], 0)
+            self.assertEqual(row['rms_status'], 'NORMAL')
+            self.assertEqual(row['rms_score'], 0.4)
+            self.assertEqual(row['rms_predicted_label'], 0)
+            self.assertGreaterEqual(row['rms_inference_time_ms'], 0)
+            if_scorer.assert_called_once()
+            rms_scorer.assert_called_once()
+            self.assertTrue(bus.closed)
+            manifest = json.loads(config.default_log_path.with_suffix('.run.json').read_text())
+            self.assertTrue(manifest['isolation_forest']['enabled'])
+            self.assertEqual(manifest['isolation_forest']['threshold'], 0.2)
+            self.assertTrue(manifest['rms']['enabled'])
+            self.assertEqual(manifest['rms']['threshold'], 0.5)
+
     def test_sampling_mismatch_fails_before_sensor_access(self):
         config = monitor.LiveConfiguration(None, Path('model'),Path('scaler'),Path('threshold'),0.2,Path('log'))
         with patch.object(monitor,'load_sensor_access') as sensor, self.assertRaisesRegex(ValueError,'!= Profil'):
@@ -191,7 +253,9 @@ class LivePipelineTests(unittest.TestCase):
             app.message_queue = worker.output_queue
             app.worker_status_text = Mock()
             app.log_text = Mock()
+            app.anomaly_log_text = Mock()
             app.update_measurement = Mock()
+            app.update_plot = Mock()
             app.acquisition_configuration = {}
             app.closing = True
             with patch.object(gui, 'PROJECT_ROOT', root):
@@ -217,11 +281,62 @@ class LivePipelineTests(unittest.TestCase):
         app.anomaly_seen = False
         app.window_indices = []
         app.reconstruction_errors = []
+        app.autoencoder_anomaly_states = []
+        app.isolation_forest_anomaly_states = []
+        app.rms_anomaly_states = []
+        app.anomaly_event_tracker = gui.AnomalyEventTracker(("autoencoder",))
+        app.latest_event_detections = {}
+        app.fastest_alarm_windows = {
+            method: [] for method in gui.ANOMALY_METHOD_LABELS
+        }
+        app.anomaly_comparison_text = Mock()
         with patch('live_pipeline.time.monotonic_ns', return_value=now_ns):
             app.update_measurement(measurement)
         app.status_text.set.assert_called_once_with('STALE / VERALTET')
         self.assertFalse(app.normal_seen)
         self.assertEqual(app.last_window_complete_ns, measurement.window_complete_monotonic_ns)
+
+    def test_anomaly_event_tracker_compares_first_detection_windows(self):
+        import live_tflite_gui as gui
+
+        tracker = gui.AnomalyEventTracker(
+            ("autoencoder", "isolation_forest", "rms")
+        )
+        first = tracker.update(
+            timestamp="2026-09-18T19:00:00+02:00",
+            window_index=10,
+            decision_monotonic_ns=10_000_000_000,
+            labels={"autoencoder": 1, "isolation_forest": 0, "rms": 0},
+        )
+        self.assertEqual(len(first), 1)
+        self.assertEqual(first[0]["method"], "autoencoder")
+        self.assertEqual(first[0]["delay_windows_from_first"], 0)
+        self.assertEqual(first[0]["detection_rank"], 1)
+        self.assertEqual(first[0]["is_fastest"], 1)
+
+        self.assertEqual(tracker.update(
+            timestamp="2026-09-18T19:00:00.640+02:00",
+            window_index=11,
+            decision_monotonic_ns=10_640_000_000,
+            labels={"autoencoder": 0, "isolation_forest": 0, "rms": 0},
+        ), [])
+        delayed = tracker.update(
+            timestamp="2026-09-18T19:00:01.280+02:00",
+            window_index=12,
+            decision_monotonic_ns=11_280_000_000,
+            labels={"autoencoder": 0, "isolation_forest": 1, "rms": 0},
+        )
+        self.assertEqual(delayed[0]["method"], "isolation_forest")
+        self.assertEqual(delayed[0]["delay_windows_from_first"], 2)
+        self.assertEqual(delayed[0]["delay_ms_from_first"], 1280)
+        self.assertEqual(delayed[0]["detection_rank"], 2)
+        self.assertEqual(delayed[0]["is_fastest"], 0)
+
+        missing = tracker.finish()
+        self.assertEqual(len(missing), 1)
+        self.assertEqual(missing[0]["method"], "rms")
+        self.assertEqual(missing[0]["result"], "NOT_DETECTED")
+        self.assertEqual(missing[0]["detection_rank"], "")
 
     def test_empirical_budget_p99_and_missing_decisions_remain_separate(self):
         with tempfile.TemporaryDirectory() as directory:

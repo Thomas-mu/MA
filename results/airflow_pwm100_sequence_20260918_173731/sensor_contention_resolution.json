@@ -1,0 +1,14 @@
+{
+  "pid": 11095,
+  "command": [
+    ".venv_tf/bin/python",
+    "src/live_tflite_gui.py",
+    "--profile",
+    "home_v001",
+    "--sensor-odr",
+    "200",
+    "--allow-sampling-mismatch"
+  ],
+  "action": "SIGTERM for clean GUI shutdown and sensor release",
+  "reason": "Exclusive sensor needed for user-requested three-phase test; blocked attempt had no PWM start"
+}

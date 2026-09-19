@@ -1,0 +1,19 @@
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+Traceback (most recent call last):
+  File "/home/malik/masterarbeit-edge-ai/src/adxl345.py", line 132, in connect
+    fcntl.flock(lock, fcntl.LOCK_EX | fcntl.LOCK_NB)
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+BlockingIOError: [Errno 11] Resource temporarily unavailable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/malik/masterarbeit-edge-ai/results/airflow_pwm100_sequence_20260918_173731/run_phase.py", line 165, in <module>
+    main()
+    ~~~~^^
+  File "/home/malik/masterarbeit-edge-ai/results/airflow_pwm100_sequence_20260918_173731/run_phase.py", line 91, in main
+    with closing(connect(odr_hz=200, range_g=2, fifo=True)) as bus:
+                 ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/malik/masterarbeit-edge-ai/src/adxl345.py", line 135, in connect
+    raise RuntimeError('ADXL345 wird bereits von einem Erfassungsprozess verwendet')
+RuntimeError: ADXL345 wird bereits von einem Erfassungsprozess verwendet
