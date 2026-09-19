@@ -1,0 +1,340 @@
+{
+  "status": "passed",
+  "pages": 63,
+  "tables": 33,
+  "figures": 11,
+  "changed_existing_body_paragraphs": [
+    115,
+    234,
+    245,
+    342,
+    354
+  ],
+  "all_results_and_conclusions_retained_verbatim": true,
+  "all_existing_figures_retained_byte_identically": true,
+  "all_measurement_tables_unchanged": true,
+  "equations_preserved": 3,
+  "source_csvs_unchanged": true,
+  "cover_and_declaration_unchanged": true,
+  "native_indexes_refreshed": 3,
+  "package_normalization": [],
+  "page_checks": [
+    {
+      "page": 1,
+      "words": 52,
+      "overflow": []
+    },
+    {
+      "page": 2,
+      "words": 69,
+      "overflow": []
+    },
+    {
+      "page": 3,
+      "words": 237,
+      "overflow": []
+    },
+    {
+      "page": 4,
+      "words": 189,
+      "overflow": []
+    },
+    {
+      "page": 5,
+      "words": 138,
+      "overflow": []
+    },
+    {
+      "page": 6,
+      "words": 90,
+      "overflow": []
+    },
+    {
+      "page": 7,
+      "words": 224,
+      "overflow": []
+    },
+    {
+      "page": 8,
+      "words": 103,
+      "overflow": []
+    },
+    {
+      "page": 9,
+      "words": 313,
+      "overflow": []
+    },
+    {
+      "page": 10,
+      "words": 308,
+      "overflow": []
+    },
+    {
+      "page": 11,
+      "words": 170,
+      "overflow": []
+    },
+    {
+      "page": 12,
+      "words": 298,
+      "overflow": []
+    },
+    {
+      "page": 13,
+      "words": 329,
+      "overflow": []
+    },
+    {
+      "page": 14,
+      "words": 325,
+      "overflow": []
+    },
+    {
+      "page": 15,
+      "words": 326,
+      "overflow": []
+    },
+    {
+      "page": 16,
+      "words": 109,
+      "overflow": []
+    },
+    {
+      "page": 17,
+      "words": 320,
+      "overflow": []
+    },
+    {
+      "page": 18,
+      "words": 298,
+      "overflow": []
+    },
+    {
+      "page": 19,
+      "words": 91,
+      "overflow": []
+    },
+    {
+      "page": 20,
+      "words": 322,
+      "overflow": []
+    },
+    {
+      "page": 21,
+      "words": 335,
+      "overflow": []
+    },
+    {
+      "page": 22,
+      "words": 185,
+      "overflow": []
+    },
+    {
+      "page": 23,
+      "words": 177,
+      "overflow": []
+    },
+    {
+      "page": 24,
+      "words": 330,
+      "overflow": []
+    },
+    {
+      "page": 25,
+      "words": 318,
+      "overflow": []
+    },
+    {
+      "page": 26,
+      "words": 294,
+      "overflow": []
+    },
+    {
+      "page": 27,
+      "words": 350,
+      "overflow": []
+    },
+    {
+      "page": 28,
+      "words": 315,
+      "overflow": []
+    },
+    {
+      "page": 29,
+      "words": 293,
+      "overflow": []
+    },
+    {
+      "page": 30,
+      "words": 279,
+      "overflow": []
+    },
+    {
+      "page": 31,
+      "words": 285,
+      "overflow": []
+    },
+    {
+      "page": 32,
+      "words": 262,
+      "overflow": []
+    },
+    {
+      "page": 33,
+      "words": 309,
+      "overflow": []
+    },
+    {
+      "page": 34,
+      "words": 253,
+      "overflow": []
+    },
+    {
+      "page": 35,
+      "words": 322,
+      "overflow": []
+    },
+    {
+      "page": 36,
+      "words": 189,
+      "overflow": []
+    },
+    {
+      "page": 37,
+      "words": 344,
+      "overflow": []
+    },
+    {
+      "page": 38,
+      "words": 333,
+      "overflow": []
+    },
+    {
+      "page": 39,
+      "words": 243,
+      "overflow": []
+    },
+    {
+      "page": 40,
+      "words": 210,
+      "overflow": []
+    },
+    {
+      "page": 41,
+      "words": 241,
+      "overflow": []
+    },
+    {
+      "page": 42,
+      "words": 266,
+      "overflow": []
+    },
+    {
+      "page": 43,
+      "words": 160,
+      "overflow": []
+    },
+    {
+      "page": 44,
+      "words": 236,
+      "overflow": []
+    },
+    {
+      "page": 45,
+      "words": 309,
+      "overflow": []
+    },
+    {
+      "page": 46,
+      "words": 176,
+      "overflow": []
+    },
+    {
+      "page": 47,
+      "words": 156,
+      "overflow": []
+    },
+    {
+      "page": 48,
+      "words": 196,
+      "overflow": []
+    },
+    {
+      "page": 49,
+      "words": 195,
+      "overflow": []
+    },
+    {
+      "page": 50,
+      "words": 187,
+      "overflow": []
+    },
+    {
+      "page": 51,
+      "words": 229,
+      "overflow": []
+    },
+    {
+      "page": 52,
+      "words": 181,
+      "overflow": []
+    },
+    {
+      "page": 53,
+      "words": 169,
+      "overflow": []
+    },
+    {
+      "page": 54,
+      "words": 216,
+      "overflow": []
+    },
+    {
+      "page": 55,
+      "words": 341,
+      "overflow": []
+    },
+    {
+      "page": 56,
+      "words": 309,
+      "overflow": []
+    },
+    {
+      "page": 57,
+      "words": 235,
+      "overflow": []
+    },
+    {
+      "page": 58,
+      "words": 253,
+      "overflow": []
+    },
+    {
+      "page": 59,
+      "words": 207,
+      "overflow": []
+    },
+    {
+      "page": 60,
+      "words": 290,
+      "overflow": []
+    },
+    {
+      "page": 61,
+      "words": 343,
+      "overflow": []
+    },
+    {
+      "page": 62,
+      "words": 343,
+      "overflow": []
+    },
+    {
+      "page": 63,
+      "words": 121,
+      "overflow": []
+    }
+  ],
+  "docx_sha256": "1300e4e282e006afb3e16cb3cbd1396bfe1b0df46d5476a54de6d4ebf38ae77b",
+  "pdf_sha256": "d1b469fc98dd16132fa92ddd74b73a137c5483255aacae11c31ae08841b283de"
+}

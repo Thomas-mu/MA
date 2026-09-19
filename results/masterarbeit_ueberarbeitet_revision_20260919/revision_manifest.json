@@ -1,0 +1,90 @@
+{
+  "source": "docs/Masterarbeit_ueberarbeitet.docx",
+  "source_sha256": "f55197f99e681eca49649913f519406b592695d6c84d26f7c7974514628dc050",
+  "backup": "docs/backups/Masterarbeit_ueberarbeitet_vor_diagrammen_20260919.docx",
+  "staged": "results/masterarbeit_ueberarbeitet_revision_20260919/Masterarbeit_ueberarbeitet_staged.docx",
+  "data_sources": {
+    "history": {
+      "path": "profiles/standlauf_pwm75_200hz/results/training_history.csv",
+      "sha256": "1c63fd16166c430a5e0bf088a21676143ba088207267a67f18aa72641a421bce"
+    },
+    "keras_errors": {
+      "path": "profiles/standlauf_pwm75_200hz/results/validation_reconstruction_errors.csv",
+      "sha256": "9cb9325be3577a62b1ee04a465ab56283eafdd2bdea021b2a5380f8006e72e4a"
+    },
+    "comparison_scores": {
+      "path": "results/phone_vibration_pilot_20260919/bundle/validation_predictions.csv",
+      "sha256": "96193b651f3608d51205d926eafee9934da3551d298b3bff8dd11facde3810a0"
+    },
+    "bundle": {
+      "path": "results/phone_vibration_pilot_20260919/bundle/bundle.json",
+      "sha256": "dbfad8529b642d1e4c74119b3865b0600c3a7668198328e1112707c7502b2eb1"
+    }
+  },
+  "metrics": {
+    "training": {
+      "epochs": 100,
+      "best_validation_epoch": 100,
+      "final_loss": 0.2514500021934509,
+      "final_val_loss": 0.2789347469806671
+    },
+    "calibration": {
+      "Autoencoder (Keras)": {
+        "n": 97,
+        "threshold": 0.47720259914362284,
+        "linear_p99_recomputed": 0.47720259914362284,
+        "minimum": 0.14809381630447227,
+        "maximum": 0.4800297731778335,
+        "ordered_value_96": 0.47708480022553074,
+        "above_threshold": 1
+      },
+      "Isolation Forest": {
+        "n": 97,
+        "threshold": 0.4833547401595273,
+        "linear_p99_recomputed": 0.4833547401595273,
+        "minimum": 0.41246583931626946,
+        "maximum": 0.49489455508038793,
+        "ordered_value_96": 0.48287391453782486,
+        "above_threshold": 1
+      },
+      "RMS": {
+        "n": 97,
+        "threshold": 1.296361072562011,
+        "linear_p99_recomputed": 1.296361072562011,
+        "minimum": 0.869322309107787,
+        "maximum": 1.305150562239207,
+        "ordered_value_96": 1.2959948438254612,
+        "above_threshold": 1
+      }
+    },
+    "ae_calibration_source": "Original Keras scores, not recomputed TFLite scores; frozen threshold unchanged."
+  },
+  "source_update": {
+    "reference": "Garay et al. (2026), Sensors 26(14), 4536",
+    "doi": "https://doi.org/10.3390/s26144536",
+    "primary_institutional_record": "https://oulurepo.oulu.fi/handle/10024/64560",
+    "verified": [
+      "bibliography",
+      "modalities",
+      "6-second windows and 10 features",
+      "four algorithms / five variants",
+      "100-tree offline vs 6-tree MCU IF"
+    ],
+    "checked_on": "2026-09-19"
+  },
+  "changes": [
+    "two evidence-based figures with explanations",
+    "pipeline figure renumbered 6-2 to 6-4",
+    "Garay journal version and artifact distinction",
+    "JSON null versus numeric zero clarified",
+    "abbreviations alphabetized"
+  ],
+  "preserved": [
+    "experiment data",
+    "model weights",
+    "thresholds",
+    "resource measurements",
+    "pilot-study limitations",
+    "cover dates pending user confirmation"
+  ]
+}

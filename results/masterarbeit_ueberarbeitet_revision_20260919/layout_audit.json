@@ -1,0 +1,464 @@
+{
+  "indexes": [
+    "Erklärung\ti\nZusammenfassung\tii\nAbbildungsverzeichnis\tv\nTabellenverzeichnis\tvi\nAbkürzungsverzeichnis\tvii\n1 Einleitung, Problemstellung und Zielsetzung\t1\n1.1 Ausgangssituation und Motivation\t1\n1.2 Wissenschaftliche Problemstellung\t1\n1.3 Zielsetzung der Arbeit\t1\n1.4 Forschungsfragen und Bewertungsmaßstab\t2\n1.5 Abgrenzung der Arbeit\t2\n1.6 Aufbau der Arbeit\t3\n2 Theoretische Grundlagen\t4\n2.1 Zustandsüberwachung und Anomalieerkennung\t4\n2.2 Verfahrensklassen für die Anomalieentscheidung\t4\n2.2.1 Statistische Schwellenwertverfahren\t4\n2.2.2 Klassische Verfahren im Normaldaten-Szenario\t4\n2.2.3 Autoencoder\t5\n2.3 Messdaten und Fensterbildung\t5\n2.4 Datenaufteilung und Vorverarbeitung\t5\n2.5 Schwellenwertkalibrierung\t6\n2.6 Erkennungsqualität und Aussagekraft der Evaluation\t6\n2.7 Lokale Ausführung und Zeitverhalten\t7\n2.8 Veränderte Normalbedingungen\t8\n3 Stand der Technik und verwandte Arbeiten\t9\n3.1 Datenbasis und Messbedingungen\t9\n3.2 Verfahren und Edge-Ausführung\t9\n3.3 Vergleich ausgewählter Arbeiten\t10\n3.4 Forschungslücke und Einordnung der eigenen Arbeit\t10\n4 Anforderungsanalyse\t12\n4.1 Messdaten und Vergleichsbasis\t12\n4.2 Lokale Verarbeitung und Zeitverhalten\t12\n4.3 Evaluation\t13\n4.4 Kernanforderungen und Nachweis\t13\n5 Variantenvergleich und Systementscheidung\t16\n5.1 Bewertungsrahmen und Vorgehen\t16\n5.2 Bewertung der Prüfstandsalternativen\t17\n5.3 Auswahl von Sensorik und Edge-Plattform\t19\n5.4 Datenbasis, Signalrepräsentation und Verfahren\t22\n5.5 Kriterienbasierte Bewertung der Softwarealternativen\t23\n5.6 Systementscheidung und Übergang zur Implementierung\t26\n6 Implementierung und Versuchsdesign\t27\n6.1 Smartphoneversuch und Untersuchungsziele\t27\n6.2 Hardware und mechanischer Übertragungsweg\t27\n6.3 PWM, Sensor und Zeitbasis\t28\n6.4 Vorverarbeitung und eingefrorene Modelle\t29\n6.5 Normaltraining, Schwellen und Exportprüfung\t30\n6.6 Einzelbetrieb, Replay und gemeinsame Live-Auswertung\t33\n6.7 Ablauf, Bedienmarker und Annahmen\t34\n6.8 Dateien, Visualisierung und Nachvollziehbarkeit\t35\n7 Evaluation\t36\n7.1 Umfang und Auswahl der Aufnahmen\t36\n7.2 Datenintegrität und Reproduzierbarkeit\t36\n7.3 Einzelbetrieb und Vergleich auf identischen Replay-Fenstern\t37\n7.4 Gemeinsamer Live-Lauf: Signal und Alarmreihenfolge\t38\n7.5 Warum unterscheiden sich die ersten Alarme?\t40\n7.6 Rechenaufwand und Verhalten des Raspberry Pi\t41\n7.7 Forschungsfragen und Nachweisstand\t45\n8 Diskussion\t47\n8.1 Alarmverhalten und Ausgabezeitpunkte\t47\n8.2 Schwellen, Alarmhäufigkeit und faire Bewertung\t47\n8.3 Vergleichbarkeit und interne Gültigkeit\t48\n8.4 Raspberry-Pi-Bedarf und Grenzen der Übertragung\t48\n9 Ausblick\t49\n10 Fazit\t50\nAnhang\t51\nDigitale Belege und Fassungszuordnung\t51\nLesen der aktuellen Messdateien\t52\nKI-Unterstützung und fachliche Verantwortung\t52\nLiteraturverzeichnis\t53",
+    "Abbildung 6-1: Schematischer Aufbau des Smartphoneversuchs\t28\nAbbildung 6-2: Trainings- und Validierungsverlust des Autoencoders\t31\nAbbildung 6-3: Verteilung der Kalibrierungsscores und eingefrorene P99-Schwellen\t32\nAbbildung 6-4: Datenfluss des gemeinsamen Live-Vergleichs\t33\nAbbildung 7-1: Erstes Alarmfenster im Offline-Replay\t38\nAbbildung 7-2: Gemeinsamer Rohdaten- und Scoreverlauf\t39\nAbbildung 7-3: Nummerierte Reihenfolge der ersten Alarmausgaben im gemeinsamen Lauf und zugehörige Fensterindizes\t40\nAbbildung 7-4: Schwellenübergang der Fenster 107 bis 109\t41\nAbbildung 7-5: Verarbeitungszeiten im Einzelbetrieb und im gemeinsamen Prozess\t42\nAbbildung 7-6: CPU und RAM im Einzelbetrieb und gemeinsamen Live-Prozess\t43\nAbbildung 7-7: Zeitlicher Ressourcenverlauf des gemeinsamen Prozesses\t44",
+    "Tabelle 2-1: Kennzahlen der binären Anomalieerkennung\t7\nTabelle 3-1: Ausgewählte Vorarbeiten und ihre Bedeutung für die Untersuchung\t10\nTabelle 4-1: Anforderungen, Prioritäten und Nachweise\t14\nTabelle 5-1: Bewertung der Prüfstandsalternativen\t17\nTabelle 5-2: Kriterien und Gewichte für den Prüfstand\t18\nTabelle 5-3: Gewichtete Bewertung der Prüfstandsalternativen\t18\nTabelle 5-4: Vergleich der Sensorik und Messketten\t19\nTabelle 5-5: Bewertung der Edge-Plattformen\t20\nTabelle 5-6: Kriterien und Gewichte für die Edge-Plattform\t20\nTabelle 5-7: Gewichtete Bewertung der Edge-Plattformen\t21\nTabelle 5-8: Bewertung der Signalrepräsentationen\t22\nTabelle 5-9: Auswahl der Anomalieverfahren\t23\nTabelle 5-10: Kriterienbasierter Vergleich der Softwarealternativen\t24\nTabelle 5-11: Kriterien und Gewichte für die Softwareauswahl\t24\nTabelle 5-12: Gewichtete Bewertung der Softwarealternativen\t25\nTabelle 5-13: Systementscheidungen und ausstehende Nachweise\t26\nTabelle 6-1: Hardware und Betriebszustand der Smartphoneuntersuchung\t28\nTabelle 6-2: Festgelegte Skalierung des aktuellen Normalprofils, gerundet\t29\nTabelle 6-3: Architektur des verwendeten Autoencoders\t30\nTabelle 6-4: Eingefrorene Schwellen der Smartphoneuntersuchung\t32\nTabelle 6-5: Zeitbegriffe und zulässige Interpretation\t34\nTabelle 6-6: Annahmen und offene Nachweise\t35\nTabelle 7-1: Erhaltene Anläufe und Auswertungsrolle\t36\nTabelle 7-2: Ausgewählte Aufnahmen und Verteilung der gültigen Fenster\t37\nTabelle 7-3: Replay derselben Rohfenster; erstes Alarmfenster und gesamte Alarmfenster\t38\nTabelle 7-4: Erste Alarme im gemeinsamen Live-Lauf\t39\nTabelle 7-5: Unmittelbarer Schwellenvergleich auf dem gemeinsamen Fenster 108\t40\nTabelle 7-6: Verarbeitungszeit im jeweiligen Auswerteraufruf; ms\t42\nTabelle 7-7: Prozessressourcen der ausgewählten Smartphoneaufnahmen\t43\nTabelle 7-8: Beantwortung der Forschungsfragen und Nachweisgrenzen\t45\nTabelle 7-9: Rückbindung an die Anforderungen aus Kapitel 4\t46\nTabelle A-1: Nachweisverzeichnis\t51"
+  ],
+  "indexes_count": 3,
+  "shortened_captions": 11,
+  "corrected_cached_pages": [],
+  "unresolved_index_entries": [],
+  "headings": [
+    {
+      "text": "Erklärung",
+      "style": "Heading 1",
+      "label": "",
+      "page": "i"
+    },
+    {
+      "text": "Zusammenfassung",
+      "style": "Heading 1",
+      "label": "",
+      "page": "ii"
+    },
+    {
+      "text": "Einleitung, Problemstellung und Zielsetzung",
+      "style": "Heading 1",
+      "label": "1",
+      "page": "1"
+    },
+    {
+      "text": "Ausgangssituation und Motivation",
+      "style": "Heading 2",
+      "label": "1.1",
+      "page": "1"
+    },
+    {
+      "text": "Wissenschaftliche Problemstellung",
+      "style": "Heading 2",
+      "label": "1.2",
+      "page": "1"
+    },
+    {
+      "text": "Zielsetzung der Arbeit",
+      "style": "Heading 2",
+      "label": "1.3",
+      "page": "1"
+    },
+    {
+      "text": "Forschungsfragen und Bewertungsmaßstab",
+      "style": "Heading 2",
+      "label": "1.4",
+      "page": "2"
+    },
+    {
+      "text": "Abgrenzung der Arbeit",
+      "style": "Heading 2",
+      "label": "1.5",
+      "page": "2"
+    },
+    {
+      "text": "Aufbau der Arbeit",
+      "style": "Heading 2",
+      "label": "1.6",
+      "page": "3"
+    },
+    {
+      "text": "Theoretische Grundlagen",
+      "style": "Heading 1",
+      "label": "2",
+      "page": "4"
+    },
+    {
+      "text": "Zustandsüberwachung und Anomalieerkennung",
+      "style": "Heading 2",
+      "label": "2.1",
+      "page": "4"
+    },
+    {
+      "text": "Verfahrensklassen für die Anomalieentscheidung",
+      "style": "Heading 2",
+      "label": "2.2",
+      "page": "4"
+    },
+    {
+      "text": "Statistische Schwellenwertverfahren",
+      "style": "Heading 3",
+      "label": "2.2.1",
+      "page": "4"
+    },
+    {
+      "text": "Klassische Verfahren im Normaldaten-Szenario",
+      "style": "Heading 3",
+      "label": "2.2.2",
+      "page": "4"
+    },
+    {
+      "text": "Autoencoder",
+      "style": "Heading 3",
+      "label": "2.2.3",
+      "page": "5"
+    },
+    {
+      "text": "Messdaten und Fensterbildung",
+      "style": "Heading 2",
+      "label": "2.3",
+      "page": "5"
+    },
+    {
+      "text": "Datenaufteilung und Vorverarbeitung",
+      "style": "Heading 2",
+      "label": "2.4",
+      "page": "5"
+    },
+    {
+      "text": "Schwellenwertkalibrierung",
+      "style": "Heading 2",
+      "label": "2.5",
+      "page": "6"
+    },
+    {
+      "text": "Erkennungsqualität und Aussagekraft der Evaluation",
+      "style": "Heading 2",
+      "label": "2.6",
+      "page": "6"
+    },
+    {
+      "text": "Lokale Ausführung und Zeitverhalten",
+      "style": "Heading 2",
+      "label": "2.7",
+      "page": "7"
+    },
+    {
+      "text": "Veränderte Normalbedingungen",
+      "style": "Heading 2",
+      "label": "2.8",
+      "page": "8"
+    },
+    {
+      "text": "Stand der Technik und verwandte Arbeiten",
+      "style": "Heading 1",
+      "label": "3",
+      "page": "9"
+    },
+    {
+      "text": "Datenbasis und Messbedingungen",
+      "style": "Heading 2",
+      "label": "3.1",
+      "page": "9"
+    },
+    {
+      "text": "Verfahren und Edge-Ausführung",
+      "style": "Heading 2",
+      "label": "3.2",
+      "page": "9"
+    },
+    {
+      "text": "Vergleich ausgewählter Arbeiten",
+      "style": "Heading 2",
+      "label": "3.3",
+      "page": "10"
+    },
+    {
+      "text": "Forschungslücke und Einordnung der eigenen Arbeit",
+      "style": "Heading 2",
+      "label": "3.4",
+      "page": "10"
+    },
+    {
+      "text": "Anforderungsanalyse",
+      "style": "Heading 1",
+      "label": "4",
+      "page": "12"
+    },
+    {
+      "text": "Messdaten und Vergleichsbasis",
+      "style": "Heading 2",
+      "label": "4.1",
+      "page": "12"
+    },
+    {
+      "text": "Lokale Verarbeitung und Zeitverhalten",
+      "style": "Heading 2",
+      "label": "4.2",
+      "page": "12"
+    },
+    {
+      "text": "Evaluation",
+      "style": "Heading 2",
+      "label": "4.3",
+      "page": "13"
+    },
+    {
+      "text": "Kernanforderungen und Nachweis",
+      "style": "Heading 2",
+      "label": "4.4",
+      "page": "13"
+    },
+    {
+      "text": "Variantenvergleich und Systementscheidung",
+      "style": "Heading 1",
+      "label": "5",
+      "page": "16"
+    },
+    {
+      "text": "Bewertungsrahmen und Vorgehen",
+      "style": "Heading 2",
+      "label": "5.1",
+      "page": "16"
+    },
+    {
+      "text": "Bewertung der Prüfstandsalternativen",
+      "style": "Heading 2",
+      "label": "5.2",
+      "page": "17"
+    },
+    {
+      "text": "Auswahl von Sensorik und Edge-Plattform",
+      "style": "Heading 2",
+      "label": "5.3",
+      "page": "19"
+    },
+    {
+      "text": "Datenbasis, Signalrepräsentation und Verfahren",
+      "style": "Heading 2",
+      "label": "5.4",
+      "page": "22"
+    },
+    {
+      "text": "Kriterienbasierte Bewertung der Softwarealternativen",
+      "style": "Heading 2",
+      "label": "5.5",
+      "page": "23"
+    },
+    {
+      "text": "Systementscheidung und Übergang zur Implementierung",
+      "style": "Heading 2",
+      "label": "5.6",
+      "page": "26"
+    },
+    {
+      "text": "Implementierung und Versuchsdesign",
+      "style": "Heading 1",
+      "label": "6",
+      "page": "27"
+    },
+    {
+      "text": "Smartphoneversuch und Untersuchungsziele",
+      "style": "Heading 2",
+      "label": "6.1",
+      "page": "27"
+    },
+    {
+      "text": "Hardware und mechanischer Übertragungsweg",
+      "style": "Heading 2",
+      "label": "6.2",
+      "page": "27"
+    },
+    {
+      "text": "PWM, Sensor und Zeitbasis",
+      "style": "Heading 2",
+      "label": "6.3",
+      "page": "28"
+    },
+    {
+      "text": "Vorverarbeitung und eingefrorene Modelle",
+      "style": "Heading 2",
+      "label": "6.4",
+      "page": "29"
+    },
+    {
+      "text": "Normaltraining, Schwellen und Exportprüfung",
+      "style": "Heading 2",
+      "label": "6.5",
+      "page": "30"
+    },
+    {
+      "text": "Einzelbetrieb, Replay und gemeinsame Live-Auswertung",
+      "style": "Heading 2",
+      "label": "6.6",
+      "page": "33"
+    },
+    {
+      "text": "Ablauf, Bedienmarker und Annahmen",
+      "style": "Heading 2",
+      "label": "6.7",
+      "page": "34"
+    },
+    {
+      "text": "Dateien, Visualisierung und Nachvollziehbarkeit",
+      "style": "Heading 2",
+      "label": "6.8",
+      "page": "35"
+    },
+    {
+      "text": "Evaluation",
+      "style": "Heading 1",
+      "label": "7",
+      "page": "36"
+    },
+    {
+      "text": "Umfang und Auswahl der Aufnahmen",
+      "style": "Heading 2",
+      "label": "7.1",
+      "page": "36"
+    },
+    {
+      "text": "Datenintegrität und Reproduzierbarkeit",
+      "style": "Heading 2",
+      "label": "7.2",
+      "page": "36"
+    },
+    {
+      "text": "Einzelbetrieb und Vergleich auf identischen Replay-Fenstern",
+      "style": "Heading 2",
+      "label": "7.3",
+      "page": "37"
+    },
+    {
+      "text": "Gemeinsamer Live-Lauf: Signal und Alarmreihenfolge",
+      "style": "Heading 2",
+      "label": "7.4",
+      "page": "38"
+    },
+    {
+      "text": "Warum unterscheiden sich die ersten Alarme?",
+      "style": "Heading 2",
+      "label": "7.5",
+      "page": "40"
+    },
+    {
+      "text": "Rechenaufwand und Verhalten des Raspberry Pi",
+      "style": "Heading 2",
+      "label": "7.6",
+      "page": "41"
+    },
+    {
+      "text": "Forschungsfragen und Nachweisstand",
+      "style": "Heading 2",
+      "label": "7.7",
+      "page": "45"
+    },
+    {
+      "text": "Diskussion",
+      "style": "Heading 1",
+      "label": "8",
+      "page": "47"
+    },
+    {
+      "text": "Alarmverhalten und Ausgabezeitpunkte",
+      "style": "Heading 2",
+      "label": "8.1",
+      "page": "47"
+    },
+    {
+      "text": "Schwellen, Alarmhäufigkeit und faire Bewertung",
+      "style": "Heading 2",
+      "label": "8.2",
+      "page": "47"
+    },
+    {
+      "text": "Vergleichbarkeit und interne Gültigkeit",
+      "style": "Heading 2",
+      "label": "8.3",
+      "page": "48"
+    },
+    {
+      "text": "Raspberry-Pi-Bedarf und Grenzen der Übertragung",
+      "style": "Heading 2",
+      "label": "8.4",
+      "page": "48"
+    },
+    {
+      "text": "Ausblick",
+      "style": "Heading 1",
+      "label": "9",
+      "page": "49"
+    },
+    {
+      "text": "Fazit",
+      "style": "Heading 1",
+      "label": "10",
+      "page": "50"
+    },
+    {
+      "text": "Anhang",
+      "style": "Heading 1",
+      "label": "",
+      "page": "51"
+    },
+    {
+      "text": "Digitale Belege und Fassungszuordnung",
+      "style": "Heading 2",
+      "label": "",
+      "page": "51"
+    },
+    {
+      "text": "Lesen der aktuellen Messdateien",
+      "style": "Heading 2",
+      "label": "",
+      "page": "52"
+    },
+    {
+      "text": "KI-Unterstützung und fachliche Verantwortung",
+      "style": "Heading 2",
+      "label": "",
+      "page": "52"
+    },
+    {
+      "text": "Literaturverzeichnis",
+      "style": "Heading 1",
+      "label": "",
+      "page": "53"
+    }
+  ],
+  "figure_pages": {
+    "Abbildung 6-1": {
+      "printed": "28",
+      "writer_physical": 38
+    },
+    "Abbildung 6-2": {
+      "printed": "31",
+      "writer_physical": 41
+    },
+    "Abbildung 6-3": {
+      "printed": "32",
+      "writer_physical": 42
+    },
+    "Abbildung 6-4": {
+      "printed": "33",
+      "writer_physical": 43
+    },
+    "Abbildung 7-1": {
+      "printed": "38",
+      "writer_physical": 48
+    },
+    "Abbildung 7-2": {
+      "printed": "39",
+      "writer_physical": 49
+    },
+    "Abbildung 7-3": {
+      "printed": "40",
+      "writer_physical": 50
+    },
+    "Abbildung 7-4": {
+      "printed": "41",
+      "writer_physical": 51
+    },
+    "Abbildung 7-5": {
+      "printed": "42",
+      "writer_physical": 52
+    },
+    "Abbildung 7-6": {
+      "printed": "43",
+      "writer_physical": 53
+    },
+    "Abbildung 7-7": {
+      "printed": "44",
+      "writer_physical": 54
+    }
+  },
+  "tables": 33,
+  "main_start_writer_physical": 11,
+  "front_start_writer_physical": 3
+}
