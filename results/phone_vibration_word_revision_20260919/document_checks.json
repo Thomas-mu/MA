@@ -1,0 +1,382 @@
+{
+  "package_normalizations": [
+    {
+      "before": "http://schemas.openxmlformats.org/officedocument/2006/relationships/metadata/core-properties",
+      "after": "http://schemas.openxmlformats.org/package/2006/relationships/metadata/core-properties"
+    }
+  ],
+  "pages": 61,
+  "page_checks": [
+    {
+      "page": 1,
+      "words": 50,
+      "overflow": [],
+      "near_edge": []
+    },
+    {
+      "page": 2,
+      "words": 69,
+      "overflow": [],
+      "near_edge": []
+    },
+    {
+      "page": 3,
+      "words": 261,
+      "overflow": [],
+      "near_edge": []
+    },
+    {
+      "page": 4,
+      "words": 192,
+      "overflow": [],
+      "near_edge": []
+    },
+    {
+      "page": 5,
+      "words": 150,
+      "overflow": [],
+      "near_edge": []
+    },
+    {
+      "page": 6,
+      "words": 303,
+      "overflow": [],
+      "near_edge": []
+    },
+    {
+      "page": 7,
+      "words": 280,
+      "overflow": [],
+      "near_edge": []
+    },
+    {
+      "page": 8,
+      "words": 103,
+      "overflow": [],
+      "near_edge": []
+    },
+    {
+      "page": 9,
+      "words": 325,
+      "overflow": [],
+      "near_edge": []
+    },
+    {
+      "page": 10,
+      "words": 338,
+      "overflow": [],
+      "near_edge": []
+    },
+    {
+      "page": 11,
+      "words": 212,
+      "overflow": [],
+      "near_edge": []
+    },
+    {
+      "page": 12,
+      "words": 298,
+      "overflow": [],
+      "near_edge": []
+    },
+    {
+      "page": 13,
+      "words": 329,
+      "overflow": [],
+      "near_edge": []
+    },
+    {
+      "page": 14,
+      "words": 314,
+      "overflow": [],
+      "near_edge": []
+    },
+    {
+      "page": 15,
+      "words": 323,
+      "overflow": [],
+      "near_edge": []
+    },
+    {
+      "page": 16,
+      "words": 298,
+      "overflow": [],
+      "near_edge": []
+    },
+    {
+      "page": 17,
+      "words": 303,
+      "overflow": [],
+      "near_edge": []
+    },
+    {
+      "page": 18,
+      "words": 330,
+      "overflow": [],
+      "near_edge": []
+    },
+    {
+      "page": 19,
+      "words": 322,
+      "overflow": [],
+      "near_edge": []
+    },
+    {
+      "page": 20,
+      "words": 211,
+      "overflow": [],
+      "near_edge": []
+    },
+    {
+      "page": 21,
+      "words": 112,
+      "overflow": [],
+      "near_edge": []
+    },
+    {
+      "page": 22,
+      "words": 331,
+      "overflow": [],
+      "near_edge": []
+    },
+    {
+      "page": 23,
+      "words": 319,
+      "overflow": [],
+      "near_edge": []
+    },
+    {
+      "page": 24,
+      "words": 337,
+      "overflow": [],
+      "near_edge": []
+    },
+    {
+      "page": 25,
+      "words": 359,
+      "overflow": [],
+      "near_edge": []
+    },
+    {
+      "page": 26,
+      "words": 312,
+      "overflow": [],
+      "near_edge": []
+    },
+    {
+      "page": 27,
+      "words": 302,
+      "overflow": [],
+      "near_edge": []
+    },
+    {
+      "page": 28,
+      "words": 317,
+      "overflow": [],
+      "near_edge": []
+    },
+    {
+      "page": 29,
+      "words": 327,
+      "overflow": [],
+      "near_edge": []
+    },
+    {
+      "page": 30,
+      "words": 343,
+      "overflow": [],
+      "near_edge": []
+    },
+    {
+      "page": 31,
+      "words": 283,
+      "overflow": [],
+      "near_edge": []
+    },
+    {
+      "page": 32,
+      "words": 329,
+      "overflow": [],
+      "near_edge": []
+    },
+    {
+      "page": 33,
+      "words": 227,
+      "overflow": [],
+      "near_edge": []
+    },
+    {
+      "page": 34,
+      "words": 352,
+      "overflow": [],
+      "near_edge": []
+    },
+    {
+      "page": 35,
+      "words": 317,
+      "overflow": [],
+      "near_edge": []
+    },
+    {
+      "page": 36,
+      "words": 232,
+      "overflow": [],
+      "near_edge": []
+    },
+    {
+      "page": 37,
+      "words": 257,
+      "overflow": [],
+      "near_edge": []
+    },
+    {
+      "page": 38,
+      "words": 236,
+      "overflow": [],
+      "near_edge": []
+    },
+    {
+      "page": 39,
+      "words": 267,
+      "overflow": [],
+      "near_edge": []
+    },
+    {
+      "page": 40,
+      "words": 324,
+      "overflow": [],
+      "near_edge": []
+    },
+    {
+      "page": 41,
+      "words": 122,
+      "overflow": [],
+      "near_edge": []
+    },
+    {
+      "page": 42,
+      "words": 156,
+      "overflow": [],
+      "near_edge": []
+    },
+    {
+      "page": 43,
+      "words": 196,
+      "overflow": [],
+      "near_edge": []
+    },
+    {
+      "page": 44,
+      "words": 232,
+      "overflow": [],
+      "near_edge": []
+    },
+    {
+      "page": 45,
+      "words": 187,
+      "overflow": [],
+      "near_edge": []
+    },
+    {
+      "page": 46,
+      "words": 219,
+      "overflow": [],
+      "near_edge": []
+    },
+    {
+      "page": 47,
+      "words": 177,
+      "overflow": [],
+      "near_edge": []
+    },
+    {
+      "page": 48,
+      "words": 335,
+      "overflow": [],
+      "near_edge": []
+    },
+    {
+      "page": 49,
+      "words": 207,
+      "overflow": [],
+      "near_edge": []
+    },
+    {
+      "page": 50,
+      "words": 334,
+      "overflow": [],
+      "near_edge": []
+    },
+    {
+      "page": 51,
+      "words": 293,
+      "overflow": [],
+      "near_edge": []
+    },
+    {
+      "page": 52,
+      "words": 225,
+      "overflow": [],
+      "near_edge": []
+    },
+    {
+      "page": 53,
+      "words": 249,
+      "overflow": [],
+      "near_edge": []
+    },
+    {
+      "page": 54,
+      "words": 190,
+      "overflow": [],
+      "near_edge": []
+    },
+    {
+      "page": 55,
+      "words": 243,
+      "overflow": [],
+      "near_edge": []
+    },
+    {
+      "page": 56,
+      "words": 404,
+      "overflow": [],
+      "near_edge": []
+    },
+    {
+      "page": 57,
+      "words": 359,
+      "overflow": [],
+      "near_edge": []
+    },
+    {
+      "page": 58,
+      "words": 190,
+      "overflow": [],
+      "near_edge": []
+    },
+    {
+      "page": 59,
+      "words": 344,
+      "overflow": [],
+      "near_edge": []
+    },
+    {
+      "page": 60,
+      "words": 332,
+      "overflow": [],
+      "near_edge": []
+    },
+    {
+      "page": 61,
+      "words": 124,
+      "overflow": [],
+      "near_edge": []
+    }
+  ],
+  "new_figures": 9,
+  "indexes_refreshed": 3,
+  "docx_sha256": "d60e1a624deb32c3841e92d863bc0b4045a4fc5ea9ee0716ecbe982b974aadf7",
+  "pdf_sha256": "e98eecd2d456ee8f200c31a87093b437e2497385c1e1113c0b91b36d1f2a644f",
+  "automated_status": "passed"
+}

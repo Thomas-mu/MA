@@ -1,0 +1,61 @@
+{
+  "source_root": "results/phone_vibration_pilot_20260919",
+  "figures": {
+    "setup": [
+      "results/phone_vibration_pilot_20260919/plan.json",
+      "results/phone_vibration_pilot_20260919/joint_trials/all_methods_01/run.json",
+      "results/phone_vibration_pilot_20260919/bundle/source_profile.json"
+    ],
+    "pipeline": [
+      "results/phone_vibration_pilot_20260919/joint_trials/all_methods_01/run.json",
+      "results/phone_vibration_pilot_20260919/joint_trials/all_methods_01/decisions.csv"
+    ],
+    "joint_signals": [
+      "results/phone_vibration_pilot_20260919/joint_trials/all_methods_01/raw.csv",
+      "results/phone_vibration_pilot_20260919/joint_trials/all_methods_01/decisions.csv",
+      "results/phone_vibration_pilot_20260919/joint_trials/all_methods_01/run.json",
+      "results/phone_vibration_pilot_20260919/presentation_v3_joint/joint_summary.json"
+    ],
+    "alarm_order": [
+      "results/phone_vibration_pilot_20260919/presentation_v3_joint/joint_summary.json",
+      "results/phone_vibration_pilot_20260919/joint_trials/all_methods_01/decisions.csv"
+    ],
+    "threshold_crossing": [
+      "results/phone_vibration_pilot_20260919/joint_trials/all_methods_01/decisions.csv"
+    ],
+    "replay_onsets": [
+      "results/phone_vibration_pilot_20260919/replay_v1/summary.json"
+    ],
+    "processing": [
+      "results/phone_vibration_pilot_20260919/trials/autoencoder_awaiting_call_03/decisions.csv",
+      "results/phone_vibration_pilot_20260919/trials/isolation_forest_awaiting_call_02/decisions.csv",
+      "results/phone_vibration_pilot_20260919/trials/rms_awaiting_call_01/decisions.csv",
+      "results/phone_vibration_pilot_20260919/joint_trials/all_methods_01/decisions.csv",
+      "results/phone_vibration_pilot_20260919/presentation_v3_joint/joint_summary.json"
+    ],
+    "resources": [
+      "results/phone_vibration_pilot_20260919/trials/autoencoder_awaiting_call_03/decisions.csv",
+      "results/phone_vibration_pilot_20260919/trials/isolation_forest_awaiting_call_02/decisions.csv",
+      "results/phone_vibration_pilot_20260919/trials/rms_awaiting_call_01/decisions.csv",
+      "results/phone_vibration_pilot_20260919/joint_trials/all_methods_01/resources.csv"
+    ],
+    "joint_operating": [
+      "results/phone_vibration_pilot_20260919/joint_trials/all_methods_01/resources.csv",
+      "results/phone_vibration_pilot_20260919/presentation_v3_joint/joint_summary.json",
+      "results/phone_vibration_pilot_20260919/joint_trials/all_methods_01/run.json"
+    ]
+  },
+  "source_sha256": {
+    "results/phone_vibration_pilot_20260919/plan.json": "aa4f1d513fc02c400c3c0fe1da8ef81f589b0e25bc3fd0e946ec0b8648ac9b95",
+    "results/phone_vibration_pilot_20260919/joint_trials/all_methods_01/run.json": "a74890d420403316b328dee1819467338bde61095918277224c8ca88bef8710d",
+    "results/phone_vibration_pilot_20260919/bundle/source_profile.json": "c163677d8530064668a98f923da7f432f7300e604e52317a69b06aa27c50348f",
+    "results/phone_vibration_pilot_20260919/joint_trials/all_methods_01/decisions.csv": "28e36df9fc68f2bf656796ddf69622e23e21a8603d26d18639b60b7e0dbf376e",
+    "results/phone_vibration_pilot_20260919/joint_trials/all_methods_01/raw.csv": "241d333071ad320bc2f1282b5722a30f54fd06ae968ecc2a9250056eb93a1074",
+    "results/phone_vibration_pilot_20260919/presentation_v3_joint/joint_summary.json": "37f2ea7a9ff4f1aa5c9f23efbb987526a484a5da6e0fe326f717666ee391b301",
+    "results/phone_vibration_pilot_20260919/replay_v1/summary.json": "5139ec9fd486ea7d79d43113e51a4ae22b8831adc516499e2cf9149885e875b8",
+    "results/phone_vibration_pilot_20260919/trials/autoencoder_awaiting_call_03/decisions.csv": "e62d2cb0ddad69eada6f3e5b5889a6c12940ad2e12ce9fbe25fedb81350e9db6",
+    "results/phone_vibration_pilot_20260919/trials/isolation_forest_awaiting_call_02/decisions.csv": "7c5ca79511335fbb8d369967894654adaaa387155cf3fb1d5ce1a5c1773a4976",
+    "results/phone_vibration_pilot_20260919/trials/rms_awaiting_call_01/decisions.csv": "1f7480eba708bbfde5df9d7ad29fac2c603fbaced6543e7569fae2ba5fb08ccd",
+    "results/phone_vibration_pilot_20260919/joint_trials/all_methods_01/resources.csv": "cfd3398a5454452d811f93a9409b9e18f356ac5fc7613100fe8138f9aac4ac70"
+  }
+}

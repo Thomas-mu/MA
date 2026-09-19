@@ -1,0 +1,145 @@
+{
+  "source": "docs/backups/Akz_Masterarbeit_Bericht(3)_vor_handyversuch_20260919.docx",
+  "source_sha256": "4ce3e32845f33e958aedea26f4d70736c4b9dfd1e5e1001a629ceef85bd700e1",
+  "staged": "results/phone_vibration_word_revision_20260919/Akz_Masterarbeit_Bericht(3)_staged.docx",
+  "staged_sha256": "e845358af756f50bc9b0ecbdf96cba6b8bcf11eb2f7a33ec9c83148c911a1b2b",
+  "retained_bibliography_xml_sha256": "740ec8e360bf8a406372341150e169a7ed233d1f011f85827d00360b34ce562f",
+  "preserved": "Deckblatt, Erklärungen, Grundlagen, Hardwareauswahl, Gleichungen, Literatur, Abschnittseinstellungen; historische Zahlentabellen unverändert",
+  "target_replaced": true,
+  "paragraph_changes_before_chapter6": [
+    {
+      "body_index": 29,
+      "old": "Diese Arbeit untersucht einen lokalen Methodenvergleich zur normalitätsbasierten Anomalieerkennung an einem Lüfterprüfstand. Ein ADXL345 erfasst dreiachsige Beschleunigungen; ein Raspberry Pi 5 verarbeitet identische, nicht überlappende Fenster mit 128 XYZ-Punkten. Verglichen werden eine RMS-Schwelle auf standardisierten Werten, Isolation Forest und ein TFLite-Autoencoder. Vollständige Aufnahmen sind Training, Validierung oder Test zugeordnet. Modelle, Skalierung und Schwellen bleiben in den unabhängigen Tests unverändert.",
+      "new": "Diese Arbeit vergleicht RMS-Schwelle, Isolation Forest und TFLite-Autoencoder zur lokalen Anomalieerkennung an einem Lüfteraufbau. Die Hardware bleibt ein Raspberry Pi 5 mit ADXL345 und einem extern versorgten Lüfter bei 75 % PWM. Im aktuellen Versuch wird eine äußere Anregung durch ein auf dem Tisch vibrierendes Handy erzeugt. Alle Verfahren verarbeiten nicht überlappende Fenster mit 128 XYZ-Punkten. Modelle, Skalierung und P99-Schwellen des am 18. September 2026 erstellten Normalprofils bleiben während der Handyversuche unverändert."
+    },
+    {
+      "body_index": 30,
+      "old": "Die kontrollierte Testfolge umfasst Normalbetrieb, eine äußere Luftstromveränderung durch eine separat befestigte Platte und eine normale Rückkehrreferenz bei 75 % PWM. Bewertet wird jeweils der vorab festgelegte Abschnitt [180,300) s einer 300-s-Aufnahme. Von 194 gültigen Fenstern des veränderten Zustands markieren RMS sieben, Isolation Forest vier und der Autoencoder keines. Die F1-Werte der vollständigen Folge betragen 6,93 %, 4,04 % und 0 %. Die erwartete Überlegenheit des Autoencoders ist in dieser Folge nicht bestätigt. Zusätzliche Normaltests bei 50 % PWM zeigen methoden- und aufnahmeabhängige Fehlalarme.",
+      "new": "Am 19. September 2026 wurden drei ausgewählte Einzelaufnahmen und ein gemeinsamer Live-Lauf ausgewertet. Im gemeinsamen Lauf erhalten die drei Verfahren dieselben 197 Rohfenster. Der Autoencoder gibt den ersten Alarm aus; Isolation Forest folgt 19,061 ms später im selben Fenster 108. RMS überschreitet seine Schwelle erst in Fenster 109 und gibt den ersten Alarm 615,659 ms nach dem Autoencoder aus. Damit zeigt der Autoencoder in diesem Lauf den günstigsten beobachteten Alarmausgabezeitpunkt. Im Replay der drei Einzelaufnahmen liegt er einmal ein Fenster vor beiden Baselines und zweimal im gleichen ersten Alarmfenster. Diese Ergebnisse beschreiben wenige Ereignisse und keine allgemeine Überlegenheit."
+    },
+    {
+      "body_index": 31,
+      "old": "In der getrennten Laufzeitprüfung liegt das empirische P99 der gesamten Verarbeitungslatenz im Sensorbetrieb je nach Methode und Lauf zwischen 6,113 und 28,577 ms; das beobachtete Fensterintervall beträgt etwa 618 ms. Die Studie belegt damit die lokale Ausführbarkeit im gemessenen Umfang, jedoch keine zuverlässige Erkennung der untersuchten Luftstromänderung. Eine einzige unabhängige veränderte Aufnahme, die ungemessene Drehzahl und die nicht unabhängig geklärte Abweichung zwischen nominell 200 Hz und etwa 207 XYZ/s begrenzen die Aussagekraft. Der Abschluss erfolgt als Pilotstudie mit erhaltenen negativen Ergebnissen und ausdrücklich offenen Nachweisen.",
+      "new": "Der gemeinsame Prozess benötigt einen CPU-Median von 13,04 % eines logischen Kerns und maximal 174,42 MiB abgetasteten RSS. RMS hat den geringsten, Isolation Forest den höchsten Verarbeitungsaufwand. Elektrische Leistung und Energie wurden nicht gemessen. Die Aufforderung zum Anrufen und die Rückmeldung zum Ende sind keine physikalischen Zeitreferenzen; eine absolute Erkennungsverzögerung, F1 oder bestätigte Fehlalarmrate lassen sich aus der Handyreihe daher nicht bestimmen. Frühere Versuche mit einem anderen Modell- und Vorverarbeitungsstand bleiben als getrennte Prüfreihe erhalten, einschließlich ihrer negativen Erkennungsergebnisse. Der Bericht ist eine nachvollziehbare Pilotstudie mit dokumentierten Aussagegrenzen."
+    },
+    {
+      "body_index": 50,
+      "old": "Der Beitrag ist der gemeinsame Vergleich von Erkennungsqualität und technischem Aufwand. Ein Zusatzversuch untersucht die Grenzen der unveränderten Pipeline bei geänderten Normalbedingungen.",
+      "new": "Der Beitrag ist ein Methodenvergleich auf identischen Sensoreingaben mit nachvollziehbarer Schwellenkalibrierung und Messung des technischen Aufwands. Der aktuelle Schwerpunkt liegt auf der Reihenfolge der Alarmausgaben bei einer Handyvibration. Frühere Prüfungen zur Erkennungsqualität und zu geänderten Normalbedingungen werden getrennt eingeordnet; sie werden durch den neuen Versuch nicht nachträglich umgedeutet."
+    },
+    {
+      "body_index": 54,
+      "old": "FF2: Wie unterscheiden sich Hauptverfahren und Baselines bei gleichen Testfenstern und einer einheitlichen Schwellenwertkalibrierung auf Normaldaten hinsichtlich Precision, Recall, F1-Score und Fehlalarmrate?",
+      "new": "FF2: Wie unterscheiden sich Hauptverfahren und Baselines bei gleichen Testfenstern und einer einheitlichen Schwellenwertkalibrierung auf Normaldaten hinsichtlich Precision, Recall, F1-Score und Fehlalarmrate? Ergänzend wird in der Handyreihe deskriptiv untersucht, welche Methode zuerst ein Alarmfenster markiert und ihre Alarmausgabe bereitstellt. Diese ergänzende Zeitfrage ersetzt die ursprüngliche Qualitätsfrage nicht."
+    },
+    {
+      "body_index": 57,
+      "old": "Die Arbeitshypothesen legen die Vergleichsgrößen fest. Bereits zur Entwicklung verwendete Daten werden explorativ ausgewertet. Die unabhängige Prüfung verwendet davon getrennte Testaufnahmen und ein vor ihrer Auswertung festgelegtes Versuchsprotokoll. Ihre Aussagekraft bleibt durch Zahl und Vielfalt der vollständigen Aufnahmen begrenzt.",
+      "new": "Die ursprünglichen Arbeitshypothesen bleiben als Bewertungsmaßstab erhalten. Der Bericht unterscheidet die frühere Prüfreihe mit definierten Zustandslabels und die nachfolgende explorative Handyreihe mit Bedienmarkern. Training und Schwellenkalibrierung der Handyreihe erfolgen auf vorher aufgenommenen Normaldaten; an den Störungsaufnahmen werden keine Schwellen angepasst. Wegen fehlender unabhängiger Zeitreferenz und weniger Ereignisse liefert die neue Reihe keinen zusätzlichen vollständigen Test von H1 oder H3. Die ergänzende Rangfolge der Alarmausgaben ist ein deskriptiver Befund, keine rückwirkend vorab formulierte Hypothese."
+    },
+    {
+      "body_index": 64,
+      "old": "Die Abschlussfassung verwendet die bis zum 12. September 2026 vorhandenen Messungen; die abschließende Auswertung und Redaktion erfolgen am 13. September 2026. Weitere Plattenwiederholungen und unabhängige Drehzahl- oder Sensortaktmessungen werden in dieser Fassung nicht als durchgeführt behandelt. Diese Begrenzung des tatsächlich erbrachten Umfangs wird nach der Versuchsauswertung offengelegt. Die ursprünglichen Anforderungen und Hypothesen bleiben als Bewertungsmaßstab erhalten; insbesondere werden Teilnachweise der Messqualität und Wiederholbarkeit nicht nachträglich zu vollständiger Erfüllung erklärt.",
+      "new": "Die überarbeitete Fassung berücksichtigt die Handyversuche vom 19. September 2026 und das zugehörige Normalprofil vom 18. September. Die Hardwareauswahl bleibt unverändert. Frühere Messungen vom 11./12. September mit separater Platte und einem anderen Modellstand werden als historische Prüfreihe kenntlich gemacht und im Anhang nachgewiesen. Die Handyreihe verwendet keine Platte. Nicht vorhandene Wiederholungen, Drehzahlmessungen, physische Vibrationszeitreferenzen und elektrische Verbrauchsmessungen werden nicht als erbracht behandelt. Teilnachweise der Messqualität und Wiederholbarkeit werden nicht nachträglich zu vollständiger Erfüllung erklärt."
+    },
+    {
+      "body_index": 66,
+      "old": "Kapitel 2 und 3 erläutern Grundlagen und Vorarbeiten. Darauf folgen Anforderungen (Kapitel 4), Variantenvergleich und Versuchsaufbau (Kapitel 5), Implementierung (Kapitel 6) und Evaluation (Kapitel 7). Diskussion und Ausblick ordnen Grenzen und weitere Untersuchungen ein; das Fazit beantwortet die Forschungsfragen.",
+      "new": "Kapitel 2 und 3 erläutern Grundlagen und Vorarbeiten. Kapitel 4 und 5 begründen Anforderungen und Hardwareauswahl. Kapitel 6 beschreibt den aktuellen Handyaufbau, die Implementierung und das Protokoll. Kapitel 7 trennt Einzelbetrieb, Replay und gemeinsamen Live-Vergleich einschließlich Raspberry-Pi-Ressourcen. Diskussion, Ausblick und Fazit ordnen die Ergebnisse ein. Der Anhang erhält die früheren Prüfergebnisse und verknüpft alle digitalen Nachweise."
+    },
+    {
+      "body_index": 107,
+      "old": "P95 und P99 beschreiben hohe empirische Perzentile der gemessenen Latenzen. Sie werden zusammen mit Fristüberschreitungen und Erfassungspausen ausgewertet. Trainierte Modelle können für die lokale Ausführung in ein anderes Format konvertiert werden (Google, 2026a). Danach müssen Scores und Entscheidungen erneut geprüft werden.",
+      "new": "P95 und P99 beschreiben hohe empirische Perzentile der gemessenen Latenzen. Sie werden zusammen mit Fristüberschreitungen und Erfassungspausen ausgewertet. Davon zu unterscheiden sind das erste als auffällig markierte Fenster und der Zeitabstand zwischen den ersten Alarmausgaben mehrerer Methoden. Eine Verzögerung ab physischem Störungsbeginn setzt eine unabhängige Zeitreferenz voraus. Trainierte Modelle können für die lokale Ausführung in ein anderes Format konvertiert werden (Google, 2026a). Danach müssen Scores und Entscheidungen erneut geprüft werden."
+    },
+    {
+      "body_index": 127,
+      "old": "Dafür werden drei Aspekte verbunden: gleiche Testfenster und eine gemeinsame Kalibrierungsregel für FF2, Messungen am tatsächlich ausgeführten Modell für FF3 sowie ein kontrollierter Vergleich unveränderter Pipelines bei geänderten Normalbedingungen für FF4. Damit werden die in den Vorarbeiten erkennbaren Grenzen von Vergleichbarkeit und Übertragbarkeit gezielt berücksichtigt.",
+      "new": "Dafür werden gleiche Testfenster und eine gemeinsame Kalibrierungsregel für FF2 sowie Messungen am tatsächlich ausgeführten Modell für FF3 verbunden. Die frühere Untersuchung geänderter Normalbedingungen adressiert FF4 separat. Die ergänzende Handyreihe vergleicht zuerst Einzelprozesse und anschließend dieselben Rohfenster im Replay und im gemeinsamen Live-Prozess. So wird zwischen unterschiedlichen physikalischen Anregungen, identischen Eingaben und zusätzlicher Konkurrenz um Rechenzeit unterschieden."
+    },
+    {
+      "body_index": 128,
+      "old": "Kapitel 4 und 5 konkretisieren Anforderungen und Systemauswahl.",
+      "new": "",
+      "reason": "Redundanter Kapitelübergang entfernt, der nach der Aktualisierung allein auf einer Seite stünde."
+    },
+    {
+      "body_index": 175,
+      "old": "Als konkrete Variante wurde der ARCTIC P12 Pro PST vorgesehen, dessen Datenblatt PWM-Ansteuerung und ein Drehzahlsignal ausweist (ARCTIC, o. J.). Ein PWM-Tastgrad ist eine Stellgröße und kein Nachweis einer konstanten Drehzahl. Die Konzeption sah deshalb die Erfassung der tatsächlichen Drehzahl vor. Dieser Nachweis wurde in der abgeschlossenen Pilotstudie nicht erbracht; die Betriebspunkte werden entsprechend durch ihre dokumentierten PWM-Vorgaben beschrieben. Für FF4 wurde ein zweiter normaler Betriebspunkt bei unveränderter Montage untersucht. Versuchszustand, Schutzmaßnahmen und Messablauf sind in Kapitel 6 dokumentiert; den begrenzten Nachweis der Rücksetzbarkeit bewertet Kapitel 7.",
+      "new": "Als konkrete Variante wurde der ARCTIC P12 Pro PST vorgesehen, dessen Datenblatt PWM-Ansteuerung und ein Drehzahlsignal ausweist (ARCTIC, o. J.). Ein PWM-Tastgrad ist eine Stellgröße und kein Nachweis einer konstanten Drehzahl. Die Konzeption sah deshalb die Erfassung der tatsächlichen Drehzahl vor. Dieser Nachweis wurde bisher nicht erbracht; die Betriebspunkte werden durch ihre dokumentierten PWM-Vorgaben beschrieben. Für FF4 wurde in der früheren Prüfreihe ein zweiter normaler Betriebspunkt bei unveränderter Montage untersucht; diese Werte bleiben im Anhang erhalten. Den aktuellen Handyaufbau und Messablauf beschreibt Kapitel 6, die zugehörigen Befunde und Grenzen Kapitel 7."
+    },
+    {
+      "body_index": 229,
+      "old": "Kapitel 6 dokumentiert Implementierung und Testprotokoll; Kapitel 7 bewertet die unabhängigen Tests anhand unveränderter Anforderungen und Hypothesen.",
+      "new": "",
+      "reason": "Redundanter Übergang entfernt; kein verwaister Absatz auf eigener Seite."
+    },
+    {
+      "old": "Für den Kernversuch wird deshalb der Lüfter gewählt. Ein Servomotor wäre bei Lastwechseln oder dynamischen Bewegungsprofilen sinnvoll, ein Motor-/Lagerprüfstand bei konkreten Lagerfehlern. Diese Aufgaben gehören nicht zum Kernvergleich. Die Ergebnisse bleiben auf den untersuchten Laborversuch begrenzt.",
+      "new": "Für den Kernversuch wird deshalb der Lüfter gewählt. Ein Servomotor wäre bei Lastwechseln oder dynamischen Bewegungsprofilen sinnvoll, ein Motor-/Lagerprüfstand bei konkreten Lagerfehlern. Diese Aufgaben gehören nicht zum Kernvergleich. Die Ergebnisse bleiben auf den untersuchten Versuchsaufbau begrenzt."
+    }
+  ],
+  "manuscript_sha256": "74d3476cc3b2cbce50797cc9e5adc41154c77f7a02f2b069a0f38867766efcc2",
+  "figures": {
+    "source_root": "results/phone_vibration_pilot_20260919",
+    "figures": {
+      "setup": [
+        "results/phone_vibration_pilot_20260919/plan.json",
+        "results/phone_vibration_pilot_20260919/joint_trials/all_methods_01/run.json",
+        "results/phone_vibration_pilot_20260919/bundle/source_profile.json"
+      ],
+      "pipeline": [
+        "results/phone_vibration_pilot_20260919/joint_trials/all_methods_01/run.json",
+        "results/phone_vibration_pilot_20260919/joint_trials/all_methods_01/decisions.csv"
+      ],
+      "joint_signals": [
+        "results/phone_vibration_pilot_20260919/joint_trials/all_methods_01/raw.csv",
+        "results/phone_vibration_pilot_20260919/joint_trials/all_methods_01/decisions.csv",
+        "results/phone_vibration_pilot_20260919/joint_trials/all_methods_01/run.json",
+        "results/phone_vibration_pilot_20260919/presentation_v3_joint/joint_summary.json"
+      ],
+      "alarm_order": [
+        "results/phone_vibration_pilot_20260919/presentation_v3_joint/joint_summary.json",
+        "results/phone_vibration_pilot_20260919/joint_trials/all_methods_01/decisions.csv"
+      ],
+      "threshold_crossing": [
+        "results/phone_vibration_pilot_20260919/joint_trials/all_methods_01/decisions.csv"
+      ],
+      "replay_onsets": [
+        "results/phone_vibration_pilot_20260919/replay_v1/summary.json"
+      ],
+      "processing": [
+        "results/phone_vibration_pilot_20260919/trials/autoencoder_awaiting_call_03/decisions.csv",
+        "results/phone_vibration_pilot_20260919/trials/isolation_forest_awaiting_call_02/decisions.csv",
+        "results/phone_vibration_pilot_20260919/trials/rms_awaiting_call_01/decisions.csv",
+        "results/phone_vibration_pilot_20260919/joint_trials/all_methods_01/decisions.csv",
+        "results/phone_vibration_pilot_20260919/presentation_v3_joint/joint_summary.json"
+      ],
+      "resources": [
+        "results/phone_vibration_pilot_20260919/trials/autoencoder_awaiting_call_03/decisions.csv",
+        "results/phone_vibration_pilot_20260919/trials/isolation_forest_awaiting_call_02/decisions.csv",
+        "results/phone_vibration_pilot_20260919/trials/rms_awaiting_call_01/decisions.csv",
+        "results/phone_vibration_pilot_20260919/joint_trials/all_methods_01/resources.csv"
+      ],
+      "joint_operating": [
+        "results/phone_vibration_pilot_20260919/joint_trials/all_methods_01/resources.csv",
+        "results/phone_vibration_pilot_20260919/presentation_v3_joint/joint_summary.json",
+        "results/phone_vibration_pilot_20260919/joint_trials/all_methods_01/run.json"
+      ]
+    },
+    "source_sha256": {
+      "results/phone_vibration_pilot_20260919/plan.json": "aa4f1d513fc02c400c3c0fe1da8ef81f589b0e25bc3fd0e946ec0b8648ac9b95",
+      "results/phone_vibration_pilot_20260919/joint_trials/all_methods_01/run.json": "a74890d420403316b328dee1819467338bde61095918277224c8ca88bef8710d",
+      "results/phone_vibration_pilot_20260919/bundle/source_profile.json": "c163677d8530064668a98f923da7f432f7300e604e52317a69b06aa27c50348f",
+      "results/phone_vibration_pilot_20260919/joint_trials/all_methods_01/decisions.csv": "28e36df9fc68f2bf656796ddf69622e23e21a8603d26d18639b60b7e0dbf376e",
+      "results/phone_vibration_pilot_20260919/joint_trials/all_methods_01/raw.csv": "241d333071ad320bc2f1282b5722a30f54fd06ae968ecc2a9250056eb93a1074",
+      "results/phone_vibration_pilot_20260919/presentation_v3_joint/joint_summary.json": "37f2ea7a9ff4f1aa5c9f23efbb987526a484a5da6e0fe326f717666ee391b301",
+      "results/phone_vibration_pilot_20260919/replay_v1/summary.json": "5139ec9fd486ea7d79d43113e51a4ae22b8831adc516499e2cf9149885e875b8",
+      "results/phone_vibration_pilot_20260919/trials/autoencoder_awaiting_call_03/decisions.csv": "e62d2cb0ddad69eada6f3e5b5889a6c12940ad2e12ce9fbe25fedb81350e9db6",
+      "results/phone_vibration_pilot_20260919/trials/isolation_forest_awaiting_call_02/decisions.csv": "7c5ca79511335fbb8d369967894654adaaa387155cf3fb1d5ce1a5c1773a4976",
+      "results/phone_vibration_pilot_20260919/trials/rms_awaiting_call_01/decisions.csv": "1f7480eba708bbfde5df9d7ad29fac2c603fbaced6543e7569fae2ba5fb08ccd",
+      "results/phone_vibration_pilot_20260919/joint_trials/all_methods_01/resources.csv": "cfd3398a5454452d811f93a9409b9e18f356ac5fc7613100fe8138f9aac4ac70"
+    }
+  },
+  "delivered_docx_sha256": "d60e1a624deb32c3841e92d863bc0b4045a4fc5ea9ee0716ecbe982b974aadf7"
+}

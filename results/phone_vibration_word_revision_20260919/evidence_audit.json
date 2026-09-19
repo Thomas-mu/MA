@@ -1,0 +1,206 @@
+{
+  "bundle_sha256": "dbfad8529b642d1e4c74119b3865b0600c3a7668198328e1112707c7502b2eb1",
+  "source_sha256": {
+    "results/phone_vibration_pilot_20260919/trials/autoencoder_awaiting_call_03/raw.csv": "00ad2204207a0f5416e95e5bc31a88cb2fbba7918043d7bb054a4c37e797aa09",
+    "results/phone_vibration_pilot_20260919/trials/autoencoder_awaiting_call_03/cues.jsonl": "508859377792c80c5c37d23d1ab0ed56ba3a06e3416224ff49f26ff6324f9343",
+    "results/phone_vibration_pilot_20260919/trials/autoencoder_awaiting_call_03/started.json": "2face3ef832e6eb7b5de6115ba565a98bcb334565979a2998a3ba969c5f95569",
+    "results/phone_vibration_pilot_20260919/trials/autoencoder_awaiting_call_03/decisions.csv": "e62d2cb0ddad69eada6f3e5b5889a6c12940ad2e12ce9fbe25fedb81350e9db6",
+    "results/phone_vibration_pilot_20260919/trials/autoencoder_awaiting_call_03/capture_source.py": "7d8caa3d9799172d8a28b46d881f7fb3b7538343e98d5d3327ac83c79f5d2a5e",
+    "results/phone_vibration_pilot_20260919/trials/autoencoder_awaiting_call_03/raw.events.jsonl": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "results/phone_vibration_pilot_20260919/trials/isolation_forest_awaiting_call_02/raw.csv": "fdae1be17bd570969d6dee9f260d7426970aebfcd13bdfd0a0ce914874c25e74",
+    "results/phone_vibration_pilot_20260919/trials/isolation_forest_awaiting_call_02/cues.jsonl": "7bfd0281fb027c9c73a6955d47e07c5b67a324519e9d74c4bd5baec3809d713b",
+    "results/phone_vibration_pilot_20260919/trials/isolation_forest_awaiting_call_02/started.json": "d917f756d65b9544cf0b583de3eec94bec6f1f19cf1cbb96241391e711266f2d",
+    "results/phone_vibration_pilot_20260919/trials/isolation_forest_awaiting_call_02/decisions.csv": "7c5ca79511335fbb8d369967894654adaaa387155cf3fb1d5ce1a5c1773a4976",
+    "results/phone_vibration_pilot_20260919/trials/isolation_forest_awaiting_call_02/capture_source.py": "7d8caa3d9799172d8a28b46d881f7fb3b7538343e98d5d3327ac83c79f5d2a5e",
+    "results/phone_vibration_pilot_20260919/trials/isolation_forest_awaiting_call_02/raw.events.jsonl": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "results/phone_vibration_pilot_20260919/trials/rms_awaiting_call_01/raw.csv": "acfb58339143db02761c6f0302a0394ef6cac74647c2ebaeeea7cba1844cba4c",
+    "results/phone_vibration_pilot_20260919/trials/rms_awaiting_call_01/cues.jsonl": "f42a4a1bcc3240462167987f8f5657b84cd0e73ad19e9cb3af89d19455ea19d8",
+    "results/phone_vibration_pilot_20260919/trials/rms_awaiting_call_01/started.json": "f4fce79d4e4aa873b8ac61a56d0a032a90bd15e41b54d2ece3936b0fd9b394cc",
+    "results/phone_vibration_pilot_20260919/trials/rms_awaiting_call_01/decisions.csv": "1f7480eba708bbfde5df9d7ad29fac2c603fbaced6543e7569fae2ba5fb08ccd",
+    "results/phone_vibration_pilot_20260919/trials/rms_awaiting_call_01/capture_source.py": "7d8caa3d9799172d8a28b46d881f7fb3b7538343e98d5d3327ac83c79f5d2a5e",
+    "results/phone_vibration_pilot_20260919/trials/rms_awaiting_call_01/raw.events.jsonl": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "results/phone_vibration_pilot_20260919/joint_trials/all_methods_01/protocol.md": "886e00026efcd5222e31cae6bc251033b96669efdd3c36f926d9ee801f18b8e2",
+    "results/phone_vibration_pilot_20260919/joint_trials/all_methods_01/raw.csv": "241d333071ad320bc2f1282b5722a30f54fd06ae968ecc2a9250056eb93a1074",
+    "results/phone_vibration_pilot_20260919/joint_trials/all_methods_01/cues.jsonl": "379a101e542d6960f20783c11282081901a5781d77c5d4b2dde2294e8317ef94",
+    "results/phone_vibration_pilot_20260919/joint_trials/all_methods_01/source_plan.json": "aa4f1d513fc02c400c3c0fe1da8ef81f589b0e25bc3fd0e946ec0b8648ac9b95",
+    "results/phone_vibration_pilot_20260919/joint_trials/all_methods_01/source_protocol.md": "4157658ed15f62cee7cfb8b67123b7b92f00b5419070b760cdbf6d95368e6415",
+    "results/phone_vibration_pilot_20260919/joint_trials/all_methods_01/started.json": "8be01869b1c3ccf089edce60f3b3a14c0377be8cafb9e90d9e66b7b33666e90a",
+    "results/phone_vibration_pilot_20260919/joint_trials/all_methods_01/bundle.json": "dbfad8529b642d1e4c74119b3865b0600c3a7668198328e1112707c7502b2eb1",
+    "results/phone_vibration_pilot_20260919/joint_trials/all_methods_01/resources.csv": "cfd3398a5454452d811f93a9409b9e18f356ac5fc7613100fe8138f9aac4ac70",
+    "results/phone_vibration_pilot_20260919/joint_trials/all_methods_01/decisions.csv": "28e36df9fc68f2bf656796ddf69622e23e21a8603d26d18639b60b7e0dbf376e",
+    "results/phone_vibration_pilot_20260919/joint_trials/all_methods_01/plan.json": "f0b5fc2ebd5a6cb5462d8a09ebdeeb7dd11a4c66b35d44f2f0cd92034a998d77",
+    "results/phone_vibration_pilot_20260919/joint_trials/all_methods_01/capture_source.py": "d4bc8d316ec8347854c487152edbba3a15895ffae6f5f730ace27d94a97729e1",
+    "results/phone_vibration_pilot_20260919/joint_trials/all_methods_01/common_comparison_source.py": "479a3de9263842574ab2c69fca5adaeac8b5418e13bb383bfae3e026ed98d2ca",
+    "results/phone_vibration_pilot_20260919/joint_trials/all_methods_01/raw.events.jsonl": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "trials": {
+    "autoencoder_awaiting_call_03": {
+      "windows": 184,
+      "partial_samples": 65,
+      "phases": {
+        "pre_cue": 83,
+        "straddling": 2,
+        "between_cues": 52,
+        "post_cue": 47
+      },
+      "methods": {
+        "rms": {
+          "first_alarm_window": 97,
+          "alarm_windows": 8,
+          "original_decisions_reproduced": 0,
+          "maximum_score_difference": null
+        },
+        "isolation_forest": {
+          "first_alarm_window": 97,
+          "alarm_windows": 6,
+          "original_decisions_reproduced": 0,
+          "maximum_score_difference": null
+        },
+        "tflite_autoencoder": {
+          "first_alarm_window": 97,
+          "alarm_windows": 11,
+          "original_decisions_reproduced": 184,
+          "maximum_score_difference": 0.0
+        }
+      }
+    },
+    "isolation_forest_awaiting_call_02": {
+      "windows": 196,
+      "partial_samples": 82,
+      "phases": {
+        "pre_cue": 76,
+        "straddling": 2,
+        "between_cues": 59,
+        "post_cue": 59
+      },
+      "methods": {
+        "rms": {
+          "first_alarm_window": 94,
+          "alarm_windows": 6,
+          "original_decisions_reproduced": 0,
+          "maximum_score_difference": null
+        },
+        "isolation_forest": {
+          "first_alarm_window": 94,
+          "alarm_windows": 6,
+          "original_decisions_reproduced": 196,
+          "maximum_score_difference": 0.0
+        },
+        "tflite_autoencoder": {
+          "first_alarm_window": 93,
+          "alarm_windows": 9,
+          "original_decisions_reproduced": 0,
+          "maximum_score_difference": null
+        }
+      }
+    },
+    "rms_awaiting_call_01": {
+      "windows": 234,
+      "partial_samples": 104,
+      "phases": {
+        "pre_cue": 83,
+        "straddling": 2,
+        "between_cues": 109,
+        "post_cue": 40
+      },
+      "methods": {
+        "rms": {
+          "first_alarm_window": 155,
+          "alarm_windows": 6,
+          "original_decisions_reproduced": 234,
+          "maximum_score_difference": 0.0
+        },
+        "isolation_forest": {
+          "first_alarm_window": 155,
+          "alarm_windows": 6,
+          "original_decisions_reproduced": 0,
+          "maximum_score_difference": null
+        },
+        "tflite_autoencoder": {
+          "first_alarm_window": 155,
+          "alarm_windows": 9,
+          "original_decisions_reproduced": 0,
+          "maximum_score_difference": null
+        }
+      }
+    },
+    "all_methods_01": {
+      "windows": 197,
+      "partial_samples": 54,
+      "phases": {
+        "pre_cue": 77,
+        "straddling": 2,
+        "between_cues": 79,
+        "post_cue": 39
+      },
+      "methods": {
+        "rms": {
+          "first_alarm_window": 109,
+          "alarm_windows": 6,
+          "original_decisions_reproduced": 197,
+          "maximum_score_difference": 0.0,
+          "first_alarm_decision_ns": 10204117676676,
+          "window_to_decision_p99_ms": 8.79273856,
+          "window_to_decision_maximum_ms": 11.455034,
+          "relative_first_output_ms": 615.658777
+        },
+        "isolation_forest": {
+          "first_alarm_window": 108,
+          "alarm_windows": 7,
+          "original_decisions_reproduced": 197,
+          "maximum_score_difference": 0.0,
+          "first_alarm_decision_ns": 10203521079006,
+          "window_to_decision_p99_ms": 45.007589559999985,
+          "window_to_decision_maximum_ms": 83.893296,
+          "relative_first_output_ms": 19.061107
+        },
+        "tflite_autoencoder": {
+          "first_alarm_window": 108,
+          "alarm_windows": 11,
+          "original_decisions_reproduced": 197,
+          "maximum_score_difference": 0.0,
+          "first_alarm_decision_ns": 10203502017899,
+          "window_to_decision_p99_ms": 9.155572359999988,
+          "window_to_decision_maximum_ms": 12.204923,
+          "relative_first_output_ms": 0.0
+        }
+      }
+    }
+  },
+  "hardware_access": false,
+  "thresholds_changed": false,
+  "all_attempts": {
+    "autoencoder_awaiting_call_01": {
+      "windows": 170,
+      "alarm_windows": 30,
+      "invalid_windows": 0
+    },
+    "autoencoder_awaiting_call_02": {
+      "windows": 158,
+      "alarm_windows": 12,
+      "invalid_windows": 1
+    },
+    "autoencoder_awaiting_call_03": {
+      "windows": 184,
+      "alarm_windows": 11,
+      "invalid_windows": 0
+    },
+    "isolation_forest_awaiting_call_01": {
+      "windows": 154,
+      "alarm_windows": 7,
+      "invalid_windows": 0
+    },
+    "isolation_forest_awaiting_call_02": {
+      "windows": 196,
+      "alarm_windows": 6,
+      "invalid_windows": 0
+    },
+    "rms_awaiting_call_01": {
+      "windows": 234,
+      "alarm_windows": 6,
+      "invalid_windows": 0
+    }
+  },
+  "total_original_decisions_reproduced": 1205,
+  "status": "passed"
+}

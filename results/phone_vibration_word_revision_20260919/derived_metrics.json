@@ -1,0 +1,61 @@
+{
+  "process_resources": {
+    "tflite_autoencoder": {
+      "cpu_median": 9.71769804581433,
+      "rss_max_mib": 48.796875,
+      "processing_median_ms": 0.4590275,
+      "processing_p95_ms": 0.5848862499999999,
+      "temperature_range": [
+        55.1,
+        60.6
+      ],
+      "frequency_khz_range": [
+        1500000.0,
+        2400000.0
+      ]
+    },
+    "isolation_forest": {
+      "cpu_median": 12.975807387049269,
+      "rss_max_mib": 167.109375,
+      "processing_median_ms": 23.428910000000002,
+      "processing_p95_ms": 32.060565499999996,
+      "temperature_range": [
+        52.35,
+        61.15
+      ],
+      "frequency_khz_range": [
+        1500000.0,
+        2400000.0
+      ]
+    },
+    "rms": {
+      "cpu_median": 9.69168492676043,
+      "rss_max_mib": 39.3125,
+      "processing_median_ms": 0.284862,
+      "processing_p95_ms": 0.35245555,
+      "temperature_range": [
+        51.8,
+        60.05
+      ],
+      "frequency_khz_range": [
+        1500000.0,
+        2400000.0
+      ]
+    },
+    "joint": {
+      "cpu_median": 13.044146837208924,
+      "rss_max_mib": 174.421875,
+      "temperature_range": [
+        52.35,
+        60.6
+      ],
+      "frequency_khz_range": [
+        1500000.0,
+        2400000.0
+      ]
+    }
+  },
+  "shared_windows": 197,
+  "decisions": 591,
+  "source_summary": "results/phone_vibration_pilot_20260919/presentation_v3_joint/joint_summary.json"
+}

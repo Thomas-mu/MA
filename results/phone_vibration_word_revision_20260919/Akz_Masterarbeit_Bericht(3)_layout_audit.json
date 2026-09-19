@@ -1,0 +1,385 @@
+{
+  "input": "/home/malik/masterarbeit-edge-ai/results/phone_vibration_word_revision_20260919/Akz_Masterarbeit_Bericht(3)_staged.docx",
+  "output": "/home/malik/masterarbeit-edge-ai/results/phone_vibration_word_revision_20260919/Akz_Masterarbeit_Bericht(3).docx",
+  "indexes_count": 3,
+  "indexes": [
+    {
+      "name": "Table of Contents1",
+      "service": [
+        "com.sun.star.text.BaseIndex",
+        "com.sun.star.text.ContentIndex"
+      ],
+      "text": "Erklärung\ti\nZusammenfassung\tii\nAbbildungsverzeichnis\tv\nTabellenverzeichnis\tvi\nAbkürzungsverzeichnis\tvii\n1 Einleitung, Problemstellung und Zielsetzung\t1\n1.1 Ausgangssituation und Motivation\t1\n1.2 Wissenschaftliche Problemstellung\t1\n1.3 Zielsetzung der Arbeit\t1\n1.4 Forschungsfragen und Hypothesen\t2\n1.5 Abgrenzung der Arbeit\t3\n1.6 Aufbau der Arbeit\t3\n2 Theoretische Grundlagen\t4\n2.1 Zustandsüberwachung und Anomalieerkennung\t4\n2.2 Verfahrensklassen für die Anomalieentscheidung\t4\n2.2.1 Statistische Schwellenwertverfahren\t4\n2.2.2 Klassische Verfahren im Normaldaten-Szenario\t4\n2.2.3 Autoencoder\t5\n2.3 Messdaten und Fensterbildung\t5\n2.4 Datenaufteilung und Vorverarbeitung\t5\n2.5 Schwellenwertkalibrierung\t6\n2.6 Erkennungsqualität und Aussagekraft der Evaluation\t6\n2.7 Lokale Ausführung und Zeitverhalten\t7\n2.8 Veränderte Normalbedingungen\t7\n3 Stand der Technik und verwandte Arbeiten\t8\n3.1 Datenbasis und Messbedingungen\t8\n3.2 Verfahren und Edge-Ausführung\t8\n3.3 Vergleich ausgewählter Arbeiten\t9\n3.4 Forschungslücke und Einordnung der eigenen Arbeit\t9\n4 Anforderungsanalyse\t10\n4.1 Messdaten und Vergleichsbasis\t10\n4.2 Lokale Verarbeitung und Zeitverhalten\t10\n4.3 Evaluation\t11\n4.4 Kernanforderungen und Nachweis\t11\n5 Variantenvergleich und Systementscheidung\t14\n5.1 Bewertungsrahmen und Vorgehen\t14\n5.2 Bewertung der Prüfstandsalternativen\t15\n5.3 Auswahl von Sensorik und Edge-Plattform\t17\n5.4 Datenbasis, Signalrepräsentation und Verfahren\t19\n5.5 Kriterienbasierte Bewertung der Softwarealternativen\t21\n5.6 Systementscheidung und Übergang zur Implementierung\t23\n6 Implementierung und aktueller Versuchsaufbau\t24\n6.1 Ziel und Abgrenzung des Handyversuchs\t24\n6.2 Hardware und mechanischer Übertragungsweg\t24\n6.3 PWM, Sensor und Zeitbasis\t25\n6.4 Vorverarbeitung und Modellstände\t26\n6.5 Normaltraining, Schwellen und Exportprüfung\t27\n6.6 Einzelbetrieb, Replay und gemeinsame Live-Auswertung\t28\n6.7 Ablauf, Bedienmarker und Annahmen\t29\n6.8 Dateien, Visualisierung und Nachvollziehbarkeit\t30\n7 Evaluation\t31\n7.1 Umfang und Auswahl der Aufnahmen\t31\n7.2 Datenintegrität und Reproduzierbarkeit\t31\n7.3 Einzelbetrieb und Vergleich auf identischen Replay-Fenstern\t32\n7.4 Gemeinsamer Live-Lauf: Signal und Alarmreihenfolge\t33\n7.5 Warum unterscheiden sich die ersten Alarme?\t35\n7.6 Rechenaufwand und Verhalten des Raspberry Pi\t36\n7.7 Einordnung der früheren Prüfreihe\t39\n7.8 Forschungsfragen und Nachweisstand\t40\n8 Diskussion\t42\n8.1 Beobachteter Vorteil des Autoencoders\t42\n8.2 Schwellen, Alarmhäufigkeit und faire Bewertung\t42\n8.3 Vergleichbarkeit und interne Gültigkeit\t43\n8.4 Raspberry-Pi-Bedarf und Grenzen der Übertragung\t43\n9 Ausblick\t44\n10 Fazit\t45\nAnhang\t46\nDigitale Belege und Fassungszuordnung\t46\nErhaltene historische Erkennungsergebnisse\t47\nErhaltene historische Raspberry-Pi-Messwerte\t48\nLesen der aktuellen Messdateien\t49\nKI-Unterstützung und fachliche Verantwortung\t50\nLiteraturverzeichnis\t51"
+    },
+    {
+      "name": "Table of Contents2",
+      "service": [
+        "com.sun.star.text.BaseIndex",
+        "com.sun.star.text.ContentIndex"
+      ],
+      "text": "Abbildung 6-1: Schematischer Aufbau des Handyversuchs. Die Darstellung erklärt den vorgesehenen Übertragungsweg; sie ist kein Foto und bestätigt keine nicht vermessene Geometrie. Quelle: eigene Darstellung anhand von B12.\t25\nAbbildung 6-2: Datenfluss des gemeinsamen Live-Vergleichs. Alle drei Methoden erhalten dasselbe Rohfenster; ihre Verarbeitung und Ausgabezeitpunkte bleiben getrennt protokolliert. Quelle: eigene Darstellung anhand der Implementierung und Journale in B12.\t28\nAbbildung 7-1: Erstes Alarmfenster im Offline-Replay. Die Zahlen an den Punkten sind Fensterindizes; die vertikale Achse zeigt den Abstand zum frühesten Alarmfenster derselben Aufnahme. Eine Null bedeutet Gleichstand auf Fensterebene, keine gleichzeitig gemessene Live-Ausgabe. Quelle: B12, replay_v1/summary.json.\t33\nAbbildung 7-2: Gemeinsamer Rohdaten- und Scoreverlauf. Graue Bereiche liegen zwischen den Bedienmarkern, nicht zwischen unabhängig gemessenem Vibrationsbeginn und -ende. Die Scoreachse ist logarithmisch und auf die jeweilige Schwelle normiert; der Wert 1 kennzeichnet die Alarmgrenze. Quelle: B12, Gemeinsam01.\t34\nAbbildung 7-3: Nummerierte Reihenfolge der ersten Alarmausgaben im gemeinsamen Lauf und zugehörige Fensterindizes. Null ist der Zeitpunkt des ersten Autoencoder-Alarms, nicht der physische Störungsbeginn. AE und IF sind auf Fensterebene gleichauf; die Ausgabezeitpunkte unterscheiden sich. Quelle: B12, Entscheidungen von Gemeinsam01.\t35\nAbbildung 7-4: Schwellenübergang der Fenster 107 bis 109. Die Normierung erleichtert das Ablesen der jeweiligen Grenzüberschreitung; die Quotienten sind weder Wahrscheinlichkeiten noch untereinander kalibrierte Störungsschweregrade. Quelle: B12, Gemeinsam01.\t36\nAbbildung 7-5: Verarbeitungszeiten im Einzelbetrieb und im gemeinsamen Prozess. Symbole zeigen Median, rechte Striche P95; die Zeitachse ist logarithmisch. Erfasst wird der instrumentierte Auswerteraufruf einschließlich seiner Vorverarbeitung, nicht eine einheitlich isolierte Modellkernzeit. Quelle: B12, ausgewählte decisions.csv.\t37\nAbbildung 7-6: CPU und RAM im Einzelbetrieb und gemeinsamen Live-Prozess. Es handelt sich um Prozessmessungen mit unterschiedlichen Laufdauern; die gemeinsame Auslastung darf nicht pro Methode aufgeteilt oder aus den Einzelwerten addiert werden. Quelle: B12, decisions.csv und resources.csv.\t38\nAbbildung 7-7: Zeitlicher Ressourcenverlauf des gemeinsamen Prozesses. Grau: Zeitraum zwischen Bedienmarkern. Temperatur und CPU-Takt sind zusätzliche Betriebsdiagnosen, keine Leistungs- oder Energiemessung. Quelle: B12, Gemeinsam01/resources.csv.\t39"
+    },
+    {
+      "name": "Table of Contents3",
+      "service": [
+        "com.sun.star.text.BaseIndex",
+        "com.sun.star.text.ContentIndex"
+      ],
+      "text": "Tabelle 2-1: Kennzahlen der binären Anomalieerkennung\t6\nTabelle 3-1: Ausgewählte Vorarbeiten und ihre Bedeutung für die Untersuchung\t9\nTabelle 4-1: Anforderungen, Prioritäten und Nachweise\t12\nTabelle 5-1: Bewertung der Prüfstandsalternativen\t15\nTabelle 5-2: Kriterien und Gewichte für den Prüfstand\t16\nTabelle 5-3: Gewichtete Bewertung der Prüfstandsalternativen\t16\nTabelle 5-4: Vergleich der Sensorik und Messketten\t17\nTabelle 5-5: Bewertung der Edge-Plattformen\t18\nTabelle 5-6: Kriterien und Gewichte für die Edge-Plattform\t18\nTabelle 5-7: Gewichtete Bewertung der Edge-Plattformen\t19\nTabelle 5-8: Bewertung der Signalrepräsentationen\t19\nTabelle 5-9: Auswahl der Anomalieverfahren\t20\nTabelle 5-10: Kriterienbasierter Vergleich der Softwarealternativen\t21\nTabelle 5-11: Kriterien und Gewichte für die Softwareauswahl\t22\nTabelle 5-12: Gewichtete Bewertung der Softwarealternativen\t22\nTabelle 5-13: Systementscheidungen und ausstehende Nachweise\t23\nTabelle 6-1: Hardware und Betriebszustand der Handyreihe\t25\nTabelle 6-2: Festgelegte Skalierung des aktuellen Normalprofils, gerundet\t26\nTabelle 6-3: Architektur des verwendeten Autoencoders\t27\nTabelle 6-4: Eingefrorene Schwellen der Handyreihe\t27\nTabelle 6-5: Zeitbegriffe und zulässige Interpretation\t29\nTabelle 6-6: Annahmen und offene Nachweise\t30\nTabelle 7-1: Erhaltene Anläufe und Auswertungsrolle\t31\nTabelle 7-2: Ausgewählte Aufnahmen und Verteilung der gültigen Fenster\t32\nTabelle 7-3: Replay derselben Rohfenster; erstes Alarmfenster und gesamte Alarmfenster\t32\nTabelle 7-4: Erste Alarme im gemeinsamen Live-Lauf\t34\nTabelle 7-5: Unmittelbarer Schwellenvergleich auf dem gemeinsamen Fenster 108\t35\nTabelle 7-6: Verarbeitungszeit im jeweiligen Auswerteraufruf; ms\t37\nTabelle 7-7: Prozessressourcen der ausgewählten Handyaufnahmen\t38\nTabelle 7-8: Bewertung der Forschungsfragen und Hypothesen\t40\nTabelle 7-9: Rückbindung an die unveränderten Anforderungen aus Kapitel 4\t41\nTabelle A-1: Nachweisverzeichnis\t46\nTabelle A-2: Historische Verwechslungszahlen der einen Plattenfolge auf identischen Fenstern\t47\nTabelle A-3: Historische deskriptive Kennzahlen für das Zustandslabel; Prozent\t47\nTabelle A-4: Historische Zählung je Aufnahme und Methode im Abschnitt [180,300) s\t48\nTabelle A-5: Historische Latenzen; Bereich von drei getrennten Prozessen je Zeile\t48\nTabelle A-6: Historische Ressourcen im aktiven Abschnitt [180,300) s; Bereich von drei Prozessen\t49"
+    }
+  ],
+  "tables": 38,
+  "headings": [
+    {
+      "text": "Erklärung",
+      "style": "Heading 1",
+      "list_label": ""
+    },
+    {
+      "text": "Zusammenfassung",
+      "style": "Heading 1",
+      "list_label": ""
+    },
+    {
+      "text": "Einleitung, Problemstellung und Zielsetzung",
+      "style": "Heading 1",
+      "list_label": "1"
+    },
+    {
+      "text": "Ausgangssituation und Motivation",
+      "style": "Heading 2",
+      "list_label": "1.1"
+    },
+    {
+      "text": "Wissenschaftliche Problemstellung",
+      "style": "Heading 2",
+      "list_label": "1.2"
+    },
+    {
+      "text": "Zielsetzung der Arbeit",
+      "style": "Heading 2",
+      "list_label": "1.3"
+    },
+    {
+      "text": "Forschungsfragen und Hypothesen",
+      "style": "Heading 2",
+      "list_label": "1.4"
+    },
+    {
+      "text": "Abgrenzung der Arbeit",
+      "style": "Heading 2",
+      "list_label": "1.5"
+    },
+    {
+      "text": "Aufbau der Arbeit",
+      "style": "Heading 2",
+      "list_label": "1.6"
+    },
+    {
+      "text": "Theoretische Grundlagen",
+      "style": "Heading 1",
+      "list_label": "2"
+    },
+    {
+      "text": "Zustandsüberwachung und Anomalieerkennung",
+      "style": "Heading 2",
+      "list_label": "2.1"
+    },
+    {
+      "text": "Verfahrensklassen für die Anomalieentscheidung",
+      "style": "Heading 2",
+      "list_label": "2.2"
+    },
+    {
+      "text": "Statistische Schwellenwertverfahren",
+      "style": "Heading 3",
+      "list_label": "2.2.1"
+    },
+    {
+      "text": "Klassische Verfahren im Normaldaten-Szenario",
+      "style": "Heading 3",
+      "list_label": "2.2.2"
+    },
+    {
+      "text": "Autoencoder",
+      "style": "Heading 3",
+      "list_label": "2.2.3"
+    },
+    {
+      "text": "Messdaten und Fensterbildung",
+      "style": "Heading 2",
+      "list_label": "2.3"
+    },
+    {
+      "text": "Datenaufteilung und Vorverarbeitung",
+      "style": "Heading 2",
+      "list_label": "2.4"
+    },
+    {
+      "text": "Schwellenwertkalibrierung",
+      "style": "Heading 2",
+      "list_label": "2.5"
+    },
+    {
+      "text": "Erkennungsqualität und Aussagekraft der Evaluation",
+      "style": "Heading 2",
+      "list_label": "2.6"
+    },
+    {
+      "text": "Lokale Ausführung und Zeitverhalten",
+      "style": "Heading 2",
+      "list_label": "2.7"
+    },
+    {
+      "text": "Veränderte Normalbedingungen",
+      "style": "Heading 2",
+      "list_label": "2.8"
+    },
+    {
+      "text": "Stand der Technik und verwandte Arbeiten",
+      "style": "Heading 1",
+      "list_label": "3"
+    },
+    {
+      "text": "Datenbasis und Messbedingungen",
+      "style": "Heading 2",
+      "list_label": "3.1"
+    },
+    {
+      "text": "Verfahren und Edge-Ausführung",
+      "style": "Heading 2",
+      "list_label": "3.2"
+    },
+    {
+      "text": "Vergleich ausgewählter Arbeiten",
+      "style": "Heading 2",
+      "list_label": "3.3"
+    },
+    {
+      "text": "Forschungslücke und Einordnung der eigenen Arbeit",
+      "style": "Heading 2",
+      "list_label": "3.4"
+    },
+    {
+      "text": "Anforderungsanalyse",
+      "style": "Heading 1",
+      "list_label": "4"
+    },
+    {
+      "text": "Messdaten und Vergleichsbasis",
+      "style": "Heading 2",
+      "list_label": "4.1"
+    },
+    {
+      "text": "Lokale Verarbeitung und Zeitverhalten",
+      "style": "Heading 2",
+      "list_label": "4.2"
+    },
+    {
+      "text": "Evaluation",
+      "style": "Heading 2",
+      "list_label": "4.3"
+    },
+    {
+      "text": "Kernanforderungen und Nachweis",
+      "style": "Heading 2",
+      "list_label": "4.4"
+    },
+    {
+      "text": "Variantenvergleich und Systementscheidung",
+      "style": "Heading 1",
+      "list_label": "5"
+    },
+    {
+      "text": "Bewertungsrahmen und Vorgehen",
+      "style": "Heading 2",
+      "list_label": "5.1"
+    },
+    {
+      "text": "Bewertung der Prüfstandsalternativen",
+      "style": "Heading 2",
+      "list_label": "5.2"
+    },
+    {
+      "text": "Auswahl von Sensorik und Edge-Plattform",
+      "style": "Heading 2",
+      "list_label": "5.3"
+    },
+    {
+      "text": "Datenbasis, Signalrepräsentation und Verfahren",
+      "style": "Heading 2",
+      "list_label": "5.4"
+    },
+    {
+      "text": "Kriterienbasierte Bewertung der Softwarealternativen",
+      "style": "Heading 2",
+      "list_label": "5.5"
+    },
+    {
+      "text": "Systementscheidung und Übergang zur Implementierung",
+      "style": "Heading 2",
+      "list_label": "5.6"
+    },
+    {
+      "text": "Implementierung und aktueller Versuchsaufbau",
+      "style": "Heading 1",
+      "list_label": "6"
+    },
+    {
+      "text": "Ziel und Abgrenzung des Handyversuchs",
+      "style": "Heading 2",
+      "list_label": "6.1"
+    },
+    {
+      "text": "Hardware und mechanischer Übertragungsweg",
+      "style": "Heading 2",
+      "list_label": "6.2"
+    },
+    {
+      "text": "PWM, Sensor und Zeitbasis",
+      "style": "Heading 2",
+      "list_label": "6.3"
+    },
+    {
+      "text": "Vorverarbeitung und Modellstände",
+      "style": "Heading 2",
+      "list_label": "6.4"
+    },
+    {
+      "text": "Normaltraining, Schwellen und Exportprüfung",
+      "style": "Heading 2",
+      "list_label": "6.5"
+    },
+    {
+      "text": "Einzelbetrieb, Replay und gemeinsame Live-Auswertung",
+      "style": "Heading 2",
+      "list_label": "6.6"
+    },
+    {
+      "text": "Ablauf, Bedienmarker und Annahmen",
+      "style": "Heading 2",
+      "list_label": "6.7"
+    },
+    {
+      "text": "Dateien, Visualisierung und Nachvollziehbarkeit",
+      "style": "Heading 2",
+      "list_label": "6.8"
+    },
+    {
+      "text": "Evaluation",
+      "style": "Heading 1",
+      "list_label": "7"
+    },
+    {
+      "text": "Umfang und Auswahl der Aufnahmen",
+      "style": "Heading 2",
+      "list_label": "7.1"
+    },
+    {
+      "text": "Datenintegrität und Reproduzierbarkeit",
+      "style": "Heading 2",
+      "list_label": "7.2"
+    },
+    {
+      "text": "Einzelbetrieb und Vergleich auf identischen Replay-Fenstern",
+      "style": "Heading 2",
+      "list_label": "7.3"
+    },
+    {
+      "text": "Gemeinsamer Live-Lauf: Signal und Alarmreihenfolge",
+      "style": "Heading 2",
+      "list_label": "7.4"
+    },
+    {
+      "text": "Warum unterscheiden sich die ersten Alarme?",
+      "style": "Heading 2",
+      "list_label": "7.5"
+    },
+    {
+      "text": "Rechenaufwand und Verhalten des Raspberry Pi",
+      "style": "Heading 2",
+      "list_label": "7.6"
+    },
+    {
+      "text": "Einordnung der früheren Prüfreihe",
+      "style": "Heading 2",
+      "list_label": "7.7"
+    },
+    {
+      "text": "Forschungsfragen und Nachweisstand",
+      "style": "Heading 2",
+      "list_label": "7.8"
+    },
+    {
+      "text": "Diskussion",
+      "style": "Heading 1",
+      "list_label": "8"
+    },
+    {
+      "text": "Beobachteter Vorteil des Autoencoders",
+      "style": "Heading 2",
+      "list_label": "8.1"
+    },
+    {
+      "text": "Schwellen, Alarmhäufigkeit und faire Bewertung",
+      "style": "Heading 2",
+      "list_label": "8.2"
+    },
+    {
+      "text": "Vergleichbarkeit und interne Gültigkeit",
+      "style": "Heading 2",
+      "list_label": "8.3"
+    },
+    {
+      "text": "Raspberry-Pi-Bedarf und Grenzen der Übertragung",
+      "style": "Heading 2",
+      "list_label": "8.4"
+    },
+    {
+      "text": "Ausblick",
+      "style": "Heading 1",
+      "list_label": "9"
+    },
+    {
+      "text": "Fazit",
+      "style": "Heading 1",
+      "list_label": "10"
+    },
+    {
+      "text": "Anhang",
+      "style": "Heading 1",
+      "list_label": ""
+    },
+    {
+      "text": "Digitale Belege und Fassungszuordnung",
+      "style": "Heading 2",
+      "list_label": ""
+    },
+    {
+      "text": "Erhaltene historische Erkennungsergebnisse",
+      "style": "Heading 2",
+      "list_label": ""
+    },
+    {
+      "text": "Erhaltene historische Raspberry-Pi-Messwerte",
+      "style": "Heading 2",
+      "list_label": ""
+    },
+    {
+      "text": "Lesen der aktuellen Messdateien",
+      "style": "Heading 2",
+      "list_label": ""
+    },
+    {
+      "text": "KI-Unterstützung und fachliche Verantwortung",
+      "style": "Heading 2",
+      "list_label": ""
+    },
+    {
+      "text": "Literaturverzeichnis",
+      "style": "Heading 1",
+      "list_label": ""
+    }
+  ],
+  "pdf": "/home/malik/masterarbeit-edge-ai/results/phone_vibration_word_revision_20260919/Akz_Masterarbeit_Bericht(3).pdf"
+}
