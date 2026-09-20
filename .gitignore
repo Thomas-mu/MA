@@ -4,3 +4,6 @@ __pycache__/
 *.pyc
 .env
 .vscode/
+
+# Original remains local; lossless .csv.gz is versioned instead.
+/results/live_runs/amplitude_gui_20260920_112415_062294.raw.csv

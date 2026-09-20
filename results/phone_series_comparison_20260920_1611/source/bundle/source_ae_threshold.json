@@ -1,0 +1,25 @@
+{
+  "profile_name": "standlauf_pwm75_200hz",
+  "normal_validation_only": true,
+  "test_or_anomaly_data_used": false,
+  "method": "99th percentile of normal validation reconstruction MSE",
+  "percentile": 99,
+  "decision_rule": {
+    "normal": "reconstruction_error <= selected_threshold",
+    "anomaly": "reconstruction_error > selected_threshold"
+  },
+  "validation_statistics": {
+    "validation_window_count": 97,
+    "mean_mse": 0.27893475550898716,
+    "standard_deviation_mse": 0.07390428274363794,
+    "median_mse": 0.26957331403285484,
+    "percentile_95_mse": 0.42021162064553286,
+    "percentile_99_mse": 0.47720259914362284,
+    "maximum_mse": 0.4800297731778335,
+    "minimum_mse": 0.14809381630447227
+  },
+  "validation_windows_above_threshold": 1,
+  "validation_fraction_above_threshold": 0.010309278350515464,
+  "selected_threshold": 0.47720259914362284,
+  "threshold": 0.47720259914362284
+}

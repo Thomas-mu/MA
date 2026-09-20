@@ -1,0 +1,57 @@
+{
+  "mode": "development_amplitude_display_not_RMS_method",
+  "configuration": {
+    "fan_pwm": 20,
+    "sensor_odr": 200.0,
+    "sensor_range": 2,
+    "no_fan_control": true,
+    "enable_development_shutdown": false,
+    "measured_rpm": null,
+    "rpm_source": null
+  },
+  "sensor": {
+    "model": "ADXL345",
+    "odr_hz": 200.0,
+    "range_g": 2,
+    "full_resolution": true,
+    "scale_g_per_lsb": 0.0039,
+    "acquisition_mode": "fifo_stream",
+    "register_readback": {
+      "0x2c": "0xb",
+      "0x31": "0x8",
+      "0x2e": "0x0",
+      "0x38": "0x90",
+      "0x2d": "0x8"
+    },
+    "timestamp_source": "host_monotonic_read_completion",
+    "sensor_time_estimate": "sample_index / nominal ODR; not measured sensor time",
+    "lost_samples_exact": null,
+    "bus_number": 1,
+    "i2c_clock_configured_hz": 100000
+  },
+  "started_utc": "2026-09-20T11:24:15.070226+02:00",
+  "fan_pwm_setpoint_percent": null,
+  "measured_rpm": null,
+  "rpm_source": null,
+  "threshold_note": "Momentaner Beschleunigungsbetrag, kein RMS-Fensterverfahren",
+  "source_sha256": "ad80c57cb11024d283b018067ff2fedd224f73cba28790c7f0afa94ee72d5cd6",
+  "final_p99_comparison_eligible": false,
+  "acquisition": {
+    "samples_captured": 669353,
+    "windows_formed": 41834,
+    "windows_dropped": 0,
+    "samples_in_dropped_windows": 0,
+    "gap_events": 50,
+    "overrun_events": 50,
+    "saturated_samples": 0,
+    "queue_high_watermark": 8,
+    "partial_samples_saved": 9,
+    "first_sample_host_monotonic_ns": 88464764630973,
+    "last_sample_host_monotonic_ns": 91694565709589,
+    "queue_capacity_windows": 8,
+    "queue_pending_windows": 0,
+    "drop_policy": "drop_newest",
+    "acquisition_error": null
+  },
+  "ended_utc": "2026-09-20T12:18:04.905610+02:00"
+}

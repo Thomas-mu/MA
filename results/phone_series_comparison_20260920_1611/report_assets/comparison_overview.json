@@ -1,0 +1,446 @@
+{
+  "trials_planned": 10,
+  "first_alarm_equals_first_new_for_all_rows": true,
+  "sole_earliest_counts": {
+    "tflite_autoencoder": 7,
+    "isolation_forest": 0,
+    "rms": 0
+  },
+  "tied_trials": [
+    7,
+    8,
+    9
+  ],
+  "trials": [
+    {
+      "trial": 1,
+      "earliest_methods": [
+        "tflite_autoencoder"
+      ],
+      "missing_methods": [],
+      "methods": {
+        "rms": {
+          "first_alarm_window": "250",
+          "first_alarm_is_new": "True",
+          "first_alarm_previous_decision": "NORMAL",
+          "first_new_alarm_window": "250",
+          "first_new_alarm_complete_relative_s": "154.327774477",
+          "first_new_alarm_difference_to_earliest_s": "0.6170951139999943",
+          "issues": ""
+        },
+        "isolation_forest": {
+          "first_alarm_window": "250",
+          "first_alarm_is_new": "True",
+          "first_alarm_previous_decision": "NORMAL",
+          "first_new_alarm_window": "250",
+          "first_new_alarm_complete_relative_s": "154.327774477",
+          "first_new_alarm_difference_to_earliest_s": "0.6170951139999943",
+          "issues": ""
+        },
+        "tflite_autoencoder": {
+          "first_alarm_window": "249",
+          "first_alarm_is_new": "True",
+          "first_alarm_previous_decision": "NORMAL",
+          "first_new_alarm_window": "249",
+          "first_new_alarm_complete_relative_s": "153.710679363",
+          "first_new_alarm_difference_to_earliest_s": "0.0",
+          "issues": ""
+        }
+      }
+    },
+    {
+      "trial": 2,
+      "earliest_methods": [
+        "tflite_autoencoder"
+      ],
+      "missing_methods": [],
+      "methods": {
+        "rms": {
+          "first_alarm_window": "444",
+          "first_alarm_is_new": "True",
+          "first_alarm_previous_decision": "NORMAL",
+          "first_new_alarm_window": "444",
+          "first_new_alarm_complete_relative_s": "274.078075959",
+          "first_new_alarm_difference_to_earliest_s": "3.088022851000005",
+          "issues": ""
+        },
+        "isolation_forest": {
+          "first_alarm_window": "440",
+          "first_alarm_is_new": "True",
+          "first_alarm_previous_decision": "NORMAL",
+          "first_new_alarm_window": "440",
+          "first_new_alarm_complete_relative_s": "271.608064454",
+          "first_new_alarm_difference_to_earliest_s": "0.618011346000003",
+          "issues": ""
+        },
+        "tflite_autoencoder": {
+          "first_alarm_window": "439",
+          "first_alarm_is_new": "True",
+          "first_alarm_previous_decision": "NORMAL",
+          "first_new_alarm_window": "439",
+          "first_new_alarm_complete_relative_s": "270.990053108",
+          "first_new_alarm_difference_to_earliest_s": "0.0",
+          "issues": ""
+        }
+      }
+    },
+    {
+      "trial": 3,
+      "earliest_methods": [
+        "tflite_autoencoder"
+      ],
+      "missing_methods": [],
+      "methods": {
+        "rms": {
+          "first_alarm_window": "575",
+          "first_alarm_is_new": "True",
+          "first_alarm_previous_decision": "NORMAL",
+          "first_new_alarm_window": "575",
+          "first_new_alarm_complete_relative_s": "354.945717254",
+          "first_new_alarm_difference_to_earliest_s": "0.617499046999967",
+          "issues": ""
+        },
+        "isolation_forest": {
+          "first_alarm_window": "575",
+          "first_alarm_is_new": "True",
+          "first_alarm_previous_decision": "NORMAL",
+          "first_new_alarm_window": "575",
+          "first_new_alarm_complete_relative_s": "354.945717254",
+          "first_new_alarm_difference_to_earliest_s": "0.617499046999967",
+          "issues": ""
+        },
+        "tflite_autoencoder": {
+          "first_alarm_window": "574",
+          "first_alarm_is_new": "True",
+          "first_alarm_previous_decision": "NORMAL",
+          "first_new_alarm_window": "574",
+          "first_new_alarm_complete_relative_s": "354.328218207",
+          "first_new_alarm_difference_to_earliest_s": "0.0",
+          "issues": ""
+        }
+      }
+    },
+    {
+      "trial": 4,
+      "earliest_methods": [
+        "tflite_autoencoder"
+      ],
+      "missing_methods": [],
+      "methods": {
+        "rms": {
+          "first_alarm_window": "702",
+          "first_alarm_is_new": "True",
+          "first_alarm_previous_decision": "NORMAL",
+          "first_new_alarm_window": "702",
+          "first_new_alarm_complete_relative_s": "433.346110074",
+          "first_new_alarm_difference_to_earliest_s": "0.619149047999997",
+          "issues": ""
+        },
+        "isolation_forest": {
+          "first_alarm_window": "702",
+          "first_alarm_is_new": "True",
+          "first_alarm_previous_decision": "NORMAL",
+          "first_new_alarm_window": "702",
+          "first_new_alarm_complete_relative_s": "433.346110074",
+          "first_new_alarm_difference_to_earliest_s": "0.619149047999997",
+          "issues": ""
+        },
+        "tflite_autoencoder": {
+          "first_alarm_window": "701",
+          "first_alarm_is_new": "True",
+          "first_alarm_previous_decision": "NORMAL",
+          "first_new_alarm_window": "701",
+          "first_new_alarm_complete_relative_s": "432.726961026",
+          "first_new_alarm_difference_to_earliest_s": "0.0",
+          "issues": ""
+        }
+      }
+    },
+    {
+      "trial": 5,
+      "earliest_methods": [
+        "tflite_autoencoder"
+      ],
+      "missing_methods": [],
+      "methods": {
+        "rms": {
+          "first_alarm_window": "875",
+          "first_alarm_is_new": "True",
+          "first_alarm_previous_decision": "NORMAL",
+          "first_new_alarm_window": "875",
+          "first_new_alarm_complete_relative_s": "540.154735192",
+          "first_new_alarm_difference_to_earliest_s": "0.6182507559999522",
+          "issues": ""
+        },
+        "isolation_forest": {
+          "first_alarm_window": "875",
+          "first_alarm_is_new": "True",
+          "first_alarm_previous_decision": "NORMAL",
+          "first_new_alarm_window": "875",
+          "first_new_alarm_complete_relative_s": "540.154735192",
+          "first_new_alarm_difference_to_earliest_s": "0.6182507559999522",
+          "issues": ""
+        },
+        "tflite_autoencoder": {
+          "first_alarm_window": "874",
+          "first_alarm_is_new": "True",
+          "first_alarm_previous_decision": "NORMAL",
+          "first_new_alarm_window": "874",
+          "first_new_alarm_complete_relative_s": "539.536484436",
+          "first_new_alarm_difference_to_earliest_s": "0.0",
+          "issues": ""
+        }
+      }
+    },
+    {
+      "trial": 6,
+      "earliest_methods": [
+        "tflite_autoencoder"
+      ],
+      "missing_methods": [],
+      "methods": {
+        "rms": {
+          "first_alarm_window": "1045",
+          "first_alarm_is_new": "True",
+          "first_alarm_previous_decision": "NORMAL",
+          "first_new_alarm_window": "1045",
+          "first_new_alarm_complete_relative_s": "645.093983362",
+          "first_new_alarm_difference_to_earliest_s": "0.6181931229999691",
+          "issues": ""
+        },
+        "isolation_forest": {
+          "first_alarm_window": "1045",
+          "first_alarm_is_new": "True",
+          "first_alarm_previous_decision": "NORMAL",
+          "first_new_alarm_window": "1045",
+          "first_new_alarm_complete_relative_s": "645.093983362",
+          "first_new_alarm_difference_to_earliest_s": "0.6181931229999691",
+          "issues": ""
+        },
+        "tflite_autoencoder": {
+          "first_alarm_window": "1044",
+          "first_alarm_is_new": "True",
+          "first_alarm_previous_decision": "NORMAL",
+          "first_new_alarm_window": "1044",
+          "first_new_alarm_complete_relative_s": "644.475790239",
+          "first_new_alarm_difference_to_earliest_s": "0.0",
+          "issues": ""
+        }
+      }
+    },
+    {
+      "trial": 7,
+      "earliest_methods": [
+        "rms",
+        "isolation_forest",
+        "tflite_autoencoder"
+      ],
+      "missing_methods": [],
+      "methods": {
+        "rms": {
+          "first_alarm_window": "1186",
+          "first_alarm_is_new": "True",
+          "first_alarm_previous_decision": "NORMAL",
+          "first_new_alarm_window": "1186",
+          "first_new_alarm_complete_relative_s": "732.131321536",
+          "first_new_alarm_difference_to_earliest_s": "0.0",
+          "issues": ""
+        },
+        "isolation_forest": {
+          "first_alarm_window": "1186",
+          "first_alarm_is_new": "True",
+          "first_alarm_previous_decision": "NORMAL",
+          "first_new_alarm_window": "1186",
+          "first_new_alarm_complete_relative_s": "732.131321536",
+          "first_new_alarm_difference_to_earliest_s": "0.0",
+          "issues": ""
+        },
+        "tflite_autoencoder": {
+          "first_alarm_window": "1186",
+          "first_alarm_is_new": "True",
+          "first_alarm_previous_decision": "NORMAL",
+          "first_new_alarm_window": "1186",
+          "first_new_alarm_complete_relative_s": "732.131321536",
+          "first_new_alarm_difference_to_earliest_s": "0.0",
+          "issues": ""
+        }
+      }
+    },
+    {
+      "trial": 8,
+      "earliest_methods": [
+        "rms",
+        "isolation_forest",
+        "tflite_autoencoder"
+      ],
+      "missing_methods": [],
+      "methods": {
+        "rms": {
+          "first_alarm_window": "1366",
+          "first_alarm_is_new": "True",
+          "first_alarm_previous_decision": "NORMAL",
+          "first_new_alarm_window": "1366",
+          "first_new_alarm_complete_relative_s": "843.256638227",
+          "first_new_alarm_difference_to_earliest_s": "0.0",
+          "issues": ""
+        },
+        "isolation_forest": {
+          "first_alarm_window": "1366",
+          "first_alarm_is_new": "True",
+          "first_alarm_previous_decision": "NORMAL",
+          "first_new_alarm_window": "1366",
+          "first_new_alarm_complete_relative_s": "843.256638227",
+          "first_new_alarm_difference_to_earliest_s": "0.0",
+          "issues": ""
+        },
+        "tflite_autoencoder": {
+          "first_alarm_window": "1366",
+          "first_alarm_is_new": "True",
+          "first_alarm_previous_decision": "NORMAL",
+          "first_new_alarm_window": "1366",
+          "first_new_alarm_complete_relative_s": "843.256638227",
+          "first_new_alarm_difference_to_earliest_s": "0.0",
+          "issues": ""
+        }
+      }
+    },
+    {
+      "trial": 9,
+      "earliest_methods": [
+        "rms",
+        "isolation_forest",
+        "tflite_autoencoder"
+      ],
+      "missing_methods": [],
+      "methods": {
+        "rms": {
+          "first_alarm_window": "1526",
+          "first_alarm_is_new": "True",
+          "first_alarm_previous_decision": "NORMAL",
+          "first_new_alarm_window": "1526",
+          "first_new_alarm_complete_relative_s": "942.0326226",
+          "first_new_alarm_difference_to_earliest_s": "0.0",
+          "issues": ""
+        },
+        "isolation_forest": {
+          "first_alarm_window": "1526",
+          "first_alarm_is_new": "True",
+          "first_alarm_previous_decision": "NORMAL",
+          "first_new_alarm_window": "1526",
+          "first_new_alarm_complete_relative_s": "942.0326226",
+          "first_new_alarm_difference_to_earliest_s": "0.0",
+          "issues": ""
+        },
+        "tflite_autoencoder": {
+          "first_alarm_window": "1526",
+          "first_alarm_is_new": "True",
+          "first_alarm_previous_decision": "NORMAL",
+          "first_new_alarm_window": "1526",
+          "first_new_alarm_complete_relative_s": "942.0326226",
+          "first_new_alarm_difference_to_earliest_s": "0.0",
+          "issues": ""
+        }
+      }
+    },
+    {
+      "trial": 10,
+      "earliest_methods": [
+        "tflite_autoencoder"
+      ],
+      "missing_methods": [],
+      "methods": {
+        "rms": {
+          "first_alarm_window": "1725",
+          "first_alarm_is_new": "True",
+          "first_alarm_previous_decision": "NORMAL",
+          "first_new_alarm_window": "1725",
+          "first_new_alarm_complete_relative_s": "1064.895064933",
+          "first_new_alarm_difference_to_earliest_s": "0.6172516169999653",
+          "issues": ""
+        },
+        "isolation_forest": {
+          "first_alarm_window": "1725",
+          "first_alarm_is_new": "True",
+          "first_alarm_previous_decision": "NORMAL",
+          "first_new_alarm_window": "1725",
+          "first_new_alarm_complete_relative_s": "1064.895064933",
+          "first_new_alarm_difference_to_earliest_s": "0.6172516169999653",
+          "issues": ""
+        },
+        "tflite_autoencoder": {
+          "first_alarm_window": "1724",
+          "first_alarm_is_new": "True",
+          "first_alarm_previous_decision": "NORMAL",
+          "first_new_alarm_window": "1724",
+          "first_new_alarm_complete_relative_s": "1064.277813316",
+          "first_new_alarm_difference_to_earliest_s": "0.0",
+          "issues": ""
+        }
+      }
+    }
+  ],
+  "normal_summary": {
+    "rms": {
+      "denominator_trials": 10,
+      "trials_with_first_alarm": 10,
+      "trials_with_first_new_alarm": 10,
+      "trials_without_new_alarm": 0,
+      "trials_with_issues": 0,
+      "normal_recorded_duration_s": 490.323409072,
+      "normal_valid_windows": 783,
+      "normal_alarm_windows": 0,
+      "normal_alarm_window_fraction": 0.0,
+      "normal_invalid_windows": 2
+    },
+    "isolation_forest": {
+      "denominator_trials": 10,
+      "trials_with_first_alarm": 10,
+      "trials_with_first_new_alarm": 10,
+      "trials_without_new_alarm": 0,
+      "trials_with_issues": 0,
+      "normal_recorded_duration_s": 490.323409072,
+      "normal_valid_windows": 783,
+      "normal_alarm_windows": 0,
+      "normal_alarm_window_fraction": 0.0,
+      "normal_invalid_windows": 2
+    },
+    "tflite_autoencoder": {
+      "denominator_trials": 10,
+      "trials_with_first_alarm": 10,
+      "trials_with_first_new_alarm": 10,
+      "trials_without_new_alarm": 0,
+      "trials_with_issues": 0,
+      "normal_recorded_duration_s": 490.323409072,
+      "normal_valid_windows": 783,
+      "normal_alarm_windows": 0,
+      "normal_alarm_window_fraction": 0.0,
+      "normal_invalid_windows": 2
+    }
+  },
+  "benchmark": {
+    "rms": {
+      "measured_windows": 10824,
+      "median_ms": 0.0325,
+      "p95_ms": 0.035463
+    },
+    "isolation_forest": {
+      "measured_windows": 10824,
+      "median_ms": 12.9706975,
+      "p95_ms": 14.523543400000001
+    },
+    "tflite_autoencoder": {
+      "measured_windows": 10824,
+      "median_ms": 0.057537,
+      "p95_ms": 0.062148
+    }
+  },
+  "comparison_rule": "Differences between completion timestamps of first new alarm windows; no vibration-onset latency.",
+  "analysis_input_sha256": {
+    "trial_comparison.csv": "28fe9fea7567ea28b74f3eeda802238556c6f2ae4e8b94178bfa79da5d00ac37",
+    "window_results.csv": "0b4fd9362b7aebf697f966a1f597c117d5ac7275a7c5fd970c31a6fbd47ddf2d",
+    "normal_phases.csv": "b3c63a0d44cd540efd95a9968f9fbfc17826da75b625690ce2b815560dcca949",
+    "summary.json": "c4e8fb834e1796ad907a2c1c6d81498adf463744495ca7aeca10a1e2a701f613",
+    "processing_benchmark.json": "7adfc2441f489c63a6a96ad0c04a7df8565003921789c5fce3fb9c5122af197c",
+    "analysis_rules.json": "5bdfa17fdd844039cda8b6c1be798cf5e35b92c237bef24044081d549b348752"
+  }
+}

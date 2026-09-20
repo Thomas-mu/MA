@@ -1,0 +1,85 @@
+{
+  "status": "starting",
+  "pid": 10815,
+  "start": {
+    "monotonic_ns": 1680199693943,
+    "utc_ns": 1789912266898114093,
+    "local_timestamp": "2026-09-20T15:51:06.898297+02:00",
+    "utc": "2026-09-20T13:51:06.898330+00:00"
+  },
+  "live_inference": false,
+  "pwm_before": {
+    "gpio_bcm": 18,
+    "physical_pin": 12,
+    "pwm_chip": 0,
+    "pwm_channel": 2,
+    "pwm_path": "/sys/class/pwm/pwmchip0/pwm2",
+    "rp1_device_path": "/sys/devices/platform/axi/1000120000.pcie/1f00098000.pwm",
+    "pwm_configuration": {
+      "period_ns": 40000,
+      "duty_cycle_ns": 10000,
+      "enable": 1,
+      "polarity": "normal",
+      "configured_frequency_hz": 25000.0,
+      "configured_duty_percent": 25.0
+    },
+    "pin_readback": {
+      "mux": "a3",
+      "function": "PWM0_CHAN2",
+      "instantaneous_level": "lo",
+      "raw": "18: a3    pd | lo // GPIO18 = PWM0_CHAN2"
+    },
+    "pwm_mux_confirmed": true,
+    "electrical_waveform_measured": false,
+    "measured_rpm": null,
+    "mechanical_state": "not_measured"
+  },
+  "start_monotonic_ns": 1680372614258,
+  "normal_start_monotonic_ns": 1710372614258,
+  "pwm_initial_readback": {
+    "gpio_bcm": 18,
+    "physical_pin": 12,
+    "pwm_chip": 0,
+    "pwm_channel": 2,
+    "pwm_path": "/sys/class/pwm/pwmchip0/pwm2",
+    "rp1_device_path": "/sys/devices/platform/axi/1000120000.pcie/1f00098000.pwm",
+    "pwm_configuration": {
+      "period_ns": 40000,
+      "duty_cycle_ns": 30000,
+      "enable": 1,
+      "polarity": "normal",
+      "configured_frequency_hz": 25000.0,
+      "configured_duty_percent": 75.0
+    },
+    "pin_readback": {
+      "mux": "a3",
+      "function": "PWM0_CHAN2",
+      "instantaneous_level": "hi",
+      "raw": "18: a3    pd | hi // GPIO18 = PWM0_CHAN2"
+    },
+    "pwm_mux_confirmed": true,
+    "electrical_waveform_measured": false,
+    "measured_rpm": null,
+    "mechanical_state": "not_measured"
+  },
+  "sensor": {
+    "model": "ADXL345",
+    "odr_hz": 200,
+    "range_g": 2,
+    "full_resolution": true,
+    "scale_g_per_lsb": 0.0039,
+    "acquisition_mode": "fifo_stream",
+    "register_readback": {
+      "0x2c": "0xb",
+      "0x31": "0x8",
+      "0x2e": "0x0",
+      "0x38": "0x90",
+      "0x2d": "0x8"
+    },
+    "timestamp_source": "host_monotonic_read_completion",
+    "sensor_time_estimate": "sample_index / nominal ODR; not measured sensor time",
+    "lost_samples_exact": null,
+    "bus_number": 1,
+    "i2c_clock_configured_hz": 100000
+  }
+}

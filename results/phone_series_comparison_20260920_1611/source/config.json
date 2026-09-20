@@ -1,0 +1,152 @@
+{
+  "schema_version": 1,
+  "created": {
+    "monotonic_ns": 1679907759412,
+    "utc_ns": 1789912266606179507,
+    "local_timestamp": "2026-09-20T15:51:06.606354+02:00",
+    "utc": "2026-09-20T13:51:06.606387+00:00"
+  },
+  "trials": 10,
+  "phone": "Google Pixel 9a",
+  "setup": "Position, Orientierung und Befestigungen unverändert laut Auftrag",
+  "profile_name": "standlauf_pwm75_200hz",
+  "source_profile": "/home/malik/masterarbeit-edge-ai/profiles/standlauf_pwm75_200hz/profile.json",
+  "bundle_sha256": "dbfad8529b642d1e4c74119b3865b0600c3a7668198328e1112707c7502b2eb1",
+  "artifact_sha256": {
+    "validation_raw.npy": "71aab25b602b4f4ef1162b4e236e0b8b1a874328f023d044280775f6b8c9b8a2",
+    "autoencoder_float32.tflite": "e84030d8523862eed516ee3d6bd1fa58fabd7f777c53f332b55c4e6b95cc9b4d",
+    "validation_windows.json": "47bd4c25f283e9a07c9969e25c1275f553c2d1b10459315dabd0ac84806102d8",
+    "isolation_forest.joblib": "eb093761a38fc7db97926b09430c7207ea53ceaa7af2ad4ee5d4ca6a70bd4e1f",
+    "source_profile.json": "c163677d8530064668a98f923da7f432f7300e604e52317a69b06aa27c50348f",
+    "scaler.joblib": "33318a0ea924f9822a0597734f313c05dc86d773ad1eb7ef08359acb3fd82b45",
+    "comparison_implementation.py": "479a3de9263842574ab2c69fca5adaeac8b5418e13bb383bfae3e026ed98d2ca",
+    "source_ae_threshold.json": "03067d96ed8b675c17e55bdb91abe764af17135e2ed881883cdd900d71b3fa24"
+  },
+  "thresholds": {
+    "rms": {
+      "value": 1.296361072562011,
+      "source": "P99_NORMAL_VALIDATION",
+      "percentile": 99
+    },
+    "isolation_forest": {
+      "value": 0.4833547401595273,
+      "source": "P99_NORMAL_VALIDATION",
+      "percentile": 99
+    },
+    "tflite_autoencoder": {
+      "value": 0.47720259914362284,
+      "source": "PROFILE/P99_FROZEN_KERAS_CALIBRATION",
+      "percentile": 99
+    }
+  },
+  "sampling_rate_hz": 200,
+  "window_size": 128,
+  "step_size": 128,
+  "pwm": {
+    "percent": 75,
+    "frequency_hz": 25000,
+    "period_ns": 40000,
+    "duty_cycle_ns": 30000,
+    "enable": 1,
+    "gpio_bcm": 18,
+    "hold_all_phases": true,
+    "change_after_start": false
+  },
+  "warmup_seconds": 30,
+  "normal_seconds": 30,
+  "warmup_source": "30 s initial run-in rule: docs/versuchsplan_kontrolliert_20260909.md; separate 30 s normal lead-in from existing phone plan",
+  "mechanical_stability_measured": false,
+  "acquisition_mode": "one_raw_sensor_process_then_shared_offline_windows",
+  "maximum_duration_seconds": null,
+  "timestamp_basis": "host_monotonic_ns; Europe/Berlin wall clock additionally",
+  "physical_onset_measured": false,
+  "fixed_call_duration_seconds": null,
+  "model_training_or_threshold_changes": false,
+  "pwm_verification_interval_seconds": 5,
+  "final_output_policy": "leave_75_percent_unchanged",
+  "source_sha256": {
+    "common_comparison.py": "479a3de9263842574ab2c69fca5adaeac8b5418e13bb383bfae3e026ed98d2ca",
+    "adxl345.py": "de7d7bb6df14a0a4499b843136ba9d47db6ef9e146709e827b9e40f0bcf9be84",
+    "phone_series_experiment.py": "a17cd5e2cf8331266ef5c4b9067c397329a57067faec66b3ddea82e5aae62d0e",
+    "fan_pwm.py": "9ea26cf53849df32ca427d392bc7e8df202e4729255a24ac09a601bc0717b933",
+    "live_pipeline.py": "128b92f6fe822a964ad8b1566fbbf0faeb5ef22847e1beb006b31fd1422fad9c",
+    "analyze_phone_series.py": "224d4ce17f770831d56b5d83f176b0af78cf6c5b3e6d4ad2ea2d55abd82c083b"
+  },
+  "provenance": {
+    "created_at_utc": "2026-09-20T13:51:06.627998+00:00",
+    "command": [
+      "-"
+    ],
+    "working_directory": "/home/malik/masterarbeit-edge-ai",
+    "code_commit": "a234089f98d0808c7b2f3c024941a98699f8d861",
+    "git_status_porcelain": "?? docs/smartphone_zehn_anrufe.md\n?? logs/\n?? results/fan_control/\n?? results/live_runs/amplitude_gui_20260920_112415_062294.fan.jsonl\n?? results/live_runs/amplitude_gui_20260920_112415_062294.raw.csv\n?? results/live_runs/amplitude_gui_20260920_112415_062294.raw.events.jsonl\n?? results/live_runs/amplitude_gui_20260920_112415_062294.run.json\n?? results/phone_series_pwm75_20260920_155106_586322/\n?? src/analyze_phone_series.py\n?? src/phone_series_experiment.py\n?? tests/test_analyze_phone_series.py\n?? tests/test_phone_series_experiment.py",
+    "implementation_sha256": "479a3de9263842574ab2c69fca5adaeac8b5418e13bb383bfae3e026ed98d2ca",
+    "python": "3.13.5 (main, Jun 13 2026, 14:18:01) [GCC 14.2.0]",
+    "python_executable": "/home/malik/masterarbeit-edge-ai/.venv/bin/python",
+    "platform": "Linux-6.18.34+rpt-rpi-2712-aarch64-with-glibc2.41",
+    "hostname": "edgepi",
+    "device_model": "Raspberry Pi 5 Model B Rev 1.0",
+    "logical_cpu_count": 4,
+    "packages": {
+      "numpy": "2.5.1",
+      "scikit-learn": "1.9.0",
+      "joblib": "1.5.3",
+      "psutil": "7.2.2",
+      "tensorflow": "2.21.0",
+      "ai-edge-litert": "2.1.6",
+      "tflite-runtime": null
+    }
+  },
+  "pwm_readback": {
+    "gpio_bcm": 18,
+    "physical_pin": 12,
+    "pwm_chip": 0,
+    "pwm_channel": 2,
+    "pwm_path": "/sys/class/pwm/pwmchip0/pwm2",
+    "rp1_device_path": "/sys/devices/platform/axi/1000120000.pcie/1f00098000.pwm",
+    "pwm_configuration": {
+      "period_ns": 40000,
+      "duty_cycle_ns": 30000,
+      "enable": 1,
+      "polarity": "normal",
+      "configured_frequency_hz": 25000.0,
+      "configured_duty_percent": 75.0
+    },
+    "pin_readback": {
+      "mux": "a3",
+      "function": "PWM0_CHAN2",
+      "instantaneous_level": "hi",
+      "raw": "18: a3    pd | hi // GPIO18 = PWM0_CHAN2"
+    },
+    "pwm_mux_confirmed": true,
+    "electrical_waveform_measured": false,
+    "measured_rpm": null,
+    "mechanical_state": "not_measured"
+  },
+  "pwm_set_and_verified": {
+    "monotonic_ns": 1680369502008,
+    "utc_ns": 1789912267067922102,
+    "local_timestamp": "2026-09-20T15:51:07.067927+02:00",
+    "utc": "2026-09-20T13:51:07.067943+00:00"
+  },
+  "sensor": {
+    "model": "ADXL345",
+    "odr_hz": 200,
+    "range_g": 2,
+    "full_resolution": true,
+    "scale_g_per_lsb": 0.0039,
+    "acquisition_mode": "fifo_stream",
+    "register_readback": {
+      "0x2c": "0xb",
+      "0x31": "0x8",
+      "0x2e": "0x0",
+      "0x38": "0x90",
+      "0x2d": "0x8"
+    },
+    "timestamp_source": "host_monotonic_read_completion",
+    "sensor_time_estimate": "sample_index / nominal ODR; not measured sensor time",
+    "lost_samples_exact": null,
+    "bus_number": 1,
+    "i2c_clock_configured_hz": 100000
+  }
+}

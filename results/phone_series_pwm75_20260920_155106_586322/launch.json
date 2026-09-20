@@ -1,0 +1,12 @@
+{
+  "pid": 10815,
+  "recording_directory": "/home/malik/masterarbeit-edge-ai/results/phone_series_pwm75_20260920_155106_586322",
+  "log": "/home/malik/masterarbeit-edge-ai/results/phone_series_pwm75_20260920_155106_586322.process.log",
+  "detached_session": true,
+  "started": {
+    "monotonic_ns": 1679944789408,
+    "utc_ns": 1789912266643210169,
+    "local_timestamp": "2026-09-20T15:51:06.643213+02:00",
+    "utc": "2026-09-20T13:51:06.643234+00:00"
+  }
+}

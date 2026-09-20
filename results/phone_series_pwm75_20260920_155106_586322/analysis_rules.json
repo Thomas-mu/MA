@@ -1,0 +1,17 @@
+{
+  "rules": {
+    "version": 1,
+    "windowing": "Originale gespeicherte window_index-Gruppen, 128 Samples, Schritt 128; keine Neuausrichtung an Markern.",
+    "search_intervals": "[call_requested, end_reported); Marker begrenzen den Suchbereich, nicht die Vibration.",
+    "primary_windows": "Erstes Sample >= Startmarker und letztes Sample < Endmarker.",
+    "boundary_windows": "Überlappende, nicht vollständig enthaltene Fenster separat als unklar; kein primärer Rang.",
+    "first_alarm": "Erstes gültiges Alarmfenster vollständig im Suchbereich, auch bei schon bestehendem Alarm.",
+    "first_new_alarm": "Erstes primäres Alarmfenster mit unmittelbar vorherigem gültigem NORMAL-Fenster; fortlaufende Fenster-/Sampleindizes und Zeiten erforderlich.",
+    "ties": "Gleicher Original-Fensterindex bedeutet Gleichstand. Kein Tie-Break durch Rechenzeiten.",
+    "invalid": "Unvollständige Fenster, Qualitätsflags, Index-/Zeitfehler und Scorefehler bleiben INVALID und werden nie NORMAL.",
+    "normal": "Nach Einlauf bis erster Aufforderung, zwischen Rückmeldung und nächster Aufforderung, nach letzter abgeschlossener Rückmeldung bis Aufnahmeende; nur dokumentierte Intervalle.",
+    "denominators": "Alarmanteile beziehen sich auf gültige, vollständig enthaltene Fenster; ungültige und Randfenster separat, Zeitdauer zusätzlich.",
+    "retention": "Alle Versuche 1 bis 10, auch fehlende, abgebrochene oder unklare, bleiben erhalten.",
+    "timing": "Relative Host-Empfangszeiten; kein präziser Vibrationsbeginn und keine nachträgliche Live-Reaktionszeit."
+  }
+}

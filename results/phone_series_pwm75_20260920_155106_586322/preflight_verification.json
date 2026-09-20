@@ -1,0 +1,24 @@
+{
+  "verified_at": {
+    "monotonic_ns": 1679944153888,
+    "utc_ns": 1789912266642573760,
+    "local_timestamp": "2026-09-20T15:51:06.642577+02:00",
+    "utc": "2026-09-20T13:51:06.642597+00:00"
+  },
+  "baseline": {
+    "command": ".venv/bin/python -m pytest -q tests",
+    "result": "767 passed, 12 subtests passed",
+    "duration_seconds": 302.29,
+    "warnings": "6005 NumPy/joblib deprecation warnings"
+  },
+  "new_series": {
+    "command": ".venv/bin/python -m pytest -q tests/test_phone_series_experiment.py tests/test_analyze_phone_series.py",
+    "result": "35 passed, 28 subtests passed",
+    "duration_seconds": 0.46
+  },
+  "synthetic_analysis_smoke": "11 PNGs and 30 trial/method rows; no real capture data",
+  "frozen_models_runtime_check": "all three scorers successfully evaluated existing validation window, no training",
+  "hardware_process_check": "no sensor acquisition process and no open /dev/i2c-1 found before launch",
+  "sensor_process_policy": "only this process opens ADXL345; shared sensor lock and fan lock held",
+  "data_scope": "new recording; previous files preserved"
+}

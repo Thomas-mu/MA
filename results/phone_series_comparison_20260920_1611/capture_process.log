@@ -1,0 +1,201 @@
+{
+  "status": "completed",
+  "pid": 10815,
+  "start": {
+    "monotonic_ns": 1680199693943,
+    "utc_ns": 1789912266898114093,
+    "local_timestamp": "2026-09-20T15:51:06.898297+02:00",
+    "utc": "2026-09-20T13:51:06.898330+00:00"
+  },
+  "live_inference": false,
+  "pwm_before": {
+    "gpio_bcm": 18,
+    "physical_pin": 12,
+    "pwm_chip": 0,
+    "pwm_channel": 2,
+    "pwm_path": "/sys/class/pwm/pwmchip0/pwm2",
+    "rp1_device_path": "/sys/devices/platform/axi/1000120000.pcie/1f00098000.pwm",
+    "pwm_configuration": {
+      "period_ns": 40000,
+      "duty_cycle_ns": 10000,
+      "enable": 1,
+      "polarity": "normal",
+      "configured_frequency_hz": 25000.0,
+      "configured_duty_percent": 25.0
+    },
+    "pin_readback": {
+      "mux": "a3",
+      "function": "PWM0_CHAN2",
+      "instantaneous_level": "lo",
+      "raw": "18: a3    pd | lo // GPIO18 = PWM0_CHAN2"
+    },
+    "pwm_mux_confirmed": true,
+    "electrical_waveform_measured": false,
+    "measured_rpm": null,
+    "mechanical_state": "not_measured"
+  },
+  "start_monotonic_ns": 1680372614258,
+  "normal_start_monotonic_ns": 1710372614258,
+  "pwm_initial_readback": {
+    "gpio_bcm": 18,
+    "physical_pin": 12,
+    "pwm_chip": 0,
+    "pwm_channel": 2,
+    "pwm_path": "/sys/class/pwm/pwmchip0/pwm2",
+    "rp1_device_path": "/sys/devices/platform/axi/1000120000.pcie/1f00098000.pwm",
+    "pwm_configuration": {
+      "period_ns": 40000,
+      "duty_cycle_ns": 30000,
+      "enable": 1,
+      "polarity": "normal",
+      "configured_frequency_hz": 25000.0,
+      "configured_duty_percent": 75.0
+    },
+    "pin_readback": {
+      "mux": "a3",
+      "function": "PWM0_CHAN2",
+      "instantaneous_level": "hi",
+      "raw": "18: a3    pd | hi // GPIO18 = PWM0_CHAN2"
+    },
+    "pwm_mux_confirmed": true,
+    "electrical_waveform_measured": false,
+    "measured_rpm": null,
+    "mechanical_state": "not_measured"
+  },
+  "sensor": {
+    "model": "ADXL345",
+    "odr_hz": 200,
+    "range_g": 2,
+    "full_resolution": true,
+    "scale_g_per_lsb": 0.0039,
+    "acquisition_mode": "fifo_stream",
+    "register_readback": {
+      "0x2c": "0xb",
+      "0x31": "0x8",
+      "0x2e": "0x0",
+      "0x38": "0x90",
+      "0x2d": "0x8"
+    },
+    "timestamp_source": "host_monotonic_read_completion",
+    "sensor_time_estimate": "sample_index / nominal ODR; not measured sensor time",
+    "lost_samples_exact": null,
+    "bus_number": 1,
+    "i2c_clock_configured_hz": 100000
+  },
+  "pwm_latest_readback": {
+    "gpio_bcm": 18,
+    "physical_pin": 12,
+    "pwm_chip": 0,
+    "pwm_channel": 2,
+    "pwm_path": "/sys/class/pwm/pwmchip0/pwm2",
+    "rp1_device_path": "/sys/devices/platform/axi/1000120000.pcie/1f00098000.pwm",
+    "pwm_configuration": {
+      "period_ns": 40000,
+      "duty_cycle_ns": 30000,
+      "enable": 1,
+      "polarity": "normal",
+      "configured_frequency_hz": 25000.0,
+      "configured_duty_percent": 75.0
+    },
+    "pin_readback": {
+      "mux": "a3",
+      "function": "PWM0_CHAN2",
+      "instantaneous_level": "lo",
+      "raw": "18: a3    pd | lo // GPIO18 = PWM0_CHAN2"
+    },
+    "pwm_mux_confirmed": true,
+    "electrical_waveform_measured": false,
+    "measured_rpm": null,
+    "mechanical_state": "not_measured"
+  },
+  "pwm_latest_verified_monotonic_ns": 2794867716471,
+  "stop_reason": "ten_trials_and_postrun_complete",
+  "acquisition": {
+    "samples_captured": 231149,
+    "windows_formed": 1805,
+    "windows_dropped": 0,
+    "samples_in_dropped_windows": 0,
+    "gap_events": 1,
+    "overrun_events": 1,
+    "saturated_samples": 0,
+    "queue_high_watermark": 1,
+    "partial_samples_saved": 109,
+    "first_sample_host_monotonic_ns": 1680384798312,
+    "last_sample_host_monotonic_ns": 2795192707129,
+    "queue_capacity_windows": 8,
+    "queue_pending_windows": 0,
+    "drop_policy": "drop_newest",
+    "acquisition_error": null
+  },
+  "pwm_final_readback": {
+    "gpio_bcm": 18,
+    "physical_pin": 12,
+    "pwm_chip": 0,
+    "pwm_channel": 2,
+    "pwm_path": "/sys/class/pwm/pwmchip0/pwm2",
+    "rp1_device_path": "/sys/devices/platform/axi/1000120000.pcie/1f00098000.pwm",
+    "pwm_configuration": {
+      "period_ns": 40000,
+      "duty_cycle_ns": 30000,
+      "enable": 1,
+      "polarity": "normal",
+      "configured_frequency_hz": 25000.0,
+      "configured_duty_percent": 75.0
+    },
+    "pin_readback": {
+      "mux": "a3",
+      "function": "PWM0_CHAN2",
+      "instantaneous_level": "hi",
+      "raw": "18: a3    pd | hi // GPIO18 = PWM0_CHAN2"
+    },
+    "pwm_mux_confirmed": true,
+    "electrical_waveform_measured": false,
+    "measured_rpm": null,
+    "mechanical_state": "not_measured"
+  },
+  "finished": {
+    "monotonic_ns": 2795246339585,
+    "utc_ns": 1789913381944759994,
+    "local_timestamp": "2026-09-20T16:09:41.944770+02:00",
+    "utc": "2026-09-20T14:09:41.944810+00:00"
+  },
+  "end_monotonic_ns": 2795246406215,
+  "cleanup_errors": [],
+  "file_sha256": {
+    "protocol.md": "ca8bad5e5fec02764964c0ccfe83a31e25f99b1e4ebb8f4702ca98cac9b60b27",
+    "raw.csv": "8e396bfe42bf6d4e38ea5846c7e1f6c46ac1c9afa2ac9b40134ead6bb9b74fa6",
+    "analysis_rules.json": "9cdf83fe15b3ab32d901d846e22e58bedd2d59333810182fc4ca7dc7b5448257",
+    "launch.json": "978051eff12d167326757cef14d09913a4d03766def2b604b0d7aa38c3376605",
+    "config.json": "399da4c7ad26838ad239dc0604307ac4878e98ca408bba89c0dd58f8d76fc1dd",
+    "cues.jsonl": "bf7199b50ef030e5e7a2560480eb5a9f532ed13ee41b16f8c3d770496d22aba1",
+    "operator_instructions.md": "14fb6b15ab543ec8778ed3aad5ff5ba5c571e493b986767abce1f110eeb23d93",
+    "fan.jsonl": "b9db3aba876772f5f7fc7e952532c1e58840de8f63c53fbb0d2c3f1ce45705df",
+    "preflight_verification.json": "40f3d1982190ad89bc16f311df2df6113586b6b44df3c1dfb3e6c3b32e590549",
+    "started.json": "97c512b73b27f942878ac01c499954a41291626499a81591ba5036662470452a",
+    "source_profile.json": "c163677d8530064668a98f923da7f432f7300e604e52317a69b06aa27c50348f",
+    "plan.json": "3d446251229b6c900eac919113d12490217005ef6b5e5d87d9696abe3727634f",
+    "raw.events.jsonl": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "bundle/validation_raw.npy": "71aab25b602b4f4ef1162b4e236e0b8b1a874328f023d044280775f6b8c9b8a2",
+    "bundle/autoencoder_float32.tflite": "e84030d8523862eed516ee3d6bd1fa58fabd7f777c53f332b55c4e6b95cc9b4d",
+    "bundle/validation_windows.json": "47bd4c25f283e9a07c9969e25c1275f553c2d1b10459315dabd0ac84806102d8",
+    "bundle/isolation_forest.joblib": "eb093761a38fc7db97926b09430c7207ea53ceaa7af2ad4ee5d4ca6a70bd4e1f",
+    "bundle/validation_predictions.csv": "96193b651f3608d51205d926eafee9934da3551d298b3bff8dd11facde3810a0",
+    "bundle/validation_diagnostics.json": "81b4d2810f81a0d6e1ba2db46c0593132a167b7450d6874e1b7d477fbe832990",
+    "bundle/source_profile.json": "c163677d8530064668a98f923da7f432f7300e604e52317a69b06aa27c50348f",
+    "bundle/bundle.json": "dbfad8529b642d1e4c74119b3865b0600c3a7668198328e1112707c7502b2eb1",
+    "bundle/scaler.joblib": "33318a0ea924f9822a0597734f313c05dc86d773ad1eb7ef08359acb3fd82b45",
+    "bundle/comparison_implementation.py": "479a3de9263842574ab2c69fca5adaeac8b5418e13bb383bfae3e026ed98d2ca",
+    "bundle/source_ae_threshold.json": "03067d96ed8b675c17e55bdb91abe764af17135e2ed881883cdd900d71b3fa24",
+    "source/common_comparison.py": "479a3de9263842574ab2c69fca5adaeac8b5418e13bb383bfae3e026ed98d2ca",
+    "source/adxl345.py": "de7d7bb6df14a0a4499b843136ba9d47db6ef9e146709e827b9e40f0bcf9be84",
+    "source/phone_series_experiment.py": "a17cd5e2cf8331266ef5c4b9067c397329a57067faec66b3ddea82e5aae62d0e",
+    "source/fan_pwm.py": "9ea26cf53849df32ca427d392bc7e8df202e4729255a24ac09a601bc0717b933",
+    "source/live_pipeline.py": "128b92f6fe822a964ad8b1566fbbf0faeb5ef22847e1beb006b31fd1422fad9c",
+    "source/analyze_phone_series.py": "224d4ce17f770831d56b5d83f176b0af78cf6c5b3e6d4ad2ea2d55abd82c083b",
+    "source/__pycache__/common_comparison.cpython-313.pyc": "e25735290925d3c54af94469fc411cd4531bbf28aa000510cba2c5de71228489",
+    "source/__pycache__/fan_pwm.cpython-313.pyc": "1a1f3057494f0b9f046a8b18d10dd766ccc6c01c5a15d32d40898fbffaa41984",
+    "source/__pycache__/adxl345.cpython-313.pyc": "1e1e358309cf71f930ba69cada04795c736e49f05aebed83077e9d966bcc70b6",
+    "source/__pycache__/phone_series_experiment.cpython-313.pyc": "26e14ee9771e57a56d516a2c2c3c417aa36f2bdf6666504e25e09099192f2624",
+    "source/__pycache__/live_pipeline.cpython-313.pyc": "2543476bcf66a3073d7f1e5b8aa2d0e1cb50216169cacfbcf0338b15db205a59"
+  }
+}
